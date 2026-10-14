@@ -1,0 +1,220 @@
+{
+  "id": "dictionaries",
+  "chapterId": "chapter-3",
+  "number": "3.2",
+  "title": "字典与按键查找",
+  "subtitle": "字典把名称和对应的值放在一起，按名称查找。",
+  "concept": "字典把名称和对应的值放在一起，按名称查找。",
+  "intuition": "通讯录用姓名找电话，不必记住它排在第几位。",
+  "objectives": [
+    "先写一张价格表",
+    "添加和更新都用名称",
+    "找不到时给一个默认值"
+  ],
+  "body": [
+    {
+      "title": "先写一张价格表",
+      "text": "prices = {\"苹果\": 3, \"面包\": 5} 是字典。每对中左边是名称，叫键；右边是对应的值。冒号配成一对，逗号隔开各对。prices[\"苹果\"] 按键取出 3。这里方括号里写名称，不是列表的位置。"
+    },
+    {
+      "title": "添加和更新都用名称",
+      "text": "prices[\"牛奶\"] = 4 添加新商品；prices[\"苹果\"] = 6 更新已有商品价格。同一个键只保留一个当前值。for name in prices: 可以依次得到各个键，再用 prices[name] 找它的值。"
+    },
+    {
+      "title": "找不到时给一个默认值",
+      "text": "直接找不存在的键会报 KeyError。prices.get(\"米饭\", 0) 表示：找到就取它的值，找不到先用 0；这个读取动作不会添加“米饭”。get 在计数里很方便：counts[name] = counts.get(name, 0) + 1。先从没有记录的 0 开始，再加一次。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "字典用键对应值；方括号读取已有键，get 可为缺失键给出默认值。",
+    "conditions": [
+      "键必须存在才能用方括号直接读取；缺失时可以用 get 明确给默认值。"
+    ]
+  },
+  "derivation": [
+    {
+      "text": "字典按键 \"苹果\" 找到 3。"
+    },
+    {
+      "text": "同一个键重新赋值后变成 6。"
+    },
+    {
+      "text": "不会多出第二个苹果键。"
+    }
+  ],
+  "interactiveVisual": {
+    "kind": "python-trace",
+    "prediction": "查“米饭”会得到多少？字典会多一项吗？",
+    "caption": "先选一个输入，写下预测，再点“下一步”。箭头指向下一条将执行的语句；右侧显示此刻的变量和已经产生的输出。",
+    "experiment": {
+      "code": "prices = {\"苹果\": 3, \"面包\": 5}\nname = '苹果'\nprice = prices.get(name, 0)\nprint(price)\n",
+      "stdout": "3\n",
+      "stdin": ""
+    },
+    "followUp": "比较已有键与缺失键，观察 prices 是否变化。",
+    "codeTemplate": "prices = {\"苹果\": 3, \"面包\": 5}\nname = {{name}}\nprice = prices.get(name, 0)\nprint(price)\n",
+    "controls": [
+      {
+        "name": "name",
+        "label": "要查的商品",
+        "values": [
+          "苹果",
+          "面包",
+          "米饭"
+        ],
+        "defaultIndex": 0
+      }
+    ],
+    "watch": [
+      "prices",
+      "name",
+      "price"
+    ]
+  },
+  "workedExamples": [
+    {
+      "title": "按商品名找价格",
+      "problem": "查苹果，再调整它的价格。",
+      "steps": [
+        "字典按键 \"苹果\" 找到 3。",
+        "同一个键重新赋值后变成 6。",
+        "不会多出第二个苹果键。"
+      ],
+      "answer": {
+        "code": "prices = {\"苹果\": 3, \"面包\": 5}\nprint(prices[\"苹果\"])\nprices[\"苹果\"] = 6\nprint(prices[\"苹果\"])\n",
+        "stdout": "3\n6\n",
+        "stdin": ""
+      }
+    },
+    {
+      "title": "数清每种水果",
+      "problem": "统计苹果、梨、苹果各出现几次。",
+      "steps": [
+        "第一次见某种水果，get 给出 0。",
+        "加 1 后存回这个键。",
+        "苹果第二次出现，原来是 1，更新为 2。"
+      ],
+      "answer": {
+        "code": "counts = {}\nfor name in [\"苹果\", \"梨\", \"苹果\"]:\n    counts[name] = counts.get(name, 0) + 1\nprint(counts[\"苹果\"])\nprint(counts[\"梨\"])\n",
+        "stdout": "2\n1\n",
+        "stdin": ""
+      }
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "dictionaries-m1",
+      "claim": "字典里第一个值总能用 [0] 读取。",
+      "correction": "字典按键查找，0 必须真的作为键存在才可以读取。"
+    },
+    {
+      "id": "dictionaries-m2",
+      "claim": "get 缺失键时会自动把这个键加进去。",
+      "correction": "get 只是读取并返回默认值，不会添加键。"
+    }
+  ],
+  "practice": [
+    {
+      "problem": "查出面包的价格 5。",
+      "hint": "用商品名作键。",
+      "solution": [
+        "prices[\"面包\"] 取出 5。"
+      ],
+      "answer": {
+        "code": "prices = {\"苹果\": 3, \"面包\": 5}\nprint(prices[\"面包\"])\n",
+        "stdout": "5\n",
+        "stdin": ""
+      },
+      "id": "dictionaries-p1",
+      "difficulty": 1,
+      "misconceptionTags": [
+        "dictionaries-m1"
+      ]
+    },
+    {
+      "problem": "把面包价格更新为 6。",
+      "hint": "给同一个键赋新值。",
+      "solution": [
+        "新价格替换旧价格。"
+      ],
+      "answer": {
+        "code": "prices = {\"面包\": 5}\nprices[\"面包\"] = 6\nprint(prices[\"面包\"])\n",
+        "stdout": "6\n",
+        "stdin": ""
+      },
+      "id": "dictionaries-p2",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "dictionaries-m2"
+      ]
+    },
+    {
+      "problem": "对没有记录的米饭返回 0。",
+      "hint": "用 get 的第二个参数。",
+      "solution": [
+        "找不到就返回默认值 0。"
+      ],
+      "answer": {
+        "code": "prices = {\"苹果\": 3}\nprint(prices.get(\"米饭\", 0))\n",
+        "stdout": "0\n",
+        "stdin": ""
+      },
+      "id": "dictionaries-p3",
+      "difficulty": 3,
+      "misconceptionTags": [
+        "dictionaries-m1"
+      ]
+    },
+    {
+      "problem": "遍历空清单统计水果，总共有几个键？",
+      "hint": "空列表不执行循环。",
+      "solution": [
+        "字典保持空，长度为 0。"
+      ],
+      "answer": {
+        "code": "counts = {}\nfor name in []:\n    counts[name] = counts.get(name, 0) + 1\nprint(len(counts))\n",
+        "stdout": "0\n",
+        "stdin": ""
+      },
+      "id": "dictionaries-p4",
+      "difficulty": 3,
+      "misconceptionTags": [
+        "dictionaries-m2"
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "prices 没有“米饭”这个键，想读到默认值 0，用哪个？",
+    "correctIndex": 1,
+    "choices": [
+      "prices[\"米饭\"]",
+      "prices.get(\"米饭\", 0)",
+      "prices[0]"
+    ],
+    "explanation": "get 可以为缺失的键提供默认值。",
+    "feedback": [
+      "直接读取缺失键会报错。",
+      "对，找不到时返回第二个参数 0。",
+      "字典按键查找，0 不是“第一个位置”。"
+    ]
+  },
+  "prerequisites": [
+    "lists"
+  ],
+  "difficulty": 3,
+  "misconceptionTags": [
+    "dictionaries-m1",
+    "dictionaries-m2"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.2.0",
+    "status": "revised",
+    "humanReviewed": false
+  },
+  "sources": [
+    "python-tutorial",
+    "python-data"
+  ],
+  "furtherReading": []
+}

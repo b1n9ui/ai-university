@@ -1,0 +1,333 @@
+{
+  "chapterReviews": [
+    {
+      "chapterId": "chapter-1",
+      "questions": [
+        {
+          "problem": "输入数量 3，单价 125 分，显示总金额（分）。",
+          "hint": "先 int，再乘法。",
+          "solution": [
+            "输入先是文字。",
+            "3 * 125 = 375 分。"
+          ],
+          "answer": {
+            "code": "count = int(input())\nprint(count * 125)\n",
+            "stdout": "375\n",
+            "stdin": "3\n"
+          },
+          "id": "review-1-1"
+        },
+        {
+          "problem": "输入 12 颗糖，每袋 5 颗，显示完整袋数和余数。",
+          "hint": "分别用 // 和 %。",
+          "solution": [
+            "两袋用掉 10 颗。",
+            "还有 2 颗。"
+          ],
+          "answer": {
+            "code": "total = int(input())\nprint(total // 5)\nprint(total % 5)\n",
+            "stdout": "2\n2\n",
+            "stdin": "12\n"
+          },
+          "id": "review-1-2"
+        }
+      ]
+    },
+    {
+      "chapterId": "chapter-2",
+      "questions": [
+        {
+          "problem": "求 1 到 5 的和；再检查哪些数被相加。",
+          "hint": "终点要写 6。",
+          "solution": [
+            "相加的数为 1、2、3、4、5。",
+            "总和为 15。"
+          ],
+          "answer": {
+            "code": "total = 0\nfor number in range(1, 6):\n    print(number)\n    total = total + number\nprint(total)\n",
+            "stdout": "1\n2\n3\n4\n5\n15\n",
+            "stdin": ""
+          },
+          "id": "review-2-1"
+        },
+        {
+          "problem": "从 2 倒数到 1，每轮少 1，结束时显示“完成”。",
+          "hint": "停止条件是 remaining > 0。",
+          "solution": [
+            "显示 2 后变 1。",
+            "显示 1 后变 0，循环结束。"
+          ],
+          "answer": {
+            "code": "remaining = 2\nwhile remaining > 0:\n    print(remaining)\n    remaining = remaining - 1\nprint(\"完成\")\n",
+            "stdout": "2\n1\n完成\n",
+            "stdin": ""
+          },
+          "id": "review-2-2"
+        }
+      ]
+    },
+    {
+      "chapterId": "chapter-3",
+      "questions": [
+        {
+          "problem": "统计清单 [\"苹果\", \"梨\", \"苹果\"] 中每种水果的数量。",
+          "hint": "字典按水果名称累计。",
+          "solution": [
+            "苹果两次。",
+            "梨一次。"
+          ],
+          "answer": {
+            "code": "counts = {}\nfor name in [\"苹果\", \"梨\", \"苹果\"]:\n    counts[name] = counts.get(name, 0) + 1\nprint(counts[\"苹果\"])\nprint(counts[\"梨\"])\n",
+            "stdout": "2\n1\n",
+            "stdin": ""
+          },
+          "id": "review-3-1"
+        },
+        {
+          "problem": "复制 [3, 1] 后给副本加 2，显示两份清单。",
+          "hint": "用 copy()，不是赋值另一名字。",
+          "solution": [
+            "复制成独立的一层列表。",
+            "原列表不添加 2。"
+          ],
+          "answer": {
+            "code": "original = [3, 1]\nother = original.copy()\nother.append(2)\nprint(original)\nprint(other)\n",
+            "stdout": "[3, 1]\n[3, 1, 2]\n",
+            "stdin": ""
+          },
+          "id": "review-3-2"
+        }
+      ]
+    },
+    {
+      "chapterId": "chapter-4",
+      "questions": [
+        {
+          "problem": "写 read_count，将整数文字转成非负数量；检查 \"3\"、\"0\"、\"-1\" 和 \"三\"。",
+          "hint": "转换后检查小于 0。",
+          "solution": [
+            "3、0 合法。",
+            "-1 是范围错误，“三”是转换错误。"
+          ],
+          "answer": {
+            "code": "def read_count(text):\n    count = int(text)\n    if count < 0:\n        raise ValueError(\"数量不能为负\")\n    return count\n\nfor text in [\"3\", \"0\", \"-1\", \"三\"]:\n    try:\n        print(read_count(text))\n    except ValueError:\n        print(\"请输入非负整数\")\n",
+            "stdout": "3\n0\n请输入非负整数\n请输入非负整数\n",
+            "stdin": ""
+          },
+          "id": "review-4-1"
+        },
+        {
+          "problem": "写 cost(price, count=1)，检查单价 5 时买一件与两件。",
+          "hint": "默认数量只在省略时生效。",
+          "solution": [
+            "省略 count 时费用为 5。",
+            "传入 2 时费用为 10。"
+          ],
+          "answer": {
+            "code": "def cost(price, count=1):\n    return price * count\n\nprint(cost(5))\nprint(cost(price=5, count=2))\n",
+            "stdout": "5\n10\n",
+            "stdin": ""
+          },
+          "id": "review-4-2"
+        }
+      ]
+    },
+    {
+      "chapterId": "chapter-5",
+      "questions": [
+        {
+          "problem": "把 {\"count\": 3} 保存成 JSON 文件，再读取并显示数量。",
+          "hint": "先 dumps，再写文件；读出文字后 loads。",
+          "solution": [
+            "写和读都使用 utf-8。",
+            "还原后按键取出 3。"
+          ],
+          "answer": {
+            "code": "import json\ndata = {\"count\": 3}\nwith open(\"record.json\", \"w\", encoding=\"utf-8\") as file:\n    file.write(json.dumps(data))\nwith open(\"record.json\", \"r\", encoding=\"utf-8\") as file:\n    text = file.read()\nrestored = json.loads(text)\nprint(restored[\"count\"])\n",
+            "stdout": "3\n",
+            "stdin": ""
+          },
+          "id": "review-5-1"
+        },
+        {
+          "problem": "检查 305 分应显示为 3.05 元，而不是 3.50 元。",
+          "hint": "先独立手算，再比较文字。",
+          "solution": [
+            "305 / 100 = 3.05。",
+            ":.2f 只控制显示位数。"
+          ],
+          "answer": {
+            "code": "def display(cents):\n    return f\"{cents / 100:.2f} 元\"\n\nassert display(305) == \"3.05 元\"\nprint(\"通过\")\n",
+            "stdout": "通过\n",
+            "stdin": ""
+          },
+          "id": "review-5-2"
+        }
+      ]
+    }
+  ],
+  "exam": [
+    {
+      "problem": "写 count_passed(scores)，计算列表里至少 60 分的人数；测试 [59, 60, 90] 和空列表。约定输入是 0～100 的整数。",
+      "hint": "先用 for 和 if，累计从 0 开始。",
+      "solution": [
+        "59 不通过；60 和 90 通过。",
+        "空列表没有人，通过人数是 0。"
+      ],
+      "answer": {
+        "code": "def count_passed(scores):\n    passed = 0\n    for score in scores:\n        if score >= 60:\n            passed = passed + 1\n    return passed\n\nassert count_passed([59, 60, 90]) == 2\nassert count_passed([]) == 0\nprint(\"通过\")\n",
+        "stdout": "通过\n",
+        "stdin": ""
+      },
+      "id": "exam-1"
+    },
+    {
+      "problem": "统计 [\"苹果\", \"梨\", \"苹果\"] 的次数，显示苹果和梨的数量。原列表不能修改。",
+      "hint": "结果另放字典。",
+      "solution": [
+        "get 的默认值让第一次计数从 0 开始。",
+        "只读取原列表，不修改它。"
+      ],
+      "answer": {
+        "code": "items = [\"苹果\", \"梨\", \"苹果\"]\ncounts = {}\nfor name in items:\n    counts[name] = counts.get(name, 0) + 1\nprint(counts[\"苹果\"])\nprint(counts[\"梨\"])\nassert items == [\"苹果\", \"梨\", \"苹果\"]\n",
+        "stdout": "2\n1\n",
+        "stdin": ""
+      },
+      "id": "exam-2"
+    },
+    {
+      "problem": "从单列 CSV 读取 125、75 分，转整数后求和；一行是 \"三\" 时明确报错。本题约定表头是 amount、每条记录一列。",
+      "hint": "复用 CSV 读取、函数和异常。",
+      "solution": [
+        "合法输入累计为 200。",
+        "错误文字的 int 转换抛 ValueError，调用处显示说明。"
+      ],
+      "answer": {
+        "code": "import csv\nimport io\n\ndef total_cents(text):\n    total = 0\n    for row in csv.DictReader(io.StringIO(text)):\n        amount = int(row[\"amount\"])\n        if amount <= 0:\n            raise ValueError(\"金额必须大于 0\")\n        total = total + amount\n    return total\n\nassert total_cents(\"amount\\n125\\n75\\n\") == 200\nprint(\"合计检查通过\")\ntry:\n    total_cents(\"amount\\n三\\n\")\nexcept ValueError:\n    print(\"金额格式错误\")\n",
+        "stdout": "合计检查通过\n金额格式错误\n",
+        "stdin": ""
+      },
+      "id": "exam-3"
+    },
+    {
+      "problem": "完成文件小工具：把 [2, 3] 每项翻倍，存成 JSON 再读回，检查结果为 [4, 6]。",
+      "hint": "先处理列表，再转换文字、写入、读取和核对。",
+      "solution": [
+        "新列表为 [4, 6]。",
+        "JSON 文件读回后检查结构与数值。"
+      ],
+      "answer": {
+        "code": "import json\nvalues = [2, 3]\nresult = [value * 2 for value in values]\nwith open(\"result.json\", \"w\", encoding=\"utf-8\") as file:\n    file.write(json.dumps(result))\nwith open(\"result.json\", \"r\", encoding=\"utf-8\") as file:\n    restored = json.loads(file.read())\nassert restored == [4, 6]\nprint(\"通过\")\n",
+        "stdout": "通过\n",
+        "stdin": ""
+      },
+      "id": "exam-4"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "程序",
+      "definition": "按顺序写给计算机的指令。"
+    },
+    {
+      "term": "解释器",
+      "definition": "负责读取和运行 Python 代码的程序。"
+    },
+    {
+      "term": "终端",
+      "definition": "可以输入运行命令、查看结果的窗口。"
+    },
+    {
+      "term": "变量",
+      "definition": "一个用来读取当前值的名字，例如 count。"
+    },
+    {
+      "term": "赋值",
+      "definition": "先算右边，再让左边的名字对应这个值。"
+    },
+    {
+      "term": "字符串",
+      "definition": "文字数据；代码中通常用成对引号表示。"
+    },
+    {
+      "term": "整数",
+      "definition": "没有小数部分的数字，例如 0、3、-2。"
+    },
+    {
+      "term": "类型",
+      "definition": "值的类别；数字和文字能做的操作不同。"
+    },
+    {
+      "term": "表达式",
+      "definition": "能算出一个值的代码，例如 2 + 3。"
+    },
+    {
+      "term": "缩进",
+      "definition": "行首的空格；用来表明哪些步骤属于同一段。"
+    },
+    {
+      "term": "条件",
+      "definition": "结果为成立或不成立的判断，例如 count >= 1。"
+    },
+    {
+      "term": "循环",
+      "definition": "按数据或条件重复执行一组步骤。"
+    },
+    {
+      "term": "列表",
+      "definition": "保存有顺序的一组值，保留重复项。"
+    },
+    {
+      "term": "索引",
+      "definition": "读取列表等数据时使用的位置编号，从 0 开始。"
+    },
+    {
+      "term": "字典",
+      "definition": "按键找对应值的数据结构，例如商品名与价格。"
+    },
+    {
+      "term": "元组",
+      "definition": "内容位置不能重新赋值的固定一组值。"
+    },
+    {
+      "term": "集合",
+      "definition": "只保留不同值、可判断是否包含某项的数据结构。"
+    },
+    {
+      "term": "函数",
+      "definition": "有名字的一组步骤，调用时可以提供输入。"
+    },
+    {
+      "term": "参数",
+      "definition": "函数接收输入时使用的名字。"
+    },
+    {
+      "term": "返回值",
+      "definition": "return 交回调用处的结果。"
+    },
+    {
+      "term": "模块",
+      "definition": "可导入的一组工具，通常存放在一个 .py 文件。"
+    },
+    {
+      "term": "异常",
+      "definition": "执行遇到问题时产生的信号，例如 ValueError。"
+    },
+    {
+      "term": "当前目录",
+      "definition": "相对文件路径开始寻找的位置。"
+    },
+    {
+      "term": "编码",
+      "definition": "文字与文件中数据的转换约定；本书使用 UTF-8。"
+    },
+    {
+      "term": "序列化",
+      "definition": "把列表、字典等结构转换为可保存的文字等格式。"
+    },
+    {
+      "term": "测试",
+      "definition": "把实际结果与独立确定的预期比较。"
+    }
+  ]
+}

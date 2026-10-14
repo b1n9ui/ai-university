@@ -1,0 +1,225 @@
+{
+  "id": "for-range",
+  "chapterId": "chapter-2",
+  "number": "2.2",
+  "title": "for 循环与计数",
+  "subtitle": "for 把一件事重复做，每次给你一个新的数。",
+  "concept": "for 把一件事重复做，每次给你一个新的数。",
+  "intuition": "逐个叫号：1 号、2 号、3 号，不用手写三遍。",
+  "objectives": [
+    "先重复显示号码",
+    "把终点写成最后一个数加一",
+    "让总数一点点增加"
+  ],
+  "body": [
+    {
+      "title": "先重复显示号码",
+      "text": "for number in range(1, 4): 读作“让 number 依次取 1、2、3”。range 给出一段整数；前面的 1 包含，后面的 4 不包含。缩进的 print(number) 每次执行一遍，所以看到三行号码。"
+    },
+    {
+      "title": "把终点写成最后一个数加一",
+      "text": "想叫到 5 号，就写 range(1, 6)。只写 range(3) 时，从 0 开始，产生 0、1、2。本节先用有起点和终点的形式。循环结束以后，继续执行不缩进的下一行。"
+    },
+    {
+      "title": "让总数一点点增加",
+      "text": "求 1 + 2 + 3，不必一次记住全部。先让 total = 0；每次把当前 number 加进去。total 的变化是 0 → 1 → 3 → 6。把 print(total) 放在循环外，才会只显示最后的总数。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "for 逐项重复；range(start, stop) 从 start 开始，到 stop 之前结束。",
+    "conditions": [
+      "range 的终点不包含；本节使用整数、步长为 1 的递增区间。"
+    ]
+  },
+  "derivation": [
+    {
+      "text": "range(1, 4) 给出 1、2、3。"
+    },
+    {
+      "text": "number 每次换成下一个数。"
+    },
+    {
+      "text": "缩进的 print 每次执行一次。"
+    }
+  ],
+  "interactiveVisual": {
+    "kind": "python-trace",
+    "prediction": "1 到 3 的和是 6；改成 1 到 4 会是多少？",
+    "caption": "先选一个输入，写下预测，再点“下一步”。箭头指向下一条将执行的语句；右侧显示此刻的变量和已经产生的输出。",
+    "experiment": {
+      "code": "end = 3\ntotal = 0\nfor number in range(1, end + 1):\n    total = total + number\nprint(total)\n",
+      "stdout": "6\n",
+      "stdin": ""
+    },
+    "followUp": "选 0，观察循环体是否执行。",
+    "codeTemplate": "end = {{end}}\ntotal = 0\nfor number in range(1, end + 1):\n    total = total + number\nprint(total)\n",
+    "controls": [
+      {
+        "name": "end",
+        "label": "加到几",
+        "values": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "defaultIndex": 3
+      }
+    ],
+    "watch": [
+      "end",
+      "number",
+      "total"
+    ]
+  },
+  "workedExamples": [
+    {
+      "title": "叫到 3 号",
+      "problem": "从 1 号开始依次显示。",
+      "steps": [
+        "range(1, 4) 给出 1、2、3。",
+        "number 每次换成下一个数。",
+        "缩进的 print 每次执行一次。"
+      ],
+      "answer": {
+        "code": "for number in range(1, 4):\n    print(number)\n",
+        "stdout": "1\n2\n3\n",
+        "stdin": ""
+      }
+    },
+    {
+      "title": "求前三个数的和",
+      "problem": "把 1、2、3 逐个加起来。",
+      "steps": [
+        "total 从 0 开始。",
+        "三次增加后依次为 1、3、6。",
+        "循环外显示最终的 6。"
+      ],
+      "answer": {
+        "code": "total = 0\nfor number in range(1, 4):\n    total = total + number\nprint(total)\n",
+        "stdout": "6\n",
+        "stdin": ""
+      }
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "for-range-m1",
+      "claim": "range(1, 4) 会取到 4。",
+      "correction": "终点不包含，得到 1、2、3。"
+    },
+    {
+      "id": "for-range-m2",
+      "claim": "累加时每轮都应该把 total 重设为 0。",
+      "correction": "total 在循环之前初始化；循环里保留上次总数再增加。"
+    }
+  ],
+  "practice": [
+    {
+      "problem": "range(1, 3) 会给出哪些数？",
+      "hint": "终点 3 不包含。",
+      "solution": [
+        "给出 1 和 2。"
+      ],
+      "answer": {
+        "code": "for number in range(1, 3):\n    print(number)\n",
+        "stdout": "1\n2\n",
+        "stdin": ""
+      },
+      "id": "for-range-p1",
+      "difficulty": 1,
+      "misconceptionTags": [
+        "for-range-m1"
+      ]
+    },
+    {
+      "problem": "依次显示 2、3、4。",
+      "hint": "终点要写 5。",
+      "solution": [
+        "range(2, 5) 包含 2、3、4。"
+      ],
+      "answer": {
+        "code": "for number in range(2, 5):\n    print(number)\n",
+        "stdout": "2\n3\n4\n",
+        "stdin": ""
+      },
+      "id": "for-range-p2",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "for-range-m2"
+      ]
+    },
+    {
+      "problem": "求 1 到 4 的和。",
+      "hint": "total 从 0 开始。",
+      "solution": [
+        "依次增加 1、2、3、4。",
+        "最后是 10。"
+      ],
+      "answer": {
+        "code": "total = 0\nfor number in range(1, 5):\n    total = total + number\nprint(total)\n",
+        "stdout": "10\n",
+        "stdin": ""
+      },
+      "id": "for-range-p3",
+      "difficulty": 3,
+      "misconceptionTags": [
+        "for-range-m1"
+      ]
+    },
+    {
+      "problem": "range(1, 1) 会执行几次？",
+      "hint": "起点已经到达不包含的终点。",
+      "solution": [
+        "一次也不执行。",
+        "循环外的 print 仍执行。"
+      ],
+      "answer": {
+        "code": "total = 0\nfor number in range(1, 1):\n    total = total + number\nprint(total)\n",
+        "stdout": "0\n",
+        "stdin": ""
+      },
+      "id": "for-range-p4",
+      "difficulty": 3,
+      "misconceptionTags": [
+        "for-range-m2"
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "range(1, 4) 包含哪些数？",
+    "correctIndex": 1,
+    "choices": [
+      "1、2、3、4",
+      "1、2、3",
+      "0、1、2、3"
+    ],
+    "explanation": "range 的终点不包含。",
+    "feedback": [
+      "终点 4 不包含。",
+      "对，取到 3 后就结束。",
+      "这里起点明确是 1，不是 0。"
+    ]
+  },
+  "prerequisites": [
+    "conditions"
+  ],
+  "difficulty": 2,
+  "misconceptionTags": [
+    "for-range-m1",
+    "for-range-m2"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.2.0",
+    "status": "revised",
+    "humanReviewed": false
+  },
+  "sources": [
+    "python-tutorial",
+    "python-control"
+  ],
+  "furtherReading": []
+}

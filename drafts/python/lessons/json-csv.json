@@ -1,0 +1,226 @@
+{
+  "id": "json-csv",
+  "chapterId": "chapter-5",
+  "number": "5.2",
+  "title": "JSON 与 CSV：保存结构和读取表格",
+  "subtitle": "JSON 保存结构，CSV 保存表格；读入后仍要检查值的类型和含义。",
+  "concept": "JSON 保存结构，CSV 保存表格；读入后仍要检查值的类型和含义。",
+  "intuition": "把字典装进文字文件，或把账单整理成一行一行的表格。",
+  "objectives": [
+    "用 JSON 保存一个字典",
+    "用 CSV 读取一张小表",
+    "数字列读进来还是文字"
+  ],
+  "body": [
+    {
+      "title": "用 JSON 保存一个字典",
+      "text": "json.dumps(data, ensure_ascii=False) 把字典变成 JSON 文字；dumps 中的 s 可以先记成“得到字符串”。ensure_ascii=False 让中文保持可读。json.loads(text) 再把文字还原为数据。这样不只保存字典的显示样子，而是使用约定好的数据格式。"
+    },
+    {
+      "title": "用 CSV 读取一张小表",
+      "text": "CSV 的每行是一条记录，第一行可以写列名。csv.DictReader 根据列名把每行读成字典。下面用 io.StringIO 包装一段示例文字，让它像文本文件一样可被读取；io 是输入输出工具模块，真实文件也可以用 open 打开后交给 DictReader。先用小表避免把文件路径问题和表格问题混在一起。"
+    },
+    {
+      "title": "数字列读进来还是文字",
+      "text": "CSV 的 amount 列看起来是 125，实际 row[\"amount\"] 是字符串 \"125\"。先 int 转成整数分，再相加。完整项目还要检查列名、缺失值和负数；不能因为表格能读出来，就认为每一行都正确。JSON 也要检查读到的是不是需要的字典或列表。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "JSON 转换结构与文字，CSV 按列读记录；解析后仍需验证结构和数值。",
+    "conditions": [
+      "CSV 字段默认是文字，计算前需转换并验证。",
+      "JSON 还原后的结构要与程序需要的结构一致。"
+    ]
+  },
+  "derivation": [
+    {
+      "text": "先导入 json。"
+    },
+    {
+      "text": "dumps 得到标准格式文字。"
+    },
+    {
+      "text": "loads 还原后，按键读取姓名和数量。"
+    }
+  ],
+  "interactiveVisual": {
+    "kind": "python-trace",
+    "prediction": "转成 JSON 再读回，count 还会是同一个数吗？",
+    "caption": "先选一个输入，写下预测，再点“下一步”。箭头指向下一条将执行的语句；右侧显示此刻的变量和已经产生的输出。",
+    "experiment": {
+      "code": "import json\ndata = {\"name\": \"小林\", \"count\": 3}\ntext = json.dumps(data, ensure_ascii=False)\nrestored = json.loads(text)\nprint(restored[\"count\"])\n",
+      "stdout": "3\n",
+      "stdin": ""
+    },
+    "followUp": "选 0，观察 text 的引号和 restored 的字典结构。",
+    "codeTemplate": "import json\ndata = {\"name\": \"小林\", \"count\": {{count}}}\ntext = json.dumps(data, ensure_ascii=False)\nrestored = json.loads(text)\nprint(restored[\"count\"])\n",
+    "controls": [
+      {
+        "name": "count",
+        "label": "要保存的数量",
+        "values": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "defaultIndex": 3
+      }
+    ],
+    "watch": [
+      "data",
+      "text",
+      "restored"
+    ]
+  },
+  "workedExamples": [
+    {
+      "title": "保存并还原一条记录",
+      "problem": "把姓名和数量转成 JSON 再读回。",
+      "steps": [
+        "先导入 json。",
+        "dumps 得到标准格式文字。",
+        "loads 还原后，按键读取姓名和数量。"
+      ],
+      "answer": {
+        "code": "import json\ndata = {\"name\": \"小林\", \"count\": 3}\ntext = json.dumps(data, ensure_ascii=False)\nrestored = json.loads(text)\nprint(restored[\"name\"])\nprint(restored[\"count\"])\n",
+        "stdout": "小林\n3\n",
+        "stdin": ""
+      }
+    },
+    {
+      "title": "两行金额求和",
+      "problem": "CSV 中金额列单位是分：125 和 200。",
+      "steps": [
+        "DictReader 按列名读取两行。",
+        "金额文字先转成整数。",
+        "总数为 325 分。"
+      ],
+      "answer": {
+        "code": "import csv\nimport io\ntext = \"category,amount\\n食品,125\\n交通,200\\n\"\ntotal = 0\nfor row in csv.DictReader(io.StringIO(text)):\n    total = total + int(row[\"amount\"])\nprint(total)\n",
+        "stdout": "325\n",
+        "stdin": ""
+      }
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "json-csv-m1",
+      "claim": "CSV 数字列读取后自动变成数字。",
+      "correction": "字段默认是文字，计算前要显式转换。"
+    },
+    {
+      "id": "json-csv-m2",
+      "claim": "文件能解析，就不用检查数据了。",
+      "correction": "还要检查列名、值的类型和允许的范围。"
+    }
+  ],
+  "practice": [
+    {
+      "problem": "从 JSON 文字中读取 count。",
+      "hint": "loads 后按键取值。",
+      "solution": [
+        "得到整数 3。"
+      ],
+      "answer": {
+        "code": "import json\ndata = json.loads('{\"count\": 3}')\nprint(data[\"count\"])\n",
+        "stdout": "3\n",
+        "stdin": ""
+      },
+      "id": "json-csv-p1",
+      "difficulty": 1,
+      "misconceptionTags": [
+        "json-csv-m1"
+      ]
+    },
+    {
+      "problem": "把 [1, 2] 转成 JSON，再读回并显示长度。",
+      "hint": "用 dumps 和 loads。",
+      "solution": [
+        "还原列表有两项。"
+      ],
+      "answer": {
+        "code": "import json\ntext = json.dumps([1, 2])\nvalues = json.loads(text)\nprint(len(values))\n",
+        "stdout": "2\n",
+        "stdin": ""
+      },
+      "id": "json-csv-p2",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "json-csv-m2"
+      ]
+    },
+    {
+      "problem": "CSV 一行 amount 为 50，读取后加 10。",
+      "hint": "先 int。",
+      "solution": [
+        "50 + 10 = 60。"
+      ],
+      "answer": {
+        "code": "import csv\nimport io\ntext = \"amount\\n50\\n\"\nfor row in csv.DictReader(io.StringIO(text)):\n    print(int(row[\"amount\"]) + 10)\n",
+        "stdout": "60\n",
+        "stdin": ""
+      },
+      "id": "json-csv-p3",
+      "difficulty": 3,
+      "misconceptionTags": [
+        "json-csv-m1"
+      ]
+    },
+    {
+      "problem": "CSV 只有列名、没有数据行，累加结果是多少？",
+      "hint": "循环不会读取到记录。",
+      "solution": [
+        "total 保持 0。"
+      ],
+      "answer": {
+        "code": "import csv\nimport io\ntotal = 0\nfor row in csv.DictReader(io.StringIO(\"amount\\n\")):\n    total = total + int(row[\"amount\"])\nprint(total)\n",
+        "stdout": "0\n",
+        "stdin": ""
+      },
+      "id": "json-csv-p4",
+      "difficulty": 3,
+      "misconceptionTags": [
+        "json-csv-m2"
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "CSV 中读到 row[\"amount\"] 是 \"125\"，加钱前应做什么？",
+    "correctIndex": 1,
+    "choices": [
+      "直接加数字",
+      "先 int 转成整数分",
+      "给字符串追加 \"200\""
+    ],
+    "explanation": "CSV 字段默认是文字，要转换并验证后再计算。",
+    "feedback": [
+      "文字和整数不能这样相加。",
+      "对，转换后才能按数值累加；还应检查范围。",
+      "连接文字得到 \"125200\"，不是金额总和。"
+    ]
+  },
+  "prerequisites": [
+    "text-files",
+    "dictionaries",
+    "modules"
+  ],
+  "difficulty": 5,
+  "misconceptionTags": [
+    "json-csv-m1",
+    "json-csv-m2"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.2.0",
+    "status": "revised",
+    "humanReviewed": false
+  },
+  "sources": [
+    "python-tutorial",
+    "python-formats",
+    "python-csv"
+  ],
+  "furtherReading": []
+}

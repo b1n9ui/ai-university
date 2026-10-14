@@ -1,0 +1,225 @@
+{
+  "id": "modules",
+  "chapterId": "chapter-4",
+  "number": "4.3",
+  "title": "模块：使用现成的工具",
+  "subtitle": "把可复用的函数放在单独文件，另一个文件导入后就能使用。",
+  "concept": "把可复用的函数放在单独文件，另一个文件导入后就能使用。",
+  "intuition": "把常用工具放进工具盒，下次按名字取出来。",
+  "objectives": [
+    "先使用 Python 自带的工具盒",
+    "把自己的工具放进 helpers.py",
+    "导入时只准备工具"
+  ],
+  "body": [
+    {
+      "title": "先使用 Python 自带的工具盒",
+      "text": "import math 导入自带的数学模块。模块是一组放在一起的工具。math.sqrt(9) 表示用 math 里的 sqrt 计算平方根，得到 3.0。点号在这里连接模块名与工具名，不必自己编写平方根算法。"
+    },
+    {
+      "title": "把自己的工具放进 helpers.py",
+      "text": "附录的 helpers.py 中定义 double。main.py 写 from helpers import double 后就能调用 double(5)。把两个文件保存在同一目录，在终端进入这个目录，再运行 main.py。不要把自己的文件命名成 math.py 或 json.py，会遮住同名自带模块。"
+    },
+    {
+      "title": "导入时只准备工具",
+      "text": "模块里普通的顶层代码在第一次导入时也会执行。为了避免导入工具就弹出提问，演示或命令行操作放在 if __name__ == \"__main__\": 下面。先把这句当成入口标记：直接运行这个文件时执行，作为工具导入时不执行；不需要先研究双下划线。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "import 准备模块工具；入口判断使演示只在文件被直接运行时执行。",
+    "conditions": [
+      "双文件示例需要把 helpers.py、main.py 放在同一目录。",
+      "sqrt 的本节输入为非负数。"
+    ]
+  },
+  "derivation": [
+    {
+      "text": "import math 准备模块。"
+    },
+    {
+      "text": "math.sqrt(9) 计算出 3.0。"
+    },
+    {
+      "text": "print 显示结果。"
+    }
+  ],
+  "interactiveVisual": {
+    "kind": "python-trace",
+    "prediction": "9 的平方根是多少？结果显示为整数还是小数？",
+    "caption": "先选一个输入，写下预测，再点“下一步”。箭头指向下一条将执行的语句；右侧显示此刻的变量和已经产生的输出。",
+    "experiment": {
+      "code": "import math\nnumber = 9\nresult = math.sqrt(number)\nprint(result)\n",
+      "stdout": "3.0\n",
+      "stdin": ""
+    },
+    "followUp": "换成 0、4、16，核对自己知道的平方根。",
+    "codeTemplate": "import math\nnumber = {{number}}\nresult = math.sqrt(number)\nprint(result)\n",
+    "controls": [
+      {
+        "name": "number",
+        "label": "待计算的数",
+        "values": [
+          0,
+          4,
+          9,
+          16,
+          25
+        ],
+        "defaultIndex": 2
+      }
+    ],
+    "watch": [
+      "number",
+      "result"
+    ]
+  },
+  "workedExamples": [
+    {
+      "title": "使用平方根工具",
+      "problem": "求 9 的平方根。",
+      "steps": [
+        "import math 准备模块。",
+        "math.sqrt(9) 计算出 3.0。",
+        "print 显示结果。"
+      ],
+      "answer": {
+        "code": "import math\nresult = math.sqrt(9)\nprint(result)\n",
+        "stdout": "3.0\n",
+        "stdin": ""
+      }
+    },
+    {
+      "title": "直接运行入口",
+      "problem": "直接运行本文件，显示翻倍结果。",
+      "steps": [
+        "先定义可复用函数。",
+        "入口判断在直接运行时成立。",
+        "调用 double(5) 得到 10。"
+      ],
+      "answer": {
+        "code": "def double(number):\n    return number * 2\n\nif __name__ == \"__main__\":\n    print(double(5))\n",
+        "stdout": "10\n",
+        "stdin": ""
+      }
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "modules-m1",
+      "claim": "导入一个文件，不会执行它的任何顶层代码。",
+      "correction": "普通顶层代码也会执行；演示步骤放在入口判断内。"
+    },
+    {
+      "id": "modules-m2",
+      "claim": "自己的 math.py 不会影响 import math。",
+      "correction": "同名文件可能遮住自带模块，练习文件用别的名字。"
+    }
+  ],
+  "practice": [
+    {
+      "problem": "求 16 的平方根。",
+      "hint": "导入 math，再 sqrt。",
+      "solution": [
+        "结果为 4.0。"
+      ],
+      "answer": {
+        "code": "import math\nprint(math.sqrt(16))\n",
+        "stdout": "4.0\n",
+        "stdin": ""
+      },
+      "id": "modules-p1",
+      "difficulty": 1,
+      "misconceptionTags": [
+        "modules-m1"
+      ]
+    },
+    {
+      "problem": "求 0 的平方根。",
+      "hint": "0 是平方根的边界。",
+      "solution": [
+        "结果为 0.0。"
+      ],
+      "answer": {
+        "code": "import math\nprint(math.sqrt(0))\n",
+        "stdout": "0.0\n",
+        "stdin": ""
+      },
+      "id": "modules-p2",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "modules-m2"
+      ]
+    },
+    {
+      "problem": "直接运行一个入口，显示“工具演示”。",
+      "hint": "使用给出的入口标记。",
+      "solution": [
+        "直接运行时 __name__ 是 \"__main__\"。"
+      ],
+      "answer": {
+        "code": "if __name__ == \"__main__\":\n    print(\"工具演示\")\n",
+        "stdout": "工具演示\n",
+        "stdin": ""
+      },
+      "id": "modules-p3",
+      "difficulty": 3,
+      "misconceptionTags": [
+        "modules-m1"
+      ]
+    },
+    {
+      "problem": "把 sqrt 单独导入，再求 25 的平方根。",
+      "hint": "from math import sqrt。",
+      "solution": [
+        "这次直接写 sqrt(25)。"
+      ],
+      "answer": {
+        "code": "from math import sqrt\nprint(sqrt(25))\n",
+        "stdout": "5.0\n",
+        "stdin": ""
+      },
+      "id": "modules-p4",
+      "difficulty": 3,
+      "misconceptionTags": [
+        "modules-m2"
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "把函数放在模块里供别人导入，演示代码应放哪里？",
+    "correctIndex": 1,
+    "choices": [
+      "普通顶层，一导入就提问",
+      "if __name__ == \"__main__\": 下面",
+      "写在注释中也会执行"
+    ],
+    "explanation": "入口判断把直接运行时的演示步骤围在一起。",
+    "feedback": [
+      "普通顶层代码也会在导入时执行，可能打断调用者。",
+      "对，直接运行时演示，导入时准备工具。",
+      "注释不会执行。"
+    ]
+  },
+  "prerequisites": [
+    "arguments",
+    "functions"
+  ],
+  "difficulty": 4,
+  "misconceptionTags": [
+    "modules-m1",
+    "modules-m2"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.2.0",
+    "status": "revised",
+    "humanReviewed": false
+  },
+  "sources": [
+    "python-tutorial",
+    "python-modules",
+    "python-venv",
+    "python-pathlib"
+  ],
+  "furtherReading": []
+}

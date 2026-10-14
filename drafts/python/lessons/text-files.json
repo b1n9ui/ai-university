@@ -1,0 +1,222 @@
+{
+  "id": "text-files",
+  "chapterId": "chapter-5",
+  "number": "5.1",
+  "title": "文本文件与路径",
+  "subtitle": "变量在程序结束后不会留下；写进文件，下一次才能重新读取。",
+  "concept": "变量在程序结束后不会留下；写进文件，下一次才能重新读取。",
+  "intuition": "把今天的清单记在纸上，明天还能打开看。",
+  "objectives": [
+    "先决定写在哪里",
+    "写入时说明模式和文字编码",
+    "读取后仍然得到文字"
+  ],
+  "body": [
+    {
+      "title": "先决定写在哪里",
+      "text": "notes.txt 是文件名；不写完整路径时，它相对于程序运行时的当前目录，不一定是代码所在目录。第一次实验请在独立练习文件夹进行。网页互动在隔离的示例目录中演示，不会写入你的电脑文件。"
+    },
+    {
+      "title": "写入时说明模式和文字编码",
+      "text": "with open(\"notes.txt\", \"w\", encoding=\"utf-8\") as file: 打开文件供写入。w 是写入模式，会清空同名文件原来的内容；因此用新文件练习。encoding 说明如何保存中文，utf-8 是本书统一使用的编码。file.write(\"买苹果\\n\") 写入文字，\\n 表示换行。with 在这段缩进代码结束后自动关闭文件。"
+    },
+    {
+      "title": "读取后仍然得到文字",
+      "text": "用 r 模式打开同一个文件，text = file.read() 把内容读成字符串。为了观察文件自带的换行，可以 print(text, end=\"\")；end=\"\" 表示这次 print 不再额外换行。需要在原内容末尾追加时用 a 模式；先确认目标文件。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "with open(...) 打开文件并在该段结束后关闭；r 读取、w 覆盖写入、a 末尾追加。",
+    "conditions": [
+      "w 会覆盖同名文件，请在独立示例目录使用新文件名。",
+      "相对路径从当前工作目录解释；读写中文统一使用 utf-8。"
+    ]
+  },
+  "derivation": [
+    {
+      "text": "w 创建或覆盖示例文件，写入一行。"
+    },
+    {
+      "text": "离开 with 后文件关闭。"
+    },
+    {
+      "text": "r 重新打开，读取并显示原内容。"
+    }
+  ],
+  "interactiveVisual": {
+    "kind": "python-trace",
+    "prediction": "变量里的文字写进文件再读回，会不会改变？",
+    "caption": "先选一个输入，写下预测，再点“下一步”。箭头指向下一条将执行的语句；右侧显示此刻的变量和已经产生的输出。",
+    "experiment": {
+      "code": "message = '买苹果'\nwith open(\"notes.txt\", \"w\", encoding=\"utf-8\") as file:\n    file.write(message)\nwith open(\"notes.txt\", \"r\", encoding=\"utf-8\") as file:\n    text = file.read()\nprint(text)\n",
+      "stdout": "买苹果\n",
+      "stdin": ""
+    },
+    "followUp": "试空文字，观察读到的 text。每次实验都从新的示例目录开始。",
+    "codeTemplate": "message = {{message}}\nwith open(\"notes.txt\", \"w\", encoding=\"utf-8\") as file:\n    file.write(message)\nwith open(\"notes.txt\", \"r\", encoding=\"utf-8\") as file:\n    text = file.read()\nprint(text)\n",
+    "controls": [
+      {
+        "name": "message",
+        "label": "要保存的文字",
+        "values": [
+          "买苹果",
+          "明天练习",
+          ""
+        ],
+        "defaultIndex": 0
+      }
+    ],
+    "watch": [
+      "message",
+      "text"
+    ]
+  },
+  "workedExamples": [
+    {
+      "title": "留下一条记录",
+      "problem": "写入“买苹果”，关闭后重新读取。",
+      "steps": [
+        "w 创建或覆盖示例文件，写入一行。",
+        "离开 with 后文件关闭。",
+        "r 重新打开，读取并显示原内容。"
+      ],
+      "answer": {
+        "code": "with open(\"notes.txt\", \"w\", encoding=\"utf-8\") as file:\n    file.write(\"买苹果\\n\")\nwith open(\"notes.txt\", \"r\", encoding=\"utf-8\") as file:\n    text = file.read()\nprint(text, end=\"\")\n",
+        "stdout": "买苹果\n",
+        "stdin": ""
+      }
+    },
+    {
+      "title": "在末尾追加",
+      "problem": "已有第一行，再用 a 添加第二行。",
+      "steps": [
+        "先建立示例文件。",
+        "a 保留原内容，在末尾写入。",
+        "读取时得到两行。"
+      ],
+      "answer": {
+        "code": "with open(\"notes.txt\", \"w\", encoding=\"utf-8\") as file:\n    file.write(\"买苹果\\n\")\nwith open(\"notes.txt\", \"a\", encoding=\"utf-8\") as file:\n    file.write(\"买面包\\n\")\nwith open(\"notes.txt\", \"r\", encoding=\"utf-8\") as file:\n    text = file.read()\nprint(text, end=\"\")\n",
+        "stdout": "买苹果\n买面包\n",
+        "stdin": ""
+      }
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "text-files-m1",
+      "claim": "w 会在旧内容末尾追加。",
+      "correction": "w 会清空旧内容；追加用 a。"
+    },
+    {
+      "id": "text-files-m2",
+      "claim": "相对路径永远从代码文件所在目录开始。",
+      "correction": "它从运行时的当前工作目录开始；先确认运行位置。"
+    }
+  ],
+  "practice": [
+    {
+      "problem": "把“你好”写入新的 hello.txt，再读取。",
+      "hint": "写完后用 r 打开。",
+      "solution": [
+        "同样的 utf-8 编码用于写和读。"
+      ],
+      "answer": {
+        "code": "with open(\"hello.txt\", \"w\", encoding=\"utf-8\") as file:\n    file.write(\"你好\")\nwith open(\"hello.txt\", \"r\", encoding=\"utf-8\") as file:\n    text = file.read()\nprint(text)\n",
+        "stdout": "你好\n",
+        "stdin": ""
+      },
+      "id": "text-files-p1",
+      "difficulty": 1,
+      "misconceptionTags": [
+        "text-files-m1"
+      ]
+    },
+    {
+      "problem": "给示例文件追加 B，原内容为 A。",
+      "hint": "模式 a 保留原内容。",
+      "solution": [
+        "先写 A，再追加 B。"
+      ],
+      "answer": {
+        "code": "with open(\"letters.txt\", \"w\", encoding=\"utf-8\") as file:\n    file.write(\"A\")\nwith open(\"letters.txt\", \"a\", encoding=\"utf-8\") as file:\n    file.write(\"B\")\nwith open(\"letters.txt\", \"r\", encoding=\"utf-8\") as file:\n    text = file.read()\nprint(text)\n",
+        "stdout": "AB\n",
+        "stdin": ""
+      },
+      "id": "text-files-p2",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "text-files-m2"
+      ]
+    },
+    {
+      "problem": "把示例文件的 A 用 w 改写成 B。",
+      "hint": "再次 w 会清空旧内容。",
+      "solution": [
+        "只剩 B。"
+      ],
+      "answer": {
+        "code": "with open(\"letters.txt\", \"w\", encoding=\"utf-8\") as file:\n    file.write(\"A\")\nwith open(\"letters.txt\", \"w\", encoding=\"utf-8\") as file:\n    file.write(\"B\")\nwith open(\"letters.txt\", \"r\", encoding=\"utf-8\") as file:\n    text = file.read()\nprint(text)\n",
+        "stdout": "B\n",
+        "stdin": ""
+      },
+      "id": "text-files-p3",
+      "difficulty": 3,
+      "misconceptionTags": [
+        "text-files-m1"
+      ]
+    },
+    {
+      "problem": "读取一个空的示例文件，文字长度是多少？",
+      "hint": "read 返回空字符串。",
+      "solution": [
+        "len(text) 是 0。"
+      ],
+      "answer": {
+        "code": "with open(\"empty.txt\", \"w\", encoding=\"utf-8\") as file:\n    file.write(\"\")\nwith open(\"empty.txt\", \"r\", encoding=\"utf-8\") as file:\n    text = file.read()\nprint(len(text))\n",
+        "stdout": "0\n",
+        "stdin": ""
+      },
+      "id": "text-files-p4",
+      "difficulty": 3,
+      "misconceptionTags": [
+        "text-files-m2"
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "要保留原内容并在末尾添加，用哪个模式？",
+    "correctIndex": 1,
+    "choices": [
+      "w",
+      "a",
+      "r 会自动保存修改"
+    ],
+    "explanation": "a 是追加；w 会覆盖；r 用于读取。",
+    "feedback": [
+      "w 会清空旧内容，不适合这里的追加。",
+      "对，a 在原内容末尾添加。",
+      "r 是读取模式，不能用来写入。"
+    ]
+  },
+  "prerequisites": [
+    "exceptions",
+    "modules"
+  ],
+  "difficulty": 5,
+  "misconceptionTags": [
+    "text-files-m1",
+    "text-files-m2"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.2.0",
+    "status": "revised",
+    "humanReviewed": false
+  },
+  "sources": [
+    "python-tutorial",
+    "python-io",
+    "python-pathlib"
+  ],
+  "furtherReading": []
+}

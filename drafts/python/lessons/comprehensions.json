@@ -1,0 +1,222 @@
+{
+  "id": "comprehensions",
+  "chapterId": "chapter-3",
+  "number": "3.4",
+  "title": "推导式与数据整理",
+  "subtitle": "列表推导式是“逐个处理并收集结果”的短写法，先读懂普通循环。",
+  "concept": "列表推导式是“逐个处理并收集结果”的短写法，先读懂普通循环。",
+  "intuition": "把每件商品的数量翻倍，收集成一张新清单。",
+  "objectives": [
+    "先用已经学会的 for",
+    "再把同样的步骤写成一行",
+    "需要时加一个筛选条件"
+  ],
+  "body": [
+    {
+      "title": "先用已经学会的 for",
+      "text": "从 values = [1, 2, 3] 出发，新建 result = []。循环里计算 value * 2，再 result.append(...) 放进新列表。得到 [2, 4, 6]。原列表仍是 [1, 2, 3]，因为我们添加的是新列表。"
+    },
+    {
+      "title": "再把同样的步骤写成一行",
+      "text": "result = [value * 2 for value in values] 与上面的简单循环目的相同。阅读时先找右边的 for：从 values 逐个取 value；再看前面的 value * 2：每项变成什么；外面的方括号表示收集成列表。"
+    },
+    {
+      "title": "需要时加一个筛选条件",
+      "text": "[value * 2 for value in values if value >= 2] 表示先保留至少 2 的项，再翻倍；结果 [4, 6]。先用小列表手算。遇到多层循环、复杂条件，继续写普通 for 更容易检查；短不是这节的目标，能解释每项怎么来才是。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "[表达式 for 项目 in 数据 if 条件] 从数据逐项筛选、计算，并收集成新列表；条件部分可省略。",
+    "conditions": [
+      "每段示例都从头独立运行；先按本节给出的输入观察，再改变一处。"
+    ]
+  },
+  "derivation": [
+    {
+      "text": "从空 result 开始。"
+    },
+    {
+      "text": "每轮计算两倍并追加。"
+    },
+    {
+      "text": "得到 2、4、6 三项。"
+    }
+  ],
+  "interactiveVisual": {
+    "kind": "python-trace",
+    "prediction": "门槛是 2，哪些数留下？翻倍后是什么？",
+    "caption": "先选一个输入，写下预测，再点“下一步”。箭头指向下一条将执行的语句；右侧显示此刻的变量和已经产生的输出。",
+    "experiment": {
+      "code": "values = [1, 2, 3]\nminimum = 2\nresult = []\nfor value in values:\n    if value >= minimum:\n        result.append(value * 2)\nprint(result)\n",
+      "stdout": "[4, 6]\n",
+      "stdin": ""
+    },
+    "followUp": "把门槛改为 4，看看有没有项目加入结果。这是对应推导式的逐步展开。",
+    "codeTemplate": "values = [1, 2, 3]\nminimum = {{minimum}}\nresult = []\nfor value in values:\n    if value >= minimum:\n        result.append(value * 2)\nprint(result)\n",
+    "controls": [
+      {
+        "name": "minimum",
+        "label": "保留的最小值",
+        "values": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "defaultIndex": 1
+      }
+    ],
+    "watch": [
+      "values",
+      "minimum",
+      "value",
+      "result"
+    ]
+  },
+  "workedExamples": [
+    {
+      "title": "普通循环收集结果",
+      "problem": "把 1、2、3 分别翻倍。",
+      "steps": [
+        "从空 result 开始。",
+        "每轮计算两倍并追加。",
+        "得到 2、4、6 三项。"
+      ],
+      "answer": {
+        "code": "values = [1, 2, 3]\nresult = []\nfor value in values:\n    result.append(value * 2)\nprint(result)\n",
+        "stdout": "[2, 4, 6]\n",
+        "stdin": ""
+      }
+    },
+    {
+      "title": "写成推导式",
+      "problem": "只取至少 2 的数，再翻倍。",
+      "steps": [
+        "1 不满足条件，跳过。",
+        "2、3 保留下来。",
+        "分别乘 2 得到 4、6。"
+      ],
+      "answer": {
+        "code": "values = [1, 2, 3]\nresult = [value * 2 for value in values if value >= 2]\nprint(result)\n",
+        "stdout": "[4, 6]\n",
+        "stdin": ""
+      }
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "comprehensions-m1",
+      "claim": "推导式一定比普通循环更适合。",
+      "correction": "简单任务可用推导式；步骤复杂时普通循环更易检查。"
+    },
+    {
+      "id": "comprehensions-m2",
+      "claim": "创建 result 时会自动修改 values。",
+      "correction": "本节收集到新列表 result，原列表不自动改变。"
+    }
+  ],
+  "practice": [
+    {
+      "problem": "把 [1, 2] 每项加 1，得到新列表。",
+      "hint": "前面的表达式是 value + 1。",
+      "solution": [
+        "1 变 2，2 变 3。"
+      ],
+      "answer": {
+        "code": "values = [1, 2]\nresult = [value + 1 for value in values]\nprint(result)\n",
+        "stdout": "[2, 3]\n",
+        "stdin": ""
+      },
+      "id": "comprehensions-p1",
+      "difficulty": 1,
+      "misconceptionTags": [
+        "comprehensions-m1"
+      ]
+    },
+    {
+      "problem": "从 [1, 2, 3] 里只保留至少 2 的数。",
+      "hint": "前面仍写 value。",
+      "solution": [
+        "筛选但不改变数值。"
+      ],
+      "answer": {
+        "code": "values = [1, 2, 3]\nresult = [value for value in values if value >= 2]\nprint(result)\n",
+        "stdout": "[2, 3]\n",
+        "stdin": ""
+      },
+      "id": "comprehensions-p2",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "comprehensions-m2"
+      ]
+    },
+    {
+      "problem": "用普通循环完成上一题。",
+      "hint": "满足 if 后才 append。",
+      "solution": [
+        "新列表只收到 2 和 3。"
+      ],
+      "answer": {
+        "code": "values = [1, 2, 3]\nresult = []\nfor value in values:\n    if value >= 2:\n        result.append(value)\nprint(result)\n",
+        "stdout": "[2, 3]\n",
+        "stdin": ""
+      },
+      "id": "comprehensions-p3",
+      "difficulty": 3,
+      "misconceptionTags": [
+        "comprehensions-m1"
+      ]
+    },
+    {
+      "problem": "把空列表每项翻倍，会得到什么？",
+      "hint": "没有项可以处理。",
+      "solution": [
+        "新列表也是空列表。"
+      ],
+      "answer": {
+        "code": "values = []\nresult = [value * 2 for value in values]\nprint(result)\n",
+        "stdout": "[]\n",
+        "stdin": ""
+      },
+      "id": "comprehensions-p4",
+      "difficulty": 3,
+      "misconceptionTags": [
+        "comprehensions-m2"
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "看推导式不明白时，可以怎么检查？",
+    "correctIndex": 1,
+    "choices": [
+      "先把它写得更短",
+      "还原成普通 for 循环",
+      "认为它会直接修改原列表"
+    ],
+    "explanation": "还原成 for、if、append，逐项手算。",
+    "feedback": [
+      "更短可能更难看清步骤。",
+      "对，用已经学会的循环检查每一项。",
+      "这里收集的是新列表，原列表不自动改变。"
+    ]
+  },
+  "prerequisites": [
+    "tuples-sets"
+  ],
+  "difficulty": 3,
+  "misconceptionTags": [
+    "comprehensions-m1",
+    "comprehensions-m2"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.2.0",
+    "status": "revised",
+    "humanReviewed": false
+  },
+  "sources": [
+    "python-tutorial",
+    "python-data"
+  ],
+  "furtherReading": []
+}

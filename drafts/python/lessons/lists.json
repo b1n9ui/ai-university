@@ -1,0 +1,219 @@
+{
+  "id": "lists",
+  "chapterId": "chapter-3",
+  "number": "3.1",
+  "title": "列表与购物清单",
+  "subtitle": "把一组有顺序的数据放进列表，再按位置取出或逐个处理。",
+  "concept": "把一组有顺序的数据放进列表，再按位置取出或逐个处理。",
+  "intuition": "一张购物清单：第一项、第二项，也可以在末尾添一项。",
+  "objectives": [
+    "用方括号装一组数据",
+    "添一项，再逐个读取",
+    "两张标签可能指向同一份清单"
+  ],
+  "body": [
+    {
+      "title": "用方括号装一组数据",
+      "text": "items = [\"苹果\", \"面包\"] 创建列表：两项文字用逗号隔开，外面是一对方括号。列表保留顺序。items[0] 取第一项，items[1] 取第二项。位置从 0 开始计数；len(items) 读作“列表有几项”，这里是 2。"
+    },
+    {
+      "title": "添一项，再逐个读取",
+      "text": "items.append(\"牛奶\") 在末尾添加一项。点号表示“对这份列表进行操作”，append 是添加的名称。for item in items: 让 item 依次取每一项，不再需要自己写 range 和位置。"
+    },
+    {
+      "title": "两张标签可能指向同一份清单",
+      "text": "other = items 并没有复印清单，只给同一份列表加了另一个名字。用 other 添加项目，items 也会看到。若需要两份独立的简单清单，用 other = items.copy()。copy 是复制。本节仅复制一层、每项都是文字或数字的列表。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "列表保留顺序和重复项，位置从 0 开始；append 添加到末尾，copy 可复制本节的一层简单列表。",
+    "conditions": [
+      "读取位置必须在列表范围内；空列表没有位置 0。",
+      "copy() 在本节用于一层、元素为数字或文字的列表。"
+    ]
+  },
+  "derivation": [
+    {
+      "text": "第一项位置为 0。"
+    },
+    {
+      "text": "for 按列表原有顺序取每项。"
+    },
+    {
+      "text": "所以苹果会先被单独显示一次，再出现在遍历中。"
+    }
+  ],
+  "interactiveVisual": {
+    "kind": "python-trace",
+    "prediction": "添一项后，顺序会怎样？",
+    "caption": "先选一个输入，写下预测，再点“下一步”。箭头指向下一条将执行的语句；右侧显示此刻的变量和已经产生的输出。",
+    "experiment": {
+      "code": "items = [\"苹果\", \"面包\"]\nitems.append('牛奶')\nfor item in items:\n    print(item)\n",
+      "stdout": "苹果\n面包\n牛奶\n",
+      "stdin": ""
+    },
+    "followUp": "换一项商品，观察列表如何增加一项。",
+    "codeTemplate": "items = [\"苹果\", \"面包\"]\nitems.append({{item}})\nfor item in items:\n    print(item)\n",
+    "controls": [
+      {
+        "name": "item",
+        "label": "要添加的商品",
+        "values": [
+          "牛奶",
+          "鸡蛋",
+          "米饭"
+        ],
+        "defaultIndex": 0
+      }
+    ],
+    "watch": [
+      "items",
+      "item"
+    ]
+  },
+  "workedExamples": [
+    {
+      "title": "读购物清单",
+      "problem": "取出第一项，再逐项显示。",
+      "steps": [
+        "第一项位置为 0。",
+        "for 按列表原有顺序取每项。",
+        "所以苹果会先被单独显示一次，再出现在遍历中。"
+      ],
+      "answer": {
+        "code": "items = [\"苹果\", \"面包\"]\nprint(items[0])\nfor item in items:\n    print(item)\n",
+        "stdout": "苹果\n苹果\n面包\n",
+        "stdin": ""
+      }
+    },
+    {
+      "title": "添加牛奶",
+      "problem": "在末尾添一项，显示项目数量。",
+      "steps": [
+        "创建时有两项。",
+        "append 添加后变为三项。"
+      ],
+      "answer": {
+        "code": "items = [\"苹果\", \"面包\"]\nitems.append(\"牛奶\")\nprint(len(items))\n",
+        "stdout": "3\n",
+        "stdin": ""
+      }
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "lists-m1",
+      "claim": "列表第一项的位置是 1。",
+      "correction": "第一项位置是 0，第二项才是 1。"
+    },
+    {
+      "id": "lists-m2",
+      "claim": "other = items 就得到了独立副本。",
+      "correction": "它们指向同一份列表；本节的一层简单列表可以用 copy() 复制。"
+    }
+  ],
+  "practice": [
+    {
+      "problem": "列表 [10, 20] 的第一项是多少？",
+      "hint": "位置从 0 开始。",
+      "solution": [
+        "values[0] 是 10。"
+      ],
+      "answer": {
+        "code": "values = [10, 20]\nprint(values[0])\n",
+        "stdout": "10\n",
+        "stdin": ""
+      },
+      "id": "lists-p1",
+      "difficulty": 1,
+      "misconceptionTags": [
+        "lists-m1"
+      ]
+    },
+    {
+      "problem": "给 [10, 20] 添加 30，逐项显示。",
+      "hint": "用 append。",
+      "solution": [
+        "30 放到末尾。"
+      ],
+      "answer": {
+        "code": "values = [10, 20]\nvalues.append(30)\nfor value in values:\n    print(value)\n",
+        "stdout": "10\n20\n30\n",
+        "stdin": ""
+      },
+      "id": "lists-p2",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "lists-m2"
+      ]
+    },
+    {
+      "problem": "求 [2, 3, 4] 的和。",
+      "hint": "用 for 和 total。",
+      "solution": [
+        "total 依次为 2、5、9。"
+      ],
+      "answer": {
+        "code": "values = [2, 3, 4]\ntotal = 0\nfor value in values:\n    total = total + value\nprint(total)\n",
+        "stdout": "9\n",
+        "stdin": ""
+      },
+      "id": "lists-p3",
+      "difficulty": 3,
+      "misconceptionTags": [
+        "lists-m1"
+      ]
+    },
+    {
+      "problem": "复制 [1, 2] 后只给副本添加 3，原列表有几项？",
+      "hint": "复制用 copy()。",
+      "solution": [
+        "副本有三项，原列表仍有两项。"
+      ],
+      "answer": {
+        "code": "values = [1, 2]\nother = values.copy()\nother.append(3)\nprint(len(values))\nprint(len(other))\n",
+        "stdout": "2\n3\n",
+        "stdin": ""
+      },
+      "id": "lists-p4",
+      "difficulty": 3,
+      "misconceptionTags": [
+        "lists-m2"
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "购物清单的第一项，用哪个位置读取？",
+    "correctIndex": 1,
+    "choices": [
+      "items[1]",
+      "items[0]",
+      "items[len(items)]"
+    ],
+    "explanation": "列表的位置从 0 开始。",
+    "feedback": [
+      "位置 1 是第二项。",
+      "对，位置 0 是第一项。",
+      "长度比最后一个位置大 1，会超出范围。"
+    ]
+  },
+  "prerequisites": [
+    "debugging"
+  ],
+  "difficulty": 3,
+  "misconceptionTags": [
+    "lists-m1",
+    "lists-m2"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.2.0",
+    "status": "revised",
+    "humanReviewed": false
+  },
+  "sources": [
+    "python-tutorial",
+    "python-data"
+  ],
+  "furtherReading": []
+}

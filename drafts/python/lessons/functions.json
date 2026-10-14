@@ -1,0 +1,221 @@
+{
+  "id": "functions",
+  "chapterId": "chapter-4",
+  "number": "4.1",
+  "title": "函数、参数与返回值",
+  "subtitle": "把常用的几步起一个名字，调用时给它输入，再接住返回的结果。",
+  "concept": "把常用的几步起一个名字，调用时给它输入，再接住返回的结果。",
+  "intuition": "一台翻倍小机器：放入 3，拿到 6。",
+  "objectives": [
+    "先给步骤起名字",
+    "调用之后，接住结果",
+    "返回和显示是两件事"
+  ],
+  "body": [
+    {
+      "title": "先给步骤起名字",
+      "text": "def double(number): 表示定义一个叫 double 的函数。函数就是一组可以重复使用的步骤；number 是它接收输入的名字，叫参数。缩进的 return number * 2 计算两倍，并把结果交给调用处。定义时只是记下步骤，还没有拿 3 去计算。"
+    },
+    {
+      "title": "调用之后，接住结果",
+      "text": "result = double(3) 才是真正调用：3 交给 number，算出 6，return 把 6 交回 result。print(result) 最后显示它。可以换一个输入再次调用，不需要重写函数里面的步骤。"
+    },
+    {
+      "title": "返回和显示是两件事",
+      "text": "print 负责把内容显示在屏幕；return 负责把结果交回调用处。想把结果继续做计算，就需要 return。若函数只 print 没有 return，调用处得到的是 None，意思是没有一个有效返回值可以用于这里的数量计算。函数内部的参数只在这次调用中使用。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "def 定义函数，调用提供输入；return 把结果交回调用处，print 把内容显示出来。",
+    "conditions": [
+      "先定义再调用；需要可计算的返回结果时，使用 return。"
+    ]
+  },
+  "derivation": [
+    {
+      "text": "def 先记下步骤。"
+    },
+    {
+      "text": "double(3) 让 number 暂时是 3。"
+    },
+    {
+      "text": "return 交回 6，result 记住 6。"
+    }
+  ],
+  "interactiveVisual": {
+    "kind": "python-trace",
+    "prediction": "函数定义时会显示什么？调用 3 后又会怎样？",
+    "caption": "先选一个输入，写下预测，再点“下一步”。箭头指向下一条将执行的语句；右侧显示此刻的变量和已经产生的输出。",
+    "experiment": {
+      "code": "def double(number):\n    return number * 2\n\nresult = double(3)\nprint(result)\n",
+      "stdout": "6\n",
+      "stdin": ""
+    },
+    "followUp": "试输入 0，再观察从调用处进入函数、返回调用处的顺序。",
+    "codeTemplate": "def double(number):\n    return number * 2\n\nresult = double({{number}})\nprint(result)\n",
+    "controls": [
+      {
+        "name": "number",
+        "label": "送进函数的数",
+        "values": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "defaultIndex": 3
+      }
+    ],
+    "watch": [
+      "number",
+      "result"
+    ]
+  },
+  "workedExamples": [
+    {
+      "title": "翻倍机器",
+      "problem": "输入 3，接住并显示两倍。",
+      "steps": [
+        "def 先记下步骤。",
+        "double(3) 让 number 暂时是 3。",
+        "return 交回 6，result 记住 6。"
+      ],
+      "answer": {
+        "code": "def double(number):\n    return number * 2\n\nresult = double(3)\nprint(result)\n",
+        "stdout": "6\n",
+        "stdin": ""
+      }
+    },
+    {
+      "title": "继续使用结果",
+      "problem": "输入 4，把返回结果再加 1。",
+      "steps": [
+        "double(4) 返回 8。",
+        "调用处继续加 1 得到 9。"
+      ],
+      "answer": {
+        "code": "def double(number):\n    return number * 2\n\nresult = double(4) + 1\nprint(result)\n",
+        "stdout": "9\n",
+        "stdin": ""
+      }
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "functions-m1",
+      "claim": "写下 def 后就已经算出了结果。",
+      "correction": "def 记下步骤；真正调用才运行函数。"
+    },
+    {
+      "id": "functions-m2",
+      "claim": "print 和 return 可以互相替代。",
+      "correction": "print 显示，return 交回结果；调用处继续计算需要返回值。"
+    }
+  ],
+  "practice": [
+    {
+      "problem": "调用翻倍函数，输入 5。",
+      "hint": "定义后再调用。",
+      "solution": [
+        "返回 10。"
+      ],
+      "answer": {
+        "code": "def double(number):\n    return number * 2\n\nprint(double(5))\n",
+        "stdout": "10\n",
+        "stdin": ""
+      },
+      "id": "functions-p1",
+      "difficulty": 1,
+      "misconceptionTags": [
+        "functions-m1"
+      ]
+    },
+    {
+      "problem": "写 add_one，返回输入加 1。",
+      "hint": "用 return。",
+      "solution": [
+        "输入 3，返回 4。"
+      ],
+      "answer": {
+        "code": "def add_one(number):\n    return number + 1\n\nprint(add_one(3))\n",
+        "stdout": "4\n",
+        "stdin": ""
+      },
+      "id": "functions-p2",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "functions-m2"
+      ]
+    },
+    {
+      "problem": "连续调用 add_one 两次，分别输入 1 和 4。",
+      "hint": "每次独立传入一个值。",
+      "solution": [
+        "分别返回 2、5。"
+      ],
+      "answer": {
+        "code": "def add_one(number):\n    return number + 1\n\nprint(add_one(1))\nprint(add_one(4))\n",
+        "stdout": "2\n5\n",
+        "stdin": ""
+      },
+      "id": "functions-p3",
+      "difficulty": 3,
+      "misconceptionTags": [
+        "functions-m1"
+      ]
+    },
+    {
+      "problem": "翻倍函数输入 0，预期是多少？",
+      "hint": "0 也是可用输入。",
+      "solution": [
+        "0 * 2 = 0。"
+      ],
+      "answer": {
+        "code": "def double(number):\n    return number * 2\n\nprint(double(0))\n",
+        "stdout": "0\n",
+        "stdin": ""
+      },
+      "id": "functions-p4",
+      "difficulty": 3,
+      "misconceptionTags": [
+        "functions-m2"
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "要把函数计算结果交回调用处，用哪个？",
+    "correctIndex": 1,
+    "choices": [
+      "print",
+      "return",
+      "只写 def 就会计算"
+    ],
+    "explanation": "return 交回结果；print 只负责显示。",
+    "feedback": [
+      "print 的作用是显示，不会替代 return 交回计算结果。",
+      "对，调用处可以接住返回值继续使用。",
+      "def 记下步骤，调用才执行它。"
+    ]
+  },
+  "prerequisites": [
+    "comprehensions"
+  ],
+  "difficulty": 4,
+  "misconceptionTags": [
+    "functions-m1",
+    "functions-m2"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.2.0",
+    "status": "revised",
+    "humanReviewed": false
+  },
+  "sources": [
+    "python-tutorial",
+    "python-control"
+  ],
+  "furtherReading": []
+}

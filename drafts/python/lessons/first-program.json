@@ -1,0 +1,218 @@
+{
+  "id": "first-program",
+  "chapterId": "chapter-1",
+  "number": "1.1",
+  "title": "运行第一个程序",
+  "subtitle": "程序是一串给计算机的指令。先让它按顺序显示两句话。",
+  "concept": "程序是一串给计算机的指令。先让它按顺序显示两句话。",
+  "intuition": "像写一张待办清单：先做第一件，再做第二件。",
+  "objectives": [
+    "先让一句话出现在屏幕上",
+    "把两行保存成一个程序",
+    "一次只改一句话"
+  ],
+  "body": [
+    {
+      "title": "先让一句话出现在屏幕上",
+      "text": "看到 print(\"你好\") 时，先读成“显示：你好”。print 是 Python 自带的显示指令；圆括号装着要显示的内容，成对的英文引号告诉 Python：这是文字。引号本身不会显示。先不背术语，跟下面的例子做一遍。"
+    },
+    {
+      "title": "把两行保存成一个程序",
+      "text": "网页实验可以先帮助你理解顺序。准备在自己的电脑上运行时，按照下面的四步操作，把刚才的两行示例保存成 hello.py。每改一次代码，先保存，再运行，才能看到新结果。"
+    },
+    {
+      "title": "一次只改一句话",
+      "text": "计算机从上往下读：第一行显示你好，第二行显示我开始学 Python。把第二行引号里的文字换成自己的话，再运行；第一行不应改变。以 # 开头的文字是给人看的注释，运行时会跳过。代码里的括号、引号使用英文符号。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "print(...) 显示括号中的内容；多行指令通常从上到下执行。",
+    "conditions": [
+      "每段示例都从头独立运行；先按本节给出的输入观察，再改变一处。"
+    ]
+  },
+  "derivation": [
+    {
+      "text": "第一行 print 显示“你好”。"
+    },
+    {
+      "text": "第二行接着显示“我开始学 Python”。"
+    },
+    {
+      "text": "每个 print 默认换到下一行。"
+    }
+  ],
+  "interactiveVisual": {
+    "kind": "python-trace",
+    "prediction": "改第一句问候，会影响第二句吗？",
+    "caption": "先选一个输入，写下预测，再点“下一步”。箭头指向下一条将执行的语句；右侧显示此刻的变量和已经产生的输出。",
+    "experiment": {
+      "code": "print('你好')\nprint(\"我开始学 Python\")\n",
+      "stdout": "你好\n我开始学 Python\n",
+      "stdin": ""
+    },
+    "followUp": "选择另一句问候，重头走一遍。",
+    "codeTemplate": "print({{message}})\nprint(\"我开始学 Python\")\n",
+    "controls": [
+      {
+        "name": "message",
+        "label": "第一句问候",
+        "values": [
+          "你好",
+          "早上好",
+          "你好，小林"
+        ],
+        "defaultIndex": 0
+      }
+    ],
+    "watch": []
+  },
+  "workedExamples": [
+    {
+      "title": "第一次问候",
+      "problem": "显示两句话，看看先后顺序。",
+      "steps": [
+        "第一行 print 显示“你好”。",
+        "第二行接着显示“我开始学 Python”。",
+        "每个 print 默认换到下一行。"
+      ],
+      "answer": {
+        "code": "print(\"你好\")\nprint(\"我开始学 Python\")\n",
+        "stdout": "你好\n我开始学 Python\n",
+        "stdin": ""
+      }
+    },
+    {
+      "title": "写一张小清单",
+      "problem": "显示今天要完成的两件事。",
+      "steps": [
+        "# 这一行是注释，不会显示。",
+        "下面两个 print 才负责输出。"
+      ],
+      "answer": {
+        "code": "# 今天的小清单\nprint(\"打开教材\")\nprint(\"试一个例子\")\n",
+        "stdout": "打开教材\n试一个例子\n",
+        "stdin": ""
+      }
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "first-program-m1",
+      "claim": "引号也会一起显示。",
+      "correction": "引号标记文字的边界，print 只显示里面的内容。"
+    },
+    {
+      "id": "first-program-m2",
+      "claim": "注释会像普通代码一样执行。",
+      "correction": "以 # 开头的注释给人阅读，不产生输出。"
+    }
+  ],
+  "practice": [
+    {
+      "problem": "预测 print(\"早上好\") 会显示什么。",
+      "hint": "引号不会显示。",
+      "solution": [
+        "显示引号里面的文字。"
+      ],
+      "answer": {
+        "code": "print(\"早上好\")\n",
+        "stdout": "早上好\n",
+        "stdin": ""
+      },
+      "id": "first-program-p1",
+      "difficulty": 1,
+      "misconceptionTags": [
+        "first-program-m1"
+      ]
+    },
+    {
+      "problem": "先显示“第一步”，再显示“第二步”。",
+      "hint": "写两个 print。",
+      "solution": [
+        "顺序与代码行顺序相同。"
+      ],
+      "answer": {
+        "code": "print(\"第一步\")\nprint(\"第二步\")\n",
+        "stdout": "第一步\n第二步\n",
+        "stdin": ""
+      },
+      "id": "first-program-p2",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "first-program-m2"
+      ]
+    },
+    {
+      "problem": "把问候换成“你好，小林”。",
+      "hint": "只改引号里的内容。",
+      "solution": [
+        "保留 print、括号和成对引号。"
+      ],
+      "answer": {
+        "code": "print(\"你好，小林\")\n",
+        "stdout": "你好，小林\n",
+        "stdin": ""
+      },
+      "id": "first-program-p3",
+      "difficulty": 3,
+      "misconceptionTags": [
+        "first-program-m1"
+      ]
+    },
+    {
+      "problem": "一行注释后接 print(\"完成\")，会出现几行输出？",
+      "hint": "注释不执行。",
+      "solution": [
+        "只出现一行“完成”。"
+      ],
+      "answer": {
+        "code": "# 这是一行注释\nprint(\"完成\")\n",
+        "stdout": "完成\n",
+        "stdin": ""
+      },
+      "id": "first-program-p4",
+      "difficulty": 3,
+      "misconceptionTags": [
+        "first-program-m2"
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "print(\"你好\") 的输出是什么？",
+    "correctIndex": 1,
+    "choices": [
+      "\"你好\"（带引号）",
+      "你好（不带引号）",
+      "print（显示指令名）"
+    ],
+    "explanation": "引号用来标记文字；显示的是里面的内容。",
+    "feedback": [
+      "引号是代码的标记，不属于输出。",
+      "对，print 显示括号里的文字。",
+      "print 是发出指令的名称，不是要显示的内容。"
+    ]
+  },
+  "prerequisites": [],
+  "difficulty": 1,
+  "misconceptionTags": [
+    "first-program-m1",
+    "first-program-m2"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.2.0",
+    "status": "revised",
+    "humanReviewed": false
+  },
+  "sources": [
+    "python-tutorial"
+  ],
+  "furtherReading": [],
+  "localSetup": [
+    "安装解释器：打开 Python 官网 python.org 的 Downloads 页面，安装仍获支持的 Python 3。解释器就是负责运行代码的程序。安装后若命令找不到，先检查安装是否完成。",
+    "保存代码：新建一个练习文件夹，用代码编辑器或纯文本编辑器新建文件，输入上面的两行，保存为 hello.py。文件名后缀是 .py，不能是 hello.py.txt；不要用 Word 保存。",
+    "找到练习目录：终端是输入命令的窗口。macOS 可搜索“终端”，Windows 可搜索“终端”或 PowerShell。输入 cd、一个空格、练习文件夹的完整路径，再按回车；路径有空格时，用一对英文双引号把路径包起来。cd 的意思是“进入这个目录”。",
+    "运行并核对：macOS/Linux 输入 python3 hello.py，Windows 通常输入 py -3 hello.py，按回车。应看到“你好”和“我开始学 Python”两行。把第二句话改掉，保存后再运行同一个命令。若提示找不到 hello.py，先确认当前目录与文件名。"
+  ]
+}

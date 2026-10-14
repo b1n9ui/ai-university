@@ -1,0 +1,220 @@
+{
+  "id": "exceptions",
+  "chapterId": "chapter-4",
+  "number": "4.4",
+  "title": "异常与输入验证",
+  "subtitle": "预料用户可能填错时，给转换步骤准备一个明确的处理办法。",
+  "concept": "预料用户可能填错时，给转换步骤准备一个明确的处理办法。",
+  "intuition": "登记数量时，有人填“两个”；先指出哪里不合要求，再请他重填。",
+  "objectives": [
+    "先把容易失败的一步找出来",
+    "用 try 和 except 说明失败时做什么",
+    "能转换，不等于符合要求"
+  ],
+  "body": [
+    {
+      "title": "先把容易失败的一步找出来",
+      "text": "int(\"3\") 可以转为数字，int(\"三\") 会产生 ValueError，表示给出的文字不适合这次转换。没有处理时，程序会停在这里。先明确我们想处理的错误是什么，不要把所有代码都包成一个模糊的“失败”。"
+    },
+    {
+      "title": "用 try 和 except 说明失败时做什么",
+      "text": "try: 下面尝试转换；except ValueError: 下面只处理这种转换失败。成功时跳过 except，失败时跳过 try 中还没执行的句子，转到 except。错误处理不是让失败变成功，而是给用户一个可理解的反馈。"
+    },
+    {
+      "title": "能转换，不等于符合要求",
+      "text": "\"-2\" 可以转成整数，但购物数量不能是负数。转换后还要判断 count < 0；函数可以用 raise ValueError(\"数量不能为负\") 主动拒绝。不要随手捕获所有异常，否则拼写错误、文件问题也可能被误说成数量问题。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "try 尝试可能失败的步骤，except 指定错误时执行处理；raise 主动报告不符合要求的输入。",
+    "conditions": [
+      "只捕获预期的错误类型；转换之后仍需检查数值范围。"
+    ]
+  },
+  "derivation": [
+    {
+      "text": "try 执行转换。"
+    },
+    {
+      "text": "转换失败，进入 ValueError 处理分支。"
+    },
+    {
+      "text": "显示明确要求，而不是继续用一个假数字。"
+    }
+  ],
+  "interactiveVisual": {
+    "kind": "python-trace",
+    "prediction": "输入“三”和输入“-2”，会走相同的处理步骤吗？",
+    "caption": "先选一个输入，写下预测，再点“下一步”。箭头指向下一条将执行的语句；右侧显示此刻的变量和已经产生的输出。",
+    "experiment": {
+      "code": "text = '3'\ntry:\n    count = int(text)\n    if count < 0:\n        print(\"不能为负\")\n    else:\n        print(count)\nexcept ValueError:\n    print(\"请输入整数\")\n",
+      "stdout": "3\n",
+      "stdin": ""
+    },
+    "followUp": "分别选择合法、负数和错误文字，观察不同的执行路径。",
+    "codeTemplate": "text = {{text}}\ntry:\n    count = int(text)\n    if count < 0:\n        print(\"不能为负\")\n    else:\n        print(count)\nexcept ValueError:\n    print(\"请输入整数\")\n",
+    "controls": [
+      {
+        "name": "text",
+        "label": "模拟收到的文字",
+        "values": [
+          "3",
+          "0",
+          "-2",
+          "三"
+        ],
+        "defaultIndex": 0
+      }
+    ],
+    "watch": [
+      "text",
+      "count"
+    ]
+  },
+  "workedExamples": [
+    {
+      "title": "处理填错的文字",
+      "problem": "尝试把“三”转换成数量。",
+      "steps": [
+        "try 执行转换。",
+        "转换失败，进入 ValueError 处理分支。",
+        "显示明确要求，而不是继续用一个假数字。"
+      ],
+      "answer": {
+        "code": "text = \"三\"\ntry:\n    count = int(text)\n    print(count)\nexcept ValueError:\n    print(\"请输入整数，例如 3\")\n",
+        "stdout": "请输入整数，例如 3\n",
+        "stdin": ""
+      }
+    },
+    {
+      "title": "拒绝负数量",
+      "problem": "定义数量检查，测试 -2。",
+      "steps": [
+        "先成功转成 -2。",
+        "检查负数时主动抛出 ValueError。",
+        "调用处显示这个错误的文字。"
+      ],
+      "answer": {
+        "code": "def read_count(text):\n    count = int(text)\n    if count < 0:\n        raise ValueError(\"数量不能为负\")\n    return count\n\ntry:\n    print(read_count(\"-2\"))\nexcept ValueError as error:\n    print(error)\n",
+        "stdout": "数量不能为负\n",
+        "stdin": ""
+      }
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "exceptions-m1",
+      "claim": "能转成整数，就一定是合法数量。",
+      "correction": "转换只检查表示格式；负数等范围问题另行检查。"
+    },
+    {
+      "id": "exceptions-m2",
+      "claim": "捕获错误后，Python 会自动补一个有效数字。",
+      "correction": "except 只执行你写下的处理步骤，不会自动修复输入。"
+    }
+  ],
+  "practice": [
+    {
+      "problem": "把合法文字 \"4\" 转换并显示。",
+      "hint": "成功时不会走 except。",
+      "solution": [
+        "结果为 4。"
+      ],
+      "answer": {
+        "code": "try:\n    count = int(\"4\")\n    print(count)\nexcept ValueError:\n    print(\"请输入整数\")\n",
+        "stdout": "4\n",
+        "stdin": ""
+      },
+      "id": "exceptions-p1",
+      "difficulty": 1,
+      "misconceptionTags": [
+        "exceptions-m1"
+      ]
+    },
+    {
+      "problem": "处理 \"4.5\" 不能直接转成整数的问题。",
+      "hint": "只捕获 ValueError。",
+      "solution": [
+        "转换失败，显示请输入整数。"
+      ],
+      "answer": {
+        "code": "try:\n    count = int(\"4.5\")\n    print(count)\nexcept ValueError:\n    print(\"请输入整数\")\n",
+        "stdout": "请输入整数\n",
+        "stdin": ""
+      },
+      "id": "exceptions-p2",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "exceptions-m2"
+      ]
+    },
+    {
+      "problem": "转换 -1 后，显示“不能为负”。",
+      "hint": "成功转换后再判断范围。",
+      "solution": [
+        "能转换，但不符合数量要求。"
+      ],
+      "answer": {
+        "code": "count = int(\"-1\")\nif count < 0:\n    print(\"不能为负\")\nelse:\n    print(count)\n",
+        "stdout": "不能为负\n",
+        "stdin": ""
+      },
+      "id": "exceptions-p3",
+      "difficulty": 3,
+      "misconceptionTags": [
+        "exceptions-m1"
+      ]
+    },
+    {
+      "problem": "数量 0 合法，程序应该怎样显示？",
+      "hint": "拒绝小于 0，不拒绝等于 0。",
+      "solution": [
+        "0 不小于 0。"
+      ],
+      "answer": {
+        "code": "count = int(\"0\")\nif count < 0:\n    print(\"不能为负\")\nelse:\n    print(count)\n",
+        "stdout": "0\n",
+        "stdin": ""
+      },
+      "id": "exceptions-p4",
+      "difficulty": 3,
+      "misconceptionTags": [
+        "exceptions-m2"
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "输入 \"-2\" 能被 int 转换，是否一定是合法购物数量？",
+    "correctIndex": 1,
+    "choices": [
+      "转换成功就一定合法",
+      "还要检查是否为负",
+      "except 会自动把负数改成 0"
+    ],
+    "explanation": "转换检查文字能否变数字，范围检查决定数字是否可用。",
+    "feedback": [
+      "转换成功只说明它是整数文字。",
+      "对，业务要求还需要单独判断。",
+      "except 不会自动修改输入或补出一个值。"
+    ]
+  },
+  "prerequisites": [
+    "modules"
+  ],
+  "difficulty": 4,
+  "misconceptionTags": [
+    "exceptions-m1",
+    "exceptions-m2"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.2.0",
+    "status": "revised",
+    "humanReviewed": false
+  },
+  "sources": [
+    "python-tutorial",
+    "python-errors"
+  ],
+  "furtherReading": []
+}

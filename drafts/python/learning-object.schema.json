@@ -1,0 +1,496 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://ai-university.org/drafts/python/learning-object.schema.json",
+  "title": "Python contribution draft learning object",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "chapterId",
+    "number",
+    "title",
+    "subtitle",
+    "concept",
+    "intuition",
+    "objectives",
+    "body",
+    "formalDefinition",
+    "derivation",
+    "interactiveVisual",
+    "workedExamples",
+    "commonMistakes",
+    "practice",
+    "prerequisites",
+    "difficulty",
+    "misconceptionTags",
+    "provenance",
+    "sources",
+    "learningCheck"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*$"
+    },
+    "chapterId": {
+      "type": "string"
+    },
+    "number": {
+      "type": "string",
+      "pattern": "^[1-9][0-9]*\\.[1-9][0-9]*$"
+    },
+    "title": {
+      "$ref": "#/definitions/text"
+    },
+    "subtitle": {
+      "$ref": "#/definitions/text"
+    },
+    "concept": {
+      "$ref": "#/definitions/text"
+    },
+    "intuition": {
+      "$ref": "#/definitions/text"
+    },
+    "objectives": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "$ref": "#/definitions/text"
+      }
+    },
+    "body": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "title",
+          "text"
+        ],
+        "properties": {
+          "title": {
+            "$ref": "#/definitions/text"
+          },
+          "text": {
+            "$ref": "#/definitions/text"
+          }
+        }
+      }
+    },
+    "formalDefinition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "text",
+        "conditions"
+      ],
+      "properties": {
+        "text": {
+          "$ref": "#/definitions/text"
+        },
+        "conditions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/text"
+          }
+        }
+      }
+    },
+    "derivation": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "text"
+        ],
+        "properties": {
+          "text": {
+            "$ref": "#/definitions/text"
+          }
+        }
+      }
+    },
+    "interactiveVisual": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "prediction",
+        "caption",
+        "experiment",
+        "followUp",
+        "codeTemplate",
+        "controls",
+        "watch"
+      ],
+      "properties": {
+        "kind": {
+          "const": "python-trace"
+        },
+        "prediction": {
+          "$ref": "#/definitions/text"
+        },
+        "caption": {
+          "$ref": "#/definitions/text"
+        },
+        "followUp": {
+          "$ref": "#/definitions/text"
+        },
+        "experiment": {
+          "$ref": "#/definitions/snippet"
+        },
+        "codeTemplate": {
+          "$ref": "#/definitions/text"
+        },
+        "watch": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_]*$"
+          }
+        },
+        "controls": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "name",
+              "label",
+              "values",
+              "defaultIndex"
+            ],
+            "properties": {
+              "name": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_]*$"
+              },
+              "label": {
+                "$ref": "#/definitions/text"
+              },
+              "values": {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 21,
+                "uniqueItems": true,
+                "items": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "integer"
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "integer"
+                      }
+                    }
+                  ]
+                }
+              },
+              "defaultIndex": {
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          }
+        }
+      }
+    },
+    "workedExamples": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "title",
+          "problem",
+          "steps",
+          "answer"
+        ],
+        "properties": {
+          "title": {
+            "$ref": "#/definitions/text"
+          },
+          "problem": {
+            "$ref": "#/definitions/text"
+          },
+          "steps": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "$ref": "#/definitions/text"
+            }
+          },
+          "answer": {
+            "$ref": "#/definitions/snippet"
+          }
+        }
+      }
+    },
+    "commonMistakes": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "claim",
+          "correction"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "claim": {
+            "$ref": "#/definitions/text"
+          },
+          "correction": {
+            "$ref": "#/definitions/text"
+          }
+        }
+      }
+    },
+    "practice": {
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "problem",
+          "answer",
+          "solution",
+          "hint",
+          "difficulty",
+          "misconceptionTags"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "problem": {
+            "$ref": "#/definitions/text"
+          },
+          "answer": {
+            "$ref": "#/definitions/snippet"
+          },
+          "solution": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "$ref": "#/definitions/text"
+            }
+          },
+          "hint": {
+            "$ref": "#/definitions/text"
+          },
+          "numericAnswer": {
+            "type": "number"
+          },
+          "difficulty": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 6
+          },
+          "misconceptionTags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "prerequisites": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "difficulty": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 6
+    },
+    "misconceptionTags": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "author",
+        "version",
+        "status",
+        "humanReviewed"
+      ],
+      "properties": {
+        "author": {
+          "const": "AI-generated"
+        },
+        "version": {
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "first-edition",
+            "revised"
+          ]
+        },
+        "humanReviewed": {
+          "type": "boolean"
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "learningCheck": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "question",
+        "choices",
+        "correctIndex",
+        "explanation"
+      ],
+      "properties": {
+        "question": {
+          "$ref": "#/definitions/text"
+        },
+        "choices": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/definitions/text"
+          }
+        },
+        "correctIndex": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2
+        },
+        "explanation": {
+          "$ref": "#/definitions/text"
+        },
+        "feedback": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "$ref": "#/definitions/text"
+          }
+        }
+      }
+    },
+    "furtherReading": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "title",
+          "text"
+        ],
+        "properties": {
+          "title": {
+            "$ref": "#/definitions/text"
+          },
+          "text": {
+            "$ref": "#/definitions/text"
+          }
+        }
+      }
+    },
+    "localSetup": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "$ref": "#/definitions/text"
+      }
+    }
+  },
+  "definitions": {
+    "text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "snippet": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "code",
+        "stdout",
+        "stdin"
+      ],
+      "properties": {
+        "code": {
+          "$ref": "#/definitions/text"
+        },
+        "stdout": {
+          "type": "string"
+        },
+        "stdin": {
+          "type": "string"
+        }
+      }
+    },
+    "question": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "problem",
+        "hint",
+        "solution",
+        "answer"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/text"
+        },
+        "problem": {
+          "$ref": "#/definitions/text"
+        },
+        "hint": {
+          "$ref": "#/definitions/text"
+        },
+        "solution": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "$ref": "#/definitions/text"
+          }
+        },
+        "answer": {
+          "$ref": "#/definitions/snippet"
+        }
+      }
+    }
+  }
+}

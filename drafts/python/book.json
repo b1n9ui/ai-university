@@ -1,0 +1,182 @@
+{
+  "id": "python-introduction",
+  "title": "Python 编程入门",
+  "englishTitle": "Introduction to Programming with Python",
+  "version": "0.2.0",
+  "status": "contribution-draft",
+  "language": "zh-CN",
+  "baseline": "Python 3.9+ 的通用语法与标准库；来源固定为 Python 3.13 文档，不依赖最新版专有特性。",
+  "audience": "没有编程经验的读者；先在网页中观察，再按第 1.1 节的指引学习保存文件与运行程序。",
+  "outcomes": [
+    "从空文件写出可运行的程序",
+    "理解类型、分支、循环和数据容器",
+    "拆分函数并处理错误输入",
+    "读写小型文本、JSON 和 CSV 文件",
+    "为命令行项目编写边界与集成测试"
+  ],
+  "outOfScope": [
+    "面向对象与继承",
+    "Web 开发、数据库、爬虫",
+    "NumPy、Pandas、机器学习",
+    "并发、异步、生成器与性能优化",
+    "正式软件打包与发布"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "humanReviewed": false,
+    "date": "2026-10-11"
+  },
+  "licenses": {
+    "content": "CC0-1.0",
+    "toolsAndProject": "MIT"
+  },
+  "chapters": [
+    {
+      "id": "chapter-1",
+      "title": "开始编程",
+      "objective": "能运行脚本、区分文本与数值并完成基本输入输出。",
+      "lessons": [
+        "first-program",
+        "names-types",
+        "numbers",
+        "strings-input"
+      ]
+    },
+    {
+      "id": "chapter-2",
+      "title": "控制执行",
+      "objective": "能读懂分支和循环，定位边界错误并设计停止条件。",
+      "lessons": [
+        "conditions",
+        "for-range",
+        "while-stop",
+        "debugging"
+      ]
+    },
+    {
+      "id": "chapter-3",
+      "title": "组织数据",
+      "objective": "从购物清单和价格表出发，学习按位置、按名称和按是否出现组织数据。",
+      "lessons": [
+        "lists",
+        "dictionaries",
+        "tuples-sets",
+        "comprehensions"
+      ]
+    },
+    {
+      "id": "chapter-4",
+      "title": "组织程序",
+      "objective": "能编写函数、设计接口、导入模块并处理预期异常。",
+      "lessons": [
+        "functions",
+        "arguments",
+        "modules",
+        "exceptions"
+      ]
+    },
+    {
+      "id": "chapter-5",
+      "title": "完成应用",
+      "objective": "能处理文件、验证格式、测试边界并交付命令行工具。",
+      "lessons": [
+        "text-files",
+        "json-csv",
+        "testing",
+        "capstone"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "python-tutorial",
+      "title": "Python 3.13 Tutorial",
+      "url": "https://docs.python.org/3.13/tutorial/",
+      "purpose": "用于核对语言入门范围；本书为零基础读者重新编写说明和例题。"
+    },
+    {
+      "id": "python-types",
+      "title": "Built-in Types",
+      "url": "https://docs.python.org/3.13/library/stdtypes.html",
+      "purpose": "核对类型、真值、赋值相关操作与容器语义。"
+    },
+    {
+      "id": "python-floating",
+      "title": "Floating-Point Arithmetic",
+      "url": "https://docs.python.org/3.13/tutorial/floatingpoint.html",
+      "purpose": "核对浮点表示误差与近似比较。"
+    },
+    {
+      "id": "python-input",
+      "title": "Built-in Functions",
+      "url": "https://docs.python.org/3.13/library/functions.html",
+      "purpose": "核对 input、int、print、len、sorted 的行为。"
+    },
+    {
+      "id": "python-control",
+      "title": "More Control Flow Tools",
+      "url": "https://docs.python.org/3.13/tutorial/controlflow.html",
+      "purpose": "核对循环、函数、默认参数与调用语义。"
+    },
+    {
+      "id": "python-errors",
+      "title": "Errors and Exceptions",
+      "url": "https://docs.python.org/3.13/tutorial/errors.html",
+      "purpose": "核对异常传播、捕获与主动抛出。"
+    },
+    {
+      "id": "python-data",
+      "title": "Data Structures",
+      "url": "https://docs.python.org/3.13/tutorial/datastructures.html",
+      "purpose": "核对列表、元组、字典、集合与推导式。"
+    },
+    {
+      "id": "python-modules",
+      "title": "Modules and venv",
+      "url": "https://docs.python.org/3.13/tutorial/modules.html",
+      "purpose": "核对模块、主入口与导入；环境部分另参见 venv。"
+    },
+    {
+      "id": "python-venv",
+      "title": "venv",
+      "url": "https://docs.python.org/3.13/library/venv.html",
+      "purpose": "核对虚拟环境创建与平台命令。"
+    },
+    {
+      "id": "python-io",
+      "title": "Input and Output",
+      "url": "https://docs.python.org/3.13/tutorial/inputoutput.html",
+      "purpose": "核对路径之外的文件模式、UTF-8、with 与序列化。"
+    },
+    {
+      "id": "python-pathlib",
+      "title": "pathlib",
+      "url": "https://docs.python.org/3.13/library/pathlib.html",
+      "purpose": "核对相对路径、目录创建与文本读写。"
+    },
+    {
+      "id": "python-formats",
+      "title": "json",
+      "url": "https://docs.python.org/3.13/library/json.html",
+      "purpose": "核对 JSON 映射、ensure_ascii 与往返限制；CSV 另参见 csv。"
+    },
+    {
+      "id": "python-csv",
+      "title": "csv",
+      "url": "https://docs.python.org/3.13/library/csv.html",
+      "purpose": "核对表格解析、字符串字段、额外列与换行规则。"
+    },
+    {
+      "id": "python-unittest",
+      "title": "unittest",
+      "url": "https://docs.python.org/3.13/library/unittest.html",
+      "purpose": "核对测试发现、断言与错误输入检查。"
+    },
+    {
+      "id": "python-argparse",
+      "title": "argparse",
+      "url": "https://docs.python.org/3.13/library/argparse.html",
+      "purpose": "核对命令行参数、帮助与退出码。"
+    }
+  ]
+}

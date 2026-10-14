@@ -1,0 +1,221 @@
+{
+  "id": "names-types",
+  "chapterId": "chapter-1",
+  "number": "1.2",
+  "title": "给值起名字",
+  "subtitle": "给一个值起名字，下一行就能用这个名字找到它。",
+  "concept": "给一个值起名字，下一行就能用这个名字找到它。",
+  "intuition": "在装着 3 个苹果的篮子上贴一张“苹果数”的标签。",
+  "objectives": [
+    "给数字起个名字",
+    "更新之后，名字记住新值",
+    "数字与文字各有用途"
+  ],
+  "body": [
+    {
+      "title": "给数字起个名字",
+      "text": "apples = 3 读作“把名字 apples 对应到数字 3”。这里 = 是赋值：先看右边的值，再让左边的名字记住它。print(apples) 不加引号，因为我们要取出名字对应的值；print(\"apples\") 加了引号，就只显示这串文字。"
+    },
+    {
+      "title": "更新之后，名字记住新值",
+      "text": "apples = apples + 2 的右边先取出原来的 3，加上 2 得到 5；然后左边 apples 改为记住 5。它不是数学里要求两边永远相等的等式。可以逐行观察下方的变量卡片。"
+    },
+    {
+      "title": "数字与文字各有用途",
+      "text": "3 是可以做算术的数字；\"3\" 是文字。先根据用途选择：苹果个数用数字，姓名用文字。名字区分大小写，apples 和 Apples 不是同一个；为了容易看懂，本书用小写英文，多个词用下划线连接，例如 apple_count。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "赋值先计算右边，再更新左边名字对应的值；带引号的名字是文字。",
+    "conditions": [
+      "每段示例都从头独立运行；先按本节给出的输入观察，再改变一处。"
+    ]
+  },
+  "derivation": [
+    {
+      "text": "apples 先记住 3。"
+    },
+    {
+      "text": "右边先算 3 + 2，再更新 apples。"
+    },
+    {
+      "text": "print 取出更新后的 5。"
+    }
+  ],
+  "interactiveVisual": {
+    "kind": "python-trace",
+    "prediction": "原来有 3 个，增加 2 个，变量会变成多少？",
+    "caption": "先选一个输入，写下预测，再点“下一步”。箭头指向下一条将执行的语句；右侧显示此刻的变量和已经产生的输出。",
+    "experiment": {
+      "code": "apples = 3\napples = apples + 2\nprint(apples)\n",
+      "stdout": "5\n",
+      "stdin": ""
+    },
+    "followUp": "把初始数量改为 0，再看右边如何先计算。",
+    "codeTemplate": "apples = {{start}}\napples = apples + 2\nprint(apples)\n",
+    "controls": [
+      {
+        "name": "start",
+        "label": "原来的苹果数",
+        "values": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "defaultIndex": 3
+      }
+    ],
+    "watch": [
+      "apples"
+    ]
+  },
+  "workedExamples": [
+    {
+      "title": "今天又买了两个",
+      "problem": "原有 3 个苹果，又买 2 个，显示新总数。",
+      "steps": [
+        "apples 先记住 3。",
+        "右边先算 3 + 2，再更新 apples。",
+        "print 取出更新后的 5。"
+      ],
+      "answer": {
+        "code": "apples = 3\napples = apples + 2\nprint(apples)\n",
+        "stdout": "5\n",
+        "stdin": ""
+      }
+    },
+    {
+      "title": "名字还是文字",
+      "problem": "比较带引号和不带引号的 apples。",
+      "steps": [
+        "不带引号时读取变量。",
+        "带引号时按文字显示。"
+      ],
+      "answer": {
+        "code": "apples = 3\nprint(apples)\nprint(\"apples\")\n",
+        "stdout": "3\napples\n",
+        "stdin": ""
+      }
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "names-types-m1",
+      "claim": "print(\"apples\") 会读取苹果数。",
+      "correction": "有引号时显示文字 apples；print(apples) 才读取变量。"
+    },
+    {
+      "id": "names-types-m2",
+      "claim": "a 更新后，之前从 a 取值的 b 也自动更新。",
+      "correction": "b = a 在当时取值；后续的数字赋值不会自动重算 b。"
+    }
+  ],
+  "practice": [
+    {
+      "problem": "count = 4 后，print(count) 显示什么？",
+      "hint": "读取名字对应的值。",
+      "solution": [
+        "count 记住 4。"
+      ],
+      "answer": {
+        "code": "count = 4\nprint(count)\n",
+        "stdout": "4\n",
+        "stdin": ""
+      },
+      "id": "names-types-p1",
+      "difficulty": 1,
+      "misconceptionTags": [
+        "names-types-m1"
+      ]
+    },
+    {
+      "problem": "把 count 从 4 增加到 5。",
+      "hint": "先取旧值再加 1。",
+      "solution": [
+        "右边得 5，赋值更新名字。"
+      ],
+      "answer": {
+        "code": "count = 4\ncount = count + 1\nprint(count)\n",
+        "stdout": "5\n",
+        "stdin": ""
+      },
+      "id": "names-types-p2",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "names-types-m2"
+      ]
+    },
+    {
+      "problem": "让 name 记住“小林”，再显示它。",
+      "hint": "文字需要引号。",
+      "solution": [
+        "赋值时写引号，读取名字时不写。"
+      ],
+      "answer": {
+        "code": "name = \"小林\"\nprint(name)\n",
+        "stdout": "小林\n",
+        "stdin": ""
+      },
+      "id": "names-types-p3",
+      "difficulty": 3,
+      "misconceptionTags": [
+        "names-types-m1"
+      ]
+    },
+    {
+      "problem": "a = 2；b = a；a = 5 后，b 是多少？",
+      "hint": "给 b 赋值时 a 还是 2。",
+      "solution": [
+        "b 记住 2。",
+        "随后更新 a 不会自动重新计算 b。"
+      ],
+      "answer": {
+        "code": "a = 2\nb = a\na = 5\nprint(a)\nprint(b)\n",
+        "stdout": "5\n2\n",
+        "stdin": ""
+      },
+      "id": "names-types-p4",
+      "difficulty": 3,
+      "misconceptionTags": [
+        "names-types-m2"
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "apples = 3 后，print(\"apples\") 显示什么？",
+    "correctIndex": 1,
+    "choices": [
+      "3（总会读取变量）",
+      "apples（文字）",
+      "没有输出（变量无法显示）"
+    ],
+    "explanation": "引号让 apples 成为普通文字。",
+    "feedback": [
+      "加了引号就不会查找变量。",
+      "对，引号里面的文字原样显示。",
+      "print 可以显示数字，也可以显示文字。"
+    ]
+  },
+  "prerequisites": [
+    "first-program"
+  ],
+  "difficulty": 1,
+  "misconceptionTags": [
+    "names-types-m1",
+    "names-types-m2"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.2.0",
+    "status": "revised",
+    "humanReviewed": false
+  },
+  "sources": [
+    "python-tutorial",
+    "python-types"
+  ],
+  "furtherReading": []
+}

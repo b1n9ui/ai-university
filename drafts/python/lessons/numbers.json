@@ -1,0 +1,259 @@
+{
+  "id": "numbers",
+  "chapterId": "chapter-1",
+  "number": "1.3",
+  "title": "数值与运算",
+  "subtitle": "同一批糖果，可以问“平均多少”，也可以问“装满几袋、还剩几颗”。",
+  "concept": "同一批糖果，可以问“平均多少”，也可以问“装满几袋、还剩几颗”。",
+  "intuition": "17 颗糖，每袋装 5 颗：装满 3 袋，还剩 2 颗。",
+  "objectives": [
+    "先用熟悉的加减乘除",
+    "完整袋数和剩余颗数",
+    "用原来的数量检查结果"
+  ],
+  "body": [
+    {
+      "title": "先用熟悉的加减乘除",
+      "text": "Python 用 + 做加法，- 做减法，* 做乘法，/ 做普通除法。例如 3 * 5 是 15，17 / 5 是 3.4。数字不加引号；print(3 * 5) 会先算出结果，再显示。乘除先于加减，想先算哪一部分就加圆括号，例如 (2 + 3) * 4。"
+    },
+    {
+      "title": "完整袋数和剩余颗数",
+      "text": "现在问题变成“只能装满多少袋”。17 // 5 得到 3；// 连着写两个斜杠，表示整除。17 % 5 得到 2；% 在这里表示余数，不是百分号。记住一幅图就够了：3 袋各装 5 颗，用掉 15 颗，17 - 15 还剩 2 颗。"
+    },
+    {
+      "title": "用原来的数量检查结果",
+      "text": "把完整袋数乘以每袋颗数，再加剩余：3 * 5 + 2 = 17。若正好装完，例如 20 颗每袋 5 颗，余数就是 0。先在下面改糖果数，再改变袋子大小，一次只改一个。这里糖果数为非负整数，每袋颗数必须大于 0。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "在本节的非负整数装袋模型中：// 求完整袋数，% 求余数；袋数 × 每袋颗数 + 余数 = 总数。",
+    "conditions": [
+      "装袋模型使用非负整数数量；每袋颗数必须是大于 0 的整数。",
+      "/、//、% 的除数不能为 0。"
+    ]
+  },
+  "derivation": [
+    {
+      "text": "total 记住总共 17 颗；size 记住每袋 5 颗。"
+    },
+    {
+      "text": "用 // 求完整袋数，得到 3。"
+    },
+    {
+      "text": "用 % 求剩余，得到 2；3 * 5 + 2 = 17。"
+    }
+  ],
+  "interactiveVisual": {
+    "kind": "python-trace",
+    "prediction": "先预测 17 颗糖、每袋 5 颗的袋数和余数，再把总数改为 20 看看。",
+    "caption": "先选一个输入，写下预测，再点“下一步”。箭头指向下一条将执行的语句；右侧显示此刻的变量和已经产生的输出。",
+    "experiment": {
+      "code": "total = 17\nsize = 5\nbags = total // size\nleft = total % size\nprint(bags)\nprint(left)\n",
+      "stdout": "3\n2\n",
+      "stdin": ""
+    },
+    "followUp": "再试 3 颗、每袋 5 颗：先预测袋数是否为 0。",
+    "codeTemplate": "total = {{total}}\nsize = {{size}}\nbags = total // size\nleft = total % size\nprint(bags)\nprint(left)\n",
+    "controls": [
+      {
+        "name": "total",
+        "label": "糖果总数",
+        "values": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "defaultIndex": 17
+      },
+      {
+        "name": "size",
+        "label": "每袋颗数",
+        "values": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "defaultIndex": 4
+      }
+    ],
+    "watch": [
+      "total",
+      "size",
+      "bags",
+      "left"
+    ]
+  },
+  "workedExamples": [
+    {
+      "title": "把 17 颗糖装袋",
+      "problem": "每袋 5 颗，显示完整袋数和剩余颗数。",
+      "steps": [
+        "total 记住总共 17 颗；size 记住每袋 5 颗。",
+        "用 // 求完整袋数，得到 3。",
+        "用 % 求剩余，得到 2；3 * 5 + 2 = 17。"
+      ],
+      "answer": {
+        "code": "total = 17\nsize = 5\nprint(total // size)\nprint(total % size)\n",
+        "stdout": "3\n2\n",
+        "stdin": ""
+      }
+    },
+    {
+      "title": "正好装完",
+      "problem": "20 颗糖每袋 5 颗，还剩多少？",
+      "steps": [
+        "20 // 5 是 4 袋。",
+        "20 % 5 是 0，表示没有剩余。"
+      ],
+      "answer": {
+        "code": "total = 20\nsize = 5\nprint(total // size)\nprint(total % size)\n",
+        "stdout": "4\n0\n",
+        "stdin": ""
+      }
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "numbers-m1",
+      "claim": "// 和 / 都是在求完整袋数。",
+      "correction": "/ 是普通除法，17 / 5 为 3.4；// 在这个模型中求完整袋数 3。"
+    },
+    {
+      "id": "numbers-m2",
+      "claim": "% 在代码里表示百分数。",
+      "correction": "在本节整数运算中，% 求余数：17 % 5 为 2。"
+    }
+  ],
+  "practice": [
+    {
+      "problem": "3 袋糖，每袋 5 颗，共有几颗？",
+      "hint": "乘法写 *。",
+      "solution": [
+        "3 * 5 = 15。"
+      ],
+      "answer": {
+        "code": "print(3 * 5)\n",
+        "stdout": "15\n",
+        "stdin": ""
+      },
+      "id": "numbers-p1",
+      "difficulty": 1,
+      "misconceptionTags": [
+        "numbers-m1"
+      ]
+    },
+    {
+      "problem": "12 颗糖每袋 5 颗，完整袋数和余数是多少？",
+      "hint": "先画出两个装满的袋子。",
+      "solution": [
+        "两袋用掉 10 颗。",
+        "剩 2 颗。"
+      ],
+      "answer": {
+        "code": "print(12 // 5)\nprint(12 % 5)\n",
+        "stdout": "2\n2\n",
+        "stdin": ""
+      },
+      "id": "numbers-p2",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "numbers-m2"
+      ]
+    },
+    {
+      "problem": "原有 17 颗，又拿来 3 颗。每袋 5 颗，求余数。",
+      "hint": "先算新总数。",
+      "solution": [
+        "17 + 3 = 20。",
+        "20 % 5 = 0。"
+      ],
+      "answer": {
+        "code": "total = 17 + 3\nprint(total % 5)\n",
+        "stdout": "0\n",
+        "stdin": ""
+      },
+      "id": "numbers-p3",
+      "difficulty": 3,
+      "misconceptionTags": [
+        "numbers-m1"
+      ]
+    },
+    {
+      "problem": "只有 3 颗糖，每袋 5 颗，能装满一袋吗？",
+      "hint": "不够一袋时完整袋数是 0。",
+      "solution": [
+        "3 // 5 = 0。",
+        "3 % 5 = 3，糖果都留在外面。"
+      ],
+      "answer": {
+        "code": "print(3 // 5)\nprint(3 % 5)\n",
+        "stdout": "0\n3\n",
+        "stdin": ""
+      },
+      "id": "numbers-p4",
+      "difficulty": 3,
+      "misconceptionTags": [
+        "numbers-m2"
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "17 颗糖，每袋装 5 颗，要用哪一个求剩余？",
+    "correctIndex": 1,
+    "choices": [
+      "17 / 5",
+      "17 % 5",
+      "17 // 5"
+    ],
+    "explanation": "余数表示装完完整袋子后剩下的数量。",
+    "feedback": [
+      "/ 得到平均值 3.4，不是剩余颗数。",
+      "对，% 得到剩余 2 颗。",
+      "// 得到完整袋数 3，不是余数。"
+    ]
+  },
+  "prerequisites": [
+    "names-types"
+  ],
+  "difficulty": 1,
+  "misconceptionTags": [
+    "numbers-m1",
+    "numbers-m2"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.2.0",
+    "status": "revised",
+    "humanReviewed": false
+  },
+  "sources": [
+    "python-tutorial",
+    "python-floating"
+  ],
+  "furtherReading": [
+    {
+      "title": "学完主线后再看：负数和小数",
+      "text": "本节的装袋模型只用非负整数。负数的 // 向下取整，例如 -3 // 2 为 -2，不能直接套用装袋直觉。小数计算还可能有表示误差，例如 0.1 + 0.2 的结果不一定恰好等于 0.3；这里先知道有这个边界即可。金额项目使用整数“分”，更精确的十进制计算可在后续学习 Decimal。"
+    }
+  ]
+}

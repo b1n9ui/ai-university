@@ -17,7 +17,9 @@
     "build": "npm run validate:content && npm run typecheck && node scripts/build-book.mjs && vite build",
     "preview": "vite preview --host 127.0.0.1",
     "check": "npm run build && npm test",
-    "content:scaffold": "node scripts/scaffold-lesson.mjs"
+    "content:scaffold": "node scripts/scaffold-lesson.mjs",
+    "build:python": "node drafts/python/tools/validate.mjs && python3 drafts/python/tools/traces.py && node drafts/python/tools/build.mjs",
+    "check:python": "node drafts/python/tools/validate.mjs && python3 drafts/python/tools/verify.py && python3 drafts/python/tools/test_traces.py && python3 drafts/python/tools/traces.py --check && node drafts/python/tools/build.mjs --check"
   },
   "dependencies": {
     "katex": "^0.19.0",

@@ -1,0 +1,220 @@
+{
+  "id": "while-stop",
+  "chapterId": "chapter-2",
+  "number": "2.3",
+  "title": "while 循环与倒计时",
+  "subtitle": "while 每次先检查条件，成立就继续，不成立就停。",
+  "concept": "while 每次先检查条件，成立就继续，不成立就停。",
+  "intuition": "倒计时：还剩时间就再走一步，走到 0 就结束。",
+  "objectives": [
+    "先检查，再做一次",
+    "每轮都让条件向停止靠近",
+    "先试小数值和零"
+  ],
+  "body": [
+    {
+      "title": "先检查，再做一次",
+      "text": "while remaining > 0: 读作“只要剩余数大于 0，就执行缩进的步骤”。它每一轮都会重新检查条件。for 常用于按一串数据重复；while 适合按“是否继续”决定重复。"
+    },
+    {
+      "title": "每轮都让条件向停止靠近",
+      "text": "remaining = remaining - 1 把剩余数减少 1。从 3 开始，依次变成 2、1、0。到 0 时条件不成立，循环结束。如果忘了减少，条件会一直成立，程序就不停重复。不要试运行那个缺少更新的版本。"
+    },
+    {
+      "title": "先试小数值和零",
+      "text": "先从 3 倒数，再试 1，最后试 0。若一开始就是 0，循环一次也不执行，但循环外的“结束”仍然显示。用这种边界检查，比只试正常例子更可靠。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "while 每轮先检查条件；成立才执行，更新后重新检查。",
+    "conditions": [
+      "每轮更新变量，让条件最终不成立；先用小输入核对停止。"
+    ]
+  },
+  "derivation": [
+    {
+      "text": "remaining 从 3 开始。"
+    },
+    {
+      "text": "每轮先显示，再减 1。"
+    },
+    {
+      "text": "变成 0 后跳出循环，显示结束。"
+    }
+  ],
+  "interactiveVisual": {
+    "kind": "python-trace",
+    "prediction": "从 0 开始，循环会不会先执行一次？",
+    "caption": "先选一个输入，写下预测，再点“下一步”。箭头指向下一条将执行的语句；右侧显示此刻的变量和已经产生的输出。",
+    "experiment": {
+      "code": "remaining = 3\nwhile remaining > 0:\n    print(remaining)\n    remaining = remaining - 1\nprint(\"结束\")\n",
+      "stdout": "3\n2\n1\n结束\n",
+      "stdin": ""
+    },
+    "followUp": "比较 0 和 3，观察判断语句被检查了几次。",
+    "codeTemplate": "remaining = {{start}}\nwhile remaining > 0:\n    print(remaining)\n    remaining = remaining - 1\nprint(\"结束\")\n",
+    "controls": [
+      {
+        "name": "start",
+        "label": "倒计时起点",
+        "values": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "defaultIndex": 3
+      }
+    ],
+    "watch": [
+      "remaining"
+    ]
+  },
+  "workedExamples": [
+    {
+      "title": "三步倒计时",
+      "problem": "显示 3、2、1，然后显示结束。",
+      "steps": [
+        "remaining 从 3 开始。",
+        "每轮先显示，再减 1。",
+        "变成 0 后跳出循环，显示结束。"
+      ],
+      "answer": {
+        "code": "remaining = 3\nwhile remaining > 0:\n    print(remaining)\n    remaining = remaining - 1\nprint(\"结束\")\n",
+        "stdout": "3\n2\n1\n结束\n",
+        "stdin": ""
+      }
+    },
+    {
+      "title": "一开始就没剩余",
+      "problem": "从 0 开始。",
+      "steps": [
+        "0 > 0 不成立。",
+        "直接执行循环后面的输出。"
+      ],
+      "answer": {
+        "code": "remaining = 0\nwhile remaining > 0:\n    print(remaining)\n    remaining = remaining - 1\nprint(\"结束\")\n",
+        "stdout": "结束\n",
+        "stdin": ""
+      }
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "while-stop-m1",
+      "claim": "while 会先执行一次，再判断条件。",
+      "correction": "while 先判断；初始条件不成立时一次也不执行。"
+    },
+    {
+      "id": "while-stop-m2",
+      "claim": "只打印剩余数，也能让倒计时结束。",
+      "correction": "必须更新 remaining；打印本身不改变它。"
+    }
+  ],
+  "practice": [
+    {
+      "problem": "从 1 开始倒计时，会显示什么？",
+      "hint": "执行一轮后变成 0。",
+      "solution": [
+        "显示 1，然后结束。"
+      ],
+      "answer": {
+        "code": "remaining = 1\nwhile remaining > 0:\n    print(remaining)\n    remaining = remaining - 1\nprint(\"结束\")\n",
+        "stdout": "1\n结束\n",
+        "stdin": ""
+      },
+      "id": "while-stop-p1",
+      "difficulty": 1,
+      "misconceptionTags": [
+        "while-stop-m1"
+      ]
+    },
+    {
+      "problem": "从 2 开始倒计时。",
+      "hint": "每轮减 1。",
+      "solution": [
+        "显示 2、1。"
+      ],
+      "answer": {
+        "code": "remaining = 2\nwhile remaining > 0:\n    print(remaining)\n    remaining = remaining - 1\n",
+        "stdout": "2\n1\n",
+        "stdin": ""
+      },
+      "id": "while-stop-p2",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "while-stop-m2"
+      ]
+    },
+    {
+      "problem": "从 0 数到 2：先显示当前数，每次增加 1。",
+      "hint": "继续条件用 current < 3。",
+      "solution": [
+        "显示 0、1、2 后 current 变成 3。"
+      ],
+      "answer": {
+        "code": "current = 0\nwhile current < 3:\n    print(current)\n    current = current + 1\n",
+        "stdout": "0\n1\n2\n",
+        "stdin": ""
+      },
+      "id": "while-stop-p3",
+      "difficulty": 3,
+      "misconceptionTags": [
+        "while-stop-m1"
+      ]
+    },
+    {
+      "problem": "剩余数是 0，while remaining > 0 的循环体运行几次？",
+      "hint": "先判断，不是先执行。",
+      "solution": [
+        "循环体运行 0 次。"
+      ],
+      "answer": {
+        "code": "remaining = 0\ntimes = 0\nwhile remaining > 0:\n    times = times + 1\n    remaining = remaining - 1\nprint(times)\n",
+        "stdout": "0\n",
+        "stdin": ""
+      },
+      "id": "while-stop-p4",
+      "difficulty": 3,
+      "misconceptionTags": [
+        "while-stop-m2"
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "想让倒计时结束，每轮需要做什么？",
+    "correctIndex": 1,
+    "choices": [
+      "只显示剩余数",
+      "减少剩余数",
+      "把剩余数重设为 3"
+    ],
+    "explanation": "更新变量，才能让下一轮的判断改变。",
+    "feedback": [
+      "只显示不改变剩余数，条件会一直成立。",
+      "对，每轮减 1，最终到达 0。",
+      "每轮重设为 3，会一直无法结束。"
+    ]
+  },
+  "prerequisites": [
+    "for-range"
+  ],
+  "difficulty": 2,
+  "misconceptionTags": [
+    "while-stop-m1",
+    "while-stop-m2"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.2.0",
+    "status": "revised",
+    "humanReviewed": false
+  },
+  "sources": [
+    "python-tutorial",
+    "python-control"
+  ],
+  "furtherReading": []
+}

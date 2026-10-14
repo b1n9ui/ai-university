@@ -1,0 +1,228 @@
+{
+  "id": "arguments",
+  "chapterId": "chapter-4",
+  "number": "4.2",
+  "title": "传入参数与默认值",
+  "subtitle": "调用函数时，可以按位置给值，也可以写清参数名；常用值可以设默认值。",
+  "concept": "调用函数时，可以按位置给值，也可以写清参数名；常用值可以设默认值。",
+  "intuition": "点饮料：说明杯数和单价；不特别说明杯数时，按一杯准备。",
+  "objectives": [
+    "先看清每个输入代表什么",
+    "把常用值写成默认值",
+    "列表输入要约定是否修改"
+  ],
+  "body": [
+    {
+      "title": "先看清每个输入代表什么",
+      "text": "def cost(price, count): 有两个参数。cost(3, 2) 按位置把 3 交给 price，2 交给 count，计算 6。顺序错了，含义可能就变了；像单价和数量这样的参数，要先用文字写清单位。"
+    },
+    {
+      "title": "把常用值写成默认值",
+      "text": "def cost(price, count=1): 表示没有给 count 时使用 1。cost(3) 是买一件，cost(3, 2) 是买两件。cost(price=3, count=2) 明确写出参数名，这叫按关键字传值。这里默认参数放在必填参数后面。"
+    },
+    {
+      "title": "列表输入要约定是否修改",
+      "text": "如果只想算清单总数，可以循环读取列表、返回 total，而不添加或删除原列表。这样调用者更容易预测结果。默认值先使用数字或文字；把 [] 放在默认值里可能让多次调用共享同一个列表，进阶说明见选读。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "参数可按位置或名称提供；默认值在这个参数被省略时使用。",
+    "conditions": [
+      "明确传入的参数覆盖默认值；必填参数放在默认参数前。"
+    ]
+  },
+  "derivation": [
+    {
+      "text": "默认 count 是 1。"
+    },
+    {
+      "text": "传入 2 时覆盖默认值。"
+    },
+    {
+      "text": "结果分别为 3 和 6。"
+    }
+  ],
+  "interactiveVisual": {
+    "kind": "python-trace",
+    "prediction": "单价 3、数量 2，返回多少？",
+    "caption": "先选一个输入，写下预测，再点“下一步”。箭头指向下一条将执行的语句；右侧显示此刻的变量和已经产生的输出。",
+    "experiment": {
+      "code": "def cost(price, count=1):\n    return price * count\n\nresult = cost(3, 2)\nprint(result)\n",
+      "stdout": "6\n",
+      "stdin": ""
+    },
+    "followUp": "选数量 0；想测试默认值，可在本机把调用改成 cost(3)。",
+    "codeTemplate": "def cost(price, count=1):\n    return price * count\n\nresult = cost(3, {{count}})\nprint(result)\n",
+    "controls": [
+      {
+        "name": "count",
+        "label": "购买数量",
+        "values": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "defaultIndex": 2
+      }
+    ],
+    "watch": [
+      "price",
+      "count",
+      "result"
+    ]
+  },
+  "workedExamples": [
+    {
+      "title": "默认买一件",
+      "problem": "单价 3，分别购买一件和两件。",
+      "steps": [
+        "默认 count 是 1。",
+        "传入 2 时覆盖默认值。",
+        "结果分别为 3 和 6。"
+      ],
+      "answer": {
+        "code": "def cost(price, count=1):\n    return price * count\n\nprint(cost(3))\nprint(cost(3, 2))\n",
+        "stdout": "3\n6\n",
+        "stdin": ""
+      }
+    },
+    {
+      "title": "写清参数名",
+      "problem": "单价 4，买 3 件。",
+      "steps": [
+        "price 明确接到 4。",
+        "count 明确接到 3。"
+      ],
+      "answer": {
+        "code": "def cost(price, count=1):\n    return price * count\n\nprint(cost(count=3, price=4))\n",
+        "stdout": "12\n",
+        "stdin": ""
+      }
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "arguments-m1",
+      "claim": "给了数量 0，默认值 1 仍然会生效。",
+      "correction": "明确传入 0 就按 0 使用；默认值只在省略时使用。"
+    },
+    {
+      "id": "arguments-m2",
+      "claim": "按位置传值时顺序可以随便换。",
+      "correction": "每个位置对应一个参数；不清楚时写参数名。"
+    }
+  ],
+  "practice": [
+    {
+      "problem": "单价 5，使用默认数量 1。",
+      "hint": "只传 price。",
+      "solution": [
+        "5 * 1 = 5。"
+      ],
+      "answer": {
+        "code": "def cost(price, count=1):\n    return price * count\n\nprint(cost(5))\n",
+        "stdout": "5\n",
+        "stdin": ""
+      },
+      "id": "arguments-p1",
+      "difficulty": 1,
+      "misconceptionTags": [
+        "arguments-m1"
+      ]
+    },
+    {
+      "problem": "单价 5，数量 2，用参数名调用。",
+      "hint": "写 price=5、count=2。",
+      "solution": [
+        "结果为 10。"
+      ],
+      "answer": {
+        "code": "def cost(price, count=1):\n    return price * count\n\nprint(cost(price=5, count=2))\n",
+        "stdout": "10\n",
+        "stdin": ""
+      },
+      "id": "arguments-p2",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "arguments-m2"
+      ]
+    },
+    {
+      "problem": "写 total_of，只读取 [2, 3] 并返回总和。",
+      "hint": "不要修改输入列表。",
+      "solution": [
+        "累加得到 5。",
+        "原列表仍有两项。"
+      ],
+      "answer": {
+        "code": "def total_of(values):\n    total = 0\n    for value in values:\n        total = total + value\n    return total\n\nvalues = [2, 3]\nprint(total_of(values))\nprint(values)\n",
+        "stdout": "5\n[2, 3]\n",
+        "stdin": ""
+      },
+      "id": "arguments-p3",
+      "difficulty": 3,
+      "misconceptionTags": [
+        "arguments-m1"
+      ]
+    },
+    {
+      "problem": "单价 5，数量 0 的费用是多少？",
+      "hint": "明确传入 0。",
+      "solution": [
+        "0 会覆盖默认值 1。",
+        "费用为 0。"
+      ],
+      "answer": {
+        "code": "def cost(price, count=1):\n    return price * count\n\nprint(cost(5, 0))\n",
+        "stdout": "0\n",
+        "stdin": ""
+      },
+      "id": "arguments-p4",
+      "difficulty": 3,
+      "misconceptionTags": [
+        "arguments-m2"
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "cost(price, count=1) 被 cost(5, 0) 调用时，count 是多少？",
+    "correctIndex": 1,
+    "choices": [
+      "1（默认值总生效）",
+      "0（明确传入的值）",
+      "5（参数顺序无关）"
+    ],
+    "explanation": "明确传入的值覆盖默认值。",
+    "feedback": [
+      "默认值只在没给这个参数时使用。",
+      "对，传入 0 就按 0 件计算。",
+      "第二个位置对应 count，不是第一个。"
+    ]
+  },
+  "prerequisites": [
+    "functions"
+  ],
+  "difficulty": 4,
+  "misconceptionTags": [
+    "arguments-m1",
+    "arguments-m2"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.2.0",
+    "status": "revised",
+    "humanReviewed": false
+  },
+  "sources": [
+    "python-tutorial",
+    "python-control"
+  ],
+  "furtherReading": [
+    {
+      "title": "选读：为什么不把 [] 当默认清单",
+      "text": "默认值在定义函数时建立一次。如果使用 def add(item, items=[]): 并往 items 添加，多次省略 items 的调用会共用这份列表。安全的做法是默认 items=None，再在函数内判断 if items is None: items = []。None 表示这里尚未提供清单；is None 检查它是否就是这个标记。初学阶段也可以让列表参数必填，避免隐含状态。"
+    }
+  ]
+}

@@ -1,0 +1,221 @@
+{
+  "id": "conditions",
+  "chapterId": "chapter-2",
+  "number": "2.1",
+  "title": "条件与分支",
+  "subtitle": "先判断条件，再选择其中一条路执行。",
+  "concept": "先判断条件，再选择其中一条路执行。",
+  "intuition": "带够车费才能乘车；没带够就走另一条路。",
+  "objectives": [
+    "把一个问题写成判断",
+    "用 if 和 else 写两条路",
+    "检查刚好够的情况"
+  ],
+  "body": [
+    {
+      "title": "把一个问题写成判断",
+      "text": "设车费是 5 元，money 是你带的钱。money >= 5 读作“带的钱是否至少有 5 元”；>= 表示大于或等于。判断的结果只有 True（成立）或 False（不成立）。先试着口头回答，再看程序走哪条路。"
+    },
+    {
+      "title": "用 if 和 else 写两条路",
+      "text": "if 条件: 表示“如果成立”；else: 表示“否则”。冒号后换行，下一行开头留 4 个空格，这叫缩进。缩进后的句子属于这条路。同一次判断只会执行一边：不会先乘车，再又显示钱不够。"
+    },
+    {
+      "title": "检查刚好够的情况",
+      "text": "先试 6 元，再试 4 元，最后试刚好 5 元。>= 包含等于，所以 5 元也能乘车。如果改成 >，刚好够的情况就会判断错误。表示相等时用 ==；单个 = 仍然是赋值。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "if 条件成立时执行其缩进部分，否则执行 else 的部分；同一次判断只走一边。",
+    "conditions": [
+      "条件后的冒号和缩进必须完整；= 用于赋值，== 用于相等判断。"
+    ]
+  },
+  "derivation": [
+    {
+      "text": "money 记住 5。"
+    },
+    {
+      "text": "5 >= 5 成立，进入 if 的缩进部分。"
+    },
+    {
+      "text": "else 的句子跳过。"
+    }
+  ],
+  "interactiveVisual": {
+    "kind": "python-trace",
+    "prediction": "刚好 5 元，会走哪一条路？",
+    "caption": "先选一个输入，写下预测，再点“下一步”。箭头指向下一条将执行的语句；右侧显示此刻的变量和已经产生的输出。",
+    "experiment": {
+      "code": "money = 5\nif money >= 5:\n    print(\"可以乘车\")\nelse:\n    print(\"钱不够\")\n",
+      "stdout": "可以乘车\n",
+      "stdin": ""
+    },
+    "followUp": "比较 4、5、6 元，观察箭头跳过了哪一行。",
+    "codeTemplate": "money = {{money}}\nif money >= 5:\n    print(\"可以乘车\")\nelse:\n    print(\"钱不够\")\n",
+    "controls": [
+      {
+        "name": "money",
+        "label": "带了多少元",
+        "values": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          8
+        ],
+        "defaultIndex": 3
+      }
+    ],
+    "watch": [
+      "money"
+    ]
+  },
+  "workedExamples": [
+    {
+      "title": "够不够车费",
+      "problem": "带 5 元，票价 5 元，显示选择。",
+      "steps": [
+        "money 记住 5。",
+        "5 >= 5 成立，进入 if 的缩进部分。",
+        "else 的句子跳过。"
+      ],
+      "answer": {
+        "code": "money = 5\nif money >= 5:\n    print(\"可以乘车\")\nelse:\n    print(\"钱不够\")\n",
+        "stdout": "可以乘车\n",
+        "stdin": ""
+      }
+    },
+    {
+      "title": "另一条路",
+      "problem": "带 4 元，再检查同一个条件。",
+      "steps": [
+        "4 >= 5 不成立。",
+        "跳过 if 的句子，执行 else 的句子。"
+      ],
+      "answer": {
+        "code": "money = 4\nif money >= 5:\n    print(\"可以乘车\")\nelse:\n    print(\"钱不够\")\n",
+        "stdout": "钱不够\n",
+        "stdin": ""
+      }
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "conditions-m1",
+      "claim": "刚好 5 元符合 money > 5。",
+      "correction": "> 不含等于，刚好够要用 >=。"
+    },
+    {
+      "id": "conditions-m2",
+      "claim": "if 和 else 两边都会执行。",
+      "correction": "这次判断只走一边；条件成立时跳过 else。"
+    }
+  ],
+  "practice": [
+    {
+      "problem": "预测 6 >= 5 的结果。",
+      "hint": "是否至少有 5？",
+      "solution": [
+        "结果为 True。"
+      ],
+      "answer": {
+        "code": "print(6 >= 5)\n",
+        "stdout": "True\n",
+        "stdin": ""
+      },
+      "id": "conditions-p1",
+      "difficulty": 1,
+      "misconceptionTags": [
+        "conditions-m1"
+      ]
+    },
+    {
+      "problem": "带 3 元时显示“钱不够”。",
+      "hint": "把 money 改为 3。",
+      "solution": [
+        "条件不成立，进入 else。"
+      ],
+      "answer": {
+        "code": "money = 3\nif money >= 5:\n    print(\"可以乘车\")\nelse:\n    print(\"钱不够\")\n",
+        "stdout": "钱不够\n",
+        "stdin": ""
+      },
+      "id": "conditions-p2",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "conditions-m2"
+      ]
+    },
+    {
+      "problem": "成绩至少 60 分显示“通过”，否则显示“再练习”；测试 60。",
+      "hint": "刚好达到也算通过。",
+      "solution": [
+        "用 >= 60。",
+        "60 分进入 if。"
+      ],
+      "answer": {
+        "code": "score = 60\nif score >= 60:\n    print(\"通过\")\nelse:\n    print(\"再练习\")\n",
+        "stdout": "通过\n",
+        "stdin": ""
+      },
+      "id": "conditions-p3",
+      "difficulty": 3,
+      "misconceptionTags": [
+        "conditions-m1"
+      ]
+    },
+    {
+      "problem": "测试刚才的程序输入 59。",
+      "hint": "只改成绩。",
+      "solution": [
+        "59 < 60，显示再练习。"
+      ],
+      "answer": {
+        "code": "score = 59\nif score >= 60:\n    print(\"通过\")\nelse:\n    print(\"再练习\")\n",
+        "stdout": "再练习\n",
+        "stdin": ""
+      },
+      "id": "conditions-p4",
+      "difficulty": 3,
+      "misconceptionTags": [
+        "conditions-m2"
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "刚好带 5 元，哪一个判断包含这种情况？",
+    "correctIndex": 1,
+    "choices": [
+      "money > 5",
+      "money >= 5",
+      "money = 5"
+    ],
+    "explanation": ">= 包含“等于”；= 用来赋值。",
+    "feedback": [
+      "> 要求超过 5，不包括刚好 5。",
+      "对，>= 表示至少 5。",
+      "= 是赋值，不能在这里当判断。"
+    ]
+  },
+  "prerequisites": [
+    "strings-input"
+  ],
+  "difficulty": 2,
+  "misconceptionTags": [
+    "conditions-m1",
+    "conditions-m2"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.2.0",
+    "status": "revised",
+    "humanReviewed": false
+  },
+  "sources": [
+    "python-tutorial",
+    "python-control"
+  ],
+  "furtherReading": []
+}

@@ -1,0 +1,227 @@
+{
+  "id": "tuples-sets",
+  "chapterId": "chapter-3",
+  "number": "3.3",
+  "title": "元组与集合：固定记录和去重",
+  "subtitle": "固定的一组值可以用元组；只关心是否出现过，可以用集合。",
+  "concept": "固定的一组值可以用元组；只关心是否出现过，可以用集合。",
+  "intuition": "地点是一对坐标；去过哪些城市，则不需要把同一个城市记两遍。",
+  "objectives": [
+    "把固定的一对数据放一起",
+    "重复的数据只保留一份",
+    "先问自己关心什么"
+  ],
+  "body": [
+    {
+      "title": "把固定的一对数据放一起",
+      "text": "point = (3, 4) 是元组，外面用圆括号。像列表一样，point[0] 取 3，point[1] 取 4；但不能给某个位置重新赋值。适合表达一个固定记录，例如坐标。本节先用两项元组；只有一项时要写 (3,) 才是元组。"
+    },
+    {
+      "title": "重复的数据只保留一份",
+      "text": "cities = {\"北京\", \"上海\", \"北京\"} 是集合。每个值只保留一份，所以 len(cities) 是 2。注意：这里没有冒号，和字典的键值对不同。空集合要写 set()；{} 是空字典。"
+    },
+    {
+      "title": "先问自己关心什么",
+      "text": "\"北京\" in cities 判断是否包含这个值。集合没有第一个、第二个位置，也不承诺输出顺序；需要稳定地显示时，可用 sorted(cities) 得到排好顺序的列表。要保留重复和原有顺序用列表；按名称配值用字典；固定记录用元组；去重与包含判断用集合。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "元组的位置不能重新赋值；集合只保留不同值，可用 in 检查是否包含。",
+    "conditions": [
+      "集合中的值需要可作为集合元素；本节只使用数字和文字。",
+      "集合不提供按位置读取，也不保证显示顺序。"
+    ]
+  },
+  "derivation": [
+    {
+      "text": "圆括号把 3、4 放在一起。"
+    },
+    {
+      "text": "位置 0 和 1 分别取出两个坐标。"
+    },
+    {
+      "text": "最后用预期输出核对自己的预测。"
+    }
+  ],
+  "interactiveVisual": {
+    "kind": "python-trace",
+    "prediction": "重复的 1 会计几次？",
+    "caption": "先选一个输入，写下预测，再点“下一步”。箭头指向下一条将执行的语句；右侧显示此刻的变量和已经产生的输出。",
+    "experiment": {
+      "code": "values = [1, 1, 2]\nunique = set(values)\nprint(len(unique))\nprint(2 in unique)\n",
+      "stdout": "2\nTrue\n",
+      "stdin": ""
+    },
+    "followUp": "比较空列表和有重复的列表；集合卡片按固定次序显示，便于观察。",
+    "codeTemplate": "values = {{values}}\nunique = set(values)\nprint(len(unique))\nprint(2 in unique)\n",
+    "controls": [
+      {
+        "name": "values",
+        "label": "原始记录",
+        "values": [
+          [
+            1,
+            1,
+            2
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          []
+        ],
+        "defaultIndex": 0
+      }
+    ],
+    "watch": [
+      "values",
+      "unique"
+    ]
+  },
+  "workedExamples": [
+    {
+      "title": "读取坐标",
+      "problem": "从一对固定坐标中取出两个数。",
+      "steps": [
+        "圆括号把 3、4 放在一起。",
+        "位置 0 和 1 分别取出两个坐标。"
+      ],
+      "answer": {
+        "code": "point = (3, 4)\nprint(point[0])\nprint(point[1])\n",
+        "stdout": "3\n4\n",
+        "stdin": ""
+      }
+    },
+    {
+      "title": "只数不同城市",
+      "problem": "北京、上海、北京，一共几个不同城市？",
+      "steps": [
+        "集合自动保留不同值。",
+        "北京虽出现两次，只计一次。"
+      ],
+      "answer": {
+        "code": "cities = {\"北京\", \"上海\", \"北京\"}\nprint(len(cities))\nprint(\"北京\" in cities)\n",
+        "stdout": "2\nTrue\n",
+        "stdin": ""
+      }
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "tuples-sets-m1",
+      "claim": "集合会保留每一次重复出现。",
+      "correction": "集合只保留不同值；要保留重复用列表。"
+    },
+    {
+      "id": "tuples-sets-m2",
+      "claim": "{} 就是空集合。",
+      "correction": "{} 是空字典，空集合用 set()。"
+    }
+  ],
+  "practice": [
+    {
+      "problem": "元组 (5, 8) 的第二项是多少？",
+      "hint": "位置是 1。",
+      "solution": [
+        "读取 point[1]。"
+      ],
+      "answer": {
+        "code": "point = (5, 8)\nprint(point[1])\n",
+        "stdout": "8\n",
+        "stdin": ""
+      },
+      "id": "tuples-sets-p1",
+      "difficulty": 1,
+      "misconceptionTags": [
+        "tuples-sets-m1"
+      ]
+    },
+    {
+      "problem": "列表 [1, 1, 2] 转成集合后有几个值？",
+      "hint": "set 可以把列表转成集合。",
+      "solution": [
+        "重复的 1 只留一次。"
+      ],
+      "answer": {
+        "code": "values = set([1, 1, 2])\nprint(len(values))\n",
+        "stdout": "2\n",
+        "stdin": ""
+      },
+      "id": "tuples-sets-p2",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "tuples-sets-m2"
+      ]
+    },
+    {
+      "problem": "判断 3 是否在集合 {1, 2} 中。",
+      "hint": "用 in。",
+      "solution": [
+        "3 没出现过，结果 False。"
+      ],
+      "answer": {
+        "code": "values = {1, 2}\nprint(3 in values)\n",
+        "stdout": "False\n",
+        "stdin": ""
+      },
+      "id": "tuples-sets-p3",
+      "difficulty": 3,
+      "misconceptionTags": [
+        "tuples-sets-m1"
+      ]
+    },
+    {
+      "problem": "创建空集合，再查看长度。",
+      "hint": "不要写 {}。",
+      "solution": [
+        "set() 建立空集合。",
+        "长度为 0。"
+      ],
+      "answer": {
+        "code": "values = set()\nprint(len(values))\n",
+        "stdout": "0\n",
+        "stdin": ""
+      },
+      "id": "tuples-sets-p4",
+      "difficulty": 3,
+      "misconceptionTags": [
+        "tuples-sets-m2"
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "需要保留购物清单的顺序和重复项，该选什么？",
+    "correctIndex": 1,
+    "choices": [
+      "集合",
+      "列表",
+      "用集合的位置 0 读取第一项"
+    ],
+    "explanation": "不同需求决定容器；清单顺序和重复用列表。",
+    "feedback": [
+      "集合会去重，也没有列表式的位置。",
+      "对，列表保留顺序与重复。",
+      "集合不能用位置 0 取第一项。"
+    ]
+  },
+  "prerequisites": [
+    "dictionaries"
+  ],
+  "difficulty": 3,
+  "misconceptionTags": [
+    "tuples-sets-m1",
+    "tuples-sets-m2"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.2.0",
+    "status": "revised",
+    "humanReviewed": false
+  },
+  "sources": [
+    "python-tutorial",
+    "python-data"
+  ],
+  "furtherReading": []
+}

@@ -7,7 +7,7 @@ import {
   Search,
   X,
 } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import { type Progress } from "./components/Practice";
 import { parseRoute } from "./lib/navigation";
 
@@ -34,6 +34,7 @@ import {
   ReferencePage,
   SearchPage,
 } from "./pages/Resources";
+const PythonPreview = lazy(() => import("./pages/PythonPreview"));
 export default function App() {
   const [route, setRoute] = useState(() => parseRoute(location.hash));
   const [progress, setProgress] = useState<Progress>(initialProgress);
@@ -82,7 +83,10 @@ export default function App() {
     return () => window.removeEventListener("hashchange", changed);
   }, []);
   useEffect(() => {
-    document.title = labelFor(route) + " · AI University";
+    document.title =
+      (route.path === "python" || route.path.startsWith("python/")
+        ? "Python 编程入门 · 投稿预览"
+        : labelFor(route)) + " · AI University";
     window.scrollTo({ top: 0, behavior: "instant" });
     if (!firstLoad.current)
       document.getElementById("main")?.focus({ preventScroll: true });
@@ -123,6 +127,19 @@ export default function App() {
     clear,
     storageOk,
   };
+  if (route.path === "python" || route.path.startsWith("python/")) {
+    return (
+      <Suspense
+        fallback={
+          <p role="status" style={{ padding: 40 }}>
+            正在打开 Python 教材…
+          </p>
+        }
+      >
+        <PythonPreview path={route.path} />
+      </Suspense>
+    );
+  }
   return (
     <State.Provider value={state}>
       <a
@@ -135,11 +152,7 @@ export default function App() {
       >
         跳到正文
       </a>
-      <header
-        className={
-          "site-header immersive-header"
-        }
-      >
+      <header className={"site-header immersive-header"}>
         <div className="header-inner">
           <Link to="home" className="brand" aria-label="AI University 首页">
             <span className="brand-mark">
@@ -159,9 +172,16 @@ export default function App() {
               <Link
                 key={id}
                 to={id}
-                aria-current={route.path === id || route.path.startsWith(id + "/") || (id === "library" && (reader || route.path === BOOK)) ? "page" : undefined}
+                aria-current={
+                  route.path === id ||
+                  route.path.startsWith(id + "/") ||
+                  (id === "library" && (reader || route.path === BOOK))
+                    ? "page"
+                    : undefined
+                }
                 className={
-                  route.path === id || route.path.startsWith(id + "/") ||
+                  route.path === id ||
+                  route.path.startsWith(id + "/") ||
                   (id === "library" && (reader || route.path === BOOK))
                     ? "active"
                     : ""

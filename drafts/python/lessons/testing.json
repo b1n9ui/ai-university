@@ -1,0 +1,233 @@
+{
+  "id": "testing",
+  "chapterId": "chapter-5",
+  "number": "5.3",
+  "title": "测试与边界验证",
+  "subtitle": "先写清输入和正确结果，再反复比较程序结果。",
+  "concept": "先写清输入和正确结果，再反复比较程序结果。",
+  "intuition": "给同一台机器几份已知答案的小题，检查它是否一直算对。",
+  "objectives": [
+    "先自己算预期答案",
+    "用 assert 做一个检查",
+    "覆盖正常情况和边界"
+  ],
+  "body": [
+    {
+      "title": "先自己算预期答案",
+      "text": "我们有一个翻倍函数。输入 3，手算预期是 6；输入 0，预期是 0；输入 -2，预期是 -4。不要用待测函数自己生成“正确答案”，否则同一个错误会出现在两边。测试就是把这些小检查保存下来，改代码后再运行。"
+    },
+    {
+      "title": "用 assert 做一个检查",
+      "text": "assert double(3) == 6 表示“这里必须成立”。== 是相等判断。成立就继续，不输出文字；不成立就产生 AssertionError，让我们看到失败。最后 print(\"检查通过\") 说明程序走过了这些检查。运行测试不要使用 Python 的 -O 选项，它会跳过 assert。"
+    },
+    {
+      "title": "覆盖正常情况和边界",
+      "text": "只有输入 3 通过还不够；试 0、负数和能暴露错误的值。一个测试通过不代表所有情况都正确，但明确的边界能防止已经发现的问题回来。项目附录使用标准库 unittest 批量运行检查；先学会输入、预期、比较这三个动作。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "测试把实际结果与独立确定的预期比较；assert 要求这个判断成立。",
+    "conditions": [
+      "预期答案独立手算；测试时不要使用会禁用 assert 的 -O 选项。"
+    ]
+  },
+  "derivation": [
+    {
+      "text": "手算预期分别为 6、0、-4。"
+    },
+    {
+      "text": "assert 比较每个实际结果。"
+    },
+    {
+      "text": "所有检查成立后显示检查通过。"
+    }
+  ],
+  "interactiveVisual": {
+    "kind": "python-trace",
+    "prediction": "输入 3，正确答案 6；若预期误写为 5 会怎样？",
+    "caption": "先选一个输入，写下预测，再点“下一步”。箭头指向下一条将执行的语句；右侧显示此刻的变量和已经产生的输出。",
+    "experiment": {
+      "code": "def double(number):\n    return number * 2\n\nactual = double(3)\nexpected = 6\nif actual == expected:\n    print(\"检查通过\")\nelse:\n    print(\"检查失败\")\n",
+      "stdout": "检查通过\n",
+      "stdin": ""
+    },
+    "followUp": "只改预期答案，观察比较结果。这是 assert 判断的展开。",
+    "codeTemplate": "def double(number):\n    return number * 2\n\nactual = double({{number}})\nexpected = {{expected}}\nif actual == expected:\n    print(\"检查通过\")\nelse:\n    print(\"检查失败\")\n",
+    "controls": [
+      {
+        "name": "number",
+        "label": "函数输入",
+        "values": [
+          0,
+          3,
+          -2
+        ],
+        "defaultIndex": 1
+      },
+      {
+        "name": "expected",
+        "label": "你填写的预期",
+        "values": [
+          0,
+          5,
+          6,
+          -4
+        ],
+        "defaultIndex": 2
+      }
+    ],
+    "watch": [
+      "number",
+      "actual",
+      "expected"
+    ]
+  },
+  "workedExamples": [
+    {
+      "title": "检查一台翻倍机器",
+      "problem": "验证正常值、零和负数。",
+      "steps": [
+        "手算预期分别为 6、0、-4。",
+        "assert 比较每个实际结果。",
+        "所有检查成立后显示检查通过。"
+      ],
+      "answer": {
+        "code": "def double(number):\n    return number * 2\n\nassert double(3) == 6\nassert double(0) == 0\nassert double(-2) == -4\nprint(\"检查通过\")\n",
+        "stdout": "检查通过\n",
+        "stdin": ""
+      }
+    },
+    {
+      "title": "看见一次失败",
+      "problem": "假设把翻倍错写成加 2，用输入 3 检查。",
+      "steps": [
+        "错误函数返回 5。",
+        "预期是 6，assert 不成立。",
+        "捕获 AssertionError 只是为了展示本例失败；正式测试让它直接报错。"
+      ],
+      "answer": {
+        "code": "def double(number):\n    return number + 2\n\ntry:\n    assert double(3) == 6\nexcept AssertionError:\n    print(\"检查失败：输入 3 应得到 6\")\n",
+        "stdout": "检查失败：输入 3 应得到 6\n",
+        "stdin": ""
+      }
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "testing-m1",
+      "claim": "正确答案可以再次调用同一个待测函数生成。",
+      "correction": "相同错误可能出现在两边；预期应独立确定。"
+    },
+    {
+      "id": "testing-m2",
+      "claim": "一个正常输入通过，就代表所有情况都正确。",
+      "correction": "补充零、空列表和错误输入等边界，测试支持已检查的情况。"
+    }
+  ],
+  "practice": [
+    {
+      "problem": "为 add_one(3) 写一个检查。",
+      "hint": "手算预期是 4。",
+      "solution": [
+        "比较实际与 4。"
+      ],
+      "answer": {
+        "code": "def add_one(number):\n    return number + 1\n\nassert add_one(3) == 4\nprint(\"通过\")\n",
+        "stdout": "通过\n",
+        "stdin": ""
+      },
+      "id": "testing-p1",
+      "difficulty": 1,
+      "misconceptionTags": [
+        "testing-m1"
+      ]
+    },
+    {
+      "problem": "为 add_one(0) 写一个边界检查。",
+      "hint": "预期是 1。",
+      "solution": [
+        "零输入也应加 1。"
+      ],
+      "answer": {
+        "code": "def add_one(number):\n    return number + 1\n\nassert add_one(0) == 1\nprint(\"通过\")\n",
+        "stdout": "通过\n",
+        "stdin": ""
+      },
+      "id": "testing-p2",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "testing-m2"
+      ]
+    },
+    {
+      "problem": "检查空列表总和是 0。",
+      "hint": "手算没有项目可加。",
+      "solution": [
+        "total_of([]) 应返回 0。"
+      ],
+      "answer": {
+        "code": "def total_of(values):\n    total = 0\n    for value in values:\n        total = total + value\n    return total\n\nassert total_of([]) == 0\nprint(\"通过\")\n",
+        "stdout": "通过\n",
+        "stdin": ""
+      },
+      "id": "testing-p3",
+      "difficulty": 3,
+      "misconceptionTags": [
+        "testing-m1"
+      ]
+    },
+    {
+      "problem": "检查 3 颗糖每袋 5 颗，完整袋数是 0，余数是 3。",
+      "hint": "分别检查两个结果。",
+      "solution": [
+        "用两个 assert 比较手算答案。"
+      ],
+      "answer": {
+        "code": "assert 3 // 5 == 0\nassert 3 % 5 == 3\nprint(\"通过\")\n",
+        "stdout": "通过\n",
+        "stdin": ""
+      },
+      "id": "testing-p4",
+      "difficulty": 3,
+      "misconceptionTags": [
+        "testing-m2"
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "给待测函数准备正确答案时，应该怎么做？",
+    "correctIndex": 1,
+    "choices": [
+      "再调用同一个函数得出预期",
+      "独立手算一个小输入",
+      "只要没报错就算通过"
+    ],
+    "explanation": "预期结果应来自独立核对，才能发现函数的计算错误。",
+    "feedback": [
+      "相同的错误可能出现在两边，比较就发现不了。",
+      "对，独立算出预期，再与程序结果比较。",
+      "不报错也可能给出错误答案。"
+    ]
+  },
+  "prerequisites": [
+    "json-csv",
+    "functions",
+    "exceptions"
+  ],
+  "difficulty": 5,
+  "misconceptionTags": [
+    "testing-m1",
+    "testing-m2"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.2.0",
+    "status": "revised",
+    "humanReviewed": false
+  },
+  "sources": [
+    "python-tutorial",
+    "python-unittest"
+  ],
+  "furtherReading": []
+}

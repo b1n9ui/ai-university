@@ -1,0 +1,227 @@
+{
+  "id": "capstone",
+  "chapterId": "chapter-5",
+  "number": "5.4",
+  "title": "综合项目：本地消费汇总器",
+  "subtitle": "把读取、检查、计算、显示四步接起来，完成一个费用汇总工具。",
+  "concept": "把读取、检查、计算、显示四步接起来，完成一个费用汇总工具。",
+  "intuition": "先把账单读清楚，确认金额有效，再按类别汇总，最后显示报表。",
+  "objectives": [
+    "先做能手算的小账单",
+    "把责任分成四步",
+    "最后才接上命令行外壳"
+  ],
+  "body": [
+    {
+      "title": "先做能手算的小账单",
+      "text": "食品 125 分、交通 200 分、食品 75 分。自己先算：食品 200 分，交通 200 分，总计 400 分。主线先用内存里的三条记录，把第 3 章的列表、字典和第 4 章的函数组合起来；不要一开始同时加入文件、命令行和测试。"
+    },
+    {
+      "title": "把责任分成四步",
+      "text": "第一步读取 CSV（第 5.2 节）；第二步检查列名、类别和整数分金额，零和负数要拒绝（第 4.4 节）；第三步用字典累加同一类别（第 3.2 节）；第四步稳定地显示结果。先验证第三步，再接文件输入。附录提供完整源码，每个函数都能找到对应步骤。"
+    },
+    {
+      "title": "最后才接上命令行外壳",
+      "text": "把附录源码与 sample.csv 保存到同一文件夹，在终端进入该目录。先运行 python3 expense_report.py --help 查看输入格式，再运行 python3 expense_report.py sample.csv。本项目把记录金额保存为整数分，显示时才换算成元。CLI 意思是“用终端命令输入参数”；argparse 帮我们读取文件名。完整测试文件里的 class 是 unittest 的固定组织模板，面向对象机制留给后续课程。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "费用工具按读取、验证、汇总、显示分步完成；本项目每条金额是正整数分。",
+    "conditions": [
+      "每条记录金额按正整数分处理；零和负数、缺失列、空类别和非法金额应明确拒绝。",
+      "没有记录时，总计是 0；这与一条金额为 0 的非法记录不同。"
+    ]
+  },
+  "derivation": [
+    {
+      "text": "每条记录都是含 category、amount 的字典。"
+    },
+    {
+      "text": "首次遇到类别，从 0 开始累加。"
+    },
+    {
+      "text": "食品为 125 + 75，交通为 200；全部共 400。"
+    }
+  ],
+  "interactiveVisual": {
+    "kind": "python-trace",
+    "prediction": "最后一条由 75 分改为 50 分，总计会是多少？",
+    "caption": "先选一个输入，写下预测，再点“下一步”。箭头指向下一条将执行的语句；右侧显示此刻的变量和已经产生的输出。",
+    "experiment": {
+      "code": "amounts = [125, 200, 75]\ntotal = 0\nfor amount in amounts:\n    total = total + amount\nprint(total)\n",
+      "stdout": "400\n",
+      "stdin": ""
+    },
+    "followUp": "选 75 分，逐项核对总计 125 → 325 → 400。",
+    "codeTemplate": "amounts = [125, 200, {{extra}}]\ntotal = 0\nfor amount in amounts:\n    total = total + amount\nprint(total)\n",
+    "controls": [
+      {
+        "name": "extra",
+        "label": "最后一条金额（分）",
+        "values": [
+          50,
+          75,
+          100,
+          125
+        ],
+        "defaultIndex": 1
+      }
+    ],
+    "watch": [
+      "amounts",
+      "amount",
+      "total"
+    ]
+  },
+  "workedExamples": [
+    {
+      "title": "先完成汇总核心",
+      "problem": "把三条小账单按类别求和。 本段约定记录已经检查过，金额为正整数分。",
+      "steps": [
+        "每条记录都是含 category、amount 的字典。",
+        "首次遇到类别，从 0 开始累加。",
+        "食品为 125 + 75，交通为 200；全部共 400。"
+      ],
+      "answer": {
+        "code": "records = [\n    {\"category\": \"食品\", \"amount\": 125},\n    {\"category\": \"交通\", \"amount\": 200},\n    {\"category\": \"食品\", \"amount\": 75},\n]\ntotals = {}\ntotal = 0\nfor record in records:\n    category = record[\"category\"]\n    amount = record[\"amount\"]\n    totals[category] = totals.get(category, 0) + amount\n    total = total + amount\nprint(totals[\"食品\"])\nprint(totals[\"交通\"])\nprint(total)\n",
+        "stdout": "200\n200\n400\n",
+        "stdin": ""
+      }
+    },
+    {
+      "title": "显示时才换算为元",
+      "problem": "把 375 分显示成 3.75 元。",
+      "steps": [
+        "先用整数分得到总额。",
+        "除以 100 把单位换成元。",
+        "f 文字中的 :.2f 表示只在显示时保留两位小数；内部账目仍保留整数分。"
+      ],
+      "answer": {
+        "code": "cents = 125 * 3\nprint(f\"{cents / 100:.2f} 元\")\n",
+        "stdout": "3.75 元\n",
+        "stdin": ""
+      }
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "capstone-m1",
+      "claim": "能转成整数的金额都可以计入账单。",
+      "correction": "每条金额还必须大于 0；零和负数在本项目中拒绝。"
+    },
+    {
+      "id": "capstone-m2",
+      "claim": "错误输入可以默默改成 0。",
+      "correction": "明确报错，让使用者修正输入，避免隐藏数据问题。"
+    }
+  ],
+  "practice": [
+    {
+      "problem": "同一类别的 100 分和 50 分，合计多少？",
+      "hint": "先在一个键上累加。",
+      "solution": [
+        "结果 150 分。"
+      ],
+      "answer": {
+        "code": "totals = {}\nfor amount in [100, 50]:\n    totals[\"食品\"] = totals.get(\"食品\", 0) + amount\nprint(totals[\"食品\"])\n",
+        "stdout": "150\n",
+        "stdin": ""
+      },
+      "id": "capstone-p1",
+      "difficulty": 1,
+      "misconceptionTags": [
+        "capstone-m1"
+      ]
+    },
+    {
+      "problem": "把 150 分显示为元，保留两位小数。",
+      "hint": "使用本节的 :.2f。",
+      "solution": [
+        "除以 100，显示为 1.50。"
+      ],
+      "answer": {
+        "code": "cents = 150\nprint(f\"{cents / 100:.2f} 元\")\n",
+        "stdout": "1.50 元\n",
+        "stdin": ""
+      },
+      "id": "capstone-p2",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "capstone-m2"
+      ]
+    },
+    {
+      "problem": "检查金额 0 分和 -1 分：本项目约定每条金额必须大于 0。",
+      "hint": "检查 amount <= 0。",
+      "solution": [
+        "逐个检查 0、-1。",
+        "两者都不是正整数分，应该被拒绝。"
+      ],
+      "answer": {
+        "code": "for amount in [0, -1]:\n    if amount <= 0:\n        print(\"金额必须大于 0\")\n    else:\n        print(amount)\n",
+        "stdout": "金额必须大于 0\n金额必须大于 0\n",
+        "stdin": ""
+      },
+      "id": "capstone-p3",
+      "difficulty": 3,
+      "misconceptionTags": [
+        "capstone-m1"
+      ]
+    },
+    {
+      "problem": "没有记录时，总计多少分？",
+      "hint": "累加从 0 开始。",
+      "solution": [
+        "循环不执行，总计为 0。"
+      ],
+      "answer": {
+        "code": "total = 0\nfor amount in []:\n    total = total + amount\nprint(total)\n",
+        "stdout": "0\n",
+        "stdin": ""
+      },
+      "id": "capstone-p4",
+      "difficulty": 3,
+      "misconceptionTags": [
+        "capstone-m2"
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "工具读到负金额，怎样处理才符合本项目约定？",
+    "correctIndex": 1,
+    "choices": [
+      "直接加进去，反正能计算",
+      "说明错误并拒绝这条输入",
+      "默默改成 0"
+    ],
+    "explanation": "本项目每条记录只接收正整数分；零和负数都应明确拒绝。",
+    "feedback": [
+      "能做算术不等于符合输入要求。",
+      "对，先验证，再汇总。",
+      "默默改值会让报表看似成功，却隐藏了原始数据问题。"
+    ]
+  },
+  "prerequisites": [
+    "testing",
+    "dictionaries",
+    "json-csv"
+  ],
+  "difficulty": 5,
+  "misconceptionTags": [
+    "capstone-m1",
+    "capstone-m2"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.2.0",
+    "status": "revised",
+    "humanReviewed": false
+  },
+  "sources": [
+    "python-tutorial",
+    "python-csv",
+    "python-argparse",
+    "python-pathlib"
+  ],
+  "furtherReading": []
+}

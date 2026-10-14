@@ -1,0 +1,219 @@
+{
+  "id": "debugging",
+  "chapterId": "chapter-2",
+  "number": "2.4",
+  "title": "读报错与调试",
+  "subtitle": "程序不符合预期时，先找最早出错的一步，再只改一处。",
+  "concept": "程序不符合预期时，先找最早出错的一步，再只改一处。",
+  "intuition": "检查一道计算题：不能只看答案，要找第一步算错的位置。",
+  "objectives": [
+    "先写下本来应该发生什么",
+    "区分报错和算错",
+    "修好后再试邻近输入"
+  ],
+  "body": [
+    {
+      "title": "先写下本来应该发生什么",
+      "text": "准备检查“1 到 3 的和”。不用程序也能算出 6，这就是预期结果。程序给出 3 时，先别改很多行；列出它真正取过的 number，找出 3 为什么没有被加进去。"
+    },
+    {
+      "title": "区分报错和算错",
+      "text": "报错会给出提示。例如拼错变量名常出现 NameError，数字和文字混用常出现 TypeError。先看提示最后一行的错误名称，再按行号找代码。能运行但得到 3 而不是 6，则是逻辑错误：Python 执行了你的指令，只是指令没有表达原意。"
+    },
+    {
+      "title": "修好后再试邻近输入",
+      "text": "range(1, 3) 不包含 3，应改成 range(1, 4)。修好后再试终点 1、2、3；不能只靠一个例子判断完成。必要时临时 print(number)，显示执行中间的值，检查后再删掉。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "调试先确定预期，再观察实际步骤；找最早的差异，一次改一处。",
+    "conditions": [
+      "每段示例都从头独立运行；先按本节给出的输入观察，再改变一处。"
+    ]
+  },
+  "derivation": [
+    {
+      "text": "手算预期为 6。"
+    },
+    {
+      "text": "range(1, 3) 只取 1、2，漏掉 3。"
+    },
+    {
+      "text": "终点改成 4 后，总数是 6。"
+    }
+  ],
+  "interactiveVisual": {
+    "kind": "python-trace",
+    "prediction": "目标是 1 + 2 + 3；终点写 3 还是 4？",
+    "caption": "先选一个输入，写下预测，再点“下一步”。箭头指向下一条将执行的语句；右侧显示此刻的变量和已经产生的输出。",
+    "experiment": {
+      "code": "stop = 3\ntotal = 0\nfor number in range(1, stop):\n    total = total + number\nprint(total)\n",
+      "stdout": "3\n",
+      "stdin": ""
+    },
+    "followUp": "先选 3 找出漏掉的一轮，再选 4 检查修复。",
+    "codeTemplate": "stop = {{stop}}\ntotal = 0\nfor number in range(1, stop):\n    total = total + number\nprint(total)\n",
+    "controls": [
+      {
+        "name": "stop",
+        "label": "range 的终点",
+        "values": [
+          3,
+          4
+        ],
+        "defaultIndex": 0
+      }
+    ],
+    "watch": [
+      "stop",
+      "number",
+      "total"
+    ]
+  },
+  "workedExamples": [
+    {
+      "title": "漏掉最后一个数",
+      "problem": "修正求 1 到 3 的和。",
+      "steps": [
+        "手算预期为 6。",
+        "range(1, 3) 只取 1、2，漏掉 3。",
+        "终点改成 4 后，总数是 6。"
+      ],
+      "answer": {
+        "code": "total = 0\nfor number in range(1, 4):\n    total = total + number\nprint(total)\n",
+        "stdout": "6\n",
+        "stdin": ""
+      }
+    },
+    {
+      "title": "先看中间值",
+      "problem": "用输出核对每轮发生了什么。",
+      "steps": [
+        "循环内显示 number。",
+        "循环外显示 total，用来检查最终答案。"
+      ],
+      "answer": {
+        "code": "total = 0\nfor number in range(1, 4):\n    print(number)\n    total = total + number\nprint(total)\n",
+        "stdout": "1\n2\n3\n6\n",
+        "stdin": ""
+      }
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "debugging-m1",
+      "claim": "程序没有报错，答案就一定正确。",
+      "correction": "还要把实际结果与独立手算的预期比较。"
+    },
+    {
+      "id": "debugging-m2",
+      "claim": "发现错了就把多行一起改掉。",
+      "correction": "一次改一处，重跑小例子，更容易知道修复是否有效。"
+    }
+  ],
+  "practice": [
+    {
+      "problem": "要显示 name 的值，修正写成 nmae 的拼写。",
+      "hint": "每次使用同一个名字。",
+      "solution": [
+        "把读取处改为 name。"
+      ],
+      "answer": {
+        "code": "name = \"小林\"\nprint(name)\n",
+        "stdout": "小林\n",
+        "stdin": ""
+      },
+      "id": "debugging-p1",
+      "difficulty": 1,
+      "misconceptionTags": [
+        "debugging-m1"
+      ]
+    },
+    {
+      "problem": "修正文字 \"3\" 与数字 2 的相加。",
+      "hint": "先做整数转换。",
+      "solution": [
+        "int(\"3\") 得到数字 3。"
+      ],
+      "answer": {
+        "code": "count = int(\"3\")\nprint(count + 2)\n",
+        "stdout": "5\n",
+        "stdin": ""
+      },
+      "id": "debugging-p2",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "debugging-m2"
+      ]
+    },
+    {
+      "problem": "求 1 到 2 的和，并显示每次加的数。",
+      "hint": "range 终点写 3。",
+      "solution": [
+        "显示 1、2。",
+        "总数为 3。"
+      ],
+      "answer": {
+        "code": "total = 0\nfor number in range(1, 3):\n    print(number)\n    total = total + number\nprint(total)\n",
+        "stdout": "1\n2\n3\n",
+        "stdin": ""
+      },
+      "id": "debugging-p3",
+      "difficulty": 3,
+      "misconceptionTags": [
+        "debugging-m1"
+      ]
+    },
+    {
+      "problem": "一个修复还要测试终点 0，预期应该是多少？",
+      "hint": "没有数可加时 total 保持 0。",
+      "solution": [
+        "循环不执行。"
+      ],
+      "answer": {
+        "code": "total = 0\nfor number in range(1, 1):\n    total = total + number\nprint(total)\n",
+        "stdout": "0\n",
+        "stdin": ""
+      },
+      "id": "debugging-p4",
+      "difficulty": 3,
+      "misconceptionTags": [
+        "debugging-m2"
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "求 1 到 3 的和却得到 3，range(1, 3) 错在哪？",
+    "correctIndex": 1,
+    "choices": [
+      "加法不能放进循环",
+      "终点没有包含 3",
+      "应该把 total 初始化为 3"
+    ],
+    "explanation": "range 的终点不包含；要取到 3 就写到 4。",
+    "feedback": [
+      "加法可以在循环里逐次累加。",
+      "对，程序只加了 1 和 2。",
+      "初始值应是 0；改成 3 会掩盖漏数的问题。"
+    ]
+  },
+  "prerequisites": [
+    "while-stop"
+  ],
+  "difficulty": 2,
+  "misconceptionTags": [
+    "debugging-m1",
+    "debugging-m2"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.2.0",
+    "status": "revised",
+    "humanReviewed": false
+  },
+  "sources": [
+    "python-tutorial",
+    "python-errors"
+  ],
+  "furtherReading": []
+}
