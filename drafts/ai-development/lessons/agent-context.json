@@ -1,0 +1,206 @@
+{
+  "id": "agent-context",
+  "chapterId": "chapter-4",
+  "number": "4.1",
+  "title": "先让 Agent 了解真实项目",
+  "subtitle": "用文件事实替代脑补。",
+  "concept": "给 Agent 用户目标、当前项目、相关文件、运行方式和边界；让它把事实、假设与未知分开。",
+  "intuition": "请新同事接手厨房，需要给菜单和设备位置，而不是只说“你是顶级大厨”。",
+  "objectives": [
+    "提供当前需求、真实文件位置、运行方法和边界。",
+    "对照文件确认计划，再把稳定约定写入项目说明。"
+  ],
+  "body": [
+    {
+      "title": "给相关材料，不倒入所有内容",
+      "text": "提供当前需求、README、相关文件路径和错误原文，说明文件是你提供的还是 Agent 已实际读取的。不要让它说“我已看过仓库”却只看见一段截图。上下文是完成当前任务所需信息，几十页聊天并不一定有用；把已经确认的约定写成一页项目说明，减少反复遗忘。"
+    },
+    {
+      "title": "先形成可以核对的地图",
+      "text": "请 Agent 先指出入口、现有实现、可能要改的文件和验证命令，再做改动。你对照文件检查它的理解。对于明确而小的修改，不必每一步都停下来审批；对于是否同步、是否删数据这类改变方向的未知，要求先问清楚，不能默默假设。"
+    },
+    {
+      "title": "给文档准确的地位",
+      "text": "不同工具可能支持 AGENTS.md、其他约定文件或自己的配置；本书不假设所有工具自动读同一种文件。可以把 README、范围和验收做成项目说明，在会话中明确要求读取。文件里的指令也需要符合你的真实授权；第三方文档要求上传密钥不因为被读取就合法。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "给 Agent 用户目标、当前项目、相关文件、运行方式和边界；让它把事实、假设与未知分开。",
+    "conditions": [
+      "面向个人、小规模学习项目；团队协作需遵守所在仓库的约定。",
+      "本节方法帮助留下可检查的证据，不能保证任意 AI 输出正确。"
+    ]
+  },
+  "workflow": [
+    "提供当前需求、真实文件位置、运行方法和边界。",
+    "要求把已经读取的事实、推测与关键未知分开。",
+    "对照文件确认计划，再把稳定约定写入项目说明。"
+  ],
+  "workedExamples": [
+    {
+      "title": "第一次接手项目",
+      "problem": "怎样请 Agent 先理解学习清单？",
+      "steps": [
+        "给出用户场景和首版范围。",
+        "指出 README、package.json 和入口文件。",
+        "要求返回文件职责与验证命令。"
+      ],
+      "answer": "先阅读 README.md、package.json、index.html、app.mjs、tasks.mjs。当前是个人单浏览器学习清单，不做账号和同步。请列出已读取的文件、一次添加的数据路径、现有测试命令和你仍不确定的地方。暂不改代码。"
+    },
+    {
+      "title": "区分事实和假设",
+      "problem": "Agent 说“这是 React 项目”，但文件没有 React 依赖。",
+      "steps": [
+        "查 package.json 和 HTML 入口。",
+        "指出事实是原生模块，不是 React。",
+        "要求更新方案，避免无缘由引入框架。"
+      ],
+      "answer": "请引用判断所用文件。当前 index.html 用 type=module 加载 app.mjs，配置没有 React。按现有结构完成任务；如果认为需新增框架，先说明具体必要性及成本。"
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "提示词越长越容易正确。",
+      "correction": "相关事实比长度有用，重复旧讨论还可能冲突。"
+    },
+    {
+      "claim": "角色写得厉害就不需要项目资料。",
+      "correction": "角色描述不能替代真实文件、约束与验收。"
+    }
+  ],
+  "practice": [
+    {
+      "id": "agent-context-p1",
+      "difficulty": 1,
+      "problem": "修保存问题，至少提供哪些材料？",
+      "hint": "沿保存路径找相关事实。",
+      "answer": "刷新复现步骤、网址、错误原文、app.mjs 保存读取逻辑、README 范围和测试方式。",
+      "solution": [
+        "让 Agent 知道哪里坏了。",
+        "不需要默认提供所有私人文件。"
+      ]
+    },
+    {
+      "id": "agent-context-p2",
+      "difficulty": 2,
+      "problem": "AI 声称读过文件，如何核对？",
+      "hint": "让结论能回到具体位置。",
+      "answer": "要求给出已读文件列表和相关实现说明，再对照真实文件。",
+      "solution": [
+        "不要只问有没有读。",
+        "检查它说的入口或函数是否确实存在。"
+      ]
+    },
+    {
+      "id": "agent-context-p3",
+      "difficulty": 3,
+      "problem": "哪些未知必须先确认？",
+      "hint": "会改变数据、权限或范围的。",
+      "answer": "是否允许替换旧数据、是否需要同步、能否新增外部服务等。",
+      "solution": [
+        "小实现细节可自主解决。",
+        "方向性未知不能默默猜。"
+      ]
+    },
+    {
+      "id": "agent-context-p4",
+      "difficulty": 4,
+      "problem": "AGENTS.md 是否所有工具都自动生效？",
+      "hint": "工具能力不同。",
+      "answer": "不是；查所用工具约定，并明确要求读取项目说明。",
+      "solution": [
+        "文件名不构成通用魔法。",
+        "重要约定在当前会话也说清楚。"
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "最有用的上下文是？",
+    "choices": [
+      "你是世界最强工程师",
+      "相关文件、现状、目标和验收",
+      "所有聊天历史不加整理"
+    ],
+    "correctIndex": 1,
+    "feedback": [
+      "角色不能提供项目事实。",
+      "能帮助识别正确改动位置与验证方式。",
+      "无关材料可能掩盖当前任务。"
+    ]
+  },
+  "interactiveVisual": {
+    "kind": "prompt",
+    "prediction": "Agent 的理解图有一条错误，继续写代码会怎样？",
+    "steps": [
+      {
+        "question": "它猜用了 React。你先？",
+        "choices": [
+          "让它依据配置和入口重新核对",
+          "接受猜测",
+          "加入 React 证明它对"
+        ],
+        "correctIndex": 0,
+        "feedback": [
+          "先纠正事实才能减少无关改动。",
+          "方案可能建立在不存在的结构上。",
+          "实现不应为证明猜测而改变。"
+        ]
+      },
+      {
+        "question": "要不要跨设备同步尚未决定。",
+        "choices": [
+          "默认为需要",
+          "向你确认，记录范围",
+          "假装已实现"
+        ],
+        "correctIndex": 1,
+        "feedback": [
+          "这个决定影响架构和权限。",
+          "关键未知需要你的方向判断。",
+          "结论没有实现和证据。"
+        ]
+      },
+      {
+        "question": "最后应记录哪种材料？",
+        "choices": [
+          "稳定的范围、运行方式与约定",
+          "所有模型闲聊",
+          "真实密钥"
+        ],
+        "correctIndex": 0,
+        "feedback": [
+          "这些内容可帮助下一次会话接手。",
+          "闲聊会增加噪声。",
+          "秘密不能为了上下文写进项目。"
+        ]
+      }
+    ],
+    "followUp": "在提示词练习台写一份接手任务，逐项核对是否有对应项目事实。"
+  },
+  "prerequisites": [
+    "git-recovery"
+  ],
+  "difficulty": 3,
+  "misconceptionTags": [
+    "agent-context-guess",
+    "agent-context-evidence"
+  ],
+  "sources": [
+    "prompt",
+    "mdn-start"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.1.0",
+    "status": "first-edition",
+    "humanReviewed": false
+  },
+  "promptTemplate": {
+    "goal": "先了解项目，暂不修改代码。",
+    "context": "个人单浏览器学习清单。请读 README.md、package.json、index.html、app.mjs、tasks.mjs。",
+    "scope": "不做账号或同步；不上传私人内容，不引入新框架。",
+    "acceptance": "列出已读文件和职责；用一次添加解释数据路径；将事实、假设与未知分开。",
+    "verification": "对照实际文件；核对 npm start 与 npm test 对应的脚本，未执行请说明。",
+    "delivery": "项目地图、拟改位置、验证方式及需要我确认的问题。"
+  }
+}

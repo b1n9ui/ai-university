@@ -7,7 +7,7 @@ import {
   Search,
   X,
 } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import { type Progress } from "./components/Practice";
 import { parseRoute } from "./lib/navigation";
 
@@ -34,6 +34,7 @@ import {
   ReferencePage,
   SearchPage,
 } from "./pages/Resources";
+const AIDevelopmentPreview = lazy(() => import("./pages/AIDevelopmentPreview"));
 export default function App() {
   const [route, setRoute] = useState(() => parseRoute(location.hash));
   const [progress, setProgress] = useState<Progress>(initialProgress);
@@ -82,7 +83,11 @@ export default function App() {
     return () => window.removeEventListener("hashchange", changed);
   }, []);
   useEffect(() => {
-    document.title = labelFor(route) + " · AI University";
+    document.title =
+      (route.path === "ai-development" ||
+      route.path.startsWith("ai-development/")
+        ? "带着 AI 做项目 · 投稿预览"
+        : labelFor(route)) + " · AI University";
     window.scrollTo({ top: 0, behavior: "instant" });
     if (!firstLoad.current)
       document.getElementById("main")?.focus({ preventScroll: true });
@@ -123,6 +128,22 @@ export default function App() {
     clear,
     storageOk,
   };
+  if (
+    route.path === "ai-development" ||
+    route.path.startsWith("ai-development/")
+  ) {
+    return (
+      <Suspense
+        fallback={
+          <p role="status" style={{ padding: 40 }}>
+            正在打开 AI 辅助开发教材…
+          </p>
+        }
+      >
+        <AIDevelopmentPreview path={route.path} />
+      </Suspense>
+    );
+  }
   return (
     <State.Provider value={state}>
       <a

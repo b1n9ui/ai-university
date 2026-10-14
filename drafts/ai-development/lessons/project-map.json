@@ -1,0 +1,198 @@
+{
+  "id": "project-map",
+  "chapterId": "chapter-2",
+  "number": "2.1",
+  "title": "看懂文件夹里的分工",
+  "subtitle": "先找入口，再看每个文件为什么存在。",
+  "concept": "项目是一组协作的文件。读 README 找运行方法，再沿入口找到界面、逻辑、配置和测试。",
+  "intuition": "餐馆有菜单、厨房和账本；把它们全部堆在一张纸上，会很难修改。",
+  "objectives": [
+    "先读 README 和配置，确认入口与运行命令。",
+    "沿一个用户动作找到涉及的文件，不随意删除陌生文件。"
+  ],
+  "body": [
+    {
+      "title": "从说明文件开始",
+      "text": "打开一个陌生项目，先找 README。它应说明用途、运行步骤和限制。再看 package.json：这是 Node 项目的配置，scripts 是命令的短名字，dependencies 是需要安装的外部包。本案例没有第三方依赖；不要因此断言所有网页项目都不需要安装。"
+    },
+    {
+      "title": "沿入口看四类文件",
+      "text": "index.html 给浏览器页面结构，并引用 style.css 和 app.mjs。CSS 改外观，app.mjs 把按钮和数据连起来，tasks.mjs 保存添加、切换、删除等规则。tasks.test.mjs 检查规则。server.mjs 只在本机提供这些文件，README 解释怎么运行。先能指出责任，再考虑框架。"
+    },
+    {
+      "title": "读到能解释行为的程度",
+      "text": "你暂时不用理解每个语法细节，但要知道点击添加时谁接收输入、谁验证、谁保存、谁画页面。看到不懂的一行可以让 Agent 用具体输入解释，再自己对照文件。问“这一行删除前为什么要检查 ID？”比“把整个项目讲一下”更容易获得可验证回答。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "项目是一组协作的文件。读 README 找运行方法，再沿入口找到界面、逻辑、配置和测试。",
+    "conditions": [
+      "面向个人、小规模学习项目；团队协作需遵守所在仓库的约定。",
+      "本节方法帮助留下可检查的证据，不能保证任意 AI 输出正确。"
+    ]
+  },
+  "workflow": [
+    "先读 README 和配置，确认入口与运行命令。",
+    "把界面、逻辑、测试和工具文件分别指出来。",
+    "沿一个用户动作找到涉及的文件，不随意删除陌生文件。"
+  ],
+  "workedExamples": [
+    {
+      "title": "只改外观",
+      "problem": "希望按钮更大，优先看哪些文件？",
+      "steps": [
+        "找 CSS 中 button 的规则。",
+        "确认 HTML/JS 给按钮的结构与类名。",
+        "改后用窄屏和键盘检查。"
+      ],
+      "answer": "主要看 style.css；必要时核对 index.html 和 app.mjs。不要为了按钮大小去改数据结构或删除测试。"
+    },
+    {
+      "title": "只改标题限制",
+      "problem": "标题上限从 80 改为 100，影响哪里？",
+      "steps": [
+        "tasks.mjs 存在校验常量。",
+        "测试中存在 80 与 81 的边界。",
+        "说明与输入反馈也写了上限。"
+      ],
+      "answer": "先确认需求，然后同步修改规则、边界测试和 README；只改页面提示会让真正校验仍停在 80。"
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "看不懂的文件删掉就清爽了。",
+      "correction": "先查引用和用途，配置、锁文件与测试可能是运行必需。"
+    },
+    {
+      "claim": "AI 能改就不用知道入口。",
+      "correction": "理解入口能让你判断改动位置是否符合目标，也能帮助排错。"
+    }
+  ],
+  "practice": [
+    {
+      "id": "project-map-p1",
+      "difficulty": 1,
+      "problem": "CSS 和 tasks.mjs 分别管什么？",
+      "hint": "一个管外观，一个管数据规则。",
+      "answer": "CSS 管样式，tasks.mjs 管添加、切换、删除和备份格式。",
+      "solution": [
+        "按职责而非扩展名记忆功能。",
+        "规则改变应有测试，样式改变需看页面。"
+      ]
+    },
+    {
+      "id": "project-map-p2",
+      "difficulty": 2,
+      "problem": "如何查 npm start 实际执行什么？",
+      "hint": "看配置里的 scripts。",
+      "answer": "读取 package.json 的 scripts.start；本项目是 node server.mjs。",
+      "solution": [
+        "命令别名并不固定。",
+        "不要假设所有项目 start 都相同。"
+      ]
+    },
+    {
+      "id": "project-map-p3",
+      "difficulty": 3,
+      "problem": "下载了项目，却找不到打开方式，第一步？",
+      "hint": "先找说明，不猜命令。",
+      "answer": "读 README，核对工具版本和所在目录；缺失时请 Agent 查文件并补说明。",
+      "solution": [
+        "依据项目事实。",
+        "避免凭空运行不相关的命令。"
+      ]
+    },
+    {
+      "id": "project-map-p4",
+      "difficulty": 4,
+      "problem": "标题限制改了，为什么测试也可能要改？",
+      "hint": "测试约定了边界。",
+      "answer": "如果新需求确实改变上限，需要把正常和拒绝边界一起更新；不能只删失败断言。",
+      "solution": [
+        "先确认标准改变。",
+        "让测试反映新规则，保留拒绝输入的能力。"
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "想改按钮颜色，第一处应看？",
+    "choices": [
+      "style.css",
+      "所有文件全部重写",
+      "备份数据"
+    ],
+    "correctIndex": 0,
+    "feedback": [
+      "样式职责与目标对应。",
+      "扩大改动会让审阅更困难。",
+      "数据和颜色无关。"
+    ]
+  },
+  "interactiveVisual": {
+    "kind": "decision",
+    "prediction": "改动目标只是一处颜色，Agent 的文件列表合理吗？",
+    "steps": [
+      {
+        "question": "计划先读 README 和 CSS。",
+        "choices": [
+          "合理，知道运行和样式位置",
+          "浪费时间",
+          "直接删除配置"
+        ],
+        "correctIndex": 0,
+        "feedback": [
+          "先理解入口和样式有助于小范围修改。",
+          "这能避免改错地方。",
+          "配置可能是运行必要部分。"
+        ]
+      },
+      {
+        "question": "它还要重写 tasks.mjs。",
+        "choices": [
+          "要求说明与颜色的关系",
+          "直接接受",
+          "删测试配合"
+        ],
+        "correctIndex": 0,
+        "feedback": [
+          "无关逻辑变更应解释或移除。",
+          "可能改变数据行为。",
+          "削弱检查会掩盖错误。"
+        ]
+      },
+      {
+        "question": "最后交付什么证据？",
+        "choices": [
+          "“已改好”",
+          "修改文件与窄屏、键盘检查结果",
+          "模型很有自信"
+        ],
+        "correctIndex": 1,
+        "feedback": [
+          "缺少实际证据。",
+          "它们对应改动范围与体验标准。",
+          "自信程度不能替代页面检查。"
+        ]
+      }
+    ],
+    "followUp": "在项目附录里画出文件分工图，并指出一次添加涉及哪些文件。"
+  },
+  "prerequisites": [
+    "acceptance"
+  ],
+  "difficulty": 2,
+  "misconceptionTags": [
+    "project-map-guess",
+    "project-map-evidence"
+  ],
+  "sources": [
+    "mdn-start",
+    "node-test"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.1.0",
+    "status": "first-edition",
+    "humanReviewed": false
+  }
+}

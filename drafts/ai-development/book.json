@@ -1,0 +1,225 @@
+{
+  "id": "ai-development",
+  "title": "带着 AI 做项目",
+  "englishTitle": "Building Projects with AI",
+  "subtitle": "从会提需求，到会判断、验证与交付",
+  "version": "0.1.0",
+  "status": "contribution-draft",
+  "language": "zh-CN",
+  "audience": "用过 AI 写代码，但对项目开发缺少整体认识的人。不要求先学完 Python，不要求已有 Git 或终端经验。",
+  "baseline": "工具中立，以个人学习清单网页为贯穿案例。先在教材里练习判断，再在独立练习目录里动手。命令使用 Git 2.28+ 和 Node.js 22.12+ 的通用能力；实际验证环境见 QA.md。",
+  "outcomes": [
+    "把想法写成用户场景、首版边界和验收案例",
+    "解释文件、数据、浏览器与服务器各自负责什么",
+    "用 Git 留下小步提交，并说明本地提交、推送、PR 和上线的区别",
+    "给 Agent 真实上下文和清晰任务，读懂关键改动",
+    "通过复现、边界测试和对照需求决定是否接受结果",
+    "交付可运行、可备份、可回退并写清限制的小项目"
+  ],
+  "outOfScope": [
+    "成为职业工程师所需的完整算法与语言训练",
+    "多人实时同步、支付、身份验证和生产数据库实现",
+    "云平台账号注册、收费服务选型与自动部署",
+    "高级 Git 历史改写、复杂 rebase 与合并提交撤销",
+    "提示词效果保证、任意代码执行或运行时模型服务"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "humanReviewed": false,
+    "date": "2026-10-11"
+  },
+  "licenses": {
+    "content": "CC0-1.0",
+    "toolsAndProject": "MIT"
+  },
+  "chapters": [
+    {
+      "id": "chapter-1",
+      "title": "先想清楚要解决什么",
+      "objective": "写出一个真实使用场景，缩小首版，并约定可检查的完成标准。",
+      "lessons": [
+        "user-problem",
+        "small-scope",
+        "acceptance"
+      ]
+    },
+    {
+      "id": "chapter-2",
+      "title": "看懂项目怎样运行",
+      "objective": "找到项目入口、画出数据路径，按说明在本机运行。",
+      "lessons": [
+        "project-map",
+        "data-flow",
+        "run-environment"
+      ]
+    },
+    {
+      "id": "chapter-3",
+      "title": "用 Git 留下可回退的记录",
+      "objective": "区分工作区、暂存区与提交，理解分支、远端、PR 和恢复。",
+      "lessons": [
+        "git-snapshot",
+        "git-collaboration",
+        "git-recovery"
+      ]
+    },
+    {
+      "id": "chapter-4",
+      "title": "把 Agent 变成合作伙伴",
+      "objective": "提供真实上下文，拆成小任务，审阅改动并要求验证证据。",
+      "lessons": [
+        "agent-context",
+        "task-prompts",
+        "review-changes"
+      ]
+    },
+    {
+      "id": "chapter-5",
+      "title": "判断改动是否可靠",
+      "objective": "自己选择测试案例，复现错误，守住数据与权限边界。",
+      "lessons": [
+        "testing",
+        "debugging",
+        "security"
+      ]
+    },
+    {
+      "id": "chapter-6",
+      "title": "完成并交付一个小项目",
+      "objective": "选择合适的存储方案，检查发布版本，交付可运行、可说明的成果。",
+      "lessons": [
+        "data-design",
+        "release",
+        "capstone"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "mdn-start",
+      "title": "MDN：第一个网站",
+      "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website",
+      "purpose": "核对网页组成与从计划到发布的过程。"
+    },
+    {
+      "id": "mdn-flow",
+      "title": "MDN：客户端与服务器",
+      "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/First_steps/Client-Server_overview",
+      "purpose": "核对请求、响应与客户端/服务器职责。"
+    },
+    {
+      "id": "mdn-storage",
+      "title": "MDN：localStorage",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage",
+      "purpose": "核对同源持久化、字符串存储及存储异常。"
+    },
+    {
+      "id": "mdn-text",
+      "title": "MDN：textContent",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent",
+      "purpose": "核对将输入作为文本插入的行为。"
+    },
+    {
+      "id": "git-record",
+      "title": "Pro Git：记录变更",
+      "url": "https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository",
+      "purpose": "核对工作区、暂存与提交的区别。"
+    },
+    {
+      "id": "git-diff",
+      "title": "Git：diff",
+      "url": "https://git-scm.com/docs/git-diff",
+      "purpose": "核对未暂存与已暂存差异的比较对象。"
+    },
+    {
+      "id": "git-branch",
+      "title": "Pro Git：分支与合并",
+      "url": "https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging",
+      "purpose": "核对分支与冲突处理。"
+    },
+    {
+      "id": "git-push",
+      "title": "Git：push",
+      "url": "https://git-scm.com/docs/git-push",
+      "purpose": "核对推送、远端分支与上游关系。"
+    },
+    {
+      "id": "git-restore",
+      "title": "Git：restore",
+      "url": "https://git-scm.com/docs/git-restore",
+      "purpose": "核对取消暂存与丢弃工作区改动的不同影响。"
+    },
+    {
+      "id": "git-revert",
+      "title": "Git：revert",
+      "url": "https://git-scm.com/docs/git-revert",
+      "purpose": "核对以新提交撤销普通提交；不展开合并提交撤销。"
+    },
+    {
+      "id": "git-stash",
+      "title": "Git：stash",
+      "url": "https://git-scm.com/docs/git-stash",
+      "purpose": "核对临时保存及未跟踪文件选项。"
+    },
+    {
+      "id": "github-pr",
+      "title": "GitHub：Pull requests",
+      "url": "https://docs.github.com/en/pull-requests/reference/pull-requests",
+      "purpose": "核对评审与合并请求的概念。"
+    },
+    {
+      "id": "npm-ci",
+      "title": "npm：ci",
+      "url": "https://docs.npmjs.com/cli/v11/commands/npm-ci/",
+      "purpose": "核对有锁文件时的干净安装及文件不一致的失败行为。"
+    },
+    {
+      "id": "node-test",
+      "title": "Node.js：测试运行器",
+      "url": "https://nodejs.org/api/test.html",
+      "purpose": "核对 node --test 与断言的使用。"
+    },
+    {
+      "id": "prompt",
+      "title": "Anthropic：提示词实践",
+      "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices",
+      "purpose": "仅核对明确任务、相关上下文及例子的通用方向；本书任务卡与协作流程为原创教学设计，不承诺模型效果。"
+    },
+    {
+      "id": "secrets",
+      "title": "OWASP：秘密管理",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html",
+      "purpose": "核对秘密生命周期、最小权限与泄露后的撤销轮换。"
+    },
+    {
+      "id": "git-fetch",
+      "title": "Git：fetch",
+      "url": "https://git-scm.com/docs/git-fetch",
+      "purpose": "核对获取远端记录与合入当前分支的区别。"
+    },
+    {
+      "id": "git-pull",
+      "title": "Git：pull",
+      "url": "https://git-scm.com/docs/git-pull",
+      "purpose": "核对 --ff-only 的快进与分叉拒绝行为。"
+    },
+    {
+      "id": "git-init",
+      "title": "Git：init",
+      "url": "https://git-scm.com/docs/git-init",
+      "purpose": "核对指定初始分支与新仓库创建。"
+    },
+    {
+      "id": "git-install",
+      "title": "Git：安装",
+      "url": "https://git-scm.com/install/",
+      "purpose": "提供安装工具的官方入口。"
+    },
+    {
+      "id": "node-install",
+      "title": "Node.js：下载",
+      "url": "https://nodejs.org/en/download",
+      "purpose": "提供运行环境安装的官方入口。"
+    }
+  ]
+}

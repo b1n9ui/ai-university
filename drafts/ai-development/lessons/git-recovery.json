@@ -1,0 +1,201 @@
+{
+  "id": "git-recovery",
+  "chapterId": "chapter-3",
+  "number": "3.3",
+  "title": "改错时先分清要撤销什么",
+  "subtitle": "不要把所有撤销都交给一个危险命令。",
+  "concept": "撤销前先区分取消暂存、丢弃工作区改动、撤销已提交变化和处理冲突，选择对应动作。",
+  "intuition": "把信封里的稿件拿出来、丢掉桌面草稿、再寄一封更正信，代价不同。",
+  "objectives": [
+    "先查看工作区、暂存区和日志，确认要撤销哪种状态。",
+    "撤销或解决冲突后重新读差异并验证，记录发生了什么。"
+  ],
+  "body": [
+    {
+      "title": "先保存证据，别急着清空",
+      "text": "先 git status，看 git diff 和 git diff --staged。想取消某文件暂存而保留编辑，用 git restore --staged README.md。想丢弃工作区相对暂存区的改动，git restore README.md 会覆盖那些编辑，应确认内容已另行保存且确实不要。Git 不保证找回从未记录的草稿；不要让 Agent 遇错就 reset --hard 或 clean -fd。"
+    },
+    {
+      "title": "已分享的记录用更正提交",
+      "text": "对于已提交并分享的普通提交，通常用 git revert 指定提交生成反向变化的新提交，保留历史。先保证工作区干净并识别正确提交。revert 也可能冲突，需要解决；撤销合并提交更复杂，本书不展开。暂时切走时可用 stash 保存，默认不含未跟踪文件；-u 才包含这类文件，应用回来也可能冲突，不是永久备份。"
+    },
+    {
+      "title": "冲突需要理解两边意图",
+      "text": "两条分支对同一段做了不同修改，Git 可能无法自动决定结果。冲突标记展示两边内容，你要回看需求、读取两边意图、写成最终内容，移除标记，再测试、暂存和完成合并。不要只让 Agent 随机选“我们的”或“他们的”。暂不继续可按当前操作使用 merge --abort 或 revert --abort；先查看状态，避免用错上下文。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "撤销前先区分取消暂存、丢弃工作区改动、撤销已提交变化和处理冲突，选择对应动作。",
+    "conditions": [
+      "面向个人、小规模学习项目；团队协作需遵守所在仓库的约定。",
+      "本节方法帮助留下可检查的证据，不能保证任意 AI 输出正确。"
+    ]
+  },
+  "workflow": [
+    "先查看工作区、暂存区和日志，确认要撤销哪种状态。",
+    "保存需要保留的内容，再选择影响最小的对应操作。",
+    "撤销或解决冲突后重新读差异并验证，记录发生了什么。"
+  ],
+  "workedExamples": [
+    {
+      "title": "只想取消暂存",
+      "problem": "README 改动还要保留，但这次不提交。",
+      "steps": [
+        "用 status 确认它已暂存。",
+        "使用 --staged，避免丢弃工作区编辑。",
+        "再看状态与文件确认编辑仍在。"
+      ],
+      "answer": "取消暂存不等于删掉编辑；在练习台对比普通 restore 的不同结果。仅在已有提交的练习仓库里操作对应文件。",
+      "code": "git restore --staged README.md\ngit status\ngit diff"
+    },
+    {
+      "title": "合并中的标题限制冲突",
+      "problem": "一边写 80、一边写 100，能随便保留任一边吗？",
+      "steps": [
+        "查当前约定到底是 80 还是新要求 100。",
+        "同步规则、提示与边界测试。",
+        "移除冲突标记，测试后完成合并。"
+      ],
+      "answer": "若尚未确认改变要求，先询问或回看需求；不能把“没有冲突标记”当作正确。最后内容必须与已确认限制一致，80/81 或 100/101 的边界应跟着规则走。"
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "撤销命令肯定都能找回。",
+      "correction": "从未记录的工作区编辑可能无法恢复；先检查与保存。"
+    },
+    {
+      "claim": "冲突解决就是删除几行符号。",
+      "correction": "符号消失只说明文本可合并，还需判断最终行为是否符合需求。"
+    }
+  ],
+  "practice": [
+    {
+      "id": "git-recovery-p1",
+      "difficulty": 1,
+      "problem": "取消暂存又保留编辑，应选什么？",
+      "hint": "目标只影响暂存区。",
+      "answer": "git restore --staged README.md。",
+      "solution": [
+        "暂存回到 HEAD 对应内容。",
+        "工作区编辑保留，再用 status 检查。"
+      ]
+    },
+    {
+      "id": "git-recovery-p2",
+      "difficulty": 2,
+      "problem": "普通 git restore README.md 从哪里取内容？",
+      "hint": "默认不是远端。",
+      "answer": "默认从暂存区恢复工作区，丢掉该文件未暂存的修改。",
+      "solution": [
+        "比较暂存与工作区。",
+        "若需要原草稿，先另存再操作。"
+      ]
+    },
+    {
+      "id": "git-recovery-p3",
+      "difficulty": 3,
+      "problem": "已推送的普通坏提交，希望保留历史，怎么处理？",
+      "hint": "增加反向记录。",
+      "answer": "干净工作区中识别正确提交，用 git revert 生成撤销提交，解决可能冲突并验证后再推送。",
+      "solution": [
+        "不随意改写已分享历史。",
+        "普通提交与合并提交规则不同。"
+      ]
+    },
+    {
+      "id": "git-recovery-p4",
+      "difficulty": 4,
+      "problem": "stash 默认能保存新建未跟踪文件吗？",
+      "hint": "区分 tracked 和 untracked。",
+      "answer": "默认不保存；需要明确 -u 才包括未跟踪文件，仍不替代永久备份。",
+      "solution": [
+        "先 status 查看文件类别。",
+        "恢复也可能冲突，先保留 stash 与记录。"
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "只是取消暂存、保留编辑，选哪个？",
+    "choices": [
+      "git restore --staged README.md",
+      "git restore README.md",
+      "删除整个目录"
+    ],
+    "correctIndex": 0,
+    "feedback": [
+      "只把暂存区恢复到 HEAD 内容。",
+      "会覆盖未暂存编辑，不符合保留目标。",
+      "破坏范围远大于目标。"
+    ]
+  },
+  "interactiveVisual": {
+    "kind": "git",
+    "prediction": "暂存 v2、工作区 v3，两种 restore 的结果相同吗？",
+    "steps": [
+      {
+        "question": "希望 v3 留在文件，先取消暂存。",
+        "choices": [
+          "restore --staged",
+          "restore 文件",
+          "reset --hard"
+        ],
+        "correctIndex": 0,
+        "feedback": [
+          "只动暂存，保留工作区 v3。",
+          "会让工作区回到暂存内容。",
+          "会丢弃更大范围的未保存变化。"
+        ]
+      },
+      {
+        "question": "确实不要 v3，暂存 v2 已确认保存。普通 restore 后？",
+        "choices": [
+          "工作区 v2",
+          "工作区 v1",
+          "远端 v3"
+        ],
+        "correctIndex": 0,
+        "feedback": [
+          "默认从暂存区恢复工作区。",
+          "只有暂存也为 v1 才会得到 v1。",
+          "此操作不上传远端。"
+        ]
+      },
+      {
+        "question": "AI 说“先清空所有改动再排错”。",
+        "choices": [
+          "要求它先读状态和差异，保存有用工作",
+          "直接执行",
+          "删除测试"
+        ],
+        "correctIndex": 0,
+        "feedback": [
+          "先弄清哪些工作会丢失。",
+          "可能丢掉从未记录的内容。",
+          "测试不是错误证据的替代目标。"
+        ]
+      }
+    ],
+    "followUp": "在练习台分别使用取消暂存与丢弃编辑，写下每列变化。"
+  },
+  "prerequisites": [
+    "git-collaboration"
+  ],
+  "difficulty": 2,
+  "misconceptionTags": [
+    "git-recovery-guess",
+    "git-recovery-evidence"
+  ],
+  "sources": [
+    "git-restore",
+    "git-revert",
+    "git-stash",
+    "git-branch"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.1.0",
+    "status": "first-edition",
+    "humanReviewed": false
+  }
+}

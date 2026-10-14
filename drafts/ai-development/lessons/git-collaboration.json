@@ -1,0 +1,206 @@
+{
+  "id": "git-collaboration",
+  "chapterId": "chapter-3",
+  "number": "3.2",
+  "title": "分支、推送和 PR 各做什么",
+  "subtitle": "让一项改动有自己的位置和审阅过程。",
+  "concept": "分支给改动一条独立记录线，推送更新远端分支，PR 提议把一条分支的改动合入另一条。它们都不自动表示上线。",
+  "intuition": "在自己的稿件副本上修订，把稿件交出去，再请编辑收录，是不同步骤。",
+  "objectives": [
+    "确认工作区状态，为一个具体改动创建分支。",
+    "在 PR 说明触发问题、改动结果与验证；区分提交、推送、合并和发布。"
+  ],
+  "body": [
+    {
+      "title": "先在小分支上做一件事",
+      "text": "工作区干净时，用 git switch -c feature/empty-title 新建并切换分支，再修空白标题。在分支上提交，main 不会因为这次提交自动前进。分支不是完全隔离的文件夹：未提交改动有时会随切换保留，有时阻止切换，所以切换前先 status 并保存好工作。"
+    },
+    {
+      "title": "远端是另一个仓库位置",
+      "text": "git remote -v 看配置的远端名称与地址，origin 只是常见名称，不是固定服务。git push -u origin feature/empty-title 上传这条分支的提交，并设置上游关联。推送需要对应仓库权限；没有原仓库权限时通常先 fork 到自己的账号，再从 fork 提交 PR。远端凭据应走受支持的登录方式，不写进源码。"
+    },
+    {
+      "title": "PR 是带证据的修改建议",
+      "text": "PR 中写原来在什么输入下出了问题、现在的行为、改了什么、怎么验证、还有什么限制。评审者可以看差异并要求修改。创建 PR、通过检查和合并是不同状态；合并之后网站是否更新，还取决于仓库的构建与发布配置。有些项目必须手动部署。"
+    },
+    {
+      "title": "第一次分享与后续更新",
+      "text": "如果从 ZIP 新建仓库，尚没有 origin：在选定托管服务建立你自己的空仓库，复制其地址，再用 git remote add origin 后接该实际地址；不要照抄占位词。已有仓库则用 git clone 后接真实地址，在复制出的目录按 README 运行。更新时先 status，整理好本地工作；git fetch origin 获取远端记录，不自动合入当前分支。已设置上游且工作区干净时，git pull --ff-only 只接受快进更新；若历史分叉会拒绝，先阅读两边改动、按项目约定处理，不改用强制推送掩盖问题。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "分支给改动一条独立记录线，推送更新远端分支，PR 提议把一条分支的改动合入另一条。它们都不自动表示上线。",
+    "conditions": [
+      "面向个人、小规模学习项目；团队协作需遵守所在仓库的约定。",
+      "本节方法帮助留下可检查的证据，不能保证任意 AI 输出正确。"
+    ]
+  },
+  "workflow": [
+    "确认工作区状态，为一个具体改动创建分支。",
+    "核对远端与权限，验证后推送相应分支。",
+    "在 PR 说明触发问题、改动结果与验证；区分提交、推送、合并和发布。"
+  ],
+  "workedExamples": [
+    {
+      "title": "修空白标题后分享",
+      "problem": "在已配置 origin 的个人练习仓库里怎样分享分支？",
+      "steps": [
+        "干净状态新建分支。",
+        "改动、运行对应测试、审阅并提交。",
+        "核对 remote 后推送，在托管服务打开 PR。"
+      ],
+      "answer": "前提：工作区干净、文件名匹配项目，origin 已配置为你有权限的目标；PR 在托管服务创建。这些命令不自动创建 PR 或发布网站。",
+      "code": "git status\ngit switch -c feature/empty-title\n# 编辑并验证，然后：\ngit add tasks.mjs tasks.test.mjs\ngit diff --staged\ngit commit -m \"拒绝全空格计划\"\ngit remote -v\ngit push -u origin feature/empty-title"
+    },
+    {
+      "title": "写一份有用的 PR 描述",
+      "problem": "怎么描述空白标题修正？",
+      "steps": [
+        "写触发输入与旧行为。",
+        "写新行为及用户结果。",
+        "列实际测试和未覆盖范围。"
+      ],
+      "answer": "原来提交三个空格会新增不可读空项。现在清理两端空白后拒绝空标题并显示提示。新增空白与普通标题测试；本机 npm test 通过，浏览器已检查提交提示。尚未检查其他浏览器。"
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "推送完成，原项目就上线了。",
+      "correction": "推送只更新目标远端分支；还需评审、合并及发布步骤。"
+    },
+    {
+      "claim": "PR 就是直接改别人主分支。",
+      "correction": "PR 是合并建议，是否接受由项目维护流程决定。"
+    }
+  ],
+  "practice": [
+    {
+      "id": "git-collaboration-p1",
+      "difficulty": 1,
+      "problem": "本地 commit 后朋友能看到吗？",
+      "hint": "有没有把记录送到远端？",
+      "answer": "通常不能；需推送到朋友可访问的远端，再给出分支或 PR 链接。",
+      "solution": [
+        "本地与远端独立。",
+        "确认链接访问权限。"
+      ]
+    },
+    {
+      "id": "git-collaboration-p2",
+      "difficulty": 2,
+      "problem": "origin 是不是永远指朋友原仓库？",
+      "hint": "它是配置名称。",
+      "answer": "不是，git remote -v 才显示实际地址，fork 项目可能指自己的仓库。",
+      "solution": [
+        "先核对目标。",
+        "不要凭名称猜所有者。"
+      ]
+    },
+    {
+      "id": "git-collaboration-p3",
+      "difficulty": 3,
+      "problem": "main 干净，新建 feature 分支并提交后 main 会自动改变吗？",
+      "hint": "分支各指向自己的顶端。",
+      "answer": "不会因 feature 的提交自动前进；需要明确合并或更新。",
+      "solution": [
+        "比较各分支记录。",
+        "未提交工作区另有规则，不混同于提交。"
+      ]
+    },
+    {
+      "id": "git-collaboration-p4",
+      "difficulty": 4,
+      "problem": "PR 合并了但网站没变，需要查什么？",
+      "hint": "仓库发布方式。",
+      "answer": "查看发布工作流、构建结果、部署目标与对应提交；可能需要维护者手动发布。",
+      "solution": [
+        "先确认合并版本。",
+        "再确认运行网站实际部署了哪个版本。"
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "朋友现在能审阅什么，取决于哪一步？",
+    "choices": [
+      "只保存在本机",
+      "已推送且有可访问 PR",
+      "我说已完成"
+    ],
+    "correctIndex": 1,
+    "feedback": [
+      "本地内容没有共享。",
+      "共享的提交与差异可被审阅。",
+      "口头结论没有给出材料。"
+    ]
+  },
+  "interactiveVisual": {
+    "kind": "git",
+    "prediction": "分支推送了，正式网站一定变了吗？",
+    "steps": [
+      {
+        "question": "feature 分支刚有新提交，main 会？",
+        "choices": [
+          "自动相同",
+          "保留原顶端，直到明确更新",
+          "自动删除"
+        ],
+        "correctIndex": 1,
+        "feedback": [
+          "两条记录线不自动一起前进。",
+          "提交发生在当前 feature 分支。",
+          "提交不会自动删 main。"
+        ]
+      },
+      {
+        "question": "push 成功表示？",
+        "choices": [
+          "远端分支已更新",
+          "PR 已合并",
+          "网站已部署"
+        ],
+        "correctIndex": 0,
+        "feedback": [
+          "它把本地提交送到目标远端分支。",
+          "合并是另一操作。",
+          "部署由项目配置与流程决定。"
+        ]
+      },
+      {
+        "question": "PR 最有用的说明是？",
+        "choices": [
+          "代码很棒",
+          "触发场景、新行为和验证结果",
+          "模型名称就足够"
+        ],
+        "correctIndex": 1,
+        "feedback": [
+          "无法帮助评审者判断结果。",
+          "提供可复查的修改依据。",
+          "生成工具不能证明改动正确。"
+        ]
+      }
+    ],
+    "followUp": "用练习台建分支、提交、推送，比较 main、本地 feature 与远端位置。"
+  },
+  "prerequisites": [
+    "git-snapshot"
+  ],
+  "difficulty": 2,
+  "misconceptionTags": [
+    "git-collaboration-guess",
+    "git-collaboration-evidence"
+  ],
+  "sources": [
+    "git-branch",
+    "git-push",
+    "github-pr",
+    "git-fetch",
+    "git-pull"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.1.0",
+    "status": "first-edition",
+    "humanReviewed": false
+  }
+}

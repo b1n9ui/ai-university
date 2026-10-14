@@ -1,0 +1,202 @@
+{
+  "id": "run-environment",
+  "chapterId": "chapter-2",
+  "number": "2.3",
+  "title": "让项目在本机跑起来",
+  "subtitle": "分清终端、目录、运行工具与依赖。",
+  "concept": "按项目说明，在正确目录用合适的工具执行命令；读懂报错，再决定下一步。",
+  "intuition": "菜谱写“放入烤箱”时，先确认你拿的是烤箱、温度合适，而且放的是这道菜。",
+  "objectives": [
+    "进入独立练习目录，核对 README 和工具版本。",
+    "保留错误信息并解释它发生在环境、安装还是运行阶段。"
+  ],
+  "body": [
+    {
+      "title": "终端是输入命令的地方",
+      "text": "编辑器改文件；终端执行命令。先建立独立练习目录，把附录项目文件按名字保存进去，在编辑器打开这个目录，再打开集成终端。许多编辑器让终端从所打开目录开始；不确定时看路径。cd 表示进入目录，例如 cd learning-list；带空格的路径需要引号。错误目录会让命令找不到配置或文件。"
+    },
+    {
+      "title": "先检查工具再运行",
+      "text": "安装 Git 和 Node.js 时使用本节来源中的官方入口，按自己的系统选择安装方式。终端输入 git --version、node --version 和 npm --version，确认能找到工具。本案例要求 Node.js 22.12+，有 npm start 和 npm test。进入项目目录后先测试，再启动；看到本地网址后在浏览器打开，终端要保持运行，Ctrl+C 停止服务器。"
+    },
+    {
+      "title": "依赖不是遇错就乱装",
+      "text": "有 dependencies 的 Node 项目通常要安装外部包。若 README 要求且已有匹配的 package-lock.json，npm ci 会按锁文件安装并在不一致时失败；它会重建 node_modules。本案例无外部依赖，不需要安装。遇到报错保留原文与执行目录，不要让 Agent 无理由删除锁文件、降级所有包或反复复制陌生脚本。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "按项目说明，在正确目录用合适的工具执行命令；读懂报错，再决定下一步。",
+    "conditions": [
+      "面向个人、小规模学习项目；团队协作需遵守所在仓库的约定。",
+      "本节方法帮助留下可检查的证据，不能保证任意 AI 输出正确。"
+    ]
+  },
+  "workflow": [
+    "进入独立练习目录，核对 README 和工具版本。",
+    "执行该项目的测试与启动命令，观察实际结果。",
+    "保留错误信息并解释它发生在环境、安装还是运行阶段。"
+  ],
+  "workedExamples": [
+    {
+      "title": "运行贯穿项目",
+      "problem": "怎样启动学习清单？",
+      "steps": [
+        "把项目文件保存到 learning-list 并在此目录开终端。",
+        "node --version 确认版本，npm test 验证规则。",
+        "npm start 后打开本地网址，终端保持运行。"
+      ],
+      "answer": "预期：测试通过；终端显示 http://127.0.0.1:5180。浏览器打开该网址，终端保持运行，Ctrl+C 停止。本案例无外部包，无需 npm install。",
+      "code": "node --version\nnpm test\nnpm start"
+    },
+    {
+      "title": "处理端口被占用",
+      "problem": "看到 EADDRINUSE，应该升级全部依赖吗？",
+      "steps": [
+        "记录命令 npm start 与完整错误。",
+        "这是地址/端口已经被占用。",
+        "找到自己的旧服务器并停止，或明确修改端口与访问地址。"
+      ],
+      "answer": "先在旧终端 Ctrl+C 停止自己启动的服务，再启动。不要随意杀未知进程。换端口后属于另一个源，原 localStorage 数据不会自动出现在新端口。"
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "所有项目都输入同一组命令。",
+      "correction": "命令由项目配置与 README 决定；先查再运行。"
+    },
+    {
+      "claim": "报错时删锁文件最省事。",
+      "correction": "锁文件支持可重复安装，删除会改变依赖版本；先查具体原因。"
+    }
+  ],
+  "practice": [
+    {
+      "id": "run-environment-p1",
+      "difficulty": 1,
+      "problem": "终端找不到 package.json，先检查什么？",
+      "hint": "文件在哪，终端在哪？",
+      "answer": "检查当前目录是否项目根目录，配置是否保存到正确名字和位置。",
+      "solution": [
+        "先验证路径。",
+        "不要在错误目录随机安装包。"
+      ]
+    },
+    {
+      "id": "run-environment-p2",
+      "difficulty": 2,
+      "problem": "node --version 不存在怎么办？",
+      "hint": "先解决工具可用性。",
+      "answer": "按 Node 官网安装说明安装或检查 PATH，然后重开终端再核对版本。",
+      "solution": [
+        "工具缺失不是业务代码错误。",
+        "先使运行环境满足 README。"
+      ]
+    },
+    {
+      "id": "run-environment-p3",
+      "difficulty": 3,
+      "problem": "npm ci 因锁文件不匹配失败，应怎么办？",
+      "hint": "失败指出了配置与记录不一致。",
+      "answer": "核对分支、package.json 和锁文件；按维护者约定更新并审阅依赖变化，不直接删锁文件绕过。",
+      "solution": [
+        "确认失败原因。",
+        "变更依赖时一起提交匹配的文件。"
+      ]
+    },
+    {
+      "id": "run-environment-p4",
+      "difficulty": 4,
+      "problem": "本机网址关闭终端后打不开，为什么？",
+      "hint": "谁在提供文件？",
+      "answer": "本地服务器已停止；重新在正确目录启动。文件保存与服务运行是两个状态。",
+      "solution": [
+        "观察终端进程。",
+        "启动成功后再在浏览器访问。"
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "EADDRINUSE 最直接表示什么？",
+    "choices": [
+      "所有代码都坏了",
+      "请求监听的地址或端口被占用",
+      "Git 提交失败"
+    ],
+    "correctIndex": 1,
+    "feedback": [
+      "错误尚未指向业务代码。",
+      "先检查自己的旧服务器。",
+      "它属于运行环境，与 Git 提交不同。"
+    ]
+  },
+  "interactiveVisual": {
+    "kind": "decision",
+    "prediction": "启动失败时，哪个下一步能减少猜测？",
+    "steps": [
+      {
+        "question": "找不到 package.json。",
+        "choices": [
+          "核对目录和文件位置",
+          "删所有测试",
+          "改按钮颜色"
+        ],
+        "correctIndex": 0,
+        "feedback": [
+          "命令很可能在错误目录运行。",
+          "测试与配置位置无关。",
+          "样式不会影响命令找到文件。"
+        ]
+      },
+      {
+        "question": "端口 5180 已占用。",
+        "choices": [
+          "随便杀系统进程",
+          "检查并停止自己的旧服务",
+          "重新安装全部包"
+        ],
+        "correctIndex": 1,
+        "feedback": [
+          "不知道用途时杀进程会破坏其他工作。",
+          "先处理已经运行的同一项目。",
+          "依赖安装不能释放端口。"
+        ]
+      },
+      {
+        "question": "现在页面能打开，你写什么记录？",
+        "choices": [
+          "环境版本、命令、网址和结果",
+          "只有“成功”",
+          "保证所有机器都成功"
+        ],
+        "correctIndex": 0,
+        "feedback": [
+          "别人可以据此复现。",
+          "缺少环境与操作信息。",
+          "一次本机成功不能证明所有平台。"
+        ]
+      }
+    ],
+    "followUp": "按附录运行项目，写下版本、目录、命令、结果四项。"
+  },
+  "prerequisites": [
+    "data-flow"
+  ],
+  "difficulty": 2,
+  "misconceptionTags": [
+    "run-environment-guess",
+    "run-environment-evidence"
+  ],
+  "sources": [
+    "npm-ci",
+    "mdn-start",
+    "mdn-storage",
+    "git-install",
+    "node-install"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.1.0",
+    "status": "first-edition",
+    "humanReviewed": false
+  }
+}

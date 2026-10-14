@@ -1,0 +1,201 @@
+{
+  "id": "git-snapshot",
+  "chapterId": "chapter-3",
+  "number": "3.1",
+  "title": "保存文件不等于 Git 提交",
+  "subtitle": "用工作区、暂存区、提交三个位置理解记录。",
+  "concept": "编辑保存改变工作区，git add 选择当时的内容放入暂存区，git commit 把暂存内容记录为本地提交。",
+  "intuition": "桌面上的草稿、装进信封的版本、已经寄出的信不是同一个位置；继续改草稿不会自动改信封。",
+  "objectives": [
+    "用 status 确认分支及文件状态，阅读相关 diff。",
+    "完成对应验证后创建有明确目的的本地提交。"
+  ],
+  "body": [
+    {
+      "title": "先知道在哪个仓库",
+      "text": "Git 是版本记录工具，GitHub 是可以托管仓库的服务。仓库记录文件历史。新练习目录可用 git init -b main 建立仓库；复制别人的项目通常用 git clone 获取仓库，别在已有仓库内再随意 init。先用 git status 看当前分支和改动。提交身份可在练习仓库用 git config user.name 和 user.email 设置，只影响这里；邮箱可能随公开提交被看到。"
+    },
+    {
+      "title": "三处内容可以不同",
+      "text": "工作区是现在编辑的文件；暂存区是你准备放进下次提交的内容；HEAD 指当前检出的提交，通常是当前分支顶端。git add README.md 后继续编辑 README，暂存区仍保留刚才 add 的版本。git diff 看工作区与暂存区之差；git diff --staged 看暂存区与 HEAD 之差。新建且未暂存的文件通常不在普通 diff 中，要一起看 status 和文件。"
+    },
+    {
+      "title": "每次提交只说明一个目的",
+      "text": "读过差异、完成本次检查后，明确 add 需要的文件，再 commit。提交说明写为什么改，例如“拒绝全空格计划”，而不是“改了很多”。.gitignore 排除不应纳入的新文件，例如依赖目录和本地秘密文件；它不能移除已经跟踪的内容，更不能清除历史中已泄露的秘密。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "编辑保存改变工作区，git add 选择当时的内容放入暂存区，git commit 把暂存内容记录为本地提交。",
+    "conditions": [
+      "面向个人、小规模学习项目；团队协作需遵守所在仓库的约定。",
+      "本节方法帮助留下可检查的证据，不能保证任意 AI 输出正确。"
+    ]
+  },
+  "workflow": [
+    "用 status 确认分支及文件状态，阅读相关 diff。",
+    "只暂存本次需要的文件，再检查 staged diff。",
+    "完成对应验证后创建有明确目的的本地提交。"
+  ],
+  "workedExamples": [
+    {
+      "title": "第一次练习提交",
+      "problem": "在新建 learning-list 练习目录里记录 README。",
+      "steps": [
+        "先建立 main 仓库并设置此仓库身份。",
+        "保存 README.md，检查并暂存。",
+        "阅读暂存差异后提交，查看日志。"
+      ],
+      "answer": "只在新的练习仓库执行 init；已有项目从 status 开始。README.md 需要先创建并保存，邮箱使用你选择公开的提交地址。",
+      "code": "git init -b main\ngit config user.name \"你的名字\"\ngit config user.email \"你选择公开的邮箱\"\ngit status\ngit add README.md\ngit diff --staged\ngit commit -m \"说明学习清单的运行方式\"\ngit log --oneline"
+    },
+    {
+      "title": "解释暂存后又编辑",
+      "problem": "文件 v1 已提交；编辑成 v2 并 add；再编辑成 v3。不再次 add，commit 记录什么？",
+      "steps": [
+        "HEAD 是 v1，暂存区是 v2，工作区是 v3。",
+        "普通 diff 显示 v2 到 v3。",
+        "staged diff 显示 v1 到 v2。"
+      ],
+      "answer": "commit 记录 v2，工作区仍为 v3 且有未暂存改动。若本次要提交 v3，先审阅再 add；不要把 commit 想成自动抓取所有当前文件。"
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "点保存就有可回退的提交了。",
+      "correction": "编辑器保存只写工作区，还需要明确暂存与提交。"
+    },
+    {
+      "claim": "git add . 总是最简单也最合适。",
+      "correction": "它可能包含无关文件；先查看状态，初学时明确列文件。"
+    }
+  ],
+  "practice": [
+    {
+      "id": "git-snapshot-p1",
+      "difficulty": 1,
+      "problem": "工作区 v3、暂存 v2、HEAD v1，不再 add 的提交结果？",
+      "hint": "commit 读取哪个位置？",
+      "answer": "新 HEAD 为 v2；工作区仍 v3，未暂存差异仍存在。",
+      "solution": [
+        "暂存内容进入提交。",
+        "提交不自动覆盖你的工作区编辑。"
+      ]
+    },
+    {
+      "id": "git-snapshot-p2",
+      "difficulty": 2,
+      "problem": "普通 diff 为空，是否一定没有可提交内容？",
+      "hint": "查看暂存区与 HEAD。",
+      "answer": "不一定，改动可能已暂存；还要看 git diff --staged 与 status。",
+      "solution": [
+        "比较对象不同。",
+        "新文件也要结合 status 判断。"
+      ]
+    },
+    {
+      "id": "git-snapshot-p3",
+      "difficulty": 3,
+      "problem": "只提交说明文件，应该怎样 add？",
+      "hint": "使用明确路径。",
+      "answer": "git add README.md，再 git diff --staged 检查没有别的内容。",
+      "solution": [
+        "避免无关改动。",
+        "检查暂存范围后再提交。"
+      ]
+    },
+    {
+      "id": "git-snapshot-p4",
+      "difficulty": 4,
+      "problem": ".env 已经进入公开历史，加入 ignore 是否解决泄露？",
+      "hint": "历史仍在。",
+      "answer": "没有。先撤销或轮换泄露凭据，再按维护流程清理跟踪与历史。",
+      "solution": [
+        "停止使用旧秘密是优先动作。",
+        "ignore 只防止符合规则的未跟踪文件被正常添加。"
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "add 后又改文件，commit 默认记录？",
+    "choices": [
+      "最后保存的所有内容",
+      "暂存时的内容",
+      "GitHub 上的版本"
+    ],
+    "correctIndex": 1,
+    "feedback": [
+      "commit 不自动重新 add。",
+      "暂存区是下次提交的来源。",
+      "本地提交不读取远端网页内容。"
+    ]
+  },
+  "interactiveVisual": {
+    "kind": "git",
+    "prediction": "先预测：暂存 v2 后编辑成 v3，再提交会发生什么？",
+    "steps": [
+      {
+        "question": "哪个命令先了解当前情况？",
+        "choices": [
+          "git status",
+          "git push --force",
+          "删除 .git"
+        ],
+        "correctIndex": 0,
+        "feedback": [
+          "先看分支和改动状态。",
+          "推送不能解释本地暂存情况。",
+          "删除记录会失去历史。"
+        ]
+      },
+      {
+        "question": "暂存 v2 后工作区 v3，普通 diff 比较？",
+        "choices": [
+          "v1 与 v2",
+          "v2 与 v3",
+          "远端与 v3"
+        ],
+        "correctIndex": 1,
+        "feedback": [
+          "这是 staged diff 的比较。",
+          "普通 diff 比较暂存和工作区。",
+          "远端不是默认比较对象。"
+        ]
+      },
+      {
+        "question": "现在 commit，没有再次 add，提交保存？",
+        "choices": [
+          "v3",
+          "v2",
+          "v1"
+        ],
+        "correctIndex": 1,
+        "feedback": [
+          "v3 没进入暂存区。",
+          "提交记录暂存的 v2。",
+          "v1 是提交前 HEAD。"
+        ]
+      }
+    ],
+    "followUp": "在练习台重现这个过程，观察三列内容和两种差异。"
+  },
+  "prerequisites": [
+    "run-environment"
+  ],
+  "difficulty": 2,
+  "misconceptionTags": [
+    "git-snapshot-guess",
+    "git-snapshot-evidence"
+  ],
+  "sources": [
+    "git-record",
+    "git-diff",
+    "secrets",
+    "git-init"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.1.0",
+    "status": "first-edition",
+    "humanReviewed": false
+  }
+}
