@@ -1,3 +1,4 @@
+import {tr, localizeNode} from "../i18n";
 import { useEffect, useRef, useState } from "react";
 import {
   Maximize2,
@@ -28,7 +29,7 @@ type Controller = {
   zoom: (scale: number) => void;
 };
 function SolidSlider({label,value,min,max,step=1,onChange}:{label:string;value:number;min:number;max:number;step?:number;onChange:(n:number)=>void}) {
-  return <ParameterControl label={label} value={value} min={min} max={max} step={step} onChange={onChange}/>;
+  return <ParameterControl label={tr(label)} value={value} min={min} max={max} step={step} onChange={onChange}/>;
 }
 export default function SolidVisual({
   lesson,
@@ -97,7 +98,7 @@ export default function SolidVisual({
     const canvas = renderer.domElement;
     canvas.setAttribute(
       "aria-label",
-      `${plainMathText(lesson.title)}的三维图。拖动旋转，滚轮缩放；键盘方向键旋转，加减键缩放。`,
+      tr(`${plainMathText(lesson.title)}的三维图。拖动旋转，滚轮缩放；键盘方向键旋转，加减键缩放。`),
     );
     canvas.setAttribute("role", "img");
     canvas.tabIndex = 0;
@@ -434,76 +435,73 @@ export default function SolidVisual({
       onChangeCapture={()=>setPlaying(false)}
       onFocusCapture={e=>{if((e.target as Element).closest(".parameter-value"))setPlaying(false);}}
       className={`solid-visual ${compact ? "compact" : ""}`}
-      aria-label={"三维旋转演示"}
+      aria-label={tr("三维旋转演示")}
     >
       <header className="solid-header">
         <div>
           <span className="eyebrow">SPATIAL LAB / 3D</span>
           <h3>
-            {model === "surface"
+            {localizeNode(model === "surface"
               ? "一条曲线，转出一个曲面"
               : model === "shell"
                 ? "一条竖片，转出一个圆柱壳"
-                : "一条横截面，转出一个旋转体"}
+                : "一条横截面，转出一个旋转体")}
           </h3>
         </div>
-        <button className="icon-btn" aria-label={"重置三维演示"} onClick={reset}>
+        <button className="icon-btn" aria-label={tr("重置三维演示")} onClick={reset}>
           <RotateCcw size={17} />
         </button>
       </header>
-      {kind === "disk" && (
-        <div className="solid-model-tabs" role="group" aria-label={"旋转体模型"}>
+      {localizeNode(kind === "disk" && (
+        <div className="solid-model-tabs" role="group" aria-label={tr("旋转体模型")}>
           <button
             className={!washer ? "active" : ""}
             aria-pressed={!washer}
             onClick={() => setWasher(false)}
           >
-            <MathText text={"圆盘 · $\\sqrt{x}$"} />
+            <MathText text={tr("圆盘 · $\\sqrt{x}$")} />
           </button>
           <button
             className={washer ? "active" : ""}
             aria-pressed={washer}
             onClick={() => setWasher(true)}
           >
-            <MathText text="圆环 · $R=2$，$r=1$" />
+            <MathText text={tr("圆环 · $R=2$，$r=1$")} />
           </button>
         </div>
-      )}
+      ))}
       <div className="solid-stage">
         <div ref={host} className="solid-canvas-host" />
-        {unavailable && (
+        {localizeNode(unavailable && (
           <div className="solid-unavailable">
-            <h3>这个浏览器暂时无法显示 3D</h3>
-            <p>可以用二维图继续查看同一个数学模型。</p>
-            <button className="secondary-btn" onClick={onFallback}>
-              查看二维演示
-            </button>
+            <h3>{tr("这个浏览器暂时无法显示 3D")}</h3>
+            <p>{tr("可以用二维图继续查看同一个数学模型。")}</p>
+            <button className="secondary-btn" onClick={onFallback}>{tr("查看二维演示")}</button>
           </div>
-        )}
-        <span className="solid-axis-label">
-          旋转轴 {solidModels[model].axis} · {degrees.toFixed(0)}°
+        ))}
+        <span className="solid-axis-label">{tr("旋转轴")}{localizeNode(solidModels[model].axis)} · {localizeNode(degrees.toFixed(0))}°
         </span>
         <div className="solid-stage-tools">
           <button
-            aria-label={"旋转视角"}
+            aria-label={tr("旋转视角")}
             onClick={() => controller.current?.orbit()}
           >
             <RotateCw size={16} />
           </button>
           <button
-            aria-label={"放大三维图"}
+            aria-label={tr("放大三维图")}
             onClick={() => controller.current?.zoom(0.85)}
           >
             <Plus size={16} />
           </button>
           <button
-            aria-label={"缩小三维图"}
+            aria-label={tr("缩小三维图")}
             onClick={() => controller.current?.zoom(1.15)}
           >
             <Minus size={16} />
           </button>
           <button
-            aria-label={"恢复三维视角"}
+            aria-label={tr("恢复三维视角")}
             onClick={() => controller.current?.view("perspective")}
           >
             <Maximize2 size={16} />
@@ -512,57 +510,49 @@ export default function SolidVisual({
         <Profile model={model} slice={slice} />
         <div className="solid-legend">
           <span>
-            <i />
-            原始曲线
-          </span>
+            <i />{tr("原始曲线")}</span>
           <span>
-            <i />
-            截面 / 薄壳
-          </span>
+            <i />{tr("截面 / 薄壳")}</span>
         </div>
       </div>
-      <div className="solid-view-tabs" role="group" aria-label={"三维视角"}>
-        <span>拖动旋转 · 滚轮缩放</span>
-        <button onClick={() => controller.current?.view("perspective")}>
-          立体
-        </button>
-        <button onClick={() => controller.current?.view("front")}>正视</button>
-        <button onClick={() => controller.current?.view("axis")}>沿轴看</button>
+      <div className="solid-view-tabs" role="group" aria-label={tr("三维视角")}>
+        <span>{tr("拖动旋转 · 滚轮缩放")}</span>
+        <button onClick={() => controller.current?.view("perspective")}>{tr("立体")}</button>
+        <button onClick={() => controller.current?.view("front")}>{tr("正视")}</button>
+        <button onClick={() => controller.current?.view("axis")}>{tr("沿轴看")}</button>
         <label>
           <input
             type="checkbox"
             checked={wire}
             onChange={(e) => setWire(e.target.checked)}
-          />
-          网格
-        </label>
+          />{tr("网格")}</label>
       </div>
-      <p className="solid-model-description"><MathText text={description} /></p>
+      <p className="solid-model-description"><MathText text={tr(description)} /></p>
       <div className="stats">
         <div>
-          <span><MathText text={model === "shell" ? "半径 $x$" : "截面位置 $x$"} /></span>
-          <strong>{f(slice)}</strong>
+          <span><MathText text={tr(model === "shell" ? "半径 $x$" : "截面位置 $x$")} /></span>
+          <strong>{localizeNode(f(slice))}</strong>
         </div>
         <div>
           <span>
-            <MathText text={model === "shell"
+            <MathText text={tr(model === "shell"
               ? "完整薄壳的 $\\frac{\\mathrm{d}V}{\\mathrm{d}x}$"
               : model === "surface"
                 ? "完整曲面的 $\\frac{\\mathrm{d}S}{\\mathrm{d}x}$"
-                : "完整截面面积 $A(x)$"} />
+                : "完整截面面积 $A(x)$")} />
           </span>
-          <strong>{f(readout.density)}</strong>
+          <strong>{localizeNode(f(readout.density))}</strong>
         </div>
         <div>
-          <span>{model === "surface" ? "曲面范围" : "当前转角的体积"}</span>
+          <span>{localizeNode(model === "surface" ? "曲面范围" : "当前转角的体积")}</span>
           <strong>
-            {readout.volume === null ? "仅侧面，无端盖" : f(readout.volume)}
+            {localizeNode(readout.volume === null ? "仅侧面，无端盖" : f(readout.volume))}
           </strong>
         </div>
       </div>
       <div className="controls">
         <SolidSlider
-          label={"旋转角度 $\\theta$"}
+          label={tr("旋转角度 $\\theta$")}
           value={degrees}
           min={0}
           max={360}
@@ -572,7 +562,7 @@ export default function SolidVisual({
           }}
         />
         <SolidSlider
-          label={model === "shell" ? "薄壳半径 $x$" : "截面位置 $x$"}
+          label={tr(model === "shell" ? "薄壳半径 $x$" : "截面位置 $x$")}
           value={slice}
           min={0}
           max={1}
@@ -589,13 +579,11 @@ export default function SolidVisual({
             setPlaying((p) => !p);
           }}
         >
-          {playing ? <Pause size={15} /> : <Play size={15} />}{" "}
-          {playing ? "暂停旋转" : "旋转成形"}
+          {localizeNode(playing ? <Pause size={15} /> : <Play size={15} />)}{localizeNode(" ")}
+          {localizeNode(playing ? "暂停旋转" : "旋转成形")}
         </button>
-        <label>
-          速度
-          <select
-            aria-label={"三维动画速度"}
+        <label>{tr("速度")}<select
+            aria-label={tr("三维动画速度")}
             value={speed}
             onChange={(e) => setSpeed(+e.target.value)}
           >
@@ -618,18 +606,16 @@ export default function SolidVisual({
           }
         />
         <p>
-          <MathText text={model === "shell"
+          <MathText text={tr(model === "shell"
             ? "金色薄壳的周长是 $2\\pi x$，高是 $x^2$。相乘得到单位厚度的体积。"
             : model === "surface"
               ? "金色带的面积约为周长乘以斜长。斜长是 $\\mathrm{d}s$，不是 $\\mathrm{d}x$。"
               : model === "washer"
                 ? "先算外圆，再减去内孔。金色截面面积是 $3\\pi$。"
-                : "金色圆盘的半径是 $\\sqrt{x}$，面积是 $\\pi x$。沿 $x$ 累加这些截面。"} />
+                : "金色圆盘的半径是 $\\sqrt{x}$，面积是 $\\pi x$。沿 $x$ 累加这些截面。")} />
         </p>
       </div>
-      <p className="visual-note">
-        截面与薄壳以零厚度示意；公式读数按完整 360° 计算。曲面与数值不替代推导。
-      </p>
+      <p className="visual-note">{tr("截面与薄壳以零厚度示意；公式读数按完整 360° 计算。曲面与数值不替代推导。")}</p>
     </section>
   );
 }
@@ -653,11 +639,9 @@ function Profile({ model, slice }: { model: SolidModel; slice: number }) {
       className="solid-profile"
       viewBox="0 0 150 120"
       role="img"
-      aria-label={"旋转前的二维轮廓"}
+      aria-label={tr("旋转前的二维轮廓")}
     >
-      <text x="13" y="14">
-        旋转前
-      </text>
+      <text x="13" y="14">{tr("旋转前")}</text>
       <path d="M15 100H136M20 106V25" fill="none" stroke="#58738e" />
       <text x="138" y="104">
         x
@@ -665,17 +649,17 @@ function Profile({ model, slice }: { model: SolidModel; slice: number }) {
       <text x="14" y="26">
         y
       </text>
-      {model !== "surface" && (
+      {localizeNode(model !== "surface" && (
         <path
           d={`${line} L${X(1)},${Y(model === "washer" ? 1 : 0)} L${X(0)},${Y(model === "washer" ? 1 : 0)} Z`}
           fill="#4bd4e0"
           opacity=".18"
         />
-      )}
+      ))}
       <path d={line} stroke="#a9eaff" strokeWidth="1.7" fill="none" />
-      {model === "washer" && (
+      {localizeNode(model === "washer" && (
         <path d={`M${X(0)},${Y(1)}H${X(1)}`} stroke="#a9eaff" fill="none" />
-      )}
+      ))}
       <path
         d={`M${X(slice)},${Y(model === "washer" ? 1 : 0)}V${Y(curve(slice))}`}
         stroke="#ffbc61"

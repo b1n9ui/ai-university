@@ -1,0 +1,63 @@
+Linear Approximation and Differentials
+Near a differentiable point, a curve is nearly straight.
+Near a differentiable point, estimate a function value using its tangent: original value plus $\text{derivative}\times\text{input change}$.
+$\sqrt{4.1}$ is close to $\sqrt{4} = 2$. The derivative at 4 is $\frac{1}{4}$, so $\sqrt{4.1} \approx 2 + (\frac{1}{4}) \times 0.1 = 2.025$.
+First-order approximation
+Differentials and error propagation
+Recognize overestimates and underestimates
+Why does a line approximate the curve?
+Differentiability means $f(a+h)=f(a)+f\prime(a)h+R(h)$ with $R(h)/h\to0$, written $R(h)=o(h)$. The remainder becomes small relative to the input displacement; it need not be zero for a finite displacement.
+Are $\mathrm{d}y$ and $\Delta  y$ the same?
+$\mathrm{d}y = f' (a) \mathrm{d}x$ is an estimate, while $\Delta  y = f (a + \mathrm{d}x) - f (a)$ is the actual change. If $f (a) \ne 0$, $\frac{\mathrm{d}y}{f (a)}$ estimates relative change.
+How do you tell whether the estimate is high or low?
+Where $f'' > 0$ nearby, the curve lies above its tangent, so the estimate is low. Where $f'' < 0$, it is high. A numerical error bound requires more information, such as a bound on the second derivative.
+The linearization centered at a differentiable point $a$.
+This is an approximation near $a$. Differentiability alone gives no specified error bound at a fixed distance.
+Use the square-root tangent at $a = 4$ as the local model.
+Convert input change 0.1 into an estimated output change.
+The square root is concave down, so its tangent overestimates.
+Adjust $x$ and center $a$. Compare the true value, tangent estimate, and actual error.
+Farther from the center, does the tangent estimate usually improve or worsen? Check the error reading.
+A quick square-root estimate
+Estimate $\sqrt{9.06}$.
+Near 9, $f (9) = 3$ and $f' (9) = \frac{1}{6}$.
+The input change is 0.06, so the estimated output increase is 0.01.
+About 3.01, slightly above the true value.
+Radius measurement error
+A sphere's radius is about 10 cm, with error about 0.1 cm. Estimate its relative volume error.
+About 3%, as a first-order estimate.
+Writing an approximation as an exact equality.
+Keep $\approx$; assess the error separately.
+Using one tangent at any distance from its center.
+Linearization is local. The error can become substantial farther away.
+Use the linearization at $a = 1$ to estimate $\ln (1.02)$.
+$\ln 1 = 0$ and the derivative at 1 is 1. The estimated increase is 0.02.
+Choose a nearby center where evaluation is easy.
+What is the linearization of $e^{x}$ at $a = 0$?
+The function value and derivative value are both 1.
+Write the tangent in point-slope form.
+A square's side has 1% relative measurement error. Estimate the relative area error.
+Approximately $2\%$, as a first-order estimate.
+The area's power determines the first-order multiplier.
+Does a tangent usually overestimate or underestimate a square root near a positive input?
+Overestimate.
+Since $f'' < 0$, the curve is concave down and the tangent lies above it.
+Compare concavity with tangent position.
+Which formula correctly approximates $f (x)$ near $a$?
+$f (x) = f' (a) x$ for every $x$
+Start at $(a , f (a))$ and follow its tangent slope. Unless the function is already linear, this is generally an approximation, not an exact identity.
+Estimate a nearby output with the tangent at a convenient point. It captures first-order change; farther away, check the error rather than replacing approximation by equality.
+At the center
+Set both the square-root center and evaluation point to 4.
+Both curve and tangent give 2, with zero error.
+Estimate nearby
+Keep the center at 4 and evaluate at 4.1.
+The tangent gives 2.025, slightly above the true square root.
+Move farther away
+Change the evaluation point to 6.
+The tangent gives 2.5, with a noticeably larger error. This is a local model.
+$V = \frac{4 \pi  r^{3}}{3}$, $\frac{\mathrm{d}V}{V} = \frac{3 \mathrm{d}r}{r}$.
+$\frac{3 \times 0.1}{10} = 0.03$.
+$0.02$.
+$L(x)=1+x$.
+$A = s^{2}$, $\frac{\mathrm{d}A}{A} = \frac{2 \mathrm{d}s}{s}$.

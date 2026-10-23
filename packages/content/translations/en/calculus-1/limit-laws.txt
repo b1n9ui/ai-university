@@ -1,0 +1,65 @@
+Limit Laws
+Know when to substitute and when to simplify.
+Knowing the limits of two functions lets you find limits of their sums, products, and quotients. For a quotient, the denominator's limit must be nonzero.
+Limit laws let you find each part's limiting value, then combine them. The quotient law cannot yet be applied to $\frac{0}{0}$.
+Conditions for substitution
+The squeeze theorem
+Basic trigonometric limits
+When does substitution work?
+Polynomials are continuous everywhere; rational functions are continuous where their denominators are nonzero. Roots and logarithms also require their domain restrictions.
+What should you do with $\frac{0}{0}$?
+Try factoring, cancellation, or multiplication by a conjugate. The simplified expression need only agree near the target; the original need not be defined at the target itself.
+How does squeezing work?
+If $g \le f \le h$ nearby and both $g$ and $h$ approach $L$, then $f$ approaches $L$ too. State the inequalities and the bounding limits. Use radians for trigonometric limits.
+If $f \to A$ and $g \to B$, sum and product limits follow ordinary arithmetic; the quotient also requires $B \ne 0$.
+Both $f$ and $g$ must have finite limits, and a quotient must have a nonzero denominator limit.
+Use a conjugate to remove the difference of roots.
+The new denominator approaches 2 at zero, so the quotient law applies.
+The algebraic identity must hold for allowed inputs near the target.
+Observe $\frac{\sin (x)}{x}$ approaching 1 from both sides of $x = 0$. The open point marks the missing value.
+$\frac{\sin x}{x}$ is undefined at 0. Can its outputs still approach one number from both sides?
+Matching the inner angle
+Find $\lim_{x\to0}\frac{\sin(3x)}{x}$.
+Rewrite it as $3\frac{\sin(3x)}{3x}$.
+Set $u = 3 x$; then $u$ also approaches 0.
+The limit is 3.
+Bounding an oscillation
+Find $\lim_{x\to0}x^2\cos(\frac{1}{x})$.
+Cosine lies between −1 and 1, so the expression lies between $- x^{2}$ and $x^{2}$.
+Both bounds approach 0. Apply the squeeze theorem.
+The limit is 0.
+Applying the quotient law when the denominator's limit is zero.
+The nonzero-denominator condition is essential.
+Forgetting the original restrictions after cancellation.
+The simplified identity often holds only away from the target point.
+Find $\lim_{x\to2}(x^2+3x)$.
+Substitute into the polynomial: $4 + 6 = 10$.
+Substitute at a point of continuity.
+Find $\lim_{x\to0}\frac{\sqrt{4+x}-2}{x}$.
+Multiply by the conjugate to obtain $\frac{1}{\sqrt{4 + x} + 2}$, then substitute to get $\frac{1}{4}$.
+Multiply numerator and denominator by the conjugate.
+Find $\lim_{x\to0}\frac{\sin(5x)}{2x}$.
+Write it as $\frac{(\frac{5}{2}) \sin (5 x)}{5 x}$.
+Make the same small angle appear in numerator and denominator.
+Find $\lim_{x\to0}x\sin(\frac{1}{x})$.
+Its absolute value is at most $|x|$, so the squeeze theorem gives 0.
+The absolute value of sine is at most 1.
+Substitution gives $\frac{0}{0}$. What should you do next?
+The answer is 0
+The answer is 1
+Simplify the expression, then find the limit
+$\frac{0}{0}$ is an indeterminate form, not an answer. Factoring, cancellation, or rationalization may reveal nearby behavior; direct division by zero is invalid.
+Getting zero over zero means direct substitution failed. Study the nearby expression and check the laws' conditions rather than treating the indeterminate form as a result.
+Start away from zero
+Observe a point 0.5 units to the right of zero.
+$\frac{\sin(0.5)}{0.5}$ is approximately 0.95885.
+Move closer from the right
+Reduce the distance to 0.01.
+The output is close to 1; the original expression remains undefined at zero.
+Check the left side
+Keep the same distance and switch to the left.
+The output is the same. This trigonometric limit uses radians; finite samples support exploration, not proof.
+$10$.
+$\frac{1}{4}$.
+$\frac{5}{2}$.
+$0$.

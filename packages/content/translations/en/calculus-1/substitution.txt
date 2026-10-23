@@ -1,0 +1,76 @@
+Integration by substitution
+The chain rule in reverse
+Substitution reverses the chain rule: replace an inner function by $u$ and replace its derivative times $\mathrm{d}x$ by $\mathrm{d}u$.
+In $\int  2 x (x^{2} + 1)^{3} \mathrm{d}x$, set $u = x^{2} + 1$ and $\mathrm{d}u = 2 x \mathrm{d}x$. The integral becomes $\int  u^{3} \mathrm{d}u$.
+Choose $u$ and $\mathrm{d}u$
+Transform definite-integral bounds
+Recognize patterns and verify
+How do you choose $u$?
+Look for an inner function $g (x)$ and check for its derivative $g' (x)$ in the integrand. A constant factor can be adjusted; a missing factor that varies with $x$ cannot be inserted freely.
+Must the bounds change too?
+Yes: $x = a , b$ correspond to $u = g (a) , g (b)$. Alternatively, substitute back to $x$ before applying the original bounds. Never combine the new variable with the old bounds.
+How do you check a substitution?
+Differentiate an indefinite-integral answer to recover the integrand. A nonmonotone substitution still works through the antiderivative endpoint formula. Geometric changes of variable require checking orientation and splitting where needed.
+Integrate the chain rule backward.
+Assume $f$ is continuous on an interval containing $g ([a , b])$, $F' = f$, and $g$ is continuously differentiable on $[a , b]$.
+Use the transformed bounds $g (a)$ and $g (b)$. This antiderivative formula does not require $g$ to be monotone.
+Set $u = x^{2} + 1$, so $\mathrm{d}u = 2 x \mathrm{d}x$.
+Integrate using the simple power rule.
+Substitute the original variable back for $u$.
+As $x$ runs from 0 to 1, $u = x^{2} + 1$ runs from 1 to 2. The factor $\frac{\mathrm{d}u}{\mathrm{d}x} = 2 x$ shows that widths change too.
+Do equal widths in $x$ become equal widths in $u = x^{2} + 1$? Compare $\frac{\mathrm{d}u}{\mathrm{d}x}$ at different values of $x$.
+Recognize a logarithm
+Find $\int \frac{2x}{1+x^2}dx$.
+Set $u = 1 + x^{2}$, so $\mathrm{d}u = 2 x \mathrm{d}x$.
+The integral becomes $\int\frac{1}{u}\,\mathrm{d}u$, with $u$ always positive.
+Transform the bounds directly
+Evaluate $\int_0^1 2x e^{x^2}dx$.
+Set $u = x^{2}$ and $\mathrm{d}u = 2 x \mathrm{d}x$. The bounds 0 and 1 become 0 and 1.
+Evaluate $\int _{0}^{1} e^{u} \mathrm{d}u = e - 1$.
+Equal new bounds can be correct
+Evaluate $\int_{-1}^{1}2xe^{x^2}\,\mathrm{d}x$.
+Set $u=x^2$ and $\mathrm{d}u=2x\,\mathrm{d}x$. Both endpoints give $u=1$, so the transformed integral is $\int_1^1e^u\,\mathrm{d}u=0$.
+Or split at 0: $\int_1^0e^u\,\mathrm{d}u+\int_0^1e^u\,\mathrm{d}u=0$. The reverse and forward traversals cancel.
+The integral is 0. This is signed accumulation, not the sum of two positive geometric areas.
+Changing the variable name but not $\mathrm{d}x$ or the bounds.
+Transform the variable, differential factor, and bounds together.
+Applying the formula when $u'$ is missing.
+In general, $\int  f (g (x)) \mathrm{d}x$ does not equal $F (g (x))$.
+Find $\int 3x^2\cos(x^3)dx$.
+Set $u = x^{3}$, so $\mathrm{d}u = 3 x^{2} \mathrm{d}x$ and the integral becomes $\int  \cos u \mathrm{d}u$.
+The inner derivative is already present.
+Evaluate $\int_0^1 2x(1+x^2)dx$.
+Set $u = 1 + x^{2}$; the new bounds are 1 and 2. Then $\int _{1}^{2} u \mathrm{d}u = \frac{4 - 1}{2}$.
+The new bounds are not 0 and 1.
+Find $\int e^{2x}dx$.
+Set $u = 2 x$, so $\mathrm{d}u = 2 \mathrm{d}x$; include the factor $\frac{1}{2}$.
+Divide out the inner scale factor when integrating.
+Find $\int\sin x\cos x\,dx$.
+You can also choose $\cos x$; the answers differ only by a constant.
+Evaluate $\int_{-2}^{2}2x(1+x^2)^3\,\mathrm{d}x$. Why is the nonmonotone substitution $u=1+x^2$ valid?
+The integral is 0. The formula follows from the chain rule and antiderivative endpoint differences; it does not require a one-to-one substitution.
+An antiderivative is $\frac{(1+x^2)^4}{4}$, with equal values at both endpoints.
+Splitting at 0 gives new bounds from 5 to 1, then 1 to 5. The contributions cancel.
+Check with endpoint values or split the interval to track orientation.
+For $\int _{0}^{1} 2 x (x^{2} + 1)^{3} \mathrm{d}x$, set $u = x^{2} + 1$. What are the new bounds?
+0 and 1
+1 and 2
+0 and 2
+The bounds transform too: $x = 0$ gives $u = 1$ and $x = 1$ gives $u = 2$, with $\mathrm{d}u = 2 x \mathrm{d}x$.
+Substitution changes widths as well as variable names. The inner derivative is the local scale factor relating the old and new widths.
+Check the start
+Set the input to 0.
+The new variable is $u=1$ and the local factor $\frac{\mathrm{d}u}{\mathrm{d}x}=0$.
+Compare the midpoint
+Set the input to 0.5.
+The new variable is 1.25 and the local width factor is 1.
+Check the endpoint
+Set the input to 1.
+The new variable is 2 and the width factor is 2. Both bounds and widths must change consistently.
+$\ln(1+x^2)+C$.
+$e-1$.
+$\sin(x^3)+C$.
+$\frac{3}{2}$.
+$\frac{e^{2x}}{2}+C$.
+$\frac{\sin^2x}{2}+C$.
+$u = \sin x$, $\mathrm{d}u = \cos x \mathrm{d}x$.

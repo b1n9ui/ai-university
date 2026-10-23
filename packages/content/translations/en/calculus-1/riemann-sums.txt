@@ -1,0 +1,65 @@
+Riemann sums and numerical integration
+Make the rectangles narrower
+Split an interval into pieces, estimate each contribution as $\text{height}\times\text{width}$, and add. As the largest width tends to 0, the sums approach the definite integral.
+Rectangles estimate the area under a curve. Finer rectangles usually improve the estimate; the widest piece must shrink too.
+Partitions, sample points, and mesh size
+From approximation to definition
+Numerical integration methods
+How do you choose a height?
+Use a left endpoint, right endpoint, midpoint, or any sample point in each piece. Widths need not be equal, but the largest width must tend to 0. Merely increasing the number of pieces is not enough.
+Can every function be integrated this way?
+Continuous functions on closed intervals can. Negative function values contribute negative amounts. Boundedness alone is insufficient: some everywhere-oscillating functions are not Riemann integrable.
+Is a finite sum exact?
+Usually it is an approximation. The midpoint rule samples each midpoint; the trapezoidal rule joins endpoint heights. With suitable smoothness, both typically have error of order $\frac{1}{n^{2}}$.
+The definite integral is the limit of Riemann sums as the largest subinterval width tends to zero.
+The limit must be independent of partitions and sample points. Continuity on a closed interval guarantees this.
+Use $n$ right-endpoint rectangles for $x^{2}$ on $[0,1]$.
+The sum-of-squares formula gives an explicit finite sum.
+Take the limit to obtain $\frac{1}{3}$.
+Switch between left, right, midpoint, and trapezoidal estimates, then increase $n$. The exact integral of $x^{2}$ on $[0,1]$ is $\frac{1}{3}$.
+For the same partition, which is larger: the left or right sum? How do both change as $n$ increases?
+Two right-endpoint rectangles
+Find the right sum for $x^{2}$ on $[0,1]$ with $n = 2$.
+The width is $\frac{1}{2}$ and the heights are $\frac{1}{4}$ and 1.
+Add the heights and multiply by the width: $(\frac{1}{2}) (\frac{1}{4} + 1)$.
+$R_{2} = \frac{5}{8} = 0.625$, above the exact value $\frac{1}{3}$.
+Trapezoids are exact for a line
+Estimate $\int_0^2(2x+1)dx$ using two trapezoids.
+The heights are 1, 3, and 5; each width is 1.
+The result is exactly 6: each sloping top coincides with the line.
+Treating a finite rectangle sum as the integral's exact definition.
+The definition uses a limit as the mesh size tends to zero. A finite sum is generally approximate.
+Increasing $n$ while leaving one wide piece unchanged.
+The largest width must tend to zero so the entire partition becomes fine.
+Find the left sum for $f (x) = x$ on $[0,1]$ with $n = 2$.
+The width is $\frac{1}{2}$ and the heights are 0 and $\frac{1}{2}$, giving $\frac{1}{4}$.
+Left endpoints give lower heights here.
+Find the single-midpoint estimate for $x^{2}$ on $[0,1]$.
+At $x = \frac{1}{2}$ the height is $\frac{1}{4}$ and the width is 1.
+Use $n = 1$.
+For a nonnegative increasing function, does a left sum overestimate or underestimate the integral?
+Underestimate.
+The left height is no greater than any other height in its piece.
+Draw one rectangle and compare.
+What is any Riemann sum for the constant function 3 on $[0,2]$?
+Every height is 3 and the widths total 2, so the sum is always 6.
+A constant height produces no approximation error.
+For an increasing function on the same equal partition, which sum is larger?
+The left-endpoint sum
+The right-endpoint sum
+They are always equal
+Each right endpoint has a function value at least as large as its left endpoint, so its rectangle is at least as tall.
+Approximate with finite pieces, then let the largest width tend to zero. Different sampling rules can approach the integral from different directions.
+Two right rectangles
+Set the count to 2 and choose right endpoints.
+The right sum is $\frac58=0.625$, above the exact integral.
+Switch to left endpoints
+Keep 2 pieces and choose left endpoints.
+The left sum is $\frac18=0.125$, below the exact integral.
+Refine the partition
+Use 60 right-endpoint rectangles.
+The estimate is closer to $\frac13$, but still has finite error. Numerical samples are not a proof.
+$T = 1 [\frac{1 + 5}{2} + 3] = 6$.
+$\frac{1}{4}$.
+$\frac{1}{4}$.
+$6$.

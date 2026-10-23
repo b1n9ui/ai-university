@@ -1,0 +1,75 @@
+L'Hôpital's Rule
+Compare rates within an indeterminate quotient.
+For a $\frac{0}{0}$ or $\frac{\infty }{\infty }$ limit satisfying the hypotheses, differentiate numerator and denominator separately and find the limit of their ratio.
+This is a rule for limits, not a formula for differentiating a quotient. Check the indeterminate form before use and recheck after every application.
+Check the form and hypotheses
+Rewrite other indeterminate forms
+Do not reverse the implication
+What must you check first?
+The original form is $\frac{0}{0}$ or $\frac{\infty }{\infty }$. On a punctured one-sided neighborhood, numerator and denominator are differentiable, the denominator's derivative is nonzero, and the derivative ratio has a limit, possibly $\pm \infty$.
+What about other indeterminate forms?
+Rewrite $0 \cdot \infty$ as a quotient, combine fractions or use a conjugate for $\infty  - \infty$, and take logarithms for power forms. Then check the hypotheses again. If direct algebra works, differentiation is unnecessary.
+What if the derivative ratio has no limit?
+That does not prove the original quotient lacks a limit. The rule gives a conclusion only when its hypotheses hold. Repeated use needs a fresh check at each step.
+Under the one-sided neighborhood assumptions above, a $\frac{0}{0}$ or $\frac{\infty }{\infty }$ limit can be obtained from the derivative ratio.
+$f , g$ are differentiable; $g' \ne 0$; the original form is $\frac{0}{0}$ or $\frac{\infty }{\infty }$; the derivative-ratio limit exists. A two-sided result requires agreement from both sides.
+For $\frac{0}{0}$ at a finite endpoint, extend continuously by $f (a) = g (a) = 0$.
+Cauchy's mean value theorem gives an interior point $c$. As $x$ approaches $a$, so does $c$.
+If the derivative ratio tends to $L$, the original ratio also tends to $L$. Other forms require the corresponding extended arguments.
+Observe $\frac{e^{x} - 1}{x}$ approaching 1. Its derivative ratio $\frac{e^{x}}{1}$ also approaches 1.
+What does $\frac{e^{x} - 1}{x}$ approach near 0? Connect this difference quotient with the ratio after differentiation.
+Comparing two vanishing quantities
+Find $\lim_{x\to0}\frac{e^x-1}{x}$.
+The form is $\frac{0}{0}$, and the denominator's derivative is 1.
+The derivative ratio is $e^{x}$, which tends to 1.
+The limit is 1.
+Logarithmic versus linear growth
+Find $\lim_{x\to\infty}\frac{\ln x}{x}$.
+The form is $\frac{\infty }{\infty }$, with derivative ratio $\frac{\frac{1}{x}}{1}$.
+That ratio tends to 0, and the hypotheses hold.
+The limit is 0: linear growth outpaces logarithmic growth.
+An oscillating derivative ratio need not prevent the original limit
+Find $\lim_{x\to\infty}\frac{x}{2x+\sin x}$. If the derivative ratio has no limit, must the original limit fail?
+Rewrite the original ratio as $\frac{1}{2+\frac{\sin x}{x}}$. Since $|\frac{\sin x}{x}|\le\frac1x$ for $x>0$, the inner term tends to 0.
+The derivative ratio is $\frac1{2+\cos x}$. Along $x=2n\pi$ and $x=(2n+1)\pi$ it equals $\frac13$ and 1, respectively, so it has no limit.
+The original limit is still $\frac12$. Failure of L'Hôpital's hypotheses only means that this method gives no conclusion.
+Differentiating separately when the quotient is not indeterminate.
+For example, $\frac{x}{2}$ tends to 0 as $x \to 0$, but the denominator's derivative is zero, so the rule does not apply.
+Confusing the derivative ratio with the derivative of the quotient.
+$(\frac{f}{g})'$ uses the quotient rule; it is not $\frac{f'}{g'}$.
+Find $\lim_{x\to0}\frac{\ln(1+x)}{x}$.
+The form is $\frac{0}{0}$, and the derivative ratio $\frac{1}{1 + x}$ tends to 1.
+Check the logarithm's domain.
+Find $\lim_{x\to0}\frac{1-\cos x}{x^2}$.
+One application gives $\frac{\sin x}{2 x}$. Use the basic trigonometric limit, or apply the rule again after checking its conditions.
+Recheck the form before each application.
+Find $\lim_{x\to\infty}\frac{x}{e^x}$.
+The form is $\frac{\infty }{\infty }$, with derivative ratio $\frac{1}{e^{x}} \to 0$.
+Exponential growth is faster.
+Find $\lim_{x\to0}\frac{x+1}{x+2}$. Is L'Hôpital's rule needed?
+$\frac{1}{2}$. This is not an indeterminate form for L'Hôpital's rule.
+Substitute directly; the denominator is nonzero.
+Check the original limit's form first.
+Find $\lim_{x\to0^+}x\ln x$. Why not simply differentiate the factors separately?
+The original form is $0\cdot(-\infty)$. Rewrite it as $\frac{\ln x}{1/x}$.
+This quotient has an infinite-over-infinite form, with derivative ratio $\frac{1/x}{-1/x^2}=-x\to0$. The denominator's derivative is nonzero in the positive-side neighborhood.
+First form a quotient satisfying the hypotheses.
+Substitution into a quotient gives $\frac{1}{0}$. Can you directly apply L'Hôpital's rule?
+Yes: differentiate numerator and denominator separately
+No: it is neither $\frac{0}{0}$ nor $\frac{\infty }{\infty }$
+The answer must be 0
+Check the indeterminate form and theorem assumptions first. $\frac{1}{0}$ is not a form handled by this rule; one-sided analysis is usually needed.
+An indeterminate quotient compares two competing rates. L'Hôpital's rule uses their derivatives when its hypotheses hold; it is not a method for arbitrary quotients.
+Inspect the original quotient
+Set the right-side distance to 0.1.
+The quotient is approximately 1.05171. The original expression is undefined at zero.
+Approach zero
+Reduce the right-side distance to 0.001.
+The quotient is approximately 1.00050, close to 1.
+Check the left side
+Use the same distance on the left.
+The quotient is approximately 0.99950. The derivative ratio and hypotheses in the text establish the common limit 1.
+$1$.
+$\frac{1}{2}$.
+$0$.
+$0$.

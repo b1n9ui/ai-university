@@ -1,0 +1,72 @@
+Related Rates
+Write the relationship, then differentiate with respect to time.
+When several quantities change with time, differentiate their relationship to connect their rates.
+From $A = \pi  r^{2}$, a changing radius gives $\frac{\mathrm{d}A}{\mathrm{d}t} = \frac{2 \pi  r \cdot \mathrm{d}r}{\mathrm{d}t}$. The same radial growth rate produces faster area growth for a larger circle.
+Organize a related-rates calculation
+Track units and signs
+Use geometric constraints
+Why substitute numerical values last?
+Differentiate the relationship while its quantities can still change. Replacing $r$ by a number too early freezes it as a constant and loses $\frac{\mathrm{d}r}{\mathrm{d}t}$.
+How do you choose signs and units?
+An increasing variable has a positive rate; a decreasing one has a negative rate, according to its definition. Length rates have length/time units; area rates have area/time units.
+Where does the relationship come from?
+Use geometry or physics. A fixed-length ladder satisfies $x^{2} + y^{2} = L^{2}$. For water similar in shape to a conical tank, the fixed ratio $\frac{r}{h}$ eliminates one variable.
+Differentiate with respect to time $t$, applying the chain rule to every changing variable.
+The relationship must hold near the time in question. Differentiate before substituting instantaneous values.
+A ladder of length 5 satisfies the Pythagorean relation.
+Differentiate both sides with respect to time.
+Solve for the velocity of the end against the wall.
+Move the ladder's foot $x$ and compare height $y = \sqrt{25 - x^{2}}$ with its downward rate of change.
+If the ladder's foot moves outward at constant speed, does its top descend at constant speed? Compare rates at different positions.
+An expanding circle
+A radius grows at $2\,\mathrm{cm}\,\mathrm{s}^{-1}$. Find the area rate when $r=3\,\mathrm{cm}$.
+Substitute $r = 3$ and $\frac{\mathrm{d}r}{\mathrm{d}t} = 2$, retaining the units.
+A sliding ladder
+The foot of a $5\,\mathrm{m}$ ladder moves away from a wall at $1\,\mathrm{m}\,\mathrm{s}^{-1}$. How fast does the top descend when $x=3\,\mathrm{m}$?
+The top moves downward at $0.75\,\mathrm{m}\,\mathrm{s}^{-1}$; the rate of change of $y$ is $-0.75\,\mathrm{m}\,\mathrm{s}^{-1}$.
+Eliminate the radius using similarity
+An inverted conical tank is $6\,\mathrm{m}$ high with top radius $3\,\mathrm{m}$. Water enters at $2\,\mathrm{m}^3\mathrm{s}^{-1}$. How fast does the surface rise at depth $2\,\mathrm{m}$?
+Similar triangles give $\frac rh=\frac36=\frac12$, so $V=\frac13\pi r^2h=\frac\pi{12}h^3$.
+Differentiate with respect to time: $\frac{\mathrm{d}V}{\mathrm{d}t}=\frac\pi4h^2\frac{\mathrm{d}h}{\mathrm{d}t}$. Only then substitute $h=2$ and inflow rate 2.
+$\frac{\mathrm{d}h}{\mathrm{d}t}=\frac2\pi\,\mathrm{m}\,\mathrm{s}^{-1}$. The radius changes too, so it cannot be held constant.
+Substituting instantaneous dimensions before differentiating.
+That freezes variables as constants. Differentiate first.
+Using positive $\frac{\mathrm{d}y}{\mathrm{d}t}$ for descent.
+If $y$ measures height, its derivative is negative during descent.
+For a sphere $V = \frac{4 \pi  r^{3}}{3}$, with $r = 2$ and $\frac{\mathrm{d}r}{\mathrm{d}t} = 3$, find $\frac{\mathrm{d}V}{\mathrm{d}t}$.
+Differentiate with $r (t)$ still variable.
+For a $5\,\mathrm{m}$ ladder, $x = 4$ and $\frac{\mathrm{d}x}{\mathrm{d}t} = 0.5$. Find $\frac{\mathrm{d}y}{\mathrm{d}t}$.
+The negative sign reflects decreasing height.
+A square's side grows at $0.2\,\mathrm{cm}\,\mathrm{s}^{-1}$. Find its area rate when the side is 5 cm.
+The area rate is not the square of the side's rate.
+What sign does a circle's area rate have when its radius shrinks?
+Negative.
+$2 \pi  r > 0$ and $\frac{\mathrm{d}r}{\mathrm{d}t} < 0$, so their product is negative.
+Identify which variable decreases.
+Water enters a downward-pointing conical tank at constant volume rate, with both depths below the top. As depth increases from $2\,\mathrm m$ to $4\,\mathrm m$, what fraction of its former value is the surface's rising rate?
+Similar cones satisfy $r=ch$, so the cross-sectional area is $A=\pi c^2h^2$.
+For fixed volume rate $Q=A\,dh/dt$, doubling depth reduces the rising rate to $1/4$ of its former value.
+For similar cones, horizontal cross-sectional area is proportional to depth squared.
+A circle has area $A = \pi  r^{2}$ and time-dependent radius $r$. What is $\frac{\mathrm{d}A}{\mathrm{d}t}$?
+Differentiate with respect to time: $\frac{\mathrm{d}A}{\mathrm{d}t} = \frac{2 \pi  r \cdot \mathrm{d}r}{\mathrm{d}t}$. Omitting $\frac{\mathrm{d}r}{\mathrm{d}t}$ ignores how fast the radius changes.
+Several quantities share a constraint. Keep them variable while differentiating with respect to time, then substitute the dimensions at the instant of interest.
+Record one instant
+For a ladder of length 5, set the foot's distance to 3.
+The height is 4. If the foot's speed is 1, the top's rate is $-\frac34$.
+Move farther out
+Set the foot's distance to 4.
+The height falls to 3 and the top's rate becomes $-\frac43$: a faster descent.
+Approach the horizontal position
+Set the foot's distance to 4.8.
+The top descends faster. Constant foot speed does not imply constant top speed. The model does not include the zero-height endpoint.
+$\frac{\mathrm{d}A}{\mathrm{d}t} = \frac{2 \pi  r \cdot \mathrm{d}r}{\mathrm{d}t}$.
+$12\pi$ $\mathrm{cm}^{2}\,\mathrm{s}^{-1}$.
+$y=\sqrt{25-9}=4\,\mathrm{m}$.
+$\frac{\mathrm{d}y}{\mathrm{d}t}=-\frac{3}{4}\times1=-0.75\,\mathrm{m}\,\mathrm{s}^{-1}$.
+$48\pi$.
+$\frac{\mathrm{d}V}{\mathrm{d}t} = \frac{4 \pi  r^{2} \mathrm{d}r}{\mathrm{d}t} = 4 \pi  \times 4 \times 3$.
+$-\frac{2}{3}$ $\mathrm{m}\,\mathrm{s}^{-1}$.
+$y = 3$, $\frac{\mathrm{d}y}{\mathrm{d}t} = - (\frac{4}{3}) \times 0.5 = \frac{- 2}{3}$.
+$2$ $\mathrm{cm}^{2}\,\mathrm{s}^{-1}$.
+$A = s^{2}$, $A' = 2 s s' = 2 \times 5 \times 0.2$.
+$\frac14$.

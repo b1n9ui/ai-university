@@ -1,3 +1,4 @@
+import {tr, localizeNode} from "../i18n";
 import {VolumeSwitcher} from "../components/VolumeSwitcher";
 import {useCurriculum} from "../lib/curriculum";
 import { MathText, plainMathText } from "../components/MathText";
@@ -40,36 +41,34 @@ export function ExplorePage({ mode }: { mode: "lab" | "practice" }) {
     <>
       <PageTitle
         tag={mode === "lab" ? "THE INTERACTIVE LAB" : "PRACTICE & REFLECT"}
-        title={mode === "lab" ? "互动实验室" : "练习中心"}
+        title={tr(mode === "lab" ? "互动实验室" : "练习中心")}
         description={
-          mode === "lab"
+          tr(mode === "lab"
             ? "改变参数，对照图像、数值与公式。每个演示都能回到对应讲解。"
-            : "先独立尝试，再对照完整解答。按知识点练习，也可以回顾整章。"
+            : "先独立尝试，再对照完整解答。按知识点练习，也可以回顾整章。")
         }
       >
         <span className="page-count">
-          {mode === "lab" ? `${bookStats.lessons} 节演示` : `${bookStats.exercises} 道练习`}
-          <small>{book.title}</small>
+          {localizeNode(mode === "lab" ? `${bookStats.lessons} 节演示` : `${bookStats.exercises} 道练习`)}
+          <small>{localizeNode(book.title)}</small>
         </span>
       </PageTitle>
-      {mode === "practice" && (
+      {localizeNode(mode === "practice" && (
         <div className="practice-feature">
           <GraduationCap size={32} />
           <div>
-            <h2>整本书 · 综合测试</h2>
-            <p>{supplements.exam.length} 道题，连接本卷各章的概念与方法。</p>
+            <h2>{tr("整本书 · 综合测试")}</h2>
+            <p>{localizeNode(supplements.exam.length)}{tr("道题，连接本卷各章的概念与方法。")}</p>
           </div>
-          <Link to="practice/exam" className="primary-btn">
-            开始测试
-            <ArrowRight size={16} />
+          <Link to="practice/exam" className="primary-btn">{tr("开始测试")}<ArrowRight size={16} />
           </Link>
         </div>
-      )}
+      ))}
       <VolumeSwitcher path={mode}/>
       <Filters path={mode} values={params} />
-      {list.length ? (
+      {localizeNode(list.length ? (
         <div className={mode === "lab" ? "lab-grid" : "practice-grid"}>
-          {list.slice(start, end).map((l) => {
+          {localizeNode(list.slice(start, end).map((l) => {
             const done = l.practice.filter(
               (q) => progress[q.id] === "understood",
             ).length;
@@ -80,61 +79,61 @@ export function ExplorePage({ mode }: { mode: "lab" | "practice" }) {
                 params={{ view: mode === "lab" ? "visual" : "practice" }}
                 className={mode === "lab" ? "lab-card" : "practice-card"}
               >
-                {mode === "lab" ? (
+                {localizeNode(mode === "lab" ? (
                   <div className="lab-preview">
                     <VisualPreview lesson={l} />
-                    <span>可调参数 · 交互图示</span>
+                    <span>{tr("可调参数 · 交互图示")}</span>
                   </div>
                 ) : (
                   <div className="practice-card-top">
-                    <span>SECTION {l.number}</span>
-                    <span>{done} / {l.practice.length} 已掌握</span>
+                    <span>SECTION {localizeNode(l.number)}</span>
+                    <span>{localizeNode(done)} / {localizeNode(l.practice.length)}{tr("已掌握")}</span>
                   </div>
-                )}
+                ))}
                 <div className="explore-card-body">
                   <small>
-                    {l.number} /{" "}
-                    {book.chapters.find((c) => c.id === l.chapterId)!.title}
+                    {localizeNode(l.number)} /{localizeNode(" ")}
+                    {localizeNode(book.chapters.find((c) => c.id === l.chapterId)!.title)}
                   </small>
-                  <h3><MathText text={l.title} /></h3>
+                  <h3><MathText text={tr(l.title)} /></h3>
                   <p>
-                    <MathText text={mode === "lab" ? l.interactiveVisual.caption : l.subtitle} />
+                    <MathText text={tr(mode === "lab" ? l.interactiveVisual.caption : l.subtitle)} />
                   </p>
                   <div>
                     <span>
-                      {mode === "lab" ? "打开互动演示" : "开始本节练习"}
+                      {localizeNode(mode === "lab" ? "打开互动演示" : "开始本节练习")}
                     </span>
                     <ArrowUpRight size={18} />
                   </div>
                 </div>
               </Link>
             );
-          })}
+          }))}
         </div>
       ) : (
         <Empty
-          title="没有匹配的知识点"
-          text="换一个关键词，或者选择全部章节。"
+          title={tr("没有匹配的知识点")}
+          text={tr("换一个关键词，或者选择全部章节。")}
           to={mode}
-          label="清除筛选"
+          label={tr("清除筛选")}
         />
-      )}
+      ))}
       <Pagination total={list.length} path={mode} params={params} />
-      {mode === "practice" && (
+      {localizeNode(mode === "practice" && (
         <section className="chapter-reviews">
           <div className="section-title">
-            <h2>章末回顾</h2>
-            <span>每章 3 道题</span>
+            <h2>{tr("章末回顾")}</h2>
+            <span>{tr("每章 3 道题")}</span>
           </div>
-          {book.chapters.map((ch, i) => (
+          {localizeNode(book.chapters.map((ch, i) => (
             <Link key={ch.id} to={"practice/review/" + ch.id}>
-              <span>{String(i + 1).padStart(2, "0")}</span>
-              {ch.title}
+              <span>{localizeNode(String(i + 1).padStart(2, "0"))}</span>
+              {localizeNode(ch.title)}
               <ArrowRight size={17} />
             </Link>
-          ))}
+          )))}
         </section>
-      )}
+      ))}
     </>
   );
 }
@@ -155,8 +154,8 @@ export function ReviewPage() {
       />
       <PageTitle
         tag="REVIEW & CONNECT"
-        title={review?.title || "整本书 · 综合测试"}
-        description="先独立完成，再展开解答对照思路。每一道题都有提示和完整答案。"
+        title={tr(review?.title || "整本书 · 综合测试")}
+        description={tr("先独立完成，再展开解答对照思路。每一道题都有提示和完整答案。")}
       />
       <PracticeSet
         key={book.id+route.path}
@@ -166,15 +165,11 @@ export function ReviewPage() {
       />
       <div className="back-row">
         <Link to="practice" className="text-btn">
-          <ArrowLeft size={16} />
-          回到练习中心
-        </Link>
-        {review && (
-          <Link to={chapterPath(review.chapterId)} className="text-btn">
-            回到本章
-            <ArrowRight size={16} />
+          <ArrowLeft size={16} />{tr("回到练习中心")}</Link>
+        {localizeNode(review && (
+          <Link to={chapterPath(review.chapterId)} className="text-btn">{tr("回到本章")}<ArrowRight size={16} />
           </Link>
-        )}
+        ))}
       </div>
     </>
   );

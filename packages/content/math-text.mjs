@@ -55,10 +55,13 @@ export function plainMathText(text) {
   }).join('');
 }
 const bareNotation = /[√²³⁴⁵⁶⁷⁸⁹ⁿˣ₀₁₂₃₄₅₆₇₈₉≥≤≠≈∫∑∞εδθπλ]|\b(?:sin|cos|tan|cot|sec|csc|ln|arcsin|arccos|arctan)\s*\(|[A-Za-z][′″]|(?<![A-Za-z])[a-z](?![A-Za-z])|[A-Za-z0-9][\^=]|\d\s*\/\s*\d/;
-export function assertMathText(text, context = 'text', { notation = true } = {}) {
+// English articles and possessives contain isolated letters (a, Cauchy's).
+// English editions additionally preserve the canonical source's explicit math segments.
+const englishBareNotation = /[√²³⁴⁵⁶⁷⁸⁹ⁿˣ₀₁₂₃₄₅₆₇₈₉≥≤≠≈∫∑∞εδθπλ]|\b(?:sin|cos|tan|cot|sec|csc|ln|arcsin|arccos|arctan)\s*\(|[A-Za-z][′″]|[A-Za-z0-9][\^=]|\d\s*\/\s*\d/;
+export function assertMathText(text, context = 'text', { notation = true, language = 'zh' } = {}) {
   for (const part of splitMathText(text)) {
     if (part.kind !== 'text') continue;
     if (part.value.includes('$')) throw new Error(`${context}: unmatched math delimiter`);
-    if (notation && bareNotation.test(part.value)) throw new Error(`${context}: unmarked mathematical notation: ${part.value}`);
+    if (notation && (language === 'en' ? englishBareNotation : bareNotation).test(part.value)) throw new Error(`${context}: unmarked mathematical notation: ${part.value}`);
   }
 }

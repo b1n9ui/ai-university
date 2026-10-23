@@ -1,0 +1,63 @@
+Volumes by cylindrical shells
+How far does a strip travel?
+A strip parallel to the rotation axis sweeps out a thin cylindrical shell. Its volume is approximately $\text{circumference}\times\text{height}\times\text{thickness}$.
+Unroll a thin shell: it has length $2 \pi  r$, height $h$, and thickness $\mathrm{d}r$. Its contribution is approximately $2\pi rh\,\mathrm{d}r$.
+Identify the shell's three dimensions
+Why the approximation becomes exact
+Cross-check with washers
+How do you find radius and height?
+For a vertical strip rotating about the $y$-axis with nonnegative horizontal coordinate, $r = x$ and $h$ is top minus bottom. Around $x = k$, $r = |x - k|$. Each shell must represent a distinct radius to avoid double counting.
+Why can the thin-shell approximation be integrated?
+An exact shell has volume $\pi  [(r + \Delta  r)^{2} - r^{2}] h$. Expanding gives $2 \pi  r h \Delta  r + \pi  h \Delta  r^{2}$. Under refinement, the total second-order error tends to zero, leaving the integral.
+How can you check the answer?
+Washers for the same region must give the same volume. If the axis passes through the region, shells from opposite sides may overlap. Choose a description without repeated coverage.
+The cylindrical shell volume formula.
+Assume $a < b$, with continuous nonnegative radius $r$ and height $h$ on $[a , b]$. Shells must not overlap in coverage.
+Slices are parallel to the axis; $x$ measures perpendicular distance so $\mathrm{d}x$ is radial thickness. For example, about the $y$-axis with $x \ge 0$, $r = x$.
+Rotate $0 \le x \le 1$, $0 \le y \le x^{2}$ about the $y$-axis.
+A thin shell contributes $2 \pi  x^{3} \mathrm{d}x$.
+Integration gives $\frac{\pi }{2}$.
+Move the vertical strip: its radius is $x$, height $x^{2}$, and circumference $2 \pi  x$. The strip and rotation views stay synchronized.
+Does height stay fixed as the shell radius increases? Identify $2 \pi  x$ and $x^{2}$ in the two-dimensional strip.
+Calculate with shells
+Find the volume formed by rotating $0 \le x \le 2$, $0 \le y \le x$ about the $y$-axis.
+$r = x$ and $h = x$, so $V = 2 \pi  \int _{0}^{2} x^{2} \mathrm{d}x$.
+The result is $\frac{2 \pi  \times 8}{3}$.
+Check with washers
+Rotate $0 \le x \le 1$, $0 \le y \le x^{2}$ about the $y$-axis. Verify the volume using washers.
+Slice horizontally for $y \in [0 , 1]$: the outer radius is 1 and the inner radius is $\sqrt{y}$.
+This agrees with the shell result $\frac{\pi}{2}$.
+Squaring the shell radius.
+A shell uses circumference $2 \pi  r$. A disk uses area $\pi  r^{2}$.
+Adding shells from both sides of an axis without checking overlap.
+They may cover the same volume. Sketch the rotated solid first.
+Rotate $0 \le x \le 1$, $0 \le y \le 1$ about the $y$-axis. Find its volume.
+The shell method gives $2 \pi  \int _{0}^{1} x \mathrm{d}x = \pi$.
+This is a cylinder of radius 1 and height 1.
+Find the volume below $y = x$ on $0 \le x \le 1$ rotated about the $y$-axis.
+Both radius and height are $x$.
+A vertical strip at $x \in [0 , 1]$ rotates about $x = 3$. What is its radius?
+Its horizontal distance from the axis is $|x - 3| = 3 - x$.
+A radius is nonnegative.
+Can shell height and thickness be interchanged freely?
+No.
+Height runs along the axis; thickness runs radially. Changing the slices changes the variable and boundaries.
+Check their directions in three dimensions.
+Rotate $0 \le y \le x^{2}$, $0 \le x \le 1$ about the $y$-axis. What is the height of a shell of radius $x$?
+The strip runs from $y = 0$ to $y = x^{2}$, so its height is $x^{2}$. Its volume is approximately $2 \pi  x \cdot x^{2} \cdot \mathrm{d}x$.
+A strip parallel to the rotation axis forms a thin shell. Multiply circumference, height, and thickness; do not replace circumference with disk area.
+Inspect a small radius
+Complete one revolution and select radius 0.25.
+The height is $\frac1{16}$ and the circumference is $\frac\pi2$.
+Double the radius
+Select radius 0.5.
+The height quadruples and the circumference doubles, so the contribution per unit thickness increases eightfold.
+Return to the strip
+Set the two-dimensional position to 0.5.
+The strip height is $x^2$ and the radius is $x$. Both appear separately in the integral.
+$\frac{16\pi}{3}$.
+$V = \pi  \int _{0}^{1} (1 - y) \mathrm{d}y = \frac{\pi }{2}$.
+$\pi$.
+$\frac{2\pi}{3}$.
+$2 \pi  \int _{0}^{1} x \cdot x \mathrm{d}x = \frac{2 \pi }{3}$.
+$3-x$.

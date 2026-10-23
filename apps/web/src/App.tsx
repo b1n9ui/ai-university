@@ -1,3 +1,6 @@
+import {LanguageSwitcher, EditionNotice, EnglishAbout, unavailableEdition} from "./i18n/LanguagePages";
+import {locale} from "./i18n";
+import {tr, localizeNode} from "./i18n";
 import {
   ArrowUpRight,
   Bookmark,
@@ -88,7 +91,8 @@ export default function App() {
     return () => window.removeEventListener("hashchange", changed);
   }, []);
   useEffect(() => {
-    document.title = labelFor(route) + " · AI University";
+    document.documentElement.lang = locale === "en" ? "en" : "zh-CN";
+    document.title = tr(labelFor(route)) + " · AI University";
     window.scrollTo({ top: 0, behavior: "instant" });
     if (!firstLoad.current)
       document.getElementById("main")?.focus({ preventScroll: true });
@@ -129,11 +133,11 @@ export default function App() {
     clear,
     storageOk,
   };
-  if (route.path === "book/python-introduction" || route.path.startsWith("book/python-introduction/")) {
-    return <Suspense fallback={<p role="status">正在打开 Python 教材…</p>}><PythonPreview path={route.path.replace("book/python-introduction","python")} /></Suspense>;
+  if (locale === "zh" && (route.path === "book/python-introduction" || route.path.startsWith("book/python-introduction/"))) {
+    return <><Suspense fallback={<p role="status">{tr("正在打开 Python 教材…")}</p>}><PythonPreview path={route.path.replace("book/python-introduction","python")} /></Suspense><div className="floating-language"><LanguageSwitcher /></div></>;
   }
-  if (route.path === "book/ai-development" || route.path.startsWith("book/ai-development/")) {
-    return <Suspense fallback={<p role="status">正在打开教材…</p>}><AIDevelopmentPreview path={route.path.replace("book/ai-development","ai-development")} /></Suspense>;
+  if (locale === "zh" && (route.path === "book/ai-development" || route.path.startsWith("book/ai-development/"))) {
+    return <><Suspense fallback={<p role="status">{tr("正在打开教材…")}</p>}><AIDevelopmentPreview path={route.path.replace("book/ai-development","ai-development")} /></Suspense><div className="floating-language"><LanguageSwitcher /></div></>;
   }
   return (
     <Curriculum.Provider value={curriculum}><State.Provider value={state}>
@@ -144,21 +148,19 @@ export default function App() {
           e.preventDefault();
           document.getElementById("main")?.focus();
         }}
-      >
-        跳到正文
-      </a>
+      >{tr("跳到正文")}</a>
       <header className={"site-header immersive-header"}>
         <div className="header-inner">
-          <Link to="home" className="brand" aria-label="AI University 首页">
+          <Link to="home" className="brand" aria-label={tr("AI University 首页")}>
             <span className="brand-mark">
               Au<span>•</span>
             </span>
             <span>
-              AI University<small>开放教科书计划</small>
+              AI University<small>{tr("开放教科书计划")}</small>
             </span>
           </Link>
-          <nav className="global-nav" aria-label="网站导航">
-            {[
+          <nav className="global-nav" aria-label={tr("网站导航")}>
+            {localizeNode([
               ["library", "教科书"],
               ["lab", "互动实验室"],
               ["practice", "练习中心"],
@@ -182,43 +184,44 @@ export default function App() {
                     : ""
                 }
               >
-                {name}
+                {localizeNode(name)}
               </Link>
-            ))}
+            )))}
           </nav>
           <div className="header-actions">
+            <LanguageSwitcher />
             <button
               ref={searchButton}
               className="search-trigger"
               onClick={() => setSearchOpen(true)}
-              aria-label="搜索教材"
+              aria-label={tr("搜索教材")}
             >
               <Search size={18} />
-              <span>搜索</span>
+              <span>{tr("搜索")}</span>
               <kbd>⌘ K</kbd>
             </button>
             <Link to="learning" className="learning-link">
               <Bookmark size={17} />
-              <span>我的学习</span>
+              <span>{tr("我的学习")}</span>
             </Link>
             <button
               className="icon-btn mobile-nav-toggle"
-              aria-label={mobileMenu ? "关闭网站导航" : "打开网站导航"}
+              aria-label={tr(mobileMenu ? "关闭网站导航" : "打开网站导航")}
               aria-expanded={mobileMenu}
               aria-controls="mobile-nav"
               onClick={() => setMobileMenu(!mobileMenu)}
             >
-              {mobileMenu ? <X /> : <Menu />}
+              {localizeNode(mobileMenu ? <X /> : <Menu />)}
             </button>
           </div>
         </div>
-        {mobileMenu && (
+        {localizeNode(mobileMenu && (
           <nav
             id="mobile-nav"
             className="mobile-global-nav"
-            aria-label="手机网站导航"
+            aria-label={tr("手机网站导航")}
           >
-            {[
+            {localizeNode([
               ["home", "首页"],
               ["library", "教科书"],
               ["lab", "互动实验室"],
@@ -228,32 +231,29 @@ export default function App() {
               ["guide", "阅读指南"],
             ].map(([id, name]) => (
               <Link key={id} to={id}>
-                {name}
+                {localizeNode(name)}
                 <ChevronRight size={17} />
               </Link>
-            ))}
+            )))}
           </nav>
-        )}
+        ))}
       </header>
-      {reader && (
+      {localizeNode(reader && (
         <div className="reader-mobile-bar">
           <button
             ref={menuButton}
             className="text-btn"
-            aria-label="打开教材目录"
+            aria-label={tr("打开教材目录")}
             aria-expanded={drawer}
             aria-controls="book-sidebar"
             onClick={() => setDrawer(!drawer)}
           >
-            <List size={18} /> 教材目录
-          </button>
-          <span>{curriculum.book.title}</span>
-          <Link to={BOOK}>
-            教材主页
-            <ArrowUpRight size={14} />
+            <List size={18} />{tr("教材目录")}</button>
+          <span>{localizeNode(curriculum.book.title)}</span>
+          <Link to={BOOK}>{tr("教材主页")}<ArrowUpRight size={14} />
           </Link>
         </div>
-      )}
+      ))}
       <div
         className={
           reader
@@ -261,7 +261,7 @@ export default function App() {
             : "site-shell " + (route.path === "home" ? "home-shell" : "")
         }
       >
-        {reader && (
+        {localizeNode(reader && (
           <>
             <BookSidebar
               current={current}
@@ -271,24 +271,24 @@ export default function App() {
                 menuButton.current?.focus();
               }}
             />
-            {drawer && (
+            {localizeNode(drawer && (
               <button
                 className="drawer-backdrop"
-                aria-label="关闭教材目录"
+                aria-label={tr("关闭教材目录")}
                 onClick={() => {
                   setDrawer(false);
                   menuButton.current?.focus();
                 }}
               />
-            )}
+            ))}
           </>
-        )}
+        ))}
         <main
           id="main"
           tabIndex={-1}
           className={reader ? "reader-main" : "site-main"}
         >
-          {current ? (
+          {localizeNode(unavailableEdition(route.path, route.params.get("book")) ? <EditionNotice /> : current ? (
             <LessonPage key={current.id} lesson={current} />
           ) : route.path === "home" ? (
             <Home />
@@ -315,15 +315,13 @@ export default function App() {
           ) : route.path === "downloads" ? (
             <DownloadsPage />
           ) : route.path === "about" || route.path.startsWith("about/") ? (
-            <AboutPage />
+            locale === "en" ? <EnglishAbout /> : <AboutPage />
           ) : (
             <NotFound />
-          )}
-          {!storageOk && (
-            <p role="status" className="storage-notice">
-              当前浏览器无法保存本地记录；教材与演示仍可使用。
-            </p>
-          )}
+          ))}
+          {localizeNode(!storageOk && (
+            <p role="status" className="storage-notice">{tr("当前浏览器无法保存本地记录；教材与演示仍可使用。")}</p>
+          ))}
         </main>
       </div>
       <Footer />

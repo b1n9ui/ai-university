@@ -1,0 +1,62 @@
+The Chain Rule
+Outer rate $\times$ inner rate
+When functions are nested, multiply their rates: the outer derivative times the inner derivative.
+For $y = (x^{2} + 1)^{3}$, call the inner expression $u$. Differentiate the outer function to get $3 u^{2}$, then multiply by $u' = 2 x$. The result is $6 x (x^{2} + 1)^{2}$.
+Identify inner and outer functions
+Distinguish composition from multiplication
+Understand why the rates multiply
+How do you identify the layers?
+Find the last operation performed. In $(x^{2} + 1)^{3}$, cubing is the outer operation and $x^{2} + 1$ is the inner function. Differentiate from outside in; each layer supplies a factor.
+When is the product rule also needed?
+The outermost operation in $x^{2} \sin (x^{3})$ is multiplication, so start with the product rule. Then use the chain rule inside $\sin (x^{3})$. Nesting and multiplication are different structures.
+Why can the rates be multiplied?
+Since $\Delta  u \approx g' (x) \Delta  x$ and $\Delta  y \approx f' (u) \Delta  u$, we get $\Delta  y \approx f' (u) g' (x) \Delta  x$. A rigorous proof controls remainders rather than canceling a possibly zero $\Delta  u$.
+If $g$ is differentiable at $x$ and $f$ is differentiable at $g (x)$, their composition is differentiable.
+Evaluate the outer derivative at $g (x)$. Both differentiability assumptions are required.
+Use the first-order differentiability expansion for $f (g (x))$.
+The inner function also has a first-order expansion.
+Substitute and divide by $h$. The remainder tends to zero, giving the chain rule.
+Choose $x$ and compare the inner rate $2 x$ for $u = x^{2} + 1$ with the outer rate $3 u^{2}$ for $y = u^{3}$. Their product is the total rate.
+At $x = 0$, the outer rate is nonzero. Why can the total rate still be zero? Check the inner rate.
+The function inside a cube
+Differentiate $y=(x^2+1)^3$.
+The outer function is $u^{3}$, with derivative $3 u^{2}$.
+The inner derivative is $2 x$. Multiply, then substitute back.
+Two layers
+Differentiate $y=\sqrt{1+x^2}$.
+The outer function $u^{\frac{1}{2}}$ has derivative $(\frac{1}{2}) u^{\frac{- 1}{2}}$.
+The inner function $1 + x^{2}$ has derivative $2 x$.
+Differentiating only the outer function.
+Also multiply by the rate of the inner function.
+Replacing $f' (g (x))$ by $f' (x)$.
+The input received by the outer function is $g (x)$.
+Differentiate $(2x+1)^4$.
+The outer derivative gives $4 (2 x + 1)^{3}$; the inner derivative gives 2.
+The inner derivative is 2.
+Differentiate $\frac{1}{1+x^2}$.
+Write it as $(1 + x^{2})^{- 1}$ and multiply the outer derivative by $2 x$.
+Use the power −1.
+Find the derivative of $y=(x^2+1)^3$ at $x = 1$.
+First differentiate the complete expression.
+Differentiate $x^2(1+x)^3$.
+Apply the product rule first, then the chain rule to $(1 + x)^{3}$.
+Start with the outermost operation.
+Which factor is easiest to omit when differentiating $y = (x^{2} + 1)^{3}$?
+The outer rate is $3 (x^{2} + 1)^{2}$; the inner rate is $2 x$. The chain rule multiplies them.
+A change passes through two stages: input to inner output, then inner output to outer output. Multiply the rates of those stages to get the total rate.
+Zero inner rate
+Set the input to 0.
+The outer rate is 3, but the inner rate is 0. The total derivative is 0.
+A positive inner rate
+Set the input to 1.
+The inner output is 2 and its rate is 2; the outer rate is 12. The total derivative is 24.
+A negative inner rate
+Set the input to −1.
+The inner output remains 2, but its rate is −2. The total derivative is −24.
+$y\prime=6x(x^2+1)^2$.
+$y\prime=\frac{x}{\sqrt{1+x^2}}$.
+$8(2x+1)^3$.
+$-\frac{2x}{(1+x^2)^2}$.
+$24$.
+$6 \times 1 \times (1 + 1)^{2} = 24$.
+$2x(1+x)^3+3x^2(1+x)^2$.

@@ -1,3 +1,4 @@
+import {tr, localizeNode} from "../i18n";
 import {
   ArrowDown,
   ArrowRight,
@@ -73,11 +74,11 @@ function MotionNotebook() {
   }, []);
   return (
     <div ref={host} className="motion-notebook">
-      {mounted ? (
+      {localizeNode(mounted ? (
         <HeroNotebook />
       ) : (
-        <div className="notebook-wait">交互演示 · 滚动到这里即可操作</div>
-      )}
+        <div className="notebook-wait">{tr("交互演示 · 滚动到这里即可操作")}</div>
+      ))}
     </div>
   );
 }
@@ -117,7 +118,7 @@ export function Home() {
   }, []);
   return (
     <div className="immersive-home" ref={root}>
-      <section className="university-stage" aria-label="数学图形探索">
+      <section className="university-stage" aria-label={tr("数学图形探索")}>
         <div className="stage-topline">
           <span>
             <i /> AI-AUTHORED. OPEN TO EVERYONE.
@@ -126,29 +127,21 @@ export function Home() {
         </div>
         <div className="stage-title">
           <Eyebrow>AI UNIVERSITY</Eyebrow>
-          <h1>
-            看见知识。
-            <br />
-            <span>理解本质。</span>
+          <h1>{tr("看见知识。")}<br />
+            <span>{tr("理解本质。")}</span>
           </h1>
-          <p>
-            AI 编写的开放教科书。
-            <br />
-            从数学到编程，讲解、互动与解答一应俱全。
-          </p>
+          <p>{tr("AI 编写的开放教科书。")}<br />{tr("从数学到编程，讲解、互动与解答一应俱全。")}</p>
           <div className="stage-actions">
-            <Link to="library" className="stage-primary">
-              进入教科书库 <ArrowUpRight size={21} />
+            <Link to="library" className="stage-primary">{tr("进入教科书库")}<ArrowUpRight size={21} />
             </Link>
-            <Link to="lab" className="stage-secondary">
-              查看交互图示 <ArrowRight size={18} />
+            <Link to="lab" className="stage-secondary">{tr("查看交互图示")}<ArrowRight size={18} />
             </Link>
           </div>
         </div>
         <div className="stage-art">
           <Suspense
             fallback={
-              <div className="sculpture-loading">正在构建数学曲面…</div>
+              <div className="sculpture-loading">{tr("正在构建数学曲面…")}</div>
             }
           >
             <MathSculpture
@@ -160,16 +153,16 @@ export function Home() {
           </Suspense>
           <div className="art-corner">
             <span>LIVE GEOMETRY</span>
-            <span>{form.subtitle}</span>
+            <span>{localizeNode(form.subtitle)}</span>
           </div>
         </div>
         <div className="stage-console">
           <div
             className="sculpture-select"
             role="group"
-            aria-label="首页数学形态"
+            aria-label={tr("首页数学形态")}
           >
-            {forms.map((item, i) => (
+            {localizeNode(forms.map((item, i) => (
               <button
                 key={item.id}
                 onClick={() => {
@@ -178,23 +171,23 @@ export function Home() {
                 }}
                 aria-pressed={mode === item.id}
               >
-                <small>0{i + 1}</small>
-                {item.title}
+                <small>0{localizeNode(i + 1)}</small>
+                {localizeNode(item.title)}
                 <span />
               </button>
-            ))}
+            )))}
           </div>
           <div className="sculpture-equation">
             <Formula latex={form.latex} />
-            <span><MathText text={form.caption} /></span>
+            <span><MathText text={tr(form.caption)} /></span>
           </div>
           <label className="sculpture-parameter">
             <span>
-              <span><MathText text={form.label} /></span>
-              <output>{value.toFixed(2)}</output>
+              <span><MathText text={tr(form.label)} /></span>
+              <output>{localizeNode(value.toFixed(2))}</output>
             </span>
             <input
-              aria-label={plainMathText(form.label)}
+              aria-label={tr(plainMathText(form.label))}
               type="range"
               min={form.min}
               max={form.max}
@@ -206,28 +199,27 @@ export function Home() {
           <div className="sculpture-buttons">
             <button
               onClick={() => setPlaying(!playing)}
-              aria-label={playing ? "暂停首页动效" : "播放首页动效"}
+              aria-label={tr(playing ? "暂停首页动效" : "播放首页动效")}
             >
-              {playing ? <Pause size={16} /> : <Play size={16} />}
+              {localizeNode(playing ? <Pause size={16} /> : <Play size={16} />)}
             </button>
             <button
               onClick={() => {
                 setValue(form.initial);
                 setResetKey((k) => k + 1);
               }}
-              aria-label="恢复首页图形"
+              aria-label={tr("恢复首页图形")}
             >
               <RotateCcw size={16} />
             </button>
-            <Link to={form.to} aria-label="阅读当前图形的相关基础">
+            <Link to={form.to} aria-label={tr("阅读当前图形的相关基础")}>
               <ArrowUpRight size={18} />
             </Link>
           </div>
         </div>
         <div className="stage-bottom">
           <span>
-            {categories.length} 个教材分类 <b>/</b> {publishedVolumes.length}{" "}
-            本已出版{volumes.length>publishedVolumes.length&&<> <b>/</b> {volumes.length-publishedVolumes.length} 本规划中</>}
+            {localizeNode(categories.length)}{tr("个教材分类")}<b>/</b> {localizeNode(publishedVolumes.length)}{localizeNode(" ")}{tr("本已出版")}{localizeNode(volumes.length>publishedVolumes.length&&<> <b>/</b> {localizeNode(volumes.length-publishedVolumes.length)}{tr("本规划中")}</>)}
           </span>
           <button
             onClick={() =>
@@ -240,46 +232,38 @@ export function Home() {
                     : "smooth",
                 })
             }
-          >
-            浏览教材 <ArrowDown size={16} />
+          >{tr("浏览教材")}<ArrowDown size={16} />
           </button>
         </div>
       </section>
       <section className="shelf-section" id="open-bookshelf">
         <div className="shelf-heading" data-reveal>
           <Eyebrow>01 / THE OPEN BOOKSHELF</Eyebrow>
-          <h2>挑一本，<em>开始读。</em></h2>
-          <p className="shelf-intro">完整正文、交互图示与练习解答，随时翻阅。</p>
-          <Link to="library" params={{ status: "published" }}>
-            浏览已出版教材 <ArrowUpRight size={18} />
+          <h2>{tr("挑一本，")}<em>{tr("开始读。")}</em></h2>
+          <p className="shelf-intro">{tr("完整正文、交互图示与练习解答，随时翻阅。")}</p>
+          <Link to="library" params={{ status: "published" }}>{tr("浏览已出版教材")}<ArrowUpRight size={18} />
           </Link>
-        <nav className="subject-tabs home-subject-tabs" aria-label="首页教材分类">
-          {categories.map(c=><button key={c.id} className={shelfCategory===c.id?"active":""} onClick={()=>setShelfCategory(c.id)} aria-pressed={shelfCategory===c.id}>{c.title}<span>{publishedVolumes.filter(v=>v.categoryId===c.id).length}</span></button>)}
-          <Link to="library">查看全部<ArrowUpRight size={16}/></Link>
+        <nav className="subject-tabs home-subject-tabs" aria-label={tr("首页教材分类")}>
+          {localizeNode(categories.map(c=><button key={c.id} className={shelfCategory===c.id?"active":""} onClick={()=>setShelfCategory(c.id)} aria-pressed={shelfCategory===c.id}>{localizeNode(c.title)}<span>{localizeNode(publishedVolumes.filter(v=>v.categoryId===c.id).length)}</span></button>))}
+          <Link to="library">{tr("查看全部")}<ArrowUpRight size={16}/></Link>
         </nav>
         </div>
-        <div className="shelf-books edition-shelf" aria-label={shelfCategory==="mathematics"?"数学教材书架":"其他教材书架"} data-reveal>
-          {publishedVolumes.filter(v=>v.categoryId===shelfCategory).map((volume) => (
+        <div className="shelf-books edition-shelf" aria-label={tr(shelfCategory==="mathematics"?"数学教材书架":"其他教材书架")} data-reveal>
+          {localizeNode(publishedVolumes.filter(v=>v.categoryId===shelfCategory).map((volume) => (
             <PublishedBook key={volume.id} volume={volume} />
-          ))}
+          )))}
         </div>
       </section>
       <section className="math-atlas" id="math-atlas">
         <div className="atlas-heading" data-reveal>
           <Eyebrow>02 / THE MATHEMATICAL ATLAS</Eyebrow>
-          <h2>
-            数学，不止一本书。
-            <br />
-            <span>从这里，继续向前。</span>
+          <h2>{tr("数学，不止一本书。")}<br />
+            <span>{tr("从这里，继续向前。")}</span>
           </h2>
-          <p>
-            微积分三卷、线性代数、常微分方程、概率统计、离散数学与实分析已开放阅读。
-            <br />
-            每本完成后，开放整本阅读。
-          </p>
+          <p>{tr("微积分三卷、线性代数、常微分方程、概率统计、离散数学与实分析已开放阅读。")}<br />{tr("每本完成后，开放整本阅读。")}</p>
         </div>
         <div className="atlas-list">
-          {mathAreas.map((area, i) => {
+          {localizeNode(mathAreas.map((area, i) => {
             const count = publishedVolumes.filter(
               (v) => v.areaId === area.id,
             ).length;
@@ -291,55 +275,48 @@ export function Home() {
                 className="atlas-row"
                 data-reveal
               >
-                <span className="atlas-number">0{i + 1}</span>
+                <span className="atlas-number">0{localizeNode(i + 1)}</span>
                 <div>
-                  <h3>{area.title}</h3>
-                  <span>{area.english}</span>
+                  <h3>{localizeNode(area.title)}</h3>
+                  <span>{localizeNode(area.english)}</span>
                 </div>
-                <p>{area.question}</p>
+                <p>{localizeNode(area.question)}</p>
                 <span className={"atlas-status " + (count ? "available" : "")}>
-                  {count ? `${count} 本已出版` : "规划中"}
+                  {localizeNode(count ? `${count} 本已出版` : "规划中")}
                 </span>
                 <ArrowUpRight size={24} />
               </Link>
             );
-          })}
+          }))}
         </div>
       </section>
       <section className="hands-on-section">
         <div className="hands-on-copy" data-reveal>
           <Eyebrow>03 / THINK WITH YOUR HANDS</Eyebrow>
-          <h2>
-            让公式
-            <br />
-            <span>动起来。</span>
+          <h2>{tr("让公式")}<br />
+            <span>{tr("动起来。")}</span>
           </h2>
-          <p>
-            拖动曲线上的点，调整参数，
-            <br />
-            看切线、面积和曲面怎样变化。
-          </p>
+          <p>{tr("拖动曲线上的点，调整参数，")}<br />{tr("看切线、面积和曲面怎样变化。")}</p>
           <div className="hands-on-steps">
             <span>
-              01 <b>先预测</b>
+              01 <b>{tr("先预测")}</b>
             </span>
             <span>
-              02 <b>亲手操作</b>
+              02 <b>{tr("亲手操作")}</b>
             </span>
             <span>
-              03 <b>回到推导</b>
+              03 <b>{tr("回到推导")}</b>
             </span>
           </div>
-          <Link to="lab" className="stage-secondary">
-            打开互动实验室 <ArrowUpRight size={19} />
+          <Link to="lab" className="stage-secondary">{tr("打开互动实验室")}<ArrowUpRight size={19} />
           </Link>
         </div>
         <MotionNotebook />
       </section>
-      <nav className="home-next" aria-label="学习入口">
-        <Link to="guide"><small>01 / READ</small><h3>读懂一个概念</h3><span>从讲解到定义 <ArrowUpRight size={19} /></span></Link>
-        <Link to="lab"><small>02 / EXPLORE</small><h3>观察图形变化</h3><span>改变参数，观察结果 <ArrowUpRight size={19} /></span></Link>
-        <Link to="practice"><small>03 / PRACTICE</small><h3>独立解一道题</h3><span>先尝试，再看解答 <ArrowUpRight size={19} /></span></Link>
+      <nav className="home-next" aria-label={tr("学习入口")}>
+        <Link to="guide"><small>01 / READ</small><h3>{tr("读懂一个概念")}</h3><span>{tr("从讲解到定义")}<ArrowUpRight size={19} /></span></Link>
+        <Link to="lab"><small>02 / EXPLORE</small><h3>{tr("观察图形变化")}</h3><span>{tr("改变参数，观察结果")}<ArrowUpRight size={19} /></span></Link>
+        <Link to="practice"><small>03 / PRACTICE</small><h3>{tr("独立解一道题")}</h3><span>{tr("先尝试，再看解答")}<ArrowUpRight size={19} /></span></Link>
       </nav>
     </div>
   );

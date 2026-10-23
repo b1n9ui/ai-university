@@ -1,0 +1,66 @@
+Extrema and Critical Points
+A zero derivative identifies a candidate.
+To find the maximum and minimum on a closed interval, check interior critical points and both endpoints, then compare function values.
+$f' = 0$ means the tangent is horizontal, not necessarily that an extremum occurs. For example, $x^{3}$ has derivative 0 at 0 but keeps increasing.
+Local and absolute extrema
+List the candidates
+Classify critical points
+Must a maximum and minimum exist?
+A continuous function on a closed, bounded interval attains both. An open interval gives no such guarantee: $x$ has no maximum on $(0,1)$.
+Which points are candidates?
+Interior domain points where $f' = 0$ or the derivative does not exist are critical points. On a closed interval, check endpoints too. A differentiable interior local extremum must satisfy $f' = 0$.
+How do you distinguish a maximum from a minimum?
+If $f'$ changes from positive to negative, there is a local maximum; negative to positive gives a local minimum. At a point with $f' = 0$, $f'' > 0$ gives a minimum and $f'' < 0$ a maximum. If $f'' = 0$, investigate further.
+The closed-interval method: list candidates, evaluate the function, and compare.
+$f$ is continuous on $[a , b]$. Only interior points in the domain can be critical points.
+For $f (x) = x^{3} - 3 x$, find the critical points.
+On $[-2,2]$, include the endpoints and evaluate all candidates.
+Comparison gives maximum 2 and minimum −2. Each may occur at more than one point.
+Move $a$ to $\pm 1$ to make the tangent horizontal, then check slope signs on either side.
+How do slope signs change across a zero-derivative point? Compare a local maximum with a local minimum.
+Horizontal without an extremum
+Does $x^3$ have an extremum at 0?
+The derivative $3 x^{2}$ is positive on both sides of zero, so the function keeps increasing.
+No local extremum.
+Include the endpoints
+Find the absolute extrema of $f(x)=x^2$ on $[-1,2]$.
+The interior critical point is $x = 0$, with value 0.
+The endpoint values are 1 and 4.
+Minimum 0 at $x = 0$; maximum 4 at $x = 2$.
+Declaring an extremum whenever the derivative is zero.
+Confirm it through a sign change, the second derivative test, or direct comparison.
+Checking only the interior and omitting endpoints.
+An absolute extremum on a closed interval may occur at an endpoint.
+Find the minimum of $x^2-4x$ on $[0,3]$.
+The equation $2 x - 4 = 0$ gives $x = 2$, with value −4.
+The endpoint values are 0 and −3. Compare to confirm the minimum.
+List critical points and endpoints.
+Does $|x|$ have an extremum at 0?
+Yes: a local and absolute minimum of 0.
+Every output is nonnegative. Zero is a nondifferentiable critical point.
+An extremum need not have zero derivative.
+Does $\frac{1}{x}$ have an absolute minimum on $(0,1)$?
+No.
+Every output exceeds 1; the function approaches 1 without attaining it.
+The right endpoint 1 is not included.
+If $f' (c) = 0$ and $f'' (c) = 0$, can you conclude an extremum occurs?
+No.
+$x^{4}$ has a minimum at 0, while $x^{3}$ has no extremum there.
+Compare these two counterexamples.
+For $f (x) = x^{3}$, the derivative is zero at $x = 0$. Is this an extremum?
+A local maximum
+A local minimum
+Neither
+$x^{3}$ increases on both sides of zero. A zero derivative gives a candidate; examine nearby behavior before drawing a conclusion.
+A zero derivative is only a candidate. Check for a change from rising to falling or vice versa. For absolute extrema, compare endpoints too.
+Before the left candidate
+Set the base point to −1.2 and the gap to 0.01.
+The derivative is positive; the function is increasing.
+Past the candidate
+Set the base point to −0.8.
+The derivative is negative. Across −1 the function changes from increasing to decreasing, so −1 is a local maximum point.
+Check the other candidate
+Set the base point to 1.
+The exact derivative is zero. Nearby signs change from negative to positive, giving a local minimum.
+$f' (0) = 0$.
+$-4$.

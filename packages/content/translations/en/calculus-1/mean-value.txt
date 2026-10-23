@@ -1,0 +1,65 @@
+Rolle's Theorem and the Mean Value Theorem
+An average rate occurs as an instantaneous rate somewhere.
+If a function is continuous over an interval and differentiable inside it, at least one instantaneous rate equals the average rate over that interval.
+If average driving speed is $60\,\mathrm{km}\,\mathrm{h}^{-1}$ and velocity varies continuously, it must equal $60\,\mathrm{km}\,\mathrm{h}^{-1}$ at some instant. Do not omit the mathematical assumptions.
+Rolle's theorem
+The mean value theorem
+Consequences and Cauchy's form
+What does Rolle's theorem say?
+If $f$ is continuous on $[a , b]$, differentiable on $(a , b)$, and $f (a) = f (b)$, then $f' = 0$ somewhere inside. Equal endpoint heights force an interior horizontal tangent.
+What if the endpoint heights differ?
+Subtract the line joining the endpoints and apply Rolle's theorem. Restoring the original function gives an interior derivative equal to $\frac{f (b) - f (a)}{b - a}$.
+What is the theorem useful for?
+A strictly positive derivative implies increase on an interval; a derivative identically zero implies a constant. Cauchy's form connects the increments of two functions to their derivatives at one common point and helps prove L'Hôpital's rule.
+Under the continuity and differentiability assumptions, at least one interior point exists.
+$f$ is continuous on the closed interval $[a , b]$ and differentiable on the open interval $(a , b)$, with $a < b$.
+Subtract the endpoint secant line to define an auxiliary function.
+The auxiliary function is zero at both endpoints, so Rolle's theorem gives $g' (c) = 0$.
+Rearrange to recover the original function: its tangent and secant slopes agree.
+Change endpoint $b$. For $y = x^{2}$, the point $c = \frac{a + b}{2}$ has a tangent parallel to the endpoint secant.
+As the right endpoint $b$ moves, where does a tangent parallel to the secant occur? Why is $c$ the midpoint in this model?
+Find a guaranteed point
+For $f(x)=x^2$ on $[1,3]$, find the point $c$ in the mean value theorem.
+The secant slope is $\frac{9 - 1}{3 - 1} = 4$.
+Solve $f' (c) = 2 c = 4$ to get $c = 2$, which lies inside the interval.
+A missing assumption matters
+Why does Rolle's theorem not apply to $f(x)=|x|$ on $[-1,1]$?
+It is continuous and has equal endpoint values of 1.
+But it is not differentiable at 0. Elsewhere the derivative is only $\pm 1$, never zero.
+Differentiability throughout the open interval fails.
+Checking endpoints without checking interior differentiability.
+A corner can invalidate the conclusion. The assumptions must cover the whole interval.
+Assuming $c$ is always the midpoint.
+That happens for a quadratic, not for every function.
+For $f (x) = x^{3}$ on $[0,1]$, find a point $c$ satisfying the mean value theorem.
+The secant slope is 1. Solve $3 c^{2} = 1$ and take the positive root inside the interval.
+Differentiate, then solve the slope equation.
+If $f' = 0$ throughout an interval, what follows about $f$?
+It is constant on that interval.
+The mean value theorem makes the difference between any two function values zero.
+The fact that the domain is an interval matters.
+For $f (x) = 2 x + 1$ on $[0,4]$, which point $c$ works?
+Every $c \in (0 , 4)$ works.
+Every derivative and every secant slope equals 2.
+The theorem does not guarantee uniqueness.
+If the derivative is strictly negative throughout an interval, how does the function change?
+It is strictly decreasing.
+For any $x_{2} > x_{1}$, the difference in function values is a negative derivative times a positive interval length.
+Apply the theorem to any two points.
+What does $c$ represent in the mean value theorem?
+The interval midpoint
+An interior point where the instantaneous slope equals the interval's average slope
+The point where the maximum occurs
+$f' (c) = \frac{f (b) - f (a)}{b - a}$. The point $c$ need not be a midpoint or unique; continuity and differentiability are required.
+The average rate over an interval occurs as an instantaneous rate somewhere inside. Continuity over the whole interval and differentiability inside are essential. There may be several such points, none necessarily at the midpoint.
+A short interval
+Set the quadratic's right endpoint to 1.
+The secant slope is 1, with a parallel tangent at 0.5.
+Widen the interval
+Set the right endpoint to 2.
+The shared slope is 2, at point 1.
+Widen it further
+Set the right endpoint to 3.
+The shared slope is 3, at point 1.5. The midpoint property belongs to this quadratic, not to the general theorem.
+$c = 2$.
+$\frac{1}{\sqrt{3}}$.

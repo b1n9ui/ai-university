@@ -1,0 +1,56 @@
+Calculus I
+From rates of change to accumulation
+An introduction to single-variable calculus: functions, limits, derivatives, integrals, and applications. Each lesson includes concise explanations, precise conditions, derivations, examples, exercises, and interactive diagrams.
+Independent learners with elementary algebra and students beginning university calculus
+Functions, limits and continuity, differentiation and its applications, definite integrals, basic integration methods, and geometric and physical applications. Sequences, series, multivariable calculus, and systematic integration techniques belong to later volumes.
+Functions: the language of change
+Start with inputs and outputs
+Calculus asks how fast something changes and how much change accumulates. Functions, graphs, and basic models give the later symbols concrete meaning.
+Determine domains and read graphs
+Understand composition, inverses, and radians
+Recognize exponential and logarithmic functions
+Limits and continuity
+Approach without arriving
+A limit describes how outputs behave as an input approaches a target. It lets us study holes, instantaneous change, and indefinitely fine partitions without assuming a value at the target.
+Distinguish a limit from a function value
+Evaluate two-sided, one-sided, and infinite limits
+Use $\varepsilon$–$\delta$ definitions and continuity
+Defining and calculating derivatives
+From average change to instantaneous change
+A derivative takes an interval's average rate of change to a single point. Start with the definition, then derive reliable calculation rules.
+Connect difference quotients to tangents and velocity
+Use product, quotient, and chain rules
+Differentiate trigonometric and implicit relations
+More derivatives and models of change
+Use rates to solve problems
+Exponential, logarithmic, and inverse trigonometric derivatives extend our tools. Related rates, linear approximation, and Newton's method put them to work.
+Differentiate exponential, logarithmic, and inverse trig functions
+Set up related rates and linear approximations
+Apply Newton's method and recognize failures
+What derivatives reveal about a function
+From local slope to global behavior
+Local slopes help determine extrema, monotonicity, concavity, and optimal designs. Correct conclusions depend on the interval and hypotheses.
+Find and verify extrema
+Understand the mean value theorem and curve shape
+Build optimization models and apply L'Hôpital's rule correctly
+Integrals: accumulation and antiderivatives
+Add small pieces to recover a whole
+Differentiation asks how something changes now; integration asks how those changes accumulate. Define a definite integral through fine partitions, then connect it to antiderivatives with the fundamental theorem.
+Distinguish antiderivatives from definite integrals
+Build Riemann sums and interpret signed area
+Use the fundamental theorem, basic formulas, and substitution
+Geometric and physical applications
+Choose a small piece, then add
+Integral applications share one method: determine how a small element contributes, then accumulate over an interval. Area, volume, length, mass, and work use different elements.
+Set up area and volume integrals
+Derive arc length and average value
+Distinguish displacement, distance, work, and mass
+Used to check scope and theorem hypotheses. Explanations, worked solutions, and interactive diagrams were independently written; source prose and images were not copied.
+Informed the organization around problems and activities. Source prose, activities, and questions were not copied.
+Informed the use of linked text and diagrams, interleaved examples and exercises, and spaced review. This does not establish the effectiveness of this textbook.
+Informed the design of limited controls, immediate feedback, and multiple representations. Three-dimensional models and diagrams were independently implemented.
+Informed geometric explanations connecting limits, derivatives, and integrals. Video, images, and wording were not copied.
+Used as a reference for course goals and self-study organization. The MIT course also covers material beyond this volume.
+Research reference for retrieval and feedback. The mathematics sample is limited; multiple-choice checks are not treated as complete retrieval practice.
+Informed explanations of method selection and mixed exercises that check transfer.
+Structure, formula rendering, prerequisites, and selected numerical checks; not a line-by-line formal proof.

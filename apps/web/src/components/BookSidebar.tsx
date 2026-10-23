@@ -1,3 +1,4 @@
+import {tr, localizeNode, locale} from "../i18n";
 import {useCurriculum} from "../lib/curriculum";
 import { MathText } from "./MathText";
 import {
@@ -51,7 +52,7 @@ export function BookSidebar({
       ref={side}
       id="book-sidebar"
       className={"book-sidebar " + (drawer ? "open" : "")}
-      aria-label="教材目录"
+      aria-label={tr("教材目录")}
       inert={mobile && !drawer}
       onKeyDown={(e) => {
         if (!drawer || e.key !== "Tab") return;
@@ -73,29 +74,27 @@ export function BookSidebar({
         <Link to={BOOK}>
           <BookOpen size={20} />
           <span>
-            {book.title}<small>{book.titleZh}</small>
+            {localizeNode(book.title)}{locale === "zh" && <small>{book.titleZh}</small>}
           </span>
         </Link>
         <button
           className="icon-btn sidebar-close"
           onClick={close}
-          aria-label="关闭教材目录"
+          aria-label={tr("关闭教材目录")}
         >
           <X size={20} />
         </button>
       </div>
       <button className="sidebar-search" onClick={search}>
-        <Search size={16} />
-        搜索教材内容<kbd>⌘K</kbd>
+        <Search size={16} />{tr("搜索教材内容")}<kbd>⌘K</kbd>
       </button>
       <div className="sidebar-progress">
-        <span>
-          阅读进度<b>{reading.read.filter(id=>book.lessonIds.includes(id)).length} / {lessons.length}</b>
+        <span>{tr("阅读进度")}<b>{localizeNode(reading.read.filter(id=>book.lessonIds.includes(id)).length)} / {localizeNode(lessons.length)}</b>
         </span>
         <progress max={lessons.length} value={reading.read.filter(id=>book.lessonIds.includes(id)).length} />
       </div>
-      <nav aria-label="章节目录">
-        {book.chapters.map((ch, i) => (
+      <nav aria-label={tr("章节目录")}>
+        {localizeNode(book.chapters.map((ch, i) => (
           <div key={ch.id} className="sidebar-chapter">
             <button
               aria-expanded={expanded.includes(ch.id)}
@@ -107,53 +106,43 @@ export function BookSidebar({
                 )
               }
             >
-              <span>{String(i + 1).padStart(2, "0")}</span>
-              {ch.title}
+              <span>{localizeNode(String(i + 1).padStart(2, "0"))}</span>
+              {localizeNode(ch.title)}
               <ChevronDown size={14} />
             </button>
-            {expanded.includes(ch.id) && (
+            {localizeNode(expanded.includes(ch.id) && (
               <div className="sidebar-lessons">
-                <Link to={chapterPath(ch.id)} className="chapter-intro-link">
-                  本章概览
-                  <ArrowUpRight size={12} />
+                <Link to={chapterPath(ch.id)} className="chapter-intro-link">{tr("本章概览")}<ArrowUpRight size={12} />
                 </Link>
-                {ch.lessonIds.map((id) => (
+                {localizeNode(ch.lessonIds.map((id) => (
                   <Link
                     to={lessonPath(id)}
                     key={id}
                     className={current?.id === id ? "active" : ""}
                     aria-current={current?.id === id ? "page" : undefined}
                   >
-                    <span>{lessonById[id].number}</span>
-                    <MathText text={lessonById[id].title}/>
-                    {reading.read.includes(id) && <Check size={12} />}
+                    <span>{localizeNode(lessonById[id].number)}</span>
+                    <MathText text={tr(lessonById[id].title)}/>
+                    {localizeNode(reading.read.includes(id) && <Check size={12} />)}
                   </Link>
-                ))}
+                )))}
                 <Link
                   to={"practice/review/" + ch.id}
                   className="chapter-intro-link"
-                >
-                  章末回顾
-                  <ArrowRight size={12} />
+                >{tr("章末回顾")}<ArrowRight size={12} />
                 </Link>
               </div>
-            )}
+            ))}
           </div>
-        ))}
+        )))}
       </nav>
       <div className="sidebar-bottom">
         <Link to="reference">
-          <Layers3 size={16} />
-          公式与术语
-        </Link>
+          <Layers3 size={16} />{tr("公式与术语")}</Link>
         <Link to="practice/exam">
-          <GraduationCap size={16} />
-          综合测试
-        </Link>
+          <GraduationCap size={16} />{tr("综合测试")}</Link>
         <Link to="downloads">
-          <Download size={16} />
-          下载整本教材
-        </Link>
+          <Download size={16} />{tr("下载整本教材")}</Link>
       </div>
     </aside>
   );

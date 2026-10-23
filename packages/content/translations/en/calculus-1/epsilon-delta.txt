@@ -1,0 +1,66 @@
+$\varepsilon$–$\delta$: Making Closeness Precise
+You specify the output error; find an input range that guarantees it.
+$\varepsilon$ bounds the output error; $\delta$ bounds the input distance. A limit exists only if a suitable $\delta$ can be found for every positive error tolerance, however small.
+For $f (x) = 2 x$, $a = 1$, and $L = 2$, output error is twice input distance. To keep it below $\varepsilon$, choose $\delta  = \frac{\varepsilon }{2}$.
+The order of the quantifiers
+Find a suitable $\delta$
+What a proof must guarantee
+Which quantity is specified first?
+First take any $\varepsilon  > 0$, then choose $\delta  > 0$. Your $\delta$ may depend on $\varepsilon$, but cannot be chosen afterward to fit a particular $x$.
+Why require $0 < |x - a|$?
+This excludes $x = a$. A limit concerns nearby allowed inputs, so $a$ itself need not belong to the domain.
+How do you find $\delta$?
+Work backward from $|f (x) - L| < \varepsilon$, then verify the argument forward. For $x^{2}$ near $a = 2$, first require $\delta  \le 1$ so that $|x + 2| < 5$, then require $\delta  \le \frac{\varepsilon }{5}$.
+Let $D$ be the domain and $a$ an accumulation point of $D$: allowed inputs other than $a$ occur arbitrarily close to $a$. A finite limit is defined as follows.
+$x$ belongs to the function's domain; $a$ need not belong to it.
+To prove that $x^{2}$ approaches 4 as $x \to 2$, factor the error.
+First impose $|x - 2| < 1$. Then $1 < x < 3$, hence $|x + 2| < 5$.
+Whenever $0 < |x - 2| < \delta$, the error is less than $5 \delta  \le \varepsilon$.
+Adjust $\varepsilon$. The choice $\delta  = \min (1 , \frac{\varepsilon }{5})$ guarantees that the curve within the blue vertical band stays inside the green horizontal band.
+If you halve $\varepsilon$, how does the guaranteed radius $\delta$ change? Predict, then compare the two bands.
+A guarantee for a linear function
+Prove $\lim_{x\to1}(3x+2)=5$.
+The output error is $|3 x + 2 - 5| = 3 |x - 1|$.
+For any $\varepsilon  > 0$, choose $\delta  = \frac{\varepsilon }{3}$. The error is then strictly less than $\varepsilon$.
+$\delta=\frac{\varepsilon}{3}$ works.
+A constant function
+Prove that the constant function $f(x)=7$ has limit 7.
+The output error is always zero.
+For any $\varepsilon  > 0$, choose $\delta  = 1$.
+Any positive $\delta$ works.
+Fixing $\delta$ first and demanding that it work for every $\varepsilon$.
+For the given $\varepsilon$, choose $\delta$. One fixed positive $\delta$ generally cannot meet every tolerance.
+Requiring only one favorable input $x$.
+The error bound must hold for every allowed $x$ in the specified range.
+For $f(x)=2x$, $a = 3$, and $L = 6$, give a valid $\delta$.
+The error satisfies $2 |x - 3| < 2 \delta  = \varepsilon$.
+Output error is twice input distance.
+Using the choice $\delta=\varepsilon/2$, what radius $\delta$ does the formula give when $\varepsilon=0.1$?
+Substitute into your formula for $\delta$.
+Prove $\lim_{x\to1}x^2=1$, first imposing $|x - 1| < 1$.
+Then $0 < x < 2$ and $|x + 1| < 3$.
+Factor the error.
+Why does $0 < |x - a|$ exclude $x = a$?
+A limit describes nearby behavior, independently of the point value.
+Excluding the center lets us discuss a limit even when $f (a)$ is undefined.
+Recall the graph with a hole.
+In the $\varepsilon$–$\delta$ definition, which quantity is specified first?
+Specify output tolerance $\varepsilon$, then find input radius $\delta$
+Fix $\delta$, then require it to work for every $\varepsilon$
+$\varepsilon$ and $\delta$ must be equal
+For every output tolerance $\varepsilon$, however small, a sufficiently small $\delta$ must exist. The choice of $\delta$ may depend on $\varepsilon$.
+Start with a required output accuracy, then give an input radius that guarantees it. One good point is not enough: every allowed point in that range must satisfy the bound.
+A wider error tolerance
+Set the output tolerance to 1.
+One valid choice is $\delta=0.2$.
+Tighten the output tolerance
+Change the tolerance to 0.1.
+The guaranteed radius shrinks to $\delta=0.02$.
+Halve it again
+Change the tolerance to 0.05.
+Now $\delta=0.01$. Use $|x^2-4|=|x-2||x+2|$ to justify the guarantee throughout the band.
+$\delta=\frac{\varepsilon}{2}$.
+$0.05$.
+$\frac{0.1}{2} = 0.05$.
+$\delta=\min(1,\frac{\varepsilon}{3})$.
+$|x^{2} - 1| < 3 \delta  \le \varepsilon$.

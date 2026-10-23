@@ -1,3 +1,4 @@
+import {locale, tr} from "../i18n";
 import programmingIndex from "../../../../packages/content/programming-index.generated.json";
 import {publishedVolumes} from "./library";
 import { plainMathText } from "../../../../packages/content/math-text.mjs";
@@ -52,7 +53,7 @@ export function labelFor(route: Route) {
 export function searchLessons(query: string) {
   const words = query.trim().toLowerCase().split(/\s+/).filter(Boolean);
   if (!words.length) return [];
-  return lessons.filter((l) => {
+  return lessons.filter((l) => (locale === "zh" || collections[0].book.lessonIds.includes(l.id))).filter((l) => {
     const text = plainMathText([
       l.title,
       l.subtitle,
@@ -80,5 +81,5 @@ export function searchTextbooks(query:string){
     bookTitle:collections.find(c=>c.book.lessonIds.includes(l.id))!.book.titleZh,
     chapterTitle:collections.flatMap(c=>c.book.chapters).find(c=>c.id===l.chapterId)!.title,
   }));
-  return [...math,...programmingIndex.filter(l=>words.every(w=>l.text.toLowerCase().includes(w))).map(l=>({...l,isMath:false}))];
+  return [...math,...programmingIndex.filter(l=>locale === "zh" && words.every(w=>l.text.toLowerCase().includes(w))).map(l=>({...l,isMath:false}))];
 }

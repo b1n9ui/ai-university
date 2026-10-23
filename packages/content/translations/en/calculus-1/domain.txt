@@ -1,0 +1,62 @@
+Functions and Domains
+Check the input before you calculate.
+A function assigns exactly one output to each allowed input.
+Ask whether an input is allowed before evaluating it. For example, $\sqrt{x}$ requires $x \ge 0$; negative inputs are outside its real domain.
+Find a domain
+Read function notation
+Distinguish functions from relations
+Which inputs are allowed?
+A denominator cannot be zero, an even root requires a nonnegative radicand, and a logarithm requires a positive argument. Intersect all these restrictions. Applied problems may also restrict time, length, or other quantities.
+How do you evaluate $f (x + h)$?
+Replace every $x$ in the formula by $x + h$. The symbol $f$ names the rule; $f (x)$ is its output for this input. Its graph consists of all allowed pairs $(x , f (x))$.
+Why is a circle not a function of its horizontal coordinate?
+One $x$ may give two values of $y$. Restricting to the upper semicircle, $y = \sqrt{1 - x^{2}}$, gives one output for each $x$. This is what the vertical line test checks.
+A function $f:D\to\mathbb R$ assigns a unique real number to each $x\in D$.
+Inputs and outputs are real unless stated otherwise.
+For a quotient containing a root, write both restrictions.
+The root requires $x \ge 1$; the denominator also excludes 3.
+Points outside this domain are not part of the graph.
+Move the input $x$. The square root has a real output only when $x \ge 0$.
+Move $x$ from positive to negative. Where does the square-root graph stop, and why?
+Substitution is not multiplication
+For $f(x)=x^2-2x$, find $f(x+h)-f(x)$.
+Expand $(x+h)^2-2(x+h)$.
+Subtract $x^2-2x$, keeping the parentheses so no terms are lost.
+Two restrictions at once
+Find the domain of $g(x)=\frac{\ln(x-2)}{x-5}$.
+The logarithm requires $x > 2$; the denominator requires $x \ne 5$.
+Both restrictions must hold.
+Checking the root but forgetting the denominator.
+The domain must satisfy every restriction simultaneously.
+Writing $f(x+h)$ as $f(x)+h$.
+You changed the input. The output generally changes by a different amount.
+For $f(x)=3x-1$, find $f(4)$.
+Substitution gives $3 \times 4 - 1 = 11$.
+Replace $x$ by 4.
+Find the domain of $\sqrt{4-x^2}$.
+Require $4 - x^{2} \ge 0$, equivalently $|x| \le 2$.
+Make the radicand nonnegative.
+Find the domain of $\frac{1}{x^2-1}$.
+Factor the denominator as $(x - 1) (x + 1)$ and exclude its two zeros.
+Which inputs make the denominator zero?
+For $f(x)=x^2$, what is $f(x+1)-f(x)$?
+Expand $(x + 1)^{2}$, then subtract $x^{2}$.
+The change in the output is not simply 1.
+For $f (x) = \frac{1}{\sqrt{x - 2}}$, which inputs $x$ are allowed?
+The root requires $x - 2 \ge 0$, and the denominator cannot be zero. Together these give $x > 2$.
+Think of a function as a rule with an entry requirement. Check that the input can enter before finding its output. Over the reals, the square-root rule accepts only nonnegative inputs.
+An allowed input
+Set the input to 4.
+$\sqrt4=2$: the graph contains the corresponding point.
+A boundary input
+Set the input to 0.
+$\sqrt0=0$: this boundary point belongs to the domain.
+Beyond the boundary
+Set the input to −1.
+There is no real output, so no point should be added to the graph.
+$2xh+h^2-2h$.
+$(2,5)\cup(5,\infty)$.
+$11$.
+$[-2,2]$.
+$\mathbb R\setminus\{-1,1\}$.
+$2x+1$.

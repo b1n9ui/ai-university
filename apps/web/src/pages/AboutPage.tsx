@@ -1,3 +1,4 @@
+import {tr, localizeNode} from "../i18n";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -178,7 +179,8 @@ export function AboutPage() {
         </div>
       ) : part === "versions" ? (
         <div className="versions-page">
-          <div className="version-entry"><span className="badge">当前网站 · 教材书架</span><h2>v0.17.2 · 每本书，有自己的样子</h2><time>2026 年 10 月 22 日</time><ul><li>首页与书库改为多列书架，桌面四列、手机两列。</li><li>十本教材使用各自的配色与学科图形，教材主页封面同步更新。</li><li>选书卡片精简为内容标签、章/节数和下载入口，减少重复介绍。</li></ul></div>
+          <div className="version-entry"><span className="badge">当前网站 · 双语阅读</span><h2>v0.18.0 · 英文微积分 I 完整版</h2><time>2026 年 10 月 23 日</time><ul><li>英文为默认阅读语言，中文可切换；语言切换保留当前知识点与学习记录。</li><li>英文微积分 I 完整包含 7 章 35 节、79 个例题与 191 道练习及回顾题，附全部解答、图示说明、术语与附录。</li><li>同步英文 Markdown 与打印版；其他九卷标注中文版。</li><li>英文内容固定发布，无需模型 API；保留 AI 编写与尚未逐节人工审校的说明。</li></ul></div>
+          <div className="version-entry"><span className="badge">历史网站 · 教材书架</span><h2>v0.17.2 · 每本书，有自己的样子</h2><time>2026 年 10 月 22 日</time><ul><li>首页与书库改为多列书架，桌面四列、手机两列。</li><li>十本教材使用各自的配色与学科图形，教材主页封面同步更新。</li><li>选书卡片精简为内容标签、章/节数和下载入口，减少重复介绍。</li></ul></div>
           <div className="version-entry"><span className="badge">数学八卷修订</span><h2>v0.17.1 · 数学教材交叉检查</h2><time>2026 年 10 月 22 日</time><ul><li>修正动画播放范围、暂停继续和小数答案的误差判定。</li><li>补全 28 道练习的已知条件；开放作答与集合题改为对照解答自评。</li><li>补充定理条件、共振相位和分段分布函数，同步整本书稿与打印版。</li><li>微积分 I v0.3.3，II、III v0.1.2；其余数学卷 v0.1.1。</li></ul></div>
           <div className="version-entry"><span className="badge">实分析 v0.1.0</span><h2>v0.17.0 · 实分析完整首版</h2><time>2026 年 10 月 22 日</time><ul><li>8 章 40 节、80 个例题、184 道带解答练习与回顾题。</li><li>完备性、收敛、实线拓扑、连续、微分、积分与一致收敛。</li><li>误差带、二分包围、开覆盖、上下和与极限交换反例演示。</li><li>完整书稿、打印、搜索、索引与练习同步接入；无需 API。</li></ul></div>
           <div className="version-entry"><span className="badge">概率与统计 v0.1.0</span><h2>v0.15.0 · 概率与统计完整首版</h2><time>2026 年 10 月 21 日</time><ul><li>10 章 50 节、100 个例题、230 道练习及回顾，全部附解答。</li><li>从数据、抽样与概率，到分布、估计、检验、回归和贝叶斯更新。</li><li>50 节交互模型，包含重复抽样、覆盖率、精确二项尾部、置换、回归与预测区间。</li><li>理论值、浮点近似和固定种子模拟分别说明；无需模型 API。</li></ul></div>
@@ -426,36 +428,27 @@ export function PrivacyPanel() {
   }
   return (
     <div className="plain-section">
-      <h2>哪些数据留在浏览器里？</h2>
-      <p>
-        最近阅读、已读小节、收藏、字号偏好和练习自评保存在本地。网站没有用户账户，也没有将这些记录上传到服务器的功能。不同设备和浏览器不会自动同步。
-      </p>
-      <p>
-        托管服务可能保留常规访问日志；这是网站托管行为，和本地学习记录不同。本网站没有接入第三方行为分析。
-      </p>
+      <h2>{tr("哪些数据留在浏览器里？")}</h2>
+      <p>{tr("最近阅读、已读小节、收藏、字号偏好和练习自评保存在本地。网站没有用户账户，也没有将这些记录上传到服务器的功能。不同设备和浏览器不会自动同步。")}</p>
+      <p>{tr("托管服务可能保留常规访问日志；这是网站托管行为，和本地学习记录不同。本网站没有接入第三方行为分析。")}</p>
       <div className="data-controls">
-        <h3>管理学习记录</h3>
+        <h3>{tr("管理学习记录")}</h3>
         <p>
-          {reading.read.length} 节已读 · {reading.saved.length} 个收藏 ·{" "}
-          {Object.keys(progress).length} 道练习有记录
-        </p>
+          {localizeNode(reading.read.length)}{tr("节已读 ·")}{localizeNode(reading.saved.length)}{tr("个收藏 ·")}{localizeNode(" ")}
+          {localizeNode(Object.keys(progress).length)}{tr("道练习有记录")}</p>
         <div>
           <button className="secondary-btn" onClick={exportData}>
-            <Download size={16} />
-            导出学习记录
-          </button>
+            <Download size={16} />{tr("导出学习记录")}</button>
           <button
             className="secondary-btn"
             onClick={() => fileInput.current?.click()}
-          >
-            导入记录
-          </button>
+          >{tr("导入记录")}</button>
           <input
             ref={fileInput}
             type="file"
             accept="application/json,.json"
             className="sr-only"
-            aria-label="导入学习记录文件"
+            aria-label={tr("导入学习记录文件")}
             onChange={(e) => importData(e.target.files?.[0])}
           />
           <button
@@ -471,15 +464,13 @@ export function PrivacyPanel() {
             }}
           >
             <RotateCcw size={16} />
-            {armed ? "确认清空本地记录" : "清空本地记录"}
+            {localizeNode(armed ? "确认清空本地记录" : "清空本地记录")}
           </button>
-          {armed && (
-            <button className="text-btn" onClick={() => setArmed(false)}>
-              取消
-            </button>
-          )}
+          {localizeNode(armed && (
+            <button className="text-btn" onClick={() => setArmed(false)}>{tr("取消")}</button>
+          ))}
         </div>
-        {message && <p role="status">{message}</p>}
+        {localizeNode(message && <p role="status">{localizeNode(message)}</p>)}
       </div>
     </div>
   );

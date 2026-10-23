@@ -1,0 +1,65 @@
+Arc length and surface area of revolution
+Add short lengths, not heights
+Arc length adds the Pythagorean lengths of small segments. Surface area of revolution adds the narrow bands swept out by those segments.
+A small segment moves horizontally by $\mathrm{d}x$ and vertically by about $f' \mathrm{d}x$, giving length $\sqrt{1 + {f'}^{2}} \mathrm{d}x$. Following the curve is longer than measuring its horizontal span.
+The arc length formula
+Choose a useful variable or antiderivative
+Surfaces of revolution
+How do you calculate arc length?
+For continuously differentiable $f$ on $[a , b]$, integrate $\sqrt{1 + {f'}^{2}}$. Squaring the slope makes descending sections contribute positive length too. Arc length generally differs from the straight distance between endpoints.
+What if you cannot integrate the formula?
+Use numerical methods or write $x = g (y)$ and integrate with respect to $y$. The absence of an elementary antiderivative does not make the length undefined.
+Why multiply by circumference for surface area?
+When $f \ge 0$ rotates about the $x$-axis, a segment $\mathrm{d}s$ sweeps a band with circumference $2 \pi  f$ and area approximately $2 \pi  f \mathrm{d}s$. The integral counts the lateral surface only; add end caps separately. A different axis changes the radius.
+Arc length and lateral surface area about the $x$-axis.
+Assume $f$ is continuously differentiable on $[a , b]$. The surface formula here requires $f \ge 0$ and excludes end caps.
+A horizontal change $\Delta  x$ and vertical change $\Delta  y$ form a right triangle.
+Divide out the horizontal scale; the segment slope tends to $f'$.
+Adding the segment lengths gives the arc length integral.
+Increase the number of two-dimensional line segments and compare polygonal length with arc length. Rotate the same curve in three dimensions to see why band area uses $\mathrm{d}s$.
+Why is a curve segment longer than its horizontal width? Refine the segments, then see how their slant length enters the rotated band area.
+Length of a sloping line
+Find the arc length of $y = 3 x + 1$ on $[0,2]$.
+The derivative is 3, so the length factor is $\sqrt{1 + 9} = \sqrt{10}$.
+Multiply by the horizontal span 2.
+A directly integrable curve
+Find the arc length of $y = (\frac{2}{3}) x^{\frac{3}{2}}$ on $[0,1]$.
+The derivative is $\sqrt{x}$, so the length is $\int _{0}^{1} \sqrt{1 + x} \mathrm{d}x$.
+An antiderivative is $(\frac{2}{3}) (1 + x)^{\frac{3}{2}}$.
+Using $\int  f (x) \mathrm{d}x$ for arc length.
+That gives signed accumulation, usually interpreted as area. Arc length depends on slope.
+Treating lateral surface area as total area of a closed solid.
+Add the appropriate end caps when total surface area is requested.
+Find the arc length of $y = 4 x$ on $[0,1]$.
+The length factor is $\sqrt{1 + 16}$ and the interval width is 1.
+Check with the Pythagorean theorem.
+Find the arc length of the horizontal line $y = 2$ on $[0,3]$.
+The derivative is 0, so integrating 1 gives 3.
+A horizontal path equals its horizontal span.
+Rotate $y = 2$, $0 \le x \le 3$, about the $x$-axis. Find the lateral surface area.
+Radius 2 and length 3 give $2 \pi  \times 2 \times 3$.
+Exclude the two circular end caps.
+Why is $f'$ squared in the arc length integrand?
+Length comes from the Pythagorean theorem and does not depend on the sign of direction.
+Add the squares of vertical and horizontal components.
+A descending segment still has positive length.
+Which length multiplies circumference in a narrow band of a surface of revolution?
+Horizontal width $\mathrm{d}x$
+Slant length $\mathrm{d}s = \sqrt{1 + f' (x)^{2}} \mathrm{d}x$
+Function height $f (x)$
+The band follows the curve, so its width is arc length $\mathrm{d}s$. Using only $\mathrm{d}x$ omits the slant. This calculates lateral area only.
+Length includes both horizontal and vertical change. Rotation sweeps this slant length into a band, so horizontal width alone is insufficient.
+Start with a few segments
+Use 4 line segments in two dimensions.
+The polygonal length approximates the curve but still has error.
+Refine further
+Use 60 line segments.
+The polygonal length moves closer to arc length. Each slant length exceeds its horizontal width.
+Inspect a rotated band
+Switch to the three-dimensional surface and complete one revolution.
+Lateral area multiplies rotation circumference by slant length. This model excludes end caps.
+$2\sqrt{10}$.
+$\frac23(2\sqrt2-1)$.
+$\sqrt{17}$.
+$3$.
+$12\pi$.

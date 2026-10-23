@@ -1,0 +1,62 @@
+Graphs and Transformations
+Track the coordinates, not a memorized slogan.
+A graph transformation moves or rescales each point. Following one point keeps the direction clear.
+In $f (x - 2)$, keeping the inner input equal to $u$ requires the new horizontal coordinate $u + 2$. The graph therefore moves 2 units right.
+Horizontal and vertical shifts
+Scaling and reflection
+Symmetry and intervals
+Why does subtracting $h$ move the graph right?
+To make $x - h$ equal the original input $u$, set $x = u + h$. Thus $f (x - h) + k$ moves $(u , f (u))$ to $(u + h , f (u) + k)$.
+How does scaling work?
+$Af(Bx)$ multiplies vertical coordinates by $A$ and divides horizontal coordinates by $B$ ($B \ne 0$). For $A < 0$ it reflects vertically; for $B < 0$ it reflects horizontally. Larger $|B|$ compresses horizontally.
+How do you check symmetry and monotonicity?
+An even function satisfies $f (- x) = f (x)$; an odd function satisfies $f (- x) = - f (x)$. Monotonicity concerns an entire interval, not just two points. Treat disconnected pieces of a domain separately.
+For $B \ne 0$, the original point $(u,f(u))$ corresponds to $(\frac{u}{B}+h,Af(u)+k)$ in the following transformed graph.
+The domain must be shifted or rescaled too.
+Set the new inner input equal to the original input $u$.
+Solve for the new horizontal coordinate, then transform the output.
+This point mapping is more reliable than memorizing a sign rule.
+Adjust $h$ and $k$ and follow the parabola's vertex.
+As $h$ increases, does the vertex move left or right? Predict, then move the horizontal-shift slider.
+Finding the vertex
+For $g(x)=2(x-3)^2+1$, find the vertex, opening direction, and minimum.
+Start with $y = x^{2}$, shift 3 units right, stretch vertically by 2, then shift 1 unit up.
+The squared term is nonnegative, so the smallest output is 1.
+Vertex $(3,1)$; opens upward; minimum 1.
+Following a known point
+Given $f(2)=5$, find the corresponding point on $g(x)=f(2x+2)-3$.
+Set $2 x + 2 = 2$, giving $x = 0$.
+The output is $5 - 3 = 2$.
+The corresponding point is $(0,2)$.
+Shifting $f(x-3)$ to the left.
+Track the inner input: the original $x = 0$ occurs at the new $x = 3$.
+Treating $2f(x)$ and $f(2x)$ as the same transformation.
+One changes outputs; the other changes inputs. They generally differ.
+What is the vertex of $y=(x+2)^2-4$?
+The inner expression is zero at $x = - 2$, where the output is −4.
+First find where the squared term is zero.
+Which reflection produces $g(x)=-f(x)$?
+Reflection across the $x$-axis.
+Each point $(x , y)$ becomes $(x , - y)$.
+Only the output changes sign.
+Is $f(x)=x^3$ odd or even?
+Odd.
+Substitute $- x$ and check.
+Find the domain of $g(x)=\sqrt{x-2}$.
+Require $x - 2 \ge 0$.
+The domain shifts too.
+Where is the vertex of $y = (x - 2)^{2}$?
+The function is smallest when its inner expression is zero. Since $x - 2 = 0$, the vertex moves right to $(2,0)$.
+A shift changes where each point lies. Subtracting inside the function requires a larger input to reach the original value, so the graph moves right.
+Start with the original graph
+Set both shifts to 0.
+The vertex is $(0,0)$.
+Shift right
+Set the horizontal shift to 2, leaving the other parameter unchanged.
+The vertex of $y=(x-2)^2$ is $(2,0)$.
+Then shift up
+Keep the horizontal shift at 2 and set the vertical shift to 1.
+The vertex becomes $(2,1)$; the shifts affect different coordinates.
+$(-2,-4)$.
+$f (- x) = - x^{3} = - f (x)$.
+$[2,\infty)$.

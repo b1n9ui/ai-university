@@ -1,0 +1,73 @@
+Implicit Differentiation
+Find a slope without first solving for $y$.
+You can differentiate a relation without solving it for $y$. Treat $y$ as a function of $x$, and include $y'$ whenever the chain rule differentiates through $y$.
+Differentiating $x^{2} + y^{2} = 1$ gives $2 x + 2 y \cdot y' = 0$. For $y \ne 0$, the slope is $\frac{- x}{y}$.
+Differentiate both sides with respect to $x$
+Work locally, not necessarily globally
+Find higher derivatives
+How do you isolate $y'$?
+Differentiate both sides with respect to $x$. Use the chain rule on terms involving $y$ and the product rule on $x y$. Collect the $y'$ terms, factor, and solve.
+Can the same $x$ have two slopes?
+Yes. The slope depends on the specific point $(x , y)$ on the curve. If the denominator vanishes, do not divide: investigate a vertical tangent or another singularity.
+How do you find $y''$?
+Differentiate $y'$ again, still including $y'$ when differentiating through $y$. Differentiate before substituting point coordinates; early substitution can erase variable dependence.
+Suppose the differentiable relation $F (x , y) = 0$ has a local differentiable branch $y = y (x)$ with $F_{y} \ne 0$. Differentiation with respect to $x$ determines its slope.
+Assume this differentiable branch exists. $F_{x}$ and $F_{y}$ mean differentiation with respect to $x$ and $y$, respectively, while holding the other variable fixed.
+Evaluate derivatives at the point $(x , y (x))$ on the curve. Dividing in the slope formula requires $F_{y} \ne 0$.
+Differentiate both sides of the circle equation.
+Solve for $y'$ where $y \ne 0$.
+On the upper semicircle, the slope is negative for $x > 0$, agreeing with the graph.
+Move $a$ along the upper semicircle of radius 2. The tangent becomes steeper near the endpoints.
+As you approach either endpoint of the upper semicircle, does the tangent become flatter or steeper?
+A tangent to a circle
+Find the tangent to $x^2+y^2=25$ at $(3,4)$.
+Implicit differentiation gives $y' = \frac{- x}{y}$.
+The line has slope $\frac{- 3}{4}$ and passes through $(3,4)$.
+A relation containing a product
+Differentiate $xy+y^2=6$.
+$x y$ gives $y + x y'$; $y^{2}$ gives $2yy\prime$.
+Collect terms: $y + (x + 2 y) y' = 0$.
+$y\prime=-\frac{y}{x+2y}$, provided the denominator is nonzero.
+Differentiate a second time
+On the upper semicircle $x^2+y^2=25$, find $y\prime\prime$ at $(3,4)$.
+First $y\prime=-\frac{x}{y}$. On a branch with $y\ne0$, differentiate again: $y\prime\prime=\frac{-y+xy\prime}{y^2}$.
+Substitute $y\prime=-\frac{x}{y}$ to get $y\prime\prime=-\frac{x^2+y^2}{y^3}=-\frac{25}{y^3}$. Only then substitute $(3,4)$.
+$y\prime\prime=-\frac{25}{64}$; the upper semicircle is concave down there.
+Treating $y$ as a constant.
+Along the curve, $y$ changes with $x$. Every differentiation through $y$ needs its chain-rule factor $y'$.
+Calling the slope zero when the denominator is zero.
+A zero denominator means this formula does not provide a finite slope.
+Find $y'$ from $x^2+y^2=1$.
+Differentiate to obtain $2 x + 2 y y' = 0$, then solve.
+The radius does not affect this slope relation.
+Find $y'$ from $y^3=x$.
+Differentiate the complete expression $y^{3}$ first.
+Find the slope of $x^2+y^2=25$ at $(0,5)$.
+Substitute a point that lies on the circle.
+Find $y'$ from $x+y+xy=3$.
+$1 + y' + y + x y' = 0$. Collect the $y'$ terms.
+Use the product rule for $x y$.
+On the upper semicircle $x^2+y^2=4$, find $y\prime\prime$ at $(0,2)$.
+From $2x+2yy\prime=0$, differentiate again: $2+2(y\prime)^2+2yy\prime\prime=0$.
+Here $y\prime=0$, so $2+4y\prime\prime=0$, giving $y\prime\prime=-\frac12$.
+Differentiate the first differentiated equation again to avoid a quotient.
+Treating $y$ as a function of $x$, what is $(y^{2})'$?
+$y^{2}$ composes an outer square with the inner function $y (x)$. Multiply by the inner derivative $y'$.
+You need not solve the whole curve as one function. Differentiate along the chosen branch, remembering that its vertical coordinate changes. The slope belongs to a specific point.
+Near the top of the circle
+On the upper semicircle of radius 2, set the base point to 0.
+The tangent at the top is horizontal; its exact slope is 0.
+Move along the right side
+Change the base point to 1.
+The height is $\sqrt3$, and the slope is $-\frac1{\sqrt3}$.
+Approach an endpoint
+Set the base point to 1.9, keeping gap 0.01.
+The height is smaller and the tangent steeper. At the endpoint, the nonzero-denominator formula cannot supply a finite slope.
+$y-4=-\frac34(x-3)$.
+$-\frac{x}{y}$($y \ne 0$).
+$\frac{1}{3y^2}$($y \ne 0$).
+$3 y^{2} y' = 1$.
+$0$.
+$\frac{- x}{y} = \frac{- 0}{5} = 0$.
+$-\frac{1+y}{1+x}$($x \ne - 1$).
+$-\frac12$.

@@ -1,3 +1,4 @@
+import {tr, localizeNode} from "../i18n";
 import { useState } from "react";
 import { ArrowRight, Check, Lightbulb } from "lucide-react";
 import type { Lesson } from "../../../../packages/content/types";
@@ -10,13 +11,13 @@ export function LearningCheck({ check }: { check: Lesson["learningCheck"] }) {
     <div className="learning-check">
       <div className="learning-check-label">
         <Lightbulb size={16} />
-        <span>先想一下 · 不计分</span>
+        <span>{tr("先想一下 · 不计分")}</span>
       </div>
       <h3>
-        <MathText text={check.question} />
+        <MathText text={tr(check.question)} />
       </h3>
-      <div className="check-choices" role="group" aria-label="概念检查选项">
-        {check.choices.map((text, i) => (
+      <div className="check-choices" role="group" aria-label={tr("概念检查选项")}>
+        {localizeNode(check.choices.map((text, i) => (
           <button
             key={i}
             aria-pressed={choice === i}
@@ -27,23 +28,23 @@ export function LearningCheck({ check }: { check: Lesson["learningCheck"] }) {
             onClick={() => setChoice(i)}
           >
             <span>
-              {answered && i === check.correctIndex ? (
+              {localizeNode(answered && i === check.correctIndex ? (
                 <Check size={14} />
               ) : (
                 String.fromCharCode(65 + i)
-              )}
+              ))}
             </span>
-            <span className="check-choice-text"><MathText text={text} /></span>
+            <span className="check-choice-text"><MathText text={tr(text)} /></span>
             <ArrowRight size={14} />
           </button>
-        ))}
+        )))}
       </div>
-      {answered && (
+      {localizeNode(answered && (
         <div className="check-feedback" role="status">
-          <strong>{correct ? "对。" : "再对照一下条件。"}</strong>
-          <MathText text={check.explanation} />
+          <strong>{localizeNode(correct ? "对。" : "再对照一下条件。")}</strong>
+          <MathText text={tr(check.explanation)} />
         </div>
-      )}
+      ))}
     </div>
   );
 }

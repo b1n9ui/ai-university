@@ -1,0 +1,65 @@
+Trigonometric Functions and Radians
+Use the unit circle to understand periodic change.
+On the unit circle, $\cos$ is the horizontal coordinate and $\sin$ the vertical coordinate. Radians measure an angle by arc length divided by radius.
+An arc of length 1 on the unit circle subtends 1 radian. Trigonometric formulas in calculus use radians unless stated otherwise.
+Radians and periods
+Essential identities
+Small angles in calculus
+How do radians convert to degrees?
+Since $\theta  = \frac{s}{r}$, a full turn is $2 \pi$ radians and $180^{\circ} = \pi$ radians. The periods of $\sin$ and $\cos$ are $2 \pi$; that of $\tan$ is $\pi$. Tangent is undefined where $\cos = 0$.
+Where do the identities come from?
+The unit-circle equation gives $\sin^{2} x + \cos^{2} x = 1$, while $\tan x = \frac{\sin x}{\cos x}$. Simplifying an expression does not remove its original domain restrictions.
+Why do small angles matter?
+In radians, $\frac{\sin x}{x} \to 1$ as $x \to 0$. This limit underlies the derivative of sine. It does not mean $\sin x = x$ for every $x$.
+The angle $x$ on the unit circle determines the point $(\cos x,\sin x)$.
+Trigonometric inputs are in radians unless stated otherwise; $\tan$ requires $\cos x \ne 0$.
+The circumference is $2 \pi  r$; dividing by the radius gives the angle of a full turn.
+The unit circle's coordinates satisfy its equation.
+Angles, graphs, and algebraic identities therefore describe the same geometry.
+Move $x$ to explore sine's period. The horizontal axis is measured in radians.
+What happens to $\sin x$ when $x$ increases by $2 \pi$? Compare inputs one period apart.
+Converting an angle
+Convert 150° to radians and find its sine.
+Multiply by $\frac{\pi }{180}$ to get $\frac{5 \pi }{6}$.
+$\frac{5 \pi }{6}$ lies in quadrant II, where sine is positive, at the same height as $\frac{\pi }{6}$.
+$\frac{5\pi}{6}$ radians; sine $\frac{1}{2}$.
+Where tangent is undefined
+Where is $\tan x$ undefined?
+Division is not allowed when the denominator $\cos x = 0$.
+These angles are $\frac{\pi }{2}$ plus an integer multiple of $\pi$.
+Entering 30 as though it meant $30^{\circ}$.
+In these formulas, 30 means radians. Convert $30^{\circ}$ to $\frac{\pi }{6}$ first.
+Writing $\sin^{2} x$ as $\sin (x^{2})$.
+The former means $(\sin x)^{2}$: evaluate sine, then square.
+How many radians equal 90°?
+A full turn is $2 \pi$.
+Find $\cos\pi$.
+Half a turn on the unit circle reaches $(-1,0)$.
+Use the horizontal coordinate.
+Simplify $1-\sin^2x$.
+Rearrange the unit-circle identity.
+The sum of the squares is 1.
+How are $\sin(x+2\pi)$ and $\sin x$ related?
+They are equal.
+A full turn returns to the same point.
+Use periodicity.
+Why are angles usually measured in radians in calculus?
+Radians make every angle smaller
+Radians are arc length divided by radius, so the basic limit needs no conversion factor
+Angles measured in degrees cannot be differentiated
+$\frac{\sin h}{h} \to 1$ requires $h$ in radians. Using degrees introduces a factor of $\frac{\pi }{180}$.
+Sine records height on the unit circle. A full turn returns to the same point, so the heights repeat. In radians, that turn measures twice pi.
+Start at zero
+Set the input to 0.
+A quarter turn
+Set the input to 1.57, close to $\frac\pi2$.
+The height is close to 1, near a peak of the sine wave.
+A full turn
+Set the input to 6.28, close to $2\pi$.
+The output is close to 0 again. These presets are decimal approximations, not exact multiples of pi.
+$x=\frac{\pi}{2}+k\pi$, $k\in\mathbb Z$.
+$\frac{\pi}{2}$.
+$\frac{90 \times \pi }{180} = \frac{\pi }{2}$.
+$-1$.
+$\cos^2x$.
+$\sin0=0$.

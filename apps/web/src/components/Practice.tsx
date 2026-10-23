@@ -1,3 +1,4 @@
+import {tr, localizeNode} from "../i18n";
 import {
   ArrowLeft,
   ArrowRight,
@@ -56,25 +57,22 @@ export function PracticeSet({
     <section className="practice-set">
       <div className="section-heading">
         <span className="eyebrow">PRACTICE & REFLECT</span>
-        <h2 ref={heading} tabIndex={-1} style={{ scrollMarginTop: 140 }}>
-          练习
-        </h2>
-        <p>数字题可检查数值；推导题请对照步骤自评。记录只保存在当前浏览器。</p>
+        <h2 ref={heading} tabIndex={-1} style={{ scrollMarginTop: 140 }}>{tr("练习")}</h2>
+        <p>{tr("数字题可检查数值；推导题请对照步骤自评。记录只保存在当前浏览器。")}</p>
       </div>
       <div className="practice-overview">
         <span>
-          {questions.length} 道题 · {understood} 道已掌握
-        </span>
+          {localizeNode(questions.length)}{tr("道题 ·")}{localizeNode(understood)}{tr("道已掌握")}</span>
         <button onClick={() => setAll(!all)}>
-          {all ? <Layers3 size={14} /> : <List size={14} />}{" "}
-          {all ? "逐题练习" : "连续查看"}
+          {localizeNode(all ? <Layers3 size={14} /> : <List size={14} />)}{localizeNode(" ")}
+          {localizeNode(all ? "逐题练习" : "连续查看")}
         </button>
       </div>
-      <nav className="question-navigator" aria-label="练习题导航">
-        {questions.map((q, i) => (
+      <nav className="question-navigator" aria-label={tr("练习题导航")}>
+        {localizeNode(questions.map((q, i) => (
           <button
             key={q.id}
-            aria-label={"第 " + (i + 1) + " 题"}
+            aria-label={tr("第 " + (i + 1) + " 题")}
             aria-current={!all && i === index ? "step" : undefined}
             className={
               (i === index && !all ? "active " : "") +
@@ -89,11 +87,11 @@ export function PracticeSet({
               choose(i);
             }}
           >
-            {i + 1}
+            {localizeNode(i + 1)}
           </button>
-        ))}
+        )))}
       </nav>
-      {questions.map((q, i) => (
+      {localizeNode(questions.map((q, i) => (
         <div key={q.id} hidden={!all && i !== index}>
           <Question
             q={q}
@@ -103,25 +101,19 @@ export function PracticeSet({
             onMark={(v) => onMark(q.id, v)}
           />
         </div>
-      ))}
-      {!all && (
+      )))}
+      {localizeNode(!all && (
         <div className="question-pagination">
           <button disabled={index === 0} onClick={() => choose(index - 1)}>
-            <ArrowLeft size={15} />
-            上一题
-          </button>
-          <span>
-            第 {index + 1} / {questions.length} 题
-          </span>
+            <ArrowLeft size={15} />{tr("上一题")}</button>
+          <span>{tr("第")}{localizeNode(index + 1)} / {localizeNode(questions.length)}{tr("题")}</span>
           <button
             disabled={index === questions.length - 1}
             onClick={() => choose(index + 1)}
-          >
-            下一题
-            <ArrowRight size={15} />
+          >{tr("下一题")}<ArrowRight size={15} />
           </button>
         </div>
-      )}
+      ))}
     </section>
   );
 }
@@ -164,20 +156,20 @@ function Question({
     <article className="exercise">
       <header>
         <span className="exercise-number">
-          {String(index + 1).padStart(2, "0")}
+          {localizeNode(String(index + 1).padStart(2, "0"))}
         </span>
-        <span>难度 {q.difficulty}/6</span>
-        {status && (
+        <span>{tr("难度")}{localizeNode(q.difficulty)}/6</span>
+        {localizeNode(status && (
           <span className={"status " + status}>
-            {status === "understood" ? "已掌握" : "需要回顾"}
+            {localizeNode(status === "understood" ? "已掌握" : "需要回顾")}
           </span>
-        )}
+        ))}
       </header>
       <h3>
-        <MathText text={q.problem} />
+        <MathText text={tr(q.problem)} />
       </h3>
       <label className="answer-label">
-        {q.numericAnswer !== undefined ? "数值结果（小数或分数）" : "你的思路"}
+        {localizeNode(q.numericAnswer !== undefined ? "数值结果（小数或分数）" : "你的思路")}
         <textarea
           value={draft}
           onChange={(e) => {
@@ -186,60 +178,58 @@ function Question({
             setResult(null);
           }}
           placeholder={
-            q.numericAnswer !== undefined
+            tr(q.numericAnswer !== undefined
               ? "小数请保留至少 6 位有效数字，也可输入分数…"
-              : "写下关键步骤，或先在纸上完成…"
+              : "写下关键步骤，或先在纸上完成…")
           }
         />
       </label>
       <div className="exercise-actions">
-        {q.numericAnswer !== undefined && (
+        {localizeNode(q.numericAnswer !== undefined && (
           <button className="small-btn" onClick={check}>
-            <Check size={14} />
-            检查数值
-          </button>
-        )}
+            <Check size={14} />{tr("检查数值")}</button>
+        ))}
         <button
           className="small-btn"
           aria-expanded={hint}
           onClick={() => setHint(!hint)}
         >
           <Lightbulb size={14} />
-          {hint ? "收起提示" : "给我一点提示"}
+          {localizeNode(hint ? "收起提示" : "给我一点提示")}
         </button>
         <button
           className="text-btn"
           aria-expanded={reveal}
           onClick={() => setReveal(!reveal)}
         >
-          {reveal ? "收起解答" : "查看完整解答"}
+          {localizeNode(reveal ? "收起解答" : "查看完整解答")}
           <ChevronDown size={14} />
         </button>
       </div>
-      {feedback && (
+      {localizeNode(feedback && (
         <div role="status" className={"feedback feedback-"+result}>
-          <strong>{feedback}</strong>
-          {result==="wrong"&&<>{misconceptions.length>0&&<div className="feedback-checks"><span>值得检查</span>{misconceptions.map(m=><p key={m.id}><MathText text={m.correction}/></p>)}</div>}</>}
-          {result==="correct"&&<button className="small-btn" onClick={()=>onMark("understood")}>我能说明步骤，标记已理解</button>}
+          <strong>{localizeNode(feedback)}</strong>
+          {localizeNode(result==="wrong"&&<>{localizeNode(misconceptions.length>0&&<div className="feedback-checks"><span>{tr("值得检查")}</span>{localizeNode(misconceptions.map(m=><p key={m.id}><MathText text={tr(m.correction)}/></p>))}</div>)}</>)}
+          {localizeNode(result==="correct"&&<button className="small-btn" onClick={()=>onMark("understood")}>{tr("我能说明步骤，标记已理解")}</button>)}
         </div>
-      )}
-      {hint && (
+      ))}
+      {localizeNode(hint && (
         <div className="hint staged-hint">
-          <span>提示</span><p><MathText text={q.hint}/></p>
-          {!nextHint?<button className="text-btn" onClick={()=>setNextHint(true)}>再看一步<ArrowRight size={14}/></button>:<><span>解题第一步</span><p><MathText text={q.solution[0]}/></p></>}
+          <span>{tr("提示")}</span><p><MathText text={tr(q.hint)}/></p>
+          {localizeNode(!nextHint?<button className="text-btn" onClick={()=>setNextHint(true)}>{tr("再看一步")}<ArrowRight size={14}/></button>:<><span>{tr("解题第一步")}</span><p><MathText text={tr(q.solution[0])}/></p></>)}
         </div>
-      )}
-      {reveal && (
+      ))}
+      {localizeNode(reveal && (
         <div className="solution">
           <strong>
-            <MathText text={q.answer} />
+            <MathText text={tr(q.answer)} />
           </strong>
           <ol>
-            {q.solution.map((s, i) => (
+            {localizeNode(q.solution.map((s, i) => (
               <li key={i}>
-                <MathText text={s} />
+                <MathText text={tr(s)} />
               </li>
-            ))}
+            )))}
           </ol>
           <div className="exercise-actions">
             <button
@@ -247,19 +237,15 @@ function Question({
               aria-pressed={status === "understood"}
               onClick={() => onMark("understood")}
             >
-              <Check size={14} />
-              自评：我已理解
-            </button>
+              <Check size={14} />{tr("自评：我已理解")}</button>
             <button
               className="small-btn"
               aria-pressed={status === "review"}
               onClick={() => onMark("review")}
-            >
-              自评：还需回顾
-            </button>
+            >{tr("自评：还需回顾")}</button>
           </div>
         </div>
-      )}
+      ))}
     </article>
   );
 }

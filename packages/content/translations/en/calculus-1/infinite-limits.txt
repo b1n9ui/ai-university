@@ -1,0 +1,65 @@
+Infinite Limits and Asymptotes
+Infinity describes behavior, not a real number.
+An infinite limit concerns unbounded outputs as $x \to a$. A finite limit at infinity concerns outputs approaching a fixed number as $x \to \infty$. First identify which quantity grows without bound.
+$\frac{1}{x}$ tends to $- \infty$ and $+ \infty$ on opposite sides of zero, yet tends to 0 as $x \to \infty$. One function can exhibit these two different uses of infinity.
+Vertical and horizontal asymptotes
+Leading terms of rational functions
+What an infinite limit guarantees
+How do you find an asymptote?
+If outputs tend to $\pm \infty$ as $x \to a$ from at least one side, $x = a$ is a vertical asymptote. If outputs tend to $L$ as $x \to \pm \infty$, then $y = L$ is a horizontal asymptote in that direction. A curve can cross it.
+How do rational functions behave at infinity?
+Compare leading terms. A lower-degree numerator gives limit 0; equal degrees give the ratio of leading coefficients. For a higher-degree numerator, analyze growth and signs. Watch odd powers as $x \to - \infty$.
+Does being unbounded imply tending to $\infty$?
+No. Tending to $+ \infty$ means eventually exceeding every prescribed threshold and remaining above it. Growing oscillations need not have that behavior.
+The definition of tending to positive infinity from the right, and an example of a finite limit at infinity.
+$\pm \infty$ are not finite real numbers. Describe the signs of one-sided infinite behavior separately.
+Factor out the leading powers when studying behavior at infinity.
+The smaller terms tend to zero, and the denominator tends to a nonzero value.
+The line $y = \frac{3}{2}$ is a horizontal asymptote in both directions.
+$\frac{1}{x}$ tends to negative infinity on the left of zero and positive infinity on the right. The viewing window clips the graph; the curve does not end at its edge.
+Does $\frac{1}{x}$ tend in the same direction as it approaches 0 from the left and right? Is the window's edge an endpoint of the curve?
+Opposite one-sided signs
+Find $\lim_{x\to0^-}\frac{1}{x}$ and $\lim_{x\to0^+}\frac{1}{x}$.
+A small negative number has a large negative reciprocal.
+A small positive number has a large positive reciprocal.
+Respectively $- \infty$ and $+ \infty$; there is no common two-sided behavior.
+A slant asymptote
+Find the slant asymptote of $f(x)=\frac{x^2+1}{x}$.
+Rewrite the function as $x + \frac{1}{x}$.
+Its signed vertical difference from $y = x$ is $\frac{1}{x}$, which tends to 0 at either end.
+The slant asymptote is $y = x$.
+Treating $\infty$ as a number in arithmetic.
+Forms such as $\infty  - \infty$ do not determine a result. Compare the actual rates of growth.
+Declaring a vertical asymptote whenever a denominator is zero.
+A factor might cancel, leaving a hole. Check the nearby behavior.
+Find $\lim_{x\to\infty}\frac{2x+1}{x+4}$.
+Divide by $x$ to obtain $\frac{2 + \frac{1}{x}}{1 + \frac{4}{x}}$.
+Compare leading coefficients.
+Find $\lim_{x\to0}\frac{1}{x^2}$.
+Both sides are positive and grow beyond every bound.
+Squaring removes the sign difference between the two sides.
+Find $\lim_{x\to-\infty}x^3$.
+An odd power of a negative input is negative, with unbounded magnitude.
+Check the direction and the parity of the power.
+Does $f(x)=\frac{x^2-1}{x-1}$ have a vertical asymptote at 1?
+No. It has a removable hole.
+For $x \ne 1$, it equals $x + 1$, whose nearby limit is finite.
+Cancel before deciding.
+Does $\frac{1}{x}$ have the two-sided limit $+ \infty$ as $x \to 0$?
+Yes
+No: it tends to $- \infty$ on the left and $+ \infty$ on the right
+Yes: $\infty$ and $- \infty$ are the same number
+The two sides disagree, so a two-sided limit of $+ \infty$ is invalid. Infinite behavior is not a finite real value either.
+Tending to infinity means eventually passing every prescribed threshold, not reaching a number called infinity. Check the side of approach and the sign.
+Approach zero from the right
+Set the right-side distance to 0.1.
+The output is 10, beyond part of the viewing window. The curve has not stopped.
+Move closer from the right
+Reduce the distance to 0.01.
+The output becomes 100. Closer positive inputs produce larger positive outputs.
+Switch to the left
+Keep distance 0.01 and switch to the left.
+The output is −100. The sides have opposite behavior, so they cannot share one two-sided infinite limit.
+$2$.
+$+ \infty$.
+$- \infty$.

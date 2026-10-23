@@ -1,0 +1,92 @@
+Displacement, work, mass, and averages
+Accumulate local contributions
+Write a small contribution before integrating: $\text{velocity}\times\text{time}$ gives displacement, $\text{force}\times\text{displacement}$ gives work, and $\text{linear density}\times\text{length}$ gives mass.
+Units help identify the right factors: $\frac{\mathrm{m}}{\mathrm{s}}\times\mathrm{s}=\mathrm{m}$, $\mathrm{N}\times\mathrm{m}=\mathrm{J}$, and $\frac{\mathrm{kg}}{\mathrm{m}}\times\mathrm{m}=\mathrm{kg}$.
+Displacement versus distance
+Work by a variable force
+Mass and center of mass
+How do displacement and distance differ?
+Displacement is $\int  v \mathrm{d}t$; distance is $\int  |v| \mathrm{d}t$. Split where velocity changes sign. Add initial position to recover position. Average velocity is displacement divided by elapsed time.
+How do you calculate variable-force work?
+The force component along motion contributes $\mathrm{d}W = F (x) \mathrm{d}x$. Stretching a spring requires external force $k x$, giving work $\int kx\,\mathrm{d}x$. The spring's restoring force points the other way.
+How do you find mass and center of mass?
+Linear density $\lambda$ gives mass $m = \int  \lambda  \mathrm{d}x$. The first moment is $M = \int  x \lambda  \mathrm{d}x$, so the center of mass is $\frac{M}{m}$ for $m > 0$. Physical models such as fluid pressure also need assumptions about density and depth.
+Why does pumping water need varying lift distances?
+With tank bottom $y=0$ and outlet height $H$, a layer at height $y$ has volume $A(y)\,\mathrm{d}y$ and must rise $H-y$. Thus $W=\int\rho gA(y)(H-y)\,\mathrm{d}y$ over the actual water layers. Assume constant density $\rho$ and gravity $g$, negligible losses, and negligible exit speed.
+How does water pressure accumulate into force?
+Measure depth $h$ downward from the surface. Gauge pressure is $p=\rho gh$. A strip of width $w(h)$ and height $\mathrm{d}h$ receives force $\rho ghw(h)\,\mathrm{d}h$. Integrate over depth to find the resultant on one side of a vertical plate. If both sides are pressurized, use their pressure difference.
+Multiply each local contribution by the appropriate differential.
+Bounds must match the time or position interval. Density is nonnegative and center of mass requires positive total mass. Use the force component along displacement.
+For $v (t) = t - 1$ on $0 \le t \le 3$, first locate the change of direction.
+Signed accumulation gives displacement.
+For distance, reverse the first piece's sign to obtain a larger total length.
+For $v (t) = t - 1$, the negative section represents backward motion and the positive section forward motion. Compare displacement and total distance.
+When velocity changes from negative to positive, are displacement and distance equal? Compare the readings at upper bound 2.
+Stretching a spring
+A spring has $k=100\,\mathrm{N}\,\mathrm{m}^{-1}$. Find the work to stretch it from its natural length to $0.2\,\mathrm{m}$.
+The external force is $F = 100 x$.
+$2\,\mathrm{J}$, assuming quasistatic stretching and negligible losses.
+A nonuniform rod
+A rod occupies $x \in [0 , 2]$ with linear density $\lambda  (x) = 1 + x$. Find its mass and center of mass.
+The mass is $[x + \frac{x^{2}}{2}]_{0}^{2} = 4$.
+The moment is $[\frac{x^{2}}{2} + \frac{x^{3}}{3}]_{0}^{2} = \frac{14}{3}$. Divide by the mass.
+Mass 4; center of mass $\frac{7}{6}$, shifted toward the denser right side.
+Each water layer rises a different distance
+A cylindrical tank has bottom $y=0$, radius $1\,\mathrm{m}$, water depth $2\,\mathrm{m}$, and outlet height $3\,\mathrm{m}$. With $\rho=1000\,\mathrm{kg}\,\mathrm{m}^{-3}$ and $g=9.8\,\mathrm{m}\,\mathrm{s}^{-2}$, find the work to empty it, neglecting losses.
+A layer at height $y$ has area $\pi\,\mathrm{m}^2$, weight $9800\pi\,\mathrm{d}y$, and lift distance $3-y$.
+$W=39200\pi\,\mathrm{J}$. Do not treat all the water as starting at the tank bottom.
+Pressure increases with depth
+A vertical rectangular gate is $2\,\mathrm{m}$ wide and $3\,\mathrm{m}$ high, with its top at the water surface. One side holds water and the other has the same atmospheric pressure. Use $\rho=1000\,\mathrm{kg}\,\mathrm{m}^{-3}$ and $g=9.8\,\mathrm{m}\,\mathrm{s}^{-2}$ to find the net hydrostatic force.
+At depth $h$, the pressure difference is $p=9800h$ and strip area is $2\,\mathrm{d}h$, so $\mathrm{d}F=19600h\,\mathrm{d}h$.
+$F=88200\,\mathrm{N}$. This is force, not work.
+Calling the integral of velocity total distance.
+Negative velocity cancels positive velocity. Distance integrates absolute velocity.
+Pairing the integrand with the wrong variable or units.
+Force multiplies position change; flow rate multiplies time change. Check dimensions first.
+For $v (t) = 2 t$ on $0 \le t \le 2$, find displacement.
+The antiderivative is $t^{2}$; its endpoint difference is 4.
+Velocity is nonnegative throughout this interval.
+A spring has $k=50\,\mathrm{N}\,\mathrm{m}^{-1}$. Find the external work to stretch it from 0 to $0.4\,\mathrm{m}$.
+The force grows from zero rather than staying constant.
+A rod has density $\lambda  = 3$ and length 2. Find its mass.
+Multiply constant density by length.
+For $v (t) = t - 1$ on $0 \le t \le 2$, find displacement and distance.
+Displacement 0; distance 1.
+Split at 1: the displacements $\frac{- 1}{2}$ and $\frac{1}{2}$ cancel.
+Their absolute values add to 1.
+Signed change and total length are different quantities.
+A cylindrical tank has radius $1\,\mathrm m$, water depth $2\,\mathrm m$, and a fixed outlet $2\,\mathrm m$ above the bottom. With $\rho=1000\,\mathrm{kg/m^3}$ and $g=9.8\,\mathrm{m/s^2}$, find the work to empty it, neglecting losses.
+The lift distance is $2-y$, so $W=9800\pi\int_0^2(2-y)\,\mathrm{d}y$.
+The integral is 2, giving $19600\pi\,\mathrm{J}$. A layer at the outlet needs zero lift distance.
+Only the lift distance changes; the water interval stays the same.
+A vertical rectangular gate is $2\,\mathrm m$ wide, with its top $1\,\mathrm m$ and bottom $4\,\mathrm m$ below water. One side holds water and the other has the same atmospheric pressure. Use $\rho=1000\,\mathrm{kg/m^3}$ and $g=9.8\,\mathrm{m/s^2}$ to find the net hydrostatic force.
+Integrate depth from 1 to 4: $F=19600\int_1^4h\,\mathrm{d}h$.
+The variable is depth below the water surface.
+In a pumping integral, what does $\rho gA(y)\,\mathrm{d}y$ represent, and what changes after multiplying by $H-y$?
+The first is the layer's weight, a force; the product is the work to lift it.
+Density times volume gives mass; multiplying by gravitational acceleration gives force.
+Force times lift distance gives work. Their units are $\mathrm{N}$ and $\mathrm{J}$, respectively.
+Distinguish mass, force, and work in that order.
+If velocity $v (t)$ has both signs, what should you integrate for total distance?
+Displacement integrates signed $v (t)$; distance integrates speed $|v (t)|$. Backtracking cancels displacement but never distance.
+Match each contribution with its units before integrating. Negative velocity tracks direction, weight times lift distance gives work, and density times volume gives mass.
+Move backward
+Set the velocity model's upper bound to 1.
+Displacement is $-\frac12$ and distance is $\frac12$.
+Return to the starting point
+Set the upper bound to 2.
+Signed displacement cancels to zero, but distance is 1.
+Continue forward
+Set the upper bound to 3.
+Displacement is $\frac32$ and distance is $\frac52$. Identify the requested quantity before reading the number.
+$W = \int _{0}^{0.2} 100 x \mathrm{d}x = 50 \times 0.04$.
+$W=9800\pi\int_0^2(3-y)\,\mathrm{d}y=9800\pi[3y-\frac{y^2}{2}]_0^2$.
+$F=19600\int_0^3h\,\mathrm{d}h=19600\times\frac92$.
+$4$.
+$4\,\mathrm{J}$.
+$W = (\frac{1}{2}) \times 50 \times 0.4^{2} = 4$.
+$6$.
+$\int _{0}^{2} 3 \mathrm{d}x = 6$.
+$19600\pi\,\mathrm{J}$.
+$147000\,\mathrm{N}$.
+$F=19600\times\frac{16-1}{2}=147000\,\mathrm{N}$.

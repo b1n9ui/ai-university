@@ -1,0 +1,84 @@
+Antiderivatives and indefinite integrals
+Reverse differentiation
+An antiderivative is a function whose derivative is $f$. On an interval, any two antiderivatives differ by a constant.
+Both $\frac{x^{2}}{2}$ and $\frac{x^{2}}{2} + 3$ have derivative $x$. Differentiation loses constants, so integration restores $+ C$.
+Why the constant matters
+Basic integration formulas
+Use an initial condition
+Why keep $C$?
+The difference of two antiderivatives has derivative 0, so it is constant on an interval. Separate components of a disconnected domain may have different constants.
+Which formula applies?
+Match the integrand to a known derivative. The power rule excludes $n = - 1$: for $\int\frac{1}{x}\,\mathrm{d}x$, use $\ln |x| + C$. Apply each formula on an interval where it is defined.
+How do you determine and check the answer?
+Substitute a known function value into $F (x) + C$ to find $C$. Differentiate to check. The integral of a product is not generally the product of the integrals.
+Which antiderivatives should you know?
+Besides powers and logarithms, use $\int e^x\,\mathrm{d}x=e^x+C$, $\int\sin x\,\mathrm{d}x=-\cos x+C$, and $\int\cos x\,\mathrm{d}x=\sin x+C$. Check by differentiating; a composite input also requires its inner derivative.
+How do trig and inverse trig patterns fit?
+$\int\sec^2x\,\mathrm{d}x=\tan x+C$, $\int\csc^2x\,\mathrm{d}x=-\cot x+C$, $\int\sec x\tan x\,\mathrm{d}x=\sec x+C$, and $\int\csc x\cot x\,\mathrm{d}x=-\csc x+C$. Inverse trig derivatives give $\int\frac{1}{1+x^2}\,\mathrm{d}x=\arctan x+C$ and $\int\frac{1}{\sqrt{1-x^2}}\,\mathrm{d}x=\arcsin x+C$. The first four require intervals avoiding undefined points; the last requires $|x|<1$.
+An indefinite integral denotes all antiderivatives.
+Work on an interval; the power formula excludes $n = - 1$, which uses a logarithm.
+Read the power rule backward.
+Divide by $n + 1$ to obtain an antiderivative.
+At $n = - 1$ the denominator vanishes, but $\ln |x|$ has derivative $\frac{1}{x}$.
+Change $C$: the antiderivative $\frac{x^{3}}{3} + C$ shifts vertically, while its derivative remains $x^{2}$.
+Does changing $C$ change the slope? Compare the vertical shift with the derivative reading.
+Integrate term by term
+Find $\int(3x^2-4x+2)\,dx$.
+The three antiderivatives are $x^{3}$, $- 2 x^{2}$, and $2 x$.
+Add one constant $C$ and differentiate to check.
+Recover position from velocity
+Given $v (t) = 2 t + 1$ and $s (0) = 3$, find $s (t)$.
+Integrate to get $s = t^{2} + t + C$.
+At $t = 0$, the condition gives $C = 3$.
+Recognize each pattern
+Find $\int\left(e^x+\frac{2}{1+x^2}-3\sin x\right)\,\mathrm{d}x$.
+The terms are derivatives of $e^x$, $2\arctan x$, and $3\cos x$.
+Check the sign: $(3\cos x)\prime=-3\sin x$.
+Omitting the constant of integration.
+An indefinite integral represents a family of antiderivatives. An initial condition selects the constant.
+Using the ordinary power formula for $\frac{1}{x}$.
+The exception $n = - 1$ gives $\ln |x| + C$.
+Find $\int x^4\,dx$.
+Increase the exponent by 1 and divide by the new exponent.
+Differentiate your answer to check.
+Find $\int(\frac{2}{x})\,dx$.
+Factor out 2 and use the logarithmic antiderivative.
+Do not divide the zeroth power of $x$ by zero.
+Find $\int\cos x\,dx$.
+The derivative of $\sin$ is $\cos$.
+Read the derivative formula backward.
+Given $F' (x) = 3 x^{2}$ and $F (1) = 5$, find $F (x)$.
+$F = x^{3} + C$; $1 + C = 5$ gives $C = 4$.
+The initial value fixes the vertical shift.
+Find $\int(2\sec^2x-\cos x)\,\mathrm{d}x$ and state where the formula applies.
+$2\tan x-\sin x+C$, on any interval avoiding $\cos x=0$.
+Integrate term by term using $(\tan x)\prime=\sec^2x$ and $(\sin x)\prime=\cos x$.
+Differentiation recovers the integrand. Do not extend one antiderivative across an undefined point of tangent.
+Keep both the constant and the domain restrictions.
+Find $\int\frac{1}{\sqrt{1-x^2}}\,\mathrm{d}x$. Is the integrand defined at $x=1$?
+$\arcsin x+C$ for $|x|<1$; the integrand is undefined at $x=1$.
+The derivative of arcsine is $\frac{1}{\sqrt{1-x^2}}$.
+At the endpoint the denominator is zero. An improper integral requires a separate limit and is not an ordinary definite integral here.
+Distinguish the antiderivative's value from the integrand's domain.
+Why does $\int  2 x \mathrm{d}x$ need $C$?
+Constants have derivative zero
+Every integral is an approximation
+$C$ must equal 1
+$x^{2}$, $x^{2} + 3$, and other vertical shifts all have derivative $2 x$. The constant $C$ records this family on a single interval.
+Reading a derivative backward gives one antiderivative. Vertical shifts have the same derivative; the integration constant records the information still undetermined.
+Start at zero
+Set the integration constant to 0.
+The antiderivative is $\frac{x^3}{3}$ and its derivative is $x^2$.
+Shift upward
+Set the constant to 1.
+The antiderivative moves upward; its derivative does not change.
+Shift downward
+Set the constant to −1.
+The curve moves, but the same derivative still gives its slope at every point.
+$x^3-2x^2+2x+C$.
+$s (t) = t^{2} + t + 3$.
+$e^x+2\arctan x+3\cos x+C$.
+$\frac{x^5}{5}+C$.
+$2\ln|x|+C$($x \ne 0$).
+$\sin x+C$.
+$x^3+4$.

@@ -1,0 +1,62 @@
+Composition and Inverse Functions
+Connect two rules, or undo one.
+Composition applies one function after another: evaluate the inner function, then pass its result to the outer one. An inverse reverses a rule when that reversal is unique.
+Squaring and then adding 1 gives $x \to x^{2} \to x^{2} + 1$. To recover an input, first restrict the domain if several inputs share an output.
+Find a composition's domain
+Recognize when an inverse exists
+Find inverse functions
+Which inputs are allowed in a composition?
+For $f (g (x))$, the input $x$ must be allowed in $g$, and its output $g (x)$ must be allowed in $f$. Both requirements matter.
+Why does $x^{2}$ need a restriction before inversion?
+Both 2 and −2 give 4, so reversing the rule does not select a unique input. Restricting to $x \ge 0$ gives the inverse $\sqrt{x}$.
+How do you find an inverse?
+Write $y = f (x)$, solve for $x$, then interchange $x$ and $y$. The inverse's domain is the original range. The notation $f^{-1}$ means inverse, not $\frac{1}{f}$.
+If $f$ is one-to-one onto its range, its inverse recovers the input from the output.
+Each identity holds on its corresponding domain.
+Start with a linear function.
+Solve for the original input.
+Interchange the variable names to obtain the inverse.
+Compare both sides of the parabola: the same height can come from two inputs, so the function is not one-to-one on the whole real line.
+Can one output come from two inputs? Find equal heights on opposite sides of the parabola.
+Order matters
+For $f(x)=x^2$ and $g(x)=x+1$, find both compositions.
+$f (g (x))$ adds 1, then squares.
+$g (f (x))$ squares, then adds 1.
+Restrictions in a composition
+Find the domain of $\ln(\sqrt{x-1})$.
+The root requires $x \ge 1$, but the logarithm also requires the root's value to be strictly positive.
+Therefore $x = 1$ is excluded.
+Confusing an inverse with $\frac{1}{f(x)}$.
+An inverse reverses the input–output relation; a reciprocal changes a numerical value.
+Assuming composition can be done in either order.
+In general, $f \circ g \ne g \circ f$.
+Find the inverse of $f(x)=2x+5$.
+Solve $y = 2 x + 5$ to obtain $x = \frac{y - 5}{2}$.
+First recover the original input.
+Find the inverse of $f(x)=x^2$ restricted to $x\le0$.
+$-\sqrt{x}$, with inverse domain $x \ge 0$.
+The original input must be nonpositive, so take the negative square-root branch.
+Squaring loses the sign; recover it from the original domain.
+For $f(x)=\sqrt{x}$ and $g(x)=x-4$, find $(f\circ g)(9)$.
+First evaluate $g (9) = 5$, then evaluate $f (5)$.
+Work from the inside out.
+Is $\frac{1}{x^2+1}$ the inverse of $x^2+1$?
+No.
+It is the reciprocal. On the whole real line, $x^{2} + 1$ is not even one-to-one.
+An inverse must recover the input.
+For $f (x) = x^{2}$ and $g (x) = x + 1$, what is $f (g (2))$?
+First $g (2) = 3$, then $f (3) = 9$. Reversing the order gives $g (f (2)) = 5$.
+A forward rule can lose information: squaring merges positive and negative inputs. To reverse it uniquely, keep only one branch first.
+Try a positive input
+Set the input to 1 and record its square.
+Try a negative input
+Change the input to −1 and compare the output.
+$(-1)^2=1$: different inputs give the same output.
+Try another pair
+Set the input to −2 and compare it with positive input 2.
+Both give 4. Restricting to the nonnegative branch makes the reverse choice unique.
+$(f\circ g)(x)=(x+1)^2$; $(g\circ f)(x)=x^2+1$.
+$x > 1$.
+$f^{-1}(x)=\frac{x-5}{2}$.
+$\sqrt5$.
+$1^2=1$.

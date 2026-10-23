@@ -1,3 +1,4 @@
+import {tr} from "../i18n";
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { EffectComposer } from "three/addons/postprocessing/EffectComposer.js";
@@ -93,7 +94,7 @@ export default function MathSculpture({
     const canvas = renderer.domElement;
     canvas.setAttribute(
       "aria-label",
-      "可旋转的数学曲面。拖动或用方向键改变视角，下面的滑块改变形状。",
+      tr("可旋转的数学曲面。拖动或用方向键改变视角，下面的滑块改变形状。"),
     );
     canvas.setAttribute("role", "img");
     canvas.tabIndex = 0;
@@ -478,10 +479,10 @@ export default function MathSculpture({
       <div ref={host} className="sculpture-canvas" />
       {error ? (
         <p className="sculpture-fallback">
-          此浏览器暂时无法显示三维图。下方教材仍可完整阅读。
+          {tr("此浏览器暂时无法显示三维图。下方教材仍可完整阅读。")}
         </p>
       ) : (
-        <output className="sculpture-sample">{sample}</output>
+        <output className="sculpture-sample">{tr(sample)}</output>
       )}
     </div>
   );

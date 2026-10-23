@@ -1,3 +1,4 @@
+import {tr, localizeNode} from "../i18n";
 import AnalysisVisual, {AnalysisPreview} from "./AnalysisVisual";
 import DiscreteVisual, {DiscretePreview} from "./DiscreteVisual";
 import Calculus3Visual, {Calculus3Preview} from "./Calculus3Visual";
@@ -30,7 +31,7 @@ import { playbackStep, boundedSweep, MIN_APPROACH_DISTANCE, MAX_REFINEMENT } fro
 const fmt = (v: number) =>
   Number.isFinite(v) ? Number(v.toFixed(5)).toString() : "无有限值";
 function Slider({label,value,min,max,step=.01,onChange}:{label:string;value:number;min:number;max:number;step?:number;onChange:(n:number)=>void}) {
-  return <ParameterControl label={label} value={value} min={min} max={max} step={step} onChange={onChange}/>;
+  return <ParameterControl label={tr(label)} value={value} min={min} max={max} step={step} onChange={onChange}/>;
 }
 type PlotContext = {
   X: (x: number) => number;
@@ -127,7 +128,7 @@ export function Plot({
     <svg
       viewBox={`0 0 ${W} ${H}`}
       role="img"
-      aria-label={title}
+      aria-label={tr(title)}
       className={onX ? "plot interactive" : "plot"}
       onDragStart={(e) => e.preventDefault()}
       onPointerDown={(e) => {
@@ -147,31 +148,29 @@ export function Plot({
         );
       }}
     >
-      <title>{title}</title>
-      <desc>
-        横轴输入、纵轴输出。图像采用有限显示窗口，超出窗口的曲线被裁切。可用下面的滑块进行精确操作。
-      </desc>
+      <title>{localizeNode(title)}</title>
+      <desc>{tr("横轴输入、纵轴输出。图像采用有限显示窗口，超出窗口的曲线被裁切。可用下面的滑块进行精确操作。")}</desc>
       <defs>
         <clipPath id={clip}>
           <rect x={P} y={P} width={W - 2 * P} height={H - 2 * P} />
         </clipPath>
       </defs>
-      {xticks.map((x, i) => (
+      {localizeNode(xticks.map((x, i) => (
         <g key={`x${i}`}>
           <line x1={X(x)} x2={X(x)} y1={P} y2={H - P} stroke="#e9edf6" />
           <text x={X(x)} y={H - 14} textAnchor="middle">
-            {Number(x.toFixed(1))}
+            {localizeNode(Number(x.toFixed(1)))}
           </text>
         </g>
-      ))}
-      {yticks.map((y, i) => (
+      )))}
+      {localizeNode(yticks.map((y, i) => (
         <g key={`y${i}`}>
           <line x1={P} x2={W - P} y1={Y(y)} y2={Y(y)} stroke="#e9edf6" />
           <text x={P - 7} y={Y(y) + 4} textAnchor="end">
-            {Number(y.toFixed(1))}
+            {localizeNode(Number(y.toFixed(1)))}
           </text>
         </g>
-      ))}
+      )))}
       <line x1={P} x2={W - P} y1={Y(axisX)} y2={Y(axisX)} stroke="#b2bfd7" />
       <line x1={X(axisY)} x2={X(axisY)} y1={P} y2={H - P} stroke="#b2bfd7" />
       <text className="math-axis" x={W - 10} y={H - 14}>
@@ -181,8 +180,8 @@ export function Plot({
         y
       </text>
       <g clipPath={`url(#${clip})`}>
-        {line(fn, "#344de8")}
-        {children?.({ X, Y, path, line, point, area })}
+        {localizeNode(line(fn, "#344de8"))}
+        {localizeNode(children?.({ X, Y, path, line, point, area }))}
       </g>
     </svg>
   );
@@ -210,28 +209,28 @@ export function Visual({
   return (
     <div className="visual-system" onChangeCapture={e=>{if(!(e.target as Element).closest(".application-visual"))setModified(true);}} onKeyDownCapture={e=>{const target=e.target as Element;if(target.matches('input[type="range"]')&&!target.closest('.application-visual')&&['Home','End','ArrowLeft','ArrowRight','ArrowUp','ArrowDown','PageUp','PageDown'].includes(e.key))setModified(true);}} onClickCapture={e=>{const target=e.target as Element;if(target.closest("button")&&target.closest(".visual-card,.solid-visual,.dimension-switch")&&!target.closest(".application-visual"))setModified(true);}}>
       <GuidedExperiment key={`guided-${lesson.id}`} lesson={lesson} index={step} modified={modified} onApply={apply}/>
-      {spatial && (
-        <div className="dimension-switch" role="group" aria-label={"演示维度"}>
-          <span>同一个模型 · 两种视角</span>
+      {localizeNode(spatial && (
+        <div className="dimension-switch" role="group" aria-label={tr("演示维度")}>
+          <span>{tr("同一个模型 · 两种视角")}</span>
           <button
             aria-pressed={dimension === "2d"}
             className={dimension === "2d" ? "active" : ""}
             onClick={() => setDimension("2d")}
           >
-            {lesson.interactiveVisual.kind === "arc" ? "2D 弧长" : "2D 截面"}
+            {localizeNode(lesson.interactiveVisual.kind === "arc" ? "2D 弧长" : "2D 截面")}
           </button>
           <button
             aria-pressed={dimension === "3d"}
             className={dimension === "3d" ? "active" : ""}
             onClick={() => setDimension("3d")}
           >
-            {lesson.interactiveVisual.kind === "arc" ? "3D 曲面" : "3D 旋转体"}
+            {localizeNode(lesson.interactiveVisual.kind === "arc" ? "3D 曲面" : "3D 旋转体")}
           </button>
         </div>
-      )}
-      {lesson.interactiveVisual.kind==='analysis'?<AnalysisVisual key={lesson.id} lesson={lesson} compact={compact} scenario={scenario} onInteraction={()=>setModified(true)}/>:lesson.interactiveVisual.kind==='discrete'?<DiscreteVisual key={lesson.id} lesson={lesson} compact={compact} scenario={scenario} onInteraction={()=>setModified(true)}/>:lesson.interactiveVisual.kind==='probability'?<ProbabilityVisual key={lesson.id} lesson={lesson} compact={compact} scenario={scenario} onInteraction={()=>setModified(true)}/>:['calculus3','linear-algebra','ode'].includes(lesson.interactiveVisual.kind) ? <Calculus3Visual lesson={lesson} compact={compact} scenario={scenario}/> : lesson.interactiveVisual.kind === "calculus2" ? <Calculus2Visual lesson={lesson} compact={compact} scenario={scenario}/> : dimension === "3d" ? (
+      ))}
+      {localizeNode(lesson.interactiveVisual.kind==='analysis'?<AnalysisVisual key={lesson.id} lesson={lesson} compact={compact} scenario={scenario} onInteraction={()=>setModified(true)}/>:lesson.interactiveVisual.kind==='discrete'?<DiscreteVisual key={lesson.id} lesson={lesson} compact={compact} scenario={scenario} onInteraction={()=>setModified(true)}/>:lesson.interactiveVisual.kind==='probability'?<ProbabilityVisual key={lesson.id} lesson={lesson} compact={compact} scenario={scenario} onInteraction={()=>setModified(true)}/>:['calculus3','linear-algebra','ode'].includes(lesson.interactiveVisual.kind) ? <Calculus3Visual lesson={lesson} compact={compact} scenario={scenario}/> : lesson.interactiveVisual.kind === "calculus2" ? <Calculus2Visual lesson={lesson} compact={compact} scenario={scenario}/> : dimension === "3d" ? (
         <Suspense
-          fallback={<div className="solid-loading">准备三维数学模型…</div>}
+          fallback={<div className="solid-loading">{tr("准备三维数学模型…")}</div>}
         >
           <SolidVisual
             key={lesson.id}
@@ -243,8 +242,8 @@ export function Visual({
         </Suspense>
       ) : (
         <PlanarVisual key={lesson.id} lesson={lesson} compact={compact} scenario={scenario} />
-      )}
-      {additional&&<details className="supplemental-experiment"><summary><span>延伸探索</span>{additional}<span>展开</span></summary><ApplicationVisual key={lesson.id} lessonId={lesson.id}/></details>}
+      ))}
+      {localizeNode(additional&&<details className="supplemental-experiment"><summary><span>{tr("延伸探索")}</span>{localizeNode(additional)}<span>{tr("展开")}</span></summary><ApplicationVisual key={lesson.id} lessonId={lesson.id}/></details>)}
     </div>
   );
 }
@@ -382,7 +381,7 @@ function PlanarVisual({
     );
     controls = (
       <Slider
-        label={"输入 $x$"}
+        label={tr("输入 $x$")}
         value={x}
         min={range[0]}
         max={range[1]}
@@ -397,14 +396,14 @@ function PlanarVisual({
     stats.push({ label: "顶点", value: `(${fmt(a)}, ${fmt(c)})` });
     controls = (
       <>
-        <Slider label={"水平平移 $h$"} value={a} min={-3} max={3} onChange={setA} />
-        <Slider label={"竖直平移 $k$"} value={c} min={-2} max={5} onChange={setC} />
+        <Slider label={tr("水平平移 $h$")} value={a} min={-3} max={3} onChange={setA} />
+        <Slider label={tr("竖直平移 $k$")} value={c} min={-2} max={5} onChange={setC} />
       </>
     );
     overlay = (p) => (
       <>
-        {p.line(F.f, "#b4c1b4", true)}
-        {p.point(a, c)}
+        {localizeNode(p.line(F.f, "#b4c1b4", true))}
+        {localizeNode(p.point(a, c))}
       </>
     );
   }
@@ -419,18 +418,16 @@ function PlanarVisual({
     controls = (
       <>
         <Slider
-          label={"距离 $|x - a|$"}
+          label={tr("距离 $|x - a|$")}
           value={h}
           min={0.0001}
           max={1.5}
           step={0.0001}
           onChange={setH}
         />
-        <label className="select-label">
-          靠近方向
-          <select value={side} onChange={(e) => setSide(+e.target.value)}>
-            <option value={-1}>从左侧</option>
-            <option value={1}>从右侧</option>
+        <label className="select-label">{tr("靠近方向")}<select value={side} onChange={(e) => setSide(+e.target.value)}>
+            <option value={-1}>{tr("从左侧")}</option>
+            <option value={1}>{tr("从右侧")}</option>
           </select>
         </label>
       </>
@@ -447,16 +444,16 @@ function PlanarVisual({
     );
     if(lesson.id==="continuity") {
       stats.push({label:"目标点的函数值",value:comparison==="filled"?fmt(c):"没有定义"});
-      controls=<>{controls}<button className="small-btn" aria-pressed={comparison==="filled"} onClick={()=>{setComparison(comparison==="filled"?"original":"filled");setC(2);setPlaying(false);}}>{comparison==="filled"?"移除补点":"补上这个点"}</button>{comparison==="filled"&&<Slider label="补点值 $f(1)$" value={c} min={0} max={4} onChange={setC}/>}</>;
+      controls=<>{localizeNode(controls)}<button className="small-btn" aria-pressed={comparison==="filled"} onClick={()=>{setComparison(comparison==="filled"?"original":"filled");setC(2);setPlaying(false);}}>{localizeNode(comparison==="filled"?"移除补点":"补上这个点")}</button>{localizeNode(comparison==="filled"&&<Slider label={tr("补点值 $f(1)$")} value={c} min={0} max={4} onChange={setC}/>)}</>;
     }
     const old = overlay;
     overlay = (p) => (
       <>
-        {old?.(p)}
-        {p.point(xx, fn(xx))}
-        {F.hole && !(comparison==="filled"&&c===F.hole[1]) && p.point(F.hole[0], F.hole[1], "#344de8", true)}
-        {comparison==="filled" && p.point(1,c,"#487454")}
-        {comparison === "jump" && p.point(1, 3, "#344de8", true)}
+        {localizeNode(old?.(p))}
+        {localizeNode(p.point(xx, fn(xx)))}
+        {localizeNode(F.hole && !(comparison==="filled"&&c===F.hole[1]) && p.point(F.hole[0], F.hole[1], "#344de8", true))}
+        {localizeNode(comparison==="filled" && p.point(1,c,"#487454"))}
+        {localizeNode(comparison === "jump" && p.point(1, 3, "#344de8", true))}
       </>
     );
     if (lesson.id === "limit-intuition") {
@@ -475,7 +472,7 @@ function PlanarVisual({
     );
     controls = (
       <Slider
-        label={"输出误差 $\\varepsilon$"}
+        label={tr("输出误差 $\\varepsilon$")}
         value={eps}
         min={0.05}
         max={2}
@@ -500,8 +497,8 @@ function PlanarVisual({
           fill="#4573c0"
           opacity="0.16"
         />
-        {p.line(F.f, "#344de8")}
-        {p.point(2, 4)}
+        {localizeNode(p.line(F.f, "#344de8"))}
+        {localizeNode(p.point(2, 4))}
       </>
     );
     extra = (
@@ -525,7 +522,7 @@ function PlanarVisual({
       controls = (
         <>
           <Slider
-            label={"切点 $a$"}
+            label={tr("切点 $a$")}
             value={a}
             min={
               spec.function === "circle"
@@ -539,28 +536,26 @@ function PlanarVisual({
             onChange={setA}
           />
           <Slider
-            label={"两点距离 $h$"}
+            label={tr("两点距离 $h$")}
             value={hh}
             min={0.0001}
             max={maxH}
             step={0.0001}
             onChange={setH}
           />
-          <label className="select-label">
-            第二点方向
-            <select value={side} onChange={(e) => setSide(+e.target.value)}>
-              <option value={1}>右侧</option>
-              <option value={-1}>左侧</option>
+          <label className="select-label">{tr("第二点方向")}<select value={side} onChange={(e) => setSide(+e.target.value)}>
+              <option value={1}>{tr("右侧")}</option>
+              <option value={-1}>{tr("左侧")}</option>
             </select>
           </label>
         </>
       );
       overlay = (p) => (
         <>
-          {p.line(tangent, "#bf8b38", true)}
-          {p.line((z) => fn(a) + s * (z - a), "#2861ba")}
-          {p.point(a, fn(a), "#bf8b38")}
-          {p.point(a + side * hh, fn(a + side * hh))}
+          {localizeNode(p.line(tangent, "#bf8b38", true))}
+          {localizeNode(p.line((z) => fn(a) + s * (z - a), "#2861ba"))}
+          {localizeNode(p.point(a, fn(a), "#bf8b38"))}
+          {localizeNode(p.point(a + side * hh, fn(a + side * hh)))}
         </>
       );
     } else {
@@ -571,9 +566,9 @@ function PlanarVisual({
       );
       controls = (
         <>
-          <Slider label={"中心 $a$"} value={a} min={0.3} max={5} onChange={setA} />
+          <Slider label={tr("中心 $a$")} value={a} min={0.3} max={5} onChange={setA} />
           <Slider
-            label={"估计位置 $x$"}
+            label={tr("估计位置 $x$")}
             value={x}
             min={0.01}
             max={6}
@@ -583,10 +578,10 @@ function PlanarVisual({
       );
       overlay = (p) => (
         <>
-          {p.line(tangent, "#bf8b38", true)}
-          {p.point(x, tangent(x), "#bf8b38")}
-          {p.point(x, fn(x))}
-          {p.point(a, fn(a), "#344de8")}
+          {localizeNode(p.line(tangent, "#bf8b38", true))}
+          {localizeNode(p.point(x, tangent(x), "#bf8b38"))}
+          {localizeNode(p.point(x, fn(x)))}
+          {localizeNode(p.point(a, fn(a), "#344de8"))}
         </>
       );
     }
@@ -611,7 +606,7 @@ function PlanarVisual({
       );
     controls = (
       <Slider
-        label={"输入 $x$"}
+        label={tr("输入 $x$")}
         value={x}
         min={k === "substitution" ? 0 : -1.5}
         max={k === "substitution" ? 1 : 1.5}
@@ -621,12 +616,12 @@ function PlanarVisual({
     overlay = (p) => p.point(x, fn(x));
     extra = (
       <div className="flow-equation">
-        <Formula latex="x" /> <span>→ 平方 + 1 →</span> <Formula latex="u" />{" "}
-        {k === "chain" && (
+        <Formula latex="x" /> <span>{tr("→ 平方 + 1 →")}</span> <Formula latex="u" />{localizeNode(" ")}
+        {localizeNode(k === "chain" && (
           <>
-            <span>→ 三次方 →</span> <Formula latex="y" />
+            <span>{tr("→ 三次方 →")}</span> <Formula latex="y" />
           </>
-        )}
+        ))}
       </div>
     );
   }
@@ -641,7 +636,7 @@ function PlanarVisual({
     );
     controls = (
       <Slider
-        label={"底端距离 $x$"}
+        label={tr("底端距离 $x$")}
         value={xx}
         min={0.1}
         max={4.9}
@@ -658,8 +653,8 @@ function PlanarVisual({
           stroke="#bf8b38"
           strokeWidth="4"
         />
-        {p.point(xx, 0)}
-        {p.point(0, yy)}
+        {localizeNode(p.point(xx, 0))}
+        {localizeNode(p.point(0, yy))}
       </>
     );
   }
@@ -674,7 +669,7 @@ function PlanarVisual({
     );
     controls = (
       <Slider
-        label={"终点 $b$"}
+        label={tr("终点 $b$")}
         value={end}
         min={0.3}
         max={3.2}
@@ -683,11 +678,11 @@ function PlanarVisual({
     );
     overlay = (p) => (
       <>
-        {p.line((z) => end * z, "#2861ba")}
-        {p.line((z) => mid * mid + 2 * mid * (z - mid), "#bf8b38", true)}
-        {p.point(mid, mid * mid, "#bf8b38")}
-        {p.point(0, 0)}
-        {p.point(end, end * end)}
+        {localizeNode(p.line((z) => end * z, "#2861ba"))}
+        {localizeNode(p.line((z) => mid * mid + 2 * mid * (z - mid), "#bf8b38", true))}
+        {localizeNode(p.point(mid, mid * mid, "#bf8b38"))}
+        {localizeNode(p.point(0, 0))}
+        {localizeNode(p.point(end, end * end))}
       </>
     );
   }
@@ -701,7 +696,7 @@ function PlanarVisual({
     );
     controls = (
       <Slider
-        label={"矩形边长 $x$"}
+        label={tr("矩形边长 $x$")}
         value={xx}
         min={0.1}
         max={11.9}
@@ -714,7 +709,7 @@ function PlanarVisual({
         viewBox="0 0 260 90"
         className="small-diagram"
         role="img"
-        aria-label={`矩形边长 ${fmt(xx)} 与 ${fmt(yy)}`}
+        aria-label={tr(`矩形边长 ${fmt(xx)} 与 ${fmt(yy)}`)}
       >
         <rect
           x="30"
@@ -726,7 +721,7 @@ function PlanarVisual({
           strokeWidth="2"
         />
         <text x="30" y="84">
-          x={fmt(xx)}，y={fmt(yy)}
+          x={localizeNode(fmt(xx))}，y={localizeNode(fmt(yy))}
         </text>
       </svg>
     );
@@ -743,14 +738,14 @@ function PlanarVisual({
     controls = (
       <>
         <Slider
-          label={"初值 $x_{0}$"}
+          label={tr("初值 $x_{0}$")}
           value={x}
           min={-1.8}
           max={2.8}
           onChange={setX}
         />
         <Slider
-          label={"迭代步数"}
+          label={tr("迭代步数")}
           value={Math.min(6, n)}
           min={1}
           max={6}
@@ -761,24 +756,22 @@ function PlanarVisual({
     );
     overlay = (p) => (
       <>
-        {rows.map((r, i) => (
+        {localizeNode(rows.map((r, i) => (
           <g key={i}>
-            {p.line(
+            {localizeNode(p.line(
               (z) => r.y + r.s * (z - r.x),
               i === rows.length - 1 ? "#bf8b38" : "#bed0e2",
               true,
-            )}
-            {p.point(r.next, 0)}
+            ))}
+            {localizeNode(p.point(r.next, 0))}
           </g>
-        ))}
+        )))}
       </>
     );
     extra = result.error ? (
-      <p className="warning">{result.error}</p>
+      <p className="warning">{localizeNode(result.error)}</p>
     ) : (
-      <p className="visual-note">
-        这是 <Formula latex="x^2-2" /> 的演示；一般函数与初值可能不收敛。
-      </p>
+      <p className="visual-note">{tr("这是")}<Formula latex="x^2-2" />{tr("的演示；一般函数与初值可能不收敛。")}</p>
     );
   }
   if (k === "antiderivative") {
@@ -789,13 +782,13 @@ function PlanarVisual({
       { label: "$F' (1) = 1^{2}$", value: "1" },
     );
     controls = (
-      <Slider label={"积分常数 $C$"} value={c} min={-2} max={2} onChange={setC} />
+      <Slider label={tr("积分常数 $C$")} value={c} min={-2} max={2} onChange={setC} />
     );
     overlay = (p) => p.line((z) => z * z, "#487454", true);
     extra = (
       <div className="legend">
-        <span>蓝色实线：原函数</span>
-        <span>绿色虚线：导函数</span>
+        <span>{tr("蓝色实线：原函数")}</span>
+        <span>{tr("绿色虚线：导函数")}</span>
       </div>
     );
   }
@@ -811,27 +804,25 @@ function PlanarVisual({
     controls = (
       <>
         <Slider
-          label={"分割数 $n$"}
+          label={tr("分割数 $n$")}
           value={n}
           min={1}
           max={80}
           step={1}
           onChange={setN}
         />
-        <label className="select-label">
-          近似方法
-          <select value={method} onChange={(e) => setMethod(e.target.value)}>
-            <option value="left">左端矩形</option>
-            <option value="right">右端矩形</option>
-            <option value="midpoint">中点矩形</option>
-            <option value="trapezoid">梯形</option>
+        <label className="select-label">{tr("近似方法")}<select value={method} onChange={(e) => setMethod(e.target.value)}>
+            <option value="left">{tr("左端矩形")}</option>
+            <option value="right">{tr("右端矩形")}</option>
+            <option value="midpoint">{tr("中点矩形")}</option>
+            <option value="trapezoid">{tr("梯形")}</option>
           </select>
         </label>
       </>
     );
     overlay = (p) => (
       <>
-        {Array.from({ length: n }, (_, i) => {
+        {localizeNode(Array.from({ length: n }, (_, i) => {
           const l = i * dx,
             r = l + dx,
             z = method === "left" ? l : method === "right" ? r : (l + r) / 2,
@@ -846,8 +837,8 @@ function PlanarVisual({
               strokeWidth="0.7"
             />
           );
-        })}
-        {p.line(fn, "#344de8")}
+        }))}
+        {localizeNode(p.line(fn, "#344de8"))}
       </>
     );
   }
@@ -870,7 +861,7 @@ function PlanarVisual({
     );
     controls = (
       <Slider
-        label={"积分上限 $b$"}
+        label={tr("积分上限 $b$")}
         value={hi}
         min={lo + 0.01}
         max={spec.function === "velocity" ? 3 : 2}
@@ -884,14 +875,14 @@ function PlanarVisual({
           fill="#cc9b73"
           fillOpacity="0.3"
         />
-        {hi > zero && (
+        {localizeNode(hi > zero && (
           <path
             d={p.area(fn, () => 0, zero, hi)}
             fill="#85ac81"
             fillOpacity="0.3"
           />
-        )}
-        {p.line(fn, "#344de8")}
+        ))}
+        {localizeNode(p.line(fn, "#344de8"))}
       </>
     );
   }
@@ -903,7 +894,7 @@ function PlanarVisual({
       { label: "$A' (x) = f (x)$", value: fmt(xx * xx) },
     );
     controls = (
-      <Slider label={"累积上限 $x$"} value={xx} min={0} max={1} onChange={setX} />
+      <Slider label={tr("累积上限 $x$")} value={xx} min={0} max={1} onChange={setX} />
     );
     overlay = (p) => (
       <>
@@ -919,10 +910,10 @@ function PlanarVisual({
           height={p.Y(0) - p.Y(fn(xx))}
           fill="#2861ba"
         />
-        {p.point(xx, fn(xx))}
-        {p.line(z=>z**3/3,"#487454")}
-        {p.line(z=>xx**3/3+xx*xx*(z-xx),"#bf8b38",true)}
-        {p.point(xx,xx**3/3,"#487454")}
+        {localizeNode(p.point(xx, fn(xx)))}
+        {localizeNode(p.line(z=>z**3/3,"#487454"))}
+        {localizeNode(p.line(z=>xx**3/3+xx*xx*(z-xx),"#bf8b38",true))}
+        {localizeNode(p.point(xx,xx**3/3,"#487454"))}
       </>
     );
     extra = <Formula latex="A(x)=\int_0^x t^2dt,\quad A\prime(x)=x^2" />;
@@ -935,7 +926,7 @@ function PlanarVisual({
       { label: "总面积", value: "$\\frac{1}{6}\\approx0.16667$" },
     );
     controls = (
-      <Slider label={"条带位置 $x$"} value={xx} min={0} max={1} onChange={setX} />
+      <Slider label={tr("条带位置 $x$")} value={xx} min={0} max={1} onChange={setX} />
     );
     overlay = (p) => (
       <>
@@ -949,8 +940,8 @@ function PlanarVisual({
           fill="#87b082"
           fillOpacity="0.24"
         />
-        {p.line((z) => z, "#2861ba")}
-        {p.line(fn, "#344de8")}
+        {localizeNode(p.line((z) => z, "#2861ba"))}
+        {localizeNode(p.line(fn, "#344de8"))}
         <line
           x1={p.X(xx)}
           x2={p.X(xx)}
@@ -979,7 +970,7 @@ function PlanarVisual({
     );
     controls = (
       <Slider
-        label={"切片位置 $x$"}
+        label={tr("切片位置 $x$")}
         value={xx}
         min={0.01}
         max={1}
@@ -1005,10 +996,10 @@ function PlanarVisual({
         className="small-diagram"
         role="img"
         aria-label={
-          k === "disk" ? "圆盘截面示意" : "圆柱壳示意，透视图不表示真实比例"
+          tr(k === "disk" ? "圆盘截面示意" : "圆柱壳示意，透视图不表示真实比例")
         }
       >
-        {k === "disk" ? (
+        {localizeNode(k === "disk" ? (
           <ellipse
             cx="150"
             cy="48"
@@ -1040,10 +1031,8 @@ function PlanarVisual({
               stroke="#344de8"
             />
           </g>
-        )}
-        <text x="12" y="96">
-          旋转示意 · 非等比例投影
-        </text>
+        ))}
+        <text x="12" y="96">{tr("旋转示意 · 非等比例投影")}</text>
       </svg>
     );
   }
@@ -1058,7 +1047,7 @@ function PlanarVisual({
     );
     controls = (
       <Slider
-        label={"折线段数 $n$"}
+        label={tr("折线段数 $n$")}
         value={n}
         min={1}
         max={80}
@@ -1097,20 +1086,20 @@ function PlanarVisual({
       onClickCapture={e=>{if((e.target as Element).closest('button'))setPlaybackComplete(false);}}
       onFocusCapture={e=>{if((e.target as Element).closest(".parameter-value"))setPlaying(false);}}
       className={`visual-card ${compact ? "compact" : ""}`}
-      aria-label={"交互演示"}
+      aria-label={tr("交互演示")}
     >
       <header>
         <div>
           <span className="eyebrow">EXPLORE THE IDEA</span>
-          <h3>图形与读数</h3>
+          <h3>{tr("图形与读数")}</h3>
         </div>
-        <button className="icon-btn" onClick={reset} aria-label={"重置演示"}>
+        <button className="icon-btn" onClick={reset} aria-label={tr("重置演示")}>
           <RotateCcw size={17} />
         </button>
       </header>
-      {(lesson.id === "limit-intuition" ||
+      {localizeNode((lesson.id === "limit-intuition" ||
         lesson.id === "derivative-definition") && (
-        <div className="comparison-tabs" role="group" aria-label={"对比数学情形"}>
+        <div className="comparison-tabs" role="group" aria-label={tr("对比数学情形")}>
           <button
             aria-pressed={comparison === "original"}
             className={comparison === "original" ? "active" : ""}
@@ -1121,7 +1110,7 @@ function PlanarVisual({
               setPlaying(false);
             }}
           >
-            <MathText text={k === "limit" ? "有孔洞，极限存在" : "$x^2$ 的光滑曲线"} />
+            <MathText text={tr(k === "limit" ? "有孔洞，极限存在" : "$x^2$ 的光滑曲线")} />
           </button>
           <button
             aria-pressed={comparison !== "original"}
@@ -1133,52 +1122,52 @@ function PlanarVisual({
               setPlaying(false);
             }}
           >
-            <MathText text={k === "limit" ? "左右不同，极限不存在" : "$|x|$ 的尖角，检查可导性"} />
+            <MathText text={tr(k === "limit" ? "左右不同，极限不存在" : "$|x|$ 的尖角，检查可导性")} />
           </button>
         </div>
-      )}
+      ))}
       <div className="plot-label">
         <span className="plot-equation"><MathText text={
-          comparison==="filled" ? `$x\\ne1$：$x+1$；$x=1$：$${fmt(c)}$`
+          tr(comparison==="filled" ? `$x\\ne1$：$x+1$；$x=1$：$${fmt(c)}$`
           : k === "chain" || k === "substitution" ? "$u=x^2+1$"
           : k === "transform" ? "$y=(x-h)^2+k$"
           : k === "related" ? "$y=\\sqrt{25-x^2}$"
           : k === "antiderivative" ? "$F(x)=\\frac{x^3}{3}+C$"
-          : F.label
+          : F.label)
         } /></span>
-        <span>拖动滑块，比较数值与图像</span>
+        <span>{tr("拖动滑块，比较数值与图像")}</span>
       </div>
       <Plot
         fn={fn}
         range={range}
-        title={plainMathText(`${lesson.title}：${caption}`)}
+        title={tr(plainMathText(`${lesson.title}：${caption}`))}
         onX={k === "graph" ? setX : undefined}
       >
-        {overlay}
+        {localizeNode(overlay)}
       </Plot>
-      {extra}
-      {isTangent&&<div className="plot-legend"><span><i className="legend-function"/>函数曲线</span><span><i className="legend-tangent"/>切线（虚线）</span>{k==="derivative"&&<span><i className="legend-secant"/>割线</span>}</div>}
-      {k==="accumulation"&&<div className="plot-legend"><span><i className="legend-function"/>被积函数的高度</span><span><i style={{borderColor:"#487454"}}/>累积函数</span><span><i className="legend-tangent"/>累积函数的切线</span></div>}
-      {k==="signed-area"&&<div className="plot-legend"><span><i className="legend-positive"/>横轴上方：正贡献</span><span><i className="legend-negative"/>横轴下方：负贡献</span></div>}
-      {comparison !== "original" && (
+      {localizeNode(extra)}
+      {localizeNode(isTangent&&<div className="plot-legend"><span><i className="legend-function"/>{tr("函数曲线")}</span><span><i className="legend-tangent"/>{tr("切线（虚线）")}</span>{localizeNode(k==="derivative"&&<span><i className="legend-secant"/>{tr("割线")}</span>)}</div>)}
+      {localizeNode(k==="accumulation"&&<div className="plot-legend"><span><i className="legend-function"/>{tr("被积函数的高度")}</span><span><i style={{borderColor:"#487454"}}/>{tr("累积函数")}</span><span><i className="legend-tangent"/>{tr("累积函数的切线")}</span></div>)}
+      {localizeNode(k==="signed-area"&&<div className="plot-legend"><span><i className="legend-positive"/>{tr("横轴上方：正贡献")}</span><span><i className="legend-negative"/>{tr("横轴下方：负贡献")}</span></div>)}
+      {localizeNode(comparison !== "original" && (
         <p className="comparison-insight">
-          <MathText text={comparison === "filled"
+          <MathText text={tr(comparison === "filled"
             ? (c===2?"点值与左右极限都为 $2$，补后的函数在这里连续。":"左右极限仍为 $2$，但现在的点值不同，所以仍不连续。")
             : comparison === "jump"
             ? "左侧极限为 $1$，右侧极限为 $3$。把距离缩得再小，也不会变成同一个数。"
-            : "在 $a=0$，右侧差商为 $1$，左侧为 $-1$。函数连续，却没有唯一的导数。切换第二点方向检查。"} />
+            : "在 $a=0$，右侧差商为 $1$，左侧为 $-1$。函数连续，却没有唯一的导数。切换第二点方向检查。")} />
         </p>
-      )}
+      ))}
       <div className="stats">
-        {stats.map((s) => (
+        {localizeNode(stats.map((s) => (
           <div key={s.label}>
-            <span><MathText text={s.label} /></span>
-            <strong><MathText text={s.value} /></strong>
+            <span><MathText text={tr(s.label)} /></span>
+            <strong><MathText text={tr(s.value)} /></strong>
           </div>
-        ))}
+        )))}
       </div>
-      <div className="controls">{controls}</div>
-      {canPlay && (
+      <div className="controls">{localizeNode(controls)}</div>
+      {localizeNode(canPlay && (
         <div className="animation-transport">
           <button
             className="animation-btn"
@@ -1198,8 +1187,8 @@ function PlanarVisual({
               setPlaying((z) => !z);
             }}
           >
-            {playing ? <Pause size={15} /> : <Play size={15} />}{" "}
-            {playing
+            {localizeNode(playing ? <Pause size={15} /> : <Play size={15} />)}{localizeNode(" ")}
+            {localizeNode(playing
               ? "暂停动画"
               : k === "limit"
                 ? "让 x 靠近目标"
@@ -1207,12 +1196,10 @@ function PlanarVisual({
                   ? "让割线靠近切线"
                   : k === "riemann" || k === "arc"
                     ? "逐渐细分"
-                    : "播放参数变化"}
+                    : "播放参数变化")}
           </button>
-          <label>
-            速度
-            <select
-              aria-label={"动画速度"}
+          <label>{tr("速度")}<select
+              aria-label={tr("动画速度")}
               value={speed}
               onChange={(e) => setSpeed(+e.target.value)}
             >
@@ -1222,20 +1209,18 @@ function PlanarVisual({
             </select>
           </label>
         </div>
-      )}
-      {playbackComplete && <p className="playback-finish" role="status"><MathText text={
-        k === 'derivative' ? '已到最小距离 $h=0.0001$。两点仍未重合，读数仍是差商。'
+      ))}
+      {localizeNode(playbackComplete && <p className="playback-finish" role="status"><MathText text={
+        tr(k === 'derivative' ? '已到最小距离 $h=0.0001$。两点仍未重合，读数仍是差商。'
         : k === 'limit' ? '已到最小距离 $|x-a|=0.0001$。移动点仍不等于目标点。'
         : k === 'riemann' || k === 'arc' ? '已到最大分割数 $n=80$。这是有限近似，仍需与精确值比较。'
-        : '本次参数变化已播完。可以重新播放，或手动调整。'
-      }/></p>}
+        : '本次参数变化已播完。可以重新播放，或手动调整。')
+      }/></p>)}
       <p className="visual-caption">
         <MoveHorizontal size={15} />
-        <span><MathText text={caption} /></span>
+        <span><MathText text={tr(caption)} /></span>
       </p>
-      <p className="visual-note">
-        图像用于探索；有限采样与动画不能替代正文中的数学论证。
-      </p>
+      <p className="visual-note">{tr("图像用于探索；有限采样与动画不能替代正文中的数学论证。")}</p>
     </section>
   );
 }
@@ -1259,19 +1244,19 @@ export function VisualPreview({ lesson }: { lesson: Lesson }) {
     "shell",
   ].includes(spec.kind);
   return (
-    <Plot fn={F.f} range={F.range} title={plainMathText(lesson.title) + "：数学模型预览"}>
-      {(p) => (
+    <Plot fn={F.f} range={F.range} title={tr(plainMathText(lesson.title) + "：数学模型预览")}>
+      {localizeNode((p) => (
         <>
-          {integral && (
+          {localizeNode(integral && (
             <path d={p.area(F.f, () => 0, 0, 1)} fill="#8396ff" opacity=".22" />
-          )}
-          {spec.kind === "derivative" &&
+          ))}
+          {localizeNode(spec.kind === "derivative" &&
             Number.isFinite(F.d(a)) &&
-            p.line((x) => F.f(a) + F.d(a) * (x - a), "#bf8b38", true)}
-          {spec.kind === "derivative" && p.point(a, F.f(a))}
-          {F.hole && p.point(F.hole[0], F.hole[1], "#344de8", true)}
+            p.line((x) => F.f(a) + F.d(a) * (x - a), "#bf8b38", true))}
+          {localizeNode(spec.kind === "derivative" && p.point(a, F.f(a)))}
+          {localizeNode(F.hole && p.point(F.hole[0], F.hole[1], "#344de8", true))}
         </>
-      )}
+      ))}
     </Plot>
   );
 }

@@ -1,0 +1,224 @@
+Functions: the language of change · Chapter review
+Find the domain of $f(x)=\frac{\sqrt{9-x^2}}{x-1}$.
+The square root requires $|x| \le 3$; the denominator excludes 1. Intersect these restrictions.
+The square root gives a closed interval; remove the denominator's zero.
+Let $f(x)=\ln x$ and $g(x)=x^2$. Compare the domains of their two compositions.
+The first expression requires only $x^{2} > 0$.
+The second evaluates $\ln x$ first, requiring $x > 0$.
+Check the inner and outer restrictions separately for each composition.
+Why do calculus formulas for trigonometric derivatives use radians?
+Radians relate angular change directly to unit-circle arc length, giving $\lim_{h\to0}\frac{\sin h}{h}=1$.
+Degree inputs require conversion by $\frac{\pi }{180}$, adding that factor to the derivative.
+Compare $\lim_{h\to0}\frac{\sin h}{h}=1$ for radian and degree inputs.
+Limits and continuity · Chapter review
+Find $\lim_{x\to4}\frac{\sqrt{x}-2}{x-4}$.
+Multiply by the conjugate to obtain $\frac{1}{\sqrt{x} + 2}$, then substitute.
+Multiply by the conjugate and state where the simplification is valid.
+Prove that $x^{2} \to 0$ as $x \to 0$, and give a valid $\delta$.
+If $0 < |x| < \sqrt{\varepsilon }$, then $|x^{2}| < \varepsilon$.
+Work backward from the output error to an input bound.
+A piecewise function equals $2 x + 1$ for $x < 0$ and $x^{2} + k$ for $x \ge 0$. Which $k$ makes it continuous?
+The left limit is 1; the right limit and point value are $k$. Set them equal.
+Compare both one-sided limits and the value at the join.
+Defining and calculating derivatives · Chapter review
+Differentiate $y=x^2\sin(x^3)$.
+Use the product rule, then multiply the sine derivative by the inner derivative $3 x^{2}$.
+The outer structure is a product; the sine term also needs the chain rule.
+Find the tangent to $y=\frac{x+1}{x^2+1}$ at $x = 0$.
+The function value is 1; the quotient rule gives derivative 1 at 0.
+A tangent needs both a point and a slope.
+For $x^2+xy+y^2=3$, find $y'$ and the slope at $(1,1)$.
+$y\prime=-\frac{2x+y}{x+2y}$; the slope at the point is −1.
+Differentiate: $2 x + y + x y' + 2 y y' = 0$.
+Collect $y'$ terms and substitute the point.
+Use the product rule for $xy$ and chain rule for $y^2$.
+More derivatives and models of change · Chapter review
+Differentiate $\ln(\sin x)$ and state the domain condition.
+The chain rule gives $\frac{\cos x}{\sin x}$; the logarithm requires a positive input.
+Check the logarithm's domain before differentiating.
+A sphere's radius grows at $0.5\,\mathrm{cm}\,\mathrm{s}^{-1}$. How fast does its volume grow when the radius is 4 cm?
+Differentiate the volume relation with respect to time before inserting the radius.
+Use the linearization of $e^{x}$ at 0 to estimate $e^{0.03}$. Is it high or low?
+Approximately 1.03, an underestimate.
+$L = 1 + x$. Since the second derivative of $e^{x}$ is positive, the tangent lies below the curve.
+Write the tangent at 0 and use concavity to determine the error direction.
+What derivatives reveal about a function · Chapter review
+Find the absolute maximum and minimum of $x^3-3x$ on $[-2,2]$.
+Maximum 2; minimum −2.
+Check critical points $\pm 1$ and endpoints $\pm 2$. The four values are −2, 2, −2, and 2.
+Evaluate both interior critical points and both endpoints.
+Use the mean value theorem to prove $|\sin b - \sin a| \le |b - a|$.
+The inequality holds.
+For $a \ne b$, the difference is $\cos c \cdot (b - a)$ with $|\cos c| \le 1$. For $a = b$ it is immediate.
+Apply the mean value theorem between the endpoints and bound the absolute cosine.
+A length-60 fence encloses three sides of a rectangle against a wall. Find the maximum area.
+$2 x + y = 60$ and $A = x (60 - 2 x)$. The derivative changes from positive to negative at $x = 15$.
+Then $y = 30$ and the area is 450.
+Use the three-side constraint to express area in one variable.
+Integrals: accumulation and antiderivatives · Chapter review
+Evaluate $\int_0^1 3x^2 e^{x^3}dx$.
+Set $u = x^{3}$ and $\mathrm{d}u = 3 x^{2} \mathrm{d}x$. The bounds remain 0 and 1.
+Choose the inner function $x^3$ and check both the differential and bounds.
+Find $\frac d{dx}\int_{x^2}^{x^3}\sqrt{1+t^2}dt$.
+Substitute $x^{3}$ and multiply by $3 x^{2}$ for the upper contribution. Subtract the lower contribution with $x^{2}$ and factor $2 x$.
+Subtract the lower-bound contribution from the upper; both need their inner derivatives.
+Explain why $\int_{-1}^1x^3dx=0$ does not mean zero geometric area.
+The two signed contributions cancel; the geometric area is $\frac{1}{2}$.
+Symmetry makes the odd function's integral zero. The absolute-value integral is $2 \int _{0}^{1} x^{3} \mathrm{d}x = \frac{1}{2}$.
+A zero integral can result from cancellation. Area requires absolute values.
+A continuous function has integral 10 on $[0,4]$. Why must it equal $\frac52$ somewhere?
+Its average is $\frac52$; the integral mean value theorem guarantees this value is attained.
+Continuity places the average between the minimum and maximum; the intermediate value theorem gives the required point.
+The integral supplies the number; continuity guarantees attainment.
+Geometric and physical applications · Chapter review
+Rotate the region below $y = x^{2}$ on $0 \le x \le 1$ about the $x$-axis and about the $y$-axis. Find both volumes.
+About the $x$-axis: $\frac{\pi}{5}$. About the $y$-axis: $\frac{\pi}{2}$.
+Disks give $\pi  \int  x^{4} \mathrm{d}x = \frac{\pi }{5}$ over the stated interval.
+Shells give $2 \pi  \int  x^{3} \mathrm{d}x = \frac{\pi }{2}$ over the stated interval.
+Use disks for one axis and shells for the other; the radii differ.
+For $v (t) = 2 t - 2$ on $0 \le t \le 3$, find displacement and distance.
+Displacement 3; distance 5.
+Displacement is $[t^{2} - 2 t]_{0}^{3} = 3$.
+Split at 1: the negative part has magnitude 1 and the positive part contributes 4.
+Locate the sign change before accumulating signed displacement and total distance.
+A length-2 rod has density $\lambda  = x + 2$. Find its mass and center of mass.
+Mass 6; center of mass $\frac{10}{9}$.
+$M = \int _{0}^{2} (x^{2} + 2 x) \mathrm{d}x = \frac{20}{3}$. Divide by 6.
+Integrate mass and first moment separately, then divide.
+A solid has square cross sections perpendicular to the $x$-axis with side $x(1-x)$ for $0\le x\le1$. Find its volume.
+The cross section is a square, not a disk.
+A tank has constant cross-sectional area $1\,\mathrm{m}^2$ and water on $0\le y\le2\,\mathrm{m}$. The outlet is at height $3\,\mathrm{m}$ and $\rho g=9800\,\mathrm{N}\,\mathrm{m}^{-3}$. Find the work to empty it, neglecting losses.
+A layer weighs $9800\,\mathrm{d}y$ and rises $3-y$.
+Layer thickness and lift distance are different lengths.
+Find the domain of $\ln(4-x^2)$.
+Require $4 - x^{2} > 0$; exclude the endpoints.
+The logarithm's input must be strictly positive.
+Evaluate $\lim_{x\to0}\frac{\sin(2x)}{5x}$.
+Rewrite as $\frac{(\frac{2}{5}) \sin (2 x)}{2 x}$.
+Match the denominator to the sine's angle and adjust the constant.
+Evaluate $\lim_{x\to1}\frac{x^3-1}{x-1}$.
+Cancel to obtain $x^{2} + x + 1$, then substitute 1.
+Factor the difference of cubes; cancellation is valid away from the target.
+Prove that $f(x)=4x-1$ tends to 7 at $a = 2$.
+Choose $\delta=\frac{\varepsilon}{4}$.
+The output error is $|4 x - 1 - 7| = 4 |x - 2| < 4 \delta  = \varepsilon$.
+Express the output error as a constant times the input error.
+Differentiate $y=e^{x^2}\ln x$.
+Use the product rule, apply the chain rule to the exponential, and factor common terms.
+Use the product rule first, then the chain rule for the exponential.
+Find the tangent to $x^2+y^2=10$ at $(1,3)$.
+Implicit differentiation gives $y' = \frac{- x}{y}$, so the slope is $\frac{- 1}{3}$.
+Find the curve's slope, then use the given point to write the tangent.
+A 10 m ladder's foot moves away from a wall at $0.5\,\mathrm{m}\,\mathrm{s}^{-1}$. Find the top's velocity when the foot is 6 m from the wall.
+The height is 8, so $\frac{\mathrm{d}y}{\mathrm{d}t} = - (\frac{6}{8}) \times 0.5 = \frac{- 3}{8}$.
+Find the current height by the Pythagorean theorem, then substitute into the rate equation.
+Find the absolute extrema of $f(x)=x^3-3x^2$ on $[-1,3]$.
+Maximum 0 at $x = 0 , 3$; minimum −4 at $x = - 1 , 2$.
+The derivative is $3 x (x - 2)$. Check critical points 0 and 2 and endpoints −1 and 3.
+The four values are −4, 0, −4, and 0.
+List derivative zeros and both endpoints; compare every value.
+Evaluate $\lim_{x\to\infty}\frac{x^2}{e^x}$.
+The form is $\frac{\infty }{\infty }$. One differentiation gives $\frac{2 x}{e^{x}}$ and a second gives $\frac{2}{e^{x}}$, which tends to zero.
+Recheck the indeterminate form before each application of L'Hôpital's rule.
+Evaluate $\int_0^2 x\sqrt{1+x^2}dx$.
+Set $u = 1 + x^{2}$ and $\mathrm{d}u = 2 x \mathrm{d}x$. The new bounds are 1 and 5.
+Integrating $(\frac{1}{2}) u^{\frac{1}{2}}$ gives $\frac{u^{\frac{3}{2}}}{3}$.
+Use the square root's inner expression; keep the constant in the differential.
+Find $\frac d{dx}\int_0^{\sin x}e^{t^2}dt$.
+Evaluate the integrand at the upper bound, then multiply by the upper bound's derivative.
+Substitute the upper bound and apply the chain rule.
+Find the area enclosed by $y = 2 x$ and $y = x^{2}$.
+The intersections are 0 and 2. Integrating $2 x - x^{2}$ gives $4 - \frac{8}{3}$.
+Find both intersections and identify the upper curve.
+Rotate the region below $y = \sqrt{x}$ on $0 \le x \le 4$ about the $x$-axis. Find the volume.
+The disk radius is $\sqrt{x}$, so $V = \pi  \int _{0}^{4} x \mathrm{d}x = 8 \pi$.
+The cross-sectional area is the radius squared times the circular-area factor.
+For density $\lambda  (x) = 2 x$ on $0 \le x \le 1$, find mass and center of mass.
+Mass 1; center of mass $\frac{2}{3}$.
+Over this interval, $m = \int  2 x \mathrm{d}x = 1$ and $M = \int  2 x^{2} \mathrm{d}x = \frac{2}{3}$. Divide by mass.
+Find total mass and first moment separately; the moment alone is not the center of mass.
+Domain
+The set of allowed inputs.
+Composition
+The output of one function becomes the input to another.
+Inverse function
+A function that reverses a one-to-one input–output relation.
+Radian
+Arc length divided by radius.
+Limit
+The value approached by outputs as inputs approach a target.
+Indeterminate form
+A form such as $\frac{0}{0}$ that does not by itself determine a limit.
+Continuity
+The function value exists and equals the nearby limit.
+Asymptote
+A line describing a graph's limiting behavior near a boundary or far away.
+Difference quotient
+The average rate of change between two inputs.
+Derivative
+The finite limit of a difference quotient as the input separation tends to zero.
+Chain rule
+Multiply the rates of change through the layers of a composition.
+Critical point
+A point in the domain where the derivative is zero or undefined.
+Inflection point
+A point on a continuous curve where concavity changes.
+Linearization
+A local first-order approximation built from a tangent.
+Riemann sum
+A sum of sample heights times subinterval widths.
+Antiderivative
+A function whose derivative is the given function.
+Definite integral
+The signed limit of increasingly fine accumulated contributions.
+Substitution
+A change of integration variable based on the chain rule in reverse.
+Arc length
+The accumulated Pythagorean lengths of short curve segments.
+Center of mass
+The mass-weighted average position.
+Integral mean value theorem
+A continuous function on a closed interval of positive length attains its average value there.
+Volume by cross sections
+Accumulate cross-sectional area along a slicing direction; rotation is not required.
+Gauge pressure
+Pressure relative to surrounding atmospheric pressure; in a stationary fluid it increases with depth.
+Proof supplement: basic trigonometric limits
+On the unit circle, for $0 < h < \frac{\pi }{2}$, the inscribed triangle, sector, and circumscribed triangle have increasing areas, giving $\sin h < h < \tan h$. Divide by $\sin h$ and rearrange to obtain $\cos h < \frac{\sin h}{h} < 1$. Since $\cos h \to 1$, squeezing gives right limit 1. The identity $\frac{\sin (- h)}{- h} = \frac{\sin h}{h}$ gives the same left limit. Rationalizing $\frac{\cos h - 1}{h}$ gives $- [\frac{\sin h}{h}] [\frac{\sin h}{1 + \cos h}]$, whose limit is 0.
+Proof supplement: Cauchy's mean value theorem
+Suppose $f , g$ are continuous on $[a , b]$ and differentiable inside. Define $H (x) = [f (b) - f (a)] [g (x) - g (a)] - [g (b) - g (a)] [f (x) - f (a)]$. Both endpoint values of $H$ are zero. Rolle's theorem gives $H' (c) = 0$, producing the cross-product identity. If $g'$ is nowhere zero inside, the mean value theorem also gives $g (b) \ne g (a)$, allowing division to equate the ratio of increments with a ratio of derivatives.
+Proof supplement: the sum of squares
+Start with $(i + 1)^{3} - i^{3} = 3 i^{2} + 3 i + 1$ and sum over $i = 1 , … , n$. The left side telescopes. Use $\sum  i = \frac{n (n + 1)}{2}$ and rearrange to obtain $\sum  i^{2} = \frac{n (n + 1) (2 n + 1)}{6}$. This turns the right Riemann sum for $x^{2}$ into an explicit finite expression.
+Scope and the next volumes
+This book covers single-variable Calculus I. Systematic integration by parts, partial fractions, trigonometric substitution, improper integrals, sequences, and Taylor series belong to Calculus II. Partial derivatives, multiple integrals, and vector calculus belong to Calculus III. Those volumes are complete books rather than placeholder chapters here.
+$[-3,1)\cup(1,3]$.
+$f\circ g=\ln(x^2)$, $x \ne 0$; $g\circ f=(\ln x)^2$, $x > 0$.
+$\frac{1}{4}$.
+$\delta=\sqrt\varepsilon$.
+$k=1$.
+$2x\sin(x^3)+3x^4\cos(x^3)$.
+$y=x+1$.
+$\cot x$, $\sin x > 0$.
+$32\pi$ $\mathrm{cm}^{3}\,\mathrm{s}^{-1}$.
+$V' = 4 \pi  r^{2} r' = 4 \pi  \times 16 \times 0.5$.
+450.
+$e-1$.
+$3x^2\sqrt{1+x^6}-2x\sqrt{1+x^4}$.
+$f_{\mathrm{avg}}=\frac{10}{4}=\frac52$.
+$m = \int _{0}^{2} (x + 2) \mathrm{d}x = 6$.
+$\frac1{30}$.
+$A(x)=x^2(1-x)^2$.
+$\int_0^1A(x)\,\mathrm{d}x=\frac13-\frac12+\frac15=\frac1{30}$.
+$39200\,\mathrm{J}$.
+$W=9800\int_0^2(3-y)\,\mathrm{d}y=39200\,\mathrm{J}$.
+$(-2,2)$.
+$\frac{2}{5}$.
+$3$.
+$e^{x^2}(2x\ln x+\frac{1}{x})$, $x > 0$.
+$y-3=-\frac{x-1}{3}$.
+$-\frac{3}{8}\,\mathrm{m}\,\mathrm{s}^{-1}$.
+$0$.
+$\frac{5\sqrt{5}-1}{3}$.
+$e^{\sin^2x}\cos x$.
+$\frac{4}{3}$.
+$8\pi$.

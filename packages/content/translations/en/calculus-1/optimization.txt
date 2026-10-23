@@ -1,0 +1,65 @@
+Optimization: Turn the Problem into a Function
+The decisive step often comes before differentiation.
+Write the objective as a function of one variable, then find and verify its largest or smallest value within the feasible domain.
+For a rectangle with fixed perimeter, increasing the width forces the length to decrease. Use the perimeter constraint to eliminate one variable before maximizing area.
+Build a model
+Differentiate and verify
+Answer the original question
+How do you form the objective function?
+Define each variable, write the objective, eliminate other variables using constraints, and state the feasible interval. Check that the units match the objective.
+Are you finished after solving $f' = 0$?
+No. Check endpoints or boundary behavior and verify the result with derivative signs, second derivatives, or value comparisons. On an open interval, the optimum may not be attained.
+How do you answer an applied problem?
+Convert back to the requested dimensions and include units. Integer requirements, minimum dimensions, or other restrictions may require another feasibility check.
+Compare the objective on the feasible domain $D$, rather than merely solving a derivative equation.
+Constraints, units, and domain belong to the model. An interior zero derivative only gives a candidate.
+For perimeter 24, the rectangle's sides $x$ and $y$ satisfy a constraint.
+Express area using one variable and state its feasible domain.
+At 6 the derivative changes from positive to negative, giving the maximum area.
+Adjust side length $x$. With perimeter fixed, the other side is $12 - x$; area is largest for a square.
+With fixed perimeter, does area keep increasing as one side grows? Find where it turns around.
+A fence against a wall
+Use $40\,\mathrm{m}$ of fencing for three sides of a rectangle against a wall. What is the largest area?
+Let $x$ be perpendicular to the wall and $y$ parallel to it. Then $2 x + y = 40$.
+$A = x (40 - 2 x)$ has derivative $40 - 4 x$, changing sign at $x = 10$.
+$x=10\,\mathrm{m}$, $y=20\,\mathrm{m}$, and maximum area $200\,\mathrm{m}^{2}$.
+A minimum distance
+Which point on $y = x$ is closest to $(2,0)$?
+The squared distance is $D^{2} = (x - 2)^{2} + x^{2}$. Distance and squared distance are minimized at the same point.
+Its derivative is $4 x - 4$, with unique zero $x = 1$ and second derivative $4 > 0$.
+Point $(1,1)$, at distance $\sqrt{2}$.
+Stopping as soon as the derivative is zero.
+Check feasibility, endpoints, and the type of extremum.
+Leaving variable constraints unstated.
+Negative lengths or values exceeding available resources are not feasible solutions.
+What is the maximum area of a rectangle with perimeter 20?
+The sides sum to 10. The area $A = x (10 - x)$ has its vertex at $x = 5$.
+At the maximum the sides are equal.
+Two positive numbers sum to 10. What is their largest product?
+The product $x (10 - x)$ is largest at $x = 5$.
+Use the sum constraint to express the second number.
+Two positive numbers have product 16. What is their smallest sum?
+$S = x + \frac{16}{x}$ for $x > 0$, with $S' = 1 - \frac{16}{x^{2}}$, negative before 4 and positive after it.
+Use positivity to select the root.
+Why is minimizing squared distance often easier than minimizing distance?
+Squaring is strictly increasing on nonnegative numbers, so the minimizing point is unchanged and the square root disappears.
+The comparisons $d_{1} \le d_{2}$ and $d_{1}^{2} \le d_{2}^{2}$ are equivalent for distances.
+Distances are nonnegative.
+Which candidates must you compare for the global maximum of a continuous function on a closed interval?
+Only zero-derivative points
+Only endpoints
+Interior critical points and endpoints
+The maximum may occur at an endpoint. Include interior critical points where the derivative is zero or nonexistent, then compare function values.
+Build the constraints into the model before comparing feasible choices. With fixed perimeter, lengthening one side shortens the other, so area cannot grow forever.
+A thin rectangle
+Set one side to 2.
+The other side is 10, giving area 20 and perimeter 24.
+Balanced dimensions
+Set one side to 6.
+The other side is also 6, and the area reaches 36.
+Keep lengthening
+Set one side to 10.
+The other becomes 2 and area returns to 20. Check the feasible interval and turning point.
+$25$.
+$25$.
+$8$.

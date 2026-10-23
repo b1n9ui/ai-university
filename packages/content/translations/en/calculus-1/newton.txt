@@ -1,0 +1,65 @@
+Newton's Method: Follow a Tangent to a Root
+Improve a guess using the local slope.
+Newton's method draws a tangent at the current point and takes its intersection with the $x$-axis as the next guess.
+Near a suitable root, a tangent often suggests a better guess. Every step requires a nonzero derivative.
+The iteration formula
+Choose stopping criteria
+Recognize convergence and failure
+How do you find the next guess?
+Set the current tangent's $y = 0$ to obtain $x_{n + 1} = x_{n} - \frac{f (x_{n})}{f' (x_{n})}$. A zero or very small denominator makes the step invalid or unreliable.
+When should you stop?
+Check both step size and function residual, and impose an iteration limit. A tiny step alone need not mean a nearby root; finite precision or a very large derivative can also cause it.
+Does it always converge?
+No. Convergence is often fast near a simple root and slower near a multiple root. For $x^{3} - 2 x + 2$, starting at 0 cycles between 0 and 1. Try a different initial guess or use bisection when it fails.
+The iteration obtained by finding a tangent's root.
+Each derivative must be nonzero and each calculation finite. Convergence needs additional local conditions and a suitable starting value.
+Set the current tangent's output to zero.
+Solve for the next input to obtain the iteration.
+For $x^{2} - 2$, the formula becomes an average.
+Starting from an initial guess, display successive tangent intersections. Change the starting value and watch the residual or a near-zero-derivative warning.
+Must changing the initial guess make convergence faster? Compare tangent intersections and residuals, then try initial value zero.
+Approximating $\sqrt{2}$
+For $x^{2} - 2$, start at $x_{0} = 1$ and take two steps.
+After two steps, approximately 1.416667, already close to $\sqrt{2}$.
+An explicit cycle
+For $f (x) = x^{3} - 2 x + 2$, what happens starting at $x_{0} = 0$?
+$f (0) = 2$ and $f' (0) = - 2$ give $x_{1} = 1$.
+$f (1) = 1$ and $f' (1) = 1$ give $x_{2} = 0$.
+It cycles between 0 and 1 without converging.
+Assuming every step moves closer to a root.
+Newton's method can move away or cycle. Monitor its progress.
+Continuing to divide when the derivative is zero.
+Stop and report the issue, or change methods.
+For $x^{2} - 4$, take one step from $x_{0} = 3$.
+Use the current function value and derivative.
+For $f (x) = x^{2} - 2$, can the first step start at $x_{0} = 0$?
+No.
+$f' (0) = 0$, so the iteration would divide by zero.
+Check the derivative first.
+For the linear function $2 x - 6$, where does one step take any initial guess?
+$x - \frac{2 x - 6}{2} = 3$. The line is its own tangent.
+Every tangent is the original line.
+Does a small residual alone prove a small input error?
+Not in general.
+For a flat function, a large input error can produce a small residual. Additional information, such as a positive lower bound on derivative magnitude, is needed.
+Distinguish output error from root-location error.
+A Newton step encounters $f' (x_{n}) = 0$. What should you do?
+Continue dividing by zero
+The formula fails here; change the starting value or the method
+Conclude that $x_{n}$ must be a root
+The update divides by $f' (x_{n})$. A zero slope prevents this step, and the function value need not be zero.
+At each step, temporarily replace the curved function by its tangent and use that line's root as the next guess. An update is possible without necessarily being an improvement.
+Take one step
+Start at 1 and perform one iteration.
+For the square-minus-2 model, the next guess is 1.5.
+Keep checking
+Start at 1 again and perform four iterations.
+The approximation is close to the square root of 2, with a small residual.
+Try a failing point
+Change the initial value to 0.
+The derivative is zero. Division is invalid, and the demonstration should explain why it stops.
+$x_{1} = \frac{1 + 2}{2} = 1.5$.
+$x_{2} = \frac{1.5 + \frac{2}{1.5}}{2} = \frac{17}{12} \approx 1.416667$.
+$\frac{13}{6}$.
+$3 - \frac{9 - 4}{6} = \frac{13}{6}$.
+$3$.

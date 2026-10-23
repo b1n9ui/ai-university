@@ -12,19 +12,19 @@ function validateLatex(latex, context) {
   katex.renderToString(latex,{throwOnError:true,trust:false,strict:'ignore'});
 }
 /** Validate authored notation; never rewrite or guess the mathematics. */
-export function validateMathNotation(value, context = 'content') {
-  if (Array.isArray(value)) return value.forEach((item,index) => validateMathNotation(item,`${context}[${index}]`));
+export function validateMathNotation(value, context = 'content', options = {}) {
+  if (Array.isArray(value)) return value.forEach((item,index) => validateMathNotation(item,`${context}[${index}]`,options));
   if (value && typeof value === 'object') {
     for (const [key,item] of Object.entries(value)) {
       if (metadata.has(key)) continue;
       if (key === 'latex' && typeof item === 'string') {
         validateLatex(item,`${context}.${key}`);
-      } else validateMathNotation(item,`${context}.${key}`);
+      } else validateMathNotation(item,`${context}.${key}`,options);
     }
     return;
   }
   if (typeof value !== 'string') return;
-  assertMathText(value,context);
+  assertMathText(value,context,options);
   for (const part of splitMathText(value)) if (part.kind === 'math') {
     validateLatex(part.value,context);
   }

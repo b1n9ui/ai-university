@@ -1,0 +1,62 @@
+The fundamental theorem of calculus
+Why change and accumulation undo each other
+Integration accumulates; differentiation measures change. Differentiating the accumulation of a continuous function recovers the integrand. An antiderivative evaluates a definite integral through its endpoint difference.
+Let $A (x) = \int _{a}^{x} f (t) \mathrm{d}t$. Moving $x$ by $h$ adds a thin strip. Its average height tends to $f (x)$, so $A' (x) = f (x)$.
+Part I: differentiate accumulation
+Part II: subtract antiderivative values
+Variable bounds
+Why is the derivative $f (x)$?
+The difference quotient is the average height of the new strip. If $f$ is continuous at $x$, all nearby heights approach $f (x)$, so their average does too.
+Why subtract $F (b) - F (a)$?
+If $F' = f$, then $F$ and the accumulation function $A$ have the same derivative. On an interval they differ by a constant, which cancels when endpoint values are subtracted.
+What if the upper bound is $g (x)$?
+Apply the chain rule: the derivative is $f (g (x)) g' (x)$. If both bounds vary, subtract the lower-bound contribution from the upper-bound contribution. The variable $t$ is only a dummy variable.
+The fundamental theorem connects continuous accumulation with differentiation.
+Assume $f$ is continuous on the relevant closed interval and $F$ is an antiderivative there. Interpret endpoints one-sidedly.
+The change in accumulation is exactly the integral over the added small interval.
+Its average height differs from $f (x)$ by at most the largest local deviation, which continuity makes tend to zero.
+Thus $A' = f$. Comparing $A$ with $F$ gives the endpoint formula.
+Move the upper bound $x$. The slope of $A (x) = \frac{x^{3}}{3}$ equals the strip height $f (x) = x^{2}$.
+How does the slope of $A (x)$ relate to the height of $f (x)$? Move the upper bound to compare.
+Replace infinitely many pieces with two values
+Evaluate $\int_0^2 3x^2\,dx$.
+An antiderivative is $x^{3}$.
+Subtract the endpoint values: $2^{3} - 0^{3} = 8$.
+The result is 8.
+A variable bound needs the chain rule
+Differentiate $G(x)=\int_0^{x^2}\cos t\,dt$.
+The accumulation function has derivative $\cos(\text{upper bound})$ with respect to its upper bound.
+The upper bound $x^{2}$ has derivative $2 x$.
+Writing $f(x)$ without checking the upper bound.
+For upper bound $g (x)$, substitute it into the integrand and multiply by $g'$.
+Subtracting the endpoint values in reverse order.
+Use the upper value $F (b)$ minus the lower value $F (a)$.
+Evaluate $\int_1^3 2x\,dx$.
+Use antiderivative $x^{2}$: $9 - 1 = 8$.
+Subtract the two endpoint values.
+Find $\frac d{dx}\int_1^x e^t dt$.
+Evaluate the continuous integrand at the upper bound.
+A fixed lower bound contributes no derivative.
+Find $\frac d{dx}\int_x^{2x}t^2dt$.
+The upper contribution is $(2 x)^{2} \times 2$; the lower contribution is $x^{2} \times 1$. Subtract to obtain $7 x^{2}$.
+Differentiate each moving bound's contribution.
+Evaluate $\int_0^{\pi}\sin x\,dx$.
+An antiderivative is $- \cos x$, giving $- \cos \pi  + \cos 0 = 2$.
+Keep the minus sign in the antiderivative.
+If $f$ is continuous and $A (x) = \int _{0}^{x} f (t) \mathrm{d}t$, what is $A' (x)$?
+Increasing the upper bound by $h$ adds approximately $f (x) h$. Divide by $h$ and take the limit to recover $f (x)$.
+A small increase in the upper bound adds a thin strip. Its contribution divided by its width approaches the current height, so differentiating accumulation recovers the integrand.
+Start at the origin
+Set the upper bound to 0.
+Both the accumulation and the current height are zero.
+Move halfway
+Set the upper bound to 0.5.
+The accumulation is $\frac1{24}$; the current height and the derivative of accumulation are both $\frac14$.
+Reach the endpoint
+Set the upper bound to 1.
+The accumulation is $\frac13$ and the current height is 1. An accumulated value and its rate are different quantities.
+$G\prime(x)=2x\cos(x^2)$.
+$8$.
+$e^x$.
+$7x^2$.
+$2$.

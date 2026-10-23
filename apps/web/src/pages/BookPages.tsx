@@ -1,3 +1,4 @@
+import {tr, localizeNode} from "../i18n";
 import {useCurriculum} from "../lib/curriculum";
 import { MathText } from "../components/MathText";
 import {
@@ -36,31 +37,31 @@ export function Library() {
   const matches=(v:typeof volumes[number])=>(!category||v.categoryId===category.id)&&(!area||v.areaId===area.id);
   const filtered=volumes.filter(v=>matches(v)&&(status==="all"||v.status===status));
   return <div className="library-exhibition">
-    <PageTitle tag="THE OPEN BOOKSHELF" title="教科书库" description="选一个学科，读一本完整的书。正文、互动和练习全部开放。">
-      <div className="library-edition"><strong>{String(volumes.filter(v=>v.status==="published").length).padStart(2,"0")}</strong><span>本已出版 / {categories.length} 个分类</span></div>
+    <PageTitle tag="THE OPEN BOOKSHELF" title={tr("教科书库")} description={tr("选一个学科，读一本完整的书。正文、互动和练习全部开放。")}>
+      <div className="library-edition"><strong>{localizeNode(String(volumes.filter(v=>v.status==="published").length).padStart(2,"0"))}</strong><span>{tr("本已出版 /")}{localizeNode(categories.length)}{tr("个分类")}</span></div>
     </PageTitle>
-    <nav className="subject-tabs" aria-label="教材分类">
-      <Link to="library" params={{status}} className={!category?"active":""} aria-current={!category?"page":undefined}>全部<span>{volumes.filter(v=>v.status==="published").length}</span></Link>
-      {categories.map(c=><Link key={c.id} to="library" params={{category:c.id,status}} className={category?.id===c.id?"active":""} aria-current={category?.id===c.id?"page":undefined}>{c.title}<span>{volumes.filter(v=>v.categoryId===c.id&&v.status==="published").length}</span></Link>)}
+    <nav className="subject-tabs" aria-label={tr("教材分类")}>
+      <Link to="library" params={{status}} className={!category?"active":""} aria-current={!category?"page":undefined}>{tr("全部")}<span>{localizeNode(volumes.filter(v=>v.status==="published").length)}</span></Link>
+      {localizeNode(categories.map(c=><Link key={c.id} to="library" params={{category:c.id,status}} className={category?.id===c.id?"active":""} aria-current={category?.id===c.id?"page":undefined}>{localizeNode(c.title)}<span>{localizeNode(volumes.filter(v=>v.categoryId===c.id&&v.status==="published").length)}</span></Link>))}
     </nav>
     <div className="series-library-filter">
-      {showStatus?<nav aria-label="教材出版状态">{[["all","全部"],["published","已出版"],["planned","规划中"]].map(([id,title])=><Link key={id} to="library" params={{category:category?.id,area:area?.id,status:id}} className={status===id?"active":""} aria-current={status===id?"page":undefined}>{title}<span>{volumes.filter(v=>matches(v)&&(id==="all"||v.status===id)).length}</span></Link>)}</nav>:<span className="library-access-note">AI 编写 · 完整教材 · 免费阅读</span>}
-      {category?.id==="mathematics"&&<label>数学方向<select aria-label="筛选数学方向" value={area?.id||""} onChange={e=>{location.hash=routeHref("library",{category:"mathematics",area:e.target.value||undefined,status})}}><option value="">全部方向</option>{mathAreas.map(a=><option key={a.id} value={a.id}>{a.title}</option>)}</select></label>}
+      {localizeNode(showStatus?<nav aria-label={tr("教材出版状态")}>{localizeNode([["all","全部"],["published","已出版"],["planned","规划中"]].map(([id,title])=><Link key={id} to="library" params={{category:category?.id,area:area?.id,status:id}} className={status===id?"active":""} aria-current={status===id?"page":undefined}>{localizeNode(title)}<span>{localizeNode(volumes.filter(v=>matches(v)&&(id==="all"||v.status===id)).length)}</span></Link>))}</nav>:<span className="library-access-note">{tr("AI 编写 · 完整教材 · 免费阅读")}</span>)}
+      {localizeNode(category?.id==="mathematics"&&<label>{tr("数学方向")}<select aria-label={tr("筛选数学方向")} value={area?.id||""} onChange={e=>{location.hash=routeHref("library",{category:"mathematics",area:e.target.value||undefined,status})}}><option value="">{tr("全部方向")}</option>{localizeNode(mathAreas.map(a=><option key={a.id} value={a.id}>{localizeNode(a.title)}</option>))}</select></label>)}
     </div>
-    {area&&<div className="library-area-intro"><Eyebrow>{area.english.toUpperCase()}</Eyebrow><h2>{area.title}：{area.question}</h2><p>{area.description}</p></div>}
-    {categories.filter(c=>!category||c.id===category.id).map(c=>{
+    {localizeNode(area&&<div className="library-area-intro"><Eyebrow>{localizeNode(area.english.toUpperCase())}</Eyebrow><h2>{localizeNode(area.title)}：{localizeNode(area.question)}</h2><p>{localizeNode(area.description)}</p></div>)}
+    {localizeNode(categories.filter(c=>!category||c.id===category.id).map(c=>{
       const items=filtered.filter(v=>v.categoryId===c.id);
       const published=items.filter((v):v is PublishedVolume=>v.status==="published");
       const planned=items.filter(v=>v.status==="planned");
       if(!items.length)return null;
-      return <section className="library-subject" key={c.id} aria-label={c.title+"教材"}>
-        <div className="subject-heading"><div><Eyebrow>{c.english.toUpperCase()}</Eyebrow><h2>{c.title}</h2><p>{c.description}</p></div><span>{published.length} 本已出版{planned.length?` / ${planned.length} 本规划中`:""}</span></div>
-        {published.length>0&&<div className="published-book-list edition-shelf">{published.map(v=><PublishedBook key={v.id} volume={v}/>)}</div>}
-        {planned.length>0&&<div className="library-planned"><div className="section-title"><h3>后续教材规划</h3><span>尚未出版</span></div><PlannedBooks items={planned}/></div>}
+      return <section className="library-subject" key={c.id} aria-label={tr(c.title+"教材")}>
+        <div className="subject-heading"><div><Eyebrow>{localizeNode(c.english.toUpperCase())}</Eyebrow><h2>{localizeNode(c.title)}</h2><p>{localizeNode(c.description)}</p></div><span>{localizeNode(published.length)}{tr("本已出版")}{localizeNode(planned.length?` / ${planned.length} 本规划中`:"")}</span></div>
+        {localizeNode(published.length>0&&<div className="published-book-list edition-shelf">{localizeNode(published.map(v=><PublishedBook key={v.id} volume={v}/>))}</div>)}
+        {localizeNode(planned.length>0&&<div className="library-planned"><div className="section-title"><h3>{tr("后续教材规划")}</h3><span>{tr("尚未出版")}</span></div><PlannedBooks items={planned}/></div>)}
       </section>;
-    })}
-    {!filtered.length&&<div className="series-library-empty"><h2>这个分类下暂时没有{status==="planned"?"规划中的":"符合条件的"}教材。</h2><Link to="library" params={{category:category?.id}} className="secondary-btn">查看本分类的全部教材<ArrowRight size={16}/></Link></div>}
-    <div className="quiet-note"><Layers3 size={24}/><div><h3>一本一本完成，持续扩展。</h3><p>已出版的教材提供整本正文和解答。新书完成后再加入正式书库。</p></div><Link to="about/contribute">了解内容规范<ArrowUpRight size={16}/></Link></div>
+    }))}
+    {localizeNode(!filtered.length&&<div className="series-library-empty"><h2>{tr("这个分类下暂时没有")}{localizeNode(status==="planned"?"规划中的":"符合条件的")}{tr("教材。")}</h2><Link to="library" params={{category:category?.id}} className="secondary-btn">{tr("查看本分类的全部教材")}<ArrowRight size={16}/></Link></div>)}
+    <div className="quiet-note"><Layers3 size={24}/><div><h3>{tr("一本一本完成，持续扩展。")}</h3><p>{tr("已出版的教材提供整本正文和解答。新书完成后再加入正式书库。")}</p></div><Link to="about/contribute">{tr("了解内容规范")}<ArrowUpRight size={16}/></Link></div>
   </div>;
 }
 
@@ -77,25 +78,23 @@ export function BookPage() {
       />
       <section className="book-overview">
         <div>
-          <Eyebrow>MATHEMATICS / {book.title.toUpperCase()}</Eyebrow>
+          <Eyebrow>MATHEMATICS / {localizeNode(book.title.toUpperCase())}</Eyebrow>
           <h1>
-            {book.titleZh}<span>{book.title}</span>
+            {localizeNode(book.titleZh)}<span>{localizeNode(book.title)}</span>
           </h1>
           <p className="book-lead">
-            {book.subtitle}
+            {localizeNode(book.subtitle)}
           </p>
-          <p>{book.description}</p>
+          <p>{localizeNode(book.description)}</p>
           <div className="hero-actions">
             <Link to={lessonPath(resume || book.lessonIds[0])} className="primary-btn">
-              {resume ? "继续阅读" : "从第一节开始"}
+              {localizeNode(resume ? "继续阅读" : "从第一节开始")}
               <ArrowRight size={17} />
             </Link>
-            <Link to="guide" className="text-btn">
-              阅读指南
-              <ArrowUpRight size={16} />
+            <Link to="guide" className="text-btn">{tr("阅读指南")}<ArrowUpRight size={16} />
             </Link>
           </div>
-          {previous&&<Link to={'book/'+previous} className="text-btn">需要复习？打开前一卷<ArrowUpRight size={15}/></Link>}
+          {localizeNode(previous&&<Link to={'book/'+previous} className="text-btn">{tr("需要复习？打开前一卷")}<ArrowUpRight size={15}/></Link>)}
           <BookStats volume={volume}/>
         </div>
         <BookCover small volume={volume}/>
@@ -103,67 +102,62 @@ export function BookPage() {
       <div className="book-meta-bar">
         <span>
           <GraduationCap size={17} />
-          {book.audience}
+          {localizeNode(book.audience)}
         </span>
         <span>
-          <CircleCheck size={17} />
-          整卷内容可直接阅读
-        </span>
+          <CircleCheck size={17} />{tr("整卷内容可直接阅读")}</span>
         <Link to="downloads">
-          <Download size={16} />
-          整本下载
-        </Link>
+          <Download size={16} />{tr("整本下载")}</Link>
       </div>
       <section className="contents-section">
         <div className="section-title">
           <div>
             <Eyebrow>CONTENTS</Eyebrow>
-            <h2>全书目录</h2>
+            <h2>{tr("全书目录")}</h2>
           </div>
-          <span>{reading.read.filter(id=>book.lessonIds.includes(id)).length} / {lessons.length} 节已读</span>
+          <span>{localizeNode(reading.read.filter(id=>book.lessonIds.includes(id)).length)} / {localizeNode(lessons.length)}{tr("节已读")}</span>
         </div>
-        {book.chapters.map((ch, i) => (
+        {localizeNode(book.chapters.map((ch, i) => (
           <div className="chapter-row" key={ch.id}>
             <Link to={chapterPath(ch.id)} className="chapter-number">
-              {String(i + 1).padStart(2, "0")}
+              {localizeNode(String(i + 1).padStart(2, "0"))}
             </Link>
             <div className="chapter-summary">
               <Link to={chapterPath(ch.id)}>
                 <h3>
-                  {ch.title}
+                  {localizeNode(ch.title)}
                   <ArrowUpRight size={19} />
                 </h3>
               </Link>
-              <p>{ch.intro}</p>
-              <Link to={"practice/review/" + ch.id} className="chapter-review">
-                章末回顾 · {supplements.reviews.find(r=>r.chapterId===ch.id)?.questions.length} 题<ArrowRight size={14} />
+              <p>{localizeNode(ch.intro)}</p>
+              <Link to={"practice/review/" + ch.id} className="chapter-review">{tr("章末回顾 ·")}{localizeNode(supplements.reviews.find(r=>r.chapterId===ch.id)?.questions.length)}{tr("题")}<ArrowRight size={14} />
               </Link>
             </div>
             <div className="chapter-lessons">
-              {ch.lessonIds.map((id) => (
+              {localizeNode(ch.lessonIds.map((id) => (
                 <LessonRow key={id} lesson={lessonById[id]} />
-              ))}
+              )))}
             </div>
           </div>
-        ))}
+        )))}
       </section>
       <div className="book-end-grid">
         <Link to="practice/exam">
           <GraduationCap />
-          <h3>综合测试</h3>
-          <p>用 {supplements.exam.length} 道题连接整本书的知识。</p>
+          <h3>{tr("综合测试")}</h3>
+          <p>{tr("用")}{localizeNode(supplements.exam.length)}{tr("道题连接整本书的知识。")}</p>
           <ArrowRight />
         </Link>
         <Link to="reference">
           <Layers3 />
-          <h3>公式、术语与附录</h3>
-          <p>查找定义，补全证明，回到正文。</p>
+          <h3>{tr("公式、术语与附录")}</h3>
+          <p>{tr("查找定义，补全证明，回到正文。")}</p>
           <ArrowRight />
         </Link>
         <Link to="downloads">
           <Download />
-          <h3>把整本书带走</h3>
-          <p>Markdown、打印版与网站源码。</p>
+          <h3>{tr("把整本书带走")}</h3>
+          <p>{tr("Markdown、打印版与网站源码。")}</p>
           <ArrowRight />
         </Link>
       </div>
@@ -186,74 +180,66 @@ export function ChapterPage() {
         ]}
       />
       <div className="chapter-heading">
-        <Eyebrow>CHAPTER {String(num).padStart(2, "0")}</Eyebrow>
-        <h1>{ch.title}</h1>
-        <p className="lede">{ch.subtitle}</p>
-        <p>{ch.intro}</p>
-        <Link to={lessonPath(ch.lessonIds[0])} className="primary-btn">
-          开始本章
-          <ArrowRight size={17} />
+        <Eyebrow>CHAPTER {localizeNode(String(num).padStart(2, "0"))}</Eyebrow>
+        <h1>{localizeNode(ch.title)}</h1>
+        <p className="lede">{localizeNode(ch.subtitle)}</p>
+        <p>{localizeNode(ch.intro)}</p>
+        <Link to={lessonPath(ch.lessonIds[0])} className="primary-btn">{tr("开始本章")}<ArrowRight size={17} />
         </Link>
       </div>
       <section className="chapter-goals">
         <Eyebrow>AFTER THIS CHAPTER</Eyebrow>
-        <h2>本章学习目标</h2>
+        <h2>{tr("本章学习目标")}</h2>
         <ul>
-          {ch.goals.map((g) => (
+          {localizeNode(ch.goals.map((g) => (
             <li key={g}>
               <CircleCheck size={18} />
-              <MathText text={g} />
+              <MathText text={tr(g)} />
             </li>
-          ))}
+          )))}
         </ul>
       </section>
       <section>
         <div className="section-title">
-          <h2>本章目录</h2>
-          <span>{ch.lessonIds.length} 节 · {ch.lessonIds.reduce((n,id)=>n+lessonById[id].workedExamples.length,0)} 例题 · {ch.lessonIds.reduce((n,id)=>n+lessonById[id].practice.length,0)} 节内练习</span>
+          <h2>{tr("本章目录")}</h2>
+          <span>{localizeNode(ch.lessonIds.length)}{tr("节 ·")}{localizeNode(ch.lessonIds.reduce((n,id)=>n+lessonById[id].workedExamples.length,0))}{tr("例题 ·")}{localizeNode(ch.lessonIds.reduce((n,id)=>n+lessonById[id].practice.length,0))}{tr("节内练习")}</span>
         </div>
         <div className="chapter-detail-list">
-          {ch.lessonIds.map((id) => {
+          {localizeNode(ch.lessonIds.map((id) => {
             const l = lessonById[id];
             return (
               <Link to={lessonPath(id)} key={id}>
-                <span>{l.number}</span>
+                <span>{localizeNode(l.number)}</span>
                 <div>
-                  <h3><MathText text={l.title} /></h3>
-                  <p><MathText text={l.subtitle} /></p>
+                  <h3><MathText text={tr(l.title)} /></h3>
+                  <p><MathText text={tr(l.subtitle)} /></p>
                 </div>
-                <span className="lesson-detail-meta">阅读 · 演示 · 练习</span>
+                <span className="lesson-detail-meta">{tr("阅读 · 演示 · 练习")}</span>
                 <ArrowRight size={19} />
               </Link>
             );
-          })}
+          }))}
         </div>
       </section>
       <div className="quiet-note">
         <GraduationCap size={24} />
         <div>
-          <h3>章末回顾</h3>
-          <p>用 {supplements.reviews.find(r=>r.chapterId===ch.id)?.questions.length} 道题检查本章的概念与条件。</p>
+          <h3>{tr("章末回顾")}</h3>
+          <p>{tr("用")}{localizeNode(supplements.reviews.find(r=>r.chapterId===ch.id)?.questions.length)}{tr("道题检查本章的概念与条件。")}</p>
         </div>
-        <Link to={"practice/review/" + ch.id} className="secondary-btn">
-          开始回顾
-          <ArrowRight size={16} />
+        <Link to={"practice/review/" + ch.id} className="secondary-btn">{tr("开始回顾")}<ArrowRight size={16} />
         </Link>
       </div>
       <div className="pagination-chapter">
-        {num > 1 && (
+        {localizeNode(num > 1 && (
           <Link to={chapterPath(book.chapters[num - 2].id)}>
-            <ArrowLeft size={16} />
-            上一章
+            <ArrowLeft size={16} />{tr("上一章")}</Link>
+        ))}
+        <Link to={BOOK}>{tr("完整目录")}</Link>
+        {localizeNode(num < book.chapters.length && (
+          <Link to={chapterPath(book.chapters[num].id)}>{tr("下一章")}<ArrowRight size={16} />
           </Link>
-        )}
-        <Link to={BOOK}>完整目录</Link>
-        {num < book.chapters.length && (
-          <Link to={chapterPath(book.chapters[num].id)}>
-            下一章
-            <ArrowRight size={16} />
-          </Link>
-        )}
+        ))}
       </div>
     </div>
   );

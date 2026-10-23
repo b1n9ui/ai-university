@@ -1,0 +1,62 @@
+Derivatives of Trigonometric Functions
+Instantaneous change in periodic motion.
+With radian inputs, the derivative of $\sin$ is $\cos$, and the derivative of $\cos$ is $- \sin$. A composite angle also contributes its inner derivative.
+The angle in $\sin (3 x)$ changes three times as fast as in $\sin x$, so its derivative is $3 \cos (3 x)$. The factor 3 comes from the chain rule.
+Derive the sine formula
+Differentiate other trigonometric functions
+Check angle units and inner derivatives
+Where does the sine derivative come from?
+Expand $\sin (x + h)$ using the addition formula. In the quotient, $\frac{\sin h}{h} \to 1$ and $\frac{\cos h - 1}{h} \to 0$, leaving $\cos x$.
+Must you memorize every other formula?
+The quotient and reciprocal rules recover $(\cot x)\prime=-\csc^2x$, $(\sec x)\prime=\sec x\tan x$, and $(\csc x)\prime=-\csc x\cot x$. Tangent and secant require $\cos x\ne0$; cotangent and cosecant require $\sin x\ne0$.
+Why are radians required?
+An angle of $\theta$ degrees equals $\frac{\pi  \theta }{180}$ radians, so differentiation with respect to $\theta$ introduces $\frac{\pi }{180}$. The standard formulas assume radians. Remember the minus sign when differentiating $\cos$.
+Use radian inputs at points where the trigonometric function is defined.
+$\sec x = \frac{1}{\cos x}$ and $\csc x = \frac{1}{\sin x}$; their denominators must be nonzero.
+Expand the sine difference quotient.
+The two basic limits are 0 and 1, respectively.
+The remaining expression is $\cos x$.
+Move $a$ along the sine curve. Its tangent slope is $\cos (a)$.
+What is the tangent slope at a maximum of $\sin x$? Check using $\cos (a)$.
+A shorter period, a faster rate
+Differentiate $y=\sin(4x)$.
+The outer derivative gives $\cos (4 x)$.
+The inner derivative is 4. Multiply.
+A product with a trigonometric function
+Differentiate $y=x\cos x$.
+The product rule gives $1 \cdot \cos x + x \cdot (- \sin x)$.
+Keep the minus sign in the second term.
+Forgetting the minus sign when differentiating cosine.
+$\cos$ decreases just to the right of zero; its derivative $- \sin$ agrees with that behavior.
+Omitting a multiplier inside the angle.
+A shorter period means faster change, so the chain-rule factor is essential.
+Differentiate $\cos(2x)$.
+Differentiate cosine with its minus sign, then multiply by the inner derivative 2.
+Check both the minus sign and the chain-rule factor.
+Differentiate $\sin^2x$.
+Multiply the derivative of the outer square by the derivative of the inner sine.
+This is a squared sine, not $\sin (x^{2})$.
+Find the derivative of $\tan x$ at 0.
+The quotient rule also works.
+Differentiate $\sec x$.
+Write it as $(\cos x)^{- 1}$. Differentiation gives $\frac{\sin x}{\cos^{2} x}$.
+Express secant as the reciprocal of cosine.
+What is $(\cos x)'$?
+Near $x = \frac{\pi }{2}$, $\cos x$ decreases with slope −1. This matches $- \sin x$; the angle is in radians.
+Height and rate of change are different quantities. Sine's rate is cosine: the wave can be high while its instantaneous rate is near zero.
+At a zero
+Set the base point to 0 and the gap to 0.01.
+$\sin0=0$, while the derivative is $\cos0=1$.
+Near a peak
+Set the base point to 1.57.
+The curve's height is near 1, but its slope is near 0.
+Crossing downward through zero
+Set the base point to 3.14.
+The height is near 0 and the slope near −1. These base points are decimal approximations in radians.
+$y\prime=4\cos(4x)$.
+$y\prime=\cos x-x\sin x$.
+$-2\sin(2x)$.
+$2\sin x\cos x$.
+$1$.
+$\sec^{2} 0 = \frac{1}{\cos^{2} 0} = 1$.
+$\sec x\tan x$.

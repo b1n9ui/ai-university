@@ -1,3 +1,6 @@
+import {locale, languageUrl} from "../i18n";
+import {unavailableEdition} from "../i18n/editions";
+import {tr, localizeNode} from "../i18n";
 import {
   ArrowRight,
   BookOpen,
@@ -35,14 +38,14 @@ export function Link({
   const scoped=["lab","practice","reference","learning","search","downloads","guide"].includes(to)||to==="practice/exam";
   const values=scoped?{book:book.id,...params}:params;
   return (
-    <a className={className} href={routeHref(to, values)} {...props}>
-      {children}
+    <a className={className} href={locale === "en" && unavailableEdition(to, values?.book?.toString()) ? languageUrl(location.href.split("#")[0]+routeHref(to, values),"zh") : routeHref(to, values)} {...props}>
+      {localizeNode(children)}
     </a>
   );
 }
 
 export function Eyebrow({ children }: { children: ReactNode }) {
-  return <span className="eyebrow">{children}</span>;
+  return <span className="eyebrow">{localizeNode(children)}</span>;
 }
 
 export function PageTitle({
@@ -65,11 +68,11 @@ export function PageTitle({
         <path d="M-30 270 C90 260 130 100 240 130 S370 270 490 80" />
       </svg>
       <div>
-        <Eyebrow>{tag}</Eyebrow>
-        <h1>{title}</h1>
-        <p>{description}</p>
+        <Eyebrow>{localizeNode(tag)}</Eyebrow>
+        <h1>{localizeNode(title)}</h1>
+        <p>{localizeNode(description)}</p>
       </div>
-      {children}
+      {localizeNode(children)}
     </div>
   );
 }
@@ -80,17 +83,17 @@ export function Breadcrumb({
   items: { label: string; to?: string }[];
 }) {
   return (
-    <nav className="breadcrumbs" aria-label="面包屑导航">
-      {items.map((item, i) => (
+    <nav className="breadcrumbs" aria-label={tr("面包屑导航")}>
+      {localizeNode(items.map((item, i) => (
         <span key={i}>
-          {i > 0 && <ChevronRight size={13} />}{" "}
-          {item.to ? (
-            <Link to={item.to}><MathText text={item.label} /></Link>
+          {localizeNode(i > 0 && <ChevronRight size={13} />)}{localizeNode(" ")}
+          {localizeNode(item.to ? (
+            <Link to={item.to}><MathText text={tr(item.label)} /></Link>
           ) : (
-            <span aria-current="page"><MathText text={item.label} /></span>
-          )}
+            <span aria-current="page"><MathText text={tr(item.label)} /></span>
+          ))}
         </span>
-      ))}
+      )))}
     </nav>
   );
 }
@@ -102,17 +105,17 @@ export function BookStats({
 }) {
   return (
     <div className="book-stats">
-      {[
+      {localizeNode([
         [volume.stats.chapters, "章节"],
         [volume.stats.lessons, "知识点"],
         [volume.stats.examples, "逐步例题"],
         [volume.stats.exercises, "练习与解答"],
       ].map(([n, s]) => (
         <span key={s}>
-          <strong>{n}</strong>
-          {s}
+          <strong>{localizeNode(n)}</strong>
+          {localizeNode(s)}
         </span>
-      ))}
+      )))}
     </div>
   );
 }
@@ -128,13 +131,13 @@ export function BookCover({
     <div className={"book-cover edition-cover " + (small ? "small" : "")+(volume.coverTitle.some(line=>line.length>10)?" long-title":"")} data-edition={volume.id} aria-hidden="true">
       <div className="cover-top">AI UNIVERSITY<span>OPEN TEXTBOOK</span></div>
       <div className="cover-title">
-        <h2>{volume.coverTitle.map((line,i)=><span key={i}>{i>0&&<br/>}{i===1&&/^I+$/.test(line)?<em>{line}</em>:line}</span>)}</h2>
-        <p>{volume.title}</p>
+        <h2>{localizeNode(volume.coverTitle.map((line,i)=><span key={i}>{localizeNode(i>0&&<br/>)}{localizeNode(i===1&&/^I+$/.test(line)?<em>{localizeNode(line)}</em>:line)}</span>))}</h2>
+        <p>{localizeNode(volume.title)}</p>
       </div>
       <BookArtwork id={volume.id}/>
       <div className="cover-bottom">
-        {volume.status==="published"&&(volume.coverFormula?<Formula latex={volume.coverFormula}/>:<code className="cover-code">{volume.coverMark}</code>)}
-        <span>{volume.categoryId==="mathematics"?"MATHEMATICS":"COMPUTING"}</span>
+        {localizeNode(volume.status==="published"&&(volume.coverFormula?<Formula latex={volume.coverFormula}/>:<code className="cover-code">{localizeNode(volume.coverMark)}</code>))}
+        <span>{localizeNode(volume.categoryId==="mathematics"?"MATHEMATICS":"COMPUTING")}</span>
       </div>
     </div>
   );
@@ -144,13 +147,13 @@ export function LessonRow({ lesson }: { lesson: Lesson }) {
   const { reading } = useApp();
   return (
     <Link to={lessonPath(lesson.id)} className="lesson-row">
-      <span className="lesson-number">{lesson.number}</span>
-      <span><MathText text={lesson.title} /></span>
-      {reading.read.includes(lesson.id) ? (
+      <span className="lesson-number">{localizeNode(lesson.number)}</span>
+      <span><MathText text={tr(lesson.title)} /></span>
+      {localizeNode(reading.read.includes(lesson.id) ? (
         <Check size={16} className="read-check" />
       ) : (
         <ArrowRight size={15} />
-      )}
+      ))}
     </Link>
   );
 }
@@ -177,30 +180,30 @@ export function Filters({
     <div className="filter-bar">
       <div>
         <SlidersHorizontal size={17} />
-        <span>筛选</span>
-        {chapter && (
+        <span>{tr("筛选")}</span>
+        {localizeNode(chapter && (
           <label>
-            <span className="sr-only">筛选章节</span>
+            <span className="sr-only">{tr("筛选章节")}</span>
             <select
-              aria-label="筛选章节"
+              aria-label={tr("筛选章节")}
               value={values.chapter || ""}
               onChange={(e) => change("chapter", e.target.value)}
             >
-              <option value="">全部章节</option>
-              {book.chapters.map((ch, i) => (
+              <option value="">{tr("全部章节")}</option>
+              {localizeNode(book.chapters.map((ch, i) => (
                 <option value={ch.id} key={ch.id}>
-                  {i + 1}. {ch.title}
+                  {localizeNode(i + 1)}. {localizeNode(ch.title)}
                 </option>
-              ))}
+              )))}
             </select>
           </label>
-        )}
+        ))}
       </div>
       <label className="filter-search">
         <Search size={17} />
         <input
-          aria-label="筛选知识点"
-          placeholder="搜索知识点…"
+          aria-label={tr("筛选知识点")}
+          placeholder={tr("搜索知识点…")}
           value={values.q || ""}
           onChange={(e) => change("q", e.target.value)}
         />
@@ -229,14 +232,13 @@ export function Pagination({
   return (
     <div className="pagination">
       <span>
-        {total ? `${start + 1}–${end}` : "0"} / {total} 项
-      </span>
-      <nav aria-label="分页导航">
-        {page > 1 ? (
+        {localizeNode(total ? `${start + 1}–${end}` : "0")} / {localizeNode(total)}{tr("项")}</span>
+      <nav aria-label={tr("分页导航")}>
+        {localizeNode(page > 1 ? (
           <Link
             to={path}
             params={{ ...params, page: page - 1 }}
-            aria-label="上一页"
+            aria-label={tr("上一页")}
           >
             <ChevronRight className="flip" size={16} />
           </Link>
@@ -244,8 +246,8 @@ export function Pagination({
           <span className="disabled-page">
             <ChevronRight className="flip" size={16} />
           </span>
-        )}
-        {Array.from({ length: pages }, (_, i) => (
+        ))}
+        {localizeNode(Array.from({ length: pages }, (_, i) => (
           <Link
             key={i}
             to={path}
@@ -253,14 +255,14 @@ export function Pagination({
             className={page === i + 1 ? "active" : ""}
             aria-current={page === i + 1 ? "page" : undefined}
           >
-            {i + 1}
+            {localizeNode(i + 1)}
           </Link>
-        ))}
-        {page < pages ? (
+        )))}
+        {localizeNode(page < pages ? (
           <Link
             to={path}
             params={{ ...params, page: page + 1 }}
-            aria-label="下一页"
+            aria-label={tr("下一页")}
           >
             <ChevronRight size={16} />
           </Link>
@@ -268,7 +270,7 @@ export function Pagination({
           <span className="disabled-page">
             <ChevronRight size={16} />
           </span>
-        )}
+        ))}
       </nav>
     </div>
   );
@@ -288,10 +290,10 @@ export function Empty({
   return (
     <div className="empty-state">
       <BookOpen size={30} />
-      <h2>{title}</h2>
-      <p>{text}</p>
+      <h2>{localizeNode(title)}</h2>
+      <p>{localizeNode(text)}</p>
       <Link to={to} className="secondary-btn">
-        {label}
+        {localizeNode(label)}
         <ArrowRight size={16} />
       </Link>
     </div>
@@ -301,10 +303,10 @@ export function Empty({
 export function NotFound() {
   return (
     <Empty
-      title="这一页还没有找到"
-      text="地址可能不完整。你可以通过目录或搜索继续阅读。"
+      title={tr("这一页还没有找到")}
+      text={tr("地址可能不完整。你可以通过目录或搜索继续阅读。")}
       to={BOOK}
-      label="回到教材目录"
+      label={tr("回到教材目录")}
     />
   );
 }

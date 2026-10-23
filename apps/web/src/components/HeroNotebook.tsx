@@ -1,3 +1,4 @@
+import {tr, localizeNode} from "../i18n";
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { lessonById } from "../../../../packages/content";
@@ -30,28 +31,26 @@ export function HeroNotebook() {
     <div className="hero-demo frontier-notebook">
       <div className="demo-window-bar">
         <span className="demo-status" />
-        MATH IN MOTION<span>来自微积分 I</span>
+        MATH IN MOTION<span>{tr("来自微积分 I")}</span>
       </div>
-      <div className="hero-demo-tabs" role="group" aria-label="首页数学演示">
-        {demos.map((d, i) => (
+      <div className="hero-demo-tabs" role="group" aria-label={tr("首页数学演示")}>
+        {localizeNode(demos.map((d, i) => (
           <button
             key={d.id}
             aria-pressed={index === i}
             className={index === i ? "active" : ""}
             onClick={() => setIndex(i)}
           >
-            {d.label}
+            {localizeNode(d.label)}
           </button>
-        ))}
+        )))}
       </div>
       <div className="demo-title">
-        <h2>{demo.title}</h2>
-        <p>{demo.hint}</p>
+        <h2>{localizeNode(demo.title)}</h2>
+        <p>{localizeNode(demo.hint)}</p>
       </div>
       <Visual key={demo.id} lesson={lessonById[demo.id]} compact />
-      <Link to={"lesson/" + demo.id} className="demo-bottom">
-        阅读对应章节
-        <ArrowRight size={16} />
+      <Link to={"lesson/" + demo.id} className="demo-bottom">{tr("阅读对应章节")}<ArrowRight size={16} />
       </Link>
     </div>
   );

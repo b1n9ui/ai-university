@@ -1,0 +1,65 @@
+Area between curves
+How tall is each strip?
+Add the areas of thin strips. Vertical strips use top minus bottom; horizontal strips use right minus left.
+Between $y = x$ and $y = x^{2}$ on $[0,1]$, each vertical height is $x - x^{2}$. The area is $\int _{0}^{1} (x - x^{2}) \mathrm{d}x = \frac{1}{6}$.
+Find intersections and curve order
+Choose horizontal strips when simpler
+Use an absolute-value expression
+What comes first?
+Find intersections, then determine which curve is above on each piece. Split wherever the order changes to prevent cancellation.
+When are horizontal strips easier?
+Use $\int(\text{right}-\text{left})\,\mathrm{d}y$ when the curves are easily written as $x = g (y)$ or this direction needs fewer pieces. Identify each strip's left and right boundaries first.
+Can you use absolute values directly?
+Write $\int  |f - g| \mathrm{d}x$. To evaluate it, usually split at intersections and remove the absolute values on each piece. Area is nonnegative, unlike signed accumulation.
+When $f$ lies above $g$, accumulate vertical strips to find the area.
+Assume $f \ge g$ and both functions are integrable on the interval. Split where their order changes.
+On $[0,1]$, $x \ge x^{2}$, so the height is $x - x^{2}$.
+Integrate and substitute the endpoints.
+The result is a nonnegative area.
+Highlight a strip between $y = x$ and $y = x^{2}$ on $[0,1]$: its height is $x - x^{2}$ and the total area is $\frac{1}{6}$.
+What is the height between $y = x$ and $y = x^{2}$? At which endpoints is it zero?
+A line and a parabola
+Find the area enclosed by $y = x$ and $y = x^{2}$.
+The intersections are $x = 0$ and 1; the line is above between them.
+Integrating $x - x^{2}$ gives $\frac{1}{2} - \frac{1}{3}$.
+The area is $\frac{1}{6}$.
+When the order changes
+Find the area between $y = x$ and $y = - x$ on $[-1,1]$.
+Top minus bottom is $- 2 x$ on the left and $2 x$ on the right.
+Each triangle has area 1.
+The total area is 2. Integrating $2 x$ throughout would incorrectly cancel the pieces.
+Using the same subtraction order without checking intersections.
+Split where top and bottom exchange, or use absolute values.
+Calling a negative integral a geometric area.
+First make sure every strip height is nonnegative.
+Find the area between $y = 2$ and $y = x$ on $[0,2]$.
+The horizontal line is above.
+Find the area between $y = x^{2}$ and the $x$-axis on $[-1,1]$.
+The function is nonnegative, and $\int _{-1}^{1} x^{2} \mathrm{d}x = \frac{2}{3}$.
+Use symmetry or an antiderivative's endpoint difference.
+Find the area between $y = \sqrt{x}$ and $y = x$ on $[0,1]$.
+Since $\sqrt{x} \ge x$, the integral is $\frac{2}{3} - \frac{1}{2} = \frac{1}{6}$.
+Compare the functions first.
+Do horizontal strips use top minus bottom?
+Use right minus left.
+The strip extends along $x$ and has thickness $\mathrm{d}y$.
+Check the direction of the strip's long side.
+How do you find area when two curves cross inside the interval?
+Always subtract the second curve from the first
+Split at intersections and use top minus bottom on each piece
+Use only the height difference at the intersection
+Area cannot cancel by sign. Find intersections and curve order, then integrate piecewise, or integrate the absolute height difference.
+Find the strip height first, then accumulate its area. Use top minus bottom; if the curves exchange places, reverse the order by splitting the interval.
+Check one endpoint
+Set the strip position to 0.
+The curves meet, so the height is zero.
+Check the middle
+Set the strip position to 0.5.
+The top is $x$, the bottom is $x^2$, and the height is $\frac14$.
+Check the other endpoint
+Set the position to 1.
+The height is zero again. The integral accumulates all strips, not just the middle one.
+$2$.
+$\int _{0}^{2} (2 - x) \mathrm{d}x = 4 - 2$.
+$\frac{2}{3}$.
+$\frac{1}{6}$.

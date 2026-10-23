@@ -1,0 +1,62 @@
+Exponential and Logarithmic Functions
+Repeated multiplication, and finding the exponent.
+An exponential computes repeated multiplication; a logarithm asks which exponent produces a given value.
+Adding the same amount at each step gives linear change. Multiplying by the same factor gives exponential change. Logarithms turn multiplication into addition.
+Bases and domains
+Laws and their conditions
+Meet $e$
+Which inputs do exponentials and logarithms accept?
+For $b > 0$ and $b \ne 1$, $b^{x}$ is defined for every real input and has positive outputs; $\log _ b x$ requires $x > 0$. Both increase if $b > 1$ and decrease if $0 < b < 1$.
+Which expressions can a logarithm split?
+Products of positive numbers become sums of logarithms; quotients become differences; powers bring the exponent out front. A logarithm does not split addition: $\ln (x + y) \ne \ln x + \ln y$.
+Why use $e$?
+An exponential with base $e$ has a rate of change equal to itself, and $\ln$ is its inverse. Other bases introduce the factor $\ln b$ in the derivative.
+Logarithms and exponentials are inverse functions.
+$b > 0$, $b \ne 1$, and $x > 0$; $\ln$ is the logarithm with base $e$.
+Write positive numbers $u$ and $v$ as exponentials.
+Multiplication adds the exponents.
+Reading off the exponent gives the logarithm product law.
+The exponential is always positive. Move $x$ and check that increasing the input by one multiplies the output by $e$.
+Does increasing the input by 1 add $e$ to the output, or multiply it by $e$? Compare two readings.
+Finding an exponent
+Solve $2^x=8$.
+Write 8 as $2^{3}$.
+The exponential with this base is one-to-one, so the exponents are equal.
+Solving within the domain
+Solve $\ln(x-1)=2$.
+First require $x > 1$.
+Exponentiate both sides to get $x - 1 = e^{2}$; the resulting solution satisfies the domain restriction.
+Assuming $\ln(u+v)=\ln u+\ln v$.
+Logarithms split products, not sums.
+Evaluating $\ln (- 1)$ over the reals.
+A real logarithm requires a strictly positive input.
+Find $\log_3 81$.
+Which power of 3 equals 81?
+Simplify $\ln(e^5)$.
+$\ln$ and $\exp$ undo each other.
+Use the inverse relationship.
+Find the domain of $\ln(2-x)$.
+Require $2 - x > 0$.
+The argument of the logarithm must be strictly positive.
+For $x>0$, what is $\ln(x^3)$?
+$x^{3}$ is a product of three positive factors $x$.
+Apply the logarithm product law.
+What is $\ln (e^{3})$?
+$\ln$ and exponentiation with base $e$ are inverse operations: $\ln (e^{x}) = x$. Here $x = 3$.
+Exponential growth replaces equal additions with equal multiplications. A logarithm works backward, counting how many steps reach a given output.
+Zero input
+Set the input to 0.
+Increase by one
+Change the input to 1.
+The output changes from 1 to $e$, about 2.71828.
+Increase by one again
+Change the input to 2.
+The output is $e^2$, about 7.38906; the ratio of consecutive outputs is still $e$.
+$x = 3$.
+$x=1+e^2$.
+$4$.
+$3^{4} = 81$.
+$5$.
+$x<2$.
+$3\ln x$.
+$e^0=1$.

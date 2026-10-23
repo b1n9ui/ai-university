@@ -1,0 +1,65 @@
+Monotonicity, Concavity, and Curve Sketching
+Two derivatives describe two different features.
+The sign of $f'$ tells whether the function rises or falls. The sign of $f''$ tells whether its slope increases or decreases.
+$f' > 0$ means the curve rises; $f'' > 0$ means its slope increases. Increasing and concave up are different properties.
+First-derivative sign charts
+Concavity and inflection points
+Combine the information in a graph
+How do you find intervals of increase and decrease?
+Split at points where $f' = 0$ or does not exist, then check its sign in each interval. Positive means increasing; negative means decreasing. Do not join intervals across points outside the function's domain.
+Does $f'' = 0$ guarantee an inflection point?
+No. An inflection point requires continuity and a change in concavity. For $x^{4}$, the second derivative is zero at 0 but the curve remains concave up on both sides.
+How do the pieces form a sketch?
+Start with domain, intercepts, symmetry, and asymptotes. Then add monotonicity, extrema, concavity, and inflection points. A viewing window can hide features, so check formulas too.
+On differentiable intervals, derivative signs and concavity describe the graph's shape.
+Use second-derivative conclusions on intervals where the relevant derivatives exist. Check a change in concavity across a candidate inflection point.
+Consider $x^{3} - 3 x$.
+Its first-derivative signs are positive, negative, positive. Its second derivative is negative before zero and positive after it.
+Local maximum $(-1,2)$, local minimum $(1,-2)$, inflection point $(0,0)$.
+Move the base point and compare value with slope. For $y = x^{3} - 3 x$, at $a = 0$ the slope changes from decreasing to increasing, indicating a change in concavity.
+Can the slope decrease while the function keeps increasing? Move the base point and track both value and slope.
+Increasing at a decreasing rate
+Describe the monotonicity and concavity of $f(x)=\ln x$ for $x > 0$.
+$f' = \frac{1}{x} > 0$, so the function increases.
+$f'' = \frac{- 1}{x^{2}} < 0$, so it is concave down.
+It increases, but its rate of increase gets smaller.
+A candidate is not a conclusion
+Does $x^4$ have an inflection point at 0?
+$f'' = 12 x^{2}$ is positive on both sides.
+Concavity does not change.
+No inflection point.
+Treating increasing and concave up as synonyms.
+One concerns values, the other slopes. For example, $\ln x$ is increasing and concave down.
+Declaring an inflection point wherever $f'' = 0$.
+Check that concavity changes across the point.
+Where is $x^2$ decreasing?
+$f' = 2 x$ is negative for $x < 0$.
+Make a derivative sign chart.
+Where is the inflection point of $x^3$?
+$f'' = 6 x$ changes sign across 0, and the function is continuous there.
+Check the second derivative's sign.
+Is $e^{x}$ concave up or down?
+Concave up.
+Its second derivative is still $e^{x}$, which is always positive.
+Differentiate a second time.
+Find the local maximum value of $x^3-3x$.
+At $x = - 1$, the derivative changes from positive to negative and the function value is 2.
+Give the function value, not just the coordinate $x$.
+If $f' > 0$ and $f'' < 0$, what does the graph do?
+Falls and is concave down
+Rises, with decreasing slope
+Rises, with increasing slope
+$f' > 0$ means the function rises; $f'' < 0$ means its slope decreases. Increasing does not mean increasing faster.
+First ask whether values rise or fall, then whether slopes grow or shrink. The first is monotonicity; the second is concavity.
+Rising with decreasing slope
+Set the base point to −2 and the gap to 0.01.
+The exact slope is 9 and the second derivative is −12: increasing, but concave down.
+At the center
+Set the base point to 0.
+The slope is −3. The second derivative changes sign across zero, so concavity changes here.
+Rising on the other side
+Set the base point to 2.
+The slope is again 9, but the second derivative is 12: increasing and concave up.
+$(-\infty,0)$.
+$(0,0)$.
+$2$.

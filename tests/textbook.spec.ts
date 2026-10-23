@@ -7,7 +7,7 @@ test("every section renders canonical text, boundary-safe diagrams and all exerc
   const errors: string[] = [];
   page.on("pageerror", (e) => errors.push(e.message));
   for (const id of book.lessonIds) {
-    await page.goto("/#/lesson/" + id);
+    await page.goto("/?lang=zh#/lesson/" + id);
     await expect(page.locator("#lesson-article > section")).toHaveCount(8);
     const lesson = JSON.parse(fs.readFileSync(`packages/content/lessons/${id}.json`, "utf8"));
     await expect(page.locator(".worked-example")).toHaveCount(lesson.workedExamples.length);
@@ -40,7 +40,7 @@ test("every section renders canonical text, boundary-safe diagrams and all exerc
 test("answer drafts survive question navigation and checked progress survives reload", async ({
   page,
 }) => {
-  await page.goto("/#/lesson/limit-intuition?view=practice");
+  await page.goto("/?lang=zh#/lesson/limit-intuition?view=practice");
   const first = page.locator(".exercise").first();
   await first.getByRole("textbox").fill("5");
   await first.getByRole("button", { name: "检查数值", exact: true }).click();
@@ -64,7 +64,7 @@ test("answer drafts survive question navigation and checked progress survives re
 test("lab filtering keeps focus and pagination carries filters", async ({
   page,
 }) => {
-  await page.goto("/#/lab");
+  await page.goto("/?lang=zh#/lab");
   await expect(page.locator(".lab-card")).toHaveCount(6);
   await page.getByRole("link", { name: "下一页", exact: true }).click();
   await expect(page).toHaveURL(/page=2/);
@@ -81,7 +81,7 @@ test("lab filtering keeps focus and pagination carries filters", async ({
 test("search keyboard flow returns full results and saved lessons appear in learning", async ({
   page,
 }) => {
-  await page.goto("/#/lesson/limit-intuition");
+  await page.goto("/?lang=zh#/lesson/limit-intuition");
   await page.getByRole("button", { name: "收藏本节", exact: true }).click();
   await page.getByRole("button", { name: "搜索教材", exact: true }).click();
   const search = page.getByRole("textbox", { name: "搜索全文", exact: true });
@@ -91,7 +91,7 @@ test("search keyboard flow returns full results and saved lessons appear in lear
     page.getByRole("heading", { name: "搜索教材", exact: true }),
   ).toBeVisible();
   await expect(page.locator(".search-results>a")).toHaveCount(8);
-  await page.goto("/#/learning?tab=saved");
+  await page.goto("/?lang=zh#/learning?tab=saved");
   await expect(
     page.getByRole("heading", { name: "极限：靠近时会怎样", exact: true }),
   ).toBeVisible();
@@ -116,7 +116,7 @@ test("site pages fit the viewport and the print edition includes the full book",
     "about/versions",
     ...book.chapters.map((c: { id: string }) => "chapter/" + c.id),
   ]) {
-    await page.goto("/#/" + route);
+    await page.goto("/?lang=zh#/" + route);
     await expect(page.locator("h1")).toHaveCount(1);
     expect(
       await page.evaluate(
@@ -132,7 +132,7 @@ test("site pages fit the viewport and the print edition includes the full book",
 
 
 test("exhibition shapes change parameters and reading focus preserves navigation", async ({ page }) => {
-  await page.goto("/#/home");
+  await page.goto("/?lang=zh#/home");
   const canvas = page.locator("canvas[data-sculpture]");
   await expect(canvas).toHaveAttribute("data-rendered", "true");
   for (const [name, mode, parameter, maximum] of [["01 曲面", "wave", "振幅 A", "1.8"], ["02 环面", "torus", "管半径 r", "1.2"], ["03 螺旋", "helix", "上升系数 p", "0.3"]]) {
@@ -151,7 +151,7 @@ test("exhibition shapes change parameters and reading focus preserves navigation
 
 
 test("typing a precise parameter during playback pauses and preserves the intended value", async ({page}) => {
-  await page.goto("/#/lesson/derivative-definition?view=visual");
+  await page.goto("/?lang=zh#/lesson/derivative-definition?view=visual");
   await page.getByRole("button",{name:"让割线靠近切线",exact:true}).click();
   const value=page.getByRole("textbox",{name:"两点距离 h：输入数值",exact:true});
   await value.fill("0.02");
@@ -165,7 +165,7 @@ test('second volume has complete reading, visuals, exercises and independent dow
  const volume=JSON.parse(fs.readFileSync('packages/content/calculus-2/book.json','utf8'));
  for(const id of volume.lessonIds){
   const lesson=JSON.parse(fs.readFileSync('packages/content/calculus-2/lessons/'+id+'.json','utf8'));
-  await page.goto('/#/lesson/'+id);
+  await page.goto('/?lang=zh#/lesson/'+id);
   await expect(page.locator('.sidebar-top')).toContainText('Calculus II');
   await expect(page.locator('.worked-example')).toHaveCount(lesson.workedExamples.length);
   await expect(page.locator('.katex-error')).toHaveCount(0);
@@ -176,7 +176,7 @@ test('second volume has complete reading, visuals, exercises and independent dow
   await page.getByRole('link',{name:'练习与解答 '+lesson.practice.length,exact:true}).click();
   await expect(page.locator('.exercise')).toHaveCount(lesson.practice.length);
  }
- await page.goto('/#/downloads?book=calculus-2');
+ await page.goto('/?lang=zh#/downloads?book=calculus-2');
  await expect(page.getByRole('link',{name:'下载 Markdown',exact:true})).toHaveAttribute('href','Calculus-II.md');
  await page.goto('/calculus-2.html');
  await expect(page.locator('.lesson')).toHaveCount(35);
@@ -184,13 +184,13 @@ test('second volume has complete reading, visuals, exercises and independent dow
  await expect(page.locator('.katex-error')).toHaveCount(0);
 });
 test('switching shared tools keeps each book chapter filters and review targets separate',async({page})=>{
- await page.goto('/#/lab?book=calculus-2');
+ await page.goto('/?lang=zh#/lab?book=calculus-2');
  await page.getByLabel('筛选章节',{exact:true}).selectOption('c2-ode');
  await expect(page.locator('.lab-card')).toHaveCount(4);
  await page.getByLabel('切换教材',{exact:true}).selectOption('calculus-1');
  await expect(page.getByLabel('筛选章节',{exact:true})).toContainText('极限与连续');
  await expect(page.getByLabel('筛选章节',{exact:true})).not.toContainText('一阶微分方程入门');
- await page.goto('/#/lesson/c2-euler-logistic');
+ await page.goto('/?lang=zh#/lesson/c2-euler-logistic');
  await page.getByRole('link',{name:'完成阅读后 整本书综合测试',exact:true}).click();
  await expect(page).toHaveURL(/book=calculus-2/);
 });
@@ -199,7 +199,7 @@ const thirdBook=JSON.parse(fs.readFileSync("packages/content/calculus-3/book.jso
 test("Calculus III renders all learning surfaces and spatial controls",async({page})=>{
  for(const id of thirdBook.lessonIds){
   const lesson=JSON.parse(fs.readFileSync("packages/content/calculus-3/lessons/"+id+".json","utf8"));
-  await page.goto("/#/lesson/"+id);
+  await page.goto("/?lang=zh#/lesson/"+id);
   await expect(page.getByRole("heading",{name:lesson.title,level:1,exact:true})).toBeVisible();
   await expect(page.locator(".worked-example")).toHaveCount(lesson.workedExamples.length);
   await page.getByRole("link",{name:"交互演示",exact:true}).click();
@@ -223,11 +223,11 @@ test("Calculus III renders all learning surfaces and spatial controls",async({pa
 
 const linearBook=JSON.parse(fs.readFileSync('packages/content/linear-algebra/book.json','utf8'));
 test('Linear Algebra is independently navigable with complete reading, models and printable exercises',async({page})=>{
- await page.goto('/#/book/linear-algebra');
+ await page.goto('/?lang=zh#/book/linear-algebra');
  await expect(page.getByRole('link',{name:'需要复习？打开前一卷',exact:true})).toHaveCount(0);
  for(const id of linearBook.lessonIds){
   const lesson=JSON.parse(fs.readFileSync('packages/content/linear-algebra/lessons/'+id+'.json','utf8'));
-  await page.goto('/#/lesson/'+id);
+  await page.goto('/?lang=zh#/lesson/'+id);
   await expect(page.getByRole('heading',{name:lesson.title,level:1,exact:true})).toBeVisible();
   await expect(page.locator('.worked-example')).toHaveCount(2);
   await expect(page.locator('.katex-error')).toHaveCount(0);
@@ -248,7 +248,7 @@ const odeBook=JSON.parse(fs.readFileSync('packages/content/ordinary-differential
 test('Ordinary Differential Equations has a complete static curriculum, finite models and printable answers',async({page})=>{
  for(const id of odeBook.lessonIds){
   const lesson=JSON.parse(fs.readFileSync('packages/content/ordinary-differential-equations/lessons/'+id+'.json','utf8'));
-  await page.goto('/#/lesson/'+id);
+  await page.goto('/?lang=zh#/lesson/'+id);
   await expect(page.getByRole('heading',{name:lesson.title,level:1,exact:true})).toBeVisible();
   await expect(page.locator('.worked-example')).toHaveCount(2);
   await page.getByRole('link',{name:'交互演示',exact:true}).click();

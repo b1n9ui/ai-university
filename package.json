@@ -1,6 +1,6 @@
 {
   "name": "ai-university",
-  "version": "0.17.2",
+  "version": "0.18.0",
   "private": true,
   "type": "module",
   "description": "AI-authored open textbooks with static interactive illustrations.",
@@ -14,7 +14,7 @@
     "typecheck": "tsc --noEmit",
     "test": "node --test scripts/*.test.mjs",
     "test:e2e": "npm run build && playwright test",
-    "build": "npm run validate:content && npm run typecheck && node scripts/build-book.mjs && node scripts/build-programming.mjs && vite build",
+    "build": "node scripts/build-english-content.mjs && npm run validate:content && npm run typecheck && node scripts/build-book.mjs && node scripts/build-english-book.mjs && node scripts/build-programming.mjs && vite build",
     "preview": "vite preview --host 127.0.0.1",
     "check": "npm run check:python && npm run check:ai-development && npm run build && npm test",
     "content:scaffold": "node scripts/scaffold-lesson.mjs",

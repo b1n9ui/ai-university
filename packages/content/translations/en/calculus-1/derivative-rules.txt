@@ -1,0 +1,63 @@
+Basic Differentiation Rules
+The rules compress calculations from the definition.
+Differentiation rules turn common structures into derivatives. First identify the outermost operation: sum, product, or quotient.
+When a product $u v$ changes, both factors can contribute. Add $u' v$ and $uv\prime$; do not simply multiply the derivatives.
+Linearity and the power rule
+The product rule
+The quotient rule
+How do sums and powers differentiate?
+A constant has derivative 0. Differentiate sums and constant multiples term by term. The derivative of $x^{n}$ is $n x^{n-1}$. Apply real-power formulas on their differentiable domains; check boundary points such as 0 separately.
+Why does the product rule have two terms?
+Changing $u$ while holding $v$ fixed contributes $u' v$; changing $v$ while holding $u$ fixed contributes $uv\prime$. Adding gives $(u v)' = u' v + u v'$.
+Where does the minus sign go in the quotient rule?
+$(\frac{u}{v})' = \frac{u' v - u v'}{v^{2}}$ requires $v \ne 0$. Rewrite the quotient as $u \cdot v^{-1}$ and use the product and chain rules to check it.
+If $u$ and $v$ are differentiable at the point, the following rules apply.
+The quotient rule requires nonzero $v$. The power rule applies where the corresponding real power is differentiable.
+Split the product's increment into two main terms and a smaller cross term.
+After division by $h$, differentiability makes the cross term tend to zero.
+The remaining terms give the product rule.
+Watch the difference quotient of $x^{3}$ approach $3 x^{2}$. Change $a$ to check other points.
+Move the base point on $x^{3}$ from 0 to 1. How does the slope change? Check against $3 a^{2}$.
+Differentiate a polynomial term by term
+Keep each constant multiplier, multiply by the original exponent, and lower the power by one.
+The constant −5 has derivative 0.
+Differentiate a quotient
+Find the derivative of $f(x)=\frac{x+1}{x-1}$.
+The numerator is $(x - 1) - (x + 1) = - 2$.
+Writing the product derivative as $u' v'$.
+The correct rule has two terms, differentiating only one factor in each.
+Reversing the terms in the quotient-rule numerator.
+Use $\text{numerator derivative}\times\text{denominator}$ minus $\text{numerator}\times\text{denominator derivative}$.
+Differentiate $x^5-3x$.
+Apply the power rule term by term.
+Keep constant multipliers.
+Differentiate $x^2(x+1)$.
+The product rule gives $2 x (x + 1) + x^{2}$. Combine like terms.
+Expanding first provides another check.
+Find the derivative of $\frac{1}{x}$ at $x = 2$.
+The derivative is $- x^{- 2}$; substitute 2.
+Write the reciprocal as a negative power.
+Differentiate $\sqrt{x}$ and state the allowed values of $x$.
+Write it as $x^{\frac{1}{2}}$ and apply the power rule.
+There is no finite two-sided derivative at $x = 0$.
+The derivative of a half power has a denominator.
+What is $(f (x) g (x))'$?
+Both factors can change. Differentiate one and multiply by the other's original value, then add the two contributions.
+Differentiation rules organize the limits in the definition into efficient calculations. You can still check them against difference quotients. A product's derivative is not the product of its derivatives.
+A horizontal tangent
+For the cubic curve, set the base point to 0.
+The exact derivative is $3a^2=0$; a finite quotient still has a small error.
+Try another point
+Change the base point to 1 and shrink the gap.
+The exact derivative is 3; the right-side quotient is approximately 3.0301.
+Compare a negative input
+Change the base point to −1, keeping the small gap.
+The derivative is again 3. A function can have a negative value and a positive rate of change.
+$f(x)=4x^3-2x^2+7x-5$.
+$f\prime(x)=12x^2-4x+7$.
+$u = x + 1$, $v = x - 1$, $u' = v' = 1$.
+$f\prime(x)=-\frac{2}{(x-1)^2}$, $x \ne 1$.
+$5x^4-3$.
+$3x^2+2x$.
+$-\frac{1}{4}$.
+$\frac{1}{2\sqrt{x}}$, $x > 0$.

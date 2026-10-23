@@ -1,0 +1,66 @@
+Continuity and the Intermediate Value Theorem
+Match nearby behavior with the point value.
+Continuity at a point means that the limit exists and equals the function's value there. A hole or a jump prevents continuity.
+Move $x$ gradually toward $a$: the output must approach $f (a)$. For continuity, the nearby limiting value and the actual point value must match.
+Check all three conditions
+Combine continuous functions
+Apply the intermediate value theorem
+Which three conditions must hold?
+$f (a)$ must be defined, the limit as $x \to a$ must exist, and that limit must equal $f (a)$. At an interval endpoint, check the one-sided limit within the domain.
+Is a composition continuous?
+Polynomials are continuous. Rational functions, roots, and logarithms are continuous on their domains. A composition is continuous when the inner and outer functions are continuous at the corresponding points.
+What does the intermediate value theorem guarantee?
+If $f$ is continuous throughout $[a , b]$, it attains every value between its endpoint values. The theorem guarantees existence, not uniqueness or an explicit location.
+The equality defining continuity; the intermediate value theorem requires continuity on the entire closed interval.
+Intermediate value theorem: if $f$ is continuous on $[a , b]$ and $N$ lies between $f (a)$ and $f (b)$, some $c \in [a , b]$ satisfies $f (c) = N$.
+At a junction of a piecewise function, match both one-sided limits and the point value.
+The left-hand limit is 1; the right-hand limit and point value are $k + 1$.
+Thus only $k = 0$ makes the junction continuous.
+The limit at the hole is 2. The function becomes continuous only if that point is filled with value 2.
+The nearby trends agree across the hole. Why is the original function still discontinuous, and how should you fill the hole?
+Filling a hole
+For $f (x) = \frac{x^{2} - 4}{x - 2}$ ($x \ne 2$), how should $f (2)$ be defined?
+Nearby, the function equals $x + 2$, so its limit is 4.
+Continuity requires the point value to equal that limit.
+Set $f (2) = 4$.
+Guaranteeing a root
+Show that $x^3+x-1=0$ has a root in $(0,1)$.
+The polynomial is continuous on $[0,1]$.
+$f (0) = - 1$ and $f (1) = 1$, so zero lies between the endpoint values.
+The intermediate value theorem guarantees at least one root in $(0,1)$.
+Assuming that being defined implies continuity.
+The nearby limit must also equal the point value.
+Claiming that the intermediate value theorem gives exactly one root.
+It gives at least one. Uniqueness needs additional evidence, such as strict monotonicity.
+If $\lim_{x\to2}f(x)=5$ but $f (2) = 3$, is the function continuous there?
+No.
+The limit and the function value differ.
+Check the last condition for continuity.
+Which value fills the hole in $\frac{x^2-9}{x-3}$ to make it continuous at 3?
+After cancellation, the nearby expression is $x + 3$, whose limit is 6.
+First find the limit near the hole.
+Use the intermediate value theorem to show that $\cos x=x$ has a solution in $(0,1)$.
+A solution exists.
+$g (x) = \cos x - x$ is continuous, with $g (0) = 1 > 0$ and $g (1) = \cos 1 - 1 < 0$.
+Thus $g$ is zero at least once inside the interval.
+Move all terms to one side to form a continuous function.
+Can changing only the point value repair a jump discontinuity?
+No.
+Different one-sided limits leave no common value with which to fill the point.
+Continuity first requires an existing two-sided limit.
+The limit exists but differs from $f (a)$. Is the function continuous at $a$?
+Yes
+No
+Yes, provided $f (a)$ is small enough
+Continuity requires a defined $f (a)$, an existing limit, and equality between them. Every condition matters.
+Continuity connects the nearby trend to the output at the point. Finding matching one-sided limits still leaves the point value to check.
+The right-side behavior
+Observe a point 0.1 units to the right of the hole.
+The output is 2.1; the limiting value near the target is 2.
+The left-side behavior
+Keep the distance and switch to the left.
+The output is 1.9. Both sides approach the same value.
+Fill the point
+Fill the target point with output 2.
+Both sides approach 2 and the point value is 2, so the extended function is continuous there. Manually try a different point value to see why continuity fails.
+$6$.

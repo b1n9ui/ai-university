@@ -1,3 +1,4 @@
+import {tr, localizeNode} from "../i18n";
 import { useEffect, useId, useRef, useState } from "react";
 import {
   parseParameter,
@@ -56,12 +57,12 @@ export function ParameterControl({
     <div className="slider parameter-control">
       <div className="parameter-heading">
         <label htmlFor={id}>
-          <MathText text={label} />
+          <MathText text={tr(label)} />
         </label>
         <input
           id={id}
           className="parameter-value"
-          aria-label={plainMathText(label) + "：输入数值"}
+          aria-label={tr(plainMathText(label) + "：输入数值")}
           inputMode="text"
           type="text"
           onFocus={(e) => {
@@ -85,7 +86,7 @@ export function ParameterControl({
         />
       </div>
       <input
-        aria-label={plainMathText(label)}
+        aria-label={tr(plainMathText(label))}
         type="range"
         min={min}
         max={max}
@@ -101,13 +102,13 @@ export function ParameterControl({
         onChange={(e) => onChange(+e.target.value)}
       />
       <small id={id + "-help"} className="parameter-help">
-        {error || `${format(min)} — ${format(max)} · 可输入分数后按回车`}
+        {localizeNode(error || `${format(min)} — ${format(max)} · 可输入分数后按回车`)}
       </small>
-      {error && (
+      {localizeNode(error && (
         <span className="sr-only" role="status">
-          {error}
+          {localizeNode(error)}
         </span>
-      )}
+      ))}
     </div>
   );
 }

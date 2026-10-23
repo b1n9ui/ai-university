@@ -1,0 +1,66 @@
+Inverse-Function and Inverse-Trigonometric Derivatives
+Invert the slope at the correct point and branch.
+An inverse function's slope is the reciprocal of the original function's slope at the corresponding point, provided that original slope is nonzero.
+The original function sends $x$ to $y$; its inverse sends $y$ back to $x$. Exchanging the coordinate roles changes $\frac{\mathrm{d}y}{\mathrm{d}x}$ into $\frac{\mathrm{d}x}{\mathrm{d}y}$.
+Differentiate inverse functions
+Choose principal branches
+Use the standard formulas
+How do you differentiate an inverse?
+Apply the chain rule to $f (f^{-1} (x)) = x$ to obtain $(f^{-1})' (x) = \frac{1}{f' (f^{-1} (x))}$. The chosen branch must be invertible and the denominator nonzero.
+Why choose branches for inverse trigonometric functions?
+Trigonometric outputs repeat. Restricting the outputs of $\arcsin$ to $[\frac{- \pi }{2} , \frac{\pi }{2}]$, $\arccos$ to $[0 , \pi ]$, and $\arctan$ to $(\frac{- \pi }{2} , \frac{\pi }{2})$ makes each inverse unique.
+Where do these derivative formulas apply?
+The derivatives of $\arcsin$ and $\arccos$ apply only for $|x| < 1$. The function $\arctan$ is differentiable on the whole real line. Check denominators before substituting endpoints.
+Inverse-trigonometric derivatives use the principal branches.
+The first two formulas require $|x| < 1$. The function $\arctan$ is differentiable everywhere on the real line.
+The general inverse derivative formula requires a differentiable inverse on the chosen interval and a nonzero original derivative at the corresponding point.
+Set $y = \arcsin x$. On the principal branch, $\cos y \ge 0$.
+For $|x| < 1$, $\cos y$ is strictly positive.
+Solve for the derivative.
+The tangent slope of $\arctan$ is $\frac{1}{1 + a^{2}}$: positive everywhere and smaller farther from zero.
+As the base point on $\arctan$ moves away from 0, does its slope increase or decrease? Check the formula.
+An inner function too
+Differentiate $\arctan(2x)$.
+The outer derivative gives $\frac{1}{1 + (2 x)^{2}}$.
+The inner derivative is 2.
+An inverse at a specified point
+Suppose $f$ is continuously differentiable and one-to-one near 2, with $f(2)=5$ and $f\prime(2)=3$. Find $(f^{-1})\prime(5)$ for this inverse branch.
+The inverse sends input 5 to output 2.
+Take the reciprocal of the original derivative at 2.
+Confusing $\arcsin x$ with $\frac{1}{\sin x}$.
+The former is an inverse function; the latter is $\csc x$.
+Evaluating the original derivative at the wrong point.
+First find the inverse output $y$, then evaluate $f' (y)$.
+Differentiate $\arcsin(\frac{x}{2})$.
+First obtain $\frac{\frac{1}{2}}{\sqrt{1 - \frac{x^{2}}{4}}}$, then simplify.
+Check both the chain rule and the domain.
+Find the derivative of $\arctan x$ at 1.
+Use the principal-branch formula.
+Find the derivative of $\arccos x$ at 0.
+The inverse cosine is decreasing.
+Suppose $f$ is continuously differentiable and one-to-one near 1, with $f(1)=4$ and $f\prime(1)=2$. Find $(f^{-1})\prime(4)$ for this branch.
+The original input is 1, so the reciprocal derivative is $\frac{1}{2}$.
+First map 4 back to 1.
+Does $\arcsin (\sin x) = x$ hold for every real $x$?
+Yes
+Only on the principal interval $[\frac{- \pi }{2} , \frac{\pi }{2}]$
+Never
+The output of $\arcsin$ is restricted to $[\frac{- \pi }{2} , \frac{\pi }{2}]$. Outside it, the original angle generally cannot be recovered.
+An inverse exchanges inputs and outputs, so its local scale factor is reciprocal. Find the corresponding point before inverting the derivative.
+The central slope
+Set the arctangent base point to 0.
+The exact slope is 1.
+Move one unit
+Set the base point to 1.
+The slope is $\frac12$. The curve still rises, but more slowly.
+Move farther away
+Set the base point to 3.
+The slope is $\frac1{10}$, still positive. The curve has not stopped rising.
+$\frac{2}{1+4x^2}$.
+$\frac{1}{3}$.
+$\frac{1}{\sqrt{4-x^2}}$, $|x| < 2$.
+$\frac{1}{2}$.
+$\frac{1}{1 + 1^{2}} = \frac{1}{2}$.
+$-1$.
+$\frac{- 1}{\sqrt{1 - 0}} = - 1$.
+$\frac{1}{2}$.

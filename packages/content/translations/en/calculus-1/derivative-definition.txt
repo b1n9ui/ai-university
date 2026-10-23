@@ -1,0 +1,65 @@
+Derivatives: From Secants to Tangents
+Shrink the interval used to measure average change.
+The derivative is a rate of change at a point: shrink the distance between two inputs toward 0 and find the limit of their average rate of change.
+For $y = x^{2}$ near $x = 1$, the secant slope is $2 + h$. As $h \to 0$, it approaches 2: the derivative and tangent slope at that point.
+Units of a difference quotient
+Differentiability is stronger than continuity
+From one derivative value to a derivative function
+What are the units of a derivative?
+Output units divided by input units. Differentiating position with respect to time gives meters per second. Negative velocity means position decreases in the chosen direction; speed remains nonnegative.
+Is every continuous function differentiable?
+No. $|x|$ is continuous at 0, but its one-sided slopes are −1 and 1. Differentiability implies continuity, but continuity does not imply differentiability.
+How do you write a tangent line?
+Given the point $(a , f (a))$ and slope $f' (a)$, the tangent is $y = f (a) + f' (a) (x - a)$. It describes the curve locally and may cross it again elsewhere.
+$f$ is differentiable at $a$ when the two-sided limit of its difference quotient exists and is finite.
+$f$ is defined at $a$ and nearby. One-sided derivatives can be considered separately at endpoints.
+Substitute the square function into the difference quotient.
+As $h$ tends to zero, the secant slope approaches $2 a$.
+The tangent passes through $(a , a^{2})$ with slope $2 a$.
+Shrink $h$: the blue secant approaches the gold tangent. The readings compare the difference quotient with the exact derivative.
+As $h$ shrinks, does the secant slope equal the derivative or approach it? At the corner of $|x|$, do the one-sided quotients agree?
+Instantaneous velocity
+Position is $s(t)=t^2+3t$. Find the velocity at $t = 2$.
+The difference quotient is $2 t + h + 3$. Taking $h \to 0$ gives $v (t) = 2 t + 3$.
+Substitute $t = 2$.
+$v (2) = 7$. If position is in meters and time in seconds, this is 7 meters per second.
+Continuous but not differentiable
+Check whether $f(x)=|x|$ is differentiable at 0.
+For $h > 0$, the quotient is $\frac{|h|}{h} = 1$.
+For $h < 0$, the quotient is −1, so the sides disagree.
+Continuous at 0, but not differentiable there.
+Substituting $h = 0$ into the original quotient.
+The quotient divides by $h$. Simplify first, then take a limit.
+Assuming continuity guarantees a derivative.
+A corner is a counterexample: differentiability requires matching one-sided slopes.
+Use the definition to differentiate $f(x)=3x+2$.
+The quotient is $\frac{3 (x + h) + 2 - 3 x - 2}{h} = 3$.
+Every secant of a line has the same slope.
+Find the tangent to $y=x^2$ at $x = 2$.
+Use point $(2,4)$ and slope 4: $y - 4 = 4 (x - 2)$.
+You need both a point and a slope.
+If $f$ is differentiable at $a$, is $f$ continuous at $a$?
+Yes.
+The change in the function is $h$ times a quotient tending to a finite number, so the change tends to zero.
+Write the change as $h\times\text{difference quotient}$.
+Find the instantaneous velocity of $s(t)=t^2$ at $t = 3$.
+The derivative is $2 t$, whose value at 3 is 6.
+The rate of change is not the current position, 9.
+For $f (x) = x^{2}$ at $a = 1$, is the secant slope with $h = 0.1$ the derivative?
+Yes, because $h$ is already small
+No: the secant slope is 2.1; the derivative is the limit 2
+The derivative does not exist
+The quotient is $\frac{(1 + h)^{2} - 1}{h} = 2 + h$. At $h = 0.1$ it is 2.1; only taking $h \to 0$ gives derivative 2.
+First measure average change over an interval, then shorten the interval. The derivative is the limiting value, not the slope of a merely short secant.
+Start with a gap
+Set the base point to 1 and the right-side gap to 1.
+The secant slope is 3; the tangent slope is 2. They still differ.
+Shrink the gap
+Keep the base point and reduce the gap to 0.01.
+The secant slope is 2.01: closer to 2, but still not the limit.
+Check a corner
+Switch to absolute value and set the base point to 0.
+The right quotient is 1 and the left quotient is −1. The function is continuous but has no common two-sided derivative.
+$3$.
+$y=4x-4$.
+$6$.

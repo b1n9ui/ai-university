@@ -1,0 +1,65 @@
+Limits: What Happens Nearby?
+A hole need not prevent a limit.
+A limit asks which number $f (x)$ approaches as $x$ approaches $a$. The value at the point can differ or even be undefined.
+For $x \ne 1$, $\frac{x^{2} - 1}{x - 1}$ equals $x + 1$. As $x$ approaches 1 from either side, the output approaches 2. The quotient being undefined at 1 does not prevent this limit.
+Distinguish nearby behavior from the point value
+Compare both one-sided limits
+Use graphs and tables appropriately
+Can you substitute directly?
+Yes, for a continuous function. If substitution gives $\frac{0}{0}$, simplify or analyze nearby values first. $\frac{0}{0}$ is not an answer.
+What if the two sides disagree?
+A two-sided limit requires equal left- and right-hand limits. If the values near zero are −1 on the left and 1 on the right, the two-sided limit does not exist. Do not average them.
+Can a graph settle the question?
+Graphs and tables suggest a limit; they do not prove it. $\sin (\frac{1}{x})$ keeps oscillating near zero. Zooming in or adding finitely many samples cannot replace the definition.
+A two-sided limit is the common limiting behavior from the left and right.
+Here the limit is a finite real number, and the domain must have points approaching from both sides.
+Factor the numerator, but keep the original function's hole.
+Nearby outputs follow a line toward 2.
+Canceling a factor establishes equality nearby; it does not define the original quotient at $x = 1$.
+Move $x$ toward 1 from both sides. The open point marks the missing value at 1, while the outputs still approach 2.
+Does a hole rule out a limit? Compare it with the graph whose two sides disagree. What changes?
+A line with a hole
+Find $\lim_{x\to2}\frac{x^2-4}{x-2}$.
+For $x \ne 2$, cancel $x - 2$ to obtain $x + 2$.
+Both sides approach 4.
+The limit is 4; the original function is undefined at 2.
+Different one-sided limits
+Let $f(x)=-1$ for $x < 0$ and $f(x)=1$ for $x \ge 0$. Find the limit at zero.
+The left-side values stay at −1; the right-side values stay at 1.
+The one-sided limits differ. Changing $f (0)$ cannot make them equal.
+Left-hand limit −1; right-hand limit 1; no two-sided limit.
+Treating $\frac{0}{0}$ as a limit of 0.
+$\frac{0}{0}$ is an indeterminate form: further analysis is needed.
+Assuming that having a limit implies continuity.
+Continuity also requires a defined point value equal to the limit.
+Find $\lim_{x\to3}(x+2)$.
+Nearby outputs of this linear function approach $3 + 2$.
+Direct substitution works for a continuous function.
+Find $\lim_{x\to1}\frac{x^2-1}{x-1}$.
+For $x \ne 1$, the quotient simplifies to $x + 1$.
+Factor the difference of squares first.
+If the one-sided limits are 2 and 3, does the two-sided limit exist?
+No.
+The two-sided limit requires the same value from both sides.
+Do not average the one-sided limits.
+If only $f(1)$ changes from 2 to 100, does the behavior expressed by $\lim_{x\to1}(x+1)$ change?
+No; the limit remains 2.
+A limit concerns a punctured neighborhood, so changing one point does not affect it.
+$x$ approaches 1 without equaling 1.
+If only $f (1)$ changes to 100, does the limit as $x \to 1$ change?
+It must become 100
+No, provided the two one-sided limits exist and agree
+The limit must cease to exist
+The limit examines inputs near 1 but different from 1. Changing the point value alone does not change the nearby behavior.
+Separate reaching a point from approaching it. A limit describes nearby outputs; a missing point can coexist with a stable limit.
+Look from the right
+Start 0.5 units to the right of the target.
+At $x=1.5$, the output is 2.5.
+Approach from the left
+Switch to the left and reduce the distance to 0.01.
+The left-side output is 1.99; on the right it is 2.01. Both approach 2.
+Compare a jump
+Switch to the function with different left- and right-side values.
+The left side stays at 1 and the right side at 3. Shrinking the distance cannot produce a common limit.
+$5$.
+$2$.

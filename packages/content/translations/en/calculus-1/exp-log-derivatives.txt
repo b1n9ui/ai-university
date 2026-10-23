@@ -1,0 +1,62 @@
+Differentiating Exponentials and Logarithms
+What makes $e$ special?
+$e^{x}$ is its own derivative, and the derivative of $\ln x$ is $\frac{1}{x}$. Other bases and composite inputs contribute extra factors.
+For $y = e^{x^{2}}$, the outer derivative retains $e^{x^{2}}$ and the inner derivative contributes $2 x$, giving $2 x e^{x^{2}}$.
+Exponential derivatives
+Logarithms and absolute values
+Logarithmic differentiation
+What if the base is not $e$?
+Write $b^{x} = e^{x \ln b}$ to get derivative $b^{x} \ln b$, for $b > 0$. Use $\ln x$ only for $x > 0$; $\ln |x|$ has derivative $\frac{1}{x}$ for $x \ne 0$.
+How do you differentiate $\ln (g (x))$?
+The result is $\frac{g' (x)}{g (x)}$, provided the original logarithm is defined. For $\ln |g (x)|$, require $g (x) \ne 0$.
+When should you use logarithmic differentiation?
+When a variable occurs in both base and exponent, as in $x^{x}$ ($x > 0$), take $\ln$ first: $\ln y = x \ln x$. Differentiation gives $\frac{y'}{y} = \ln x + 1$; then multiply by $y$.
+The following formulas apply on their respective domains.
+Require $b > 0$; $\ln x$ requires $x > 0$. Every logarithm used in logarithmic differentiation must be defined.
+Write the inverse relation $y = \ln x$.
+Differentiate with respect to $x$, remembering that $y$ depends on $x$.
+Substitute $e^{y} = x$.
+Move $a$: the height $e^{a}$ equals the tangent slope.
+Move the base point on $e^{x}$. How do its height and tangent slope compare?
+An exponential with an inner function
+Differentiate $e^{3x^2}$.
+The outer derivative retains $e^{3 x^{2}}$.
+The inner function $3 x^{2}$ has derivative $6 x$.
+A variable base and exponent
+Differentiate $x^x$ for $x > 0$.
+Set $y = x^{x}$ and take logarithms: $\ln y = x \ln x$.
+Differentiate to get $\frac{y'}{y} = \ln x + 1$, then multiply by $y$.
+Writing only $e^{u}$ as the derivative of $e^{u}$.
+Also multiply by $u'$.
+Applying the fixed-power rule directly to $x^{x}$.
+The exponent $x$ changes too. Use logarithmic differentiation.
+Differentiate $\ln(1+x^2)$.
+The outer derivative gives $\frac{1}{u}$ and the inner derivative gives $2 x$.
+Use the chain rule for $\ln u$.
+Differentiate $2^x$.
+Write it as $e^{x \ln 2}$ and differentiate.
+A base other than $e$ introduces a different multiplier.
+Find the derivative of $e^{x}$ at 0.
+The derivative is $e^{x}$, which equals 1 at 0.
+The curve's height equals its slope.
+Differentiate $\ln|3x-1|$ and state its restriction.
+Use $\frac{u'}{u}$; the expression inside the absolute value must be nonzero.
+The absolute value permits both signs, but not zero.
+For $x > 0$, what is $(\ln (3 x))'$?
+The chain rule gives $(\frac{1}{3 x}) \cdot 3 = \frac{1}{x}$. The real domain of $\ln (3 x)$ is $x > 0$.
+Exponential growth has a rate proportional to the current amount. With the natural base, that proportionality factor is one: the curve's height equals its rate of change.
+Compare at zero
+Set the base point to 0.
+Both height and exact slope are 1.
+Move right
+Set the base point to 1.
+Both height and slope are approximately 2.71828.
+Move left
+Set the base point to −1.
+Both are approximately 0.36788. A negative input does not make an exponential output negative.
+$6x e^{3x^2}$.
+$x^x(\ln x+1)$.
+$\frac{2x}{1+x^2}$.
+$2^x\ln2$.
+$1$.
+$\frac{3}{3x-1}$, $x \ne \frac{1}{3}$.

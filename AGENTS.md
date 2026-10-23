@@ -7,3 +7,5 @@
 - Read `docs/CONTENT_GUIDE.md` and `docs/GENERATION_REVIEW.md` before substantive textbook changes.
 - Run `npm run check` after content or code changes. Check responsive layouts and slider/domain boundaries when touching visuals.
 - Do not introduce a required human review gate for generating this AI-authored book. Review contributions and correct discovered errors transparently.
+
+- Language scope: English is the default website language, Chinese is switchable. Calculus I is complete in both; the other nine books are currently Chinese-only and must be labeled honestly. English text is fixed in `packages/content/translations/en/calculus-1`; keep source checksums, mathematical expressions, IDs, answer keys, presets and whole-book exports aligned. See `docs/TRANSLATION_GUIDE.md`.
