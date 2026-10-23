@@ -121,7 +121,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "status": "first-edition",
     "humanReviewed": false
   },
@@ -139,6 +139,7 @@
     "text": "普通点的幂级数解",
     "latex": "y=\\sum_{n=0}^\\infty a_nt^n,\\quad y''=\\sum_{n=0}^\\infty(n+2)(n+1)a_{n+2}t^n",
     "conditions": [
+      "标准齐次方程 $y^{\\prime\\prime}+P(t)y^\\prime+Q(t)y=0$ 的 $P,Q$ 在展开点附近解析；只有连续性不足以保证解析解。",
       "在收敛圆内可逐项求导；本节在普通点零展开，其他中心先平移变量。"
     ]
   },

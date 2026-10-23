@@ -29,7 +29,7 @@
     "latex": "P(X\\ge a)\\le\\frac{EX}{a}\\ (X\\ge0),\\qquad P(|X-\\mu|\\ge k\\sigma)\\le\\frac1{k^2}",
     "conditions": [
       "Markov 要求 $a>0$、非负变量与有限期望。",
-      "Chebyshev 要求有限方差；标准差形式在 $\\sigma>0$ 时使用。"
+      "Chebyshev 的标准差形式要求 $k>0$、有限且正的方差。方差为零时变量几乎处处为均值，应单独处理。"
     ]
   },
   "derivation": [
@@ -58,7 +58,7 @@
     },
     {
       "title": "两倍标准差",
-      "problem": "任意有限方差分布落在至少两倍标准差之外的概率界？",
+      "problem": "任意有限且正方差的分布，落在至少两倍标准差之外的概率上界是多少？",
       "steps": [
         "使用 Chebyshev。",
         "$1/2^2=1/4$。"
@@ -146,7 +146,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "status": "first-edition",
     "humanReviewed": false
   },

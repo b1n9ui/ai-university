@@ -3,7 +3,7 @@
   "title": "Real Analysis",
   "titleZh": "实分析",
   "subtitle": "把直觉变成有条件的证明",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "language": "zh-CN",
   "author": "AI University · AI-generated",
   "description": "实数完备性、数列级数、紧致与连续、微分、Riemann 积分、函数列和极限交换。每节提供证明思路、条件、反例、完整习题解答和本地交互。",

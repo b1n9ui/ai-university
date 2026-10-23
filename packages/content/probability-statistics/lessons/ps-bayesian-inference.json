@@ -80,7 +80,7 @@
     },
     {
       "id": "ps-bayesian-inference-q2",
-      "problem": "上述后验的预测成功率？",
+      "problem": "成功率的后验为 $\\operatorname{Beta}(3,6)$，下一次 Bernoulli 试验的后验预测成功率是多少？",
       "hint": "形状参数除以总和。",
       "solution": [
         "$3/9=1/3$。"
@@ -146,7 +146,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "status": "first-edition",
     "humanReviewed": false
   },

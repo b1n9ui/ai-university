@@ -91,7 +91,7 @@
       "id": "la-low-rank-q1"
     },
     {
-      "problem": "同一矩阵秩一截断的 Frobenius 误差？",
+      "problem": "矩阵奇异值为 $4,3,2$。秩一截断的 Frobenius 误差是多少？",
       "hint": "舍弃平方和开根号。",
       "solution": [
         "$\\sqrt{3^2+2^2}=\\sqrt{13}$。"
@@ -136,7 +136,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "status": "first-edition",
     "humanReviewed": false
   },

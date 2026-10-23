@@ -108,7 +108,7 @@
       "id": "c2-surface-p3"
     },
     {
-      "problem": "例题圆柱若加上两个端盖，总面积是多少？",
+      "problem": "半径 $2$、长 $3$ 的圆柱，加上两个端盖后的总表面积是多少？",
       "answer": "$20\\pi$。",
       "hint": "侧面积加两个圆。",
       "solution": [
@@ -180,7 +180,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.1.0",
+    "version": "0.1.2",
     "status": "first-edition",
     "humanReviewed": false
   },

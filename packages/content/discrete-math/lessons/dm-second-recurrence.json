@@ -68,7 +68,7 @@
   ],
   "practice": [
     {
-      "problem": "上述 Fibonacci 的指标六项？",
+      "problem": "$F_0=0,F_1=1,F_n=F_{n-1}+F_{n-2}$（$n\\ge2$）。求 $F_6$。",
       "hint": "由三和五相加。",
       "solution": [
         "指标六为八。"
@@ -145,7 +145,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "status": "first-edition",
     "humanReviewed": false
   },

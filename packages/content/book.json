@@ -3,7 +3,7 @@
   "title": "Calculus I",
   "titleZh": "微积分 I",
   "subtitle": "从变化率到累积量",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "language": "zh-CN",
   "author": "AI University · AI-generated",
   "description": "一元微积分入门：函数、极限、导数、积分及应用。每节有简明讲解、定义条件、推导、例题、练习和可操作图示。",

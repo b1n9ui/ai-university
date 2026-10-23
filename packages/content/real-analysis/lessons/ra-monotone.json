@@ -73,10 +73,9 @@
       "solution": [
         "仅零满足。"
       ],
-      "answer": "零。",
+      "answer": "$\\{0\\}$。",
       "difficulty": 2,
       "misconceptionTags": [],
-      "numericAnswer": 0,
       "id": "ra-monotone-q1"
     },
     {
@@ -151,7 +150,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "status": "first-edition",
     "humanReviewed": false
   },

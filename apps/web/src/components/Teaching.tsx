@@ -16,7 +16,7 @@ export function GuidedExperiment({lesson,index,modified,onApply}:{lesson:Lesson;
   return <div className="guided-experiment">
     <div className="experiment-prompt"><p><MathText text={lesson.interactiveVisual.prediction}/></p></div>
     <div className="experiment-steps" role="group" aria-label="演示步骤">
-      {lesson.teaching.steps.map((s,i)=><button key={s.title} aria-pressed={i===index} onClick={()=>choose(i)}><span className="step-index">{i+1}</span><span>{s.title}</span><ArrowRight size={14}/></button>)}
+      {lesson.teaching.steps.map((s,i)=><button key={i} aria-pressed={i===index} onClick={()=>choose(i)}><span className="step-index">{i+1}</span><span>{s.title}</span><ArrowRight size={14}/></button>)}
     </div>
     <div className="experiment-task" aria-live="polite">
       {step?<>

@@ -3,7 +3,7 @@
   "title": "Calculus II",
   "titleZh": "微积分 II",
   "subtitle": "从积分技巧到无穷逼近",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "language": "zh-CN",
   "author": "AI University · AI-generated",
   "description": "完整的一元微积分进阶：积分技巧与误差、反常积分、数列级数、Taylor 展开、参数曲线与极坐标、一阶微分方程入门。",

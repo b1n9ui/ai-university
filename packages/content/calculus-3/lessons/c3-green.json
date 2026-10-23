@@ -92,7 +92,7 @@
     },
     {
       "id": "c3-green-q2",
-      "problem": "将上题边界反向，积分是多少？",
+      "problem": "单位正方形边界按顺时针定向，$\\oint_C x\\,dy$ 是多少？",
       "hint": "定向改变符号。",
       "solution": [
         "反向边界积分为 $-1$。"
@@ -182,7 +182,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "status": "revised",
     "humanReviewed": false
   },

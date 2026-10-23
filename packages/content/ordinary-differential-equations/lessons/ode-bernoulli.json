@@ -121,7 +121,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "status": "first-edition",
     "humanReviewed": false
   },
@@ -139,6 +139,7 @@
     "text": "Bernoulli 方程与 Logistic 模型",
     "latex": "v'+(1-m)pv=(1-m)q,\\qquad v=y^{1-m}",
     "conditions": [
+      "本节非线性代换取 $m\\ne0,1$；$m=0$ 或 $m=1$ 时原式已经是线性方程。",
       "幂次在所选实分支上可微，$y\\ne0$；零解和其他被除条件须回原式检查。Logistic 使用 $r,K>0$。"
     ]
   },

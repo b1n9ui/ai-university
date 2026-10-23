@@ -3,7 +3,7 @@
   "title": "Probability & Statistics",
   "titleZh": "概率与统计",
   "subtitle": "从不确定性到有依据的判断",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "language": "zh-CN",
   "author": "AI University · AI-generated",
   "description": "数据与抽样、事件和分布、随机变量、联合模型、抽样极限、估计、检验、回归和贝叶斯更新。每节有推导、完整例题、练习解答与本地交互演示。",
@@ -322,6 +322,12 @@
       "title": "R stats · Test of Equal or Given Proportions",
       "url": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/prop.test.html",
       "usage": "核对比例得分检验与区间反演；本卷说明自身不使用连续性校正的 Wilson 约定。"
+    },
+    {
+      "id": "nist-contingency",
+      "title": "NIST · Contingency tables",
+      "url": "https://www.itl.nist.gov/div898/handbook/prc/section4/prc45.htm",
+      "usage": "核对列联表独立性检验的计数、预期与参考分布；正文独立编写。"
     }
   ],
   "provenance": {

@@ -80,7 +80,7 @@
       "id": "dm-counting-rules-q1"
     },
     {
-      "problem": "两类各三人但有一人重叠，直接相加正确吗？",
+      "problem": "两类各三人，有一人同时属于两类。去重后共有多少人？",
       "hint": "共同的人被数几遍？",
       "solution": [
         "重复一次，应减去一。"
@@ -147,7 +147,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "status": "first-edition",
     "humanReviewed": false
   },

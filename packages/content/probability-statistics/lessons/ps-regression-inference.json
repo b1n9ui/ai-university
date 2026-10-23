@@ -81,7 +81,7 @@
     },
     {
       "id": "ps-regression-inference-q2",
-      "problem": "同一点的预测区间能比均值区间更窄吗？",
+      "problem": "在相同置信水平、同一点和同一线性误差模型下，新观测预测区间能比均值响应置信区间更窄吗？",
       "hint": "它多加一个误差方差。",
       "solution": [
         "相同模型与水平下不会更窄。"
@@ -145,7 +145,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "status": "first-edition",
     "humanReviewed": false
   },

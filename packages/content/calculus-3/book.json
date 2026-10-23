@@ -3,7 +3,7 @@
   "title": "Calculus III",
   "titleZh": "微积分 III",
   "subtitle": "从多元变化到空间中的守恒",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "language": "zh-CN",
   "author": "AI University · AI-generated",
   "description": "完整的多元与向量微积分：空间几何、向量曲线、偏导与优化、重积分、曲线和曲面积分、Green、Stokes、散度定理及守恒应用。",

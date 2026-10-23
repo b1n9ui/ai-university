@@ -69,7 +69,7 @@
   "practice": [
     {
       "id": "ps-cdf-q1",
-      "problem": "沿上例，$F_X(-1)$ 是多少？",
+      "problem": "$X$ 在 $0,1,2$ 处的概率依次为 $0.2,0.5,0.3$。$F_X(-1)$ 是多少？",
       "hint": "阈值低于全部支持点。",
       "solution": [
         "没有取值落入事件。"
@@ -81,7 +81,7 @@
     },
     {
       "id": "ps-cdf-q2",
-      "problem": "沿上例，$P(X=1)$ 是多少？",
+      "problem": "$X$ 在 $0,1,2$ 处的概率依次为 $0.2,0.5,0.3$。$P(X=1)$ 是多少？",
       "hint": "读跳幅。",
       "solution": [
         "$0.7-0.2=0.5$。"
@@ -146,7 +146,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "status": "first-edition",
     "humanReviewed": false
   },

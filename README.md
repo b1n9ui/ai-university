@@ -6,11 +6,14 @@
 
 | 教材 | 章 | 节 | 例题 | 节内练习 | 回顾 / 综合题 |
 |---|---:|---:|---:|---:|---:|
-| Calculus I · v0.3.2 | 7 | 35 | 79 | 153 | 24 / 14 |
-| Calculus II · v0.1.1 | 8 | 35 | 72 | 141 | 24 / 14 |
-| Calculus III · v0.1.1 | 9 | 40 | 81 | 160 | 27 / 16 |
-| Linear Algebra · v0.1.0 | 10 | 50 | 100 | 200 | 30 / 20 |
-| Ordinary Differential Equations · v0.1.0 | 11 | 55 | 110 | 220 | 33 / 22 |
+| Calculus I · v0.3.3 | 7 | 35 | 79 | 153 | 24 / 14 |
+| Calculus II · v0.1.2 | 8 | 35 | 72 | 141 | 24 / 14 |
+| Calculus III · v0.1.2 | 9 | 40 | 81 | 160 | 27 / 16 |
+| Linear Algebra · v0.1.1 | 10 | 50 | 100 | 200 | 30 / 20 |
+| Ordinary Differential Equations · v0.1.1 | 11 | 55 | 110 | 220 | 33 / 22 |
+| Probability & Statistics · v0.1.1 | 10 | 50 | 100 | 200 | 20 / 10 |
+| Discrete Mathematics · v0.1.1 | 8 | 40 | 80 | 160 | 16 / 8 |
+| Real Analysis · v0.1.1 | 8 | 40 | 80 | 160 | 16 / 8 |
 
 网站是 React + TypeScript + SVG + KaTeX 的纯静态应用。没有聊天室、模型 API、账户、服务端或付费依赖。AI 用于离线编写与修订教材，读者得到可审查、可下载的固定版本。
 
@@ -18,7 +21,9 @@
 
 ![新版网站首页](docs/images/series/home.jpg)
 
-当前出版与核验记录：[常微分方程首版](docs/ODE_AUDIT.md) · [线性代数首版](docs/LINEAR_ALGEBRA_AUDIT.md) · [微积分三卷修订](docs/CALCULUS_SERIES_REVIEW.md)。
+当前检查记录：[数学八卷交叉检查](docs/MATHEMATICS_AUDIT_2026-10-22.md)。
+
+各卷出版记录：[常微分方程首版](docs/ODE_AUDIT.md) · [线性代数首版](docs/LINEAR_ALGEBRA_AUDIT.md) · [微积分三卷修订](docs/CALCULUS_SERIES_REVIEW.md)。
 
 ## 直接运行
 
@@ -33,7 +38,7 @@ npm run dev
 打开 `http://127.0.0.1:5173`。不需要 `.env` 或任何 API key。
 
 ```sh
-npm run check     # 全部九卷：内容、程序回放、项目测试、公式、类型、整本生成与构建
+npm run check     # 全部十卷：内容、程序回放、项目测试、公式、类型、整本生成与构建
 npm run preview   # 查看构建后的静态版本
 ```
 
@@ -96,7 +101,7 @@ npm run preview   # 查看构建后的静态版本
 
 ## 阅读与下载
 
-- 网站 v0.17.0：数学系列首页、按方向和出版状态筛选的书库、教材主页、数学八卷共 71 个章节主页、345 个知识点页面、实验室、分页练习中心、全文搜索、公式/术语/附录索引、阅读指南、下载、项目与贡献资料。
+- 网站 v0.17.1：数学系列首页、按方向和出版状态筛选的书库、教材主页、数学八卷共 71 个章节主页、345 个知识点页面、实验室、分页练习中心、全文搜索、公式/术语/附录索引、阅读指南、下载、项目与贡献资料。
 - 阅读页：专注模式、嵌入演示、页内定位、上下节翻页、收藏、较大字号与已读标记。练习支持逐题/连续查看、提示、完整解答与数值检查。
 - [微积分 I 书稿](book/Calculus-I.md)与[微积分 II 书稿](book/Calculus-II.md)、[微积分 III 书稿](book/Calculus-III.md)与[线性代数书稿](book/Linear-Algebra.md)、[常微分方程书稿](book/Ordinary-Differential-Equations.md)：版本化源产物，包含所有解答。
 - `dist/book.html` 与 `dist/calculus-2.html` 与 `dist/calculus-3.html` 与 `dist/linear-algebra.html`：数学八卷各自的完整阅读页（另含 `dist/ordinary-differential-equations.html` 、`dist/probability-statistics.html` 、`dist/discrete-math.html` 与 `dist/real-analysis.html`），公式预先排版，支持浏览器打印为 PDF。
@@ -107,7 +112,7 @@ npm run preview   # 查看构建后的静态版本
 
 ```text
 apps/web/                  静态阅读网站与界面组件
-packages/content/          五卷目录、215 个 canonical learning objects、回顾与考试
+packages/content/          数学八卷目录、345 个 canonical learning objects、回顾与考试
 packages/visuals/          可复用数学模型与数值方法
 schemas/                   教材 JSON Schema
 scripts/                   校验、整本生成、数学回归测试、草稿脚手架
@@ -120,7 +125,7 @@ docs/                      架构、内容规范、生成检查流程、部署�
 
 ## 质量与版本
 
-网站版本 **v0.17.0**；微积分 I 内容为 **v0.3.2**，微积分 II、III 为 **v0.1.1**，线性代数、常微分方程、概率与统计、离散数学及实分析均为 **v0.1.0**。尚未逐节人工审校。结构校验、公式渲染、先修图与选定数值验证可以发现部分错误，但不等同于逐式形式化证明。欢迎用具体反例、章节位置和可复算步骤提交勘误。
+网站版本 **v0.17.1**；微积分 I 内容为 **v0.3.3**，微积分 II、III 为 **v0.1.2**，其余数学卷均为 **v0.1.1**。尚未逐节人工审校。结构校验、公式渲染、先修图与选定数值验证可以发现部分错误，但不等同于逐式形式化证明。欢迎用具体反例、章节位置和可复算步骤提交勘误。
 
 `npm run check` 检查所有章节结构、章节链接、公式语法、先修有向无环图、视觉函数配置与数学模型。浏览器验证记录见 [QA](docs/QA.md)。
 
@@ -163,7 +168,7 @@ English: AI University publishes complete AI-authored, versioned textbooks with 
 
 ## 概率与统计
 
-完整首版 v0.1.0，10 章 50 节、100 个例题、230 道练习及回顾。覆盖数据与研究设计、事件与计数、随机变量、离散与连续分布、联合和条件分布、抽样理论、估计区间、检验、回归、ANOVA 与 Beta–二项更新。前半需要初等代数；连续部分需要基础积分。
+完整首版，当前修订 v0.1.1，10 章 50 节、100 个例题、230 道练习及回顾。覆盖数据与研究设计、事件与计数、随机变量、离散与连续分布、联合和条件分布、抽样理论、估计区间、检验、回归、ANOVA 与 Beta–二项更新。前半需要初等代数；连续部分需要基础积分。
 
 [在线阅读](https://b1n9ui.github.io/ai-university/#/book/probability-statistics) · [整本书稿](book/Probability-Statistics.md) · [内容与交互复核](docs/PROBABILITY_STATISTICS_AUDIT.md)
 
@@ -173,7 +178,7 @@ English: AI University publishes complete AI-authored, versioned textbooks with 
 
 ## 离散数学
 
-完整首版 v0.1.0，8 章 40 节、80 个例题、184 道带解答练习、40 个交互模型与 120 组引导参数。覆盖逻辑证明、集合关系、整数同余、归纳算法、计数递推、图论和树与网络算法。
+完整首版，当前修订 v0.1.1，8 章 40 节、80 个例题、184 道带解答练习、40 个交互模型与 120 组引导参数。覆盖逻辑证明、集合关系、整数同余、归纳算法、计数递推、图论和树与网络算法。
 
 [完整书稿](book/Discrete-Mathematics.md) · [检查记录](docs/DISCRETE_MATH_AUDIT.md)。从 `#/book/discrete-math` 阅读；打印版为 `discrete-math.html`。原书单现已全部出版；偏微分方程等属于独立后续课程。
 

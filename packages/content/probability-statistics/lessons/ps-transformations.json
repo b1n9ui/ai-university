@@ -63,7 +63,7 @@
         "当 $0\\le y\\le1$，原事件为 $-\\sqrt y\\le X\\le\\sqrt y$。",
         "区间长度除以二。"
       ],
-      "answer": "$F_Y(y)=\\sqrt y$；密度 $1/(2\\sqrt y)$ 在 $(0,1)$。"
+      "answer": "$F_Y(y)=0$（$y<0$），$F_Y(y)=\\sqrt y$（$0\\le y\\le1$），$F_Y(y)=1$（$y>1$）。密度为 $1/(2\\sqrt y)$（$0<y<1$），区间外为零。"
     }
   ],
   "practice": [
@@ -146,7 +146,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "status": "first-edition",
     "humanReviewed": false
   },

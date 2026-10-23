@@ -47,7 +47,7 @@
         "第一步 $y_1=1+0.1\\cdot1=1.1$。",
         "第二步 $y_2=1.1+0.1\\cdot1.1=1.21$；真值为 $e^{0.2}$。"
       ],
-      "answer": "近似 $1.21$，低于真值约 $1.2214$。"
+      "answer": "Euler 近似为 $1.21$；真值约为 $1.2214$，低估约 $0.0114$。"
     },
     {
       "title": "资源限制",
@@ -180,7 +180,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.1.0",
+    "version": "0.1.2",
     "status": "first-edition",
     "humanReviewed": false
   },

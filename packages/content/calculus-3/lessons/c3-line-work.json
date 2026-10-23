@@ -92,7 +92,7 @@
     },
     {
       "id": "c3-line-work-q2",
-      "problem": "沿相反方向走，上题功是多少？",
+      "problem": "常力 $(2,0,0)$ 沿直线从 $(3,1,0)$ 回到原点，做功是多少？",
       "hint": "有向位移反号。",
       "solution": [
         "由终点回原点，位移为 $(-3,-1,0)$，功为 $-6$。"
@@ -183,7 +183,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "status": "revised",
     "humanReviewed": false
   },

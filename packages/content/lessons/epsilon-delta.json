@@ -105,7 +105,7 @@
       "misconceptionTags": [
         "epsilon-delta-m1"
       ],
-      "problem": "上题 $\\varepsilon  = 0.1$ 时可取多少 $\\delta$？",
+      "problem": "按 $\\delta=\\varepsilon/2$ 选择输入半径。当 $\\varepsilon=0.1$ 时，公式给出的 $\\delta$ 是多少？",
       "answer": "$0.05$。",
       "solution": [
         "$\\frac{0.1}{2} = 0.05$。"
@@ -149,7 +149,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.3.1",
+    "version": "0.3.3",
     "status": "revised",
     "humanReviewed": false
   },

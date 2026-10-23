@@ -69,7 +69,7 @@
   "practice": [
     {
       "id": "ps-density-q1",
-      "problem": "上述模型中 $P(X=1/2)$？",
+      "problem": "随机变量在 $[0,1]$ 的密度为 $2x$，区间外为零。$P(X=1/2)$ 是多少？",
       "hint": "单点没有面积。",
       "solution": [
         "单点积分为零。"
@@ -92,7 +92,7 @@
     },
     {
       "id": "ps-density-q3",
-      "problem": "上述 $2x$ 密度下 $P(X>1/2)$？",
+      "problem": "随机变量在 $[0,1]$ 的密度为 $2x$，区间外为零。$P(X>1/2)$ 是多少？",
       "hint": "使用补集。",
       "solution": [
         "$1-1/4=3/4$。"
@@ -146,7 +146,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "status": "first-edition",
     "humanReviewed": false
   },

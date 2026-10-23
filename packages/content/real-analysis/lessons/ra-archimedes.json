@@ -95,10 +95,9 @@
       "solution": [
         "$1/20=0.05$。"
       ],
-      "answer": "$1/20$。",
+      "answer": "例如 $1/20$。",
       "difficulty": 2,
       "misconceptionTags": [],
-      "numericAnswer": 0.05,
       "id": "ra-archimedes-q3"
     },
     {
@@ -150,7 +149,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "status": "first-edition",
     "humanReviewed": false
   },

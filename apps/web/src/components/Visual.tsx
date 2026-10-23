@@ -26,7 +26,7 @@ import { Formula, MathText, plainMathText } from "./MathText";
 import { ParameterControl } from "./ParameterControl";
 import { ApplicationVisual } from "./ApplicationVisual";
 import { GuidedExperiment } from "./Teaching";
-import { playbackStep, MIN_APPROACH_DISTANCE } from '../../../../packages/visuals/playback.mjs';
+import { playbackStep, boundedSweep, MIN_APPROACH_DISTANCE, MAX_REFINEMENT } from '../../../../packages/visuals/playback.mjs';
 const fmt = (v: number) =>
   Number.isFinite(v) ? Number(v.toFixed(5)).toString() : "无有限值";
 function Slider({label,value,min,max,step=.01,onChange}:{label:string;value:number;min:number;max:number;step?:number;onChange:(n:number)=>void}) {
@@ -331,7 +331,10 @@ function PlanarVisual({
       last = now;
       const elapsed = dt * speed;
       clock.current += elapsed;
-      const frame = playbackStep(mode, initial, clock.current);
+      const sweepBounds = k === 'chain' ? [-1.5, 1.5] : ['disk', 'shell'].includes(k) ? [.01, 1] : [0, 1];
+      const frame = mode === 'sweep'
+        ? boundedSweep(Math.max(sweepBounds[0], Math.min(sweepBounds[1], initial)), sweepBounds[0], sweepBounds[1], clock.current)
+        : playbackStep(mode, initial, clock.current);
       if (mode === 'approach') setH(frame.value);
       else if (mode === 'refine') setN(frame.value);
       else setX(frame.value);
@@ -1181,9 +1184,16 @@ function PlanarVisual({
             className="animation-btn"
             onClick={() => {
               if (!playing) {
-                if (k === "limit" || k === "derivative") setH(1);
-                if (k === "riemann" || k === "arc") setN(4);
-                else setX(0);
+                setPlaybackComplete(false);
+                if (k === "limit" || k === "derivative") {
+                  if (h <= MIN_APPROACH_DISTANCE) setH(1);
+                } else if (k === "riemann" || k === "arc") {
+                  if (n >= MAX_REFINEMENT) setN(4);
+                } else {
+                  const min = k === "chain" ? -1.5 : ["disk", "shell"].includes(k) ? .01 : 0;
+                  const max = k === "chain" ? 1.5 : 1;
+                  if (x >= max) setX(min);
+                }
               }
               setPlaying((z) => !z);
             }}

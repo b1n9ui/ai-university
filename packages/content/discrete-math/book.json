@@ -3,7 +3,7 @@
   "title": "Discrete Mathematics",
   "titleZh": "离散数学",
   "subtitle": "从清楚的定义到可靠的推理",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "language": "zh-CN",
   "author": "AI University · AI-generated",
   "description": "逻辑与证明、集合与关系、整数、归纳与算法、计数、递推、图与树、网络算法。每节包含条件、推导、例题、练习解答与本地交互演示。",

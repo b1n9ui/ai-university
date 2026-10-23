@@ -25,10 +25,10 @@
     }
   ],
   "formalDefinition": {
-    "text": "均匀不放回抽取，整数 $0\\le K,n\\le N$。",
+    "text": "总体非空；抽样数与目标数均为合法整数。",
     "latex": "P(X=k)=\\frac{{K\\choose k}{N-K\\choose n-k}}{{N\\choose n}},\\quad\\operatorname{Var}(X)=np(1-p)\\frac{N-n}{N-1},\\quad p=K/N",
     "conditions": [
-      "均匀不放回抽取，整数 $0\\le K,n\\le N$。",
+      "均匀不放回抽取，整数 $N\\ge1$、$0\\le K,n\\le N$。",
       "方差公式使用 $N>1$；取值还需满足两组可供选择数量。"
     ]
   },
@@ -147,7 +147,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "status": "first-edition",
     "humanReviewed": false
   },

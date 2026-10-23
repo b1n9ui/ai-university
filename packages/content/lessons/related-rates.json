@@ -151,13 +151,13 @@
     },
     {
       "id": "related-rates-p5",
-      "problem": "上例水箱的注水率仍为 $2\\,\\mathrm{m}^3\\mathrm{s}^{-1}$。水深为 $4\\,\\mathrm{m}$ 时，上升速率是原来水深 2 时的几倍？",
+      "problem": "尖端向下的圆锥水箱以恒定速率注水，水深均未达箱顶。水深由 $2\\,\\mathrm m$ 增到 $4\\,\\mathrm m$，水面上升速率变为原来的几倍？",
       "answer": "$\\frac14$。",
       "solution": [
-        "由 $\\frac{\\mathrm{d}h}{\\mathrm{d}t}=\\frac{8}{\\pi h^2}$。",
-        "水深加倍，水平截面积变为四倍；同样的入水量使上升速率降为四分之一。"
+        "相似圆锥满足 $r=ch$，所以截面积 $A=\\pi c^2h^2$。",
+        "固定体积流率 $Q=A\\,dh/dt$，故水深加倍使上升速率变为原来的 $1/4$。"
       ],
-      "hint": "比较变化率，不必先算两个小数。",
+      "hint": "相似圆锥中，水平截面积随水深的平方变化。",
       "difficulty": 3,
       "misconceptionTags": [
         "related-rates-m1"
@@ -176,7 +176,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.3.1",
+    "version": "0.3.3",
     "status": "revised",
     "humanReviewed": false
   },

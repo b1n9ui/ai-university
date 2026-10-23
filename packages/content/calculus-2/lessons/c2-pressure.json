@@ -85,7 +85,7 @@
       "id": "c2-pressure-p1"
     },
     {
-      "problem": "例题圆柱水槽出口再升高 $1\\,\\mathrm m$，总功？",
+      "problem": "竖直圆柱水槽的截面积为 $1\\,\\mathrm{m^2}$，水深 $2\\,\\mathrm m$，固定出口距槽底 $3\\,\\mathrm m$。取 $\\rho=1000\\,\\mathrm{kg/m^3}$、$g=9.8\\,\\mathrm{m/s^2}$，忽略损耗，抽空需要多少功？",
       "answer": "$39200\\,\\mathrm J$。",
       "hint": "每层多提升一米。",
       "solution": [
@@ -180,7 +180,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "status": "revised",
     "humanReviewed": false
   },

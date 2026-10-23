@@ -10,6 +10,7 @@ import {
 import { useRef, useState } from "react";
 import type { Exercise, Lesson } from "../../../../packages/content/types";
 import { MathText } from "./MathText";
+import { parseNumeric, numericAnswerMatches } from "../../../../packages/content/numeric-answer.mjs";
 export type Progress = Record<string, "understood" | "review">;
 export function Practice({
   lesson,
@@ -124,15 +125,6 @@ export function PracticeSet({
     </section>
   );
 }
-function parseNumeric(input: string) {
-  const s = input.trim();
-  if (/^[-+]?\d+(?:\.\d+)?\s*\/\s*[-+]?\d+(?:\.\d+)?$/.test(s)) {
-    const [a, b] = s.split("/").map(Number);
-    return b === 0 ? NaN : a / b;
-  }
-  if (/^[-+]?(?:\d+\.?\d*|\.\d+)(?:e[-+]?\d+)?$/i.test(s)) return Number(s);
-  return NaN;
-}
 function Question({
   q,
   misconceptions,
@@ -158,9 +150,7 @@ function Question({
       setFeedback("请输入有限数值，可使用小数或分数（如 1/3）。");
       return;
     }
-    const ok =
-      Math.abs(value - q.numericAnswer!) <
-      Math.max(1e-5, Math.abs(q.numericAnswer!) * 1e-5);
+    const ok = numericAnswerMatches(value, q.numericAnswer!);
     setResult(ok?"correct":"wrong");
     if(!ok){setHint(true);setNextHint(false);}
     setFeedback(
@@ -187,7 +177,7 @@ function Question({
         <MathText text={q.problem} />
       </h3>
       <label className="answer-label">
-        {q.numericAnswer !== undefined ? "你的答案（小数或分数）" : "你的思路"}
+        {q.numericAnswer !== undefined ? "数值结果（小数或分数）" : "你的思路"}
         <textarea
           value={draft}
           onChange={(e) => {
@@ -197,7 +187,7 @@ function Question({
           }}
           placeholder={
             q.numericAnswer !== undefined
-              ? "输入数值，也可以先在纸上完成…"
+              ? "小数请保留至少 6 位有效数字，也可输入分数…"
               : "写下关键步骤，或先在纸上完成…"
           }
         />

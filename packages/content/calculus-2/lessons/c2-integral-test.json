@@ -84,7 +84,7 @@
       "id": "c2-integral-test-p1"
     },
     {
-      "problem": "平方倒数级数取多少项，可保证尾误差不超过 $0.01$？",
+      "problem": "对平方倒数级数，按 $R_N\\le1/N$ 估计，最少取多少项可保证该误差界不超过 $0.01$？",
       "answer": "$100$ 项足够。",
       "hint": "使用尾部上界。",
       "solution": [
@@ -107,7 +107,7 @@
       "id": "c2-integral-test-p3"
     },
     {
-      "problem": "$\\sum\\frac1{n^3}$ 前 10 项后的尾和上界？",
+      "problem": "对 $\\sum_{n=1}^{\\infty}1/n^3$，用 $\\int_{10}^{\\infty}x^{-3}\\,dx$ 给前 10 项后的尾和上界，结果是多少？",
       "answer": "$\\frac1{200}$。",
       "hint": "积分从十开始。",
       "solution": [
@@ -177,7 +177,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.1.0",
+    "version": "0.1.2",
     "status": "first-edition",
     "humanReviewed": false
   },

@@ -22,3 +22,11 @@ export function playbackStep(mode, initial, elapsed) {
   }
   throw new RangeError('Unknown playback mode.');
 }
+
+// Map progress to the actual control domain; coordinates need not lie in [0, 1].
+export function boundedSweep(initial, min, max, elapsed) {
+  if (![initial, min, max].every(Number.isFinite) || min >= max || initial < min || initial > max)
+    throw new RangeError('Sweep position must belong to its control domain.');
+  const frame = playbackStep('sweep', (initial - min) / (max - min), elapsed);
+  return { value: frame.done ? max : min + frame.value * (max - min), done: frame.done };
+}

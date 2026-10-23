@@ -66,7 +66,7 @@
     },
     {
       "id": "ode-linearization-systems-q2",
-      "problem": "上题原点是什么类型？",
+      "problem": "系统 $x^\\prime=2x+xy,y^\\prime=-y$ 的原点平衡是什么类型？",
       "hint": "两个根异号。",
       "solution": [
         "存在扩张方向。"
@@ -123,7 +123,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "status": "first-edition",
     "humanReviewed": false
   },

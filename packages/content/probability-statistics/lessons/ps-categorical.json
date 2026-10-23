@@ -29,7 +29,9 @@
     "latex": "\\chi^2=\\sum_{i,j}\\frac{(O_{ij}-E_{ij})^2}{E_{ij}},\\quad E_{ij}=\\frac{O_{i+}O_{+j}}{N},\\quad\\nu=(r-1)(c-1)",
     "conditions": [
       "这里是列联表独立性检验；边缘对应的类别须互斥并覆盖。",
-      "拟合优度的自由度另为类别数减一再减所估计参数数，不能混用。"
+      "拟合优度的自由度另为类别数减一再减所估计参数数，不能混用。",
+      "观察单位相互独立，$N>0$，参与计算的行列边缘均为正；先删除不可能出现的空类别，再计算自由度。",
+      "卡方尾概率是渐近近似。本卷采用各格预期计数至少五的保守课堂规则；稀疏表另选适配方法。"
     ]
   },
   "derivation": [
@@ -148,12 +150,13 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "status": "first-edition",
     "humanReviewed": false
   },
   "sources": [
-    "nist-chi-square"
+    "nist-chi-square",
+    "nist-contingency"
   ],
   "interactiveVisual": {
     "kind": "probability",

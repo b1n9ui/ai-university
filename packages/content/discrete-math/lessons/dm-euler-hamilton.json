@@ -58,7 +58,7 @@
     },
     {
       "title": "两个三角形共一点",
-      "problem": "它有 Euler 闭路或 Hamilton 圈吗？",
+      "problem": "两个三角形只有一个公共顶点，没有其他公共顶点或公共边。这个图有 Euler 闭路或 Hamilton 圈吗？",
       "steps": [
         "中心度四，其余度二，连通，所以有 Euler 闭路。",
         "中心是割点，Hamilton 圈无法只访问中心一次而串联两侧。"
@@ -146,7 +146,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "status": "first-edition",
     "humanReviewed": false
   },

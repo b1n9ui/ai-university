@@ -69,7 +69,7 @@
   "practice": [
     {
       "id": "ps-bayes-q1",
-      "problem": "沿上一例，已知次品，来自工厂二的概率？",
+      "problem": "工厂一供货六成、次品率 $0.02$；工厂二供货四成、次品率 $0.05$。已知产品为次品，来自工厂二的概率是多少？",
       "hint": "用该来源的次品路径作分子。",
       "solution": [
         "$0.02/0.032=0.625$。"
@@ -147,7 +147,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "status": "first-edition",
     "humanReviewed": false
   },

@@ -3,7 +3,7 @@
   "title": "Linear Algebra",
   "titleZh": "线性代数",
   "subtitle": "从方程组到空间、投影与分解",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "language": "zh-CN",
   "author": "AI University · AI-generated",
   "description": "完整的有限维线性代数：方程组、矩阵与映射、向量空间、四个基本子空间、行列式、特征值、正交与最小二乘、对称矩阵、SVD，以及网络和数据应用。",

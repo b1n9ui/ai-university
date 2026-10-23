@@ -91,7 +91,7 @@
     },
     {
       "id": "c3-potential-q2",
-      "problem": "上题场从原点到 $(1,2,2)$ 的功？",
+      "problem": "场 $(2x,2y,2z)$ 从原点到 $(1,2,2)$ 的功是多少？",
       "hint": "使用端点势差。",
       "solution": [
         "终值 $1+4+4=9$，初值零。"
@@ -181,7 +181,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "status": "revised",
     "humanReviewed": false
   },

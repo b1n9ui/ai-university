@@ -90,7 +90,7 @@
       "id": "la-markov-q1"
     },
     {
-      "problem": "上题稳态第一分量？",
+      "problem": "列随机矩阵 $P=\\begin{pmatrix}0.9&0.4\\\\0.1&0.6\\end{pmatrix}$ 的概率稳态向量第一分量是多少？",
       "hint": "用流量平衡。",
       "solution": [
         "$0.1p_1=0.4p_2$，和一给 $p_1=0.8$。"
@@ -135,7 +135,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "status": "first-edition",
     "humanReviewed": false
   },

@@ -103,7 +103,7 @@
     },
     {
       "id": "c3-line-scalar-q3",
-      "problem": "将上题半圆反向走，积分变吗？",
+      "problem": "将单位半圆的方向反过来，标量曲线积分 $\\int_C1\\,ds$ 会改变吗？",
       "hint": "看弧长元是否有向。",
       "solution": [
         "弧长不随方向变号，因此仍为 $\\pi$。"
@@ -180,7 +180,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "status": "revised",
     "humanReviewed": false
   },

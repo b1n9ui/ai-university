@@ -103,7 +103,7 @@
     },
     {
       "id": "ps-summaries-q4",
-      "problem": "样本量为一能计算上述样本方差吗？",
+      "problem": "样本量为一时，能按分母 $n-1$ 计算样本方差吗？",
       "hint": "检查分母。",
       "solution": [
         "自由度为零。"
@@ -145,7 +145,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "status": "first-edition",
     "humanReviewed": false
   },

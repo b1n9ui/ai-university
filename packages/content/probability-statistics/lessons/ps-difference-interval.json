@@ -29,7 +29,8 @@
     "latex": "\\hat\\Delta\\pm t_{1-\\alpha/2,\\nu}\\sqrt{v_1+v_2},\\quad v_j=s_j^2/n_j,\\quad\\nu=\\frac{(v_1+v_2)^2}{v_1^2/(n_1-1)+v_2^2/(n_2-1)}",
     "conditions": [
       "独立两样本的 Welch 区间为常用近似；小样本需评估组内正态性。",
-      "配对区间要求各对之间独立，正态差值时为精确 $t$ 区间。"
+      "配对区间要求各对之间独立，正态差值时为精确 $t$ 区间。",
+      "两组各有 $n_j\\ge2$，且 $s_1^2/n_1+s_2^2/n_2>0$，自由度与标准误公式才有定义；配对情形须有至少两个差值并且差值标准差非零。"
     ]
   },
   "derivation": [
@@ -145,7 +146,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "status": "first-edition",
     "humanReviewed": false
   },

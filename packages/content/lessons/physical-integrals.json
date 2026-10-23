@@ -169,7 +169,7 @@
     },
     {
       "id": "physical-integrals-p5",
-      "problem": "上例圆柱水箱仍有 $2\\,\\mathrm{m}$ 深的水，把出口从高 3 改为高 $2\\,\\mathrm{m}$，需多少功？其他假设相同。",
+      "problem": "圆柱水箱半径 $1\\,\\mathrm m$，水深 $2\\,\\mathrm m$，固定出口距槽底 $2\\,\\mathrm m$。取 $\\rho=1000\\,\\mathrm{kg/m^3}$、$g=9.8\\,\\mathrm{m/s^2}$，忽略损耗，抽空需要多少功？",
       "answer": "$19600\\pi\\,\\mathrm{J}$。",
       "solution": [
         "提升距离改为 $2-y$，$W=9800\\pi\\int_0^2(2-y)\\,\\mathrm{d}y$。",
@@ -183,7 +183,7 @@
     },
     {
       "id": "physical-integrals-p6",
-      "problem": "上例闸门若上边在水下 $1\\,\\mathrm{m}$、下边在水下 $4\\,\\mathrm{m}$，净水压力是多少？宽度与物理假设不变。",
+      "problem": "竖直矩形闸门宽 $2\\,\\mathrm m$，上边水深 $1\\,\\mathrm m$、下边水深 $4\\,\\mathrm m$。一侧为水、另一侧为同样大气压；取 $\\rho=1000\\,\\mathrm{kg/m^3}$、$g=9.8\\,\\mathrm{m/s^2}$，求净水压力。",
       "answer": "$147000\\,\\mathrm{N}$。",
       "solution": [
         "深度从 1 积到 4，$F=19600\\int_1^4h\\,\\mathrm{d}h$。",
@@ -222,7 +222,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.3.1",
+    "version": "0.3.3",
     "status": "revised",
     "humanReviewed": false
   },

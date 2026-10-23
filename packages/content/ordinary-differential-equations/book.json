@@ -3,7 +3,7 @@
   "title": "Ordinary Differential Equations",
   "titleZh": "常微分方程",
   "subtitle": "从局部变化到完整运动",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "language": "zh-CN",
   "author": "AI University · AI-generated",
   "description": "一阶方程、存在唯一性、线性与非线性系统、阻尼和共振、Laplace 变换、级数解与数值方法。解释、推导、例题、习题与交互图示组成一门完整入门课程。",

@@ -81,7 +81,7 @@
     },
     {
       "id": "ps-binomial-q2",
-      "problem": "上述三次，恰好一正概率？",
+      "problem": "独立公平掷币三次，恰好一次正面的概率是多少？",
       "hint": "三种成功位置。",
       "solution": [
         "$3/8$。"
@@ -149,7 +149,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "status": "first-edition",
     "humanReviewed": false
   },

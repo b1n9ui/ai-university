@@ -73,7 +73,7 @@
   ],
   "practice": [
     {
-      "problem": "用 $1-\\frac{x^2}{2}$ 估计 $\\cos0.1$，利用三次项为零给误差界。",
+      "problem": "用 $1-\\frac{x^2}{2}$ 估计 $\\cos0.1$。把它看作三次 Taylor 多项式，取四阶导数界 $M_4=1$，Lagrange 公式给出的误差上界是多少？",
       "answer": "不超过 $\\frac{0.1^4}{24}$。",
       "hint": "把它视为三次多项式。",
       "solution": [
@@ -179,7 +179,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.1.0",
+    "version": "0.1.2",
     "status": "first-edition",
     "humanReviewed": false
   },

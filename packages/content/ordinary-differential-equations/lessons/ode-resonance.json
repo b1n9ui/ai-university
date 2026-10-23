@@ -122,7 +122,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "status": "first-edition",
     "humanReviewed": false
   },
@@ -138,9 +138,11 @@
   ],
   "formalDefinition": {
     "text": "受迫振动与共振",
-    "latex": "y_p=\\frac F{2\\omega_0}t\\sin(\\omega_0t)\\quad(\\omega=\\omega_0)",
+    "latex": "y''+\\omega_0^2y=F\\cos(\\omega_0t)\\implies y_p=\\frac F{2\\omega_0}t\\sin(\\omega_0t)",
     "conditions": [
-      "无阻尼、常系数、正固有频率，外力持续正弦驱动；该增长结论不直接适用于有正阻尼的稳态。"
+      "无阻尼、常系数，$\\omega_0>0$；本式对应余弦外力，$F$ 是标准化方程中的幅度。",
+      "若右端为 $F\\sin(\\omega_0t)$，可取 $y_p=-Ft\\cos(\\omega_0t)/(2\\omega_0)$；外力相位改变，特解也随之改变。",
+      "非零外力才产生该增长项；正阻尼下的稳态另见下一节。"
     ]
   },
   "learningCheck": {

@@ -92,7 +92,7 @@
     },
     {
       "id": "c3-regions-order-q2",
-      "problem": "该三角形面积是多少？",
+      "problem": "三角形 $0\\le x\\le2,\\ 0\\le y\\le2-x$ 的面积是多少？",
       "hint": "底乘高再除以二。",
       "solution": [
         "底和高均为 2，面积为 2。"
@@ -181,7 +181,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "status": "revised",
     "humanReviewed": false
   },

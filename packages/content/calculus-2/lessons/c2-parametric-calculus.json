@@ -91,7 +91,7 @@
       "id": "c2-parametric-calculus-p1"
     },
     {
-      "problem": "上一题的二阶导数？",
+      "problem": "$x=2t,y=t^2$ 在 $t=1$ 的二阶导数 $d^2y/dx^2$ 是多少？",
       "answer": "$\\frac12$。",
       "hint": "还要除以横坐标导数。",
       "solution": [
@@ -186,7 +186,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.1.0",
+    "version": "0.1.2",
     "status": "first-edition",
     "humanReviewed": false
   },

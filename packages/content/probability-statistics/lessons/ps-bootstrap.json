@@ -81,7 +81,7 @@
     },
     {
       "id": "ps-bootstrap-q2",
-      "problem": "上述四种样本均值有哪些？",
+      "problem": "原数据为 $2,4$。所有四种有序、样本量为二的 bootstrap 样本，其均值分别是什么？",
       "hint": "列出两次抽取。",
       "solution": [
         "$(2,2),(2,4),(4,2),(4,4)$。"
@@ -145,7 +145,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "status": "first-edition",
     "humanReviewed": false
   },

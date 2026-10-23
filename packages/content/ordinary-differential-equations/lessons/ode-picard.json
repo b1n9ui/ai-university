@@ -66,7 +66,7 @@
     },
     {
       "id": "ode-picard-q2",
-      "problem": "同一问题第二轮？",
+      "problem": "对 $y^\\prime=y,y(0)=2$，从 $y_0(t)\\equiv2$ 开始的第二轮 Picard 近似是什么？",
       "hint": "再代入第一轮。",
       "solution": [
         "$2+\\int_0^t(2+2s)ds$。"
@@ -120,7 +120,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "status": "first-edition",
     "humanReviewed": false
   },

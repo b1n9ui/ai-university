@@ -102,7 +102,7 @@
     },
     {
       "id": "c3-taylor-q3",
-      "problem": "$e^{x+y}$ 的二阶模型中混合项系数是多少？",
+      "problem": "$e^{x+y}$ 在原点展开的二阶 Taylor 多项式中，$xy$ 的系数是多少？",
       "hint": "展开平方或看双重贡献。",
       "solution": [
         "$\\frac12(2xy)=xy$，系数为 1。"
@@ -182,7 +182,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "status": "revised",
     "humanReviewed": false
   },
