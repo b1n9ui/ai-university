@@ -306,6 +306,30 @@
         "examples": 36,
         "exercises": 88
       }
+    },
+    {
+      "id": "c-programming",
+      "categoryId": "other",
+      "areaId": "programming",
+      "title": "C 语言：从零到完整程序",
+      "englishTitle": "C Programming from Zero",
+      "coverTitle": [
+        "C",
+        "从零开始"
+      ],
+      "tagline": "从第一份源文件到可测试的完整项目",
+      "description": "面向零基础的 C17 教材：安装与编译、控制流、函数、数组、指针、内存与文件，配 116 个可运行案例和完整成绩管理器。",
+      "audience": "没有编程或终端经验的中文读者",
+      "scope": "8 章 · 32 节 · C17 与命令行项目",
+      "status": "published",
+      "route": "book/c-programming",
+      "coverMark": "int main(void)",
+      "stats": {
+        "chapters": 8,
+        "lessons": 32,
+        "examples": 64,
+        "exercises": 148
+      }
     }
   ],
   "categories": [
@@ -319,7 +343,7 @@
       "id": "other",
       "title": "其他",
       "english": "Other Subjects",
-      "description": "Python 编程入门与 AI 辅助开发，从理解程序到完成项目。"
+      "description": "C、Python 编程入门与 AI 辅助开发，从理解程序到完成项目。"
     }
   ]
 }

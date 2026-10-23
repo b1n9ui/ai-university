@@ -1,0 +1,190 @@
+{
+  "id": "c-modules",
+  "number": "7.1",
+  "chapterId": "c-ch7",
+  "title": "头文件、多文件与构建",
+  "concept": "把声明与实现分开，可以让一个项目的多个源文件共享接口，同时各自保持清楚的职责。",
+  "intuition": "头文件像菜单，源文件像厨房。看见菜单知道能点什么，但链接时仍必须找到真正做菜的实现。",
+  "objectives": [
+    "一个声明，一份定义",
+    "头文件保护",
+    "编译与链接分开理解"
+  ],
+  "body": [
+    {
+      "title": "一个声明，一份定义",
+      "text": "在 stats.h 放 int max_score(int a,int b); 原型，在 stats.c 放实现，main.c 包含头文件并调用。声明可在不同编译单元出现，普通外部函数定义通常只保留一份。不要在头文件里直接放普通全局对象定义，否则多个 .c 包含时容易出现重复定义。"
+    },
+    {
+      "title": "头文件保护",
+      "text": "使用 #ifndef STATS_H、#define STATS_H 和 #endif 包住头文件正文，防止同一翻译单元重复包含造成类型重复定义。自有头文件写双引号，标准头文件写尖括号。头文件应包含自己声明所需的类型头文件，不要求调用者碰巧先包含某个文件。文件内辅助函数可用 static 限制链接可见性。"
+    },
+    {
+      "title": "编译与链接分开理解",
+      "text": "gcc -std=c17 -Wall -Wextra -Wpedantic main.c stats.c -o app 会编译两份源文件再链接。漏掉 stats.c 时，即使原型正确，也会缺少函数实现。头文件不是需要单独链接的实现文件。较大项目可用 -c 先得到目标文件，再链接；本书项目给出一条直接可用的命令，避免先被构建系统打断。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "头文件提供可共享声明；各 .c 独立翻译，链接器把它们的定义与引用连接。",
+    "conditions": [
+      "共享声明保持一致。",
+      "源文件实现包含自己的接口头文件以暴露类型不一致。",
+      "命令必须列出所有参与链接的实现源文件。"
+    ]
+  },
+  "derivation": [
+    {
+      "text": "把公开类型和函数原型放进带保护的头文件。"
+    },
+    {
+      "text": "把实现放进 .c，main 只调用公开接口。"
+    },
+    {
+      "text": "一次编译链接全部实现文件，用缺失和重复定义诊断检查职责。"
+    }
+  ],
+  "workedExamples": [
+    {
+      "title": "先声明再定义",
+      "problem": "单文件模拟声明和后置实现，调用 larger。",
+      "steps": [
+        "main 前先放原型。",
+        "调用依声明检查参数。",
+        "main 后的定义提供实现。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\nint larger(int a, int b);\nint main(void)\n{\n    printf(\"%d\\n\", larger(2, 9));\n    return 0;\n}\nint larger(int a, int b)\n{\n    return a > b ? a : b;\n}\n",
+        "stdin": "",
+        "stdout": "9\n",
+        "files": {},
+        "exitCode": 0
+      }
+    },
+    {
+      "title": "文件内辅助函数",
+      "problem": "static helper 仅供本源文件使用，返回两倍值。",
+      "steps": [
+        "static 限制函数链接可见性。",
+        "同文件 main 可以调用。",
+        "4 的两倍为 8。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nstatic int helper(int n)\n{\n    return n * 2;\n}\n\nint main(void)\n{\n    printf(\"%d\\n\", helper(4));\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "8\n",
+        "files": {},
+        "exitCode": 0
+      }
+    }
+  ],
+  "practice": [
+    {
+      "problem": "有声明仍报 undefined reference，先检查什么？",
+      "hint": "声明不等于实现已链接。",
+      "solution": [
+        "确认存在匹配定义。",
+        "确认实现 .c 在编译命令里。",
+        "再查拼写和签名。"
+      ],
+      "answer": "检查是否漏编译实现文件，或函数名、声明与定义不一致。",
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "为什么头文件保护不能解决把普通全局变量定义放在头文件导致的跨文件重复？",
+      "hint": "保护只在单个翻译单元内生效。",
+      "solution": [
+        "每个 .c 独立预处理。",
+        "各自都可能产生一份外部定义。",
+        "头文件放 extern 声明，单个 .c 放定义。"
+      ],
+      "answer": "保护防同一翻译单元重复包含，不防多个翻译单元各自产生定义。",
+      "difficulty": 3,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "main.c、records.c、input.c 如何一次构建？",
+      "hint": "把三个实现源文件列在命令里。",
+      "solution": [
+        "用同样标准和警告参数。",
+        "不把 .h 当实现文件。",
+        "最后 -o 指定程序。"
+      ],
+      "answer": "gcc -std=c17 -Wall -Wextra -Wpedantic main.c records.c input.c -o gradebook",
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "?: 表达式 a>b ? a:b 在例题里做什么？",
+      "hint": "问号前是条件，冒号分开两个值。",
+      "solution": [
+        "条件非零选 a。",
+        "否则选 b。",
+        "这是带结果的条件选择，不会两个分支都计算。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    int a = 6, b = 4;\n    printf(\"%d\\n\", a > b ? a : b);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "6\n",
+        "files": {},
+        "exitCode": 0
+      },
+      "difficulty": 2,
+      "misconceptionTags": []
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "包含头文件就已经链接实现。",
+      "correction": "头文件提供声明，仍需编译并链接对应 .c。",
+      "tag": "c-modules-m1"
+    },
+    {
+      "claim": "所有辅助函数都要暴露给其他文件。",
+      "correction": "只在当前文件使用的函数可声明为 static，缩小接口。",
+      "tag": "c-modules-m2"
+    }
+  ],
+  "learningCheck": {
+    "question": "头文件主要负责？",
+    "choices": [
+      "保存运行结果",
+      "声明共享类型与函数接口",
+      "自动安装编译器"
+    ],
+    "correctIndex": 1,
+    "feedback": [
+      "运行数据应存明确数据文件。",
+      "正确，实现通常在 .c。",
+      "编译器安装与头文件职责不同。"
+    ]
+  },
+  "interactiveVisual": {
+    "mode": "c-compare",
+    "prediction": "先遮住输出：单文件模拟声明和后置实现，调用 larger。 写下结果后，对比两个已编译的例子。",
+    "caption": "切换案例，比较代码、输入与预期输出。结果来自本书固定程序的本机执行检查；网页展示静态案例，不运行任意 C 代码。",
+    "experiment": {
+      "code": "#include <stdio.h>\nint larger(int a, int b);\nint main(void)\n{\n    printf(\"%d\\n\", larger(2, 9));\n    return 0;\n}\nint larger(int a, int b)\n{\n    return a > b ? a : b;\n}\n",
+      "stdin": "",
+      "stdout": "9\n",
+      "files": {},
+      "exitCode": 0
+    }
+  },
+  "prerequisites": [
+    "c-parse"
+  ],
+  "difficulty": 5,
+  "misconceptionTags": [
+    "c-modules-m1",
+    "c-modules-m2"
+  ],
+  "sources": [
+    "n1570"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "humanReviewed": false,
+    "version": "0.1.0"
+  }
+}

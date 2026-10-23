@@ -1,0 +1,186 @@
+{
+  "id": "c-project-input",
+  "number": "8.3",
+  "chapterId": "c-ch8",
+  "title": "综合项目三：整份加载与文本协议",
+  "concept": "文件模块先把输入放入临时表，只有整份合法才替换旧表，避免失败留下半成品。",
+  "intuition": "像批次验货：全部合格才入库，任何一件失败则退回这一批，原仓库不动。",
+  "objectives": [
+    "有界逐字符读行",
+    "严格解析两字段",
+    "提交与回滚"
+  ],
+  "body": [
+    {
+      "title": "有界逐字符读行",
+      "text": "项目 read_line 用 fgetc 的 int 结果逐个读取，最多保存 63 个字符加零。这样可以明确拒绝内嵌零和超长行，接受末行无换行，并在读到 LF 后去掉可选的 CR。裸 CR 仍被格式检查拒绝。返回值区分正常行、正常结束、读取错误、超长或非法字节；不把截断行交给解析器。"
+    },
+    {
+      "title": "严格解析两字段",
+      "text": "parse_student 先找唯一空格，前面必须 1..20 个英文字母；后面至少一个十进制数字且只有数字，先拒绝符号与空白，再用 strtol 和 errno 检查值与范围。输出 Student 只在成功时写入。空行、尾部空格、重复分隔符都拒绝，不悄悄纠正协议。"
+    },
+    {
+      "title": "提交与回滚",
+      "text": "gb_load 要求目标表已初始化。先打开文件并建立 staging 临时表，逐行解析并 gb_add。任何一步失败都关闭文件、销毁 staging，原目标保持原样；完全成功且关闭无误后，销毁旧目标并把 staging 所有权交给目标。结构体赋值在这里是有意的所有权转移，转移后的 staging 不再销毁同一块。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "事务式加载在所有可检查步骤成功后一次转移结果；失败时销毁临时状态并保留原目标。",
+    "conditions": [
+      "目标表先初始化。",
+      "输入遵守本项目 ASCII 两字段协议。",
+      "加载成功转移所有权，失败清理临时表；不承诺文件系统的原子写入。"
+    ]
+  },
+  "derivation": [
+    {
+      "text": "逐行读取并拒绝截断与非法字节。"
+    },
+    {
+      "text": "在临时表中解析、查重、追加，错误即清理。"
+    },
+    {
+      "text": "检查读取与关闭结果，成功后才替换目标。"
+    }
+  ],
+  "workedExamples": [
+    {
+      "title": "解析条件先于转换",
+      "problem": "检查字符形式，\"-1\" 不符合无符号十进制分数协议。",
+      "steps": [
+        "第一个字符是减号。",
+        "不在 0..9。",
+        "格式失败，不调用业务统计。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    const char *s = \"-1\";\n    int valid = 1;\n    for (size_t i = 0; s[i] != '\\0'; i++) {\n        if (s[i] < '0' || s[i] > '9') { valid = 0; break; }\n    }\n    printf(\"%d\\n\", valid);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "0\n",
+        "files": {},
+        "exitCode": 0
+      }
+    },
+    {
+      "title": "接受无换行末行",
+      "problem": "读取固定文件最后一个字符后，正常 EOF 不等于读取错误。",
+      "steps": [
+        "循环读成功字符。",
+        "结束检查 ferror。",
+        "这里三字符有效，即使没有换行。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    FILE *fp = fopen(\"last.txt\", \"r\");\n    if (fp == NULL) { return 1; }\n    int ch;\n    while ((ch = fgetc(fp)) != EOF) { putchar(ch); }\n    int bad = ferror(fp);\n    if (fclose(fp) != 0) { bad = 1; }\n    if (bad) { return 1; }\n    putchar('\\n');\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "end\n",
+        "files": {
+          "last.txt": "end"
+        },
+        "exitCode": 0
+      }
+    }
+  ],
+  "practice": [
+    {
+      "problem": "临时表已加两人，第 3 人重复，原目标应怎样？",
+      "hint": "加载操作尚未提交。",
+      "solution": [
+        "销毁临时表。",
+        "关闭流。",
+        "保留调用前目标表不变。"
+      ],
+      "answer": "原目标长度、记录和拥有资源保持不变。",
+      "difficulty": 3,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "为何不用 fgets 后直接 strlen 来检测所有任意文件字节？",
+      "hint": "文件里可能有内嵌零。",
+      "solution": [
+        "fgets 可以读到零字节。",
+        "strlen 会在第一个零停止。",
+        "此处逐字节读取可明确拒绝内嵌零。"
+      ],
+      "answer": "简单 strlen 会丢失零后面的信息，不能据此宣称已验证整行。",
+      "difficulty": 4,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "文本 \"Ada 90 \" 应接受吗？",
+      "hint": "分数后不允许空白。",
+      "solution": [
+        "末尾还有一个空格。",
+        "协议要求数字后立即结束。",
+        "拒绝，不默默 trim。"
+      ],
+      "answer": "拒绝；若改变协议，应同步文档和测试。",
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "成功转移 staging 后为何不能再对它 gb_destroy？",
+      "hint": "目标与 staging 暂时包含相同的拥有指针。",
+      "solution": [
+        "所有权已经交给目标。",
+        "再次销毁会释放目标正在使用的块。",
+        "转移后不要重复释放，或先把源重置为空。"
+      ],
+      "answer": "避免重复释放；本项目转移后不再销毁 staging。",
+      "difficulty": 4,
+      "misconceptionTags": []
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "解析前几行成功就能逐步覆盖目标表。",
+      "correction": "后面失败会留下部分结果，违反整份成功才替换的契约。",
+      "tag": "c-project-input-m1"
+    },
+    {
+      "claim": "正常 EOF 与 I/O 错误都当成成功。",
+      "correction": "检查读取状态与 ferror，错误必须拒绝本次加载。",
+      "tag": "c-project-input-m2"
+    }
+  ],
+  "learningCheck": {
+    "question": "什么时候替换旧目标表？",
+    "choices": [
+      "第一条合法记录后",
+      "全部读取、解析、关闭成功后",
+      "打开文件后立即"
+    ],
+    "correctIndex": 1,
+    "feedback": [
+      "后续仍可能失败。",
+      "正确，所有检查通过才提交结果。",
+      "打开成功不能代表数据有效。"
+    ]
+  },
+  "interactiveVisual": {
+    "mode": "c-compare",
+    "prediction": "先遮住输出：检查字符形式，\"-1\" 不符合无符号十进制分数协议。 写下结果后，对比两个已编译的例子。",
+    "caption": "切换案例，比较代码、输入与预期输出。结果来自本书固定程序的本机执行检查；网页展示静态案例，不运行任意 C 代码。",
+    "experiment": {
+      "code": "#include <stdio.h>\n\nint main(void)\n{\n    const char *s = \"-1\";\n    int valid = 1;\n    for (size_t i = 0; s[i] != '\\0'; i++) {\n        if (s[i] < '0' || s[i] > '9') { valid = 0; break; }\n    }\n    printf(\"%d\\n\", valid);\n    return 0;\n}\n",
+      "stdin": "",
+      "stdout": "0\n",
+      "files": {},
+      "exitCode": 0
+    }
+  },
+  "prerequisites": [
+    "c-project-records"
+  ],
+  "difficulty": 6,
+  "misconceptionTags": [
+    "c-project-input-m1",
+    "c-project-input-m2"
+  ],
+  "sources": [
+    "n1570"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "humanReviewed": false,
+    "version": "0.1.0"
+  }
+}

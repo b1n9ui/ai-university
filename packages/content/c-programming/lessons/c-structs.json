@@ -1,0 +1,190 @@
+{
+  "id": "c-structs",
+  "number": "6.1",
+  "chapterId": "c-ch6",
+  "title": "结构体、typedef 与枚举",
+  "concept": "结构体把同一条记录的多个字段放在一起，避免姓名和成绩被排序拆散。",
+  "intuition": "把一个人的资料装在同一张卡片上，再把卡片放进数组；移动卡片就会一起移动全部字段。",
+  "objectives": [
+    "定义记录类型",
+    "typedef 只起别名",
+    "枚举表达有限状态"
+  ],
+  "body": [
+    {
+      "title": "定义记录类型",
+      "text": "struct Student { char name[21]; int score; }; 定义类型，末尾要分号。struct Student s = {\"Lin\", 88}; 创建对象。s.score 访问字段；若 p 指向记录，p->score 等价于 (*p).score。结构体赋值会复制各成员，内含数组成员也随记录一起复制。"
+    },
+    {
+      "title": "typedef 只起别名",
+      "text": "typedef struct { ... } Student; 给类型一个简短名字，不创建对象，也不分配内存。复制结构体中若包含指针，复制的是地址，不会深复制目标分配块。后面的动态记录表因此不能随意按值复制拥有者结构体。"
+    },
+    {
+      "title": "枚举表达有限状态",
+      "text": "enum Status { STATUS_OK, STATUS_INVALID, STATUS_FULL }; 用具名整数常量表达返回状态，比神秘数字更好读。C17 的 enum 不是自动验证输入的强类型，外部数字仍要检查。结构体可能有填充字节，不要用 sizeof 推断各字段简单相加，也不要直接把原始内存当跨平台文件格式。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "结构体把不同类型成员组成一个记录类型；typedef 提供类型别名；enum 提供具名整数常量。",
+    "conditions": [
+      "字符串字段必须留出终止零。",
+      "结构体包含拥有内存的指针时，必须定义复制与销毁规则。",
+      "不按原始结构体内存建立可移植文件格式。"
+    ]
+  },
+  "derivation": [
+    {
+      "text": "列出一条记录的字段与各自限制。"
+    },
+    {
+      "text": "定义类型并初始化一个对象。"
+    },
+    {
+      "text": "通过点或箭头访问成员，移动整条记录而非平行数组。"
+    }
+  ],
+  "workedExamples": [
+    {
+      "title": "一张成绩卡",
+      "problem": "创建姓名 Lin、成绩 88 的记录。",
+      "steps": [
+        "name 容量 21。",
+        "初始化时复制字符串含终止零。",
+        "按字段输出。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\ntypedef struct {\n    char name[21];\n    int score;\n} Student;\n\nint main(void)\n{\n    Student s = {\"Lin\", 88};\n    printf(\"%s %d\\n\", s.name, s.score);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "Lin 88\n",
+        "files": {},
+        "exitCode": 0
+      }
+    },
+    {
+      "title": "结构体复制",
+      "problem": "复制记录后改副本成绩，原记录如何？",
+      "steps": [
+        "此结构没有指针字段。",
+        "赋值复制数组成员和整数成员。",
+        "改副本不改原记录。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\ntypedef struct { char name[21]; int score; } Student;\n\nint main(void)\n{\n    Student a = {\"Lin\", 88};\n    Student b = a;\n    b.score = 90;\n    printf(\"%d %d\\n\", a.score, b.score);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "88 90\n",
+        "files": {},
+        "exitCode": 0
+      }
+    }
+  ],
+  "practice": [
+    {
+      "problem": "通过 Student *p 修改 s.score 为 95。",
+      "hint": "箭头访问指向记录的字段。",
+      "solution": [
+        "p=&s。",
+        "p->score=95。",
+        "s.score 被修改。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\ntypedef struct { char name[21]; int score; } Student;\n\nint main(void)\n{\n    Student s = {\"Bo\", 70};\n    Student *p = &s;\n    p->score = 95;\n    printf(\"%d\\n\", s.score);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "95\n",
+        "files": {},
+        "exitCode": 0
+      },
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "typedef int Score; 是否创建了名为 Score 的变量？",
+      "hint": "别名与对象不同。",
+      "solution": [
+        "typedef 声明类型别名。",
+        "Score s=80 才创建对象。",
+        "别名本身不保存成绩。"
+      ],
+      "answer": "没有；Score 是 int 的类型别名。",
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "包含 int *data 的结构体按值复制，会产生独立数组吗？",
+      "hint": "复制地址不等于复制目标。",
+      "solution": [
+        "data 的地址值被复制。",
+        "两个对象仍指向同一块。",
+        "若都当拥有者释放，就会重复释放。"
+      ],
+      "answer": "不会；需显式深复制或禁止拥有者的随意复制。",
+      "difficulty": 3,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "为什么不直接 fwrite 整个 Student 当通用存档？",
+      "hint": "想一想填充、整数表示与编码。",
+      "solution": [
+        "结构体可能含填充。",
+        "不同实现的布局和表示可能不同。",
+        "逐字段写明确文本格式更便于检查和移植。"
+      ],
+      "answer": "原始内存并非稳定的跨平台文件协议。",
+      "difficulty": 3,
+      "misconceptionTags": []
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "结构体里有数组，所以结构体不能赋值。",
+      "correction": "结构体赋值合法，其数组成员随结构体复制；数组本体不能直接 a=b 是另一条规则。",
+      "tag": "c-structs-m1"
+    },
+    {
+      "claim": "枚举会自动拒绝外部非法值。",
+      "correction": "枚举名字帮助表达意图，不代替输入验证。",
+      "tag": "c-structs-m2"
+    }
+  ],
+  "learningCheck": {
+    "question": "p 是 Student*，访问成绩字段应写？",
+    "choices": [
+      "p.score",
+      "p->score",
+      "score(p)"
+    ],
+    "correctIndex": 1,
+    "feedback": [
+      "p 自身是指针。",
+      "正确，箭头访问所指记录的成员。",
+      "没有定义这样的函数。"
+    ]
+  },
+  "interactiveVisual": {
+    "mode": "c-compare",
+    "prediction": "先遮住输出：创建姓名 Lin、成绩 88 的记录。 写下结果后，对比两个已编译的例子。",
+    "caption": "切换案例，比较代码、输入与预期输出。结果来自本书固定程序的本机执行检查；网页展示静态案例，不运行任意 C 代码。",
+    "experiment": {
+      "code": "#include <stdio.h>\n\ntypedef struct {\n    char name[21];\n    int score;\n} Student;\n\nint main(void)\n{\n    Student s = {\"Lin\", 88};\n    printf(\"%s %d\\n\", s.name, s.score);\n    return 0;\n}\n",
+      "stdin": "",
+      "stdout": "Lin 88\n",
+      "files": {},
+      "exitCode": 0
+    }
+  },
+  "prerequisites": [
+    "c-memory"
+  ],
+  "difficulty": 4,
+  "misconceptionTags": [
+    "c-structs-m1",
+    "c-structs-m2"
+  ],
+  "sources": [
+    "n1570"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "humanReviewed": false,
+    "version": "0.1.0"
+  }
+}

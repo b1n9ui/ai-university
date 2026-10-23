@@ -1,0 +1,196 @@
+{
+  "id": "c-bits",
+  "number": "7.3",
+  "chapterId": "c-ch7",
+  "title": "无符号位运算与标志",
+  "concept": "位运算可以把多个独立开关放进一个整数；要先区分逻辑判断与逐位操作。",
+  "intuition": "把低位看成几个独立灯，掩码像只看某盏灯的挡板。这个模型只解释无符号整数值的位，不依赖内存的字节顺序。",
+  "objectives": [
+    "四个常见运算",
+    "设置、检查、清除",
+    "移位的严格边界"
+  ],
+  "body": [
+    {
+      "title": "四个常见运算",
+      "text": "& 按位与、| 按位或、^ 按位异或、~ 按位取反。它们与 &&、||、! 的逻辑语义不同。逻辑运算只关心是否为零，并可能短路；位运算对位计算且没有这样的短路规则。使用 unsigned int 和带 U 后缀的常量，减少有符号表示与提升带来的干扰。"
+    },
+    {
+      "title": "设置、检查、清除",
+      "text": "定义 READ=1U、WRITE=2U，flags|=WRITE 设置写标志，(flags&WRITE)!=0 检查，flags&=~WRITE 清除。~ 会翻转类型的所有值位，不只是屏幕上写出的几位，因此清除时要和原 flags 相与。输出无符号十进制使用 %u。"
+    },
+    {
+      "title": "移位的严格边界",
+      "text": "1U<<k 表示把一个位向左移 k 位，要求 k 非负且小于提升后左操作数类型的位宽。右移无符号数按数值除以相应的 2 的幂截断。不要对负有符号数照搬无符号规则。为可移植性，本节只用低 0..3 位，标准保证 unsigned int 至少足以容纳它们。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "位运算按整数表示的位计算；移位次数必须在合法位宽范围内，本书只讨论无符号值。",
+    "conditions": [
+      "只操作 unsigned int 与匹配的 U 常量。",
+      "移位次数使用已证明小于类型位宽的常量。",
+      "不把位值模型冒充实际内存地址或字节序。"
+    ]
+  },
+  "derivation": [
+    {
+      "text": "给每个开关分配不重叠的掩码。"
+    },
+    {
+      "text": "分别用或设置、与检查、与取反掩码清除。"
+    },
+    {
+      "text": "每步用小十进制值独立核对，不混用逻辑操作符。"
+    }
+  ],
+  "workedExamples": [
+    {
+      "title": "两个开关",
+      "problem": "从 READ 开始，添加 WRITE，再检查。",
+      "steps": [
+        "1U 与 2U 按位或得 3。",
+        "3U&2U 非零。",
+        "输出 3 和 1。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    const unsigned READ = 1U, WRITE = 2U;\n    unsigned flags = READ;\n    flags |= WRITE;\n    printf(\"%u %d\\n\", flags, (flags & WRITE) != 0);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "3 1\n",
+        "files": {},
+        "exitCode": 0
+      }
+    },
+    {
+      "title": "清除一位",
+      "problem": "flags=3，清除 WRITE 位。",
+      "steps": [
+        "~2U 在对应位置变零。",
+        "与原 flags 相与。",
+        "只保留 READ，得 1。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    unsigned flags = 3U;\n    flags &= ~2U;\n    printf(\"%u\\n\", flags);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "1\n",
+        "files": {},
+        "exitCode": 0
+      }
+    }
+  ],
+  "practice": [
+    {
+      "problem": "1U<<3 的数值是多少？",
+      "hint": "从最低位向左移动三次。",
+      "solution": [
+        "1、2、4、8。",
+        "该移位在最小保证位宽内。",
+        "输出 8。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    printf(\"%u\\n\", 1U << 3);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "8\n",
+        "files": {},
+        "exitCode": 0
+      },
+      "difficulty": 1,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "flags=5，检查掩码 4U 是否设置。",
+      "hint": "与掩码后比较非零。",
+      "solution": [
+        "5 的低位包含 4 和 1。",
+        "5&4 得 4。",
+        "非零，输出 1。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    unsigned flags = 5U;\n    printf(\"%d\\n\", (flags & 4U) != 0);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "1\n",
+        "files": {},
+        "exitCode": 0
+      },
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "&& 和 & 可以互换来保护除零吗？",
+      "hint": "哪种运算短路？",
+      "solution": [
+        "&& 左边为假不算右边。",
+        "& 没有逻辑短路。",
+        "保护条件必须使用 && 并满足其他除法范围要求。"
+      ],
+      "answer": "不能；& 不是短路逻辑与。",
+      "difficulty": 3,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "能把 1U 移动“类型位宽”这么多位吗？",
+      "hint": "合法次数严格小于位宽。",
+      "solution": [
+        "等于位宽已经越界。",
+        "即使某机器看似绕回也不能依赖。",
+        "先限制移位次数。"
+      ],
+      "answer": "不能，移位次数必须小于位宽。",
+      "difficulty": 3,
+      "misconceptionTags": []
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "位掩码可以用任意连续编号 1、2、3。",
+      "correction": "独立单比特标志应为不同的 2 的幂，3 同时含前两位。",
+      "tag": "c-bits-m1"
+    },
+    {
+      "claim": "& 和 && 只差写法。",
+      "correction": "一个逐位运算，一个逻辑短路，行为与结果类型含义不同。",
+      "tag": "c-bits-m2"
+    }
+  ],
+  "learningCheck": {
+    "question": "设置标志 WRITE 而保留其他位应写？",
+    "choices": [
+      "flags |= WRITE",
+      "flags = WRITE",
+      "flags && WRITE"
+    ],
+    "correctIndex": 0,
+    "feedback": [
+      "正确，按位或保留已有位。",
+      "赋值会丢掉其他标志。",
+      "逻辑表达式不执行设置动作。"
+    ]
+  },
+  "interactiveVisual": {
+    "mode": "c-compare",
+    "prediction": "先遮住输出：从 READ 开始，添加 WRITE，再检查。 写下结果后，对比两个已编译的例子。",
+    "caption": "切换案例，比较代码、输入与预期输出。结果来自本书固定程序的本机执行检查；网页展示静态案例，不运行任意 C 代码。",
+    "experiment": {
+      "code": "#include <stdio.h>\n\nint main(void)\n{\n    const unsigned READ = 1U, WRITE = 2U;\n    unsigned flags = READ;\n    flags |= WRITE;\n    printf(\"%u %d\\n\", flags, (flags & WRITE) != 0);\n    return 0;\n}\n",
+      "stdin": "",
+      "stdout": "3 1\n",
+      "files": {},
+      "exitCode": 0
+    }
+  },
+  "prerequisites": [
+    "c-recursion"
+  ],
+  "difficulty": 5,
+  "misconceptionTags": [
+    "c-bits-m1",
+    "c-bits-m2"
+  ],
+  "sources": [
+    "n1570"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "humanReviewed": false,
+    "version": "0.1.0"
+  }
+}

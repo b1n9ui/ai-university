@@ -1,0 +1,202 @@
+{
+  "id": "c-for",
+  "number": "3.1",
+  "chapterId": "c-ch3",
+  "title": "for 循环与嵌套循环",
+  "concept": "已知重复次数时，for 把起点、条件、更新写在一起，更容易看清下标与次数。",
+  "intuition": "用一张小表写出每轮的 i，比凭感觉数循环次数可靠。嵌套循环则像表格：外层选行，内层逐列处理。",
+  "objectives": [
+    "读懂 for 的四个阶段",
+    "次数与下标分开",
+    "嵌套的工作量"
+  ],
+  "body": [
+    {
+      "title": "读懂 for 的四个阶段",
+      "text": "for (int i = 0; i < 3; i++) 先初始化一次，然后依次判断、执行循环体、更新，再回到判断。i 取 0、1、2，一共三次。continue 会转到 for 的更新部分，再判断；break 则完全离开。不要在 for 后误加分号，否则循环体变成空语句。"
+    },
+    {
+      "title": "次数与下标分开",
+      "text": "从 0 开始不是 C 的强制风格，而是与数组下标相配。处理 n 个元素通常使用 i < n；i <= n 会多访问一个。用 size_t 表示长度时，避免写 i >= 0 的无符号倒序循环；无符号数永远不小于零。可以从 n 开始，在 i > 0 时访问 i - 1。"
+    },
+    {
+      "title": "嵌套的工作量",
+      "text": "外层循环每走一轮，内层会完整执行一次。两行三列总共六次内层动作。生成矩形时，内层输出每列，内层结束后再输出换行。若内层做 n 次、外层也做 n 次，动作数量按平方增长；这为后面的算法复杂度建立直觉，不代替性能测量。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "for 由初始化、控制条件、更新表达式和循环体组成；内层变量可以在各自块中独立生存。",
+    "conditions": [
+      "循环计数与结果可表示。",
+      "访问长度为 n 的数组时只用 0 到 n-1 的下标。",
+      "无符号循环不依赖“小于零”。"
+    ]
+  },
+  "derivation": [
+    {
+      "text": "把初始化写在第一次判断之前。"
+    },
+    {
+      "text": "逐轮列出条件成立时的变量值。"
+    },
+    {
+      "text": "嵌套时固定一个外层值，完整追踪内层，再换下一个外层值。"
+    }
+  ],
+  "workedExamples": [
+    {
+      "title": "三次问候",
+      "problem": "用 for 输出编号 0、1、2。",
+      "steps": [
+        "i 初值为 0。",
+        "小于 3 才打印。",
+        "每轮加一，3 不打印。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    for (int i = 0; i < 3; i++) {\n        printf(\"%d\\n\", i);\n    }\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "0\n1\n2\n",
+        "files": {},
+        "exitCode": 0
+      }
+    },
+    {
+      "title": "两行三列",
+      "problem": "打印两行，每行三个星号。",
+      "steps": [
+        "外层执行两次。",
+        "内层每次打印三个星号。",
+        "每行结束后 putchar 换行。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    for (int row = 0; row < 2; row++) {\n        for (int col = 0; col < 3; col++) {\n            putchar('*');\n        }\n        putchar('\\n');\n    }\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "***\n***\n",
+        "files": {},
+        "exitCode": 0
+      }
+    }
+  ],
+  "practice": [
+    {
+      "problem": "求 1 到 5 的和。",
+      "hint": "用 sum 保存累计值。",
+      "solution": [
+        "初始化 sum 为零。",
+        "遍历 1、2、3、4、5。",
+        "累计得 15。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    int sum = 0;\n    for (int i = 1; i <= 5; i++) {\n        sum += i;\n    }\n    printf(\"%d\\n\", sum);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "15\n",
+        "files": {},
+        "exitCode": 0
+      },
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "输出 0 到 4 中的偶数。",
+      "hint": "余数检查后才输出。",
+      "solution": [
+        "遍历五个整数。",
+        "i % 2 为 0 时输出。",
+        "结果是 0、2、4。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    for (int i = 0; i < 5; i++) {\n        if (i % 2 == 0) {\n            printf(\"%d\\n\", i);\n        }\n    }\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "0\n2\n4\n",
+        "files": {},
+        "exitCode": 0
+      },
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "为什么 for(size_t i=3; i>=0; i--) 无法靠条件正常结束？",
+      "hint": "size_t 是无符号整数类型。",
+      "solution": [
+        "所有 i 都满足 >=0。",
+        "零减一会回绕到很大的值。",
+        "改为 i=3; i>0; i--，使用 i-1。"
+      ],
+      "answer": "条件永远为真；无符号倒序要在减到零之前停止。",
+      "difficulty": 3,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "打印三行，每行数字 12。",
+      "hint": "换行写在内层之后。",
+      "solution": [
+        "外层三轮。",
+        "内层从 1 到 2。",
+        "每次内层结束输出换行。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    for (int r = 0; r < 3; r++) {\n        for (int c = 1; c <= 2; c++) {\n            printf(\"%d\", c);\n        }\n        putchar('\\n');\n    }\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "12\n12\n12\n",
+        "files": {},
+        "exitCode": 0
+      },
+      "difficulty": 2,
+      "misconceptionTags": []
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "i <= n 恰好执行 n 次。",
+      "correction": "取决于起点；从 0 开始会执行 n+1 次。",
+      "tag": "c-for-m1"
+    },
+    {
+      "claim": "内层结束就会自动换行。",
+      "correction": "换行也是输出动作，必须明确写出来。",
+      "tag": "c-for-m2"
+    }
+  ],
+  "learningCheck": {
+    "question": "for(int i=0; i<4; i++) 的循环体执行几次？",
+    "choices": [
+      "3",
+      "4",
+      "5"
+    ],
+    "correctIndex": 1,
+    "feedback": [
+      "0、1、2、3 四个值。",
+      "正确，4 不进入循环体。",
+      "只有 <=4 才会是五次。"
+    ]
+  },
+  "interactiveVisual": {
+    "mode": "c-compare",
+    "prediction": "先遮住输出：用 for 输出编号 0、1、2。 写下结果后，对比两个已编译的例子。",
+    "caption": "切换案例，比较代码、输入与预期输出。结果来自本书固定程序的本机执行检查；网页展示静态案例，不运行任意 C 代码。",
+    "experiment": {
+      "code": "#include <stdio.h>\n\nint main(void)\n{\n    for (int i = 0; i < 3; i++) {\n        printf(\"%d\\n\", i);\n    }\n    return 0;\n}\n",
+      "stdin": "",
+      "stdout": "0\n1\n2\n",
+      "files": {},
+      "exitCode": 0
+    }
+  },
+  "prerequisites": [
+    "c-while"
+  ],
+  "difficulty": 2,
+  "misconceptionTags": [
+    "c-for-m1",
+    "c-for-m2"
+  ],
+  "sources": [
+    "n1570"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "humanReviewed": false,
+    "version": "0.1.0"
+  }
+}

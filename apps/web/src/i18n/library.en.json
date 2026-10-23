@@ -70,5 +70,13 @@
   "数学": "Mathematics",
   "从微积分到线性代数，理解变化、空间与方程。": "Understand change, space, and equations, from calculus to linear algebra.",
   "其他": "Other Subjects",
-  "Python 编程入门与 AI 辅助开发，从理解程序到完成项目。": "Python and AI-assisted development: from understanding programs to delivering projects."
+  "Python 编程入门与 AI 辅助开发，从理解程序到完成项目。": "Python and AI-assisted development: from understanding programs to delivering projects.",
+  "C 语言：从零到完整程序": "C Programming from Zero",
+  "从零开始": "From Zero",
+  "从第一份源文件到可测试的完整项目": "From your first source file to a tested project",
+  "没有编程或终端经验的中文读者": "Chinese readers without programming or terminal experience",
+  "8 章 · 32 节 · C17 与命令行项目": "8 chapters · 32 lessons · C17 and a command-line project",
+  "面向零基础的 C17 教材：安装与编译、控制流、函数、数组、指针、内存与文件，配 116 个可运行案例和完整成绩管理器。": "C17 for beginners: setup, control flow, functions, arrays, pointers, memory, and files, with 116 runnable cases and a complete gradebook project.",
+  "C、Python 编程入门与 AI 辅助开发，从理解程序到完成项目。": "C, Python, and AI-assisted development: from understanding programs to delivering projects.",
+  "C17 · 指针与内存 · 完整项目": "C17 · pointers and memory · complete project"
 }

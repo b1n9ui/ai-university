@@ -1,0 +1,207 @@
+{
+  "id": "c-arithmetic",
+  "number": "1.4",
+  "chapterId": "c-ch1",
+  "title": "运算、转换与数值边界",
+  "concept": "表达式把数据变成结果；理解运算发生在哪种类型里，才能避免“看起来算对、结果却错”。",
+  "intuition": "先决定用整数尺还是小数尺，再计算。把整数除法的结果放进 double，不会让先前丢掉的小数重新出现。",
+  "objectives": [
+    "整数商和余数",
+    "转换发生的时间",
+    "优先级和副作用",
+    "范围是程序条件"
+  ],
+  "body": [
+    {
+      "title": "整数商和余数",
+      "text": "两个整数相除得到整数商，C17 向零截断：7 / 2 是 3，-7 / 2 是 -3。% 只用于整数，-7 % 2 是 -1；被除数等于商乘除数再加余数。除数必须非零，且商可表示；例如最小有符号整数除以 -1 也可能越界，不能只检查零。"
+    },
+    {
+      "title": "转换发生的时间",
+      "text": "double a = 7 / 2; 先执行整数除法，a 才得到 3.0。写 7.0 / 2 或 (double)7 / 2 才先进入浮点运算。强制转换写在表达式前的圆括号里。转换不自动验证范围；浮点数转整数会向零截断，但超出目标整数可表示范围不能依赖。"
+    },
+    {
+      "title": "优先级和副作用",
+      "text": "乘除取余先于加减；不确定就加括号。++ 是更新变量的操作，初学时单独写一行，例如 i++;。不要写 i++ + i++ 这样的未定序多次修改，也不要假设函数各实参从左向右求值。把复杂表达式拆成几句能直接减少这类问题。"
+    },
+    {
+      "title": "范围是程序条件",
+      "text": "有符号整数溢出属于未定义行为，不保证绕回。unsigned 按模运算回绕，但仍可能破坏业务结果。混用有符号和无符号数会触发转换，例如负数可能变成很大的无符号数。先用本书限定的小范围数据，后面再学 limits.h 和操作前检查。浮点数是近似表示，显示两位只是输出格式，不是改变内部精度。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "表达式依据操作数类型执行转换和运算；赋值目标的类型通常在右侧求值后才起作用。",
+    "conditions": [
+      "所有运算结果在相应类型的合法范围内。",
+      "整数除法的除数非零，且商可表示。",
+      "不依赖未定序副作用或精确的浮点十进制表示。"
+    ]
+  },
+  "derivation": [
+    {
+      "text": "先标记每个操作数的类型。"
+    },
+    {
+      "text": "按括号和优先级计算中间结果，并检查范围。"
+    },
+    {
+      "text": "最后赋值或输出，确认转换发生在运算之前还是之后。"
+    }
+  ],
+  "workedExamples": [
+    {
+      "title": "三种平均值",
+      "problem": "比较 7 / 2、赋值后转 double、先转 double 三种结果。",
+      "steps": [
+        "整数商为 3。",
+        "事后存入 double 得到 3.0。",
+        "先转换再除得到 3.5。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    int a = 7 / 2;\n    double b = 7 / 2;\n    double c = (double)7 / 2;\n    printf(\"%d %.1f %.1f\\n\", a, b, c);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "3 3.0 3.5\n",
+        "files": {},
+        "exitCode": 0
+      }
+    },
+    {
+      "title": "把秒拆成分秒",
+      "problem": "把 185 秒拆成完整分钟和余下秒数。",
+      "steps": [
+        "除以 60 得完整分钟 3。",
+        "对 60 取余得 5。",
+        "两部分合起来仍为 185 秒。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    int seconds = 185;\n    printf(\"%d min %d sec\\n\", seconds / 60, seconds % 60);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "3 min 5 sec\n",
+        "files": {},
+        "exitCode": 0
+      }
+    }
+  ],
+  "practice": [
+    {
+      "problem": "求 2、3 两个数的浮点平均值。",
+      "hint": "先把加法结果转换为 double，再除 2。",
+      "solution": [
+        "小整数相加为 5。",
+        "除以 2.0 触发浮点除法。",
+        "输出一位小数。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    double mean = (2 + 3) / 2.0;\n    printf(\"%.1f\\n\", mean);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "2.5\n",
+        "files": {},
+        "exitCode": 0
+      },
+      "difficulty": 1,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "求 -7 / 2 与 -7 % 2。",
+      "hint": "用向零截断，再验算商乘除数加余数。",
+      "solution": [
+        "商为 -3。",
+        "余数为 -1。",
+        "(-3)*2+(-1)=-7。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    printf(\"%d %d\\n\", -7 / 2, -7 % 2);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "-3 -1\n",
+        "files": {},
+        "exitCode": 0
+      },
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "int max = INT_MAX; max + 1 能保证回到 INT_MIN 吗？",
+      "hint": "区分有符号溢出和 unsigned 回绕。",
+      "solution": [
+        "INT_MAX 已是 int 上限。",
+        "再加 1 超出可表示范围。",
+        "应在加法前检查，不把错误表达式当实验。"
+      ],
+      "answer": "不能；有符号溢出是未定义行为。应先检查 max < INT_MAX。",
+      "difficulty": 3,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "单价 125 分，买 3 件，支付 500 分，求找零。",
+      "hint": "全程用整数分。",
+      "solution": [
+        "总价 125*3=375。",
+        "找零 500-375=125。",
+        "明确单位为分。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    int change_cents = 500 - 125 * 3;\n    printf(\"%d cents\\n\", change_cents);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "125 cents\n",
+        "files": {},
+        "exitCode": 0
+      },
+      "difficulty": 2,
+      "misconceptionTags": []
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "给 double 赋值就会进行小数除法。",
+      "correction": "右侧若是两个整数先做整数除法；把一个操作数提前转换。",
+      "tag": "c-arithmetic-m1"
+    },
+    {
+      "claim": "溢出后看见负数是 C 的规定。",
+      "correction": "有符号溢出没有这种保证；程序必须在运算前排除它。",
+      "tag": "c-arithmetic-m2"
+    }
+  ],
+  "learningCheck": {
+    "question": "double x = 5 / 2; 中 x 的值是？",
+    "choices": [
+      "2.5",
+      "2.0",
+      "无法确定"
+    ],
+    "correctIndex": 1,
+    "feedback": [
+      "小数已在整数除法时截掉。",
+      "正确，整数商 2 再转换成 2.0。",
+      "本例没有溢出或除零，结果确定。"
+    ]
+  },
+  "interactiveVisual": {
+    "mode": "c-compare",
+    "prediction": "先遮住输出：比较 7 / 2、赋值后转 double、先转 double 三种结果。 写下结果后，对比两个已编译的例子。",
+    "caption": "切换案例，比较代码、输入与预期输出。结果来自本书固定程序的本机执行检查；网页展示静态案例，不运行任意 C 代码。",
+    "experiment": {
+      "code": "#include <stdio.h>\n\nint main(void)\n{\n    int a = 7 / 2;\n    double b = 7 / 2;\n    double c = (double)7 / 2;\n    printf(\"%d %.1f %.1f\\n\", a, b, c);\n    return 0;\n}\n",
+      "stdin": "",
+      "stdout": "3 3.0 3.5\n",
+      "files": {},
+      "exitCode": 0
+    }
+  },
+  "prerequisites": [
+    "c-values"
+  ],
+  "difficulty": 1,
+  "misconceptionTags": [
+    "c-arithmetic-m1",
+    "c-arithmetic-m2"
+  ],
+  "sources": [
+    "n1570"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "humanReviewed": false,
+    "version": "0.1.0"
+  }
+}

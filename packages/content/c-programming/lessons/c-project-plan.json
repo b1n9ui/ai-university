@@ -1,0 +1,190 @@
+{
+  "id": "c-project-plan",
+  "number": "8.1",
+  "chapterId": "c-ch8",
+  "title": "综合项目一：规格、数据与验收",
+  "concept": "把学过的语法组织成一个可交付程序，要先固定输入格式、输出内容和失败行为。",
+  "intuition": "本项目像一个小型成绩柜：先检查所有卡片都合法，再统一计算报告；任意一张坏卡都不能悄悄消失。",
+  "objectives": [
+    "交付目标",
+    "数据与容量",
+    "边界写进需求"
+  ],
+  "body": [
+    {
+      "title": "交付目标",
+      "text": "完成命令行 gradebook：接收一个文本文件路径，输出人数、总分、平均分、及格人数，以及按分数降序排列的姓名与成绩。不联网、不登录、不使用数据库。输入每行一个记录，示例为 Lin 88；姓名限 1..20 个 ASCII 英文字母，区分大小写，成绩为 0..100 的十进制数字。两字段之间一个普通空格，不允许额外空格、正负号或尾部文字。"
+    },
+    {
+      "title": "数据与容量",
+      "text": "Student 保存 name[21] 和 score；Gradebook 拥有动态 Student 数组，长度与容量分开，最多 100 人，姓名不能重复。总分最多 10000，可由 C 标准保证的 int 范围容纳。平均分用 double 显示两位；空文件接受为空表，平均值显示 n/a，而不是除以零。排序按分数降序，同分按 strcmp 的名字字典序；这是执行字符集下的顺序，不宣称某种人类语言排序。"
+    },
+    {
+      "title": "边界写进需求",
+      "text": "接受 LF、CRLF，以及没有最后换行的非空最后一行；拒绝空行、内嵌零字节、过长行、重复姓名和第 101 条。错误信息写 stderr，状态非零，不输出半份报告。正常输出只写 stdout，可重定向保存。输入路径由用户指定；项目不执行 shell，不猜测文件类型。学习者先照附录把文件放在同一目录，然后按 README 的构建命令运行。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "验收是能逐条执行的输入与结果约定。本项目把格式、范围、容量、排序和失败时的状态都作为接口的一部分。",
+    "conditions": [
+      "输入文件为无编码歧义的 ASCII 记录文本，姓名仅英文字母。",
+      "最多 100 条且姓名唯一。",
+      "项目处理单次本地报告，不实现多用户或并发保存。"
+    ]
+  },
+  "derivation": [
+    {
+      "text": "先用三行样例手算报告。"
+    },
+    {
+      "text": "列出每条拒绝规则的反例。"
+    },
+    {
+      "text": "把数据结构与模块职责写好，再实现最小贯通路径。"
+    }
+  ],
+  "workedExamples": [
+    {
+      "title": "独立手算报告",
+      "problem": "Lin 88、Bo 59、Ada 100 的人数、总分与及格人数？",
+      "steps": [
+        "人数为 3。",
+        "总分 88+59+100=247。",
+        ">=60 的两人及格，平均显示 82.33。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    int total = 88 + 59 + 100;\n    printf(\"count=3 total=%d mean=%.2f pass=2\\n\", total, total / 3.0);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "count=3 total=247 mean=82.33 pass=2\n",
+        "files": {},
+        "exitCode": 0
+      }
+    },
+    {
+      "title": "空表行为",
+      "problem": "零条记录的平均值应该如何表示？",
+      "steps": [
+        "人数为零。",
+        "不执行除法。",
+        "显示 n/a。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    size_t count = 0;\n    if (count == 0) { puts(\"mean=n/a\"); } else { printf(\"mean=%.2f\\n\", 0.0 / count); }\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "mean=n/a\n",
+        "files": {},
+        "exitCode": 0
+      }
+    }
+  ],
+  "practice": [
+    {
+      "problem": "姓名允许空格时，当前“姓名 空格 成绩”格式有什么问题？",
+      "hint": "分隔符与内容会混淆。",
+      "solution": [
+        "字段边界不再唯一。",
+        "需设计引号、转义或不同协议。",
+        "首版限制姓名为英文字母，保持规则简单。"
+      ],
+      "answer": "当前首版不接受带空格姓名；若扩展，要同时更新解析器、文档与测试。",
+      "difficulty": 3,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "100 人每人 100 分，总分能放进标准保证的 int 吗？",
+      "hint": "int 至少能表示到 32767。",
+      "solution": [
+        "总分最大 10000。",
+        "10000 小于 32767。",
+        "固定上限使本项目累计安全。"
+      ],
+      "answer": "能；项目上限保证总分至多 10000。",
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "60 分算及格，输入两人 59 和 60 的及格人数？",
+      "hint": "阈值含 60。",
+      "solution": [
+        "59 不及格。",
+        "60 及格。",
+        "人数为 1。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    int scores[] = {59, 60};\n    int passed = 0;\n    for (size_t i = 0; i < 2; i++) { if (scores[i] >= 60) { passed++; } }\n    printf(\"%d\\n\", passed);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "1\n",
+        "files": {},
+        "exitCode": 0
+      },
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "读取第 3 行失败，能输出前两行的正式报告吗？",
+      "hint": "本项目承诺整份输入有效才报告。",
+      "solution": [
+        "前两行不代表完整文件。",
+        "失败要丢弃本次临时结果。",
+        "stderr 报错，stdout 为空。"
+      ],
+      "answer": "不能；拒绝整份输入，避免半份报告被误认成完整统计。",
+      "difficulty": 3,
+      "misconceptionTags": []
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "先写功能，边界以后随意补。",
+      "correction": "边界影响解析和所有权设计，先固定再编码。",
+      "tag": "c-project-plan-m1"
+    },
+    {
+      "claim": "空表平均值就写 0。",
+      "correction": "零是有效数值，不能冒充不存在的平均值。",
+      "tag": "c-project-plan-m2"
+    }
+  ],
+  "learningCheck": {
+    "question": "成绩文件第 5 行非法时，本项目应？",
+    "choices": [
+      "忽略第 5 行继续",
+      "整份拒绝且不输出报告",
+      "用 0 替换"
+    ],
+    "correctIndex": 1,
+    "feedback": [
+      "静默丢行破坏数据完整性。",
+      "正确，失败行为属于规格。",
+      "不能替用户猜测数据。"
+    ]
+  },
+  "interactiveVisual": {
+    "mode": "c-compare",
+    "prediction": "先遮住输出：Lin 88、Bo 59、Ada 100 的人数、总分与及格人数？ 写下结果后，对比两个已编译的例子。",
+    "caption": "切换案例，比较代码、输入与预期输出。结果来自本书固定程序的本机执行检查；网页展示静态案例，不运行任意 C 代码。",
+    "experiment": {
+      "code": "#include <stdio.h>\n\nint main(void)\n{\n    int total = 88 + 59 + 100;\n    printf(\"count=3 total=%d mean=%.2f pass=2\\n\", total, total / 3.0);\n    return 0;\n}\n",
+      "stdin": "",
+      "stdout": "count=3 total=247 mean=82.33 pass=2\n",
+      "files": {},
+      "exitCode": 0
+    }
+  },
+  "prerequisites": [
+    "c-testing"
+  ],
+  "difficulty": 5,
+  "misconceptionTags": [
+    "c-project-plan-m1",
+    "c-project-plan-m2"
+  ],
+  "sources": [
+    "n1570"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "humanReviewed": false,
+    "version": "0.1.0"
+  }
+}

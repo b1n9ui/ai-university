@@ -1,6 +1,6 @@
 {
   "name": "ai-university",
-  "version": "0.18.0",
+  "version": "0.19.0",
   "private": true,
   "type": "module",
   "description": "AI-authored open textbooks with static interactive illustrations.",
@@ -14,14 +14,16 @@
     "typecheck": "tsc --noEmit",
     "test": "node --test scripts/*.test.mjs",
     "test:e2e": "npm run build && playwright test",
-    "build": "node scripts/build-english-content.mjs && npm run validate:content && npm run typecheck && node scripts/build-book.mjs && node scripts/build-english-book.mjs && node scripts/build-programming.mjs && vite build",
+    "build": "node scripts/build-english-content.mjs && npm run validate:content && npm run typecheck && node scripts/build-book.mjs && node scripts/build-english-book.mjs && npm run build:c && node scripts/build-programming.mjs && vite build",
     "preview": "vite preview --host 127.0.0.1",
-    "check": "npm run check:python && npm run check:ai-development && npm run build && npm test",
+    "check": "npm run check:python && npm run check:ai-development && npm run build && npm run check:c && npm test",
     "content:scaffold": "node scripts/scaffold-lesson.mjs",
     "build:python": "node packages/content/python/tools/validate.mjs && python3 packages/content/python/tools/traces.py && node packages/content/python/tools/build.mjs",
     "check:python": "node packages/content/python/tools/validate.mjs && python3 packages/content/python/tools/verify.py && python3 packages/content/python/tools/test_traces.py && python3 packages/content/python/tools/traces.py --check && node packages/content/python/tools/build.mjs --check",
     "build:ai-development": "node packages/content/ai-development/tools/validate.mjs && node packages/content/ai-development/tools/build.mjs",
-    "check:ai-development": "node packages/content/ai-development/tools/validate.mjs && node --test packages/content/ai-development/tools/git-lab.test.mjs && npm test --prefix packages/content/ai-development/project && node packages/content/ai-development/tools/build.mjs --check"
+    "check:ai-development": "node packages/content/ai-development/tools/validate.mjs && node --test packages/content/ai-development/tools/git-lab.test.mjs && npm test --prefix packages/content/ai-development/project && node packages/content/ai-development/tools/build.mjs --check",
+    "build:c": "node packages/content/c-programming/tools/validate.mjs && node packages/content/c-programming/tools/build.mjs",
+    "check:c": "node packages/content/c-programming/tools/validate.mjs && python3 packages/content/c-programming/tools/verify.py && node packages/content/c-programming/tools/build.mjs --check"
   },
   "dependencies": {
     "katex": "^0.19.0",

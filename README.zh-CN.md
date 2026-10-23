@@ -50,7 +50,7 @@ npm run preview   # 查看构建后的静态版本
 
 ## 分类与书库
 
-`packages/content/library.json` 统一维护分类、学科方向、教材简介和出版状态。当前 10 本已出版：数学 8 本、其他 2 本。数学分类包含微积分 I/II/III、线性代数、常微分方程、概率与统计、离散数学、实分析；其他分类暂时收录 Python 编程入门与《带着 AI 做项目》。规划条目不提供空白章节或阅读链接。新增规划会自动进入首页方向与书库，整本内容接入完成后再出版。详见 [系列目录与新增教材](docs/LIBRARY.md)。
+`packages/content/library.json` 统一维护分类、学科方向、教材简介和出版状态。当前 11 本已出版：数学 8 本、其他 3 本。数学分类包含微积分 I/II/III、线性代数、常微分方程、概率与统计、离散数学、实分析；其他分类收录 C 语言、Python 编程入门与《带着 AI 做项目》。规划条目不提供空白章节或阅读链接。新增规划会自动进入首页方向与书库，整本内容接入完成后再出版。详见 [系列目录与新增教材](docs/LIBRARY.md)。
 
 ## 第一卷的完整范围
 
@@ -105,7 +105,7 @@ npm run preview   # 查看构建后的静态版本
 
 ## 阅读与下载
 
-- 网站 v0.18.0：数学系列首页、按方向和出版状态筛选的书库、教材主页、数学八卷共 71 个章节主页、345 个知识点页面、实验室、分页练习中心、全文搜索、公式/术语/附录索引、阅读指南、下载、项目与贡献资料。
+- 网站 v0.19.0：数学系列首页、按方向和出版状态筛选的书库、教材主页、数学八卷共 71 个章节主页、345 个知识点页面、实验室、分页练习中心、全文搜索、公式/术语/附录索引、阅读指南、下载、项目与贡献资料。
 - 阅读页：专注模式、嵌入演示、页内定位、上下节翻页、收藏、较大字号与已读标记。练习支持逐题/连续查看、提示、完整解答与数值检查。
 - [微积分 I 书稿](book/Calculus-I.md)与[微积分 II 书稿](book/Calculus-II.md)、[微积分 III 书稿](book/Calculus-III.md)与[线性代数书稿](book/Linear-Algebra.md)、[常微分方程书稿](book/Ordinary-Differential-Equations.md)：版本化源产物，包含所有解答。
 - `dist/book.html` 与 `dist/calculus-2.html` 与 `dist/calculus-3.html` 与 `dist/linear-algebra.html`：数学八卷各自的完整阅读页（另含 `dist/ordinary-differential-equations.html` 、`dist/probability-statistics.html` 、`dist/discrete-math.html` 与 `dist/real-analysis.html`），公式预先排版，支持浏览器打印为 PDF。
@@ -129,7 +129,7 @@ docs/                      架构、内容规范、生成检查流程、部署�
 
 ## 质量与版本
 
-网站版本 **v0.18.0**；微积分 I 内容为 **v0.3.3**，微积分 II、III 为 **v0.1.2**，其余数学卷均为 **v0.1.1**。尚未逐节人工审校。结构校验、公式渲染、先修图与选定数值验证可以发现部分错误，但不等同于逐式形式化证明。欢迎用具体反例、章节位置和可复算步骤提交勘误。
+网站版本 **v0.19.0**；微积分 I 内容为 **v0.3.3**，微积分 II、III 为 **v0.1.2**，其余数学卷均为 **v0.1.1**。尚未逐节人工审校。结构校验、公式渲染、先修图与选定数值验证可以发现部分错误，但不等同于逐式形式化证明。欢迎用具体反例、章节位置和可复算步骤提交勘误。
 
 `npm run check` 检查所有章节结构、章节链接、公式语法、先修有向无环图、视觉函数配置与数学模型。浏览器验证记录见 [QA](docs/QA.md)。
 
@@ -191,3 +191,9 @@ English: AI University publishes complete AI-authored, versioned textbooks with 
 完整首版 8 章 40 节、80 个例题、184 道带解答练习与回顾题。由实数完备性到数列、级数、实线拓扑、连续、微分、Riemann 积分及一致收敛；每节含证明练习。交互模型展示误差带、二分包围、开覆盖、上下和、移动尖峰及极限交换反例。
 
 [完整书稿](book/Real-Analysis.md) · [检查记录](docs/REAL_ANALYSIS_AUDIT.md)。阅读入口 `#/book/real-analysis`，打印版 `real-analysis.html`。这是实直线上第一门分析课程；一般度量空间、测度与 Lebesgue 积分、泛函分析和多元理论另属后续课程。
+
+## C 语言：从零到完整程序
+
+新增完整 C17 中文教材：8 章 32 节、64 个逐步例题、128 道节内练习、16 道章末回顾、4 道综合题和 32 个术语，全部附解答。安装工具、保存文件、终端和编译从零解释；覆盖数组、指针、生命周期、动态内存、结构体、文件和严格输入解析，以多文件成绩管理器收尾。
+
+[完整书稿](packages/content/c-programming/C-Programming.md) · [课程与运行说明](packages/content/c-programming/README.md)；本地 `?lang=zh#/book/c-programming`。`npm run check:c` 实际编译运行 116 个案例并检查项目边界；需要 C17 GCC/Clang 和 Python 3.9+。`npm run check` 包含该检查。源码 ZIP 与整本打印页从同一内容生成。AI-generated，humanReviewed=false，自动检查不代表全输入证明或人工审校。

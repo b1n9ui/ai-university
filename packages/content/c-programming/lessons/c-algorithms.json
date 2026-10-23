@@ -1,0 +1,190 @@
+{
+  "id": "c-algorithms",
+  "number": "4.2",
+  "chapterId": "c-ch4",
+  "title": "查找、排序与算法理由",
+  "concept": "同一批数据可以被查找和排序；写出循环为什么正确，比只背代码更可靠。",
+  "intuition": "查找像从左到右翻卡片，排序像把每张新卡插进已经排好的部分。先保证小部分有序，再逐步扩展。",
+  "objectives": [
+    "线性查找",
+    "插入排序",
+    "代价与边界"
+  ],
+  "body": [
+    {
+      "title": "线性查找",
+      "text": "依次比较每个元素，找到就返回位置。未找到可返回长度 n，作为不可能的合法下标；调用者必须先检查 result < n，再访问。这个约定也能覆盖空数组。本节用小数组，逐个比较足够直观，最多检查 n 次。"
+    },
+    {
+      "title": "插入排序",
+      "text": "从第二项开始，临时保存当前值 key。左侧已排好序，把比 key 大的项逐个右移，最后把 key 放到空位。移动时先判断 j>0 再访问 a[j-1]，防止无符号下溢。循环不变量是：开始处理 i 时，前 i 项已按升序排列，并且仍是原来的那些值。"
+    },
+    {
+      "title": "代价与边界",
+      "text": "线性查找最坏比较次数随 n 线性增加；插入排序逆序输入时移动次数约按平方增加。用大 O 描述增长级别，不是某次运行的秒数。排序改变数组顺序，可能破坏与其他数组的对应关系；若数据有多个字段，后面用结构体把它们一起移动。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "算法是解决问题的有限、明确步骤。正确性理由应说明初始化、每轮保持的性质及结束后如何得到目标。",
+    "conditions": [
+      "查找返回 n 时不能当作下标。",
+      "排序前确认目标数组可修改。",
+      "本节插入排序适用于固定长度、小规模、可比较整数数组。"
+    ]
+  },
+  "derivation": [
+    {
+      "text": "先为零项、一项和未找到情况规定结果。"
+    },
+    {
+      "text": "用不变量解释每轮为何保持已有正确部分。"
+    },
+    {
+      "text": "用原始数据多重集与有序性双重检查排序结果。"
+    }
+  ],
+  "workedExamples": [
+    {
+      "title": "找到第一个目标",
+      "problem": "在 {4,7,4} 中查 7，返回下标。",
+      "steps": [
+        "从 0 比较。",
+        "下标 1 首次命中。",
+        "输出 1。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    int a[] = {4, 7, 4};\n    size_t result = 3;\n    for (size_t i = 0; i < 3; i++) {\n        if (a[i] == 7) { result = i; break; }\n    }\n    printf(\"%zu\\n\", result);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "1\n",
+        "files": {},
+        "exitCode": 0
+      }
+    },
+    {
+      "title": "插入排序",
+      "problem": "把 {3,1,2} 排成升序。",
+      "steps": [
+        "处理 1 时把 3 右移。",
+        "处理 2 时再把 3 右移。",
+        "写回 key 后得到 1、2、3。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    int a[] = {3, 1, 2};\n    for (size_t i = 1; i < 3; i++) {\n        int key = a[i];\n        size_t j = i;\n        while (j > 0 && a[j - 1] > key) {\n            a[j] = a[j - 1];\n            j--;\n        }\n        a[j] = key;\n    }\n    for (size_t i = 0; i < 3; i++) { printf(\"%d\\n\", a[i]); }\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "1\n2\n3\n",
+        "files": {},
+        "exitCode": 0
+      }
+    }
+  ],
+  "practice": [
+    {
+      "problem": "在 {1,2} 中找 9，按本节约定返回什么？",
+      "hint": "未找到返回长度。",
+      "solution": [
+        "比较两项都失败。",
+        "保留初始结果 2。",
+        "调用者不能访问 a[2]。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    int a[] = {1, 2};\n    size_t result = 2;\n    for (size_t i = 0; i < 2; i++) {\n        if (a[i] == 9) { result = i; break; }\n    }\n    printf(\"%zu\\n\", result);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "2\n",
+        "files": {},
+        "exitCode": 0
+      },
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "排序后只检查“升序”够不够？",
+      "hint": "想想丢失或重复元素。",
+      "solution": [
+        "全改为零也可能升序。",
+        "还要检查项数与各值出现次数。",
+        "用预期序列或独立计数对照。"
+      ],
+      "answer": "不够；必须保留原数据的元素及重复次数。",
+      "difficulty": 3,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "为什么 j>0 && a[j-1]>key 不能随意交换两边？",
+      "hint": "右侧访问需要左侧提供边界保护。",
+      "solution": [
+        "j 为零时 j-1 无效。",
+        "&& 先算左边。",
+        "将边界检查放在前面可避免访问。"
+      ],
+      "answer": "顺序承担安全条件；先检查 j>0，之后才能访问 a[j-1]。",
+      "difficulty": 3,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "对已经有序的 {1,2,3}，插入排序会右移元素吗？",
+      "hint": "每次只比较左邻是否大于 key。",
+      "solution": [
+        "1 不大于 2。",
+        "2 不大于 3。",
+        "while 都不进入，右移次数为零。"
+      ],
+      "answer": "不会右移；仍要执行外层检查，不能说整个算法完全不工作。",
+      "difficulty": 2,
+      "misconceptionTags": []
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "有序就证明排序实现正确。",
+      "correction": "还须保留原始元素和重复次数；正确性不能只看一个性质。",
+      "tag": "c-algorithms-m1"
+    },
+    {
+      "claim": "大 O 就是实测运行时间。",
+      "correction": "它描述规模增长的上界级别，常数、机器和输入仍影响实际时间。",
+      "tag": "c-algorithms-m2"
+    }
+  ],
+  "learningCheck": {
+    "question": "查找未找到时返回 n，下一步应？",
+    "choices": [
+      "访问 a[n]",
+      "先判断 result<n",
+      "把 n 改成 0"
+    ],
+    "correctIndex": 1,
+    "feedback": [
+      "n 不在合法下标内。",
+      "正确，再决定读取元素或报告未找到。",
+      "0 可能表示真实第一项，会混淆结果。"
+    ]
+  },
+  "interactiveVisual": {
+    "mode": "c-compare",
+    "prediction": "先遮住输出：在 {4,7,4} 中查 7，返回下标。 写下结果后，对比两个已编译的例子。",
+    "caption": "切换案例，比较代码、输入与预期输出。结果来自本书固定程序的本机执行检查；网页展示静态案例，不运行任意 C 代码。",
+    "experiment": {
+      "code": "#include <stdio.h>\n\nint main(void)\n{\n    int a[] = {4, 7, 4};\n    size_t result = 3;\n    for (size_t i = 0; i < 3; i++) {\n        if (a[i] == 7) { result = i; break; }\n    }\n    printf(\"%zu\\n\", result);\n    return 0;\n}\n",
+      "stdin": "",
+      "stdout": "1\n",
+      "files": {},
+      "exitCode": 0
+    }
+  },
+  "prerequisites": [
+    "c-arrays"
+  ],
+  "difficulty": 3,
+  "misconceptionTags": [
+    "c-algorithms-m1",
+    "c-algorithms-m2"
+  ],
+  "sources": [
+    "n1570"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "humanReviewed": false,
+    "version": "0.1.0"
+  }
+}

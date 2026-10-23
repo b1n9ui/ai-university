@@ -1,0 +1,196 @@
+{
+  "id": "c-switch",
+  "number": "2.3",
+  "chapterId": "c-ch2",
+  "title": "switch：多选分支与菜单雏形",
+  "concept": "switch 把同一个整数值的多种情况集中写在一起，适合固定编号的菜单。",
+  "intuition": "把输入编号看成柜台号码；case 是柜台标志，break 让本次办理结束。case 本身只是标签，不会自动停止后续执行。",
+  "objectives": [
+    "从编号选择动作",
+    "理解落入后续分支",
+    "为意外输入留路径"
+  ],
+  "body": [
+    {
+      "title": "从编号选择动作",
+      "text": "switch (choice) 先计算一个整数类型的控制值，匹配某个 case 的整数常量表达式；未匹配时选择 default。case 后是冒号，不是分号。case 值不能重复，不能用运行时变量当作任意标签。字符串和范围条件用 if 或其他结构处理。"
+    },
+    {
+      "title": "理解落入后续分支",
+      "text": "执行到 break 才退出当前 switch；如果省略，会继续向下执行，称为贯穿。多个 case 共用一段处理时可以有意相邻放置，但必须写注释解释。continue 针对循环，不是 switch 的“下一项”按钮。"
+    },
+    {
+      "title": "为意外输入留路径",
+      "text": "菜单编号不在已知集合时，default 提示 unknown option。分支内若声明临时局部变量，可用一对额外花括号建立块作用域，避免标签和声明带来的可读性问题。复杂处理以后抽成函数，switch 只负责选择，不把整个项目塞进一个大分支。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "switch 按整型值跳转到匹配的 case 或 default 标签；break 退出最近包围的 switch 或循环。",
+    "conditions": [
+      "case 为合法且互不重复的整型常量表达式。",
+      "本书除明确合并标签外，每个菜单分支以 break 或 return 结束。",
+      "浮点范围、字符串内容比较不使用 switch。"
+    ]
+  },
+  "derivation": [
+    {
+      "text": "列出菜单编号及未知编号的行为。"
+    },
+    {
+      "text": "给每个编号放置 case、动作和明确的结束语句。"
+    },
+    {
+      "text": "逐个测试每个 case 与 default，检查是否意外贯穿。"
+    }
+  ],
+  "workedExamples": [
+    {
+      "title": "查看菜单",
+      "problem": "编号 2 表示 list，编号 1 表示 add。",
+      "steps": [
+        "choice 为 2。",
+        "跳到 case 2 输出 list。",
+        "break 退出，不执行 default。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    int choice = 2;\n    switch (choice) {\n    case 1:\n        puts(\"add\");\n        break;\n    case 2:\n        puts(\"list\");\n        break;\n    default:\n        puts(\"unknown\");\n        break;\n    }\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "list\n",
+        "files": {},
+        "exitCode": 0
+      }
+    },
+    {
+      "title": "合并两个编号",
+      "problem": "编号 1、2 都表示 weekday，其他表示 other。",
+      "steps": [
+        "case 1 后不放动作，紧接 case 2。",
+        "两个标签共享同一 puts。",
+        "共有处理后 break。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    int day = 1;\n    switch (day) {\n    case 1:\n    case 2:\n        puts(\"weekday\");\n        break;\n    default:\n        puts(\"other\");\n        break;\n    }\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "weekday\n",
+        "files": {},
+        "exitCode": 0
+      }
+    }
+  ],
+  "practice": [
+    {
+      "problem": "写 1 输出 new，其他输出 invalid，测试 9。",
+      "hint": "保留 default。",
+      "solution": [
+        "9 没有匹配 case。",
+        "执行 default。",
+        "退出 switch。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    int choice = 9;\n    switch (choice) {\n    case 1: puts(\"new\"); break;\n    default: puts(\"invalid\"); break;\n    }\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "invalid\n",
+        "files": {},
+        "exitCode": 0
+      },
+      "difficulty": 1,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "switch 能直接根据 double 温度区间分支么？",
+      "hint": "区间与精确整数标签不同。",
+      "solution": [
+        "switch 要求整型控制表达式。",
+        "温度区间是大小关系。",
+        "改用 if / else if，并明确边界。"
+      ],
+      "answer": "不能；使用 if (t < 0.0) 等范围判断。",
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "case 1 输出 A 后无 break，case 2 输出 B 后 break；输入 1 会怎样？",
+      "hint": "标签不会自动终止。",
+      "solution": [
+        "先到 case 1。",
+        "输出 A 后继续到下一段。",
+        "输出 B 后 break。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    int choice = 1;\n    switch (choice) {\n    case 1: puts(\"A\"); /* intentional fallthrough */\n    case 2: puts(\"B\"); break;\n    default: break;\n    }\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "A\nB\n",
+        "files": {},
+        "exitCode": 0
+      },
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "两个 case 都写 1 能编译通过吗？",
+      "hint": "每个标签必须能唯一匹配。",
+      "solution": [
+        "两个相同值产生重复标签。",
+        "这是约束违反，需要诊断。",
+        "合并处理或更正编号，不能依赖“选第一个”。"
+      ],
+      "answer": "不能作为有效程序；编译器应诊断重复 case 值。",
+      "difficulty": 2,
+      "misconceptionTags": []
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "case 执行完自动跳出。",
+      "correction": "标签不结束执行，使用 break、return 或明确贯穿。",
+      "tag": "c-switch-m1"
+    },
+    {
+      "claim": "default 必须写在最前。",
+      "correction": "可以放在不同位置，本书统一放最后便于阅读；匹配规则不由位置决定。",
+      "tag": "c-switch-m2"
+    }
+  ],
+  "learningCheck": {
+    "question": "break 在 switch 内的直接作用是？",
+    "choices": [
+      "退出整个程序",
+      "退出最近包围的 switch 或循环",
+      "跳到下一个 case"
+    ],
+    "correctIndex": 1,
+    "feedback": [
+      "退出程序通常由 main 返回或调用相应函数完成。",
+      "正确；这里最近的结构是 switch。",
+      "break 离开结构，不选择下一项。"
+    ]
+  },
+  "interactiveVisual": {
+    "mode": "c-compare",
+    "prediction": "先遮住输出：编号 2 表示 list，编号 1 表示 add。 写下结果后，对比两个已编译的例子。",
+    "caption": "切换案例，比较代码、输入与预期输出。结果来自本书固定程序的本机执行检查；网页展示静态案例，不运行任意 C 代码。",
+    "experiment": {
+      "code": "#include <stdio.h>\n\nint main(void)\n{\n    int choice = 2;\n    switch (choice) {\n    case 1:\n        puts(\"add\");\n        break;\n    case 2:\n        puts(\"list\");\n        break;\n    default:\n        puts(\"unknown\");\n        break;\n    }\n    return 0;\n}\n",
+      "stdin": "",
+      "stdout": "list\n",
+      "files": {},
+      "exitCode": 0
+    }
+  },
+  "prerequisites": [
+    "c-input"
+  ],
+  "difficulty": 2,
+  "misconceptionTags": [
+    "c-switch-m1",
+    "c-switch-m2"
+  ],
+  "sources": [
+    "n1570"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "humanReviewed": false,
+    "version": "0.1.0"
+  }
+}

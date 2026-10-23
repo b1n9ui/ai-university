@@ -10,5 +10,11 @@
     "directory": "ai-development",
     "filename": "AI-Assisted-Development.md",
     "printFile": "ai-development.html"
+  },
+  {
+    "id": "c-programming",
+    "directory": "c-programming",
+    "filename": "C-Programming.md",
+    "printFile": "c-programming.html"
   }
 ]

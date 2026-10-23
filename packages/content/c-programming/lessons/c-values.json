@@ -1,0 +1,202 @@
+{
+  "id": "c-values",
+  "number": "1.3",
+  "chapterId": "c-ch1",
+  "title": "变量、类型与初始化",
+  "concept": "变量把会变化的数据命名，类型规定这些数据能表示什么、怎样参与运算。",
+  "intuition": "把变量想成有标签的储物格：标签是名字，格子的规格是类型，里面的东西是值。这个比喻只帮助理解；实际类型范围要查标准头文件，不能凭“格子看起来大”猜测。",
+  "objectives": [
+    "声明时就给初值",
+    "先学四类常用类型",
+    "格式与只读意图"
+  ],
+  "body": [
+    {
+      "title": "声明时就给初值",
+      "text": "int count = 3; 创建一个 int 对象并把初值设为 3。后续 count = 5; 是赋值，不是数学等式；它把右侧结果存到左侧对象。名字区分大小写。用含义明确的英文名如 item_count，比 a、b、c 更容易排错。局部自动变量若没有初始化，不能把读到的内容当作可用数字。"
+    },
+    {
+      "title": "先学四类常用类型",
+      "text": "int 保存常用整数；double 保存有小数的近似数；char 保存一个字符编码单位；size_t 表示 sizeof 得到的大小和容器长度。char 的位数不保证恰好为 8，int 也不保证为 32 位。sizeof 的单位是 C 的字节，sizeof(char) 必为 1。本书不把机器上的某次大小当作语言保证。"
+    },
+    {
+      "title": "格式与只读意图",
+      "text": "printf 输出 int 用 %d，double 常用 %.2f 显示小数点后两位，char 用 %c，size_t 用 %zu。const int days = 7; 表达之后不通过这个名字改值的意图。const 不是任意上下文里的编译期常量，也不让所有相关存储自动不可变。金额优先使用整数分，避免把二进制近似小数当作精确货币。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "对象是保存值的存储区域；变量名标识对象。初始化为新对象提供初始值，赋值更新已有可修改对象的值。",
+    "conditions": [
+      "先初始化，再读取。",
+      "格式符与参数类型匹配。",
+      "不假定 int、指针或 double 的固定字节数；范围查 limits.h。"
+    ]
+  },
+  "derivation": [
+    {
+      "text": "根据数据含义选择类型。"
+    },
+    {
+      "text": "声明时给初始值，计算时先读右侧再写左侧。"
+    },
+    {
+      "text": "按类型选择输出格式，观察打印精度与内部值的区别。"
+    }
+  ],
+  "workedExamples": [
+    {
+      "title": "库存变化",
+      "problem": "库存初始 12，卖出 5，输出剩余。",
+      "steps": [
+        "用 int 存数量。",
+        "先算 12 - 5，再写回 stock。",
+        "按 %d 输出 7。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    int stock = 12;\n    stock = stock - 5;\n    printf(\"%d\\n\", stock);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "7\n",
+        "files": {},
+        "exitCode": 0
+      }
+    },
+    {
+      "title": "不同数据不同格式",
+      "problem": "输出数量 3、温度 18.5、等级 A。",
+      "steps": [
+        "int 对应 %d。",
+        "double 用 %.1f 显示一位小数。",
+        "char 用单引号初始化，%c 输出。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    int count = 3;\n    double temperature = 18.5;\n    char level = 'A';\n    printf(\"%d %.1f %c\\n\", count, temperature, level);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "3 18.5 A\n",
+        "files": {},
+        "exitCode": 0
+      }
+    }
+  ],
+  "practice": [
+    {
+      "problem": "x 初始 4；执行 x = x + 2 两次，结果是什么？",
+      "hint": "每次使用更新后的 x。",
+      "solution": [
+        "第一次得到 6。",
+        "第二次读取 6 得到 8。",
+        "输出最终值。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    int x = 4;\n    x = x + 2;\n    x = x + 2;\n    printf(\"%d\\n\", x);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "8\n",
+        "files": {},
+        "exitCode": 0
+      },
+      "difficulty": 1,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "把半径 2.5 保存为只读局部对象并输出一位小数。",
+      "hint": "使用 const double。",
+      "solution": [
+        "声明 const double radius。",
+        "初始化 2.5。",
+        "用 %.1f 输出。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    const double radius = 2.5;\n    printf(\"%.1f\\n\", radius);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "2.5\n",
+        "files": {},
+        "exitCode": 0
+      },
+      "difficulty": 1,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "int x; printf(\"%d\", x); 为什么不能作为“随机数生成器”？",
+      "hint": "未初始化值没有可依赖的语义。",
+      "solution": [
+        "x 是未初始化的局部自动对象。",
+        "读取它不能保证得到有效的预期值，可能触发未定义行为。",
+        "若需要初值写 int x = 0；随机数另用有明确契约的库。"
+      ],
+      "answer": "不能依赖未初始化读取；它不是合法随机数接口。",
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "sizeof(char) 能否在某台符合本书基线的实现上等于 2？",
+      "hint": "这里的单位是 C 字节。",
+      "solution": [
+        "C 定义 sizeof(char) 为 1。",
+        "一个 C 字节的位数由 CHAR_BIT 表示。",
+        "别把字节数和位数混为一谈。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    printf(\"%zu\\n\", sizeof(char));\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "1\n",
+        "files": {},
+        "exitCode": 0
+      },
+      "difficulty": 2,
+      "misconceptionTags": []
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "变量名像数学未知数，赋值两边必须永久相等。",
+      "correction": "赋值是一次更新动作；右侧先求值，随后存回左侧。",
+      "tag": "c-values-m1"
+    },
+    {
+      "claim": "所有机器的 int 都占 4 字节。",
+      "correction": "常见不等于保证；写可移植程序时依据类型范围与 sizeof。",
+      "tag": "c-values-m2"
+    }
+  ],
+  "learningCheck": {
+    "question": "哪句保证第一次读 count 前已有确定初值？",
+    "choices": [
+      "int count;",
+      "int count = 0;",
+      "printf(\"%d\", count);"
+    ],
+    "correctIndex": 1,
+    "feedback": [
+      "声明没有为这个局部自动对象提供初值。",
+      "正确，初始化为零后可以读取。",
+      "输出语句不能替变量补初值。"
+    ]
+  },
+  "interactiveVisual": {
+    "mode": "c-compare",
+    "prediction": "先遮住输出：库存初始 12，卖出 5，输出剩余。 写下结果后，对比两个已编译的例子。",
+    "caption": "切换案例，比较代码、输入与预期输出。结果来自本书固定程序的本机执行检查；网页展示静态案例，不运行任意 C 代码。",
+    "experiment": {
+      "code": "#include <stdio.h>\n\nint main(void)\n{\n    int stock = 12;\n    stock = stock - 5;\n    printf(\"%d\\n\", stock);\n    return 0;\n}\n",
+      "stdin": "",
+      "stdout": "7\n",
+      "files": {},
+      "exitCode": 0
+    }
+  },
+  "prerequisites": [
+    "c-output"
+  ],
+  "difficulty": 1,
+  "misconceptionTags": [
+    "c-values-m1",
+    "c-values-m2"
+  ],
+  "sources": [
+    "n1570"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "humanReviewed": false,
+    "version": "0.1.0"
+  }
+}

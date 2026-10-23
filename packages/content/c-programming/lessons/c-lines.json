@@ -1,0 +1,196 @@
+{
+  "id": "c-lines",
+  "number": "4.4",
+  "chapterId": "c-ch4",
+  "title": "fgets：完整地接收一行",
+  "concept": "fgets 为输入设置容量上限，并保留换行信息，让程序能识别一行是否读完整。",
+  "intuition": "把一行水倒进有容量的杯子：杯子满了，不等于整壶水都已倒完。必须检查行尾，不能把截断的半行当成完整姓名。",
+  "objectives": [
+    "理解函数参数",
+    "完整与截断",
+    "别混用输入方式"
+  ],
+  "body": [
+    {
+      "title": "理解函数参数",
+      "text": "char line[32]; fgets(line, sizeof line, stdin) 最多读取 31 个字符，然后补终止零。它读到换行会把换行也保存在数组里。成功返回 line，首次未读到字符就遇到文件结束或发生读错误时返回 NULL。本节容量是小常量，可安全作为 fgets 的 int 参数；任意巨大 size_t 不能盲目转换。"
+    },
+    {
+      "title": "完整与截断",
+      "text": "用 strchr(line, '\\n') 查换行：找到则这次读到了行尾；没找到则可能是长行的一部分，也可能是文件最后一行没有换行。程序必须选定策略。本节交互练习要求每行以换行结束，缺换行一律拒绝；6.3 的文件读取会处理最后一行的合法无换行情形。长行要把剩余部分丢弃到换行或 EOF，才能正确读下一行。"
+    },
+    {
+      "title": "别混用输入方式",
+      "text": "scanf 读数字后通常留下换行，紧接的 fgets 可能读到只含换行的空行。不要靠 fflush(stdin) 清输入，ISO C 没有为这种用法定义可依赖行为。主线从这里开始统一整行读取，下一章再用 strtol 解析数字。读取字符的 getchar 返回 int，先比较 EOF，再转 char，避免丢失文件结束标志。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "fgets 在容量允许范围内读取至换行、容量限制或输入结束，成功时补零，但不保证每次返回完整一行。",
+    "conditions": [
+      "数组容量至少为 2；本书本节使用 32。",
+      "本节输入是无内嵌零的文本，以换行结束。",
+      "读取失败后不使用缓冲区的内容。"
+    ]
+  },
+  "derivation": [
+    {
+      "text": "调用 fgets 并判断是否成功。"
+    },
+    {
+      "text": "查找换行，按既定策略接受、拒绝或继续读取。"
+    },
+    {
+      "text": "确认完整后才删除换行并处理内容；截断时处理残余输入。"
+    }
+  ],
+  "workedExamples": [
+    {
+      "title": "读取带空格的姓名",
+      "problem": "读取 Ada Lovelace 并原样输出；本例允许保留换行。",
+      "steps": [
+        "fgets 不在空格处分开。",
+        "输入中已有换行。",
+        "printf %s 不再额外补换行。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    char line[32];\n    if (fgets(line, sizeof line, stdin) == NULL) { return 1; }\n    printf(\"%s\", line);\n    return 0;\n}\n",
+        "stdin": "Ada Lovelace\n",
+        "stdout": "Ada Lovelace\n",
+        "files": {},
+        "exitCode": 0
+      }
+    },
+    {
+      "title": "拒绝不完整行",
+      "problem": "容量 8，要求必须读到换行；输入 abcdefghij。",
+      "steps": [
+        "只能装入前 7 个字符和终止零。",
+        "没有换行，属于本节拒绝情况。",
+        "直接结束，本例不再读取下一行。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n#include <string.h>\n\nint main(void)\n{\n    char line[8];\n    if (fgets(line, sizeof line, stdin) == NULL) { return 1; }\n    if (strchr(line, '\\n') == NULL) {\n        puts(\"line incomplete\");\n        return 1;\n    }\n    printf(\"%s\", line);\n    return 0;\n}\n",
+        "stdin": "abcdefghij\n",
+        "stdout": "line incomplete\n",
+        "files": {},
+        "exitCode": 1
+      }
+    }
+  ],
+  "practice": [
+    {
+      "problem": "容量为 5 的字符数组，fgets 最多存多少个输入字符？",
+      "hint": "留一个终止零位置。",
+      "solution": [
+        "总容量 5。",
+        "至多读取 4 个输入字符。",
+        "第五格放终止零。"
+      ],
+      "answer": "至多 4 个；其中可能包含读到的换行。",
+      "difficulty": 1,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "输入 A B 换行，为什么不是只得到 A？",
+      "hint": "fgets 按行，不按单词。",
+      "solution": [
+        "空格是普通输入字符。",
+        "持续读取到换行。",
+        "输出整行 A B。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    char line[16];\n    if (fgets(line, sizeof line, stdin) == NULL) { return 1; }\n    printf(\"%s\", line);\n    return 0;\n}\n",
+        "stdin": "A B\n",
+        "stdout": "A B\n",
+        "files": {},
+        "exitCode": 0
+      },
+      "difficulty": 1,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "scanf 之后 fgets 得到空行，最可能是什么原因？",
+      "hint": "前一次读取没有消耗什么？",
+      "solution": [
+        "数字转换停在换行前。",
+        "fgets 立即读到剩余换行。",
+        "统一采用整行读取并解析，或明确消费剩余行。"
+      ],
+      "answer": "残留换行；不能用未定义的 fflush(stdin) 当通用修复。",
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "用 getchar 逐字节读取直到 EOF，为什么变量要用 int？",
+      "hint": "需要同时表示字符值和 EOF。",
+      "solution": [
+        "char 不能保证区分所有字符值与 EOF。",
+        "先在 int 中检查是否 EOF。",
+        "再把成功的字符交给 putchar。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    int ch;\n    while ((ch = getchar()) != EOF) {\n        putchar(ch);\n    }\n    return 0;\n}\n",
+        "stdin": "Hi\n",
+        "stdout": "Hi\n",
+        "files": {},
+        "exitCode": 0
+      },
+      "difficulty": 2,
+      "misconceptionTags": []
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "fgets 成功就表示整行读完。",
+      "correction": "还可能因为容量用尽提前返回，必须检查行尾。",
+      "tag": "c-lines-m1"
+    },
+    {
+      "claim": "fgets 会丢掉换行。",
+      "correction": "如果读到换行且有空间，它会保存换行；需要时再明确删除。",
+      "tag": "c-lines-m2"
+    }
+  ],
+  "learningCheck": {
+    "question": "char line[8] 配合 fgets，最多读取几个输入字符？",
+    "choices": [
+      "8",
+      "7",
+      "无限制"
+    ],
+    "correctIndex": 1,
+    "feedback": [
+      "还要给终止零留一格。",
+      "正确，7 个输入字符加终止零。",
+      "容量参数限制了这次读取。"
+    ]
+  },
+  "interactiveVisual": {
+    "mode": "c-compare",
+    "prediction": "先遮住输出：读取 Ada Lovelace 并原样输出；本例允许保留换行。 写下结果后，对比两个已编译的例子。",
+    "caption": "切换案例，比较代码、输入与预期输出。结果来自本书固定程序的本机执行检查；网页展示静态案例，不运行任意 C 代码。",
+    "experiment": {
+      "code": "#include <stdio.h>\n\nint main(void)\n{\n    char line[32];\n    if (fgets(line, sizeof line, stdin) == NULL) { return 1; }\n    printf(\"%s\", line);\n    return 0;\n}\n",
+      "stdin": "Ada Lovelace\n",
+      "stdout": "Ada Lovelace\n",
+      "files": {},
+      "exitCode": 0
+    }
+  },
+  "prerequisites": [
+    "c-strings"
+  ],
+  "difficulty": 3,
+  "misconceptionTags": [
+    "c-lines-m1",
+    "c-lines-m2"
+  ],
+  "sources": [
+    "n1570"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "humanReviewed": false,
+    "version": "0.1.0"
+  }
+}

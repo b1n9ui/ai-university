@@ -19,7 +19,7 @@ async function checkEnglishRendering(){
   for(const route of ['book/calculus-2','book/python-introduction','lesson/'+JSON.parse((await import('node:fs')).default.readFileSync('packages/content/real-analysis/book.json')).lessonIds[0],'reference?book=calculus-3']){
    const html=render(route);assert.match(html,/English edition has not been published/,route);assert.match(html,/lang=zh/,route);
   }
-  const library=render('library');assert.equal((library.match(/class="edition-language">Chinese edition/g)||[]).length,9);assert.match(library,/EN \/ 中文/);
+  const library=render('library');assert.equal((library.match(/class="edition-language">Chinese edition/g)||[]).length,10);assert.match(library,/EN \/ 中文/);
   const search=await server.ssrLoadModule('/src/lib/catalog.ts');assert.ok(search.searchLessons('derivative').some(l=>l.id==='derivative-definition'));assert.ok(search.searchTextbooks('integral').every(l=>content.book.lessonIds.includes(l.id)));
  }finally{await server.close();Object.assign(globalThis,original)}
  }

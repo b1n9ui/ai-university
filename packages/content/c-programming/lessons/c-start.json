@@ -1,0 +1,239 @@
+{
+  "id": "c-start",
+  "number": "1.1",
+  "chapterId": "c-ch1",
+  "title": "从文件到可运行的程序",
+  "concept": "C 程序让计算机按明确的步骤处理数据；第一件事是走通“编辑、编译、运行”的完整流程。",
+  "intuition": "源文件像写好的菜谱，可执行文件像能够按菜谱工作的机器。修改菜谱不会自动改好机器；保存后还必须重新编译。编辑器负责写字，编译器负责翻译，终端负责接收命令，它们各有工作。",
+  "objectives": [
+    "准备练习目录",
+    "安装一个 C 编译器",
+    "保存真正的文本文件",
+    "第一次编译和运行"
+  ],
+  "body": [
+    {
+      "title": "准备练习目录",
+      "text": "本书不要求你会终端。终端是输入命令并看到文字结果的窗口。先在用户目录创建 c-study 文件夹，避免目录名中的空格干扰首次练习。打开终端，输入 mkdir c-study 回车，再输入 cd c-study 回车。mkdir 创建目录；cd 改变当前目录。若目录已存在，只执行 cd。用 pwd 查看位置，用 ls 查看文件；Windows 本书统一使用 MSYS2 UCRT64 终端，那里也支持这些命令。"
+    },
+    {
+      "title": "安装一个 C 编译器",
+      "text": "Windows 64 位 x86 电脑：从 MSYS2 官网安装，打开名为 UCRT64 的终端，运行 pacman -Syu；若提示关闭终端，照提示关闭后重开 UCRT64，再更新，随后运行 pacman -S --needed mingw-w64-ucrt-x86_64-gcc。ARM64 电脑请按官网对应环境安装，不照抄 x86 包名。macOS：打开“终端”，输入 xcode-select --install 并完成系统安装窗口。Ubuntu/Debian：在终端运行 sudo apt update，再运行 sudo apt install build-essential。安装需要网络；日常练习不需要网络。"
+    },
+    {
+      "title": "保存真正的文本文件",
+      "text": "用能保存纯文本的编辑器新建 hello.c，保存到 c-study。不要用富文本格式；确认文件不是 hello.c.txt，Windows 文件管理器可启用“文件扩展名”。输入下方完整程序，保留英文半角引号、括号和分号。保存后回到同一目录。Windows/Linux 输入 gcc --version；macOS 输入 clang --version；能看到版本才继续。"
+    },
+    {
+      "title": "第一次编译和运行",
+      "text": "Windows/Linux 输入 gcc -std=c17 -Wall -Wextra -Wpedantic hello.c -o hello；macOS 把 gcc 换成 clang。-std=c17 固定本书语言版本，三个 -W 参数请求常用警告，-o 指定输出名字。编译成功通常没有文字。macOS/Linux 输入 ./hello；MSYS2 UCRT64 输入 ./hello.exe。./ 表示当前目录，命令不包含教材中的提示符。看见 Hello, C! 后，把文本改成 I can code.，保存、重新编译、重新运行。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "本书使用 C17 的常用可移植子集，以 .c 为源文件扩展名，以 int main(void) 为本节程序入口。C17 是本书选择的学习基线，不声称它是最新标准。",
+    "conditions": [
+      "先安装 GCC 或 Clang；编辑器扩展不能代替编译器。",
+      "命令中的 hello.c 必须在当前目录，或写明正确路径。",
+      "代码用 ASCII 输出，中文解释用 UTF-8，避免首次运行被终端编码问题打断。"
+    ]
+  },
+  "derivation": [
+    {
+      "text": "保存 hello.c，确认当前位置与文件名。"
+    },
+    {
+      "text": "执行编译命令；有诊断时从第一条开始修正，成功后再运行。"
+    },
+    {
+      "text": "运行新生成的可执行文件，并对照输出；更改源文件后重复前两步。"
+    }
+  ],
+  "workedExamples": [
+    {
+      "title": "第一次输出",
+      "problem": "创建 hello.c，输出一行 Hello, C!。",
+      "steps": [
+        "stdio.h 声明 puts。",
+        "main 内的 puts 发送文字并换行。",
+        "return 0 报告正常结束。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    puts(\"Hello, C!\");\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "Hello, C!\n",
+        "files": {},
+        "exitCode": 0
+      }
+    },
+    {
+      "title": "修改后再编译",
+      "problem": "把输出改为 I can code.，验证你运行的是新版。",
+      "steps": [
+        "只改字符串里的文字。",
+        "先保存，再执行同一编译命令。",
+        "最后运行，输出应与旧版不同。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    puts(\"I can code.\");\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "I can code.\n",
+        "files": {},
+        "exitCode": 0
+      }
+    }
+  ],
+  "practice": [
+    {
+      "problem": "编译器说 hello.c: No such file or directory。先检查什么？",
+      "hint": "区分“找不到文件”和“代码写错”。",
+      "solution": [
+        "用 pwd 确认目录。",
+        "用 ls 看是否有 hello.c，检查隐藏的 .txt 后缀。",
+        "进入正确目录或给出路径，再编译。"
+      ],
+      "answer": "先核对当前目录、文件名和实际扩展名；此时还没进入语法检查。",
+      "difficulty": 1,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "写程序输出自己的学习目标 Learn one step.。",
+      "hint": "沿用第一个完整程序，只改文字。",
+      "solution": [
+        "保留头文件与 main。",
+        "把 puts 的参数改成目标文本。",
+        "保存、编译、运行，对照大小写和句点。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    puts(\"Learn one step.\");\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "Learn one step.\n",
+        "files": {},
+        "exitCode": 0
+      },
+      "difficulty": 1,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "修改 hello.c 后直接运行，为什么仍看见旧文字？",
+      "hint": "区分源文件与可执行文件。",
+      "solution": [
+        "编辑只更新源文件。",
+        "运行命令启动上次编译的文件。",
+        "保存并成功重编译后，再运行新文件。"
+      ],
+      "answer": "没有重新编译，或编译失败后仍运行了旧文件。",
+      "difficulty": 1,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "如何把可执行文件命名为 lesson1？",
+      "hint": "观察 -o 后面的参数。",
+      "solution": [
+        "保留输入 hello.c。",
+        "把 -o hello 改成 -o lesson1。",
+        "运行 ./lesson1；MSYS2 运行 ./lesson1.exe。"
+      ],
+      "answer": "gcc -std=c17 -Wall -Wextra -Wpedantic hello.c -o lesson1；macOS 可用 clang。",
+      "difficulty": 1,
+      "misconceptionTags": []
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "点编辑器里的运行按钮就一定用了 C17。",
+      "correction": "按钮可能使用另一套配置。第一次先用书中命令，明确编译器、源文件与参数。",
+      "tag": "c-start-m1"
+    },
+    {
+      "claim": "编译没输出，说明卡住了。",
+      "correction": "命令行已出现新的提示符且没有报错时，编译通常已完成；接着执行运行命令。",
+      "tag": "c-start-m2"
+    }
+  ],
+  "learningCheck": {
+    "question": "修改 .c 后怎样让变化生效？",
+    "choices": [
+      "保存、成功编译、运行",
+      "只保存",
+      "只运行旧文件"
+    ],
+    "correctIndex": 0,
+    "feedback": [
+      "正确，这三个动作对应三个不同阶段。",
+      "保存没有产生新的可执行文件。",
+      "旧文件仍包含旧的机器指令。"
+    ]
+  },
+  "interactiveVisual": {
+    "mode": "c-compare",
+    "prediction": "先遮住输出：创建 hello.c，输出一行 Hello, C!。 写下结果后，对比两个已编译的例子。",
+    "caption": "切换案例，比较代码、输入与预期输出。结果来自本书固定程序的本机执行检查；网页展示静态案例，不运行任意 C 代码。",
+    "experiment": {
+      "code": "#include <stdio.h>\n\nint main(void)\n{\n    puts(\"Hello, C!\");\n    return 0;\n}\n",
+      "stdin": "",
+      "stdout": "Hello, C!\n",
+      "files": {},
+      "exitCode": 0
+    }
+  },
+  "prerequisites": [],
+  "difficulty": 1,
+  "misconceptionTags": [
+    "c-start-m1",
+    "c-start-m2"
+  ],
+  "sources": [
+    "gcc",
+    "apple",
+    "msys2"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "humanReviewed": false,
+    "version": "0.1.0"
+  },
+  "setup": [
+    {
+      "title": "Windows x86-64：安装编译器",
+      "text": "先从 https://www.msys2.org/ 安装 MSYS2。打开 UCRT64 终端。先执行更新；如果要求关闭，关闭后重开 UCRT64 并再次更新，再安装编译器。ARM64 使用官网对应环境，不照抄本包名。",
+      "commands": "pacman -Syu\npacman -S --needed mingw-w64-ucrt-x86_64-gcc\ngcc --version",
+      "expected": "最后一条显示 GCC 版本；出现 command not found 时先确认打开的是 UCRT64 并已安装成功。"
+    },
+    {
+      "title": "macOS：安装命令行工具",
+      "text": "打开“终端”，运行安装命令，完成系统窗口后再查看版本。如果已安装 Xcode 或命令行工具，系统可能提示已存在。",
+      "commands": "xcode-select --install\nclang --version",
+      "expected": "第二条显示 Apple Clang 版本。安装窗口完成前不要急着编译。"
+    },
+    {
+      "title": "Ubuntu / Debian：安装工具",
+      "text": "打开终端，按顺序执行。sudo 会请求当前用户密码；输入时可能不显示字符，完成后按回车。",
+      "commands": "sudo apt update\nsudo apt install build-essential\ngcc --version",
+      "expected": "最后显示 GCC 版本。其他 Linux 发行版使用各自官方包管理器，不照抄 apt 命令。"
+    },
+    {
+      "title": "建立目录并保存 hello.c",
+      "text": "只做一次。如果目录已存在，跳过 mkdir。执行后用编辑器把例 1 的完整 C 代码保存到这个目录的 hello.c；不是把 C 代码当终端命令输入。",
+      "commands": "mkdir c-study\ncd c-study\npwd\nls",
+      "expected": "pwd 末尾是 c-study；保存后 ls 能列出 hello.c。macOS 编辑器使用纯文本模式，Windows 检查不是 hello.c.txt。"
+    },
+    {
+      "title": "Windows UCRT64：编译并运行",
+      "text": "在 hello.c 所在目录先编译。若有诊断，先修正并重新编译；成功后再运行第二条。",
+      "commands": "gcc -std=c17 -Wall -Wextra -Wpedantic hello.c -o hello\n./hello.exe",
+      "expected": "输出 Hello, C!。编译成功通常无输出，运行时才产生输出。"
+    },
+    {
+      "title": "Linux：编译并运行",
+      "text": "在 hello.c 所在目录执行这两条。每条输入后按回车，先完成编译再运行。",
+      "commands": "gcc -std=c17 -Wall -Wextra -Wpedantic hello.c -o hello\n./hello",
+      "expected": "输出 Hello, C!。改代码后先保存，再重新编译、运行。"
+    },
+    {
+      "title": "macOS：编译并运行",
+      "text": "在 hello.c 所在目录执行。这是上一项的 macOS 替代命令，不需要再运行 gcc 那组。",
+      "commands": "clang -std=c17 -Wall -Wextra -Wpedantic hello.c -o hello\n./hello",
+      "expected": "输出 Hello, C!。改动源文件后先保存，再重复编译与运行。"
+    }
+  ]
+}

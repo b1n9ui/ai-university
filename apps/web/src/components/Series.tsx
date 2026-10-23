@@ -152,6 +152,7 @@ const bookTopics:Record<string,string>={
   "probability-statistics":"概率 · 抽样 · 统计推断",
   "discrete-math":"逻辑 · 计数 · 图与网络",
   "real-analysis":"完备性 · 收敛 · 严格证明",
+  "c-programming":"C17 · 指针与内存 · 完整项目",
   "python-introduction":"语法 · 数据结构 · 完整程序",
   "ai-development":"需求 · 代码 · 测试与交付",
 };

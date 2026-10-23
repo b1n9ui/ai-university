@@ -1,0 +1,190 @@
+{
+  "id": "c-parse",
+  "number": "6.4",
+  "chapterId": "c-ch6",
+  "title": "用 strtol 验证整数文本",
+  "concept": "把整行文本转换为数字时，要分别检查“读到了数字”“有没有多余字符”“是否超范围”。",
+  "intuition": "三道关卡分别查格式、机器范围、业务范围；只过一道不能说明数据可用。",
+  "objectives": [
+    "先读文本，再转换",
+    "三个失败条件",
+    "atoi 不承担验证"
+  ],
+  "body": [
+    {
+      "title": "先读文本，再转换",
+      "text": "strtol 来自 stdlib.h，按给定进制转换开头的数字，返回 long，并通过 end 指针告诉你停在哪里。调用前 errno=0，之后检查 errno==ERANGE。它会跳过前导空白，也可接受正负号；接口默认行为不一定等于你的业务规则，要额外规定并检查。"
+    },
+    {
+      "title": "三个失败条件",
+      "text": "end==text 表示没有转换任何数字。*end 不为终止零，说明仍有未接受的后缀；若允许换行或空白，先明确定义并消耗它们。errno==ERANGE 代表结果超出 long 可表示范围。通过这些检查后，还要比较 INT_MIN/INT_MAX 或 0..100 这样的目标范围，最后才强转为 int。"
+    },
+    {
+      "title": "atoi 不承担验证",
+      "text": "atoi 没有 end 参数，难区分合法零和无效输入，也不能像这里一样可靠处理越界诊断。本节解析函数先限制完整文本为一个整数表示，允许 strtol 本身接受的前导空白和符号，拒绝任何后缀。项目的“姓名 空格 分数”有更窄格式，会明确用专门规则检查，不能宣称一个函数适用所有输入协议。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "strtol 使用 endptr 报告未转换后缀，并通过 errno 的 ERANGE 报告范围错误；调用者负责完整格式和目标范围验证。",
+    "conditions": [
+      "输入为有终止零的文本。",
+      "调用前清零 errno。",
+      "只在全部验证通过后写输出参数或转换为窄类型。"
+    ]
+  },
+  "derivation": [
+    {
+      "text": "清 errno，调用 strtol 并保存 end。"
+    },
+    {
+      "text": "检查无数字、ERANGE、后缀和业务范围。"
+    },
+    {
+      "text": "全部通过才转换成 int 并更新输出，否则保持原状态。"
+    }
+  ],
+  "workedExamples": [
+    {
+      "title": "合法分数",
+      "problem": "把 \"85\" 解析为 0..100 的分数。",
+      "steps": [
+        "调用前 errno 置零。",
+        "end 指向终止零。",
+        "范围合法，输出 85。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <errno.h>\n\nint main(void)\n{\n    const char *text = \"85\";\n    char *end;\n    errno = 0;\n    long value = strtol(text, &end, 10);\n    if (end == text || errno == ERANGE || *end != '\\0' || value < 0 || value > 100) { return 1; }\n    printf(\"%d\\n\", (int)value);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "85\n",
+        "files": {},
+        "exitCode": 0
+      }
+    },
+    {
+      "title": "拒绝后缀",
+      "problem": "输入 \"85abc\"，不把前缀 85 当作有效整行。",
+      "steps": [
+        "strtol 能读取 85。",
+        "end 指向 a，后缀非空。",
+        "拒绝整条记录。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <errno.h>\n\nint main(void)\n{\n    const char *text = \"85abc\";\n    char *end;\n    errno = 0;\n    long value = strtol(text, &end, 10);\n    if (end == text || errno == ERANGE || *end != '\\0' || value < 0 || value > 100) {\n        puts(\"invalid\"); return 1;\n    }\n    printf(\"%ld\\n\", value);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "invalid\n",
+        "files": {},
+        "exitCode": 1
+      }
+    }
+  ],
+  "practice": [
+    {
+      "problem": "空字符串传给 strtol，最直接用哪条检查拒绝？",
+      "hint": "有没有消费至少一个数字。",
+      "solution": [
+        "空串无可转换数字。",
+        "end 等于输入起点。",
+        "立即拒绝。"
+      ],
+      "answer": "end == text。",
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "\"101\" 转换没报 ERANGE，为什么仍不能作成绩？",
+      "hint": "机器范围不同于业务范围。",
+      "solution": [
+        "101 能放进 long。",
+        "成绩上限却是 100。",
+        "业务范围检查拒绝。"
+      ],
+      "answer": "必须额外检查 0<=value && value<=100。",
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "为什么不能先 (int)value 再检查是否在 0..100？",
+      "hint": "窄化前可能已丢失信息。",
+      "solution": [
+        "long 值可能超出 int。",
+        "转换后的结果不再可靠表达原值。",
+        "先在 long 中比较范围，合法后转换。"
+      ],
+      "answer": "范围检查必须发生在转换之前。",
+      "difficulty": 3,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "解析 \"0\" 是否应被误判为失败？",
+      "hint": "返回值为零也可能是合法数值。",
+      "solution": [
+        "检查 end 已前进。",
+        "无 ERANGE 且无后缀。",
+        "0 在业务范围内，接受。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <errno.h>\n\nint main(void)\n{\n    const char *text = \"0\";\n    char *end;\n    errno = 0;\n    long value = strtol(text, &end, 10);\n    if (end == text || errno == ERANGE || *end != '\\0' || value < 0 || value > 100) { return 1; }\n    printf(\"%ld\\n\", value);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "0\n",
+        "files": {},
+        "exitCode": 0
+      },
+      "difficulty": 2,
+      "misconceptionTags": []
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "strtol 返回 0 就是失败。",
+      "correction": "合法文本 \"0\" 也返回零，要结合 end 与 errno。",
+      "tag": "c-parse-m1"
+    },
+    {
+      "claim": "没有 ERANGE 就满足所有输入规则。",
+      "correction": "它只报告 long 范围，后缀与业务范围由你验证。",
+      "tag": "c-parse-m2"
+    }
+  ],
+  "learningCheck": {
+    "question": "\"12x\" 只允许纯整数时，应该？",
+    "choices": [
+      "接受 12",
+      "检查 *end 后拒绝",
+      "把 x 自动删除"
+    ],
+    "correctIndex": 1,
+    "feedback": [
+      "前缀可转换不等于整条格式合法。",
+      "正确，未接受后缀不能忽略。",
+      "静默删改输入会掩盖错误。"
+    ]
+  },
+  "interactiveVisual": {
+    "mode": "c-compare",
+    "prediction": "先遮住输出：把 \"85\" 解析为 0..100 的分数。 写下结果后，对比两个已编译的例子。",
+    "caption": "切换案例，比较代码、输入与预期输出。结果来自本书固定程序的本机执行检查；网页展示静态案例，不运行任意 C 代码。",
+    "experiment": {
+      "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <errno.h>\n\nint main(void)\n{\n    const char *text = \"85\";\n    char *end;\n    errno = 0;\n    long value = strtol(text, &end, 10);\n    if (end == text || errno == ERANGE || *end != '\\0' || value < 0 || value > 100) { return 1; }\n    printf(\"%d\\n\", (int)value);\n    return 0;\n}\n",
+      "stdin": "",
+      "stdout": "85\n",
+      "files": {},
+      "exitCode": 0
+    }
+  },
+  "prerequisites": [
+    "c-files"
+  ],
+  "difficulty": 4,
+  "misconceptionTags": [
+    "c-parse-m1",
+    "c-parse-m2"
+  ],
+  "sources": [
+    "n1570"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "humanReviewed": false,
+    "version": "0.1.0"
+  }
+}

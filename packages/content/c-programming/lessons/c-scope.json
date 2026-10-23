@@ -1,0 +1,196 @@
+{
+  "id": "c-scope",
+  "number": "3.3",
+  "chapterId": "c-ch3",
+  "title": "作用域、生命周期与程序状态",
+  "concept": "分清名字在哪里可见、对象存在多久，才能避免函数之间互相干扰。",
+  "intuition": "作用域像地图上能看到标签的区域，生命周期像储物柜实际租用的时间。看不见标签，不等于柜子一定销毁；看得见指针，也不等于它指向的对象仍存在。",
+  "objectives": [
+    "块作用域",
+    "自动与静态存储期",
+    "全局状态谨慎使用"
+  ],
+  "body": [
+    {
+      "title": "块作用域",
+      "text": "花括号建立块。块内声明的普通局部变量，通常只有从声明处到块末尾可用。内层可声明同名变量遮蔽外层，但容易读错，本书尽量用不同名字。for 初始化中声明的 i 通常只在该 for 的范围内可见。"
+    },
+    {
+      "title": "自动与静态存储期",
+      "text": "普通局部对象每次进入对应块时有新的实例，离开块时生命周期结束。static 局部对象则在整个程序运行期间存在，只初始化一次，名字仍局限于函数内部。它能保留状态，但隐藏状态会使测试互相影响。初学主线优先显式通过参数与返回值传状态。"
+    },
+    {
+      "title": "全局状态谨慎使用",
+      "text": "文件作用域的对象可在函数外声明。过多全局可变状态让你难以判断哪个函数改变数据，也难以重复测试。用 const 表达固定配置，用函数参数表达输入，用返回值或明确的输出参数表达结果。生命周期错误在指针章会再次出现，此时先记住“离开块后，普通局部对象不存在了”。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "作用域决定标识符的可见范围；存储期与生命周期决定对象存在的时段。它们不是同一个概念。",
+    "conditions": [
+      "不读取已结束生命周期的对象。",
+      "static 局部状态跨调用保留，不能当作每次重置。",
+      "演示静态变量仅说明机制，不鼓励隐藏业务状态。"
+    ]
+  },
+  "derivation": [
+    {
+      "text": "先圈出每个声明所在的块。"
+    },
+    {
+      "text": "逐次调用时区分新建的局部对象和保留的静态对象。"
+    },
+    {
+      "text": "检查函数输出是否依赖之前的调用，决定是否应改成显式状态。"
+    }
+  ],
+  "workedExamples": [
+    {
+      "title": "局部副本",
+      "problem": "函数每次创建 n=0，再加一，两次调用结果如何？",
+      "steps": [
+        "每次进入都初始化为零。",
+        "各自加一得 1。",
+        "两次结果都是 1。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint next_local(void)\n{\n    int n = 0;\n    n++;\n    return n;\n}\n\nint main(void)\n{\n    printf(\"%d\\n\", next_local());\n    printf(\"%d\\n\", next_local());\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "1\n1\n",
+        "files": {},
+        "exitCode": 0
+      }
+    },
+    {
+      "title": "保留状态",
+      "problem": "使用 static int n=0，每次加一，调用两次。",
+      "steps": [
+        "static 只初始化一次。",
+        "第一次得到 1。",
+        "第二次从 1 开始得到 2。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint next_static(void)\n{\n    static int n = 0;\n    n++;\n    return n;\n}\n\nint main(void)\n{\n    printf(\"%d\\n\", next_static());\n    printf(\"%d\\n\", next_static());\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "1\n2\n",
+        "files": {},
+        "exitCode": 0
+      }
+    }
+  ],
+  "practice": [
+    {
+      "problem": "内层块声明 x=9，外层 x=2，块结束后外层是什么？",
+      "hint": "遮蔽不会合并对象。",
+      "solution": [
+        "内层输出 9。",
+        "块结束销毁内层 x。",
+        "外层 x 保持 2。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    int x = 2;\n    {\n        int x = 9;\n        printf(\"%d\\n\", x);\n    }\n    printf(\"%d\\n\", x);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "9\n2\n",
+        "files": {},
+        "exitCode": 0
+      },
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "计数函数使用 static 状态，为什么每个测试不一定都从 0 开始？",
+      "hint": "状态可能来自前一次调用。",
+      "solution": [
+        "静态对象存在整个程序。",
+        "调用之间没有自动重新初始化。",
+        "改为显式 state 参数或设计重置接口。"
+      ],
+      "answer": "测试共享了保留状态，应明确隔离或重置。",
+      "difficulty": 3,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "for(int i=0;i<2;i++) 后能直接读取 i 吗？",
+      "hint": "声明写在 for 初始化内。",
+      "solution": [
+        "i 属于该 for 的作用域。",
+        "循环之后名字不可见。",
+        "需要保留时在外层先声明，并明确结束值。"
+      ],
+      "answer": "不能直接引用该 i；这是作用域问题。",
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "怎样写函数，让调用次数不会影响返回值？",
+      "hint": "让结果只依赖传入值。",
+      "solution": [
+        "使用参数接收输入。",
+        "不要访问可变全局或 static 状态。",
+        "例如 twice(4) 每次返回 8。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint twice(int n)\n{\n    return n * 2;\n}\n\nint main(void)\n{\n    printf(\"%d %d\\n\", twice(4), twice(4));\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "8 8\n",
+        "files": {},
+        "exitCode": 0
+      },
+      "difficulty": 2,
+      "misconceptionTags": []
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "static 让名字在所有文件可见。",
+      "correction": "本节 static 局部对象名字仍在块内；文件作用域 static 还会限制链接可见性。",
+      "tag": "c-scope-m1"
+    },
+    {
+      "claim": "生命周期和作用域是一回事。",
+      "correction": "一个描述对象何时存在，另一个描述名字哪里可见。",
+      "tag": "c-scope-m2"
+    }
+  ],
+  "learningCheck": {
+    "question": "static 局部变量每次调用都会重新初始化吗？",
+    "choices": [
+      "会",
+      "不会，只初始化一次",
+      "只在偶数次调用初始化"
+    ],
+    "correctIndex": 1,
+    "feedback": [
+      "普通自动局部变量通常每次建立新实例。",
+      "正确，后续调用保留之前状态。",
+      "没有这种规则。"
+    ]
+  },
+  "interactiveVisual": {
+    "mode": "c-compare",
+    "prediction": "先遮住输出：函数每次创建 n=0，再加一，两次调用结果如何？ 写下结果后，对比两个已编译的例子。",
+    "caption": "切换案例，比较代码、输入与预期输出。结果来自本书固定程序的本机执行检查；网页展示静态案例，不运行任意 C 代码。",
+    "experiment": {
+      "code": "#include <stdio.h>\n\nint next_local(void)\n{\n    int n = 0;\n    n++;\n    return n;\n}\n\nint main(void)\n{\n    printf(\"%d\\n\", next_local());\n    printf(\"%d\\n\", next_local());\n    return 0;\n}\n",
+      "stdin": "",
+      "stdout": "1\n1\n",
+      "files": {},
+      "exitCode": 0
+    }
+  },
+  "prerequisites": [
+    "c-functions"
+  ],
+  "difficulty": 2,
+  "misconceptionTags": [
+    "c-scope-m1",
+    "c-scope-m2"
+  ],
+  "sources": [
+    "n1570"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "humanReviewed": false,
+    "version": "0.1.0"
+  }
+}

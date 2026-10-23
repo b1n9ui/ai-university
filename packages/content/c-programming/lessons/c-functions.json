@@ -1,0 +1,196 @@
+{
+  "id": "c-functions",
+  "number": "3.2",
+  "chapterId": "c-ch3",
+  "title": "函数：拆出能重复使用的动作",
+  "concept": "函数把一项任务命名，让同一计算可以重复调用，也更容易单独检查。",
+  "intuition": "函数像有输入格和输出格的小机器：参数给输入，return 交结果。调用一次，就建立一次新的局部执行过程。",
+  "objectives": [
+    "先写输入输出契约",
+    "调用传的是值",
+    "声明与返回"
+  ],
+  "body": [
+    {
+      "title": "先写输入输出契约",
+      "text": "例如 int square(int value) 接收一个 int，返回它的平方。函数定义包含返回类型、名字、形参列表和函数体。先明确合法输入范围：若乘积不能用 int 表示，函数就不该直接相乘。本节限定参数在 -100 到 100，乘积在 int 的标准最小保证范围内。"
+    },
+    {
+      "title": "调用传的是值",
+      "text": "square(n) 会把 n 的值交给形参 value。修改 value 不会改调用者的 n，这叫按值传递。想改调用者对象，后面通过指针传递地址；指针本身也仍是按值传递。没有参数的函数写 (void)，在本书 C17 基线下不能把空括号声明当作同样明确的参数契约。"
+    },
+    {
+      "title": "声明与返回",
+      "text": "调用处之前必须看得见函数声明。小程序可把定义放在 main 前，项目可在头文件放原型。非 void 函数在每个需要返回的路径上提供合适值；不要指望走到底自动获得正确结果。void 函数不返回业务值，可用 return; 提前结束。计算函数尽量不夹杂 scanf 与 printf，输入输出留在外层。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "函数封装可调用的语句序列；实参的值初始化形参，return 将控制交还调用者并可提供一个结果。",
+    "conditions": [
+      "调用前有匹配的声明。",
+      "实参符合约定范围。",
+      "不依赖实参求值顺序，不返回局部对象地址。"
+    ]
+  },
+  "derivation": [
+    {
+      "text": "用一句话规定函数做什么以及合法输入。"
+    },
+    {
+      "text": "先实现计算与 return，再在 main 中调用。"
+    },
+    {
+      "text": "用不同实参分别调用，确认局部修改不会泄漏到调用者。"
+    }
+  ],
+  "workedExamples": [
+    {
+      "title": "平方函数",
+      "problem": "计算 4 的平方。",
+      "steps": [
+        "定义 square，参数范围为 -100 到 100。",
+        "4 复制到 value。",
+        "返回 16 并输出。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint square(int value)\n{\n    return value * value;\n}\n\nint main(void)\n{\n    printf(\"%d\\n\", square(4));\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "16\n",
+        "files": {},
+        "exitCode": 0
+      }
+    },
+    {
+      "title": "值传递",
+      "problem": "在函数里把参数改成 99，调用者的 x 是否变化？",
+      "steps": [
+        "x 的值 3 被复制。",
+        "函数内修改的是复制品。",
+        "调用结束后 x 仍为 3。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint changed(int value)\n{\n    value = 99;\n    return value;\n}\n\nint main(void)\n{\n    int x = 3;\n    printf(\"%d\\n\", changed(x));\n    printf(\"%d\\n\", x);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "99\n3\n",
+        "files": {},
+        "exitCode": 0
+      }
+    }
+  ],
+  "practice": [
+    {
+      "problem": "实现 int larger(int a,int b)，返回较大者，测试 3、8。",
+      "hint": "用 if 比较。",
+      "solution": [
+        "a>b 时返回 a。",
+        "否则返回 b，包含相等情况。",
+        "本题得到 8。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint larger(int a, int b)\n{\n    if (a > b) { return a; }\n    return b;\n}\n\nint main(void)\n{\n    printf(\"%d\\n\", larger(3, 8));\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "8\n",
+        "files": {},
+        "exitCode": 0
+      },
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "函数参数被改成 0，为何原变量还是 7？",
+      "hint": "画两个独立储物格。",
+      "solution": [
+        "实参值被复制给形参。",
+        "写形参只更新形参对象。",
+        "要改外部对象需明确传地址。"
+      ],
+      "answer": "C 是按值传递；此处没有修改原对象。",
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "实现 int is_even(int n)，测试 -4 与 3。",
+      "hint": "n%2 == 0 对负偶数也成立。",
+      "solution": [
+        "比较余数是否为零。",
+        "比较结果是 0 或 1。",
+        "分别输出 1、0。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint is_even(int n)\n{\n    return n % 2 == 0;\n}\n\nint main(void)\n{\n    printf(\"%d %d\\n\", is_even(-4), is_even(3));\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "1 0\n",
+        "files": {},
+        "exitCode": 0
+      },
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "平方函数为何不能对任意 int 都直接返回 n*n？",
+      "hint": "返回类型不能修复已经溢出的乘法。",
+      "solution": [
+        "乘法先按操作数类型计算。",
+        "某些 int 的平方超出 int 范围。",
+        "限定输入或先检查，不在溢出后检查结果。"
+      ],
+      "answer": "必须写明范围或增加运算前验证；本节使用 -100 到 100。",
+      "difficulty": 3,
+      "misconceptionTags": []
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "调用函数会自动修改同名外部变量。",
+      "correction": "形参和外部变量是不同对象，同名也不会改变值传递。",
+      "tag": "c-functions-m1"
+    },
+    {
+      "claim": "返回类型写 double 就能修复内部整数除法。",
+      "correction": "仍要在运算前转换操作数；返回时转换太晚。",
+      "tag": "c-functions-m2"
+    }
+  ],
+  "learningCheck": {
+    "question": "void bump(int n) 里执行 n++，调用后原 int 是否改变？",
+    "choices": [
+      "一定加一",
+      "不改变",
+      "取决于变量名"
+    ],
+    "correctIndex": 1,
+    "feedback": [
+      "只修改了形参副本。",
+      "正确，普通整数按值传递。",
+      "名字不会把两个对象绑定。"
+    ]
+  },
+  "interactiveVisual": {
+    "mode": "c-compare",
+    "prediction": "先遮住输出：计算 4 的平方。 写下结果后，对比两个已编译的例子。",
+    "caption": "切换案例，比较代码、输入与预期输出。结果来自本书固定程序的本机执行检查；网页展示静态案例，不运行任意 C 代码。",
+    "experiment": {
+      "code": "#include <stdio.h>\n\nint square(int value)\n{\n    return value * value;\n}\n\nint main(void)\n{\n    printf(\"%d\\n\", square(4));\n    return 0;\n}\n",
+      "stdin": "",
+      "stdout": "16\n",
+      "files": {},
+      "exitCode": 0
+    }
+  },
+  "prerequisites": [
+    "c-for"
+  ],
+  "difficulty": 2,
+  "misconceptionTags": [
+    "c-functions-m1",
+    "c-functions-m2"
+  ],
+  "sources": [
+    "n1570"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "humanReviewed": false,
+    "version": "0.1.0"
+  }
+}

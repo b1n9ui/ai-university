@@ -1,0 +1,192 @@
+{
+  "id": "c-files",
+  "number": "6.3",
+  "chapterId": "c-ch6",
+  "title": "文本文件、错误检查与关闭",
+  "concept": "文件让数据在程序退出后仍能保存；读写必须同时考虑打开失败、处理中失败和关闭失败。",
+  "intuition": "打开文件像借一本册子，读取位置会前进，最后必须归还。打开成功只说明拿到了册子，不保证之后每一页都能读写成功。",
+  "objectives": [
+    "文件指针与模式",
+    "循环不能预判 EOF",
+    "写入和关闭也会失败"
+  ],
+  "body": [
+    {
+      "title": "文件指针与模式",
+      "text": "FILE *fp=fopen(\"notes.txt\",\"r\") 尝试只读打开相对路径，失败返回 NULL；\"w\" 创建或截断文件，旧内容会被清空；\"a\" 追加。相对路径从程序当前工作目录解释，不从源文件所在目录解释。不要在未确认路径时对重要文件使用 w。"
+    },
+    {
+      "title": "循环不能预判 EOF",
+      "text": "while(fgets(buf,sizeof buf,fp)!=NULL) 是常见逐段读取方式。while(!feof(fp)) 不对：文件结束标志通常在一次读取尝试遇到结束之后才设置，预判会多处理一次旧缓冲。读取循环结束后用 ferror(fp) 区分读取错误与正常结束。文件最后一行可以没有换行，解析器应写清是否接受。"
+    },
+    {
+      "title": "写入和关闭也会失败",
+      "text": "fprintf 返回负数表示失败；fclose 成功返回零，失败返回 EOF。缓冲写入的错误可能延迟到关闭时出现。每条退出路径都要关闭已经打开的文件，但关闭后不能再次使用 FILE 指针。本书项目先验证整份输入才输出报告，不给坏数据生成看似完整的部分统计；这不等于支持操作系统断电下的原子存储。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "标准 I/O 流以 FILE * 表示；读取返回值决定是否获得数据，ferror 区分错误，fclose 结束流并报告关闭结果。",
+    "conditions": [
+      "只有 fopen 成功后使用流。",
+      "写模式可能截断旧文件。",
+      "读取循环中的缓冲区只在读取成功时使用。"
+    ]
+  },
+  "derivation": [
+    {
+      "text": "打开并立即检查。"
+    },
+    {
+      "text": "每次读写检查返回值，读完检查 ferror。"
+    },
+    {
+      "text": "关闭一次并检查关闭结果，保留前面已发生的错误。"
+    }
+  ],
+  "workedExamples": [
+    {
+      "title": "写入再读取",
+      "problem": "在临时练习目录创建 note.txt，写两行并读取。",
+      "steps": [
+        "检查 fopen 与 fputs。",
+        "关闭写流后重新只读打开。",
+        "逐段读并检查错误，最后关闭。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    FILE *fp = fopen(\"note.txt\", \"w\");\n    if (fp == NULL) { return 1; }\n    if (fputs(\"one\\ntwo\\n\", fp) == EOF) { fclose(fp); return 1; }\n    if (fclose(fp) != 0) { return 1; }\n    fp = fopen(\"note.txt\", \"r\");\n    if (fp == NULL) { return 1; }\n    char line[16];\n    while (fgets(line, sizeof line, fp) != NULL) { printf(\"%s\", line); }\n    int bad = ferror(fp);\n    if (fclose(fp) != 0) { bad = 1; }\n    if (bad) { return 1; }\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "one\ntwo\n",
+        "files": {},
+        "exitCode": 0
+      }
+    },
+    {
+      "title": "文件不存在",
+      "problem": "打开本例临时目录中不存在的 missing.txt。",
+      "steps": [
+        "r 不创建文件。",
+        "fopen 返回 NULL。",
+        "报告错误并返回非零。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    FILE *fp = fopen(\"missing.txt\", \"r\");\n    if (fp == NULL) { puts(\"cannot open\"); return 1; }\n    fclose(fp);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "cannot open\n",
+        "files": {},
+        "exitCode": 1
+      }
+    }
+  ],
+  "practice": [
+    {
+      "problem": "fopen(\"x.txt\",\"w\") 遇到已有文件会怎样？",
+      "hint": "w 不是追加。",
+      "solution": [
+        "成功时截断原内容。",
+        "之后从头写。",
+        "保留旧内容应另选策略或用 a，不能混淆。"
+      ],
+      "answer": "成功打开会清空原文件内容；先明确写入意图。",
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "为何 while(!feof(fp)) 不能作为读取成功判断？",
+      "hint": "结束标志通常在读失败后设置。",
+      "solution": [
+        "进入循环时还没尝试本次读取。",
+        "最后一次可能没有新数据。",
+        "用读取函数返回值控制处理。"
+      ],
+      "answer": "它不能保证本轮有新数据，可能重复处理旧缓冲。",
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "统计固定文件 a.txt 的字节数，本题文件内容 abc 换行。",
+      "hint": "用 int 接收 fgetc。",
+      "solution": [
+        "每次非 EOF 时计数。",
+        "循环结束检查 ferror。",
+        "本题 ASCII 三字符加换行，文本流取得四个字符。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    FILE *fp = fopen(\"a.txt\", \"r\");\n    if (fp == NULL) { return 1; }\n    size_t count = 0;\n    int ch;\n    while ((ch = fgetc(fp)) != EOF) { count++; }\n    int bad = ferror(fp);\n    if (fclose(fp) != 0) { bad = 1; }\n    if (bad) { return 1; }\n    printf(\"%zu\\n\", count);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "4\n",
+        "files": {
+          "a.txt": "abc\n"
+        },
+        "exitCode": 0
+      },
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "fputs 成功后，fclose 失败能否报告保存成功？",
+      "hint": "缓冲错误可能延后报告。",
+      "solution": [
+        "数据可能仍在缓冲。",
+        "关闭时刷新可能失败。",
+        "保存成功要求所有相关操作成功。"
+      ],
+      "answer": "不能；应把关闭失败作为写入失败报告。",
+      "difficulty": 3,
+      "misconceptionTags": []
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "相对路径相对源文件位置。",
+      "correction": "相对于程序启动时的当前工作目录，二者可能不同。",
+      "tag": "c-files-m1"
+    },
+    {
+      "claim": "打开成功后就无需再检查。",
+      "correction": "磁盘、权限、设备等错误仍可能在读写或关闭时发生。",
+      "tag": "c-files-m2"
+    }
+  ],
+  "learningCheck": {
+    "question": "逐行读文件的循环应由什么控制？",
+    "choices": [
+      "fgets 的返回值",
+      "进入循环前的 feof",
+      "文件扩展名"
+    ],
+    "correctIndex": 0,
+    "feedback": [
+      "正确，只有读取成功才处理缓冲。",
+      "它不能预告下一次一定读取成功。",
+      "扩展名不决定流的读取状态。"
+    ]
+  },
+  "interactiveVisual": {
+    "mode": "c-compare",
+    "prediction": "先遮住输出：在临时练习目录创建 note.txt，写两行并读取。 写下结果后，对比两个已编译的例子。",
+    "caption": "切换案例，比较代码、输入与预期输出。结果来自本书固定程序的本机执行检查；网页展示静态案例，不运行任意 C 代码。",
+    "experiment": {
+      "code": "#include <stdio.h>\n\nint main(void)\n{\n    FILE *fp = fopen(\"note.txt\", \"w\");\n    if (fp == NULL) { return 1; }\n    if (fputs(\"one\\ntwo\\n\", fp) == EOF) { fclose(fp); return 1; }\n    if (fclose(fp) != 0) { return 1; }\n    fp = fopen(\"note.txt\", \"r\");\n    if (fp == NULL) { return 1; }\n    char line[16];\n    while (fgets(line, sizeof line, fp) != NULL) { printf(\"%s\", line); }\n    int bad = ferror(fp);\n    if (fclose(fp) != 0) { bad = 1; }\n    if (bad) { return 1; }\n    return 0;\n}\n",
+      "stdin": "",
+      "stdout": "one\ntwo\n",
+      "files": {},
+      "exitCode": 0
+    }
+  },
+  "prerequisites": [
+    "c-vector"
+  ],
+  "difficulty": 4,
+  "misconceptionTags": [
+    "c-files-m1",
+    "c-files-m2"
+  ],
+  "sources": [
+    "n1570"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "humanReviewed": false,
+    "version": "0.1.0"
+  }
+}

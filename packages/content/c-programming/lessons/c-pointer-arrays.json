@@ -1,0 +1,190 @@
+{
+  "id": "c-pointer-arrays",
+  "number": "5.3",
+  "chapterId": "c-ch5",
+  "title": "数组与指针、const 与范围",
+  "concept": "理解数组何时转换为指针，可以写出同时表达位置、长度和只读意图的接口。",
+  "intuition": "数组是一排实际抽屉，指针是指向其中一个抽屉的标签。标签知道起点，却不自动记录整排有多少个。",
+  "objectives": [
+    "转换不是同一类型",
+    "尾后指针的限制",
+    "只读参数与可改指针"
+  ],
+  "body": [
+    {
+      "title": "转换不是同一类型",
+      "text": "多数表达式中，数组名转换成指向首元素的指针；sizeof 数组、对数组取地址等场景例外。int a[3] 的 a+1 指向下一元素，按元素大小前进，不是随意增加一个字节。a[i] 对合法范围等价于 *(a+i)。数组与指针有关联，但不是同一类对象。"
+    },
+    {
+      "title": "尾后指针的限制",
+      "text": "可以形成指向数组最后一项之后的尾后指针，用来判断遍历结束，但不能解引用。指针加减应保持在同一数组对象内或其尾后位置；不能越界形成任意指针再“走回来”。不同对象的指针大小比较、相减也没有一般的可移植意义。"
+    },
+    {
+      "title": "只读参数与可改指针",
+      "text": "const int *p 表示不能经 p 修改目标 int，但 p 自身可改为指向别处。int *const p 表示指针对象不能改指向，但可通过它改目标。const 不延长生命周期。数组只读计算接口优先用 const int *values, size_t count，让调用者明确提供范围。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "数组到指针转换产生首元素地址；指针算术以目标元素为单位，并受同一数组及尾后边界限制。",
+    "conditions": [
+      "函数接收至少 count 项的有效数组；count 为零时不访问。",
+      "不解引用尾后指针。",
+      "不将任意两个独立对象地址做大小比较或相减。"
+    ]
+  },
+  "derivation": [
+    {
+      "text": "识别当前表达式里的数组是否发生转换。"
+    },
+    {
+      "text": "把指针位置与实际数组长度一起追踪。"
+    },
+    {
+      "text": "用 const 限制不必要的写入，迭代始终在合法范围。"
+    }
+  ],
+  "workedExamples": [
+    {
+      "title": "只读求和",
+      "problem": "函数接收三个数及长度，求和。",
+      "steps": [
+        "const 阻止函数通过参数写元素。",
+        "循环按 n 访问。",
+        "2+3+4 得 9。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint sum_small(const int *a, size_t n)\n{\n    int sum = 0;\n    for (size_t i = 0; i < n; i++) { sum += a[i]; }\n    return sum;\n}\n\nint main(void)\n{\n    int a[] = {2, 3, 4};\n    printf(\"%d\\n\", sum_small(a, 3));\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "9\n",
+        "files": {},
+        "exitCode": 0
+      }
+    },
+    {
+      "title": "移动一个元素",
+      "problem": "指针从首项移到第二项再读取。",
+      "steps": [
+        "p 最初指向 a[0]。",
+        "p++ 前进一项。",
+        "*p 得到 a[1] 的 20。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    int a[] = {10, 20, 30};\n    const int *p = a;\n    p++;\n    printf(\"%d\\n\", *p);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "20\n",
+        "files": {},
+        "exitCode": 0
+      }
+    }
+  ],
+  "practice": [
+    {
+      "problem": "a+3 对三元素数组是合法的吗？能读取 *(a+3) 吗？",
+      "hint": "区分形成尾后指针与解引用。",
+      "solution": [
+        "a+3 是合法尾后位置。",
+        "那里没有数组元素。",
+        "只能作边界标记，不得解引用。"
+      ],
+      "answer": "可形成尾后指针，但不能读取或写入它。",
+      "difficulty": 3,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "用 const int *p 能执行 p++ 吗？",
+      "hint": "const 修饰的是目标 int。",
+      "solution": [
+        "指针本身不是 const。",
+        "可在合法范围内移动。",
+        "仍不能用 *p=... 写目标。"
+      ],
+      "answer": "可以在合法范围内移动；不能经 p 修改 int。",
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "打印 a[2] 与 *(a+2)，数组为 {6,7,8}。",
+      "hint": "两种写法访问同一元素。",
+      "solution": [
+        "第二个偏移为 2。",
+        "均访问第三项。",
+        "两个输出都是 8。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    int a[] = {6, 7, 8};\n    printf(\"%d %d\\n\", a[2], *(a + 2));\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "8 8\n",
+        "files": {},
+        "exitCode": 0
+      },
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "函数只收到 int *p，能用 sizeof p / sizeof p[0] 求原数组长度吗？",
+      "hint": "指针不携带完整数组大小。",
+      "solution": [
+        "sizeof p 是指针大小。",
+        "它与数组实际长度无关。",
+        "接口必须另传长度。"
+      ],
+      "answer": "不能；这个计算不会恢复原数组长度。",
+      "difficulty": 2,
+      "misconceptionTags": []
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "数组就是指针，sizeof 总是一样。",
+      "correction": "数组本体与指针对象的大小含义不同；转换不意味着类型相同。",
+      "tag": "c-pointer-arrays-m1"
+    },
+    {
+      "claim": "尾后指针可读取一个终止零。",
+      "correction": "整数数组没有自动终止零；尾后位置不能解引用。",
+      "tag": "c-pointer-arrays-m2"
+    }
+  ],
+  "learningCheck": {
+    "question": "const int *p 中 const 限制什么？",
+    "choices": [
+      "经 p 修改目标 int",
+      "修改 p 的指向",
+      "任何人修改原对象"
+    ],
+    "correctIndex": 0,
+    "feedback": [
+      "正确，只限制通过这个访问路径的写入。",
+      "p 本身可在合法范围改指向。",
+      "其他有权写入的访问路径未必受限制。"
+    ]
+  },
+  "interactiveVisual": {
+    "mode": "c-compare",
+    "prediction": "先遮住输出：函数接收三个数及长度，求和。 写下结果后，对比两个已编译的例子。",
+    "caption": "切换案例，比较代码、输入与预期输出。结果来自本书固定程序的本机执行检查；网页展示静态案例，不运行任意 C 代码。",
+    "experiment": {
+      "code": "#include <stdio.h>\n\nint sum_small(const int *a, size_t n)\n{\n    int sum = 0;\n    for (size_t i = 0; i < n; i++) { sum += a[i]; }\n    return sum;\n}\n\nint main(void)\n{\n    int a[] = {2, 3, 4};\n    printf(\"%d\\n\", sum_small(a, 3));\n    return 0;\n}\n",
+      "stdin": "",
+      "stdout": "9\n",
+      "files": {},
+      "exitCode": 0
+    }
+  },
+  "prerequisites": [
+    "c-out-parameters"
+  ],
+  "difficulty": 4,
+  "misconceptionTags": [
+    "c-pointer-arrays-m1",
+    "c-pointer-arrays-m2"
+  ],
+  "sources": [
+    "n1570"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "humanReviewed": false,
+    "version": "0.1.0"
+  }
+}

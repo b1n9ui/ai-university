@@ -1,0 +1,202 @@
+{
+  "id": "c-output",
+  "number": "1.2",
+  "chapterId": "c-ch1",
+  "title": "读懂第一段代码与输出",
+  "concept": "认识程序的标点和输出方式，就能把一段“能运行的代码”读成有顺序的动作。",
+  "intuition": "从 main 的左花括号进入，一句一句向下执行。分号像一句话的句号，花括号把多句组成一个整体；缩进让人看清层级，但在这里不决定执行顺序。",
+  "objectives": [
+    "逐个读符号",
+    "换行和转义",
+    "printf 是带空位的模板"
+  ],
+  "body": [
+    {
+      "title": "逐个读符号",
+      "text": "#include <stdio.h> 让本文件获得标准输入输出函数的声明。int 是 main 返回值的类型；void 表示这个写法不接收参数。函数名后写括号，函数体用花括号包住。puts(\"Hi\"); 是一次函数调用：把文字交给 puts。字符串用英文双引号，分号在括号外。"
+    },
+    {
+      "title": "换行和转义",
+      "text": "puts 会在字符串末尾增加一个换行；printf 不自动增加。反斜杠加 n 写作 \\n，表示一个换行字符，不是打印两个字母。\\t 表示制表符，\\\" 表示字符串内的双引号，\\\\ 表示反斜杠。屏幕上的列宽、制表符位置可能因终端而不同，本书不靠它们对齐表格。"
+    },
+    {
+      "title": "printf 是带空位的模板",
+      "text": "printf 的第一个参数是格式字符串。%d 是整数空位，后面的整数按顺序填进去；%% 才是打印百分号。先数清空位，再数后面的参数。不要把读者输入当成格式字符串。注释 // 直到行尾，或 /* 到 */，用于解释意图，不参与运行；块注释不能互相嵌套。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "语句按控制流执行；字符串是双引号包围的字符序列。printf 的格式说明必须与传入参数的实际类型匹配。",
+    "conditions": [
+      "调用函数前包含声明它的头文件。",
+      "本节 %d 对应 int；文字直接写在格式字符串内。",
+      "屏幕显示与标准输出不同：你在键盘输入的回显不算程序输出。"
+    ]
+  },
+  "derivation": [
+    {
+      "text": "从 main 开始，先找每个分号结束的语句。"
+    },
+    {
+      "text": "把字符串里的转义字符解释成实际字符。"
+    },
+    {
+      "text": "按执行顺序拼接输出，并只在明确换行的位置换行。"
+    }
+  ],
+  "workedExamples": [
+    {
+      "title": "两种换行",
+      "problem": "先用 puts 输出 Start，再用 printf 输出两行。",
+      "steps": [
+        "puts 自动换行。",
+        "printf 的两个 \\n 分别换行。",
+        "三行会依次出现。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    puts(\"Start\");\n    printf(\"A\\nB\\n\");\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "Start\nA\nB\n",
+        "files": {},
+        "exitCode": 0
+      }
+    },
+    {
+      "title": "模板与百分号",
+      "problem": "输出整数进度 25，并显示百分号。",
+      "steps": [
+        "%d 由整数 25 替换。",
+        "%% 生成一个 %。",
+        "末尾 \\n 让终端换行。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    printf(\"Progress: %d%%\\n\", 25);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "Progress: 25%\n",
+        "files": {},
+        "exitCode": 0
+      }
+    }
+  ],
+  "practice": [
+    {
+      "problem": "printf(\"A\"); printf(\"B\\n\"); 输出几行？",
+      "hint": "第一次没有换行。",
+      "solution": [
+        "先追加 A。",
+        "再在同一行追加 B。",
+        "最后换行。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    printf(\"A\");\n    printf(\"B\\n\");\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "AB\n",
+        "files": {},
+        "exitCode": 0
+      },
+      "difficulty": 1,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "输出带双引号的 \"C\"。",
+      "hint": "双引号需要转义。",
+      "solution": [
+        "外层双引号界定字符串。",
+        "内部两个双引号前加反斜杠。",
+        "使用 puts 完成换行。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    puts(\"\\\"C\\\"\");\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "\"C\"\n",
+        "files": {},
+        "exitCode": 0
+      },
+      "difficulty": 1,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "为什么 printf(\"%d %d\\n\", 3); 不可以？",
+      "hint": "数空位和参数。",
+      "solution": [
+        "格式要求两个 int。",
+        "只提供了一个。",
+        "补齐参数或删去一个空位，不能期待“自动补零”。"
+      ],
+      "answer": "格式参数不足会导致未定义行为；不能给这个错误程序规定输出。",
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "输出一行 Path: C:\\study。",
+      "hint": "要输出一个反斜杠，在字符串里写两个。",
+      "solution": [
+        "写好 Path: 文本。",
+        "把路径反斜杠写成 \\\\。",
+        "puts 自动加换行。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    puts(\"Path: C:\\\\study\");\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "Path: C:\\study\n",
+        "files": {},
+        "exitCode": 0
+      },
+      "difficulty": 1,
+      "misconceptionTags": []
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "printf 会自动换行。",
+      "correction": "只有格式字符串里的 \\n 或其他输出函数明确要求时才换行。",
+      "tag": "c-output-m1"
+    },
+    {
+      "claim": "中文全角分号也能结束 C 语句。",
+      "correction": "代码标点使用英文半角；全角符号是不同字符，编译器会报错。",
+      "tag": "c-output-m2"
+    }
+  ],
+  "learningCheck": {
+    "question": "printf(\"%d%%\", 8) 写出什么？",
+    "choices": [
+      "8%%",
+      "8%",
+      "%d%"
+    ],
+    "correctIndex": 1,
+    "feedback": [
+      "%% 在格式里表示一个百分号。",
+      "正确，%d 用 8 填入，%% 输出一个 %。",
+      "%d 会按参数替换，不保留原样。"
+    ]
+  },
+  "interactiveVisual": {
+    "mode": "c-compare",
+    "prediction": "先遮住输出：先用 puts 输出 Start，再用 printf 输出两行。 写下结果后，对比两个已编译的例子。",
+    "caption": "切换案例，比较代码、输入与预期输出。结果来自本书固定程序的本机执行检查；网页展示静态案例，不运行任意 C 代码。",
+    "experiment": {
+      "code": "#include <stdio.h>\n\nint main(void)\n{\n    puts(\"Start\");\n    printf(\"A\\nB\\n\");\n    return 0;\n}\n",
+      "stdin": "",
+      "stdout": "Start\nA\nB\n",
+      "files": {},
+      "exitCode": 0
+    }
+  },
+  "prerequisites": [
+    "c-start"
+  ],
+  "difficulty": 1,
+  "misconceptionTags": [
+    "c-output-m1",
+    "c-output-m2"
+  ],
+  "sources": [
+    "n1570"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "humanReviewed": false,
+    "version": "0.1.0"
+  }
+}

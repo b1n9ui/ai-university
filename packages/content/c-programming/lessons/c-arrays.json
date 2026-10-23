@@ -1,0 +1,196 @@
+{
+  "id": "c-arrays",
+  "number": "4.1",
+  "chapterId": "c-ch4",
+  "title": "数组：下标、长度与边界",
+  "concept": "数组把同类型的多项数据连续存放，让程序可以按下标逐项处理。",
+  "intuition": "像一排编号从零开始的抽屉：五个抽屉的标签是 0 到 4，标签 5 已在这一排之外。",
+  "objectives": [
+    "创建与初始化",
+    "长度不是终止标记",
+    "传给函数时另传长度"
+  ],
+  "body": [
+    {
+      "title": "创建与初始化",
+      "text": "int scores[3] = {70, 80, 90}; 创建三个 int 元素。scores[0] 是第一项，scores[2] 是最后一项。int a[5] = {0}; 把所有元素初始化为零；只提供部分初始化值时，其余也被零初始化。数组不能在创建后直接用 a = b 整体赋值，要逐项复制或用明确的库操作。"
+    },
+    {
+      "title": "长度不是终止标记",
+      "text": "在数组本体所在作用域，可用 sizeof a / sizeof a[0] 得元素个数，结果为 size_t。循环写 i < count。C 不在普通下标访问时自动检查越界；越界不是“可能得到随机值的合法读取”，而是程序错误。二维固定数组可视为每行又是数组，a[row][col] 每一维都要合法。"
+    },
+    {
+      "title": "传给函数时另传长度",
+      "text": "函数形参写 const int values[] 时，会调整为指针类型，不再携带完整数组大小。函数内 sizeof values 不能求原数组长度。让接口显式接收 size_t count，并约定至少有 count 个可读元素；若 count 为零，就不访问任何元素。最大值等操作还必须专门定义空数组的行为。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "长度为 n 的数组由 n 个连续同类型元素组成，有效下标为 0 到 n-1。数组形参调整为指针，长度需另传。",
+    "conditions": [
+      "每次访问都在实际数组范围内。",
+      "sizeof 求长度只用于真正的数组表达式，不用于已调整的形参。",
+      "求平均或最大值时先规定空数据行为。"
+    ]
+  },
+  "derivation": [
+    {
+      "text": "列出元素个数与最后一个合法下标。"
+    },
+    {
+      "text": "用 size_t 遍历并检查 i<count。"
+    },
+    {
+      "text": "把长度随数组交给函数，不在函数里猜。"
+    }
+  ],
+  "workedExamples": [
+    {
+      "title": "成绩总分",
+      "problem": "求 70、80、90 的总和。",
+      "steps": [
+        "数组长度由 sizeof 得到 3。",
+        "循环访问 0、1、2。",
+        "总和为 240。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    int scores[] = {70, 80, 90};\n    size_t count = sizeof scores / sizeof scores[0];\n    int total = 0;\n    for (size_t i = 0; i < count; i++) {\n        total += scores[i];\n    }\n    printf(\"%d\\n\", total);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "240\n",
+        "files": {},
+        "exitCode": 0
+      }
+    },
+    {
+      "title": "部分初始化",
+      "problem": "int a[4]={7} 的四项是什么？",
+      "steps": [
+        "第一项为 7。",
+        "其余被零初始化。",
+        "用合法下标遍历打印。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    int a[4] = {7};\n    for (size_t i = 0; i < 4; i++) {\n        printf(\"%d\\n\", a[i]);\n    }\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "7\n0\n0\n0\n",
+        "files": {},
+        "exitCode": 0
+      }
+    }
+  ],
+  "practice": [
+    {
+      "problem": "数组 {2,4,6} 的平均值。",
+      "hint": "先确认非空，再用浮点除法。",
+      "solution": [
+        "三项之和 12。",
+        "长度 3。",
+        "12/3.0 得 4.0。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    int a[] = {2, 4, 6};\n    int sum = 0;\n    for (size_t i = 0; i < 3; i++) { sum += a[i]; }\n    printf(\"%.1f\\n\", sum / 3.0);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "4.0\n",
+        "files": {},
+        "exitCode": 0
+      },
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "int a[3] 中 a[3] 是否存在？",
+      "hint": "从零开始数。",
+      "solution": [
+        "合法下标为 0、1、2。",
+        "3 是越界位置。",
+        "不得读取或写入。"
+      ],
+      "answer": "不存在可访问的第四项；不能为 a[3] 指定合法输出。",
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "打印 2 行 2 列固定数组的各行和。",
+      "hint": "外层每行把 sum 重置为零。",
+      "solution": [
+        "第一行 1+2=3。",
+        "第二行 3+4=7。",
+        "每行输出一个总和。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    int a[2][2] = {{1, 2}, {3, 4}};\n    for (size_t r = 0; r < 2; r++) {\n        int sum = 0;\n        for (size_t c = 0; c < 2; c++) { sum += a[r][c]; }\n        printf(\"%d\\n\", sum);\n    }\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "3\n7\n",
+        "files": {},
+        "exitCode": 0
+      },
+      "difficulty": 3,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "为何 int sum(int a[],size_t n) 内 sizeof a 不能求元素总数？",
+      "hint": "形参已调整为指针。",
+      "solution": [
+        "形参不再是原数组本体。",
+        "sizeof 得到指针类型大小。",
+        "直接使用传来的 n 并遵守约定。"
+      ],
+      "answer": "数组长度不会随这个形参自动保留。",
+      "difficulty": 3,
+      "misconceptionTags": []
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "访问 a[n] 可以得到结尾标记。",
+      "correction": "普通数组没有自动尾标记；最后合法项是 a[n-1]。",
+      "tag": "c-arrays-m1"
+    },
+    {
+      "claim": "数组名可像整数变量一样整体赋值。",
+      "correction": "数组不能这样赋值；逐项复制，并确认目标容量。",
+      "tag": "c-arrays-m2"
+    }
+  ],
+  "learningCheck": {
+    "question": "int a[5] 的最后合法下标是？",
+    "choices": [
+      "5",
+      "4",
+      "由内容决定"
+    ],
+    "correctIndex": 1,
+    "feedback": [
+      "5 已经越界。",
+      "正确，从 0 到 4 共五项。",
+      "容量由数组定义决定。"
+    ]
+  },
+  "interactiveVisual": {
+    "mode": "c-compare",
+    "prediction": "先遮住输出：求 70、80、90 的总和。 写下结果后，对比两个已编译的例子。",
+    "caption": "切换案例，比较代码、输入与预期输出。结果来自本书固定程序的本机执行检查；网页展示静态案例，不运行任意 C 代码。",
+    "experiment": {
+      "code": "#include <stdio.h>\n\nint main(void)\n{\n    int scores[] = {70, 80, 90};\n    size_t count = sizeof scores / sizeof scores[0];\n    int total = 0;\n    for (size_t i = 0; i < count; i++) {\n        total += scores[i];\n    }\n    printf(\"%d\\n\", total);\n    return 0;\n}\n",
+      "stdin": "",
+      "stdout": "240\n",
+      "files": {},
+      "exitCode": 0
+    }
+  },
+  "prerequisites": [
+    "c-debug"
+  ],
+  "difficulty": 3,
+  "misconceptionTags": [
+    "c-arrays-m1",
+    "c-arrays-m2"
+  ],
+  "sources": [
+    "n1570"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "humanReviewed": false,
+    "version": "0.1.0"
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "id": "c-programming",
+  "title": "C 语言：从零到完整程序",
+  "englishTitle": "C Programming from Zero",
+  "version": "0.1.0",
+  "language": "zh-CN",
+  "audience": "面向没有编程、终端或计算机专业基础的中文读者；只需会输入文本和进行基本四则运算。",
+  "baseline": "以 C17 的可移植常用子集为基线，GCC / Clang；主线不依赖第三方 C 库。",
+  "description": "先学会保存、编译、运行，再一步步理解控制流、函数、数组、指针、资源所有权和文件，最后交付可测试的成绩管理器。",
+  "license": {
+    "content": "CC0-1.0",
+    "code": "MIT"
+  },
+  "provenance": {
+    "author": "AI-generated",
+    "humanReviewed": false,
+    "version": "0.1.0"
+  },
+  "contribution": {
+    "submittedBy": "aby0120"
+  },
+  "chapters": [
+    {
+      "id": "c-ch1",
+      "title": "第1章 开始编程",
+      "objective": "从零完成安装、保存、编译和运行，读懂输出、变量与运算。",
+      "lessons": [
+        "c-start",
+        "c-output",
+        "c-values",
+        "c-arithmetic"
+      ]
+    },
+    {
+      "id": "c-ch2",
+      "title": "第2章 选择与重复",
+      "objective": "接收受限输入，设计条件、菜单和有终止依据的循环。",
+      "lessons": [
+        "c-if",
+        "c-input",
+        "c-switch",
+        "c-while"
+      ]
+    },
+    {
+      "id": "c-ch3",
+      "title": "第3章 组织与检查",
+      "objective": "用函数、作用域和测试把长程序分解成可核对的步骤。",
+      "lessons": [
+        "c-for",
+        "c-functions",
+        "c-scope",
+        "c-debug"
+      ]
+    },
+    {
+      "id": "c-ch4",
+      "title": "第4章 组织成批数据",
+      "objective": "正确处理数组、查找、排序、字符串与有界整行输入。",
+      "lessons": [
+        "c-arrays",
+        "c-algorithms",
+        "c-strings",
+        "c-lines"
+      ]
+    },
+    {
+      "id": "c-ch5",
+      "title": "第5章 理解内存",
+      "objective": "从对象与地址出发，掌握指针接口、生命周期和动态分配。",
+      "lessons": [
+        "c-pointers",
+        "c-out-parameters",
+        "c-pointer-arrays",
+        "c-memory"
+      ]
+    },
+    {
+      "id": "c-ch6",
+      "title": "第6章 管理记录与文件",
+      "objective": "用结构体、动态数组、文件流和严格解析表达完整数据。",
+      "lessons": [
+        "c-structs",
+        "c-vector",
+        "c-files",
+        "c-parse"
+      ]
+    },
+    {
+      "id": "c-ch7",
+      "title": "第7章 建立工程习惯",
+      "objective": "组织多文件程序，理解递归与位操作，建立边界测试矩阵。",
+      "lessons": [
+        "c-modules",
+        "c-recursion",
+        "c-bits",
+        "c-testing"
+      ]
+    },
+    {
+      "id": "c-ch8",
+      "title": "第8章 交付完整项目",
+      "objective": "从规格到数据、加载、报告和测试，完成成绩管理器。",
+      "lessons": [
+        "c-project-plan",
+        "c-project-records",
+        "c-project-input",
+        "c-project-delivery"
+      ]
+    }
+  ],
+  "outOfScope": [
+    "不涵盖 C++、并发线程、网络、图形界面、嵌入式硬件寄存器或操作系统内核。",
+    "不系统讲解函数指针、复杂声明器、联合体、位域、变长数组、预处理元编程和严格别名优化；不以空白章节占位。",
+    "递归与位操作为建立基本边界认识的短章，不替代数据结构或算法专门课程。",
+    "不宣称 C17 是最新标准；选择它是为了稳定教学基线。"
+  ],
+  "sources": [
+    {
+      "id": "n1570",
+      "title": "WG14 N1570：C11 委员会草案（核对 C17 共通基础）",
+      "url": "https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf",
+      "usage": "按章节核对共通规则：6.2 对象/类型/生命周期、6.3 转换、6.5 表达式、6.7 声明、6.8 语句、7.21 I/O、7.22 转换与内存、7.24 字符串；这是 C11 草案，不冒称 C17 正式标准。"
+    },
+    {
+      "id": "gcc",
+      "title": "GCC：C Dialect Options",
+      "url": "https://gcc.gnu.org/onlinedocs/gcc/C-Dialect-Options.html",
+      "usage": "核对 -std=c17 的含义和语言版本选择；本书不依赖编译器默认标准。"
+    },
+    {
+      "id": "apple",
+      "title": "Apple：Installing the command-line tools",
+      "url": "https://developer.apple.com/documentation/xcode/installing-the-command-line-tools",
+      "usage": "核对 macOS 命令行工具安装入口。"
+    },
+    {
+      "id": "msys2",
+      "title": "MSYS2：安装与环境说明",
+      "url": "https://www.msys2.org/docs/environments/",
+      "usage": "核对 Windows UCRT64 环境与架构选择；下载入口为 https://www.msys2.org/ 。"
+    },
+    {
+      "id": "asan",
+      "title": "Clang：AddressSanitizer",
+      "url": "https://clang.llvm.org/docs/AddressSanitizer.html",
+      "usage": "核对地址检查构建参数与已知工具边界。"
+    },
+    {
+      "id": "ubsan",
+      "title": "Clang：UndefinedBehaviorSanitizer",
+      "url": "https://clang.llvm.org/docs/UndefinedBehaviorSanitizer.html",
+      "usage": "核对未定义行为检查的启用方式与覆盖类别。"
+    }
+  ],
+  "status": "published"
+}

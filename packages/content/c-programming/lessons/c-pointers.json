@@ -1,0 +1,196 @@
+{
+  "id": "c-pointers",
+  "number": "5.1",
+  "chapterId": "c-ch5",
+  "title": "指针：对象、地址与解引用",
+  "concept": "指针保存对象的位置，让函数和数据结构能够间接访问对象。",
+  "intuition": "对象像房间，地址像门牌，指针变量像写着门牌的纸条。复制纸条不会复制房间；修改纸条也不会搬动房间。真实指针还有类型和合法访问条件，不能只把它当一个可随意计算的整数。",
+  "objectives": [
+    "先画三个不同东西",
+    "通过地址修改对象",
+    "空指针不是空对象"
+  ],
+  "body": [
+    {
+      "title": "先画三个不同东西",
+      "text": "int value = 5; 创建整数对象。int *p = &value; 创建指针对象，保存 value 的地址。& 取地址，*p 在表达式中表示访问 p 指向的 int。声明里的 * 表示 p 的类型是指针，表达式里的 * 是解引用，含义依语法位置区分。"
+    },
+    {
+      "title": "通过地址修改对象",
+      "text": "*p = 8; 更新的是 value，不是 p。p = &other; 更新的是指针，让它转向另一个活着的 int。打印指针用 printf(\"%p\", (void *)p)，格式结果依实现而变，不写死具体地址，也不保证相邻打印值的视觉模式。"
+    },
+    {
+      "title": "空指针不是空对象",
+      "text": "NULL 表示空指针常量的常见写法，可初始化尚不指向对象的指针。不能解引用 NULL，也不能解引用未初始化指针或悬空指针。检查 p != NULL 只排除了空，不能证明它一定指向活着、类型合适、可访问的对象。指针安全来自对象关系与生命周期约定。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "类型为 T * 的指针可指向适当的 T 对象；当指向对象仍在生命周期内且访问合法时，*p 表示该对象。",
+    "conditions": [
+      "先初始化指针。",
+      "解引用前指向正确类型、可访问且仍存活的对象。",
+      "打印地址只作观察，不用于固定输出测试。"
+    ]
+  },
+  "derivation": [
+    {
+      "text": "先建立一个确定存活的对象。"
+    },
+    {
+      "text": "用 & 取得地址并存入匹配类型的指针。"
+    },
+    {
+      "text": "区分修改指针本身与修改 *p，并追踪对象的最终值。"
+    }
+  ],
+  "workedExamples": [
+    {
+      "title": "间接改值",
+      "problem": "通过 p 把 value 从 5 改成 8。",
+      "steps": [
+        "p 指向 value。",
+        "*p 是 value 的别名访问。",
+        "写入后 value 为 8。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    int value = 5;\n    int *p = &value;\n    *p = 8;\n    printf(\"%d\\n\", value);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "8\n",
+        "files": {},
+        "exitCode": 0
+      }
+    },
+    {
+      "title": "指针转向",
+      "problem": "p 先指向 a，再转向 b，修改 *p。",
+      "steps": [
+        "p=&b 后不再指向 a。",
+        "*p=9 改的是 b。",
+        "a 保持 1。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    int a = 1, b = 2;\n    int *p = &a;\n    p = &b;\n    *p = 9;\n    printf(\"%d %d\\n\", a, b);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "1 9\n",
+        "files": {},
+        "exitCode": 0
+      }
+    }
+  ],
+  "practice": [
+    {
+      "problem": "p、q 都指向 x，*q=7 后 *p 是多少？",
+      "hint": "两个指针可指向同一对象。",
+      "solution": [
+        "p 与 q 保存同一地址。",
+        "q 间接更新 x。",
+        "p 读取同一个 x。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    int x = 3;\n    int *p = &x;\n    int *q = p;\n    *q = 7;\n    printf(\"%d\\n\", *p);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "7\n",
+        "files": {},
+        "exitCode": 0
+      },
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "int *p=NULL; 能用 *p=0 创建对象吗？",
+      "hint": "指针不会自动分配目标对象。",
+      "solution": [
+        "NULL 不指向可写 int。",
+        "解引用不合法。",
+        "先创建实际 int，再让 p 指向它。"
+      ],
+      "answer": "不能；解引用空指针是错误，不能把它当分配操作。",
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "int *p, q; 中两个都是指针吗？",
+      "hint": "星号属于具体声明项。",
+      "solution": [
+        "p 声明为 int*。",
+        "q 声明为 int。",
+        "建议一行声明一个指针减少误读。"
+      ],
+      "answer": "只有 p 是指针，q 是 int。",
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "p 指向 x，执行 p=&y 是否复制 x 的值给 y？",
+      "hint": "改变地址与改变内容不同。",
+      "solution": [
+        "只把 y 的地址写入 p。",
+        "x 和 y 的值均未被这句改动。",
+        "之后 *p 访问 y。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    int x = 4, y = 6;\n    int *p = &x;\n    p = &y;\n    printf(\"%d %d %d\\n\", x, y, *p);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "4 6 6\n",
+        "files": {},
+        "exitCode": 0
+      },
+      "difficulty": 2,
+      "misconceptionTags": []
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "指针里保存的就是目标整数值。",
+      "correction": "保存的是地址；p 与 *p 是不同层次。",
+      "tag": "c-pointers-m1"
+    },
+    {
+      "claim": "非 NULL 就一定安全。",
+      "correction": "悬空、越界、类型不合适的指针也可能非空。",
+      "tag": "c-pointers-m2"
+    }
+  ],
+  "learningCheck": {
+    "question": "int x=2; int *p=&x; *p=4; 此后 x 为？",
+    "choices": [
+      "2",
+      "4",
+      "地址"
+    ],
+    "correctIndex": 1,
+    "feedback": [
+      "*p 访问的正是 x。",
+      "正确，通过指针修改了同一对象。",
+      "x 仍是 int，不会变成地址。"
+    ]
+  },
+  "interactiveVisual": {
+    "mode": "c-compare",
+    "prediction": "先遮住输出：通过 p 把 value 从 5 改成 8。 写下结果后，对比两个已编译的例子。",
+    "caption": "切换案例，比较代码、输入与预期输出。结果来自本书固定程序的本机执行检查；网页展示静态案例，不运行任意 C 代码。",
+    "experiment": {
+      "code": "#include <stdio.h>\n\nint main(void)\n{\n    int value = 5;\n    int *p = &value;\n    *p = 8;\n    printf(\"%d\\n\", value);\n    return 0;\n}\n",
+      "stdin": "",
+      "stdout": "8\n",
+      "files": {},
+      "exitCode": 0
+    }
+  },
+  "prerequisites": [
+    "c-lines"
+  ],
+  "difficulty": 3,
+  "misconceptionTags": [
+    "c-pointers-m1",
+    "c-pointers-m2"
+  ],
+  "sources": [
+    "n1570"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "humanReviewed": false,
+    "version": "0.1.0"
+  }
+}

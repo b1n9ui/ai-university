@@ -1,0 +1,504 @@
+{
+  "chapterReviews": [
+    {
+      "chapterId": "c-ch1",
+      "questions": [
+        {
+          "problem": "修改程序但输出没变，给出可操作排查顺序。",
+          "hint": "区分三个文件阶段。",
+          "solution": [
+            "确认编辑的文件和保存位置。",
+            "用明确源文件重新编译并处理所有诊断。",
+            "运行 -o 指定的新文件，核对当前目录。"
+          ],
+          "answer": "先保存，再成功重编译，最后运行正确路径的程序。",
+          "difficulty": 3,
+          "misconceptionTags": []
+        },
+        {
+          "problem": "求 7、8、9 的浮点平均值。",
+          "hint": "不要先执行整数除法再转 double。",
+          "solution": [
+            "先求和 24。",
+            "除以 3.0。",
+            "输出 8.0。"
+          ],
+          "answer": {
+            "code": "#include <stdio.h>\n\nint main(void)\n{\n    printf(\"%.1f\\n\", (7 + 8 + 9) / 3.0);\n    return 0;\n}\n",
+            "stdin": "",
+            "stdout": "8.0\n",
+            "files": {},
+            "exitCode": 0
+          },
+          "difficulty": 3,
+          "misconceptionTags": []
+        }
+      ]
+    },
+    {
+      "chapterId": "c-ch2",
+      "questions": [
+        {
+          "problem": "把 1 到 10 中偶数相加。",
+          "hint": "先确定遍历边界，再决定是否累计。",
+          "solution": [
+            "遍历 1..10。",
+            "只加余数为零的项。",
+            "2+4+6+8+10=30。"
+          ],
+          "answer": {
+            "code": "#include <stdio.h>\n\nint main(void)\n{\n    int sum = 0;\n    for (int i = 1; i <= 10; i++) { if (i % 2 == 0) { sum += i; } }\n    printf(\"%d\\n\", sum);\n    return 0;\n}\n",
+            "stdin": "",
+            "stdout": "30\n",
+            "files": {},
+            "exitCode": 0
+          },
+          "difficulty": 3,
+          "misconceptionTags": []
+        },
+        {
+          "problem": "输入读取失败后继续 while 重试，为什么可能卡死？",
+          "hint": "错误字符是否被消耗？",
+          "solution": [
+            "scanf 不能转换时可能不消耗该字符。",
+            "下一轮又遇到同一字符。",
+            "结束或整行消费并给出恢复策略。"
+          ],
+          "answer": "失败必须改变输入状态或退出；不能无条件对同一字符重复转换。",
+          "difficulty": 3,
+          "misconceptionTags": []
+        }
+      ]
+    },
+    {
+      "chapterId": "c-ch3",
+      "questions": [
+        {
+          "problem": "写一个无隐藏状态的 clamp_score，把输入限定到 0..100。",
+          "hint": "低于零、高于百、范围内三种情况。",
+          "solution": [
+            "小于零返回零。",
+            "大于百返回百。",
+            "其余原样返回。"
+          ],
+          "answer": {
+            "code": "#include <stdio.h>\n#include <assert.h>\n\nint clamp_score(int n)\n{\n    if (n < 0) { return 0; }\n    if (n > 100) { return 100; }\n    return n;\n}\n\nint main(void)\n{\n    assert(clamp_score(-2)==0);\n    assert(clamp_score(50)==50);\n    assert(clamp_score(120)==100);\n    puts(\"ok\");\n    return 0;\n}\n",
+            "stdin": "",
+            "stdout": "ok\n",
+            "files": {},
+            "exitCode": 0
+          },
+          "difficulty": 3,
+          "misconceptionTags": []
+        },
+        {
+          "problem": "解释为何“同名”不能让函数参数修改调用者整数。",
+          "hint": "分别画形参和实参对象。",
+          "solution": [
+            "实参先求值。",
+            "值复制给独立形参。",
+            "写形参不会写原对象，需显式地址接口。"
+          ],
+          "answer": "名字不建立对象共享；C 的参数按值传递。",
+          "difficulty": 3,
+          "misconceptionTags": []
+        }
+      ]
+    },
+    {
+      "chapterId": "c-ch4",
+      "questions": [
+        {
+          "problem": "在 {5,2,5,1} 中统计 5 的次数。",
+          "hint": "不要找到一次就 break。",
+          "solution": [
+            "计数从零开始。",
+            "遍历四项。",
+            "两次命中，返回 2。"
+          ],
+          "answer": {
+            "code": "#include <stdio.h>\n\nint main(void)\n{\n    int a[]={5,2,5,1};\n    size_t count=0;\n    for(size_t i=0;i<4;i++){ if(a[i]==5){ count++; } }\n    printf(\"%zu\\n\",count);\n    return 0;\n}\n",
+            "stdin": "",
+            "stdout": "2\n",
+            "files": {},
+            "exitCode": 0
+          },
+          "difficulty": 3,
+          "misconceptionTags": []
+        },
+        {
+          "problem": "字符数组长度 4，能保存 hello 吗？",
+          "hint": "字符串需要终止零。",
+          "solution": [
+            "hello 有五字符。",
+            "还需一个零。",
+            "至少六个 char，容量四不够。"
+          ],
+          "answer": "不能；至少容量 6，且每次写入都必须受容量限制。",
+          "difficulty": 3,
+          "misconceptionTags": []
+        }
+      ]
+    },
+    {
+      "chapterId": "c-ch5",
+      "questions": [
+        {
+          "problem": "函数返回局部 int 地址，为什么加 NULL 检查也修不好？",
+          "hint": "对象已结束生命周期。",
+          "solution": [
+            "返回指针可能非 NULL。",
+            "目标局部对象却已经不存在。",
+            "返回值本身，或使用调用者对象、明确拥有的动态存储。"
+          ],
+          "answer": "NULL 检查不证明生命周期有效；修复对象归属与存活期。",
+          "difficulty": 3,
+          "misconceptionTags": []
+        },
+        {
+          "problem": "malloc 得到 p，q=p，free(q) 后如何处理 p？",
+          "hint": "两份指针共享一块分配。",
+          "solution": [
+            "q 释放整块。",
+            "p 也失去可访问目标。",
+            "不得再次 free(p) 或读取；按拥有者规则清除旧别名。"
+          ],
+          "answer": "p 是悬空指针；停止使用，不重复释放。",
+          "difficulty": 3,
+          "misconceptionTags": []
+        }
+      ]
+    },
+    {
+      "chapterId": "c-ch6",
+      "questions": [
+        {
+          "problem": "为何 realloc 要先存 tmp，并且成功后旧元素指针也要弃用？",
+          "hint": "分别看失败与成功的契约。",
+          "solution": [
+            "失败原块仍在，tmp 防止丢失原地址。",
+            "成功可能移动并使旧指针失效。",
+            "更新拥有者，重新获取元素地址。"
+          ],
+          "answer": "失败保留旧所有权；成功改用返回的新地址，废弃全部旧别名。",
+          "difficulty": 3,
+          "misconceptionTags": []
+        },
+        {
+          "problem": "给出完整整数解析的四项检查。",
+          "hint": "数字、机器范围、后缀、业务范围。",
+          "solution": [
+            "end!=text 说明确有数字。",
+            "errno!=ERANGE 且后缀符合协议。",
+            "值在业务与目标类型范围内，之后再转换。"
+          ],
+          "answer": "检查无数字、ERANGE、未接受后缀和业务范围；调用前 errno=0。",
+          "difficulty": 3,
+          "misconceptionTags": []
+        }
+      ]
+    },
+    {
+      "chapterId": "c-ch7",
+      "questions": [
+        {
+          "problem": "函数有递归基例 n==0，却以 n+1 递归；对 n>0 会结束吗？",
+          "hint": "检查度量是否靠近零。",
+          "solution": [
+            "正数不断增加。",
+            "不能到零。",
+            "还可能先溢出，需修正递推与输入域。"
+          ],
+          "answer": "没有终止保证；基例存在还不够，需要严格靠近。",
+          "difficulty": 3,
+          "misconceptionTags": []
+        },
+        {
+          "problem": "头文件原型正确但链接失败，列出两个可能原因。",
+          "hint": "实现在哪，命令编了什么？",
+          "solution": [
+            "漏写实现或名字不一致。",
+            "漏把实现 .c 加入命令。",
+            "检查函数是否误设为文件内 static。"
+          ],
+          "answer": "常见是漏链接实现文件，或定义名/链接属性不匹配。",
+          "difficulty": 3,
+          "misconceptionTags": []
+        }
+      ]
+    },
+    {
+      "chapterId": "c-ch8",
+      "questions": [
+        {
+          "problem": "样例增加 Ada 90，原文件已有 Ada 100，如何处理？",
+          "hint": "姓名唯一。",
+          "solution": [
+            "检查重复失败。",
+            "销毁本次 staging。",
+            "不输出报告，原目标不变。"
+          ],
+          "answer": "拒绝整份输入，不能覆盖、合并或悄悄忽略。",
+          "difficulty": 3,
+          "misconceptionTags": []
+        },
+        {
+          "problem": "提出支持中文姓名的扩展计划。",
+          "hint": "字节长度、分隔、排序都受影响。",
+          "solution": [
+            "明确 UTF-8 验证和最大字节/字符长度。",
+            "定义空格分隔与名字排序规则。",
+            "更新解析、错误信息、测试和文档，再实现。"
+          ],
+          "answer": "不能只删 ASCII 检查；必须重新定义编码、容量、协议和排序契约。",
+          "difficulty": 3,
+          "misconceptionTags": []
+        }
+      ]
+    }
+  ],
+  "exam": [
+    {
+      "problem": "实现非空整数数组最小值，通过输出参数返回；空数组失败且不改输出。",
+      "hint": "先检查空，再用第一项初始化。",
+      "solution": [
+        "n 为零或 out 为空返回失败。",
+        "从第一项建立最小候选。",
+        "遍历后写出结果。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n#include <assert.h>\n\nint minimum(const int *a, size_t n, int *out)\n{\n    if(n==0 || out==NULL){ return 0; }\n    int best=a[0];\n    for(size_t i=1;i<n;i++){ if(a[i]<best){ best=a[i]; } }\n    *out=best;\n    return 1;\n}\n\nint main(void)\n{\n    int a[]={4,-2,7};\n    int result=99;\n    assert(minimum(a,3,&result)==1);\n    assert(result==-2);\n    assert(minimum(a,0,&result)==0);\n    assert(result==-2);\n    printf(\"%d\\n\",result);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "-2\n",
+        "files": {},
+        "exitCode": 0
+      },
+      "difficulty": 4,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "设计两个人同分 80 的报告测试，Zoe 与 Ada，检查哪些内容？",
+      "hint": "同时检查顺序与汇总。",
+      "solution": [
+        "count 为 2，总分 160。",
+        "平均 80.00，及格 2。",
+        "在本项目验证环境按 strcmp，Ada 在 Zoe 前且配对不变。"
+      ],
+      "answer": "检查人数 2、总分 160、平均 80.00、及格 2，排序 Ada 80 / Zoe 80。",
+      "difficulty": 4,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "审查 bad_add：先 size++，再直接 data=realloc(...)，无检查就写数据。给出修复顺序。",
+      "hint": "长度、所有权和失败行为都要保留。",
+      "solution": [
+        "先验证记录与容量上限。",
+        "用临时指针申请，失败保持旧状态。",
+        "成功更新指针与容量，再写元素、最后增加 size。"
+      ],
+      "answer": "先验证，安全算容量，用 tmp 接 realloc；成功才替换、写入并增长度。",
+      "difficulty": 5,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "为项目提出至少六个拒绝输入，并给出共同预期。",
+      "hint": "覆盖格式、范围、重复、容量。",
+      "solution": [
+        "空行、尾空格、-1、101、重复姓名、101 人。",
+        "还可加入内嵌零、超长行、缺失字段。",
+        "每项非零退出，stdout 为空，stderr 给错误。"
+      ],
+      "answer": "所有拒绝输入都不产生半份报告；内存和打开流应清理，原目标表保留。",
+      "difficulty": 4,
+      "misconceptionTags": []
+    }
+  ],
+  "glossary": [
+    {
+      "term": "编译器",
+      "definition": "把源文件翻译并配合链接生成程序的工具。",
+      "lessonId": "c-start"
+    },
+    {
+      "term": "终端",
+      "definition": "接收命令并显示文字结果的交互窗口。",
+      "lessonId": "c-start"
+    },
+    {
+      "term": "标准输出",
+      "definition": "正常程序结果所写入的流，通常连接终端。",
+      "lessonId": "c-output"
+    },
+    {
+      "term": "转义字符",
+      "definition": "在字符串中用反斜杠开头表达换行、引号等字符。",
+      "lessonId": "c-output"
+    },
+    {
+      "term": "初始化",
+      "definition": "为新建对象提供初始值。",
+      "lessonId": "c-values"
+    },
+    {
+      "term": "类型",
+      "definition": "规定可表示值及相应操作规则的分类。",
+      "lessonId": "c-values"
+    },
+    {
+      "term": "未定义行为",
+      "definition": "标准不对该行为施加要求；不能为它规定可移植输出。",
+      "lessonId": "c-arithmetic"
+    },
+    {
+      "term": "短路",
+      "definition": "逻辑结果已决定时不再计算右侧表达式。",
+      "lessonId": "c-if"
+    },
+    {
+      "term": "哨兵",
+      "definition": "专门表示终止等控制信息、而不作普通数据的值。",
+      "lessonId": "c-while"
+    },
+    {
+      "term": "形参",
+      "definition": "函数定义中接收实参值的局部对象。",
+      "lessonId": "c-functions"
+    },
+    {
+      "term": "作用域",
+      "definition": "标识符在源程序中可见的范围。",
+      "lessonId": "c-scope"
+    },
+    {
+      "term": "生命周期",
+      "definition": "对象存在且可按规则使用的时间段。",
+      "lessonId": "c-scope"
+    },
+    {
+      "term": "断言",
+      "definition": "在测试或内部契约中检查一个必须成立的条件。",
+      "lessonId": "c-debug"
+    },
+    {
+      "term": "下标",
+      "definition": "从零开始定位数组元素的整数偏移。",
+      "lessonId": "c-arrays"
+    },
+    {
+      "term": "循环不变量",
+      "definition": "每次迭代关键位置都保持的性质。",
+      "lessonId": "c-algorithms"
+    },
+    {
+      "term": "终止零",
+      "definition": "C 字符串中标记结尾的零字符。",
+      "lessonId": "c-strings"
+    },
+    {
+      "term": "缓冲区",
+      "definition": "保存读取或待输出数据的有容量存储区域。",
+      "lessonId": "c-lines"
+    },
+    {
+      "term": "指针",
+      "definition": "保存位置并具有目标类型的值或对象。",
+      "lessonId": "c-pointers"
+    },
+    {
+      "term": "解引用",
+      "definition": "经有效指针访问其目标对象。",
+      "lessonId": "c-pointers"
+    },
+    {
+      "term": "输出参数",
+      "definition": "成功时由函数写入调用者对象以交付结果的参数。",
+      "lessonId": "c-out-parameters"
+    },
+    {
+      "term": "尾后指针",
+      "definition": "指向数组末元素之后的位置，可作边界不可解引用。",
+      "lessonId": "c-pointer-arrays"
+    },
+    {
+      "term": "所有权",
+      "definition": "谁负责一个资源的有效使用、转移与最终释放的约定。",
+      "lessonId": "c-memory"
+    },
+    {
+      "term": "悬空指针",
+      "definition": "仍保存旧地址但目标对象生命周期已结束的指针。",
+      "lessonId": "c-memory"
+    },
+    {
+      "term": "结构体",
+      "definition": "由多个具名成员组成的记录类型。",
+      "lessonId": "c-structs"
+    },
+    {
+      "term": "容量",
+      "definition": "已分配可容纳的元素个数，不等于已用长度。",
+      "lessonId": "c-vector"
+    },
+    {
+      "term": "流",
+      "definition": "标准 I/O 使用的输入或输出序列。",
+      "lessonId": "c-files"
+    },
+    {
+      "term": "解析",
+      "definition": "把文本按明确协议转成结构化数据。",
+      "lessonId": "c-parse"
+    },
+    {
+      "term": "翻译单元",
+      "definition": "源文件及其包含内容经预处理后独立翻译的单位。",
+      "lessonId": "c-modules"
+    },
+    {
+      "term": "递归",
+      "definition": "函数直接或间接调用自身的组织方式。",
+      "lessonId": "c-recursion"
+    },
+    {
+      "term": "掩码",
+      "definition": "用于选择特定位的整数位模式。",
+      "lessonId": "c-bits"
+    },
+    {
+      "term": "回归测试",
+      "definition": "保留曾发现问题的用例，防止后续再次引入。",
+      "lessonId": "c-testing"
+    },
+    {
+      "term": "事务式加载",
+      "definition": "先在临时状态验证整批数据，成功才整体替换的加载方式。",
+      "lessonId": "c-project-input"
+    }
+  ],
+  "appendices": [
+    {
+      "title": "建议的自学节奏",
+      "text": "按目录顺序，每节先运行第一个例子，再遮住输出手算第二个例子。练习先只看提示，写出自己的版本后核对完整解答。完成一章后，合上正文做两道回顾题。建议每次集中完成一节到两节，不把“读完”当作“会写”；指针与内存章节可以重复画对象关系图。时间长短随读者调整，不承诺固定天数掌握。"
+    },
+    {
+      "title": "命令与目录速查",
+      "text": "mkdir c-study 创建目录；cd c-study 进入目录；pwd 显示当前目录；ls 查看文件；cd .. 返回上层。路径有空格时加英文引号。Windows 本书用 UCRT64，Linux/macOS 用终端。命令行中的 $ 或 > 若作为提示符出现，不需要输入；本书命令块不包含提示符。找不到文件先看位置和扩展名，不反复改代码。"
+    },
+    {
+      "title": "C17 语法补充",
+      "text": "do { ... } while (condition); 先执行再判断，末尾有分号。?: 是按条件选择一个表达式值的运算符。+=、-=、*= 等组合赋值更新左侧对象，涉及副作用时仍需谨慎。#define 可定义宏，但宏不是函数，可能重复求值参数；本卷不展开复杂宏。const 表达只读访问意图，不保证所有场景中可作为整型常量表达式。"
+    },
+    {
+      "title": "常用格式速查",
+      "text": "printf：int 用 %d，unsigned int 用 %u，long 用 %ld，unsigned long long 用 %llu，size_t 用 %zu，double 用 %f / %.2f，字符用 %c，终止字符串用 %s，指针用 %p 并转成 void*。scanf：int* 用 %d，double* 用 %lf；不要把 printf 的浮点规则照抄给 scanf。格式必须匹配真实参数类型，不按“看起来一样大”猜测。"
+    },
+    {
+      "title": "错误速查",
+      "text": "找不到源文件：查 pwd、ls、扩展名；未声明名字：查拼写、作用域和头文件；缺少函数定义：查链接命令；重复定义：查头文件中普通定义和多个实现；程序等待：查是否等待输入、scanf 格式尾空白；结果差一：列循环下标；崩溃或不稳定：查越界、未初始化、悬空、重复释放；错误不能只靠“加一个强转”掩盖。"
+    },
+    {
+      "title": "验证与来源边界",
+      "text": "本书由 AI 编写，humanReviewed=false。固定示例和带代码答案由实际 C17 编译、执行、输出比较检查；概念说明另按来源规则核对。自动检查不能证明全部 C 语义、全平台一致性或教学效果。正文和题目为原创，不复制标准段落或第三方题库。具体运行环境、数量和未覆盖路径见同目录 QA.md；勘误保留版本位置和可复现输入。"
+    }
+  ]
+}

@@ -1,0 +1,186 @@
+{
+  "id": "c-testing",
+  "number": "7.4",
+  "chapterId": "c-ch7",
+  "title": "边界测试与运行时检查工具",
+  "concept": "把契约变成测试矩阵，并结合编译器工具，可以更早发现越界、溢出和状态损坏。",
+  "intuition": "一张检查表覆盖正常、边界与失败，比“随便输入几次没崩”更能说明你检查了什么。工具像报警器，没报警不代表所有问题都不存在。",
+  "objectives": [
+    "测试矩阵",
+    "动态检查的用法",
+    "失败路径需要专门证据"
+  ],
+  "body": [
+    {
+      "title": "测试矩阵",
+      "text": "对分数解析列出 0、100、-1、101、空串、后缀、超长数字；对容器列出空表、一项、重复姓名、容量上限、再加一项；对文件列出不存在、空文件、CRLF、末行无换行、过长行。每项有明确预期，不把“能运行”当标准。项目章给出实际用例而不是仅列名词。"
+    },
+    {
+      "title": "动态检查的用法",
+      "text": "支持这些工具的 Clang/GCC 环境可在编译和链接时加 -g -O1 -fsanitize=address,undefined -fno-omit-frame-pointer。AddressSanitizer 可发现执行路径上的许多越界和释放后使用；UndefinedBehaviorSanitizer 可发现部分未定义行为。Windows 工具链支持可能不同，先用普通构建，按工具官方说明另跑。不要为了让书能用而要求初学者先配置全部工具。"
+    },
+    {
+      "title": "失败路径需要专门证据",
+      "text": "普通小数据几乎不会自然触发 malloc 失败，所以不能把跑完成功路径写成“内存失败都测过了”。可通过替代分配器进行故障注入，或明确记录尚未执行的路径。本书项目自动检查格式与容量失败、失败不改状态；实际系统分配失败和 I/O 设备故障不声称已穷尽模拟。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "测试用例由输入、环境条件、操作和可核对的预期组成；运行时检查只覆盖实际执行到的行为与工具支持的错误类别。",
+    "conditions": [
+      "先有独立预期再运行。",
+      "不运行故意带未定义行为的片段来规定“正确输出”。",
+      "工具通过不等于全输入证明。"
+    ]
+  },
+  "derivation": [
+    {
+      "text": "从接口每条约束推导正常、边界、拒绝用例。"
+    },
+    {
+      "text": "对比状态与输出，不仅检查退出码。"
+    },
+    {
+      "text": "运行普通构建与支持的 sanitizer 构建，记录真实覆盖和局限。"
+    }
+  ],
+  "workedExamples": [
+    {
+      "title": "合法范围边缘",
+      "problem": "函数 accepts 仅允许 0 到 100，检查四个阈值。",
+      "steps": [
+        "-1 与 101 拒绝。",
+        "0 与 100 接受。",
+        "断言都成立输出 ok。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n#include <assert.h>\n\nint accepts(int score)\n{\n    return score >= 0 && score <= 100;\n}\n\nint main(void)\n{\n    assert(!accepts(-1));\n    assert(accepts(0));\n    assert(accepts(100));\n    assert(!accepts(101));\n    puts(\"ok\");\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "ok\n",
+        "files": {},
+        "exitCode": 0
+      }
+    },
+    {
+      "title": "检查失败不改状态",
+      "problem": "拒绝超范围值后，原分数保持 60。",
+      "steps": [
+        "函数先验证。",
+        "失败返回 0 且不写目标。",
+        "状态与返回值同时断言。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n#include <assert.h>\n\nint set_score(int *out, int score)\n{\n    if (out == NULL || score < 0 || score > 100) { return 0; }\n    *out = score;\n    return 1;\n}\n\nint main(void)\n{\n    int score = 60;\n    int ok = set_score(&score, 101);\n    assert(ok == 0);\n    assert(score == 60);\n    puts(\"ok\");\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "ok\n",
+        "files": {},
+        "exitCode": 0
+      }
+    }
+  ],
+  "practice": [
+    {
+      "problem": "只有退出码为零，能证明排序保留了全部元素吗？",
+      "hint": "结果属性要显式检查。",
+      "solution": [
+        "零仅表示程序报告正常。",
+        "还要比较项数、顺序与元素次数。",
+        "根据目标建立断言。"
+      ],
+      "answer": "不能，需要核对实际结果。",
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "100 分要测试吗？",
+      "hint": "它是业务上边界。",
+      "solution": [
+        "刚好 100 应接受。",
+        "101 应拒绝。",
+        "两者能发现 < 与 <= 混淆。"
+      ],
+      "answer": "要，同时测试 101 等边界外值。",
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "sanitizer 没报警能证明没有内存泄漏吗？",
+      "hint": "工具种类与平台能力不同。",
+      "solution": [
+        "并非所有构建启用泄漏检查。",
+        "也可能没执行相关路径。",
+        "报告具体工具和实际覆盖。"
+      ],
+      "answer": "不能；要说明启用了哪些检查、平台支持与未覆盖路径。",
+      "difficulty": 3,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "要验证错误输入不改变表，除了错误消息还需断言什么？",
+      "hint": "比较调用前后业务状态。",
+      "solution": [
+        "先保存长度与原记录。",
+        "执行失败操作。",
+        "检查长度、记录和拥有者仍符合原契约。"
+      ],
+      "answer": "至少检查长度、已有数据、可继续使用状态与资源所有权。",
+      "difficulty": 3,
+      "misconceptionTags": []
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "工具全绿就能写“全书已验证无误”。",
+      "correction": "只能准确报告检查过的片段和路径。",
+      "tag": "c-testing-m1"
+    },
+    {
+      "claim": "assert 适合拒绝所有用户错误。",
+      "correction": "用户输入验证必须在普通控制流中存在，不能被 NDEBUG 关闭。",
+      "tag": "c-testing-m2"
+    }
+  ],
+  "learningCheck": {
+    "question": "高质量测试报告应写？",
+    "choices": [
+      "没有任何错误",
+      "具体用例、环境、结果与未覆盖部分",
+      "只写运行过"
+    ],
+    "correctIndex": 1,
+    "feedback": [
+      "有限检查不支持这种绝对声明。",
+      "正确，证据和边界都明确。",
+      "缺少预期与覆盖范围，无法评估。"
+    ]
+  },
+  "interactiveVisual": {
+    "mode": "c-compare",
+    "prediction": "先遮住输出：函数 accepts 仅允许 0 到 100，检查四个阈值。 写下结果后，对比两个已编译的例子。",
+    "caption": "切换案例，比较代码、输入与预期输出。结果来自本书固定程序的本机执行检查；网页展示静态案例，不运行任意 C 代码。",
+    "experiment": {
+      "code": "#include <stdio.h>\n#include <assert.h>\n\nint accepts(int score)\n{\n    return score >= 0 && score <= 100;\n}\n\nint main(void)\n{\n    assert(!accepts(-1));\n    assert(accepts(0));\n    assert(accepts(100));\n    assert(!accepts(101));\n    puts(\"ok\");\n    return 0;\n}\n",
+      "stdin": "",
+      "stdout": "ok\n",
+      "files": {},
+      "exitCode": 0
+    }
+  },
+  "prerequisites": [
+    "c-bits"
+  ],
+  "difficulty": 5,
+  "misconceptionTags": [
+    "c-testing-m1",
+    "c-testing-m2"
+  ],
+  "sources": [
+    "n1570",
+    "asan",
+    "ubsan"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "humanReviewed": false,
+    "version": "0.1.0"
+  }
+}

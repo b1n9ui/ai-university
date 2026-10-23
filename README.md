@@ -22,6 +22,7 @@ English is the default. Use the language selector to switch to Chinese; the curr
 | Real Analysis | 8 | 40 | 80 | 184 | Chinese |
 | Introduction to Programming with Python | 5 | 20 | 40 | 94 | Chinese |
 | Building Projects with AI | 6 | 18 | 36 | 88 | Chinese |
+| C Programming from Zero | 8 | 32 | 64 | 148 | Chinese |
 
 The English Calculus I edition includes every lesson, definition and hypothesis, derivation, worked example, misconception, exercise solution, visual instruction, chapter review, final assessment, glossary, and appendix. Other books are clearly marked as Chinese editions. Further English books will be published one complete volume at a time.
 
@@ -32,6 +33,10 @@ The website has a subject library, book and chapter contents, lesson reading, in
 Diagrams use SVG, Canvas, and locally calculated Three.js models. Adjust parameters, compare cases, explore a solid in 3D, or use its 2D fallback. Worked solutions and teaching explanations are fixed authored content. There is no live chat, model backend, API key, account, or required paid service.
 
 Finite sampling and animation support exploration; they do not replace a mathematical proof. Content is AI-authored and has not been individually human-reviewed. Automated checks do not establish exhaustive mathematical correctness or learning effectiveness.
+
+## C Programming from Zero
+
+The complete Chinese beginner textbook has 32 lessons, 64 worked examples, 148 exercises and reviews with solutions, 116 runnable cases, and a multi-file gradebook project. Start with compiler installation and terminal basics, then learn arrays, pointers, ownership, robust input, and files. [Manuscript](packages/content/c-programming/C-Programming.md) · [Scope and checks](packages/content/c-programming/README.md). Rebuilding and checking C examples requires GCC or Clang supporting C17, plus Python 3.9+.
 
 ## Run locally
 
@@ -71,6 +76,6 @@ Contributions go through pull requests and protected-branch checks. An external 
 
 ## Version and licenses
 
-Website **v0.18.0**. English Calculus I edition 1 aligns with Chinese Calculus I **v0.3.3**. Source checksums detect when translation review is needed; formulas, IDs, numeric answer keys, prerequisites, and diagram presets remain aligned.
+Website **v0.19.0**. English Calculus I edition 1 aligns with Chinese Calculus I **v0.3.3**. Source checksums detect when translation review is needed; formulas, IDs, numeric answer keys, prerequisites, and diagram presets remain aligned.
 
 Website code is [MIT](LICENSE). Original textbook content is [CC0](LICENSE-CONTENT.md). Third-party libraries retain their own licenses; see [third-party notices](THIRD_PARTY_NOTICES.md).

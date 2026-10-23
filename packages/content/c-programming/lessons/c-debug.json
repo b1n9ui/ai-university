@@ -1,0 +1,190 @@
+{
+  "id": "c-debug",
+  "number": "3.4",
+  "chapterId": "c-ch3",
+  "title": "读诊断、手工追踪与最小测试",
+  "concept": "排错先把“哪里不符合预期”缩小成可复现事实，再修改最小的一处。",
+  "intuition": "编译器诊断像路线指示牌：它告诉你在某处无法继续理解，不保证那一行就是根因。漏掉前一行分号，也可能让下一行报错。",
+  "objectives": [
+    "三种问题分开处理",
+    "做一个最小复现",
+    "用断言保留发现"
+  ],
+  "body": [
+    {
+      "title": "三种问题分开处理",
+      "text": "编译错误说明不能生成有效程序，例如缺分号、名字未声明；链接错误说明声明有了但缺少实现，例如漏编译某个 .c；运行错误或逻辑错误发生在启动之后。先解决第一条编译诊断，再重编译，避免同时追踪由它引起的许多连锁消息。保留 -Wall -Wextra -Wpedantic，警告也要解释和处理。"
+    },
+    {
+      "title": "做一个最小复现",
+      "text": "记录完整编译命令、最小输入、预期输出与实际输出。例如总和差一项，列出 i、sum 在每轮前后的值。临时 printf 可以观察状态，但要移除或写到 stderr，避免污染正常输出。不要一次改循环条件、初值和更新，改一项后验证假设。"
+    },
+    {
+      "title": "用断言保留发现",
+      "text": "assert 来自 assert.h；条件为假时终止程序，适合检查程序员承诺的内部条件和测试期望。它可能被 NDEBUG 关闭，所以不能代替用户输入验证，也不能把必须发生的赋值或函数调用藏在 assert 内。外部错误用普通 if 返回状态；内部测试先执行动作，再 assert 结果。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "可复现问题至少包含相同代码、构建方式、输入、预期与实际结果；测试是针对明确断言的可重复检查。",
+    "conditions": [
+      "不在 assert 中放必须执行的副作用。",
+      "测试包含边界和正常情况。",
+      "通过有限测试不能证明所有输入正确。"
+    ]
+  },
+  "derivation": [
+    {
+      "text": "固定一个最小输入并手算正确答案。"
+    },
+    {
+      "text": "从诊断或状态表找到最早与预期不一致的位置。"
+    },
+    {
+      "text": "只修改根因，重跑原用例与边界，把它保存为回归测试。"
+    }
+  ],
+  "workedExamples": [
+    {
+      "title": "保留边界测试",
+      "problem": "判断 60 及格，断言 59 不及格、60 及格。",
+      "steps": [
+        "把判断抽成函数。",
+        "分别检查阈值两侧。",
+        "全部成立后输出 ok。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n#include <assert.h>\n\nint passes(int score)\n{\n    return score >= 60;\n}\n\nint main(void)\n{\n    assert(!passes(59));\n    assert(passes(60));\n    puts(\"ok\");\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "ok\n",
+        "files": {},
+        "exitCode": 0
+      }
+    },
+    {
+      "title": "修正少加一项",
+      "problem": "目标累计 1 到 3，正确循环应包括 3。",
+      "steps": [
+        "i<3 只处理 1、2。",
+        "改为 i<=3。",
+        "手算 1+2+3 得 6。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n#include <assert.h>\n\nint main(void)\n{\n    int sum = 0;\n    for (int i = 1; i <= 3; i++) {\n        sum += i;\n    }\n    assert(sum == 6);\n    printf(\"%d\\n\", sum);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "6\n",
+        "files": {},
+        "exitCode": 0
+      }
+    }
+  ],
+  "practice": [
+    {
+      "problem": "编译器在 printf 行报 expected ;，先看哪里？",
+      "hint": "上一条语句可能尚未结束。",
+      "solution": [
+        "查看诊断对应行。",
+        "回看上一条语句是否漏分号或括号。",
+        "只修第一处，重新编译。"
+      ],
+      "answer": "检查该行以及紧邻前面的语句；错误位置可能晚于根因。",
+      "difficulty": 1,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "测试 int abs_small(int n)，仅支持 -100 到 100。",
+      "hint": "覆盖负数、零、正数。",
+      "solution": [
+        "负数返回相反数。",
+        "零保持零。",
+        "三个用例分别验证。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n#include <assert.h>\n\nint abs_small(int n)\n{\n    if (n < 0) { return -n; }\n    return n;\n}\n\nint main(void)\n{\n    assert(abs_small(-3) == 3);\n    assert(abs_small(0) == 0);\n    assert(abs_small(4) == 4);\n    puts(\"ok\");\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "ok\n",
+        "files": {},
+        "exitCode": 0
+      },
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "能用 assert(scanf(\"%d\", &x)==1) 完成必要输入吗？",
+      "hint": "断言可能被关闭。",
+      "solution": [
+        "NDEBUG 会让 assert 不求值。",
+        "scanf 也就不执行。",
+        "把调用放在普通语句中，用 if 验证。"
+      ],
+      "answer": "不能；先独立读取并处理失败，断言不承担必要动作。",
+      "difficulty": 3,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "一项测试通过，能宣布函数对全部输入都正确吗？",
+      "hint": "测试只观察实际运行的样例。",
+      "solution": [
+        "列出已覆盖范围。",
+        "补充边界与反例。",
+        "仍要核对契约与算法理由。"
+      ],
+      "answer": "不能；只能报告已运行用例通过，并说明未覆盖部分。",
+      "difficulty": 2,
+      "misconceptionTags": []
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "代码能编译就一定逻辑正确。",
+      "correction": "编译器不能知道你的业务目标；还需手算预期和运行测试。",
+      "tag": "c-debug-m1"
+    },
+    {
+      "claim": "把警告关掉就算修好了。",
+      "correction": "警告消失不等于原因消失；理解类型、初始化与控制流后修正。",
+      "tag": "c-debug-m2"
+    }
+  ],
+  "learningCheck": {
+    "question": "assert 中能否放必须执行的更新操作？",
+    "choices": [
+      "可以，永远执行",
+      "不应这样写",
+      "只在 main 可以"
+    ],
+    "correctIndex": 1,
+    "feedback": [
+      "启用 NDEBUG 时可能完全不执行。",
+      "正确，动作先执行，断言只检查结果。",
+      "函数位置不改变断言语义。"
+    ]
+  },
+  "interactiveVisual": {
+    "mode": "c-compare",
+    "prediction": "先遮住输出：判断 60 及格，断言 59 不及格、60 及格。 写下结果后，对比两个已编译的例子。",
+    "caption": "切换案例，比较代码、输入与预期输出。结果来自本书固定程序的本机执行检查；网页展示静态案例，不运行任意 C 代码。",
+    "experiment": {
+      "code": "#include <stdio.h>\n#include <assert.h>\n\nint passes(int score)\n{\n    return score >= 60;\n}\n\nint main(void)\n{\n    assert(!passes(59));\n    assert(passes(60));\n    puts(\"ok\");\n    return 0;\n}\n",
+      "stdin": "",
+      "stdout": "ok\n",
+      "files": {},
+      "exitCode": 0
+    }
+  },
+  "prerequisites": [
+    "c-scope"
+  ],
+  "difficulty": 2,
+  "misconceptionTags": [
+    "c-debug-m1",
+    "c-debug-m2"
+  ],
+  "sources": [
+    "n1570"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "humanReviewed": false,
+    "version": "0.1.0"
+  }
+}

@@ -119,3 +119,5 @@
  .edition-card-footer{padding-top:3px;}
 }
 #open-bookshelf{scroll-margin-top:76px;}
+
+.edition-cover[data-edition="c-programming"] { --cover-dark:#264d4b;--cover-light:#4e7a6c;--cover-accent:#ebcf9b; }

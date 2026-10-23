@@ -1,0 +1,196 @@
+{
+  "id": "c-input",
+  "number": "2.2",
+  "chapterId": "c-ch2",
+  "title": "让程序接收键盘输入",
+  "concept": "输入让同一个程序处理不同数据；读取是否成功必须成为程序流程的一部分。",
+  "intuition": "读取像填写表格：想要一个整数，不代表读者一定交来整数。先检查这一格是否填成功，再使用数据。",
+  "objectives": [
+    "先理解标准输入",
+    "返回值是第一道检查",
+    "本节方法的边界"
+  ],
+  "body": [
+    {
+      "title": "先理解标准输入",
+      "text": "程序的标准输入通常连接键盘。在终端运行后，光标停着可能是在等待输入。键入 12 后按回车，文本才交给程序。scanf(\"%d\", &age) 尝试把文本转成 int；&age 是让函数把结果放到 age 的位置，& 的细节在指针章展开，本节先识别它的职责。"
+    },
+    {
+      "title": "返回值是第一道检查",
+      "text": "scanf 返回成功赋值的项目个数。读取一个 int 时检查是否等于 1；两个 int 检查是否等于 2。读取失败就输出错误并结束，不继续使用结果。%d 跳过前面的空白，但读取完成后可能留下换行。不要在本书的格式末尾写空白或 \\n，以免交互时继续等待下一段非空白。"
+    },
+    {
+      "title": "本节方法的边界",
+      "text": "scanf 的整数转换不适合处理任意不可信文本：数值超出目标对象可表示范围时，C 的标准接口没有给你一个可靠的范围错误返回。课堂练习假定输入整数在 int 范围内，再检查业务范围。后面将用 fgets 读整行、strtol 检查完整格式与范围。本节不把 scanf 当作最终的健壮输入方案。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "scanf 从标准输入按格式转换，返回成功赋值的项目数，或在首次转换前输入失败时返回 EOF。",
+    "conditions": [
+      "输入数值可由目标类型表示；不满足时改用后文的 fgets + strtol。",
+      "%d 的目标为 int 对象地址。",
+      "业务范围检查在读取成功后进行；不要用失败后的值。"
+    ]
+  },
+  "derivation": [
+    {
+      "text": "创建并初始化输入变量。"
+    },
+    {
+      "text": "调用 scanf，先判断返回值是否等于预期个数。"
+    },
+    {
+      "text": "成功才计算；失败明确结束，避免重复读取同一错误字符造成死循环。"
+    }
+  ],
+  "workedExamples": [
+    {
+      "title": "年龄输入",
+      "problem": "读一个范围内的整数，输出下一年的年龄；本例输入 18。",
+      "steps": [
+        "准备 int age。",
+        "检查返回值为 1。",
+        "本例条件限制年龄 0 到 150，再加 1。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    int age = 0;\n    if (scanf(\"%d\", &age) != 1 || age < 0 || age > 150) {\n        puts(\"invalid age\");\n        return 1;\n    }\n    printf(\"%d\\n\", age + 1);\n    return 0;\n}\n",
+        "stdin": "18\n",
+        "stdout": "19\n",
+        "files": {},
+        "exitCode": 0
+      }
+    },
+    {
+      "title": "格式失败",
+      "problem": "同一接口遇到 hello 时，拒绝计算。",
+      "steps": [
+        "hello 无法转换为 int。",
+        "返回值不是 1。",
+        "错误路径直接结束，绝不输出未读到的年龄。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    int age = 0;\n    if (scanf(\"%d\", &age) != 1) {\n        puts(\"invalid input\");\n        return 1;\n    }\n    printf(\"%d\\n\", age);\n    return 0;\n}\n",
+        "stdin": "hello\n",
+        "stdout": "invalid input\n",
+        "files": {},
+        "exitCode": 1
+      }
+    }
+  ],
+  "practice": [
+    {
+      "problem": "读两个小整数 3 和 4，输出和。",
+      "hint": "返回值应与两个目标对应。",
+      "solution": [
+        "初始化两个 int。",
+        "检查 scanf 返回 2。",
+        "确认本题小整数相加可表示，再输出。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    int a = 0, b = 0;\n    if (scanf(\"%d%d\", &a, &b) != 2) {\n        return 1;\n    }\n    printf(\"%d\\n\", a + b);\n    return 0;\n}\n",
+        "stdin": "3 4\n",
+        "stdout": "7\n",
+        "files": {},
+        "exitCode": 0
+      },
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "为什么 scanf(\"%d\", age) 缺少 &？",
+      "hint": "函数需要能写入目标对象的位置。",
+      "solution": [
+        "age 只给出了当前数值。",
+        "%d 要求 int * 参数。",
+        "使用 &age，格式与参数必须匹配。"
+      ],
+      "answer": "应写 scanf(\"%d\", &age)，并检查返回值。",
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "输入 -2 作为 0 到 150 的年龄，应走哪条路径？",
+      "hint": "成功转换不代表满足业务范围。",
+      "solution": [
+        "-2 可转换成 int。",
+        "范围判断失败。",
+        "给出错误并以非零状态结束。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    int age = 0;\n    if (scanf(\"%d\", &age) != 1 || age < 0 || age > 150) {\n        puts(\"invalid age\");\n        return 1;\n    }\n    printf(\"%d\\n\", age);\n    return 0;\n}\n",
+        "stdin": "-2\n",
+        "stdout": "invalid age\n",
+        "files": {},
+        "exitCode": 1
+      },
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "要接收任意长度的用户数字文本，能只靠 scanf 返回 1 就保证安全么？",
+      "hint": "想一想超出 int 范围的输入。",
+      "solution": [
+        "scanf 的数值转换有表示范围要求。",
+        "返回个数不是完整的范围验证机制。",
+        "使用有长度限制的整行读取，再用 strtol 和 errno 检查。"
+      ],
+      "answer": "不能；本节只用于已限定为可表示小整数的练习，健壮方案见 4.4 与 6.4。",
+      "difficulty": 3,
+      "misconceptionTags": []
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "输入失败时初始化为 0 就能继续。",
+      "correction": "初始化避免部分未初始化读取，但不能把失败输入偷偷当成合法零。",
+      "tag": "c-input-m1"
+    },
+    {
+      "claim": "读取整数时在格式末尾加 \\n 更好。",
+      "correction": "scanf 的空白指令会继续匹配空白，交互时可能等待更多输入；写 %d 即可。",
+      "tag": "c-input-m2"
+    }
+  ],
+  "learningCheck": {
+    "question": "scanf(\"%d%d\", &a, &b) 读到 3 x 返回什么？",
+    "choices": [
+      "2",
+      "1",
+      "0"
+    ],
+    "correctIndex": 1,
+    "feedback": [
+      "第二项不能转成整数。",
+      "正确，只有 a 成功赋值。",
+      "第一项 3 已成功转换。"
+    ]
+  },
+  "interactiveVisual": {
+    "mode": "c-compare",
+    "prediction": "先遮住输出：读一个范围内的整数，输出下一年的年龄；本例输入 18。 写下结果后，对比两个已编译的例子。",
+    "caption": "切换案例，比较代码、输入与预期输出。结果来自本书固定程序的本机执行检查；网页展示静态案例，不运行任意 C 代码。",
+    "experiment": {
+      "code": "#include <stdio.h>\n\nint main(void)\n{\n    int age = 0;\n    if (scanf(\"%d\", &age) != 1 || age < 0 || age > 150) {\n        puts(\"invalid age\");\n        return 1;\n    }\n    printf(\"%d\\n\", age + 1);\n    return 0;\n}\n",
+      "stdin": "18\n",
+      "stdout": "19\n",
+      "files": {},
+      "exitCode": 0
+    }
+  },
+  "prerequisites": [
+    "c-if"
+  ],
+  "difficulty": 1,
+  "misconceptionTags": [
+    "c-input-m1",
+    "c-input-m2"
+  ],
+  "sources": [
+    "n1570"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "humanReviewed": false,
+    "version": "0.1.0"
+  }
+}

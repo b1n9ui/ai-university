@@ -1,0 +1,196 @@
+{
+  "id": "c-strings",
+  "number": "4.3",
+  "chapterId": "c-ch4",
+  "title": "字符数组与字符串",
+  "concept": "C 字符串在字符数组中用零字符标明结束；容量和可见长度必须分别计算。",
+  "intuition": "一串字符后面有一张“到此为止”的小卡片 \\0。数组容量包含卡片占的位置，屏幕不会把这张卡片当作可见文字。",
+  "objectives": [
+    "三个容易混的符号",
+    "长度和容量",
+    "比较与复制"
+  ],
+  "body": [
+    {
+      "title": "三个容易混的符号",
+      "text": "'A' 是字符常量，\"A\" 是含 A 与终止零的字符串字面量，'\\0' 是值为零的字符。char name[] = \"Lin\" 推导出四个 char 的数组：L、i、n、终止零。字符 '0' 则是数字符号的编码，不是终止零。字符串字面量本身不可修改，需要改文字时用可写字符数组。"
+    },
+    {
+      "title": "长度和容量",
+      "text": "strlen 来自 string.h，计算终止零之前的字符数量，不计终止零。sizeof 数组得到整个容量。strlen 要求存在可访问的终止零；对未终止数组调用可能越界。中文 UTF-8 通常一个汉字占多个字节，strlen 不等于人眼看到的字数；本书字符串算法只处理 ASCII，避免把字节反转误教成中文反转。"
+    },
+    {
+      "title": "比较与复制",
+      "text": "字符串内容比较用 strcmp，结果小于、等于、大于零分别表示字典序关系；不能假定结果一定是 -1 或 1。== 比较指针地址，不比较内容。复制前先确认目标容量足够包含终止零；不要把 strncpy 当成总会终止的“安全 strcpy”。本书优先在已知容量内逐项处理或用明确检查过长度的写入。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "C 字符串是以第一个零字符终止的字符序列；承载它的数组容量至少为内容字节数加一。",
+    "conditions": [
+      "strlen、strcmp 的输入必须是有效终止字符串。",
+      "不修改字符串字面量。",
+      "本节长度单位为 char，不声称能统计 Unicode 字符数。"
+    ]
+  },
+  "derivation": [
+    {
+      "text": "先写出包含终止零的实际数组。"
+    },
+    {
+      "text": "分别标出容量与内容长度。"
+    },
+    {
+      "text": "比较内容用库函数，修改前确认可写性与剩余容量。"
+    }
+  ],
+  "workedExamples": [
+    {
+      "title": "长度和容量",
+      "problem": "观察 char name[]=\"Lin\" 的长度与容量。",
+      "steps": [
+        "三个可见字符。",
+        "还有一个终止零。",
+        "strlen 为 3，sizeof 为 4。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n#include <string.h>\n\nint main(void)\n{\n    char name[] = \"Lin\";\n    printf(\"%zu %zu\\n\", strlen(name), sizeof name);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "3 4\n",
+        "files": {},
+        "exitCode": 0
+      }
+    },
+    {
+      "title": "可写数组",
+      "problem": "把 Cat 的首字母改为 B。",
+      "steps": [
+        "数组接收字面量的副本。",
+        "首项可写。",
+        "终止零保持原位，输出 Bat。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    char word[] = \"Cat\";\n    word[0] = 'B';\n    puts(word);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "Bat\n",
+        "files": {},
+        "exitCode": 0
+      }
+    }
+  ],
+  "practice": [
+    {
+      "problem": "char s[4]=\"abc\" 还能直接追加一个 d 吗？",
+      "hint": "需要保留终止零的位置。",
+      "solution": [
+        "现有三字符加零已占四项。",
+        "追加 d 还需第五项终止零。",
+        "扩大容量后再修改。"
+      ],
+      "answer": "不能在原容量内形成 \"abcd\" 字符串；至少需要容量 5。",
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "比较两个独立数组里的 hi。",
+      "hint": "使用 strcmp==0。",
+      "solution": [
+        "两个数组地址不同不影响内容。",
+        "strcmp 比较直到终止零。",
+        "内容相等返回 0。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n#include <string.h>\n\nint main(void)\n{\n    char a[] = \"hi\", b[] = \"hi\";\n    printf(\"%d\\n\", strcmp(a, b) == 0);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "1\n",
+        "files": {},
+        "exitCode": 0
+      },
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "统计 ASCII 字符串 banana 中 a 的个数。",
+      "hint": "逐字符遍历到终止零。",
+      "solution": [
+        "计数从零开始。",
+        "遇到 a 加一。",
+        "三个 a，终止零不参与。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    char s[] = \"banana\";\n    int count = 0;\n    for (size_t i = 0; s[i] != '\\0'; i++) {\n        if (s[i] == 'a') { count++; }\n    }\n    printf(\"%d\\n\", count);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "3\n",
+        "files": {},
+        "exitCode": 0
+      },
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "strlen(\"你好\") 是否保证为 2？",
+      "hint": "它统计的是 char 数量。",
+      "solution": [
+        "编码可能使用多个字节。",
+        "strlen 不理解 Unicode 字符边界。",
+        "本书只对 ASCII 作逐字符算法保证。"
+      ],
+      "answer": "不保证；编码和执行字符集影响结果，不把字节长度当作汉字个数。",
+      "difficulty": 3,
+      "misconceptionTags": []
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "数组容量就是 strlen。",
+      "correction": "容量包含可用空间和终止零，strlen 只到第一个零。",
+      "tag": "c-strings-m1"
+    },
+    {
+      "claim": "== 能比较两段字符串内容。",
+      "correction": "它比较地址；比较文本使用 strcmp 并正确检查其符号或是否为零。",
+      "tag": "c-strings-m2"
+    }
+  ],
+  "learningCheck": {
+    "question": "存储 \"hello\" 至少需要几个 char？",
+    "choices": [
+      "5",
+      "6",
+      "由屏幕字体决定"
+    ],
+    "correctIndex": 1,
+    "feedback": [
+      "还缺终止零的位置。",
+      "正确，五个字符加一个终止零。",
+      "字体不影响字符串存储需求。"
+    ]
+  },
+  "interactiveVisual": {
+    "mode": "c-compare",
+    "prediction": "先遮住输出：观察 char name[]=\"Lin\" 的长度与容量。 写下结果后，对比两个已编译的例子。",
+    "caption": "切换案例，比较代码、输入与预期输出。结果来自本书固定程序的本机执行检查；网页展示静态案例，不运行任意 C 代码。",
+    "experiment": {
+      "code": "#include <stdio.h>\n#include <string.h>\n\nint main(void)\n{\n    char name[] = \"Lin\";\n    printf(\"%zu %zu\\n\", strlen(name), sizeof name);\n    return 0;\n}\n",
+      "stdin": "",
+      "stdout": "3 4\n",
+      "files": {},
+      "exitCode": 0
+    }
+  },
+  "prerequisites": [
+    "c-algorithms"
+  ],
+  "difficulty": 3,
+  "misconceptionTags": [
+    "c-strings-m1",
+    "c-strings-m2"
+  ],
+  "sources": [
+    "n1570"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "humanReviewed": false,
+    "version": "0.1.0"
+  }
+}

@@ -1,0 +1,202 @@
+{
+  "id": "c-if",
+  "number": "2.1",
+  "chapterId": "c-ch2",
+  "title": "条件判断与逻辑",
+  "concept": "条件语句让程序根据数据选择行动，避免所有输入都执行同一段处理。",
+  "intuition": "像检票：先判断“是否有票”，再决定放行或提示。条件是一个可求值的表达式，不是自然语言里省略条件的句子。",
+  "objectives": [
+    "比较与分支",
+    "多个条件一起检查",
+    "顺序决定分类"
+  ],
+  "body": [
+    {
+      "title": "比较与分支",
+      "text": "if (score >= 60) 后写花括号包围的动作，else 写条件为假时的动作。== 比较是否相等，= 赋值。C 把零当假、非零当真；比较运算结果是 int 类型的 0 或 1。即使只有一条语句也保留花括号，减少后来加代码时的错误。"
+    },
+    {
+      "title": "多个条件一起检查",
+      "text": "&& 表示两者都满足，|| 表示至少一个满足，! 取反。写范围检查 age >= 0 && age <= 150，而不是 0 <= age <= 150；后者先算左边得到 0 或 1，再与 150 比较。&& 和 || 从左向右短路，左侧已能决定真假时不计算右侧。"
+    },
+    {
+      "title": "顺序决定分类",
+      "text": "else if 形成互斥分类，按顺序找到第一个真分支就停止。分数等级从高阈值往低阈值写，否则较高分可能先被“>=60”截住。先验证输入是否合法，再做业务分类，让非法值不会意外被当作优等。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "if 根据控制表达式与零是否相等选择分支；&&、|| 有从左到右的短路规则。",
+    "conditions": [
+      "比较两侧类型和数值范围明确。",
+      "除法前用短路排除零除数，并排除不可表示的商。",
+      "本书分支均使用花括号。"
+    ]
+  },
+  "derivation": [
+    {
+      "text": "先列合法范围，再列互斥的业务情况。"
+    },
+    {
+      "text": "把每一条自然语言条件写成完整比较，用 && 或 || 连接。"
+    },
+    {
+      "text": "按阈值下方、阈值本身、阈值上方分别试算。"
+    }
+  ],
+  "workedExamples": [
+    {
+      "title": "判断及格",
+      "problem": "分数 60 属于及格还是未及格？",
+      "steps": [
+        "合法分数先限定 0 到 100。",
+        ">= 包含等号，所以 60 达标。",
+        "只输出选中的分支。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    int score = 60;\n    if (score >= 60) {\n        puts(\"pass\");\n    } else {\n        puts(\"retry\");\n    }\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "pass\n",
+        "files": {},
+        "exitCode": 0
+      }
+    },
+    {
+      "title": "短路保护",
+      "problem": "分母是 0 时，如何不执行除法？",
+      "steps": [
+        "先判断 denominator != 0。",
+        "左侧为假时 && 不求右侧。",
+        "走 else，避免 12 / 0。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    int denominator = 0;\n    if (denominator != 0 && 12 / denominator > 2) {\n        puts(\"large\");\n    } else {\n        puts(\"not available\");\n    }\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "not available\n",
+        "files": {},
+        "exitCode": 0
+      }
+    }
+  ],
+  "practice": [
+    {
+      "problem": "温度 0 到 30 含两端为 normal，测试 30。",
+      "hint": "两次比较用 && 连接。",
+      "solution": [
+        "检查 >= 0。",
+        "检查 <= 30。",
+        "30 满足两项。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    int t = 30;\n    if (t >= 0 && t <= 30) {\n        puts(\"normal\");\n    } else {\n        puts(\"outside\");\n    }\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "normal\n",
+        "files": {},
+        "exitCode": 0
+      },
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "判断 17 是奇数还是偶数。",
+      "hint": "余数为零才是偶数。",
+      "solution": [
+        "计算 17 % 2 为 1。",
+        "与 0 比较为假。",
+        "进入 odd 分支。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    int n = 17;\n    if (n % 2 == 0) {\n        puts(\"even\");\n    } else {\n        puts(\"odd\");\n    }\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "odd\n",
+        "files": {},
+        "exitCode": 0
+      },
+      "difficulty": 1,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "为什么 0 <= x <= 10 不能检查闭区间？",
+      "hint": "比较产生的是 0 或 1。",
+      "solution": [
+        "先算 0 <= x。",
+        "结果 0 或 1 都小于等于 10。",
+        "正确写 x >= 0 && x <= 10。"
+      ],
+      "answer": "这个表达式会把不在区间内的整数也判为真；要连接两个完整比较。",
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "90 分及以上 A，60 分及以上 B，其余 C，测试 95。",
+      "hint": "先判断高阈值。",
+      "solution": [
+        "95 >= 90 成立。",
+        "选择 A。",
+        "后面的 else if 不再执行。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    int score = 95;\n    if (score >= 90) {\n        puts(\"A\");\n    } else if (score >= 60) {\n        puts(\"B\");\n    } else {\n        puts(\"C\");\n    }\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "A\n",
+        "files": {},
+        "exitCode": 0
+      },
+      "difficulty": 2,
+      "misconceptionTags": []
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "= 与 == 可以互换。",
+      "correction": "= 改值，== 比较；编译器警告有帮助，但应从语义上区分。",
+      "tag": "c-if-m1"
+    },
+    {
+      "claim": "每个分支都从低阈值开始写。",
+      "correction": "互斥 else if 链的顺序影响结果；先写会截住其他情况的条件必须谨慎。",
+      "tag": "c-if-m2"
+    }
+  ],
+  "learningCheck": {
+    "question": "x 为 -5 时，正确的范围检查是哪句？",
+    "choices": [
+      "0 <= x <= 10",
+      "x >= 0 && x <= 10",
+      "x >= 0 || x <= 10"
+    ],
+    "correctIndex": 1,
+    "feedback": [
+      "第一次比较只得到 0 或 1。",
+      "正确，两个条件必须同时成立。",
+      "至少满足其中一个太宽，会放过 -5。"
+    ]
+  },
+  "interactiveVisual": {
+    "mode": "c-compare",
+    "prediction": "先遮住输出：分数 60 属于及格还是未及格？ 写下结果后，对比两个已编译的例子。",
+    "caption": "切换案例，比较代码、输入与预期输出。结果来自本书固定程序的本机执行检查；网页展示静态案例，不运行任意 C 代码。",
+    "experiment": {
+      "code": "#include <stdio.h>\n\nint main(void)\n{\n    int score = 60;\n    if (score >= 60) {\n        puts(\"pass\");\n    } else {\n        puts(\"retry\");\n    }\n    return 0;\n}\n",
+      "stdin": "",
+      "stdout": "pass\n",
+      "files": {},
+      "exitCode": 0
+    }
+  },
+  "prerequisites": [
+    "c-arithmetic"
+  ],
+  "difficulty": 1,
+  "misconceptionTags": [
+    "c-if-m1",
+    "c-if-m2"
+  ],
+  "sources": [
+    "n1570"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "humanReviewed": false,
+    "version": "0.1.0"
+  }
+}

@@ -1,0 +1,186 @@
+{
+  "id": "c-project-delivery",
+  "number": "8.4",
+  "chapterId": "c-ch8",
+  "title": "综合项目四：运行、测试与交付",
+  "concept": "交付包含别人能照做的构建命令、样例、预期结果、错误行为与已知限制。",
+  "intuition": "把项目交给明天的自己：不靠记忆补文件，不靠解释猜命令，解压后就能重现同一结果。",
+  "objectives": [
+    "独立运行",
+    "保存报告与退出状态",
+    "测试与后续修改"
+  ],
+  "body": [
+    {
+      "title": "独立运行",
+      "text": "从教材项目包解压后进入 project 目录。Windows UCRT64/Linux 使用 gcc -std=c17 -Wall -Wextra -Wpedantic main.c records.c input.c -o gradebook；macOS 可用 clang。运行 ./gradebook sample.txt；MSYS2 可写 ./gradebook.exe sample.txt。三行样例应输出 count: 3、total: 247、mean: 82.33、passed: 2，再输出 Ada 100、Lin 88、Bo 59。"
+    },
+    {
+      "title": "保存报告与退出状态",
+      "text": "正常报告写 stdout，错误写 stderr，main 用 EXIT_SUCCESS 或 EXIT_FAILURE 返回。可运行 ./gradebook sample.txt > report.txt 保存标准输出；重定向由 shell 先创建或截断目标文件，所以绝不能把输出路径设为输入文件，也不能使用其别名或硬链接。项目自身只读输入文件，不提供覆盖式存储；路径安全由这条使用限制说明。"
+    },
+    {
+      "title": "测试与后续修改",
+      "text": "test_records.c 检查正常插入、查重、容量上限、排序、解析与失败不写输出；tools/verify.py 还从外部调用真实程序，对输出、错误退出和不完整报告逐项核对。扩展中文姓名、CSV、编辑模式或更大容量时，先更新协议与范围推理，再改实现和测试。本卷到可运行、可验证的本地项目为止，不制造未写的后续章节。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "可重复交付要求源代码、构建命令、输入样例、预期输出和测试使用同一版本。",
+    "conditions": [
+      "在临时练习目录运行例子。",
+      "不把报告重定向到输入路径或其别名。",
+      "记录实际平台与工具支持，不声称所有系统已验证。"
+    ]
+  },
+  "derivation": [
+    {
+      "text": "按 README 从源代码构建，不使用遗留可执行文件。"
+    },
+    {
+      "text": "对照样例报告，再运行正常与拒绝用例。"
+    },
+    {
+      "text": "保留版本、许可、验证记录和限制，提交同版源与派生产物。"
+    }
+  ],
+  "workedExamples": [
+    {
+      "title": "错误走标准错误",
+      "problem": "演示将错误写 stderr，并返回失败。",
+      "steps": [
+        "fprintf 目标为 stderr。",
+        "stdout 保持空。",
+        "返回非零状态，调用者能判断失败。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    fprintf(stderr, \"invalid record\\n\");\n    return 1;\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "",
+        "files": {},
+        "exitCode": 1,
+        "stderr": "invalid record\n"
+      }
+    },
+    {
+      "title": "交付自检",
+      "problem": "用断言复算样例总分与边界，成功输出 ready。",
+      "steps": [
+        "独立手算总分 247。",
+        "确认平均值与及格判断的输入条件。",
+        "测试通过才报告 ready。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n#include <assert.h>\n\nint main(void)\n{\n    int total = 100 + 88 + 59;\n    assert(total == 247);\n    assert(60 >= 60);\n    assert(!(59 >= 60));\n    puts(\"ready\");\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "ready\n",
+        "files": {},
+        "exitCode": 0
+      }
+    }
+  ],
+  "practice": [
+    {
+      "problem": "能执行 ./gradebook sample.txt > sample.txt 吗？",
+      "hint": "shell 会在程序读取前处理重定向。",
+      "solution": [
+        "输出重定向先截断目标。",
+        "输入文件会被清空。",
+        "输出使用另一个全新路径，避免别名。"
+      ],
+      "answer": "不能；会有丢失输入的风险，项目文档明确禁止。",
+      "difficulty": 3,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "只交 gradebook 可执行文件够不够？",
+      "hint": "平台、版本和可审查性。",
+      "solution": [
+        "二进制可能只适用于当前系统。",
+        "读者需要源、命令、样例和测试。",
+        "完整包保留同版文件。"
+      ],
+      "answer": "不够；教材交付包含完整源文件与可重复构建说明。",
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "stderr 有错误而 stdout 还有前两行报告，符合规格吗？",
+      "hint": "整份拒绝的含义。",
+      "solution": [
+        "这会让部分数据被误认成正式结果。",
+        "应先加载完整文件。",
+        "失败只给错误，不打印报告。"
+      ],
+      "answer": "不符合；本项目输入失败时 stdout 必须为空。",
+      "difficulty": 3,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "准备增加最大人数到 100 万，需要重新分析什么？",
+      "hint": "此前总分和容量安全依赖上限 100。",
+      "solution": [
+        "检查容量增长和尺寸乘法。",
+        "重新证明总分类型足够、排序代价可接受。",
+        "更新边界测试与文档，不能只改常量。"
+      ],
+      "answer": "至少重审整数范围、内存增长、性能、协议限制和测试。",
+      "difficulty": 4,
+      "misconceptionTags": []
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "成功编译就可以省略 README。",
+      "correction": "初学者需要目录、命令、样例、输出与失败处理才能复现。",
+      "tag": "c-project-delivery-m1"
+    },
+    {
+      "claim": "验证记录可以写成“全平台无误”。",
+      "correction": "只报告实际运行平台与用例，未知平台不冒充已测。",
+      "tag": "c-project-delivery-m2"
+    }
+  ],
+  "learningCheck": {
+    "question": "教材项目的完整交付应包含？",
+    "choices": [
+      "只有可执行文件",
+      "源代码、命令、样例、测试与限制",
+      "一张运行截图"
+    ],
+    "correctIndex": 1,
+    "feedback": [
+      "读者无法审查或跨平台重建。",
+      "正确，可重复运行并能核对行为。",
+      "截图不能代替可运行材料。"
+    ]
+  },
+  "interactiveVisual": {
+    "mode": "c-compare",
+    "prediction": "先遮住输出：演示将错误写 stderr，并返回失败。 写下结果后，对比两个已编译的例子。",
+    "caption": "切换案例，比较代码、输入与预期输出。结果来自本书固定程序的本机执行检查；网页展示静态案例，不运行任意 C 代码。",
+    "experiment": {
+      "code": "#include <stdio.h>\n\nint main(void)\n{\n    fprintf(stderr, \"invalid record\\n\");\n    return 1;\n    return 0;\n}\n",
+      "stdin": "",
+      "stdout": "",
+      "files": {},
+      "exitCode": 1,
+      "stderr": "invalid record\n"
+    }
+  },
+  "prerequisites": [
+    "c-project-input"
+  ],
+  "difficulty": 6,
+  "misconceptionTags": [
+    "c-project-delivery-m1",
+    "c-project-delivery-m2"
+  ],
+  "sources": [
+    "n1570"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "humanReviewed": false,
+    "version": "0.1.0"
+  }
+}

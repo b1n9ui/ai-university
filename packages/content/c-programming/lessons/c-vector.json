@@ -1,0 +1,184 @@
+{
+  "id": "c-vector",
+  "number": "6.2",
+  "chapterId": "c-ch6",
+  "title": "动态数组与 realloc 的失败路径",
+  "concept": "当记录数量运行时才知道，可以用“数据指针、长度、容量”组成可增长数组。",
+  "intuition": "长度是已入住人数，容量是总房间数。扩建失败时，原楼还在，不能先丢掉原楼地址。",
+  "objectives": [
+    "先建立不变量",
+    "realloc 必须用临时指针",
+    "增长前检查上限"
+  ],
+  "body": [
+    {
+      "title": "先建立不变量",
+      "text": "动态表使用 data、size、capacity。始终满足 size<=capacity，只有下标小于 size 的元素已初始化并属于数据；capacity-size 部分只代表备用空间。初始 data=NULL、size=0、capacity=0，销毁后恢复这三项。容量不等于元素数，不能把备用空间拿去统计。"
+    },
+    {
+      "title": "realloc 必须用临时指针",
+      "text": "realloc(old, bytes) 成功时返回新块，可能移动；原指针和所有旧元素地址都不可再用。失败返回 NULL，原分配仍归你所有。因此写 tmp=realloc(data,bytes)，成功后再 data=tmp。直接 data=realloc(...) 在失败时丢失原指针，造成泄漏。避免零大小请求的复杂边界。"
+    },
+    {
+      "title": "增长前检查上限",
+      "text": "翻倍容量前检查乘法和业务上限。入门项目最多接收 100 条，容量增长到 100 就停止，这也限制了总分与内存需求。插入操作先确认空间成功，再写元素、最后增加 size；失败保持原记录表不变。不要在扩容后继续使用之前保存的元素指针。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "可增长数组以拥有者结构管理分配块；realloc 失败保留原分配，成功后必须采用新指针并废弃旧别名。",
+    "conditions": [
+      "尺寸计算不溢出，容量不超过项目上限。",
+      "传给 realloc 的地址为当前仍拥有的分配块首地址或 NULL。",
+      "本节微型示例只演示固定增长，完整通用逻辑在项目中。"
+    ]
+  },
+  "derivation": [
+    {
+      "text": "确认需要的长度是否超过容量。"
+    },
+    {
+      "text": "计算并检查新容量，用临时指针申请增长。"
+    },
+    {
+      "text": "成功后更新指针与容量，写入新项，最后更新长度。"
+    }
+  ],
+  "workedExamples": [
+    {
+      "title": "从一项扩为两项",
+      "problem": "先存 7，再扩容到两项并存 9。",
+      "steps": [
+        "malloc 申请一项。",
+        "tmp 接收 realloc，失败时释放原块。",
+        "成功后新指针存第二项，输出并释放。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n#include <stdlib.h>\n\nint main(void)\n{\n    int *a = malloc(sizeof *a);\n    if (a == NULL) { return 1; }\n    a[0] = 7;\n    int *tmp = realloc(a, 2 * sizeof *a);\n    if (tmp == NULL) { free(a); return 1; }\n    a = tmp;\n    a[1] = 9;\n    printf(\"%d %d\\n\", a[0], a[1]);\n    free(a);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "7 9\n",
+        "files": {},
+        "exitCode": 0
+      }
+    },
+    {
+      "title": "区分长度和容量",
+      "problem": "容量四项，只存了两项 3、5，只统计已用部分。",
+      "steps": [
+        "size 为 2。",
+        "只访问 [0,size)。",
+        "备用两项不读取，总和 8。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n#include <stdlib.h>\n\nint main(void)\n{\n    int *a = malloc(4 * sizeof *a);\n    if (a == NULL) { return 1; }\n    size_t size = 2;\n    a[0] = 3; a[1] = 5;\n    int sum = 0;\n    for (size_t i = 0; i < size; i++) { sum += a[i]; }\n    printf(\"%d\\n\", sum);\n    free(a);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "8\n",
+        "files": {},
+        "exitCode": 0
+      }
+    }
+  ],
+  "practice": [
+    {
+      "problem": "realloc 失败后原块是否已经释放？",
+      "hint": "失败与成功的契约不同。",
+      "solution": [
+        "返回 NULL 表示此次失败。",
+        "原块保持分配。",
+        "你仍须决定保留或释放。"
+      ],
+      "answer": "没有；原块仍由调用者拥有。",
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "扩容成功后，可否继续使用旧元素指针？",
+      "hint": "新块可能移址，原对象生命周期已改变。",
+      "solution": [
+        "旧地址不能继续依赖。",
+        "更新拥有者指针。",
+        "用新指针和下标重新取得元素地址。"
+      ],
+      "answer": "不能；成功后重新获取所有借用指针。",
+      "difficulty": 3,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "size=2、capacity=8，遍历统计到哪？",
+      "hint": "已初始化数据与备用空间不同。",
+      "solution": [
+        "合法数据为下标 0、1。",
+        "循环条件 i<size。",
+        "不要读取其余未初始化空间。"
+      ],
+      "answer": "遍历 size 项；capacity 只用于分配与插入空间判断。",
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "插入失败却先 size++，会破坏什么？",
+      "hint": "size 声称有一项实际上并不存在。",
+      "solution": [
+        "分配未成功。",
+        "长度却增加。",
+        "之后遍历可能访问未初始化或越界内存。"
+      ],
+      "answer": "破坏 size<=capacity 或已用区域全初始化的不变量；成功写入后再增加长度。",
+      "difficulty": 3,
+      "misconceptionTags": []
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "realloc 总会原地扩展。",
+      "correction": "可能移动，成功后的旧别名不能保留使用。",
+      "tag": "c-vector-m1"
+    },
+    {
+      "claim": "先覆盖原指针代码更短，所以更好。",
+      "correction": "失败会丢失原块；必须保留原指针直到成功。",
+      "tag": "c-vector-m2"
+    }
+  ],
+  "learningCheck": {
+    "question": "正确接收 realloc 结果的方式是？",
+    "choices": [
+      "直接无条件覆盖唯一原指针",
+      "先放临时指针，成功再替换",
+      "忽略返回值"
+    ],
+    "correctIndex": 1,
+    "feedback": [
+      "失败时会丢失原地址。",
+      "正确，能保留失败时的所有权。",
+      "成功可能移动，忽略结果会留下无效旧指针。"
+    ]
+  },
+  "interactiveVisual": {
+    "mode": "c-compare",
+    "prediction": "先遮住输出：先存 7，再扩容到两项并存 9。 写下结果后，对比两个已编译的例子。",
+    "caption": "切换案例，比较代码、输入与预期输出。结果来自本书固定程序的本机执行检查；网页展示静态案例，不运行任意 C 代码。",
+    "experiment": {
+      "code": "#include <stdio.h>\n#include <stdlib.h>\n\nint main(void)\n{\n    int *a = malloc(sizeof *a);\n    if (a == NULL) { return 1; }\n    a[0] = 7;\n    int *tmp = realloc(a, 2 * sizeof *a);\n    if (tmp == NULL) { free(a); return 1; }\n    a = tmp;\n    a[1] = 9;\n    printf(\"%d %d\\n\", a[0], a[1]);\n    free(a);\n    return 0;\n}\n",
+      "stdin": "",
+      "stdout": "7 9\n",
+      "files": {},
+      "exitCode": 0
+    }
+  },
+  "prerequisites": [
+    "c-structs"
+  ],
+  "difficulty": 4,
+  "misconceptionTags": [
+    "c-vector-m1",
+    "c-vector-m2"
+  ],
+  "sources": [
+    "n1570"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "humanReviewed": false,
+    "version": "0.1.0"
+  }
+}

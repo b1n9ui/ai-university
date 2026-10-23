@@ -1,0 +1,190 @@
+{
+  "id": "c-recursion",
+  "number": "7.2",
+  "chapterId": "c-ch7",
+  "title": "递归与调用栈的边界",
+  "concept": "递归让函数用更小的同类问题求解当前问题；每次调用都必须走向明确的终点。",
+  "intuition": "把任务交给处理更小任务的自己，直到最小任务直接回答。每次交接都保留一张等待返回的便条，太深就会耗尽存储。",
+  "objectives": [
+    "基例与缩小",
+    "每层有自己的局部对象",
+    "优先选可解释方案"
+  ],
+  "body": [
+    {
+      "title": "基例与缩小",
+      "text": "阶乘可写为 n 为 0 时返回 1，否则 n*factorial(n-1)。基例阻止继续调用，递归步骤严格缩小非负 n。输入负数不会自然走到零，所以必须在入口限制。unsigned long long 也有上限，本节仅允许 0 到 10，结果 3628800 在其标准保证范围内。"
+    },
+    {
+      "title": "每层有自己的局部对象",
+      "text": "factorial(3) 等待 factorial(2)，后者等待 factorial(1)，再到 factorial(0)。返回顺序与调用深入顺序相反。每层参数是独立副本。不能把局部地址返回给上层继续使用；生命周期规则没有因为递归而改变。"
+    },
+    {
+      "title": "优先选可解释方案",
+      "text": "简单求和与阶乘可用循环，避免深层调用。递归适合本身有树形或分治结构的问题，但需要分析深度和重复计算。C 不保证尾调用优化，也没有固定可移植的最大递归层数。不要拿无限递归测试机器“最大安全深度”当作可靠程序设计。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "递归函数直接或间接调用自身；正确终止依赖基例，以及每次调用使一个有下界的度量严格减小。",
+    "conditions": [
+      "本节阶乘仅接收 0..10。",
+      "整数结果与中间乘积可表示。",
+      "调用深度受控，不依赖尾调用优化。"
+    ]
+  },
+  "derivation": [
+    {
+      "text": "先给最小输入写直接答案。"
+    },
+    {
+      "text": "证明每次递归参数向基例靠近。"
+    },
+    {
+      "text": "从最深基例向外回填结果，检查每层乘积与深度。"
+    }
+  ],
+  "workedExamples": [
+    {
+      "title": "三的阶乘",
+      "problem": "计算 3! 并追踪返回过程。",
+      "steps": [
+        "fact(0) 返回 1。",
+        "fact(1)=1，fact(2)=2。",
+        "fact(3)=6。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nunsigned long long fact(unsigned n)\n{\n    if (n == 0) { return 1; }\n    return n * fact(n - 1);\n}\n\nint main(void)\n{\n    printf(\"%llu\\n\", fact(3));\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "6\n",
+        "files": {},
+        "exitCode": 0
+      }
+    },
+    {
+      "title": "递归求小范围总和",
+      "problem": "sum_to(4) 通过 sum_to(3) 求解。",
+      "steps": [
+        "零时返回 0。",
+        "每层返回 n 加更小问题。",
+        "从 1 回填到 4 得 10。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint sum_to(int n)\n{\n    if (n == 0) { return 0; }\n    return n + sum_to(n - 1);\n}\n\nint main(void)\n{\n    printf(\"%d\\n\", sum_to(4));\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "10\n",
+        "files": {},
+        "exitCode": 0
+      }
+    }
+  ],
+  "practice": [
+    {
+      "problem": "fact(0) 为什么返回 1 而不是 0？",
+      "hint": "乘法递推需要乘法单位元。",
+      "solution": [
+        "0! 定义为 1。",
+        "这样 1!=1*0!=1。",
+        "若返回零，所有后续乘积都成零。"
+      ],
+      "answer": "返回 1，才能与阶乘定义及递推一致。",
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "sum_to 对负数输入为什么不安全？",
+      "hint": "每次减一是否靠近零？",
+      "solution": [
+        "-1 继续变 -2。",
+        "不会到零基例。",
+        "入口拒绝负值，限制范围。"
+      ],
+      "answer": "递归远离基例，并最终超出深度或算术范围。",
+      "difficulty": 3,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "用循环算 5!，作为递归的独立复算。",
+      "hint": "乘积从 1 开始。",
+      "solution": [
+        "依次乘 1 到 5。",
+        "中间值都在范围内。",
+        "结果 120。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    unsigned long long result = 1;\n    for (unsigned i = 1; i <= 5; i++) { result *= i; }\n    printf(\"%llu\\n\", result);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "120\n",
+        "files": {},
+        "exitCode": 0
+      },
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "写了尾递归就保证不会消耗调用栈吗？",
+      "hint": "语言保证与编译优化不同。",
+      "solution": [
+        "编译器可能优化。",
+        "C17 不保证必须优化。",
+        "仍要限制深度或改成循环。"
+      ],
+      "answer": "不保证；不能把可选优化当正确性条件。",
+      "difficulty": 3,
+      "misconceptionTags": []
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "有一个 if 就说明递归会结束。",
+      "correction": "必须证明参数进入基例；输入域也属于证明条件。",
+      "tag": "c-recursion-m1"
+    },
+    {
+      "claim": "递归天然比循环更高级、更快。",
+      "correction": "选择取决于结构、深度与重复计算，简单累计常用循环更清楚。",
+      "tag": "c-recursion-m2"
+    }
+  ],
+  "learningCheck": {
+    "question": "递归正确终止需要？",
+    "choices": [
+      "基例和向基例靠近的步骤",
+      "只要调用自己",
+      "只要返回值不是 void"
+    ],
+    "correctIndex": 0,
+    "feedback": [
+      "正确，输入也必须在约定范围内。",
+      "自调用本身没有终止保证。",
+      "返回类型不决定终止。"
+    ]
+  },
+  "interactiveVisual": {
+    "mode": "c-compare",
+    "prediction": "先遮住输出：计算 3! 并追踪返回过程。 写下结果后，对比两个已编译的例子。",
+    "caption": "切换案例，比较代码、输入与预期输出。结果来自本书固定程序的本机执行检查；网页展示静态案例，不运行任意 C 代码。",
+    "experiment": {
+      "code": "#include <stdio.h>\n\nunsigned long long fact(unsigned n)\n{\n    if (n == 0) { return 1; }\n    return n * fact(n - 1);\n}\n\nint main(void)\n{\n    printf(\"%llu\\n\", fact(3));\n    return 0;\n}\n",
+      "stdin": "",
+      "stdout": "6\n",
+      "files": {},
+      "exitCode": 0
+    }
+  },
+  "prerequisites": [
+    "c-modules"
+  ],
+  "difficulty": 5,
+  "misconceptionTags": [
+    "c-recursion-m1",
+    "c-recursion-m2"
+  ],
+  "sources": [
+    "n1570"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "humanReviewed": false,
+    "version": "0.1.0"
+  }
+}

@@ -22,7 +22,7 @@ jobs:
           python-version: "3.14"
       - run: npm ci
       - run: npm run check
-      - run: git diff --exit-code -- book/*.md packages/content/python packages/content/ai-development packages/content/programming-index.generated.json
+      - run: git diff --exit-code -- book/*.md packages/content/python packages/content/ai-development packages/content/c-programming packages/content/programming-index.generated.json
       - uses: actions/upload-artifact@v4
         with:
           name: ai-university-static-website

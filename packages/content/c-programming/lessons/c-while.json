@@ -1,0 +1,196 @@
+{
+  "id": "c-while",
+  "number": "2.4",
+  "chapterId": "c-ch2",
+  "title": "while、哨兵与终止条件",
+  "concept": "循环让程序重复执行动作；正确的终止条件保证工作会做完，也保证不多做一次。",
+  "intuition": "每次绕圈前先看门口的条件。若从一开始就不满足，while 的身体一次都不执行。",
+  "objectives": [
+    "三个部分一起设计",
+    "哨兵不属于数据",
+    "累计值和空输入"
+  ],
+  "body": [
+    {
+      "title": "三个部分一起设计",
+      "text": "写循环前列出初始状态、继续条件、状态更新。int n = 3; while (n > 0) { ...; n--; } 每轮减少 n，最后到零退出。若忘记更新，条件可能永久为真。不要先写 while(1) 再祈祷某处会结束；确需无条件循环时，明确每一条 break 或 return 路径。"
+    },
+    {
+      "title": "哨兵不属于数据",
+      "text": "读取多个分数可约定 -1 表示结束，称为哨兵。先检查是否为 -1，再参与求和与计数；不要把哨兵也加进去。读取失败也应退出或有明确恢复方案，不能每次对同一个无法转换的字符重试。EOF 表示输入结束，不是正常数值；终端如何发送 EOF 因环境而异，也可用输入重定向练习。"
+    },
+    {
+      "title": "累计值和空输入",
+      "text": "sum 从 0 开始，count 从 0 开始；每次接受一条合法数据再更新它们。求平均值前先检查 count > 0。空数据集不是平均值为零，而是平均值尚未定义。总和仍须检查范围；本节固定用小数据，完整项目会以记录上限保证总和可表示。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "while 在每轮之前判断条件，条件为非零时执行循环体，再回到条件；break 立即离开最近循环。",
+    "conditions": [
+      "循环状态必须有能解释的进展。",
+      "累计运算在合法范围内。",
+      "数据结束、格式失败和业务非法值各有明确路径。"
+    ]
+  },
+  "derivation": [
+    {
+      "text": "写下初值和每轮结束后的状态。"
+    },
+    {
+      "text": "在加入数据前判断哨兵与合法性。"
+    },
+    {
+      "text": "用零轮、一轮、多轮手工追踪，再确认结束后的累计结果。"
+    }
+  ],
+  "workedExamples": [
+    {
+      "title": "倒计时",
+      "problem": "从 3 倒数到 1，随后停止。",
+      "steps": [
+        "n 初值 3 满足条件。",
+        "每轮先输出再减一。",
+        "n 为 0 时不再进入。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    int n = 3;\n    while (n > 0) {\n        printf(\"%d\\n\", n);\n        n--;\n    }\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "3\n2\n1\n",
+        "files": {},
+        "exitCode": 0
+      }
+    },
+    {
+      "title": "哨兵求和",
+      "problem": "本节小整数输入 2 5 -1，-1 结束且不计入总和。",
+      "steps": [
+        "每轮检查读取成功。",
+        "先遇到 -1 就 break。",
+        "只将 2、5 累加为 7。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    int value = 0, sum = 0;\n    while (scanf(\"%d\", &value) == 1) {\n        if (value == -1) {\n            break;\n        }\n        sum += value;\n    }\n    printf(\"%d\\n\", sum);\n    return 0;\n}\n",
+        "stdin": "2 5 -1\n",
+        "stdout": "7\n",
+        "files": {},
+        "exitCode": 0
+      }
+    }
+  ],
+  "practice": [
+    {
+      "problem": "n 初值为 0，while(n > 0) 会执行几次？",
+      "hint": "while 先判断。",
+      "solution": [
+        "第一次条件为假。",
+        "不执行循环体。",
+        "直接执行循环之后的语句。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    int n = 0;\n    while (n > 0) {\n        puts(\"inside\");\n        n--;\n    }\n    puts(\"done\");\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "done\n",
+        "files": {},
+        "exitCode": 0
+      },
+      "difficulty": 1,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "把 1 到 4 累加，写 while。",
+      "hint": "先设计 i 与 sum 的初值。",
+      "solution": [
+        "i 从 1 开始，sum 从 0 开始。",
+        "每轮加上 i 后递增 i。",
+        "到 i=5 退出，和为 10。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint main(void)\n{\n    int i = 1, sum = 0;\n    while (i <= 4) {\n        sum += i;\n        i++;\n    }\n    printf(\"%d\\n\", sum);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "10\n",
+        "files": {},
+        "exitCode": 0
+      },
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "第一项就是 -1，求平均之前要检查什么？",
+      "hint": "计数可能保持为零。",
+      "solution": [
+        "哨兵不加入数据。",
+        "count 仍是 0。",
+        "输出 no data，不计算 sum/count。"
+      ],
+      "answer": "检查 count > 0；空集合不给平均值。",
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "while 中用 continue 跳过负数，更新计数器应该放在哪？",
+      "hint": "continue 会直接回到条件。",
+      "solution": [
+        "找出每条能到 continue 的路径。",
+        "让必要更新发生在 continue 之前，或使用 for 的更新部分。",
+        "否则某些状态永远不变。"
+      ],
+      "answer": "确保所有继续路径仍推进循环；不能让 continue 跳过唯一的状态更新。",
+      "difficulty": 3,
+      "misconceptionTags": []
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "条件为假时也先执行一次。",
+      "correction": "while 先判断；至少执行一次需要 do / while，后者本书仅作为语法速查介绍。",
+      "tag": "c-while-m1"
+    },
+    {
+      "claim": "结束标记也该算入平均值。",
+      "correction": "哨兵是控制信息；识别它以后立即停止，不更新总和与计数。",
+      "tag": "c-while-m2"
+    }
+  ],
+  "learningCheck": {
+    "question": "输入序列只有 -1，按本节哨兵约定接受了几条数据？",
+    "choices": [
+      "1",
+      "0",
+      "-1"
+    ],
+    "correctIndex": 1,
+    "feedback": [
+      "-1 是结束标记。",
+      "正确，没有接受任何数据。",
+      "计数表示条数，不能是 -1。"
+    ]
+  },
+  "interactiveVisual": {
+    "mode": "c-compare",
+    "prediction": "先遮住输出：从 3 倒数到 1，随后停止。 写下结果后，对比两个已编译的例子。",
+    "caption": "切换案例，比较代码、输入与预期输出。结果来自本书固定程序的本机执行检查；网页展示静态案例，不运行任意 C 代码。",
+    "experiment": {
+      "code": "#include <stdio.h>\n\nint main(void)\n{\n    int n = 3;\n    while (n > 0) {\n        printf(\"%d\\n\", n);\n        n--;\n    }\n    return 0;\n}\n",
+      "stdin": "",
+      "stdout": "3\n2\n1\n",
+      "files": {},
+      "exitCode": 0
+    }
+  },
+  "prerequisites": [
+    "c-switch"
+  ],
+  "difficulty": 2,
+  "misconceptionTags": [
+    "c-while-m1",
+    "c-while-m2"
+  ],
+  "sources": [
+    "n1570"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "humanReviewed": false,
+    "version": "0.1.0"
+  }
+}

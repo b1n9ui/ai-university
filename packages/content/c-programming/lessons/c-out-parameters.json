@@ -1,0 +1,190 @@
+{
+  "id": "c-out-parameters",
+  "number": "5.2",
+  "chapterId": "c-ch5",
+  "title": "指针参数与明确的输出结果",
+  "concept": "把对象地址交给函数，可以让函数明确地修改调用者数据，或返回多个结果。",
+  "intuition": "普通参数像复印数据，指针参数像复印门牌：函数拿到门牌副本，仍能找到原对象。",
+  "objectives": [
+    "交换两个整数",
+    "状态与业务值分开",
+    "调用者也承担条件"
+  ],
+  "body": [
+    {
+      "title": "交换两个整数",
+      "text": "void swap(int *a, int *b) 接收两个有效整数地址。先保存 *a，再把 *b 写入 *a，最后把临时值写入 *b。没有临时变量直接连续赋值会丢掉原值。传参时写 swap(&x, &y)，不是 swap(x, y)。"
+    },
+    {
+      "title": "状态与业务值分开",
+      "text": "一个函数既可能失败又要返回数值时，可返回成功标志，把业务值写到输出参数。例如 checked_add 返回 1 才写 *out，失败返回 0 且保持原输出不变。这样不把合法零和失败混淆。输出参数必须指向可写对象；函数要声明是否允许 NULL、是否允许输入输出指向同一对象。"
+    },
+    {
+      "title": "调用者也承担条件",
+      "text": "函数检查 NULL 不代表能验证任意地址是否可写。调用者负责传有效对象。对业务错误用普通分支报告，别只用 assert。接口越清楚，越能独立测试成功路径、失败路径和“不改变原输出”的承诺。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "指针实参仍按值传递；通过该副本解引用可访问调用者对象。输出参数在成功时写入结果。",
+    "conditions": [
+      "swap 接收两个有效可写 int 地址，可为同一对象。",
+      "本节加法例限制两个输入在 0 到 100，保证和可表示。",
+      "失败时输出参数保持不变，调用者先检查返回状态。"
+    ]
+  },
+  "derivation": [
+    {
+      "text": "写清输入对象和输出对象的职责。"
+    },
+    {
+      "text": "先验证参数及可检查的范围，再写输出。"
+    },
+    {
+      "text": "调用时传地址，成功后才使用结果。"
+    }
+  ],
+  "workedExamples": [
+    {
+      "title": "真正交换",
+      "problem": "交换 x=3 与 y=8。",
+      "steps": [
+        "传 &x 和 &y。",
+        "临时变量保存 3。",
+        "依次写入后得到 8 和 3。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nvoid swap(int *a, int *b)\n{\n    int temp = *a;\n    *a = *b;\n    *b = temp;\n}\n\nint main(void)\n{\n    int x = 3, y = 8;\n    swap(&x, &y);\n    printf(\"%d %d\\n\", x, y);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "8 3\n",
+        "files": {},
+        "exitCode": 0
+      }
+    },
+    {
+      "title": "失败不改输出",
+      "problem": "限定 0..100 的加法，输入 -1、2，out 原值 99。",
+      "steps": [
+        "先判断参数范围。",
+        "失败立即返回 0。",
+        "out 不变，仍是 99。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nint add_small(int a, int b, int *out)\n{\n    if (out == NULL || a < 0 || a > 100 || b < 0 || b > 100) { return 0; }\n    *out = a + b;\n    return 1;\n}\n\nint main(void)\n{\n    int out = 99;\n    int ok = add_small(-1, 2, &out);\n    printf(\"%d %d\\n\", ok, out);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "0 99\n",
+        "files": {},
+        "exitCode": 0
+      }
+    }
+  ],
+  "practice": [
+    {
+      "problem": "写 set_zero(int *p)，把调用者变量设为零，要求 p 有效。",
+      "hint": "给 *p 赋值。",
+      "solution": [
+        "函数接收地址。",
+        "*p=0 改变对象。",
+        "main 输出新值。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nvoid set_zero(int *p)\n{\n    *p = 0;\n}\n\nint main(void)\n{\n    int x = 5;\n    set_zero(&x);\n    printf(\"%d\\n\", x);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "0\n",
+        "files": {},
+        "exitCode": 0
+      },
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "swap(&x,&x) 会损坏 x 吗？",
+      "hint": "按三步赋值追踪同一对象。",
+      "solution": [
+        "temp 保存原 x。",
+        "x 写回自身值。",
+        "最后又写 temp。"
+      ],
+      "answer": "本节临时变量交换在两参数同址时仍保持原值。",
+      "difficulty": 3,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "函数返回成功标志 0，同时 out 仍为 99，能把 99 当运算结果吗？",
+      "hint": "先检查状态。",
+      "solution": [
+        "0 表示失败。",
+        "99 只是先前值。",
+        "调用者应处理错误而不是继续计算。"
+      ],
+      "answer": "不能；只有状态成功时输出才是本次结果。",
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "为什么把参数 p 设置为 NULL，调用者指针并不会自动变 NULL？",
+      "hint": "p 自己也是一个值副本。",
+      "solution": [
+        "复制指针地址到形参。",
+        "p=NULL 只改副本。",
+        "若要修改调用者指针，需返回新指针或使用指针的地址。"
+      ],
+      "answer": "修改形参指针本身不会更新调用者的指针对象。",
+      "difficulty": 3,
+      "misconceptionTags": []
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "C 一旦传指针就变成按引用传递。",
+      "correction": "仍按值传递，只是副本地址可访问共享的目标对象。",
+      "tag": "c-out-parameters-m1"
+    },
+    {
+      "claim": "返回零就一定代表业务结果零。",
+      "correction": "接口可把零定义为失败状态，业务值在输出参数里，需读契约。",
+      "tag": "c-out-parameters-m2"
+    }
+  ],
+  "learningCheck": {
+    "question": "要让函数修改 int x，应传？",
+    "choices": [
+      "x",
+      "&x",
+      "sizeof x"
+    ],
+    "correctIndex": 1,
+    "feedback": [
+      "只是原数值的副本。",
+      "正确，函数拿到对象地址。",
+      "大小不标识对象位置。"
+    ]
+  },
+  "interactiveVisual": {
+    "mode": "c-compare",
+    "prediction": "先遮住输出：交换 x=3 与 y=8。 写下结果后，对比两个已编译的例子。",
+    "caption": "切换案例，比较代码、输入与预期输出。结果来自本书固定程序的本机执行检查；网页展示静态案例，不运行任意 C 代码。",
+    "experiment": {
+      "code": "#include <stdio.h>\n\nvoid swap(int *a, int *b)\n{\n    int temp = *a;\n    *a = *b;\n    *b = temp;\n}\n\nint main(void)\n{\n    int x = 3, y = 8;\n    swap(&x, &y);\n    printf(\"%d %d\\n\", x, y);\n    return 0;\n}\n",
+      "stdin": "",
+      "stdout": "8 3\n",
+      "files": {},
+      "exitCode": 0
+    }
+  },
+  "prerequisites": [
+    "c-pointers"
+  ],
+  "difficulty": 3,
+  "misconceptionTags": [
+    "c-out-parameters-m1",
+    "c-out-parameters-m2"
+  ],
+  "sources": [
+    "n1570"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "humanReviewed": false,
+    "version": "0.1.0"
+  }
+}

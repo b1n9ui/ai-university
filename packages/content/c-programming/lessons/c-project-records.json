@@ -1,0 +1,184 @@
+{
+  "id": "c-project-records",
+  "number": "8.2",
+  "chapterId": "c-ch8",
+  "title": "综合项目二：记录表、所有权与排序",
+  "concept": "数据模块把插入、查重、排序和销毁集中起来，让外层不用直接操作容量细节。",
+  "intuition": "只让一个管理员负责柜子的扩建和归还，其他函数借用记录读取；这样不会出现两个人都以为自己该释放同一块内存。",
+  "objectives": [
+    "公开接口",
+    "失败保持有效状态",
+    "排序与计算分离"
+  ],
+  "body": [
+    {
+      "title": "公开接口",
+      "text": "records.h 声明 Student、Gradebook 与 GbStatus，以及 gb_init、gb_add、gb_sort、gb_total、gb_passed、gb_destroy。gb_init 建立空表，gb_destroy 释放后恢复空表。除初始化外，所有操作要求表处于有效状态；拥有者不允许随意按值复制。gb_add 先验证姓名与分数，再查重、检查上限、增长容量，最后追加。"
+    },
+    {
+      "title": "失败保持有效状态",
+      "text": "无效、重复或已满时，返回明确状态且不插入。realloc 失败仍保留旧块；长度和已有记录不变。容量增长使用 4、8、16、32、64、100，边界限制让乘法与翻倍容易分析。成功后临时借用的元素指针必须重新取得，因为扩容可能移动分配块。"
+    },
+    {
+      "title": "排序与计算分离",
+      "text": "gb_sort 对整条 Student 记录做插入排序。比较器先看分数高低，同分再 strcmp；交换或移动整条记录，名字不会与成绩分离。gb_total 与 gb_passed 只读已用区域。平均分由展示层在非空时计算，数据模块不直接 printf，测试无需模拟终端。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "模块契约限制合法状态与所有权：Gradebook 是分配块唯一拥有者，借用指针只在约定操作之间有效。",
+    "conditions": [
+      "表先初始化，最终销毁。",
+      "名字与分数通过验证后才存入。",
+      "插入、加载、排序等操作后不保留未经保证的借用元素地址。"
+    ]
+  },
+  "derivation": [
+    {
+      "text": "定义状态不变量与返回状态。"
+    },
+    {
+      "text": "先实现单记录追加，再覆盖查重和容量失败。"
+    },
+    {
+      "text": "按完整记录排序，用独立预期检查姓名成绩配对。"
+    }
+  ],
+  "workedExamples": [
+    {
+      "title": "同分按名字排",
+      "problem": "同分 Ada、Bo 应由 strcmp 结果决定次序。",
+      "steps": [
+        "两个成绩相同。",
+        "比较 ASCII 名称在本机执行字符集下的顺序。",
+        "本项目样例 Ada 在 Bo 前。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n#include <string.h>\n\nint main(void)\n{\n    printf(\"%d\\n\", strcmp(\"Ada\", \"Bo\") < 0);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "1\n",
+        "files": {},
+        "exitCode": 0
+      }
+    },
+    {
+      "title": "记录一起移动",
+      "problem": "交换两条记录，姓名和成绩是否仍对应？",
+      "steps": [
+        "先复制完整记录到 temp。",
+        "交换完整结构体。",
+        "Bo 仍对应 59，Lin 仍对应 88。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\ntypedef struct { char name[21]; int score; } Student;\n\nint main(void)\n{\n    Student a = {\"Lin\", 88}, b = {\"Bo\", 59};\n    Student temp = a; a = b; b = temp;\n    printf(\"%s %d\\n%s %d\\n\", a.name, a.score, b.name, b.score);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "Bo 59\nLin 88\n",
+        "files": {},
+        "exitCode": 0
+      }
+    }
+  ],
+  "practice": [
+    {
+      "problem": "为什么不把 Gradebook b=a 当作独立副本？",
+      "hint": "结构体里的 data 是拥有资源的指针。",
+      "solution": [
+        "赋值复制同一个地址。",
+        "两表会共享分配且都像拥有者。",
+        "需显式深复制或转移后清空源表。"
+      ],
+      "answer": "按值复制不创建独立数据；重复销毁会重复释放。",
+      "difficulty": 3,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "gb_add 返回 GB_DUPLICATE 后 size 应增加吗？",
+      "hint": "重复姓名被拒绝。",
+      "solution": [
+        "先查重。",
+        "失败不写数据。",
+        "长度保持原值。"
+      ],
+      "answer": "不应增加，已有记录也保持不变。",
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "排序只交换 score，不交换 name，会怎样？",
+      "hint": "记录字段有业务对应。",
+      "solution": [
+        "成绩转移到另一个名字下。",
+        "配对被破坏。",
+        "必须移动完整 Student。"
+      ],
+      "answer": "产生错误成绩归属，即使分数列有序也不正确。",
+      "difficulty": 3,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "capacity=64、size=64，再插入时新容量为什么选 100 而不是 128？",
+      "hint": "业务上限为 100。",
+      "solution": [
+        "翻倍候选 128。",
+        "超过业务上限。",
+        "截到 100，之后不再增长。"
+      ],
+      "answer": "为上限 100 截断增长；第 101 条应拒绝，不继续申请。",
+      "difficulty": 3,
+      "misconceptionTags": []
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "只检查 size<=capacity 就保证表完全有效。",
+      "correction": "还须确认指针所有权、已用区初始化、记录合法和姓名唯一。",
+      "tag": "c-project-records-m1"
+    },
+    {
+      "claim": "返回失败后随意清空旧表更省事。",
+      "correction": "接口承诺失败保留旧状态，不能擅自破坏调用者数据。",
+      "tag": "c-project-records-m2"
+    }
+  ],
+  "learningCheck": {
+    "question": "哪种操作会破坏姓名与成绩配对？",
+    "choices": [
+      "移动完整 Student",
+      "只排序成绩字段",
+      "只读统计总分"
+    ],
+    "correctIndex": 1,
+    "feedback": [
+      "完整记录保持配对。",
+      "正确，独立移动字段会错配。",
+      "只读不改变配对。"
+    ]
+  },
+  "interactiveVisual": {
+    "mode": "c-compare",
+    "prediction": "先遮住输出：同分 Ada、Bo 应由 strcmp 结果决定次序。 写下结果后，对比两个已编译的例子。",
+    "caption": "切换案例，比较代码、输入与预期输出。结果来自本书固定程序的本机执行检查；网页展示静态案例，不运行任意 C 代码。",
+    "experiment": {
+      "code": "#include <stdio.h>\n#include <string.h>\n\nint main(void)\n{\n    printf(\"%d\\n\", strcmp(\"Ada\", \"Bo\") < 0);\n    return 0;\n}\n",
+      "stdin": "",
+      "stdout": "1\n",
+      "files": {},
+      "exitCode": 0
+    }
+  },
+  "prerequisites": [
+    "c-project-plan"
+  ],
+  "difficulty": 5,
+  "misconceptionTags": [
+    "c-project-records-m1",
+    "c-project-records-m2"
+  ],
+  "sources": [
+    "n1570"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "humanReviewed": false,
+    "version": "0.1.0"
+  }
+}

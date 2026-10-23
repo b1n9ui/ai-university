@@ -38,6 +38,7 @@ import {
   SearchPage,
 } from "./pages/Resources";
 const AIDevelopmentPreview = lazy(() => import("./pages/AIDevelopmentPreview"));
+const CProgramming = lazy(() => import("./pages/CProgramming"));
 const PythonPreview = lazy(() => import("./pages/PythonPreview"));
 import {collectionForRoute} from "../../../packages/content";
 import {Curriculum} from "./lib/curriculum";
@@ -133,6 +134,9 @@ export default function App() {
     clear,
     storageOk,
   };
+  if (locale === "zh" && (route.path === "book/c-programming" || route.path.startsWith("book/c-programming/"))) {
+    return <><Suspense fallback={<p role="status">正在打开 C 语言教材…</p>}><CProgramming path={route.path}/></Suspense><div className="floating-language"><LanguageSwitcher/></div></>;
+  }
   if (locale === "zh" && (route.path === "book/python-introduction" || route.path.startsWith("book/python-introduction/"))) {
     return <><Suspense fallback={<p role="status">{tr("正在打开 Python 教材…")}</p>}><PythonPreview path={route.path.replace("book/python-introduction","python")} /></Suspense><div className="floating-language"><LanguageSwitcher /></div></>;
   }

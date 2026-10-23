@@ -1,0 +1,190 @@
+{
+  "id": "c-memory",
+  "number": "5.4",
+  "chapterId": "c-ch5",
+  "title": "生命周期、malloc 与 free",
+  "concept": "动态内存让程序在运行时申请空间；每块空间必须有明确的拥有者和释放时机。",
+  "intuition": "借来的柜子要登记谁负责归还。把柜子地址再抄一份，并不会多出一个柜子，也不会多出一次归还权。",
+  "objectives": [
+    "局部地址不能带出函数",
+    "申请成功后才能访问",
+    "一次释放与别名"
+  ],
+  "body": [
+    {
+      "title": "局部地址不能带出函数",
+      "text": "int *bad(void) { int x=1; return &x; } 返回后 x 已结束生命周期，地址变成悬空。即使某次似乎读到 1，也不能据此认定合法。需要返回数值就按值返回，需要持续对象则由调用者提供空间或明确分配动态空间。"
+    },
+    {
+      "title": "申请成功后才能访问",
+      "text": "malloc 来自 stdlib.h，接收字节数，失败返回 NULL，成功所得空间初始内容不确定。申请 n 项先检查 n <= SIZE_MAX / sizeof *p，避免乘法回绕。本节固定申请三项，不需要巨大长度，但仍说明一般边界。C 中不必强转 malloc 返回值；包含正确头文件，使用 sizeof *p 避免类型名重复。"
+    },
+    {
+      "title": "一次释放与别名",
+      "text": "free 释放一块仍由本程序拥有的动态分配空间；free(NULL) 允许。不能释放局部数组、指向分配块中间的地址，也不能释放同一块两次。free 后别名也失效；把拥有者设 NULL 可减少自身误用，但不会自动清除其他副本。所有权交接与错误路径都必须写清。"
+    }
+  ],
+  "formalDefinition": {
+    "text": "malloc 分配适当对齐的动态存储，free 结束该分配的可用生命周期；之后不得通过旧指针访问或再次释放该块。",
+    "conditions": [
+      "分配尺寸计算不溢出；本书避免零大小分配。",
+      "每次分配结果先检查，再初始化读取。",
+      "每块成功分配最终恰好由一个拥有者释放一次。"
+    ]
+  },
+  "derivation": [
+    {
+      "text": "确定容量、检查尺寸并申请。"
+    },
+    {
+      "text": "检查非 NULL，初始化所有将读取的元素。"
+    },
+    {
+      "text": "最后一次使用后释放；失败路径也释放之前已拥有的资源。"
+    }
+  ],
+  "workedExamples": [
+    {
+      "title": "三项动态数组",
+      "problem": "动态申请三个 int，存 2、4、6 并输出总和。",
+      "steps": [
+        "malloc 申请三项字节数。",
+        "检查后逐项赋值。",
+        "输出 12，再 free。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n#include <stdlib.h>\n\nint main(void)\n{\n    int *a = malloc(3 * sizeof *a);\n    if (a == NULL) { return 1; }\n    a[0] = 2; a[1] = 4; a[2] = 6;\n    printf(\"%d\\n\", a[0] + a[1] + a[2]);\n    free(a);\n    a = NULL;\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "12\n",
+        "files": {},
+        "exitCode": 0
+      }
+    },
+    {
+      "title": "由调用者持有对象",
+      "problem": "函数写入调用者数组，而非返回局部数组地址。",
+      "steps": [
+        "main 拥有数组。",
+        "函数仅借用它。",
+        "返回后数组仍在 main 中存活。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n\nvoid fill(int *a)\n{\n    a[0] = 7;\n    a[1] = 9;\n}\n\nint main(void)\n{\n    int a[2] = {0};\n    fill(a);\n    printf(\"%d %d\\n\", a[0], a[1]);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "7 9\n",
+        "files": {},
+        "exitCode": 0
+      }
+    }
+  ],
+  "practice": [
+    {
+      "problem": "malloc 成功后元素是否全为零？",
+      "hint": "它只提供空间，不保证清零。",
+      "solution": [
+        "初始内容不确定。",
+        "先写入每个要读的元素。",
+        "若用 calloc，也仍要检查分配失败。"
+      ],
+      "answer": "不保证；不得直接读取未初始化元素。",
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "free(p) 后执行 p=NULL，副本 q 是否也自动变空？",
+      "hint": "纸条是两份，柜子只有一份。",
+      "solution": [
+        "释放使目标块失效。",
+        "p=NULL 只改 p。",
+        "q 仍悬空，不得读取或释放目标。"
+      ],
+      "answer": "不会；所有别名必须按同一生命周期约定停止使用。",
+      "difficulty": 3,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "给两项动态数组填 5 和 6，输出乘积并释放。",
+      "hint": "检查 malloc 返回值。",
+      "solution": [
+        "申请两项。",
+        "初始化再乘。",
+        "输出 30，最后 free。"
+      ],
+      "answer": {
+        "code": "#include <stdio.h>\n#include <stdlib.h>\n\nint main(void)\n{\n    int *a = malloc(2 * sizeof *a);\n    if (a == NULL) { return 1; }\n    a[0] = 5; a[1] = 6;\n    printf(\"%d\\n\", a[0] * a[1]);\n    free(a);\n    return 0;\n}\n",
+        "stdin": "",
+        "stdout": "30\n",
+        "files": {},
+        "exitCode": 0
+      },
+      "difficulty": 2,
+      "misconceptionTags": []
+    },
+    {
+      "problem": "为什么 n*sizeof *p 要在乘法前检查？",
+      "hint": "size_t 无符号回绕可能把大需求变成小分配。",
+      "solution": [
+        "比较 n 与 SIZE_MAX/sizeof *p。",
+        "超出就拒绝。",
+        "分配小块后按大长度写会越界。"
+      ],
+      "answer": "先检查 n > SIZE_MAX / sizeof *p；不能等乘法回绕后再猜原需求。",
+      "difficulty": 3,
+      "misconceptionTags": []
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "free 会自动把所有指针变成 NULL。",
+      "correction": "free 不改调用者所有别名；必须停止使用旧地址。",
+      "tag": "c-memory-m1"
+    },
+    {
+      "claim": "返回局部地址只要马上用就安全。",
+      "correction": "生命周期已经结束，“马上”不恢复它。",
+      "tag": "c-memory-m2"
+    }
+  ],
+  "learningCheck": {
+    "question": "malloc 返回 NULL 后应？",
+    "choices": [
+      "继续写第零项",
+      "处理失败，不解引用",
+      "调用两次 free"
+    ],
+    "correctIndex": 1,
+    "feedback": [
+      "NULL 不指向分配好的元素。",
+      "正确，报告失败或清理后返回。",
+      "free(NULL) 允许但不能代替错误处理。"
+    ]
+  },
+  "interactiveVisual": {
+    "mode": "c-compare",
+    "prediction": "先遮住输出：动态申请三个 int，存 2、4、6 并输出总和。 写下结果后，对比两个已编译的例子。",
+    "caption": "切换案例，比较代码、输入与预期输出。结果来自本书固定程序的本机执行检查；网页展示静态案例，不运行任意 C 代码。",
+    "experiment": {
+      "code": "#include <stdio.h>\n#include <stdlib.h>\n\nint main(void)\n{\n    int *a = malloc(3 * sizeof *a);\n    if (a == NULL) { return 1; }\n    a[0] = 2; a[1] = 4; a[2] = 6;\n    printf(\"%d\\n\", a[0] + a[1] + a[2]);\n    free(a);\n    a = NULL;\n    return 0;\n}\n",
+      "stdin": "",
+      "stdout": "12\n",
+      "files": {},
+      "exitCode": 0
+    }
+  },
+  "prerequisites": [
+    "c-pointer-arrays"
+  ],
+  "difficulty": 4,
+  "misconceptionTags": [
+    "c-memory-m1",
+    "c-memory-m2"
+  ],
+  "sources": [
+    "n1570"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "humanReviewed": false,
+    "version": "0.1.0"
+  }
+}
