@@ -1,4 +1,4 @@
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Download } from "lucide-react";
 import { Formula } from "./MathText";
 import { BookCover, BookStats, Eyebrow, Link } from "./UI";
 import {
@@ -143,37 +143,36 @@ export function MathAreas() {
   );
 }
 
+const bookTopics:Record<string,string>={
+  "calculus-1":"极限 · 导数 · 积分",
+  "calculus-2":"积分技巧 · 级数 · Taylor 展开",
+  "calculus-3":"多元函数 · 重积分 · 向量场",
+  "linear-algebra":"向量 · 矩阵 · 空间变换",
+  "ordinary-differential-equations":"初值问题 · 振动 · 动力系统",
+  "probability-statistics":"概率 · 抽样 · 统计推断",
+  "discrete-math":"逻辑 · 计数 · 图与网络",
+  "real-analysis":"完备性 · 收敛 · 严格证明",
+  "python-introduction":"语法 · 数据结构 · 完整程序",
+  "ai-development":"需求 · 代码 · 测试与交付",
+};
+
 export function PublishedBook({ volume }: { volume: PublishedVolume }) {
   return (
-    <div className="featured-book">
-      <Link
-        to={volume.route}
-        className="cover-link"
-        aria-label={`查看${volume.title}教材`}
-      >
-        <BookCover volume={volume} />
+    <article className="edition-card" data-volume={volume.id}>
+      <Link to={volume.route} className="edition-cover-link" aria-label={`查看${volume.title}教材`}>
+        <BookCover volume={volume}/>
+        <span className="edition-open" aria-hidden="true"><ArrowUpRight size={18}/></span>
       </Link>
-      <div className="featured-book-copy">
-        <span className="badge">已出版 / {areaFor(volume.areaId).title}</span>
-        <h3>{volume.title}</h3>
-        <span className="english-title">
-          {volume.englishTitle} — {volume.tagline}
-        </span>
-        <p>{volume.description}</p>
-        <BookStats volume={volume} />
-        <div className="hero-actions">
-          <Link to={volume.route} className="primary-btn">
-            打开教材
-            <ArrowRight size={17} />
-          </Link>
-          <Link to="downloads" params={{book:volume.id}} className="text-btn">
-            下载与打印
-            <ArrowUpRight size={16} />
-          </Link>
+      <div className="edition-card-copy">
+        <span className="edition-subject">{areaFor(volume.areaId).title}</span>
+        <h3><Link to={volume.route}>{volume.title}</Link></h3>
+        <p>{bookTopics[volume.id]??volume.tagline}</p>
+        <div className="edition-card-footer">
+          <span>{volume.stats.chapters} 章 <i>·</i> {volume.stats.lessons} 节</span>
+          <Link to="downloads" params={{book:volume.id}} className="edition-download" aria-label={`下载${volume.title}`}><Download size={16}/></Link>
         </div>
-        <small>AI 编写 · 固定版本 · 含完整例题与练习解答</small>
       </div>
-    </div>
+    </article>
   );
 }
 

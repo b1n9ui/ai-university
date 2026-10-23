@@ -32,6 +32,7 @@ export function Library() {
   const area=category?.id==="mathematics" ? mathAreas.find(a=>a.id===route.params.get("area")) : undefined;
   const rawStatus=route.params.get("status");
   const status=rawStatus==="published"||rawStatus==="planned"?rawStatus:"all";
+  const showStatus=volumes.some(v=>v.status==="planned")||status==="planned";
   const matches=(v:typeof volumes[number])=>(!category||v.categoryId===category.id)&&(!area||v.areaId===area.id);
   const filtered=volumes.filter(v=>matches(v)&&(status==="all"||v.status===status));
   return <div className="library-exhibition">
@@ -43,7 +44,7 @@ export function Library() {
       {categories.map(c=><Link key={c.id} to="library" params={{category:c.id,status}} className={category?.id===c.id?"active":""} aria-current={category?.id===c.id?"page":undefined}>{c.title}<span>{volumes.filter(v=>v.categoryId===c.id&&v.status==="published").length}</span></Link>)}
     </nav>
     <div className="series-library-filter">
-      <nav aria-label="教材出版状态">{[["all","全部"],["published","已出版"],["planned","规划中"]].map(([id,title])=><Link key={id} to="library" params={{category:category?.id,area:area?.id,status:id}} className={status===id?"active":""} aria-current={status===id?"page":undefined}>{title}<span>{volumes.filter(v=>matches(v)&&(id==="all"||v.status===id)).length}</span></Link>)}</nav>
+      {showStatus?<nav aria-label="教材出版状态">{[["all","全部"],["published","已出版"],["planned","规划中"]].map(([id,title])=><Link key={id} to="library" params={{category:category?.id,area:area?.id,status:id}} className={status===id?"active":""} aria-current={status===id?"page":undefined}>{title}<span>{volumes.filter(v=>matches(v)&&(id==="all"||v.status===id)).length}</span></Link>)}</nav>:<span className="library-access-note">AI 编写 · 完整教材 · 免费阅读</span>}
       {category?.id==="mathematics"&&<label>数学方向<select aria-label="筛选数学方向" value={area?.id||""} onChange={e=>{location.hash=routeHref("library",{category:"mathematics",area:e.target.value||undefined,status})}}><option value="">全部方向</option>{mathAreas.map(a=><option key={a.id} value={a.id}>{a.title}</option>)}</select></label>}
     </div>
     {area&&<div className="library-area-intro"><Eyebrow>{area.english.toUpperCase()}</Eyebrow><h2>{area.title}：{area.question}</h2><p>{area.description}</p></div>}
@@ -54,7 +55,7 @@ export function Library() {
       if(!items.length)return null;
       return <section className="library-subject" key={c.id} aria-label={c.title+"教材"}>
         <div className="subject-heading"><div><Eyebrow>{c.english.toUpperCase()}</Eyebrow><h2>{c.title}</h2><p>{c.description}</p></div><span>{published.length} 本已出版{planned.length?` / ${planned.length} 本规划中`:""}</span></div>
-        {published.length>0&&<div className="published-book-list">{published.map(v=><PublishedBook key={v.id} volume={v}/>)}</div>}
+        {published.length>0&&<div className="published-book-list edition-shelf">{published.map(v=><PublishedBook key={v.id} volume={v}/>)}</div>}
         {planned.length>0&&<div className="library-planned"><div className="section-title"><h3>后续教材规划</h3><span>尚未出版</span></div><PlannedBooks items={planned}/></div>}
       </section>;
     })}

@@ -15,6 +15,7 @@ import { pageWindow, routeHref } from "../lib/navigation";
 
 import { BOOK, lessonPath } from "../lib/catalog";
 import { useApp } from "../lib/state";
+import { BookArtwork } from "./BookArtwork";
 import { firstVolume, type PublishedVolume, type Volume } from "../lib/library";
 export function Link({
   to,
@@ -124,31 +125,16 @@ export function BookCover({
   volume?: Volume;
 }) {
   return (
-    <div className={"book-cover " + (small ? "small" : "")+(volume.coverTitle.some(line=>line.length>10)?" long-title":"")}>
-      <div className="cover-top">
-        AI UNIVERSITY<span>{volume.categoryId==="mathematics"?"MATHEMATICS":"OTHER SUBJECTS"}</span>
+    <div className={"book-cover edition-cover " + (small ? "small" : "")+(volume.coverTitle.some(line=>line.length>10)?" long-title":"")} data-edition={volume.id} aria-hidden="true">
+      <div className="cover-top">AI UNIVERSITY<span>OPEN TEXTBOOK</span></div>
+      <div className="cover-title">
+        <h2>{volume.coverTitle.map((line,i)=><span key={i}>{i>0&&<br/>}{i===1&&/^I+$/.test(line)?<em>{line}</em>:line}</span>)}</h2>
+        <p>{volume.title}</p>
       </div>
-      <div>
-        <span>{volume.categoryId==="mathematics"?"MATHEMATICS":"OTHER SUBJECTS"}</span>
-        <h2>
-          {volume.coverTitle.map((line, i) => (
-            <span key={i}>
-              {i > 0 && <br />}
-              {i === 1 && /^I+$/.test(line) ? <em>{line}</em> : line}
-            </span>
-          ))}
-        </h2>
-        <p>
-          {volume.title}
-          <br />
-          {volume.tagline}
-        </p>
-      </div>
+      <BookArtwork id={volume.id}/>
       <div className="cover-bottom">
-        {volume.status === "published" && (
-          volume.coverFormula ? <Formula latex={volume.coverFormula} /> : <code className="cover-code">{volume.coverMark}</code>
-        )}
-        <span>OPEN TEXTBOOK</span>
+        {volume.status==="published"&&(volume.coverFormula?<Formula latex={volume.coverFormula}/>:<code className="cover-code">{volume.coverMark}</code>)}
+        <span>{volume.categoryId==="mathematics"?"MATHEMATICS":"COMPUTING"}</span>
       </div>
     </div>
   );

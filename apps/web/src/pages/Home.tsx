@@ -227,13 +227,12 @@ export function Home() {
         <div className="stage-bottom">
           <span>
             {categories.length} 个教材分类 <b>/</b> {publishedVolumes.length}{" "}
-            本已出版 <b>/</b> {volumes.length - publishedVolumes.length}{" "}
-            本规划中
+            本已出版{volumes.length>publishedVolumes.length&&<> <b>/</b> {volumes.length-publishedVolumes.length} 本规划中</>}
           </span>
           <button
             onClick={() =>
               document
-                .getElementById("math-atlas")
+                .getElementById("open-bookshelf")
                 ?.scrollIntoView({
                   behavior: matchMedia("(prefers-reduced-motion: reduce)")
                     .matches
@@ -246,14 +245,11 @@ export function Home() {
           </button>
         </div>
       </section>
-      <section className="shelf-section">
+      <section className="shelf-section" id="open-bookshelf">
         <div className="shelf-heading" data-reveal>
           <Eyebrow>01 / THE OPEN BOOKSHELF</Eyebrow>
-          <h2>
-            已出版。
-            <br />
-            <em>现在就读。</em>
-          </h2>
+          <h2>挑一本，<em>开始读。</em></h2>
+          <p className="shelf-intro">完整正文、交互图示与练习解答，随时翻阅。</p>
           <Link to="library" params={{ status: "published" }}>
             浏览已出版教材 <ArrowUpRight size={18} />
           </Link>
@@ -262,7 +258,7 @@ export function Home() {
           <Link to="library">查看全部<ArrowUpRight size={16}/></Link>
         </nav>
         </div>
-        <div className="shelf-books" data-reveal>
+        <div className="shelf-books edition-shelf" aria-label={shelfCategory==="mathematics"?"数学教材书架":"其他教材书架"} data-reveal>
           {publishedVolumes.filter(v=>v.categoryId===shelfCategory).map((volume) => (
             <PublishedBook key={volume.id} volume={volume} />
           ))}
