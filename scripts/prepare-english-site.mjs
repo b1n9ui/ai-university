@@ -14,11 +14,12 @@ if(execFileSync('git',['status','--porcelain'],{cwd:root,encoding:'utf8'}).trim(
 const commit=execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim();
 const archive=execFileSync('git',['archive','HEAD'],{cwd:root,maxBuffer:200*1024*1024});
 execFileSync('tar',['-x','--exclude=.openai/hosting.json','-C',destination],{input:archive,maxBuffer:200*1024*1024});
-manifest.static={...(manifest.static||{}),directory:settings.directory};
+const nativeDirectory='out';
+manifest.static={...(manifest.static||{}),directory:nativeDirectory};
 fs.writeFileSync(manifestPath,JSON.stringify(manifest,null,2)+'\n');
-const target=path.join(destination,settings.directory);
+const target=path.join(destination,nativeDirectory);
 fs.rmSync(target,{recursive:true,force:true});fs.cpSync(path.join(root,settings.directory),target,{recursive:true});
 function hashes(folder,prefix=''){return fs.readdirSync(folder,{withFileTypes:true}).sort((a,b)=>a.name.localeCompare(b.name)).flatMap(e=>e.isDirectory()?hashes(path.join(folder,e.name),prefix+e.name+'/'):[{path:prefix+e.name,sha256:crypto.createHash('sha256').update(fs.readFileSync(path.join(folder,e.name))).digest('hex')}]);}
 const files=hashes(target);
-fs.writeFileSync(path.join(destination,'SOURCE_PROVENANCE.json'),JSON.stringify({repository:'https://github.com/b1n9ui/ai-university',canonical_commit:commit,edition:'en',static_directory:settings.directory,files},null,2)+'\n');
+fs.writeFileSync(path.join(destination,'SOURCE_PROVENANCE.json'),JSON.stringify({repository:'https://github.com/b1n9ui/ai-university',canonical_commit:commit,edition:'en',static_directory:nativeDirectory,files},null,2)+'\n');
 console.log(`Prepared independent English Site from canonical ${commit}: ${files.length} exact build files.`);

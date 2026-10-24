@@ -21,3 +21,14 @@ fs.rmSync(pages,{recursive:true,force:true});fs.cpSync(path.join(root,'dist'),pa
 fs.cpSync(path.join(root,'dist-en'),path.join(pages,'en'),{recursive:true});
 fs.writeFileSync(path.join(pages,'.nojekyll'),'');
 console.log('Built separate Chinese and English sites, plus a combined GitHub Pages artifact.');
+
+// Native Sites accepts a fixed set of static output directories. In the English
+// source mirror, keep the supported `out/` directory English on every rebuild.
+const hosting=JSON.parse(fs.readFileSync(path.join(root,'.openai/hosting.json'),'utf8'));
+const deployments=JSON.parse(fs.readFileSync(path.join(root,'deployments/sites.json'),'utf8'));
+if(hosting.project_id===deployments.en.project_id){
+ const nativeOutput=path.join(root,'out');
+ fs.rmSync(nativeOutput,{recursive:true,force:true});
+ fs.cpSync(path.join(root,'dist-en'),nativeOutput,{recursive:true});
+ console.log('Prepared English native Site output in out/.');
+}

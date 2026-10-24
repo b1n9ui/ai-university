@@ -15,7 +15,7 @@ Each language has 383 lessons, 778 worked examples, and 1,878 exercises includin
 - `dist-github/`: Chinese at the root, English at `en/`.
 - Vite fixes the language before resolving content modules. The English application imports English books; Chinese bodies are not a runtime fallback.
 - Old saved language preferences and URL language parameters do not change an edition. A cross-site anchor retains the full lesson hash and view.
-- The deployment registry preserves the existing Chinese Site identity and the independently registered English Site identity. `prepare-english-site.mjs` mirrors a clean canonical commit into the English checkout, preserves its identity, copies the exact tested English output, and records a file hash manifest and canonical commit.
+- The deployment registry preserves the existing Chinese Site identity and the independently registered English Site identity. `prepare-english-site.mjs` mirrors a clean canonical commit into the English checkout, preserves its identity, copies the exact tested English output, and records a file hash manifest and canonical commit. The native English host uses the supported `out/` directory; rebuilding its source mirror refreshes that directory from `dist-en/`.
 - Separate native hosts have separate browser-local records. The two GitHub Pages paths share an origin. There is no account or synchronization service.
 
 ## Verification performed
