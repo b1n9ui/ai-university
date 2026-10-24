@@ -24,6 +24,6 @@ gh release create v0.1.0 --title 'Calculus I · 完整第一版' \
 
 - `npm run build` 同时产出中文 `dist/` 和英文 `dist-en/`；两站只携带各自语言的教材下载。
 - GitHub Pages 上传 `dist-github/`：根目录中文，`en/` 英文。不要仅上传 `dist/` 导致英文站入口失效。
-- 两个独立原生 Site 使用各自的 project ID；保留中文站现有 ID 与访问范围，英文站使用单独 ID。英文原生发布可使用 `dist-en/` 的精确构建镜像，并记录 canonical GitHub 提交，不复制中文站身份。
+- 两个独立原生 Site 使用各自的 project ID；保留中文站现有 ID 与访问范围，英文站使用单独 ID。英文原生发布可使用 `dist-en/` 的精确构建镜像，复制到平台支持的 `out/` 目录，并记录 canonical GitHub 提交，不复制中文站身份；英文源码镜像再次构建时也会自动更新 `out/`。
 - 两站的构建语言固定，不读取旧的语言偏好；跨站链接保留小节 hash。独立域名之间不声称共享或同步学习数据。
 - Release 附十本英文、十本中文 Markdown、两个站点包、Pages 组合包和源码；全部来自通过检查的同一 canonical 提交。

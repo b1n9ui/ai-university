@@ -59,3 +59,5 @@ apps/web/public/python-introduction-en.html
 apps/web/public/AI-Assisted-Development-English.md
 apps/web/public/ai-development-en.html
 packages/content/translations/en/**/__pycache__/
+
+out/
