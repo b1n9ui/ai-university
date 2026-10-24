@@ -1,0 +1,65 @@
+Taylor remainders and error bounds
+Pair every approximation with an applicable bound
+A Taylor polynomial gives an approximation; a bound on the next derivative limits its error.
+Closer to the center, $(x-a)^{m+1}$ is smaller. Derivatives may be large, so distance alone is insufficient.
+Where must the derivative be bounded?
+Throughout the interval from center to target, not just at the center.
+Choosing the order
+Bound the derivative on the interval, then require the remainder bound below tolerance. The derivative bound may change with order.
+Does infinite smoothness guarantee equality with the series?
+No. Define $f(x)=e^{-1/x^2}$ away from zero and $f(0)=0$. Every derivative at zero vanishes, but the function is positive elsewhere. Its Taylor series does not represent it. Away from zero, each derivative is a polynomial in $x^{-1}$ times $e^{-1/x^2}$. Exponential decay beats every negative power, allowing continuous extension of every derivative by zero.
+Pair every approximation with an applicable bound
+$f$ has a continuous derivative of order $m+1$ on an interval containing $a,x$. The point $\xi$ lies between the endpoints, and $M$ bounds that derivative throughout.
+The remainder is the function minus its matching polynomial.
+Taylor's theorem expresses it using a higher derivative at an intermediate point.
+Take absolute values and use a uniform derivative bound.
+Bounding an exponential approximation
+Approximate $e^{0.1}$ by its quadratic Maclaurin polynomial and bound the error.
+On $[0,0.1]$, its third derivative satisfies $e^t\leq e^{0.1}<1.106$.
+The error is below $\frac{1.106(0.1)^3}{6}<0.000185$.
+Approximation $1.105$, with error below $0.000185$.
+A cubic sine approximation
+Use $x-\frac{x^3}{6}$ to estimate $\sin0.2$, with a guarantee.
+Regard it as the fourth-degree Taylor polynomial: the fourth-degree coefficient is zero.
+The fifth derivative has magnitude at most 1, giving error at most $\frac{0.2^5}{120}$.
+Error at most $0.000002667$.
+Only the center's derivative matters for the bound.
+The intermediate point is unknown; bound the derivative over the whole interval.
+Existing derivatives of every order guarantee equality with the Taylor series.
+You must also prove the remainder tends to zero.
+Use $1-\frac{x^2}{2}$ for $\cos0.1$. Regard it as a cubic Taylor polynomial, with fourth-derivative bound $M_4=1$. What Lagrange error bound follows?
+At most $\frac{0.1^4}{24}$.
+Regard it as a cubic polynomial.
+The fourth derivative is cosine, of magnitude at most 1. Insert this into the bound.
+Use $1+x$ to estimate $e^x$. What error bound holds on $|x|\leq0.1$?
+At most $\frac{e^{0.1}}2x^2$, with uniform bound $\frac{e^{0.1}}{200}$.
+The second derivative is bounded throughout the interval.
+$|f^{(2)}(t)|=e^t\leq e^{0.1}$; use the first-order remainder bound.
+On $[0,1]$, bound the remainder of the fourth-degree Maclaurin polynomial for $e^x$ uniformly.
+$\frac e{120}$.
+The fifth derivative is again exponential.
+$e^t\leq e$ and $|x|^5\leq1$, so $|R_4|\leq\frac e{5!}$.
+Can overlapping curves in a graph replace a remainder proof?
+No.
+The graph has finite range and sampling.
+Agreement at the displayed resolution is not a guarantee. Check the theorem's hypotheses and bound.
+For a Taylor series to equal its function, what else is needed?
+Infinitely many written terms suffice
+The corresponding remainder tends to zero
+Continuity alone
+Finite derivative matching does not automatically establish an infinite representation.
+Use the polynomial to calculate and the remainder to state how reliable that calculation is.
+Low order
+Set order to 2 and input to 0.5.
+The finite polynomial matches low-order derivatives; the readout shows its actual error.
+Increase the order
+Set order to 6, keeping input 0.5.
+Observe how the actual error changes at this input.
+Farther from the center
+Set order to 10 and input to 0.9.
+Accuracy depends on input and function; range and remainder conditions still matter.
+Compare $e^x$ with finite expansions centered at zero and read the error.
+Does raising the order give the same accuracy far away as near the center?
+Bound higher derivatives over the whole interval
+Choose an order for the target tolerance
+Distinguish infinite smoothness from Taylor representation

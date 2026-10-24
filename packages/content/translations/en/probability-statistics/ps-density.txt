@@ -1,0 +1,65 @@
+Densities and continuous CDFs
+For a variable with a density, interval probability is area under its density curve.
+For a variable with a density, interval probability is area under its density curve.
+Density measures probability concentration over an interval; a single point has no width.
+Separate height from probability
+Integrate to obtain the distribution
+Separate height from probability
+A density may exceed one. It must be nonnegative and integrate to one. For a variable with a density, every singleton has probability zero.
+Integrate to obtain the distribution
+The CDF accumulates left-hand area; subtract its endpoint values for interval probabilities. A density is one possible representation when it exists.
+Check the support
+The formula holds only on its specified support, with density zero outside. Do not extend a polynomial density across the entire real line.
+The variable has a nonnegative integrable density with total integral one.
+The variable has a nonnegative integrable density with total integral one.
+Distributions with jumps are not pure density models of this kind.
+Normalize the whole support's area.
+Accumulate to the threshold to obtain the CDF.
+Subtract, leaving only the interval's area.
+A normalizing constant
+Let $f(x)=cx$ on $0\le x\le1$, zero outside. Find $c$.
+Its integral is $c/2$.
+Set total area to one.
+$c=2$.
+Compute an area
+For that density, find $P(X\le1/2)$.
+Integrate $\int_0^{1/2}2x\,dx$.
+An antiderivative is the square.
+$1/4$.
+A variable has density $2x$ on $[0,1]$, zero outside. Find $P(X=1/2)$.
+A point has no area.
+Its integral is zero.
+$0$.
+Is $f(x)=4$ on $[0,1/4]$, zero outside, a valid density?
+Check nonnegativity and total area.
+Area is $4(1/4)=1$.
+Valid.
+A variable has density $2x$ on $[0,1]$, zero outside. Find $P(X>1/2)$.
+Use the complement.
+$1-1/4=3/4$.
+$3/4$.
+Does a density value $1.5$ prove the model invalid?
+Density is not singleton probability.
+Check the total integral.
+No.
+For a variable with density, what is probability at one fixed point?
+Density height
+Zero
+One
+The singleton has zero length.
+Density cannot exceed one
+The constraint is total area one, not height.
+Every distribution has an ordinary density
+Discrete and some other distributions cannot be fully represented that way.
+Move the upper limit. How do the area and CDF change together?
+A linear density on the unit interval separates density height from cumulative probability.
+The constraint is total area one, not height.
+Integration upper limit: 0.5
+Set the upper limit to $0.5$ and compare the figure and readouts.
+At these parameters: density at threshold $1$; left area $0.25$; singleton probability $0$.
+Integration upper limit: 0
+Set the upper limit to $0$ and compare the figure and readouts.
+At these parameters: density at threshold $0$; left area $0$; singleton probability $0$.
+Integration upper limit: 1
+Set the upper limit to $1$ and compare the figure and readouts.
+At these parameters: density at threshold $2$; left area $1$; singleton probability $0$.

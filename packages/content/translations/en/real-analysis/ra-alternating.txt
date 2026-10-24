@@ -1,0 +1,67 @@
+Alternating series and remainder bounds
+When magnitudes decrease to zero, alternating cancellation bounds the remainder by the next term.
+When magnitudes decrease to zero, alternating cancellation bounds the remainder by the next term.
+Odd partial sums descend and even ones rise. Their gap is the next term's magnitude.
+Check both conditions
+Prove the partial-sum squeeze
+Check both conditions
+Magnitudes must be nonnegative, tend to zero, and be nonincreasing throughout the tail where the bound is used. Alternating signs alone are insufficient.
+Prove the partial-sum squeeze
+Even partial sums increase, odd ones decrease, and they bound each other. Their adjacent gap vanishes, giving the same limit.
+Locate the remainder
+The sum lies between consecutive partial sums, so the approximation error is at most the next term's magnitude. Do not apply the bound before eventual monotonicity begins.
+Starting with a positive term, the alternating test gives signed upper and lower bounds.
+Nonnegative magnitudes are nonincreasing and tend to zero.
+If conditions hold only eventually, keep the earlier finite prefix separately.
+Even partial sums increase by a difference of a term pair.
+Odd partial sums decrease by a difference of a term pair.
+The bounding gap vanishes and contains the sum.
+Alternating harmonic error
+Using ninety-nine alternating harmonic terms, how large can the remainder be?
+Reciprocal magnitudes decrease to zero.
+The next magnitude is one hundredth.
+At most $0.01$.
+Alternating but not vanishing
+Does the test apply to $1-1+1-1+\cdots$?
+The magnitude stays one rather than tending to zero.
+The upper–lower gap persists.
+No.
+What is the error bound after nine alternating harmonic terms?
+The next term is the tenth.
+The bound is one tenth.
+$0.1$.
+Must a convergent alternating series converge absolutely?
+Consider the alternating harmonic series.
+Absolute values give the divergent harmonic series.
+No.
+If magnitudes become monotone only at term ten, does the next-term bound apply to a one-term approximation?
+The entire omitted tail must satisfy the conditions.
+The tail after term one does not yet meet them.
+Not directly.
+Find a sufficient $N$ giving absolute error less than $10^{-3}$ after $N$ alternating harmonic terms.
+The target is a strict inequality.
+The remainder satisfies $|S-S_N|\le1/(N+1)$.
+To guarantee strictly less than $10^{-3}$ from this bound, require $N+1>1000$.
+$N=1000$ suffices. For $N=999$, this bound gives only a non-strict inequality, not that strict guarantee.
+$N=1000$ suffices. For $N=999$, this bound gives only a non-strict inequality, not that strict guarantee.
+Which term magnitude bounds the remainder?
+Last retained term
+First term
+First omitted term
+It is the distance between consecutive partial sums.
+Alternating signs guarantee convergence
+Magnitude conditions are also needed.
+Eventual decrease gives the same bound for any prefix
+Use the bound only on a tail satisfying its hypotheses.
+Increase the term count. How do the odd–even brackets and next-term error bounds shrink?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+Odd and even partial sums form narrowing brackets. This requires the stated magnitude conditions, not merely alternating signs.
+Retained terms: 1
+Set the retained term count to $1$. Inspect the odd–even bracket and the next-term error bound.
+Partial sum $1$; sum lower bound $0.5$; sum upper bound $1$; remainder bound $0.5$.
+Retained terms: 50
+Set the retained term count to $50$. Inspect the odd–even bracket and the next-term error bound.
+Partial sum $0.6832472$; sum lower bound $0.6832472$; sum upper bound $0.702855$; remainder bound $0.01960784$.
+Retained terms: 100
+Set the retained term count to $100$. Inspect the odd–even bracket and the next-term error bound.
+Partial sum $0.6881722$; sum lower bound $0.6881722$; sum upper bound $0.6980732$; remainder bound $0.00990099$.

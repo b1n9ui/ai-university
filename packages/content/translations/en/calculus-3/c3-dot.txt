@@ -1,0 +1,63 @@
+Dot products and projections
+Extract contribution along a direction
+The dot product measures alignment. Projection gives the part pointing along a chosen direction.
+Aligned motion contributes positively, perpendicular motion zero, and opposing motion negatively. The dot product summarizes this as a scalar.
+Compute projections and angles
+Use dot products to test perpendicularity
+Why is the dot product a scalar?
+Multiply corresponding components and add. This equals one length times the other's signed component along it. The result has sign but no vector direction.
+Testing perpendicularity
+Two nonzero vectors are perpendicular exactly when their dot product is zero. Zero dots to zero with everything, so exclude it when interpreting angles.
+Scalar versus vector projection
+Scalar projection is a signed length. Vector projection multiplies it by a target unit vector. The residual is perpendicular to that target.
+Extract contribution along a direction
+Angles and projection directions require $\mathbf u\ne0$; angles also require $\mathbf v\ne0$; $0\le\theta\le\pi$.
+Place vectors at one origin and apply the cosine law.
+Expand squared components to obtain the dot product.
+Require the projection residual perpendicular to the target.
+Testing perpendicularity
+Are $\mathbf u=\langle1,2,-1\rangle,\mathbf v=\langle2,0,2\rangle$ perpendicular?
+Their dot product is $2+0-2=0$.
+Both are nonzero, so the perpendicularity criterion applies.
+They are perpendicular.
+Projection decomposition
+Project $\langle3,1,0\rangle$ onto $\langle1,1,0\rangle$.
+The coefficient is $\frac{3+1}{1+1}=2$.
+Projection is $\langle2,2,0\rangle$; residual $\langle1,-1,0\rangle$ dots to zero with the target.
+Projection $\langle2,2,0\rangle$.
+A dot product is just the product of lengths.
+Include the angle's cosine; opposing directions give a negative result.
+Projection always preserves length.
+Projection length cannot exceed the original length; perpendicular projection is zero.
+Find $\langle1,-2,3\rangle\cdot\langle4,1,-1\rangle$.
+Multiply corresponding components.
+$4-2-3=-1$.
+Find the angle between $\langle2,2,0\rangle$ and the positive horizontal axis.
+Compute length, then cosine.
+Length is $2\sqrt2$; cosine is $1/\sqrt2$.
+$\frac\pi4$.
+Project $\langle-3,4,0\rangle$ onto the positive horizontal axis. Find scalar projection.
+Take its signed horizontal component.
+That component is $-3$; negative means opposite the positive axis.
+Is the angle between zero and another vector a right angle?
+What is the denominator in the cosine formula?
+The dot product is zero, but so is the product of lengths.
+The angle formula is undefined.
+This angle is not defined for the zero vector.
+What does a negative dot product imply?
+An obtuse angle between nonzero vectors
+Perpendicularity
+Negative vector length
+Positive lengths leave the negative sign to the angle's cosine.
+Fix $\mathbf u=\langle1.5,0,0\rangle$, rotate equal-length $\mathbf v$, and compare dot product and projection.
+When vectors are perpendicular, where is the projection?
+The dot product is one length times the other's signed directional component; negative means opposing contribution.
+Aligned
+Set angle $\theta$ to $0$.
+The dot product is positive; projection points forward.
+Perpendicular
+Set angle $\theta$ to $\frac\pi2$.
+The dot product is numerically zero and the projection vanishes.
+Opposing
+Set angle $\theta$ to $\pi$.
+The dot product is negative; projection reverses.

@@ -1,0 +1,66 @@
+Strong induction and well-ordering
+When the next case needs several smaller cases, assume all preceding cases in the inductive step.
+When the next case needs several smaller cases, assume all preceding cases in the inductive step.
+Recursion may split a problem into two nonconsecutive smaller ones. Strong induction supplies both needed results.
+Strengthen the hypothesis
+Check that subproblems are smaller
+Strengthen the hypothesis
+Strong induction assumes every case from the starting index through the current index. It is equivalent to ordinary induction, not a stronger axiom.
+Check that subproblems are smaller
+To factor an integer greater than one into primes, split a composite into two strictly smaller factors greater than one, then apply strong induction.
+Use a least counterexample
+If failing positive integers exist, well-ordering gives a least one. If smaller successful cases imply its success, a contradiction follows.
+Every nonempty set of nonnegative integers has a least element. This cannot be applied directly to all integers.
+Specify the base cases and the smallest indices produced by the decomposition.
+Assume a counterexample exists and choose the least.
+Minimality ensures every smaller case holds.
+If the inductive argument proves this case, there is a contradiction.
+Postage combinations
+Prove that every integer at least six is a nonnegative integer combination of three and four.
+Six, seven, and eight are three plus three, three plus four, and four plus four.
+For a number at least nine, subtracting three leaves at least six.
+Apply strong induction and add one more three.
+Every such integer is representable.
+Existence of a prime divisor
+Prove that every integer greater than one has a prime divisor.
+Two is prime.
+A larger prime already qualifies; a composite has a strictly smaller factor greater than one.
+Apply strong induction to that factor.
+A prime divisor exists.
+What is the largest nonnegative integer not representable using threes and fours?
+Check zero through eight, then use the add-three rule.
+Five fails; six, seven, and eight work, and later values follow by adding three.
+Five.
+Does the set of negative integers have a least element?
+Subtract one from any proposed element.
+There is always a smaller negative integer.
+No.
+Why may strong induction require several base cases?
+The recurrence may skip indices.
+Every skipped-index chain must enter the valid range.
+To cover all initial gaps.
+May a least-counterexample proof omit justification that a least counterexample exists?
+It depends on the domain's well-ordering property.
+A lower-bound condition for integers cannot be omitted.
+No.
+How are strong and ordinary induction related?
+Unrelated
+Strong induction requires a stronger axiom
+Equivalent on the nonnegative integers
+Combine all preceding statements into a single new statement to convert one form to the other.
+A stronger induction hypothesis makes the proof circular
+Only strictly smaller indices are used.
+All integers are well-ordered
+An integer subset unbounded below may have no least element.
+Increase the target integer. Which values can be formed from threes and fours?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+Only strictly smaller indices are used.
+Target integer: 0
+Set the control to $0$. Compare the current step with the complete reference result.
+At this setting: target reachable: yes.
+Target integer: 15
+Set the control to $15$. Compare the current step with the complete reference result.
+At this setting: target reachable: yes.
+Target integer: 30
+Set the control to $30$. Compare the current step with the complete reference result.
+At this setting: target reachable: yes.

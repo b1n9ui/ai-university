@@ -1,0 +1,63 @@
+Scalar line integrals
+Accumulate along actual length
+A scalar line integral weights a wire's density by arc length. Reversing direction leaves it unchanged.
+Divide a curve into short segments. Each contributes density times length; faster parameter motion gives a longer segment per time increment.
+Compute scalar arc-length integrals
+Handle reversal and repeated tracing
+Why multiply by speed?
+A parameter increment is not length. Arc length is speed times that increment. Omitting speed makes the result depend on parameterization.
+Does reversal change the sign?
+Not for scalar arc-length integration, since length is nonnegative. A signed integrand can still give a signed result.
+A wire's center of mass
+Integrate position times line density against arc length, then divide by mass. Repeated tracing accumulates repeatedly; it does not automatically describe one physical wire.
+Accumulate along actual length
+The path is piecewise smooth and the function continuous along it. Avoid repeated tracing for a wire. Regular monotone reparameterization preserves the integral regardless of speed or direction.
+Approximate arc length by short segments.
+Multiply each length by density.
+Sum and take a mesh limit.
+A circular wire
+Find mass of a radius-2 circle at line density 3.
+Choose $\mathbf r=(2\cos t,2\sin t,0)$, with speed 2.
+Integrate $3\cdot2\cdot2\pi=12\pi$.
+$12\pi$.
+Density along a diagonal
+A segment runs from $(0,0,0)$ to $(1,1,0)$, with density $x+y$. Find mass.
+Use $(t,t,0)$ from zero to one; density is $2t$, speed $\sqrt2$.
+Integrate $\int_0^12t\sqrt2dt=\sqrt2$.
+$\sqrt2$.
+The parameter differential is the arc-length element.
+Multiply by speed unless the parameter already is arc length.
+Reversing a path negates every line integral.
+Scalar arc-length integrals stay unchanged; work integrals reverse sign.
+Find mass of a length-4 segment at density 2.
+Multiply line density by length.
+$2\cdot4=8$.
+Integrate one over a unit semicircle.
+This is its arc length.
+A radius-1 semicircle has length $\pi$.
+$\pi$.
+Reverse a unit semicircle. Does scalar integral $\int_C1\,ds$ change?
+Is arc length oriented?
+Length does not change sign, so the value remains $\pi$.
+Unchanged.
+What happens if a circular wire's mass integral traces it twice?
+Count coverage.
+Each segment contributes twice, giving twice the physical single-loop mass.
+It doubles; use one traversal for the wire.
+What happens to a scalar arc-length integral after reversal?
+It changes sign
+Unchanged
+It becomes zero
+Length has no travel direction.
+Accumulate density one along a unit circle; the bright arc marks travel.
+Does reversing the path make a wire's mass negative?
+Speed compensates for parameter rate; direction never makes length negative.
+A short arc
+Set path parameter $t$ to $\frac\pi2$.
+The integral of density one is the quarter-circle length.
+A semicircle
+Set path parameter $t$ to $\pi$.
+The integral increases with path length.
+A full turn
+Set path parameter $t$ to $2\pi$.
+The full circumference is $2\pi$.

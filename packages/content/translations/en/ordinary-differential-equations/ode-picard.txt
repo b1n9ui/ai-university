@@ -1,0 +1,64 @@
+Integral equations and Picard iteration
+Update a whole curve from the previous curve
+Why are the forms equivalent?
+Integrating a continuous right-hand side recovers the initial condition. Differentiating the integral form recovers the equation. Both retain the starting point.
+How do you iterate?
+Begin with constant function $y_0(t)=y_0$ and set $y_{n+1}=y_0+\int_{t_0}^t f(s,y_n(s))ds$.
+What ensures convergence?
+On a suitable rectangle, require a continuous right-hand side, state Lipschitz regularity, and a time interval short enough to keep iterates inside and make the map a contraction. The argument is local.
+For $y'=y,y(0)=1$, begin with a constant.
+Substitute for the first and second iterations.
+Continuing gives exponential partial sums.
+The second iteration
+For $y'=2y,y(0)=1$, calculate the second iterate starting from a constant.
+The first iterate is $1+2t$.
+Integrating $2(1+2s)$ gives $1+2t+2t^2$.
+$y_2=1+2t+2t^2$.
+Explicit time dependence
+Find the first Picard iterate for $y'=t,y(0)=3$.
+The right side does not depend on the approximate function.
+Integrate time directly.
+$y_1=3+t^2/2$, already the exact solution.
+Find the first iterate for $y'=y,y(0)=2$.
+Start from constant two.
+$2+\int_0^t2ds$.
+$2+2t$.
+For $y^\prime=y,y(0)=2$ starting at $y_0(t)\equiv2$, find the second Picard approximation.
+Substitute the first iterate again.
+$2+\int_0^t(2+2s)ds$.
+$2+2t+t^2$.
+Which initial value corresponds to $y=4+\int_1^tf(s,y(s))ds$?
+Set the integral limits equal.
+At $t=1$, the integral is zero.
+$y(1)=4$.
+With $L=2$, does half-interval length $h=1$ satisfy the contraction criterion?
+Check whether the product is strictly less than one.
+$Lh=2$.
+It does not satisfy this sufficient condition.
+Picard iteration updates only the next time point.
+It updates an entire function. Euler's method instead advances by time steps.
+Every time interval gives a contraction automatically.
+The interval length must meet the relevant bounds.
+Rewriting an initial-value problem as an integral equation lets successive curve substitutions construct a local solution.
+Each iteration uses the previous state estimate to accumulate the corresponding rates again.
+Rewrite differential initial-value problems in integral form
+Calculate iterates and state convergence hypotheses
+Integral equations and Picard iteration
+For a continuous right-hand side, the integral and differentiable initial-value forms are equivalent. The contraction argument also needs local Lipschitz regularity, iterates inside the rectangle, and $Lh<1$.
+Which curve enters the Picard integral?
+Only the endpoint value
+The unknown new curve itself
+The previous approximate curve
+The previous iterate supplies the whole integrand.
+The unknown is an entire curve, so the iteration acts between functions.
+Start with a constant
+The zeroth iterate is just the initial-value constant.
+Set iteration count $n$ to $0$ and observation time $t$ to $1$.
+Two iterations
+The result is a quadratic partial sum.
+Set iteration count $n$ to $2$ and observation time $t$ to $1$.
+More iterations
+The approximation is closer to the exponential in this finite window.
+Set iteration count $n$ to $8$ and observation time $t$ to $1$.
+Blue is the exact exponential; gold is a Picard partial sum. This iterates whole functions rather than stepping through time.
+How does the whole approximate curve change as the iteration count increases?

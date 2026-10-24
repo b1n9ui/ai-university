@@ -1,0 +1,65 @@
+Generating functions and constrained counting
+Store counts as power-series coefficients; multiplication then combines independent choices.
+Store counts as power-series coefficients; multiplication then combines independent choices.
+An exponent records the total size; its coefficient counts ways to reach that size.
+Use formal power series
+Interpret multiplication
+Use formal power series
+Here a series is a sequence of coefficients, without a claim about convergence at real inputs. Each fixed-degree coefficient requires only finite calculation.
+Interpret multiplication
+Select one term from each factor and add their exponents. Add contributions with the same total exponent: this is convolution.
+Include upper bounds
+Use a finite polynomial when a type can occur from zero up to a limit. Products encode separate quantity constraints for distinct recipients.
+Coefficient-extraction notation specifies the coefficient of a given power.
+Allocations are integers and recipients are distinct.
+Calculations use formal power series and make no analytic convergence claims.
+Each possible allocation to one recipient contributes one term.
+Multiplication over recipients adds exponents.
+Combining like powers counts every valid allocation with the same total.
+Bounded allocations
+Two people may each receive at most two candies. How many allocations total two candies?
+Find the quadratic coefficient of $(1+x+x^2)^2$.
+It comes from $(0,2),(1,1),(2,0)$.
+Three.
+Different denominations
+Make four units using one-unit and two-unit coins, distinguishing denomination counts.
+Find the fourth-degree coefficient of $(1-x)^{-1}(1-x^2)^{-1}$.
+Use zero, one, or two two-unit coins; each choice determines the one-unit count.
+Three.
+What is the coefficient of the linear term in $(1+x)^3$?
+Select the variable from one factor.
+There are three factors to choose.
+Three.
+What does the exponent record in counting?
+Exponents add under multiplication.
+It records the accumulated quantity, not the number of ways.
+Total size.
+Three people each receive zero or one item. How many allocations total two?
+Extract the quadratic coefficient.
+$[x^2](1+x)^3=3$.
+Three.
+Does equality of formal power series require real-variable convergence?
+Equality is defined coefficientwise.
+Matching every coefficient suffices.
+No.
+What do generating-function coefficients usually represent?
+Numbers of ways
+Input values
+Radii of convergence
+Exponents record totals; coefficients count ways.
+Exponents and coefficients have interchangeable meanings
+They play different roles.
+Formal calculations automatically establish analytic convergence
+Formal identities assert coefficient relations only.
+Change the recipient count, individual bound, and target total. How do the convolution coefficients change?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+They play different roles.
+Target total: 0
+Set the control to $0$. Compare the current step with the complete reference result.
+At this setting: target coefficient $1$; sum of all coefficients $27$.
+Target total: 10
+Set the control to $10$. Compare the current step with the complete reference result.
+At this setting: target coefficient $0$; sum of all coefficients $27$.
+Target total: 20
+Set the control to $20$. Compare the current step with the complete reference result.
+At this setting: target coefficient $0$; sum of all coefficients $27$.

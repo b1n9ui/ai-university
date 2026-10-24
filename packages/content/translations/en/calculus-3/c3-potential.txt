@@ -1,0 +1,64 @@
+Potentials, path independence and holes
+When are endpoints enough?
+For a field equal to the gradient of a single-valued function, work is final potential minus initial potential.
+Each step's work is an increment of one function. Intermediate increments cancel, leaving endpoints.
+Find and verify global potentials
+Recognize domain-hole counterexamples
+Finding a potential
+Integrate one field component, allowing the constant to depend on remaining variables. Match other components, then verify the full gradient.
+Are equal cross partials enough?
+On a simply connected open domain, a continuously differentiable curl-free field has a potential. Simply connected means every loop can contract to a point within the domain.
+Why do holes matter?
+Local zero curl can coexist with nonzero work around a hole. A global potential must be single-valued; a branched angle is insufficient.
+When are endpoints enough?
+The potential is continuously differentiable on an open domain containing the piecewise smooth path. Inferring conservativeness from zero curl also requires a simply connected open domain and continuously differentiable field.
+Apply the chain rule to potential along the path.
+Use the single-variable fundamental theorem.
+A loop has matching endpoints, giving zero difference.
+Finding a potential
+For $\mathbf F=(2xy,x^2+2y,0)$, find work from the origin to $(1,2,0)$.
+Integrating the first component gives $\varphi=x^2y+g(y)$.
+The second gives $g\prime=2y$; thus $\varphi=x^2y+y^2$, with endpoint value 6.
+6, for any path staying in the domain.
+A hole counterexample
+On the plane without the origin, find work of $\mathbf F=(-y/r^2,x/r^2)$ around the unit circle.
+The field equals unit tangent on the circle, giving $2\pi$.
+Local cross partials agree, but the hole prevents a single-valued global potential.
+$2\pi$; the field is not conservative.
+Matching cross partials make the domain irrelevant.
+A hole can support nonzero loop integrals.
+Integrating any one component automatically gives a potential.
+Match every component and verify the gradient.
+Find a potential for $(2x,2y,2z)$.
+Look for the gradient of a sum of squares.
+$\nabla(x^2+y^2+z^2)=(2x,2y,2z)$.
+$x^2+y^2+z^2$.
+Find work of $(2x,2y,2z)$ from the origin to $(1,2,2)$.
+Use endpoint potential difference.
+Final value $1+4+4=9$; initial value zero.
+How can two potentials differ on a connected domain?
+Their gradient difference is zero.
+Their difference stays constant along connecting paths.
+By a constant.
+On the punctured plane, does zero curl automatically imply zero loop work?
+Use an angular-field counterexample.
+A unit circle around the hole can give $2\pi$.
+Local zero curl does not eliminate global circulation around holes.
+No.
+When a global potential exists, what determines work?
+Endpoints alone
+Length alone
+Speed alone
+The chain rule and fundamental theorem cancel intermediate increments.
+Field $\nabla(\frac12(x^2+y^2))=(x,y)$ does zero work around the unit circle; compare with the preceding rotational field.
+Which field property supports zero closed-loop work?
+For a single-valued gradient field, work sums potential increments and leaves only endpoint difference.
+Path start
+Set path parameter $t$ to $0$.
+The radial gradient field has potential one here.
+Midway
+Set path parameter $t$ to $\pi$.
+Potential stays one on the unit circle; accumulated work is zero.
+Return to start
+Set path parameter $t$ to $2\pi$.
+Zero loop work follows from a global potential, not closure alone.

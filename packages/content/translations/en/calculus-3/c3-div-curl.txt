@@ -1,0 +1,64 @@
+Divergence and curl
+Measure net outflow and local rotation separately
+Divergence measures net outflow per unit volume. Curl's normal component measures local circulation per unit area.
+A tiny box measures excess outflow; a tiny paddle detects rotation. A field may have either, both or neither.
+Compute divergence and curl
+State local interpretations and smoothness hypotheses
+Why is divergence a scalar?
+Compare flow across three opposite face pairs, divide by volume, and sum the three directional expansion rates.
+Why is curl a vector?
+Rotation can occur about different axes. Its components describe circulation densities on the three oriented coordinate planes.
+Hypotheses for the identities
+For sufficient smoothness, gradients have zero curl and curls have zero divergence. Mixed-derivative cancellation requires continuity and cannot be extended across singularities.
+Measure net outflow and local rotation separately
+Use continuously differentiable fields for the formulas and local interpretations. Identities need the relevant continuous second partials. These are classical derivatives, not distributional singularities.
+Opposite-face flow differences use partial derivatives.
+Small-loop circulation differences use cross partials.
+Continuous second mixed partials cancel.
+A radial field
+Find divergence and curl of $\mathbf F=(2x,2y,2z)$.
+The three pure partials are each 2, so divergence is 6.
+Cross partials vanish, giving zero curl.
+Divergence 6; curl $\mathbf0$.
+A rotational field
+Find divergence and curl of $\mathbf F=(-3y,3x,0)$.
+Divergence is zero.
+The vertical curl component is $3-(-3)=6$; the others vanish.
+Divergence 0; curl $(0,0,6)$.
+Curved field arrows imply nonzero curl.
+Curl measures local circulation density, not streamline shape alone.
+Zero divergence means no motion.
+Strong rotation or balanced flow may have zero local net outflow.
+Find divergence of $\mathbf F=(x^2,y,z)$.
+Differentiate each component in its own coordinate.
+$2x+1+1=2x+2$.
+$2x+2$.
+Find curl of $\mathbf F=(y,0,0)$.
+Take cross partials in the specified order.
+The vertical component is $Q_x-P_y=0-1=-1$.
+$(0,0,-1)$.
+Find the curl of a smooth gradient field.
+Mixed partials cancel.
+Each component subtracts equal mixed partials; continuous second derivatives give zero.
+$\mathbf0$.
+Can a singular radial field be assigned zero divergence at its singularity using its outside formula?
+Are derivatives defined there?
+An undefined field has no classical divergence there. An outside formula cannot fill the singularity.
+No.
+Does zero divergence exclude local rotation?
+Yes
+No
+The field must vanish
+A pure rotation has zero divergence but nonzero curl.
+A horizontal slice of spatial field $(-y+cx,x+cy,0)$; planar expansion gives divergence $2c$ and curl $(0,0,2)$.
+Can one field expand outward while rotating?
+Divergence examines box outflow; curl examines loop circulation. They measure different things.
+Pure rotation
+Set radial coefficient $c$ to $0$.
+Vertical curl is two; divergence zero.
+Add expansion
+Set radial coefficient $c$ to $0.5$.
+A planar radial component adds positive divergence without changing curl.
+Stronger expansion
+Set radial coefficient $c$ to $1$.
+Net outflow increases while rotation density stays two.

@@ -1,0 +1,65 @@
+General regions and changing integration order
+Draw the region before choosing inner limits
+Limits describe a region. Changing integration order requires reading its boundaries afresh.
+Vertical and horizontal sweeps cover the same land, but their slice endpoints differ.
+Write slice bounds from inequalities
+Simplify calculations by changing order
+Which variables may inner bounds depend on?
+Only the fixed outer variables. The inner variable cannot appear in its own bounds.
+When must the region be split?
+Split where a slice's boundary formula changes, or where holes produce disjoint intervals.
+Why choose an order?
+It may simplify a difficult inner integral. Preserve the region and density rather than mechanically swapping differentials.
+Draw the region before choosing inner limits
+A bounded closed region with piecewise smooth boundary and continuous integrand suffices here. Preserve the region, splitting as needed.
+Write bounds as inequalities.
+Solve for horizontal slice bounds.
+The new limits describe the same triangle.
+Simplifying a nonelementary inner integral
+Evaluate $\int_0^1\int_x^1 e^{y^2}dy\,dx$.
+Changing order gives region $0\le y\le1,0\le x\le y$.
+Integrating the first coordinate first gives $\int_0^1ye^{y^2}dy=(e-1)/2$.
+$\frac{e-1}2$.
+A curved region
+Find the area of $0\le x\le1,x^2\le y\le x$.
+Vertical-slice height is $x-x^2$.
+Its integral is $1/2-1/3=1/6$; horizontal slices $y\le x\le\sqrt y$ give the same result.
+$\frac16$.
+Only swap the differential symbols.
+Rebuild the limits too.
+Outer bounds may depend on the inner variable.
+Choose the independent outer range, then specify each inner slice.
+Reverse the order in $\int_0^2\int_0^{2-x}f\,dy\,dx$.
+Draw the axes and sloping line.
+The region is a first-quadrant triangle.
+Horizontal slices satisfy $0\le y\le2,0\le x\le2-y$.
+$\int_0^2\int_0^{2-y}f\,dx\,dy$.
+Find the area of triangle $0\le x\le2,\ 0\le y\le2-x$.
+Use half base times height.
+Base and height are both 2, giving area 2.
+After reversing $0\le x\le1,0\le y\le x^2$, what is the first-coordinate range?
+Solve $y\le x^2$ with nonnegative first coordinate.
+Fix $0\le y\le1$; then $\sqrt y\le x\le1$.
+$\sqrt y\le x\le1$.
+If a horizontal line meets two disjoint intervals, may one integral span from the far left to far right?
+Would that include a gap?
+It would include extra blank area.
+Use two inner integrals or subdivide the region.
+Not in general.
+What comes first when changing order?
+Swap differentials
+Write inequalities or draw the region
+Delete the bounds
+Ensure the sweep covers exactly the original region.
+Move a vertical slice through $0\le x\le1,x\le y\le1$; the top view shows the reverse-order boundaries.
+Does changing scan direction alter area?
+Change the sweep without adding or losing any part of the region.
+Left slice
+Set slice coordinate $x$ to $0$.
+The triangular slice has height 1.
+Middle slice
+Set slice coordinate $x$ to $0.5$.
+The slice runs from one-half to 1, with height one-half.
+Right slice
+Set slice coordinate $x$ to $1$.
+The slice collapses to a point of zero height.

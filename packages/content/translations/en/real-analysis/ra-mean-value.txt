@@ -1,0 +1,66 @@
+Rolle's theorem and the mean value theorem
+Continuity on a closed interval and differentiability inside connect the average change to a derivative somewhere.
+Continuity on a closed interval and differentiability inside connect the average change to a derivative somewhere.
+Subtract the endpoint secant line to equalize endpoint values. An interior extremum then gives a horizontal tangent.
+Prove Rolle's theorem first
+Subtract the secant
+Prove Rolle's theorem first
+For a nonconstant function with equal endpoint values, the extreme value theorem gives an interior extremum. There, opposite signs of one-sided quotients force the derivative to zero.
+Subtract the secant
+Subtracting the endpoint secant from a general function creates Rolle's hypotheses. Its zero derivative becomes the original derivative equal to average slope.
+Turn a local bound into a global bound
+A uniform bound on derivative magnitude lets the mean value theorem bound every output difference by that constant times input distance. Derivatives existing everywhere need not have a uniform bound.
+The mean value theorem does not require a continuous derivative.
+The endpoints are strictly ordered; the function is continuous on the closed interval and differentiable inside.
+Subtract the line with the average slope.
+The endpoint values match, so Rolle gives an interior zero derivative.
+Rearrange to recover the result.
+A square-function mean value point
+Find the mean value point for $x^2$ from zero to two.
+The average slope is four divided by two, or two.
+$2c=2$, so $c=1$.
+One.
+A missing differentiability condition
+For $|x|$ from negative one to one, average slope is zero. Is any derivative zero?
+It is not differentiable at zero.
+Elsewhere the derivative is positive or negative one.
+No; the mean value theorem does not apply.
+If the derivative is zero throughout an interval, what is the function?
+Apply the mean value theorem between any two points.
+Their output difference is zero.
+Constant.
+Does a nonnegative derivative imply a nondecreasing function on an interval?
+Use the mean value theorem and the sign of the input difference.
+Every later input has at least the earlier output.
+Yes.
+Does the mean value theorem need a continuous derivative?
+Check its hypotheses.
+Only interior differentiability is needed.
+No.
+Suppose $f$ is differentiable on an interval and $|f'|\le M$. Prove $|f(x)-f(y)|\le M|x-y|$.
+Apply the mean value theorem on the segment between the inputs.
+The case $x=y$ is immediate. Otherwise assume $x<y$; differentiability gives continuity on this closed segment.
+Some $c\in(x,y)$ satisfies $f(y)-f(x)=f'(c)(y-x)$.
+Take absolute values and apply the derivative bound. The resulting inequality also proves uniform continuity.
+Take absolute values and apply the derivative bound. The resulting inequality also proves uniform continuity.
+What gives an interior extremum in Rolle's proof?
+The extreme value theorem and equal endpoint values
+Plot sampling
+A continuous derivative
+Continuity on a closed interval guarantees attained extrema.
+One missing corner point does not affect the theorem
+That point may be exactly the required mean value point.
+Zero derivative gives one constant on every disconnected domain
+The conclusion holds separately on each interval component.
+Change the interval. How does its secant slope match the tangent at the mean value point?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+Subtracting the secant gives equal endpoints and an interior horizontal tangent. A missing corner can invalidate the required derivative.
+Left endpoint: -2
+Set the left endpoint to $-2$. Compare secant and tangent slopes and check that the mean value point lies between endpoints.
+Secant slope $0$; mean value point $0$.
+Left endpoint: -0.5
+Set the left endpoint to $-0.5$. Compare secant and tangent slopes and check that the mean value point lies between endpoints.
+Secant slope $1.5$; mean value point $0.75$.
+Left endpoint: 1
+Set the left endpoint to $1$. Compare secant and tangent slopes and check that the mean value point lies between endpoints.
+Secant slope $3$; mean value point $1.5$.

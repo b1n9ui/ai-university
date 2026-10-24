@@ -1,0 +1,65 @@
+Differentiating and integrating power series
+Operate term by term inside the convergence radius
+Inside the convergence interval, power series can be differentiated and integrated term by term. The radius stays the same; endpoints may change.
+Integrating a geometric series gives a logarithm; differentiating it gives another rational-function expansion.
+Why emphasize the interior?
+Arbitrary function series cannot be differentiated term by term. A power series and its derivative series converge uniformly on every closed interval strictly inside the radius, justifying differentiation. Uniform convergence of the original justifies integration. One term count controls all inputs in that interval at once.
+Determining the integration constant
+Integrate from the center or use a known function value to determine the constant. Do not lose the constant term.
+What happens at endpoints?
+Integration may gain endpoint convergence; differentiation may lose it. Substitute the endpoints again.
+Operate term by term inside the convergence radius
+The original radius is $R>0$. Termwise integration is initially guaranteed only on the open interval; check boundaries separately.
+Start with a convergent geometric series.
+Integrate term by term from the center to the input.
+Alternatively, differentiate to obtain a new expansion.
+The arctangent series
+Derive the expansion of $\arctan x$ on $|x|<1$ from a geometric series.
+$\frac1{1+t^2}=\sum_{n=0}^\infty(-1)^nt^{2n}$.
+Integrate from 0 to $x$; use $\arctan0=0$ to set the constant.
+$\arctan x=\sum_{n=0}^\infty\frac{(-1)^nx^{2n+1}}{2n+1}$.
+A weighted sum
+Evaluate $\sum_{n=1}^\infty\frac n{2^n}$.
+Termwise differentiation gives $\sum n x^{n-1}=\frac1{(1-x)^2}$.
+Multiply by $x$, then substitute $x=\frac12$.
+$2$.
+Every infinite sum can be differentiated term by term.
+Convergence hypotheses are needed; here the guarantee applies to power series inside their radius.
+The differentiated series retains the same endpoints.
+The radius stays the same, but endpoint behavior may change.
+Evaluate $\sum_{n=1}^\infty n(\frac13)^n$.
+$\frac34$.
+Use the derivative of a geometric series.
+$\sum nx^n=\frac{x}{(1-x)^2}$; substituting $\frac13$ gives $\frac34$.
+Find the first four nonzero terms of the expansion of $\ln(1+x)$ at zero.
+$x-\frac{x^2}{2}+\frac{x^3}{3}-\frac{x^4}{4}$.
+Integrate a geometric series with negative ratio.
+$\frac1{1+t}=1-t+t^2-t^3+\cdots$; integrate term by term from zero.
+The series $\sum\frac{x^n}{n^2}$ converges at $x=1$. What about its derivative there?
+It diverges.
+Inspect the derivative terms.
+At 1 the derivative series is $\sum\frac1n$, the harmonic series.
+From $\frac1{1-x}$, obtain an expansion and range for $\frac1{1-x^2}$.
+$\sum_{n=0}^\infty x^{2n}$, $|x|<1$.
+Replace the input by its square.
+The ratio is $x^2$, requiring $|x^2|<1$.
+After termwise differentiation, what happens to the radius and endpoints?
+Same radius; check endpoints again
+Both remain unchanged
+The radius must decrease
+The interior is guaranteed; boundaries need a new test.
+Use a reliable expansion to build others through substitution, differentiation and integration, always tracking the valid range.
+Near the center
+Set input to 0.5 and count to 10.
+Inside the radius, partial sums approach 2.
+Near the boundary
+Set input to 0.95 and count to 10.
+Convergence holds, but similar accuracy takes more terms.
+Outside the radius
+Set input to -1.2 and count to 20.
+Partial sums oscillate with growing magnitude, unlike the rational function's value.
+Compare $\sum_{n=0}^{N-1}x^n$ with $\frac1{1-x}$ and mark the convergence radius.
+Outside the radius, do the polynomial graphs still approach the same function?
+Differentiate and integrate inside the convergence radius
+Determine constants from center values
+Retest endpoints after operations

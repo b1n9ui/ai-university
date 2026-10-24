@@ -1,0 +1,66 @@
+Partial and higher-order derivatives
+Change one input at a time
+A partial derivative measures instantaneous change in one variable while all others stay fixed.
+Slice a surface in a coordinate direction and differentiate that single-variable curve. Different directions may have different slopes.
+Compute first and mixed partial derivatives
+Recognize what partial derivatives cannot guarantee
+What happens to other variables?
+Hold the second variable constant when differentiating in the first, then reverse roles. A partial derivative describes one slice, not a uniform approximation in every direction.
+Can mixed derivatives be exchanged?
+Continuity of the second mixed derivatives nearby is sufficient. Without suitable conditions, do not interchange the order by notation alone.
+Do existing partials imply smoothness?
+They need not even imply continuity, let alone differentiability. Normal axis slices can hide diagonal anomalies.
+Change one input at a time
+Difference quotients stay within the domain. Continuous second mixed partials near the point suffice to interchange them.
+Fix one variable.
+Differentiate the resulting one-variable slice.
+Differentiate that partial-derivative function again.
+Separate derivatives
+Find both partials of $f=x^2y+\sin y$.
+Fixing the second variable gives $f_x=2xy$.
+Fixing the first gives $f_y=x^2+\cos y$.
+$f_x=2xy,f_y=x^2+\cos y$.
+Checking mixed derivatives
+Find both mixed partials of $f=x^2y^3$.
+$f_x=2xy^3$; differentiating in the second variable gives $6xy^2$.
+Reverse order also gives $6xy^2$. Polynomial smoothness meets the continuity condition.
+Both equal $6xy^2$.
+The other variable has derivative one.
+It is fixed here, so its derivative is zero.
+Existing partial derivatives imply continuity.
+Axis checks are insufficient; the multivariable limit may fail.
+Find $f_x$ for $f=e^{xy}$.
+The inner first-variable derivative is the second variable.
+The chain rule gives $f_x=ye^{xy}$.
+$ye^{xy}$.
+For $f=x^2+3xy+y^2$ at $(1,2)$, find $f_y$.
+Differentiate first, then substitute the point.
+$f_y=3x+2y$.
+Substitution gives 7.
+For $g=\frac{xy}{x^2+y^2}$, extended by zero at the origin, find both origin partials.
+Use axis difference quotients.
+The function vanishes on both axes, so both quotients are zero.
+Its diagonal values do not tend to zero, so continuity fails.
+Both partials are zero, yet the function is discontinuous.
+Can mixed partials always be interchanged?
+State the hypotheses.
+Continuous second mixed partials nearby suffice.
+Otherwise calculate both orders or give another justification.
+Not unconditionally.
+When differentiating $x^2y$ in its first variable, how is the second treated?
+It varies with the first
+It is constant
+It must be zero
+Partial differentiation fixes all other independent variables.
+Surface $z=x^2+y^2$ at $(a,b,a^2+b^2)$, with coordinate slices and tangents. Gold follows the first direction, blue the second; slopes are $2a$, $2b$.
+Does the first-direction slope stay the same at different points?
+A partial derivative changes one input alone; the other is fixed for that calculation.
+First direction
+Use $a=-1,b=0$ and inspect the gold tangent.
+The first partial is $-2$, the second zero. They belong to distinct slices.
+Change the second coordinate only
+Keep $a=-1$ and change $b$ to $1$.
+The first partial stays $-2$, while the second becomes $2$; it is not always zero.
+Compare at one point
+Use $a=0.5,b=-0.5$ and compare both tangents.
+At this point the first slope is $1$, the second $-1$. Each requires holding the other variable fixed.

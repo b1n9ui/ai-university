@@ -1,0 +1,67 @@
+Derivatives and local linearity
+Differentiability writes the change as a linear main term plus a remainder smaller than the input change.
+Differentiability writes the change as a linear main term plus a remainder smaller than the input change.
+Continuity brings values close; differentiability also requires one consistent first-order slope.
+Rewrite the quotient as a remainder
+Check agreement from both sides
+Rewrite the quotient as a remainder
+A derivative exists exactly when the increment equals derivative times input increment plus a remainder whose ratio to the increment vanishes. This immediately implies continuity.
+Check agreement from both sides
+Absolute value is continuous at zero, but its right quotient is one and its left quotient negative one. No common derivative exists.
+Prove the composition rule
+Insert the inner increment into the outer function's local linear expansion. Inner differentiability bounds its increment by a constant times the original input change, leaving a smaller-order remainder.
+Interior differentiability uses a two-sided difference-quotient limit.
+The center is an interior domain point; one-sided endpoint derivatives may be defined separately.
+A little-o remainder divided by the input increment tends to zero.
+Write the error in the quotient limit as a vanishing function.
+Multiply by the input increment.
+Both increment terms vanish, proving continuity.
+The square-function remainder
+For $f(x)=x^2$ at center $a$, identify the linear term and remainder.
+$(a+h)^2-a^2=2ah+h^2$.
+$h^2/h=h\to0$.
+Main term $2ah$; remainder $h^2$.
+Continuous but not differentiable
+What are the difference quotients of $|x|$ at zero?
+Positive increments give one.
+Negative increments give negative one.
+The sides differ, so no derivative exists.
+Does differentiability imply continuity?
+Use the local linear decomposition.
+The linear term and smaller-order remainder both vanish.
+Yes.
+Does continuity imply differentiability?
+Consider absolute value at zero.
+The counterexample disproves the converse.
+Not necessarily.
+Is $h^2$ an $o(h)$ remainder?
+Divide and take the limit.
+$h^2/h=h\to0$.
+Yes.
+Prove directly that $|x|$ is not differentiable at zero.
+Compute the positive and negative difference quotients.
+For $h>0$, $(|h|-0)/h=1$.
+For $h<0$, $(|h|-0)/h=-1$.
+The one-sided limits differ, so the two-sided quotient has no limit. The function remains continuous at zero.
+The one-sided limits differ, so the two-sided quotient has no limit. The function remains continuous at zero.
+What does differentiability add to continuity?
+One consistent local first-order slope
+Monotonicity
+Continuity of the derivative
+The derivative itself may be discontinuous.
+A large difference quotient proves discontinuity of the function
+Differentiability and continuity need separate checks.
+A small remainder only needs to vanish by itself
+It must be smaller in order than the input change.
+Shrink the increment. How does the square-function remainder divided by that increment change?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+A derivative requires a consistent first-order slope. Check differentiability separately from continuity.
+Increment magnitude: 0.4
+Set the increment magnitude to $0.4$. Compare secant and tangent, then switch sides to test agreement of the quotients.
+Current quotient $0.4$; center derivative $0$; remainder divided by increment $0.4$.
+Increment magnitude: 0.2001
+Set the increment magnitude to $0.2001$. Compare secant and tangent, then switch sides to test agreement of the quotients.
+Current quotient $0.2001$; center derivative $0$; remainder divided by increment $0.2001$.
+Increment magnitude: 0.0001
+Set the increment magnitude to $0.0001$. Compare secant and tangent, then switch sides to test agreement of the quotients.
+Current quotient $0.0001$; center derivative $0$; remainder divided by increment $0.0001$.

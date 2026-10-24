@@ -1,0 +1,64 @@
+Second-order Taylor models
+Add the bending a tangent plane misses
+Second-order Taylor polynomials record directional curvature and interactions beyond the tangent plane.
+Linear terms describe slope; quadratic terms describe bowls, saddles and mixed-direction coupling.
+Construct second-order multivariable models
+Check mixed terms and remainder hypotheses
+What is the Hessian?
+The matrix of second partial derivatives. It is symmetric when those derivatives are continuous. Multiplying by displacement on both sides produces a scalar quadratic form.
+Why do mixed terms appear twice?
+The two differentiation orders contribute separately; the overall one-half compensates. Do not omit a contribution again.
+Controlling the remainder
+Continuous second derivatives give a remainder negligible relative to squared distance. Bounded third derivatives near the connecting segment give a cubic bound via one-variable Taylor.
+Add the bending a tangent plane misses
+Evaluate coefficients at the center. The function is twice continuously differentiable nearby; explicit cubic bounds require third-order hypotheses.
+Restrict the function to the displacement line segment.
+Apply the chain rule twice to obtain the quadratic form.
+Apply one-variable Taylor to the segment parameter.
+An exponential model
+Find the second-order polynomial of $f=e^{x+y}$ at the origin.
+Constant 1; linear term $x+y$.
+Quadratic term $(x+y)^2/2=x^2/2+xy+y^2/2$.
+$1+x+y+\frac{x^2}2+xy+\frac{y^2}2$.
+An explicit error
+Use this model for $e^{0.1+0.1}$, with a bound.
+The polynomial gives $1+0.2+0.02=1.22$.
+The exponential remainder along the segment is at most $e^{0.2}(0.2)^3/6<0.00163$.
+Approximation 1.22; error below 0.00163.
+Second-order terms contain only pure squares.
+Mixed terms matter and can change diagonal bending.
+The Taylor polynomial equals the original function.
+It is usually a local approximation; retain the remainder in exact equalities.
+Find the origin Hessian of $x^2+3xy+2y^2$.
+Differentiate again in both variables.
+Pure second partials are 2 and 4; mixed partials are 3.
+$\begin{pmatrix}2&3\\3&4\end{pmatrix}$.
+Find the second-order origin polynomial of $\sin(x+y)$.
+Sine's second derivative at zero vanishes.
+Constant zero; linear term $x+y$; every quadratic term vanishes.
+$x+y$.
+In the origin second-order expansion of $e^{x+y}$, what is the coefficient of $xy$?
+Expand the square or count both contributions.
+$\frac12(2xy)=xy$; coefficient 1.
+Do second partials existing at one point suffice for this remainder theorem?
+Check neighborhood hypotheses.
+The theorem requires twice continuous differentiability nearby.
+Values at a single point do not establish that sufficient condition.
+Not enough to apply it directly.
+Where does a second-order mixed term come from?
+Interaction between both variables
+An arbitrary correction
+It is always zero
+Each chain-rule differentiation order contributes.
+Model $f=e^{x+y}$ to second order at zero; compare exact and approximate heights along $(h,h)$.
+Must the second-order model be exact away from its center?
+Join the center to the target by a line and apply single-variable Taylor along it.
+Larger displacement
+Set equal-coordinate displacement $h$ to $0.5$.
+The quadratic approximation still has visible remainder.
+Small displacement
+Set equal-coordinate displacement $h$ to $0.1$.
+The quadratic model lies closer than the tangent plane to the exponential surface.
+Smaller displacement
+Set equal-coordinate displacement $h$ to $0.01$.
+The cubic bound decreases further; exact equality still needs a remainder.

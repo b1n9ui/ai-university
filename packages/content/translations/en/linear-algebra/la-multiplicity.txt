@@ -1,0 +1,62 @@
+Repeated roots and eigenspace dimension
+Root count differs from direction count
+A repeated eigenvalue need not provide enough independent eigenvectors.
+A polynomial counts repeated roots. The eigenspace dimension counts the independent directions actually available.
+Distinguish algebraic and geometric multiplicity
+Recognize matrices missing eigendirections
+What is geometric multiplicity?
+Geometric multiplicity is $\dim\ker(A-\lambda I)$. It is at least one and at most the root's algebraic multiplicity.
+Why can directions be missing?
+A shear-type matrix can have identical eigenvalues yet only one eigenline. Elimination reveals this deficit directly.
+What about distinct eigenvalues?
+Eigenvectors for distinct eigenvalues are independent. For a repeated eigenvalue, choose a basis within its eigenspace.
+Repeated roots and eigenspace dimension
+Discuss multiplicities only for actual eigenvalues, and calculate eigenspaces over the specified field.
+Assume a shortest nontrivial dependence relation.
+Apply the matrix, then subtract the first eigenvalue times the original relation.
+Distinct eigenvalues give a shorter relation, a contradiction.
+Same roots, different geometry
+Compare $I_2$ and $J=\begin{pmatrix}1&1\\0&1\end{pmatrix}$.
+Both characteristic polynomials are $(\lambda-1)^2$.
+The kernel of $I_2-I_2=0$ is the plane; $J-I_2$ forces the second component to zero.
+Their geometric multiplicities are 2 and 1 respectively.
+A missing direction
+Why does $J$ lack two independent eigenvectors?
+Every eigenvector is $(t,0)$ with $t\ne0$.
+Any two are collinear.
+Its eigenspace is only one-dimensional.
+A double root guarantees diagonalizability.
+Check the geometric multiplicity too.
+Eigenvectors for distinct eigenvalues may be collinear.
+One nonzero vector cannot have two different scaling values.
+Find the geometric multiplicity of eigenvalue $3$ for $3I_3$.
+Every direction scales by three.
+The eigenspace is the whole three-dimensional space.
+How many independent eigenvectors does a three-by-three matrix with three distinct real eigenvalues have?
+Distinct eigenvalues give independent directions.
+Choose one eigenvector for each eigenvalue, giving three independent vectors.
+Find the eigenspace of $J=\begin{pmatrix}2&1\\0&2\end{pmatrix}$.
+Find the kernel.
+$(J-2I)v=0$ requires $v_2=0$.
+$\operatorname{span}((1,0))$.
+Can geometric multiplicity exceed algebraic multiplicity?
+Extend an eigenspace basis and inspect the block-triangular matrix.
+The eigenspace dimension contributes that many characteristic-polynomial factors.
+No.
+$A=\begin{pmatrix}1&c\\0&1\end{pmatrix}$ always has eigenvalue one. A nonzero shear leaves just one real eigenline.
+Why does the eigenspace expand from a line to the plane exactly when the shear is zero?
+Can a two-by-two matrix with a double root and a one-dimensional eigenspace be diagonalized?
+Yes
+No
+It depends on vector length
+One independent eigendirection is missing.
+When geometric multiplicity is deficient, more calculation cannot find the missing direction: it does not exist.
+Missing a direction
+Set $c=1$.
+Algebraic multiplicity two and geometric multiplicity one: not diagonalizable.
+Reduce the shear
+Set $c=0.1$.
+It is still nonzero, so geometric multiplicity remains one.
+Exactly the identity
+Set $c=0$.
+The eigenspace becomes the whole plane and diagonalization is possible.

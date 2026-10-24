@@ -1,0 +1,62 @@
+Choosing discrete models and approximations
+Choose the exact model first, then explain what an approximation preserves.
+Choose the exact model first, then explain what an approximation preserves.
+Binomial models admit Poisson or normal approximations in different parameter regimes.
+Choose the exact benchmark
+Approximate rare events
+Choose the exact benchmark
+Use binomial for fixed independent trials, hypergeometric without replacement, geometric for first-success waits, and possibly Poisson for interval counts.
+Approximate rare events
+With many trials and small success probability, approximate binomial by Poisson with matching mean. Equal means alone do not ensure accuracy.
+Normal approximation and continuity correction
+When both expected binomial counts are sufficiently large, use a normal approximation with half-unit correction for integer events. Rules of thumb are not universal error guarantees.
+Avoid severe skew and extreme tails for binomial normal approximation; commonly check that $np,n(1-p)$ are sufficiently large.
+Avoid severe skew and extreme tails for binomial normal approximation; commonly check that $np,n(1-p)$ are sufficiently large.
+Poisson approximation needs many independent small-probability opportunities; computable exact probabilities remain the benchmark.
+Match binomial mean and variance.
+Replace integer lattice points by continuous cells.
+Then standardize.
+Approximate zero successes
+For $n=100,p=0.01$, compare exact zero probability with Poisson approximation.
+Exact: $0.99^{100}\approx0.3660$.
+Approximate: $e^{-1}\approx0.3679$.
+Close, but unequal.
+Find the corrected boundary
+For a continuous normal approximation to $P(X\ge5)$, what boundary is used?
+The cell for integer five starts at $4.5$.
+Use right-tail threshold $4.5$.
+$4.5$.
+A binomial has mean ten and variance nine. What standard deviation should the normal approximation use?
+Standard deviation is the square root of variance.
+$\sqrt9=3$.
+$3$.
+For $P(X\le8)$, what continuous boundary is used?
+Include the half-cell above eight.
+The upper boundary is $8.5$.
+$8.5$.
+Is a normal approximation necessarily good for $n=100,p=0.001$?
+Inspect the smaller expected count.
+Expected successes are only $0.1$, giving strong skew.
+Usually unsuitable.
+Does a difference between exact and approximate probabilities necessarily indicate a programming error?
+First allow approximation error.
+Approximation permits differences; inspect their size and the assumptions.
+Not necessarily.
+Which integer event is equivalent to $P(X<5)$ before approximation?
+Resolve the integer event before continuity correction.
+Matching means make distributions interchangeable
+Shape, variance, and tails also affect probabilities.
+A rule-of-thumb threshold guarantees all tails are accurate
+Extreme tails can still have large relative errors.
+Increase success probability. How does Poisson approximation to binomial change?
+Exact binomial and Poisson masses are compared side by side; approximation is not equality.
+Shape, variance, and tails also affect probabilities.
+Binomial success probability: 0.02
+Set the probability to $0.02$ and compare the figure and readouts.
+At these parameters: binomial mean $1$; variance $0.98$; total variation distance $0.00558341$.
+Binomial success probability: 0.005
+Set the probability to $0.005$ and compare the figure and readouts.
+At these parameters: binomial mean $0.25$; variance $0.24875$; total variation distance $0.000855723$.
+Binomial success probability: 0.5
+Set the probability to $0.5$ and compare the figure and readouts.
+At these parameters: binomial mean $25$; variance $12.5$; total variation distance $0.166965$.

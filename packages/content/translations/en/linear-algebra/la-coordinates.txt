@@ -1,0 +1,64 @@
+Basis coordinates and change of basis
+The vector stays; its description changes
+A change of basis changes a vector's coordinates, not the vector itself.
+Different road networks can describe the same location. Coordinates are a description, not the location.
+Calculate coordinates in a specified basis
+Form change-of-basis and similarity transformations
+How do you find coordinates?
+Put basis vectors in columns of $P_B$ and solve $P_B[v]_B=v$. A subspace basis matrix can be rectangular; the basis still guarantees uniqueness.
+How do you change between bases?
+For bases of all of $\mathbb R^n$, use $[v]_C=P_C^{-1}P_B[v]_B$. Recover standard coordinates first, then convert to the new basis.
+How does an operator's matrix change?
+Matrices of one operator in different bases are similar. If $P$ converts new coordinates to old ones, the new matrix is $P^{-1}AP$.
+Basis coordinates and change of basis
+When writing inverses, both bases span coordinate spaces of the same full dimension. Identify the input and output coordinate systems of each map.
+Convert new coordinates to old ones.
+Apply the operator in old coordinates.
+Convert the output back to new coordinates.
+Coordinates in an oblique basis
+Given $B=((1,1),(1,-1))$, find the basis coordinates of $(4,2)$.
+$a+b=4,a-b=2$.
+$a=3,b=1$.
+$[(4,2)]_B=(3,1)^T$.
+The matrix after changing basis
+Given $A=\operatorname{diag}(2,1),P=\begin{pmatrix}1&1\\0&1\end{pmatrix}$, find $P^{-1}AP$.
+$AP=\begin{pmatrix}2&2\\0&1\end{pmatrix}$.
+Multiply on the left by $P^{-1}=\begin{pmatrix}1&-1\\0&1\end{pmatrix}$.
+$\begin{pmatrix}2&1\\0&1\end{pmatrix}$.
+Changing coordinates moves the vector.
+The vector stays fixed; the basis and coefficients change.
+Multiply by the same matrix on both sides to change basis.
+Usually one side uses the basis change and the other its inverse.
+Given $B=((2,0),(0,1))$, find the coordinates of $(6,4)$.
+Divide by each corresponding scale.
+$3(2,0)+4(0,1)=(6,4)$.
+$(3,4)^T$.
+Given $[v]_B=(1,-2)$ and $B=((1,0),(1,1))$, find standard coordinates.
+Combine the basis vectors with those coefficients.
+$(1,0)-2(1,1)=(-1,-2)$.
+$(-1,-2)$.
+What happens to coordinates when basis vectors swap order?
+Each coefficient follows its basis vector.
+The two coordinate components swap too.
+Swap their order.
+Must $P^{-1}AP$ and $A$ represent different operators?
+Distinguish matrix entries from the coordinate choice.
+They can represent the same operator in different bases.
+Not necessarily.
+Fix $v=(1,1)$ with basis $(1,0),(c,1)$. Changing the basis changes its coordinates and decomposition, while the vector stays fixed.
+How do coordinates change when the basis becomes oblique?
+What stays unchanged during a change of basis?
+The vector itself
+Every coordinate component
+The basis list
+The vector is the object; basis coordinates describe it in a chosen basis.
+For every change-of-basis formula, identify which coordinates enter and which leave. This is more reliable than memorizing multiplication order.
+Standard basis
+Set $c=0$.
+The coordinates are $(1,1)$.
+Oblique basis
+Set $c=1$.
+Coordinates become $(0,1)$, while the vector remains $(1,1)$.
+Tilt the other way
+Set $c=-1$.
+Coordinates become $(2,1)$.

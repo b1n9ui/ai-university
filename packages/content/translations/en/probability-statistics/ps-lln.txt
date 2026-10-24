@@ -1,0 +1,65 @@
+The law of large numbers and relative frequency
+Averaging independent repetitions stabilizes random fluctuations.
+Averaging independent repetitions stabilizes random fluctuations.
+A frequency approaching probability does not mean the next result compensates for earlier deviations.
+Identify what converges
+Bound error probabilities
+Identify what converges
+The weak law says a sample mean approaches its expectation in probability. It does not require every finite path to approach monotonically.
+Bound error probabilities
+For independent identically distributed observations with finite variance, the sample mean's variance is population variance divided by sample size. Chebyshev bounds deviation probabilities.
+Respect the assumptions
+Independent identical sampling is sufficient here. Selection bias, strong dependence, and heavy tails without a finite mean prevent direct use of this version.
+This proof assumes independent identically distributed observations, finite variance, and fixed $\varepsilon>0$.
+This proof assumes independent identically distributed observations, finite variance, and fixed $\varepsilon>0$.
+More general laws require their own assumptions. No finite sample is promised to match the expectation exactly.
+Use linearity to find the mean.
+Independence reduces the variance of the average.
+Apply Chebyshev to the average.
+A frequency error bound
+Observe 400 independent trials with success probability one half. Bound the probability that frequency differs from one half by at least $0.1$.
+Bernoulli variance is one quarter.
+Substitute into $0.25/(400\times0.01)$.
+At most $0.0625$.
+Convergence need not be monotone
+If the current frequency exactly equals the true probability, can the next trial move it away?
+The next trial can still succeed or fail.
+A finite average can deviate again.
+Yes. Convergence does not require the error to shrink at every step.
+Population variance is nine and the independent sample size is 100. Find the mean's variance.
+Divide by sample size.
+$9/100=0.09$.
+$0.09$.
+If sample size quadruples, by what factor does the sample mean's variance change?
+Use inverse proportionality.
+It becomes one quarter as large.
+A factor of $1/4$.
+After ten consecutive failures, does the law require the next trial to succeed?
+Distinguish a long-run average from the next conditional probability.
+In independent trials, the next success probability is unchanged.
+No.
+Can the independent-sample law be used after recording the same random value 1,000 times?
+The records are perfectly dependent.
+Their average is still the original random value.
+No.
+Must a finite average get closer to expectation at every step?
+Yes
+No
+Only for a fair coin
+The law describes the overall behavior of error probabilities as sample size increases.
+Long-run regularity compensates on the next trial
+Independent trials have no next-trial compensation mechanism.
+More records always mean more independent information
+Copying dependent records does not create independent observations.
+As one sampling path grows, must its error decrease at each step?
+A seeded Bernoulli path displays frequency fluctuations separately from the theoretical probability line.
+Independent trials have no next-trial compensation mechanism.
+Cumulative trials: 200
+Set cumulative trials to $200$ and compare the diagram and readings.
+At this preset: successes $87$; cumulative frequency $0.435$; absolute error $0.065$; theoretical frequency standard deviation $0.0353553$.
+Cumulative trials: 10
+Set cumulative trials to $10$ and compare the diagram and readings.
+At this preset: successes $5$; cumulative frequency $0.5$; absolute error $0$; theoretical frequency standard deviation $0.158114$.
+Cumulative trials: 1000
+Set cumulative trials to $1000$ and compare the diagram and readings.
+At this preset: successes $460$; cumulative frequency $0.46$; absolute error $0.04$; theoretical frequency standard deviation $0.0158114$.

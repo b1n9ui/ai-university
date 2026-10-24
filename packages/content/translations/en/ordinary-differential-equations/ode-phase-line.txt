@@ -1,0 +1,65 @@
+Autonomous equations and phase lines
+State alone determines the next direction
+Where are equilibria?
+For $y'=f(y)$, solve $f(y_*)=0$. Equilibrium solutions are constant functions.
+How do you determine arrows?
+Test the sign between neighboring zeros. Positive means increasing state; negative means decreasing state.
+A local derivative test
+If $f'(y_*)<0$, equilibrium is locally asymptotically stable. A positive derivative gives instability; zero needs higher-order or sign analysis.
+Write the displacement from equilibrium.
+Expand the first-order term.
+A nonzero linear term determines nearby arrows.
+Logistic equilibria
+Classify equilibria of $y'=y(1-y)$.
+Its zeros are zero and one.
+The derivative $1-2y$ is positive at zero and negative at one.
+Zero is unstable; one is locally asymptotically stable.
+Attraction from one side
+Classify zero for $y'=y^2$.
+Rates on both sides are nonnegative.
+Negative states approach zero; positive states move away to the right.
+One-sided attraction, but unstable overall; often called semistable.
+Is zero stable for $y'=-y^3$?
+With zero derivative, inspect signs on both sides.
+Positive states decrease and negative states increase, both toward zero.
+Asymptotically stable.
+Classify zero for $y'=y^3$.
+Both sides point outward.
+Positive states rise and negative states fall.
+Unstable.
+Under local uniqueness, can a one-dimensional autonomous solution cross an equilibrium and leave it?
+Compare it with the constant equilibrium solution.
+Passing through the same initial state would violate uniqueness.
+No.
+Does $f'(y_*)=0$ guarantee stability?
+Compare positive and negative cubic fields.
+The same zero derivative permits opposite stabilities.
+Inconclusive.
+A zero equilibrium derivative prevents further study.
+Use signs or higher-order terms instead.
+Attraction from one side implies full stability.
+Stability must control all sufficiently close states on both sides.
+Signs of a scalar autonomous field determine increase and decrease; equilibria divide the state axis into intervals.
+Each interval's arrow reveals the motion without first solving explicitly.
+Draw phase lines and classify equilibria
+Distinguish local stability from one-sided attraction
+Autonomous equations and phase lines
+f'(y_*)<0\Rightarrow y_*\text{ locally asymptotically stable}
+$f$ is continuously differentiable near equilibrium. A zero derivative cannot classify stability using only the linear term.
+What do phase-line arrows directly represent?
+Whether state increases or decreases
+All solutions have constant speed
+Exact time values of solutions
+The right-hand side's sign supplies the arrows.
+Find stationary points, then read the directions between them to understand scalar long-term trends.
+Below capacity
+The population rises without crossing equilibrium one.
+Set initial value $y_0$ to $0.3$ and observation time $t$ to $5$.
+Above capacity
+The population decreases toward one.
+Set initial value $y_0$ to $1.8$ and observation time $t$ to $5$.
+Exactly at equilibrium
+The equilibrium solution stays fixed.
+Set initial value $y_0$ to $1$ and observation time $t$ to $5$.
+Capacity is one. Positive values below rise and those above fall. The dashed line marks equilibrium; the zero equilibrium is discussed separately in the text.
+Does a population above capacity keep growing?

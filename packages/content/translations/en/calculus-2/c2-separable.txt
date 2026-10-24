@@ -1,0 +1,65 @@
+Separable equations
+Keep solutions that division might remove
+If a rate factors into a function of each variable, separate and integrate. Find equilibria before dividing by the dependent-variable factor.
+$y\prime=xy$ can be written $\frac{dy}{y}=x dx$, but division by $y$ temporarily loses the zero solution.
+Separating variables
+On an interval with $g(y)\neq0$, rewrite $y\prime=f(x)g(y)$ as $\frac1{g(y)}dy=f(x)dx$, then integrate.
+Keeping equilibrium solutions
+Check every constant function $y=c$ satisfying $g(c)=0$ in the original equation. Division may remove it from the derived expression.
+Initial values and valid intervals
+Use the initial value to set the constant. If a denominator vanishes at a finite point, use the interval containing the initial point without crossing it.
+Keep solutions that division might remove
+Work on branches satisfying $g(y)\neq0$; separately retain equilibria from $g(c)=0$. Check initial values and domains afterward.
+Separate variables in $y\prime=xy$.
+Integrate both sides.
+Combine sign branches and restore equilibria.
+An initial-value problem
+Solve $y\prime=2xy$, $y(0)=3$.
+The nonzero branch gives $\ln|y|=x^2+C$.
+$y=Ae^{x^2}$; the initial value gives $A=3$.
+$y=3e^{x^2}$.
+Finite-time blow-up
+Solve $y\prime=y^2$, $y(0)=1$, stating its interval.
+$\int y^{-2}dy=\int dx$, giving $-\frac1y=x+C$.
+The initial value gives $C=-1$, hence $y=\frac1{1-x}$.
+$y=\frac1{1-x}$; the maximal interval containing the initial point is $(-\infty,1)$.
+Dividing by an unknown function never loses solutions.
+Record equilibria associated with zero factors first.
+An explicit formula may be continued across any point where it can be evaluated.
+Do not join intervals across a singularity into one initial-value solution.
+Solve $y\prime=-y,y(0)=4$.
+$4e^{-x}$.
+Separate and exponentiate.
+$\ln|y|=-x+C$; the initial value gives positive coefficient 4.
+Find the equilibria of $y\prime=y^2$.
+$y=0$.
+Find constants making the right side zero.
+The zero function has zero derivative. Retain it before dividing by a square.
+Given $y\prime=xy,y(0)=1$, find $y(1)$.
+$e^{1/2}$.
+Find the initial-value solution first.
+$y=e^{x^2/2}$; substitute 1.
+Find the maximal initial-value interval for $y\prime=y^2,y(0)=-1$.
+$(-1,\infty)$.
+Locate the denominator's zero.
+$y=-\frac1{x+1}$; the singularity is $-1$. Choose the side containing zero.
+Before dividing by a dependent-variable factor, what should you do?
+Ignore the zero-factor case
+Check equilibrium solutions
+Divide away the initial value
+Division is valid only on nonzero branches.
+Separation is a calculation method, not permission to change the solution set. Each division must account for excluded solutions.
+Coarse steps
+Set the count to 4.
+On $[0,0.8]$, the exact endpoint value is 5; four Euler steps substantially underestimate it.
+Reduce the step size
+Set the count to 16.
+The step size falls to 0.05; compare approximation and exact solution.
+Refine further
+Set the count to 64.
+Improvement on a finite interval does not permit crossing the exact singularity at 1.
+Compare exact and Euler solutions of $y\prime=y^2$, $y(0)=1$ on $[0,0.8]$.
+How does reducing step size change the gap between polygon and exact curve?
+Separate variables on valid branches
+Retain equilibria excluded by division
+Determine the valid interval containing the initial point

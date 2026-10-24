@@ -1,0 +1,62 @@
+Determinants and oriented volume
+The signed volume scale
+The determinant's magnitude gives volume scaling; its sign records an orientation reversal.
+A matrix sends a unit square or cube to a parallelogram or parallelepiped. Collapsing into a lower dimension makes the corresponding area or volume factor zero.
+Calculate area and volume scale factors
+Distinguish orientation from geometric size
+How do you calculate in two dimensions?
+Columns $(a,c),(b,d)$ span signed area $ad-bc$. Geometric area is its absolute value, not a signed quantity.
+How do you interpret three dimensions?
+Three columns span a parallelepiped. Swapping columns reverses orientation without changing geometric volume. Coplanar columns give zero volume.
+Does the determinant describe everything?
+No. Different stretches and shears can share a volume factor. Preserving area does not guarantee preserving lengths or angles.
+Determinants and oriented volume
+Determinants are defined for square matrices. Use Euclidean volume of the same dimension; degenerate images have zero volume in that dimension.
+Begin with diagonal stretches.
+Swapping two directions reverses orientation.
+Dependence destroys volume in the original dimension.
+Area and orientation
+What area does $A=\begin{pmatrix}1&2\\3&1\end{pmatrix}$ produce from the unit square?
+$\det A=1-6=-5$.
+The absolute value gives area scaling; the negative sign reverses orientation.
+Area 5, with reversed orientation.
+Spatial volume
+Find the volume scale factor of $A=\operatorname{diag}(2,3,-1)$.
+Its determinant is $-6$.
+Take the absolute value for geometric volume.
+6, with reversed orientation.
+A negative determinant means negative area.
+Area is nonnegative; the sign describes orientation.
+Equal determinants imply equal transformations.
+One number cannot determine an entire matrix.
+What is $\det\operatorname{diag}(2,5)$?
+Multiply the diagonal entries.
+$2\cdot5=10$.
+What area factor does a two-by-two matrix with equal columns have?
+The two directions coincide.
+The parallelogram degenerates into a segment.
+Does reflection preserve area?
+Separate magnitude from sign.
+An orthogonal reflection has determinant $-1$ and absolute value one.
+Yes, while reversing orientation.
+Does a three-dimensional map with $\det A=2$ double every length?
+Consider a diagonal matrix.
+$\operatorname{diag}(2,1,1)$ stretches only one direction.
+No.
+The columns are $(1,0,0),(0,1,0),(c,0,a)$. Shearing changes shape; $a$ changes signed volume.
+Which directions become dependent when volume reaches zero?
+What does a negative determinant mean?
+Negative length
+Reversed orientation
+Undefined
+Geometric volume scaling uses the determinant's absolute value.
+A determinant reduces a spatial deformation to one volume reading. It detects collapse without specifying the stretch of every direction.
+Unit volume
+Set $a=1,c=0$.
+Determinant and volume are both one.
+Shear
+Set $a=1,c=1$.
+The shape tilts, but volume remains one.
+Reverse orientation
+Set $a=-1,c=1$.
+Signed volume becomes minus one; geometric volume remains one.

@@ -1,0 +1,64 @@
+Separable equations
+Put the variables on separate sides
+When can you separate?
+If $y'=g(t)h(y)$, write $dy/h(y)=g(t)dt$ on a solution segment where $h(y)\ne0$.
+What about zeros?
+Find $h(y_*)=0$ first. Constants $y=y_*$ solve the original equation and would be lost by division.
+How do you finish the answer?
+The integrated relation may be implicit. Choose the initial-value branch and state singularities the solution cannot cross.
+For $y'=ty$, retain the zero solution first.
+Divide nonzero solutions by the state variable.
+Integrate and absorb the sign into the constant.
+A rate increasing with time
+Solve $y'=ty,y(0)=2$.
+For a nonzero solution, integration gives $y=Ke^{t^2/2}$.
+The initial value gives $K=2$.
+$y=2e^{t^2/2}$, valid on the real line.
+Retain equilibria
+Find the equilibria of $y'=y(1-y)$.
+Set the state factor to zero.
+$y(1-y)=0$ gives two constant values.
+$y\equiv0$ and $y\equiv1$.
+Solve $y'=2ty,y(0)=3$.
+Integrate the logarithmic derivative.
+$\ln\lvert y\rvert=t^2+C$; the initial condition gives coefficient $3$.
+$y=3e^{t^2}$.
+Find the equilibria of $y'=y(y-2)$.
+Do not divide first.
+Zero right-hand side gives $y=0,2$.
+$y\equiv0,2$.
+Solve $y'=t/y,y(0)=2$.
+Multiply by the unknown and integrate.
+$y^2=t^2+4$; the initial condition selects the positive branch.
+$y=\sqrt{t^2+4}$.
+Which solution is lost by dividing $y'=y^2$ by $y^2$?
+Check where the divisor is zero.
+The zero function solves the original equation but does not permit this division.
+$y\equiv0$.
+The nonzero separated family includes every solution.
+Check zeros of the divided factor separately.
+Always take the positive square root.
+Initial conditions and continuity determine the branch.
+If the rate is a product of time and state factors, integrate the two variables separately.
+Separation rewrites a differential relation along one solution. Save the state factor's zero solutions before dividing.
+Separate and integrate
+Check equilibria and valid intervals
+Separable equations
+Use the separated form where $h(y)\ne0$. Check equilibria separately and require continuous integrands on the interval used.
+What should you check before separating variables?
+Whether the divisor can vanish
+Whether a three-dimensional plot is required
+Whether the constant can be deleted
+Zeros of the divisor may give equilibrium solutions.
+Keep the stationary solutions, then divide and integrate the changing ones.
+Positive initial value
+The positive solution grows.
+Set initial value $y_0$ to $1$ and observation time $t$ to $1$.
+Negative initial value
+Negative solutions satisfy the same separable equation.
+Set initial value $y_0$ to $-1$ and observation time $t$ to $1$.
+Zero solution
+The constant solution excluded by division really exists.
+Set initial value $y_0$ to $0$ and observation time $t$ to $2$.
+Select positive, negative, and zero initial values to compare the nonzero family with the zero solution that separation must retain.
+Is the curve still a valid solution when the initial value is zero?

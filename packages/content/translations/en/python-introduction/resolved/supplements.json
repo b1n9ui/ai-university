@@ -1,0 +1,333 @@
+{
+  "chapterReviews": [
+    {
+      "chapterId": "chapter-1",
+      "questions": [
+        {
+          "problem": "Read quantity 3 at unit price 125 cents and display the total in cents.",
+          "hint": "Convert with int, then multiply.",
+          "solution": [
+            "Input starts as text.",
+            "3 * 125 = 375 cents."
+          ],
+          "answer": {
+            "code": "count = int(input())\nprint(count * 125)\n",
+            "stdout": "375\n",
+            "stdin": "3\n"
+          },
+          "id": "review-1-1"
+        },
+        {
+          "problem": "Read 12 candies and a bag size of 5. Print full bags and the remainder.",
+          "hint": "Use // and % respectively.",
+          "solution": [
+            "Two bags use 10 candies.",
+            "2 candies remain."
+          ],
+          "answer": {
+            "code": "total = int(input())\nprint(total // 5)\nprint(total % 5)\n",
+            "stdout": "2\n2\n",
+            "stdin": "12\n"
+          },
+          "id": "review-1-2"
+        }
+      ]
+    },
+    {
+      "chapterId": "chapter-2",
+      "questions": [
+        {
+          "problem": "Sum 1 through 5, then check which numbers were added.",
+          "hint": "Set stop to 6.",
+          "solution": [
+            "The terms are 1, 2, 3, 4, 5.",
+            "Their sum is 15."
+          ],
+          "answer": {
+            "code": "total = 0\nfor number in range(1, 6):\n    print(number)\n    total = total + number\nprint(total)\n",
+            "stdout": "1\n2\n3\n4\n5\n15\n",
+            "stdin": ""
+          },
+          "id": "review-2-1"
+        },
+        {
+          "problem": "Count down from 2 to 1, subtracting 1 each time. Print Done at the end.",
+          "hint": "Continue while remaining > 0.",
+          "solution": [
+            "After printing 2, the value becomes 1.",
+            "After printing 1, it becomes 0 and the loop stops."
+          ],
+          "answer": {
+            "code": "remaining = 2\nwhile remaining > 0:\n    print(remaining)\n    remaining = remaining - 1\nprint(\"Done\")\n",
+            "stdout": "2\n1\nDone\n",
+            "stdin": ""
+          },
+          "id": "review-2-2"
+        }
+      ]
+    },
+    {
+      "chapterId": "chapter-3",
+      "questions": [
+        {
+          "problem": "Count each fruit in [\"apple\", \"pear\", \"apple\"].",
+          "hint": "Accumulate in a dictionary keyed by fruit name.",
+          "solution": [
+            "apple occurs twice.",
+            "pear occurs once."
+          ],
+          "answer": {
+            "code": "counts = {}\nfor name in [\"apple\", \"pear\", \"apple\"]:\n    counts[name] = counts.get(name, 0) + 1\nprint(counts[\"apple\"])\nprint(counts[\"pear\"])\n",
+            "stdout": "2\n1\n",
+            "stdin": ""
+          },
+          "id": "review-3-1"
+        },
+        {
+          "problem": "Copy [3, 1], append 2 to the copy, and print both lists.",
+          "hint": "Use copy(), not assignment to another name.",
+          "solution": [
+            "Create an independent one-level copy.",
+            "The original does not gain 2."
+          ],
+          "answer": {
+            "code": "original = [3, 1]\nother = original.copy()\nother.append(2)\nprint(original)\nprint(other)\n",
+            "stdout": "[3, 1]\n[3, 1, 2]\n",
+            "stdin": ""
+          },
+          "id": "review-3-2"
+        }
+      ]
+    },
+    {
+      "chapterId": "chapter-4",
+      "questions": [
+        {
+          "problem": "Write read_count to convert integer text to a nonnegative quantity. Test \"3\", \"0\", \"-1\", and \"three\".",
+          "hint": "After conversion, reject values below 0.",
+          "solution": [
+            "3 and 0 are valid.",
+            "-1 fails the range check; three fails conversion."
+          ],
+          "answer": {
+            "code": "def read_count(text):\n    count = int(text)\n    if count < 0:\n        raise ValueError(\"Quantity cannot be negative\")\n    return count\n\nfor text in [\"3\", \"0\", \"-1\", \"three\"]:\n    try:\n        print(read_count(text))\n    except ValueError:\n        print(\"Enter a nonnegative integer\")\n",
+            "stdout": "3\n0\nEnter a nonnegative integer\nEnter a nonnegative integer\n",
+            "stdin": ""
+          },
+          "id": "review-4-1"
+        },
+        {
+          "problem": "Write cost(price, count=1). Check buying one and two items at unit price 5.",
+          "hint": "The default quantity applies only when omitted.",
+          "solution": [
+            "Omitting count gives cost 5.",
+            "Passing 2 gives cost 10."
+          ],
+          "answer": {
+            "code": "def cost(price, count=1):\n    return price * count\n\nprint(cost(5))\nprint(cost(price=5, count=2))\n",
+            "stdout": "5\n10\n",
+            "stdin": ""
+          },
+          "id": "review-4-2"
+        }
+      ]
+    },
+    {
+      "chapterId": "chapter-5",
+      "questions": [
+        {
+          "problem": "Save {\"count\": 3} in a JSON file, then read it and display the count.",
+          "hint": "Use dumps before writing; after reading text, use loads.",
+          "solution": [
+            "Use UTF-8 for both writing and reading.",
+            "After restoring the dictionary, retrieve 3 by key."
+          ],
+          "answer": {
+            "code": "import json\ndata = {\"count\": 3}\nwith open(\"record.json\", \"w\", encoding=\"utf-8\") as file:\n    file.write(json.dumps(data))\nwith open(\"record.json\", \"r\", encoding=\"utf-8\") as file:\n    text = file.read()\nrestored = json.loads(text)\nprint(restored[\"count\"])\n",
+            "stdout": "3\n",
+            "stdin": ""
+          },
+          "id": "review-5-1"
+        },
+        {
+          "problem": "Check that 305 cents displays as 3.05 units, not 3.50.",
+          "hint": "Calculate independently before comparing the text.",
+          "solution": [
+            "305 / 100 = 3.05.",
+            ":.2f controls only the displayed decimal places."
+          ],
+          "answer": {
+            "code": "def display(cents):\n    return f\"{cents / 100:.2f} units\"\n\nassert display(305) == \"3.05 units\"\nprint(\"Pass\")\n",
+            "stdout": "Pass\n",
+            "stdin": ""
+          },
+          "id": "review-5-2"
+        }
+      ]
+    }
+  ],
+  "exam": [
+    {
+      "problem": "Write count_passed(scores) to count scores of at least 60. Test [59, 60, 90] and an empty list. Inputs are integers from 0 through 100.",
+      "hint": "Use for and if, starting the count at 0.",
+      "solution": [
+        "59 fails; 60 and 90 pass.",
+        "An empty list contains nobody, so the count is 0."
+      ],
+      "answer": {
+        "code": "def count_passed(scores):\n    passed = 0\n    for score in scores:\n        if score >= 60:\n            passed = passed + 1\n    return passed\n\nassert count_passed([59, 60, 90]) == 2\nassert count_passed([]) == 0\nprint(\"Pass\")\n",
+        "stdout": "Pass\n",
+        "stdin": ""
+      },
+      "id": "exam-1"
+    },
+    {
+      "problem": "Count [\"apple\", \"pear\", \"apple\"] and print apple and pear counts without changing the original list.",
+      "hint": "Store results in a separate dictionary.",
+      "solution": [
+        "The default in get starts a new count at 0.",
+        "Read the original list without modifying it."
+      ],
+      "answer": {
+        "code": "items = [\"apple\", \"pear\", \"apple\"]\ncounts = {}\nfor name in items:\n    counts[name] = counts.get(name, 0) + 1\nprint(counts[\"apple\"])\nprint(counts[\"pear\"])\nassert items == [\"apple\", \"pear\", \"apple\"]\n",
+        "stdout": "2\n1\n",
+        "stdin": ""
+      },
+      "id": "exam-2"
+    },
+    {
+      "problem": "Read 125 and 75 cents from a one-column CSV and sum them as integers. Report invalid text such as three. The header is amount and each record has one column.",
+      "hint": "Combine CSV reading, a function, and exception handling.",
+      "solution": [
+        "The valid input totals 200.",
+        "Invalid text makes int raise ValueError; the caller displays an explanation."
+      ],
+      "answer": {
+        "code": "import csv\nimport io\n\ndef total_cents(text):\n    total = 0\n    for row in csv.DictReader(io.StringIO(text)):\n        amount = int(row[\"amount\"])\n        if amount <= 0:\n            raise ValueError(\"Amount must be positive\")\n        total = total + amount\n    return total\n\nassert total_cents(\"amount\\n125\\n75\\n\") == 200\nprint(\"Total check passed\")\ntry:\n    total_cents(\"amount\\nthree\\n\")\nexcept ValueError:\n    print(\"Invalid amount format\")\n",
+        "stdout": "Total check passed\nInvalid amount format\n",
+        "stdin": ""
+      },
+      "id": "exam-3"
+    },
+    {
+      "problem": "Build a file utility: double each item of [2, 3], save as JSON, read it back, and check for [4, 6].",
+      "hint": "Process the list, serialize it, write, read, and compare.",
+      "solution": [
+        "The new list is [4, 6].",
+        "Check the structure and values after reading the JSON file."
+      ],
+      "answer": {
+        "code": "import json\nvalues = [2, 3]\nresult = [value * 2 for value in values]\nwith open(\"result.json\", \"w\", encoding=\"utf-8\") as file:\n    file.write(json.dumps(result))\nwith open(\"result.json\", \"r\", encoding=\"utf-8\") as file:\n    restored = json.loads(file.read())\nassert restored == [4, 6]\nprint(\"Pass\")\n",
+        "stdout": "Pass\n",
+        "stdin": ""
+      },
+      "id": "exam-4"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Program",
+      "definition": "Instructions written for a computer to execute in order."
+    },
+    {
+      "term": "Interpreter",
+      "definition": "A program that reads and runs Python code."
+    },
+    {
+      "term": "Terminal",
+      "definition": "A window for entering commands and viewing results."
+    },
+    {
+      "term": "Variable",
+      "definition": "A name used to retrieve a current value, such as count."
+    },
+    {
+      "term": "Assignment",
+      "definition": "Evaluate the right side, then bind the left-hand name to that value."
+    },
+    {
+      "term": "String",
+      "definition": "Text data, usually written between matching quotes in code."
+    },
+    {
+      "term": "Integer",
+      "definition": "A number without a fractional part, such as 0, 3, or -2."
+    },
+    {
+      "term": "Type",
+      "definition": "A value's category, which determines its supported operations."
+    },
+    {
+      "term": "Expression",
+      "definition": "Code that evaluates to a value, such as 2 + 3."
+    },
+    {
+      "term": "Indentation",
+      "definition": "Leading spaces that group statements into a block."
+    },
+    {
+      "term": "Condition",
+      "definition": "A test with a true or false result, such as count >= 1."
+    },
+    {
+      "term": "Loop",
+      "definition": "Steps repeated over data or while a condition holds."
+    },
+    {
+      "term": "List",
+      "definition": "An ordered collection of values that preserves duplicates."
+    },
+    {
+      "term": "Index",
+      "definition": "A position used to retrieve data, starting at 0 for a list."
+    },
+    {
+      "term": "Dictionary",
+      "definition": "A mapping from keys to values, such as product names to prices."
+    },
+    {
+      "term": "Tuple",
+      "definition": "A fixed sequence whose positions cannot be reassigned."
+    },
+    {
+      "term": "Set",
+      "definition": "A collection of distinct values supporting membership tests."
+    },
+    {
+      "term": "Function",
+      "definition": "A named set of steps that can receive input when called."
+    },
+    {
+      "term": "Parameter",
+      "definition": "A name for an input received by a function."
+    },
+    {
+      "term": "Return value",
+      "definition": "A result sent back to the caller by return."
+    },
+    {
+      "term": "Module",
+      "definition": "An importable collection of tools, often stored in a .py file."
+    },
+    {
+      "term": "Exception",
+      "definition": "A signal of a problem during execution, such as ValueError."
+    },
+    {
+      "term": "Current working directory",
+      "definition": "The starting location for relative file paths."
+    },
+    {
+      "term": "Encoding",
+      "definition": "A convention for converting text to stored data. This book uses UTF-8."
+    },
+    {
+      "term": "Serialization",
+      "definition": "Converting structures such as lists and dictionaries to a storable format such as text."
+    },
+    {
+      "term": "Test",
+      "definition": "A comparison of an actual result with an independent expectation."
+    }
+  ]
+}

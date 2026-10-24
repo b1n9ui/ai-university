@@ -1,0 +1,65 @@
+Geometric and negative-binomial waiting times
+Fix a success target and count how many trials it takes.
+Fix a success target and count how many trials it takes.
+Binomial models fix trials and count successes. Waiting models fix successes and count trials.
+State the counting convention
+Understand memorylessness
+State the counting convention
+This book's geometric variable includes the first successful trial, so its minimum is one. Some references count preceding failures; align conventions first.
+Understand memorylessness
+Under independent repeated trials, previous failures do not change future single-trial success probability. A long wait does not make the next success inevitable.
+Wait for several successes
+A negative-binomial variable counts total trials to a specified success count. The last trial succeeds; earlier successes are placed before it. Inter-success waits are independent and identically distributed, giving $E[T_r]=r/p$ and $\operatorname{Var}(T_r)=r(1-p)/p^2$.
+Trials are mutually independent Bernoulli trials with fixed $0<p\le1$.
+Trials are mutually independent Bernoulli trials with fixed $0<p\le1$.
+Geometric totals satisfy $t\ge1$; negative-binomial totals satisfy $t\ge r$.
+First success requires a preceding run of failures.
+The no-success path gives the tail. Tail summation also yields $ET=\sum_{t=0}^{\infty}(1-p)^t=1/p$.
+Choose earlier success positions before the final success.
+First success
+With success probability one quarter, find the probability the first success is on trial three.
+Fail twice, then succeed.
+$(3/4)^2(1/4)=9/64$.
+$9/64$.
+Second success
+For fair trials, find the probability of reaching the second success exactly on trial four.
+The first three trials have exactly one success in three possible positions.
+Each four-trial sequence has probability $1/16$.
+$3/16$.
+With success probability $0.2$, what is the expected total wait for first success?
+Include the successful trial.
+$1/0.2=5$.
+$5$.
+With success probability one half, find the probability of waiting more than three trials.
+The first three all fail.
+$(1/2)^3=1/8$.
+$1/8$.
+After ten independent failures, does next-trial success probability automatically rise?
+The model keeps success probability fixed.
+Future trials are independent of the past.
+No.
+If a source counts failures before success, how does this book's geometric mean change?
+The variables differ by one.
+Failures equal total trials minus one.
+The mean is $(1-p)/p$.
+What is the minimum first-success total in this book?
+Zero
+One
+The reciprocal success probability
+The successful trial is included.
+Longer failure streaks make the next success likelier
+A fixed-probability independent model gives no such compensation.
+All geometric conventions are identical
+Total trials and preceding failures are two common conventions.
+Lower success probability. How does the waiting tail lengthen?
+The finite mass window explicitly reports unplotted tail probability.
+A fixed-probability independent model gives no such compensation.
+Per-trial success probability: 0.25
+Set per-trial probability to $0.25$ and compare the figure and readouts.
+At these parameters: mean total wait $4$; waiting variance $12$; probability inside window $0.996829$; tail outside $0.00317121$.
+Per-trial success probability: 0.05
+Set per-trial probability to $0.05$ and compare the figure and readouts.
+At these parameters: mean total wait $20$; waiting variance $380$; probability inside window $0.641514$; tail outside $0.358486$.
+Per-trial success probability: 1
+Set per-trial probability to $1$ and compare the figure and readouts.
+At these parameters: mean total wait $1$; waiting variance $0$; probability inside window $1$; tail outside $0$.

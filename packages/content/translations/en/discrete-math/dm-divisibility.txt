@@ -1,0 +1,64 @@
+Divisibility, greatest common divisors, and least common multiples
+Divisibility requires an integer quotient. The greatest common divisor is the largest shared positive factor.
+Divisibility requires an integer quotient. The greatest common divisor is the largest shared positive factor.
+The gcd measures shared factors. The lcm is the smallest positive integer divisible by both numbers.
+Use the definition of divisibility
+Combine divisibility relations
+Use the definition of divisibility
+An integer divides another if the latter equals the former times an integer. A nonzero divisor avoids division by zero.
+Combine divisibility relations
+A common divisor of two integers divides every integer linear combination of them. This fact underlies the Euclidean algorithm.
+Connect gcd and lcm
+For positive integers, gcd times lcm equals their product. Minimum and maximum prime-factor exponents explain why.
+The gcd is positive here; the lcm is used for positive integers.
+Both integers in the product formula are positive.
+A common divisor divides each term.
+Take any integer-coefficient linear combination.
+The expression in parentheses is still an integer.
+Find both quantities
+Find the gcd and lcm of twelve and eighteen.
+$12=2^2\cdot3,18=2\cdot3^2$.
+The minimum exponents give six; the maximum exponents give thirty-six.
+Six and thirty-six.
+A linear combination
+If five divides an integer sum and one summand, must it divide the other summand?
+The other summand is the sum minus the known summand.
+A common divisor divides the difference.
+Yes.
+What is the gcd of fifteen and twenty?
+List their common positive divisors.
+The common positive divisors are one and five.
+Five.
+Must coprime integers both be prime?
+Find coprime composite numbers.
+Eight and nine are coprime but both composite.
+No.
+Does six divide three?
+Is the quotient an integer?
+Three divided by six is one half.
+No.
+What is the lcm of eight and twelve?
+Find the gcd first.
+$8\cdot12/4=24$.
+Twenty-four.
+What does coprime mean?
+No common divisors
+Greatest common divisor one
+Both numbers prime
+One is always a common divisor of positive integers.
+The smaller integer always divides the larger
+Size does not guarantee an integer multiple.
+Coprime integers must both be prime
+Coprimality concerns the shared factors of a pair.
+Change the two integers. How do their common divisors and lcm change?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+Size does not guarantee an integer multiple.
+First integer: 1
+Set the control to $1$. Observe which objects, relations, or counts change.
+At this setting: gcd $1$; lcm $18$.
+First integer: 30
+Set the control to $30$. Observe which objects, relations, or counts change.
+At this setting: gcd $6$; lcm $90$.
+First integer: 60
+Set the control to $60$. Observe which objects, relations, or counts change.
+At this setting: gcd $6$; lcm $180$.

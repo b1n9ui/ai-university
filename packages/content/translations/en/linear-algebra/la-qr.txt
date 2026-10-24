@@ -1,0 +1,64 @@
+QR factorization
+Orthogonal directions and triangular coefficients
+QR expresses matrix columns using orthonormal directions and their combination coefficients.
+Orthogonalization chooses directions; the triangular matrix records which directions each column uses.
+Write orthogonalization as a thin QR factorization
+Distinguish rectangular Q from a square orthogonal matrix
+What is thin QR?
+A full-column-rank $m\times n$ matrix with $m\ge n$ has $A=QR$, where $Q^TQ=I_n$ and $R$ is invertible upper triangular.
+How are coefficients obtained?
+$R=Q^TA$. Original column $j$ uses no future directions before step $j$, making the lower triangle zero.
+Can a rectangular $Q$ have an inverse?
+$Q^TQ=I$ does not imply $QQ^T=I$; the latter is projection onto the column space. Only square orthogonal matrices satisfy $Q^{-1}=Q^T$.
+QR factorization
+The invertible triangular factor in thin QR requires full column rank. A positive diagonal makes the factorization unique. Dependent columns can admit general QR, but this construction cannot normalize zero residuals.
+The first original column uses only the first direction.
+Later columns use only current and earlier directions.
+Place the column equalities side by side.
+Write orthogonalization as a factorization
+Find a thin QR of $A=\begin{pmatrix}1&1\\1&0\end{pmatrix}$.
+$Q=\frac1{\sqrt2}\begin{pmatrix}1&1\\1&-1\end{pmatrix}$.
+$Q^TA=\begin{pmatrix}\sqrt2&1/\sqrt2\\0&1/\sqrt2\end{pmatrix}$; multiply to recover the original.
+$A=QR$.
+Already orthogonal columns
+Find a thin QR of $A=\begin{pmatrix}2&0\\0&3\\0&0\end{pmatrix}$.
+Normalizing columns gives $Q=(e_1,e_2)$.
+$R=\operatorname{diag}(2,3)$.
+$QQ^T=\operatorname{diag}(1,1,0)$, not the three-by-three identity.
+Orthogonal columns of $Q$ allow $Q^{-1}$ everywhere.
+A rectangular $Q$ has no two-sided inverse as defined here.
+QR changes only signs, not the directional basis.
+It rewrites general column directions in an orthogonal basis.
+If thin $Q$ is $5\times3$, what size is $R$?
+The product must recover five rows and three columns.
+$R$ is $3\times3$.
+$3\times3$.
+If $Q^TQ=I$, how are $\|Qx\|$ and $\|x\|$ related?
+Expand the squared norms.
+$\|Qx\|^2=x^TQ^TQx=x^Tx$.
+Equal.
+Why is $R$ upper triangular in QR?
+The construction of column $j$ has not used future directions.
+$a_j$ lies only in the span of $q_1,\ldots,q_j$.
+Coefficients for future directions are zero.
+Without full column rank, can thin QR's $R$ remain invertible?
+Invertible $R$ would make every column independent.
+Rank deficiency forces the triangular factor to lose full rank.
+No.
+The columns are $(1,0),(1,c)$. Switch between original columns, subtracting projections, and normalization to see dependent columns produce zero residuals.
+How do orthogonalization coefficients form an upper-triangular matrix?
+A rectangular $Q$ satisfies $Q^TQ=I$. What is $QQ^T$ generally?
+The identity on the whole space
+Orthogonal projection onto the column space
+The zero matrix
+It preserves the column space and removes its orthogonal complement.
+QR uses orthogonal directions that preserve lengths and leaves an upper-triangular system ready for back substitution.
+Original columns
+Set $c=1$ and select original columns.
+Column two has a horizontal component.
+Subtract the projection
+Select subtraction of the projection.
+The remainder is $(0,1)$, perpendicular to the first direction.
+Dependent columns
+Set $c=0$ and select normalization.
+The residual is zero, so this column-by-column construction cannot normalize it. A general QR factorization may still exist.

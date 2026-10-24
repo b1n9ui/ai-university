@@ -1,0 +1,222 @@
+{
+  "id": "text-files",
+  "chapterId": "chapter-5",
+  "number": "5.1",
+  "title": "Text files and paths",
+  "subtitle": "Variables disappear when a program ends. Save data to a file to read it next time.",
+  "concept": "Variables disappear when a program ends. Save data to a file to read it next time.",
+  "intuition": "Write today's list on paper so you can read it tomorrow.",
+  "objectives": [
+    "Choose where to write",
+    "Specify the file mode and text encoding",
+    "Reading a file still gives text"
+  ],
+  "body": [
+    {
+      "title": "Choose where to write",
+      "text": "notes.txt is a filename. Without a full path, it is relative to the program's current working directory, which may differ from the code directory. Start in a separate practice folder. The web replay uses an isolated example directory and does not write files on your computer."
+    },
+    {
+      "title": "Specify the file mode and text encoding",
+      "text": "with open(\"notes.txt\", \"w\", encoding=\"utf-8\") as file: opens a file for writing. Mode w truncates an existing file, so practice with a new filename. The encoding determines how text is stored; this book consistently uses UTF-8. file.write(\"Buy apples\\n\") writes text; \\n is a newline. with closes the file when its indented block ends."
+    },
+    {
+      "title": "Reading a file still gives text",
+      "text": "Open the same file in r mode. text = file.read() reads its contents as a string. Use print(text, end=\"\") to preserve the file's newlines without adding another one. Mode a appends to existing content; check the destination first."
+    }
+  ],
+  "formalDefinition": {
+    "text": "with open(...) opens a file and closes it at the end of the block. r reads, w overwrites, and a appends.",
+    "conditions": [
+      "w overwrites an existing file. Use new filenames in a separate practice directory.",
+      "Relative paths start at the current working directory. Use UTF-8 consistently when reading and writing."
+    ]
+  },
+  "derivation": [
+    {
+      "text": "w creates or overwrites the example file and writes a line."
+    },
+    {
+      "text": "The file closes when the with block ends."
+    },
+    {
+      "text": "r reopens it to read and display the saved text."
+    }
+  ],
+  "interactiveVisual": {
+    "kind": "python-trace",
+    "prediction": "Does text change when it is written to a file and read back?",
+    "caption": "Choose an input and predict the result, then select Next step. The arrow marks the next statement to execute; the side panel shows current variables and output produced so far.",
+    "experiment": {
+      "code": "message = 'Buy apples'\nwith open(\"notes.txt\", \"w\", encoding=\"utf-8\") as file:\n    file.write(message)\nwith open(\"notes.txt\", \"r\", encoding=\"utf-8\") as file:\n    text = file.read()\nprint(text)\n",
+      "stdout": "Buy apples\n",
+      "stdin": ""
+    },
+    "followUp": "Try empty text and inspect text after reading. Each replay starts in a fresh example directory.",
+    "codeTemplate": "message = {{message}}\nwith open(\"notes.txt\", \"w\", encoding=\"utf-8\") as file:\n    file.write(message)\nwith open(\"notes.txt\", \"r\", encoding=\"utf-8\") as file:\n    text = file.read()\nprint(text)\n",
+    "controls": [
+      {
+        "name": "message",
+        "label": "Text to save",
+        "values": [
+          "Buy apples",
+          "Practice tomorrow",
+          ""
+        ],
+        "defaultIndex": 0
+      }
+    ],
+    "watch": [
+      "message",
+      "text"
+    ]
+  },
+  "workedExamples": [
+    {
+      "title": "Save a note",
+      "problem": "Write Buy apples, close the file, then read it again.",
+      "steps": [
+        "w creates or overwrites the example file and writes a line.",
+        "The file closes when the with block ends.",
+        "r reopens it to read and display the saved text."
+      ],
+      "answer": {
+        "code": "with open(\"notes.txt\", \"w\", encoding=\"utf-8\") as file:\n    file.write(\"Buy apples\\n\")\nwith open(\"notes.txt\", \"r\", encoding=\"utf-8\") as file:\n    text = file.read()\nprint(text, end=\"\")\n",
+        "stdout": "Buy apples\n",
+        "stdin": ""
+      }
+    },
+    {
+      "title": "Append at the end",
+      "problem": "Keep the first line and add a second with a.",
+      "steps": [
+        "Create the example file first.",
+        "a preserves the existing content and writes at the end.",
+        "Reading the file returns both lines."
+      ],
+      "answer": {
+        "code": "with open(\"notes.txt\", \"w\", encoding=\"utf-8\") as file:\n    file.write(\"Buy apples\\n\")\nwith open(\"notes.txt\", \"a\", encoding=\"utf-8\") as file:\n    file.write(\"Buy bread\\n\")\nwith open(\"notes.txt\", \"r\", encoding=\"utf-8\") as file:\n    text = file.read()\nprint(text, end=\"\")\n",
+        "stdout": "Buy apples\nBuy bread\n",
+        "stdin": ""
+      }
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "text-files-m1",
+      "claim": "w appends to existing content.",
+      "correction": "w truncates the file. Use a to append."
+    },
+    {
+      "id": "text-files-m2",
+      "claim": "A relative path always starts at the code file's directory.",
+      "correction": "It starts at the current working directory. Check where the program is running."
+    }
+  ],
+  "practice": [
+    {
+      "problem": "Write Hello to a new hello.txt, then read it.",
+      "hint": "After writing, open it in r mode.",
+      "solution": [
+        "Use the same UTF-8 encoding for writing and reading."
+      ],
+      "answer": {
+        "code": "with open(\"hello.txt\", \"w\", encoding=\"utf-8\") as file:\n    file.write(\"Hello\")\nwith open(\"hello.txt\", \"r\", encoding=\"utf-8\") as file:\n    text = file.read()\nprint(text)\n",
+        "stdout": "Hello\n",
+        "stdin": ""
+      },
+      "id": "text-files-p1",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "text-files-m1"
+      ]
+    },
+    {
+      "problem": "Append B to an example file containing A.",
+      "hint": "Mode a preserves existing content.",
+      "solution": [
+        "Write A first, then append B."
+      ],
+      "answer": {
+        "code": "with open(\"letters.txt\", \"w\", encoding=\"utf-8\") as file:\n    file.write(\"A\")\nwith open(\"letters.txt\", \"a\", encoding=\"utf-8\") as file:\n    file.write(\"B\")\nwith open(\"letters.txt\", \"r\", encoding=\"utf-8\") as file:\n    text = file.read()\nprint(text)\n",
+        "stdout": "AB\n",
+        "stdin": ""
+      },
+      "id": "text-files-p2",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "text-files-m2"
+      ]
+    },
+    {
+      "problem": "Overwrite A with B using w in an example file.",
+      "hint": "Reopening with w discards the old content.",
+      "solution": [
+        "Only B remains."
+      ],
+      "answer": {
+        "code": "with open(\"letters.txt\", \"w\", encoding=\"utf-8\") as file:\n    file.write(\"A\")\nwith open(\"letters.txt\", \"w\", encoding=\"utf-8\") as file:\n    file.write(\"B\")\nwith open(\"letters.txt\", \"r\", encoding=\"utf-8\") as file:\n    text = file.read()\nprint(text)\n",
+        "stdout": "B\n",
+        "stdin": ""
+      },
+      "id": "text-files-p3",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "text-files-m1"
+      ]
+    },
+    {
+      "problem": "What is the length of the text read from an empty example file?",
+      "hint": "read returns an empty string.",
+      "solution": [
+        "len(text) is 0."
+      ],
+      "answer": {
+        "code": "with open(\"empty.txt\", \"w\", encoding=\"utf-8\") as file:\n    file.write(\"\")\nwith open(\"empty.txt\", \"r\", encoding=\"utf-8\") as file:\n    text = file.read()\nprint(len(text))\n",
+        "stdout": "0\n",
+        "stdin": ""
+      },
+      "id": "text-files-p4",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "text-files-m2"
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "Which mode preserves content and adds at the end?",
+    "correctIndex": 1,
+    "choices": [
+      "w",
+      "a",
+      "r automatically saves changes"
+    ],
+    "explanation": "a appends, w overwrites, and r reads.",
+    "feedback": [
+      "w discards existing content, so it cannot preserve it here.",
+      "Yes. a appends after the existing content.",
+      "r is a read mode and cannot write."
+    ]
+  },
+  "prerequisites": [
+    "exceptions",
+    "modules"
+  ],
+  "difficulty": 5,
+  "misconceptionTags": [
+    "text-files-m1",
+    "text-files-m2"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.2.1",
+    "status": "revised",
+    "humanReviewed": false
+  },
+  "sources": [
+    "python-tutorial",
+    "python-io",
+    "python-pathlib"
+  ],
+  "furtherReading": []
+}

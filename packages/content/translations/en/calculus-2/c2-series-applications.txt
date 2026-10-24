@@ -1,0 +1,65 @@
+Using series for integrals and limits
+Replace difficult functions by integrable powers
+Series approximate integrals without elementary antiderivatives and reveal the first surviving term in a limit.
+Low-order cancellation can hide a limit. Expansion exposes the first term that remains.
+When can integration be termwise?
+On closed intervals inside a power series' radius. Reaching a boundary requires additional justification.
+Bounding the approximation
+If integrated terms alternate with decreasing magnitudes tending to zero, use the next-term bound. Otherwise integrate a remainder or use another valid bound.
+How far should you expand?
+Continue to the first uncancelled term relevant to the denominator, then control the remaining terms. Here $O(x^k)$ means the remainder's magnitude near zero is at most a fixed constant times $|x|^k$.
+Replace difficult functions by integrable powers
+The exponential series has infinite radius and can be integrated termwise over any finite interval. Check decreasing magnitudes separately for an error bound.
+Expand the integrand.
+Integrate term by term on the finite interval.
+On inputs from zero to one, the integrated magnitudes decrease, allowing the next-term bound.
+A nonelementary integral
+Approximate $\int_0^1e^{-t^2}dt$, retaining terms through $t^4$.
+Integrating three terms gives $1-\frac13+\frac1{10}=\frac{23}{30}$.
+The next magnitude is $\frac1{42}$; the negative remainder places the true value in $[\frac{23}{30}-\frac1{42},\frac{23}{30}]$.
+Approximation $\frac{23}{30}$, error at most $\frac1{42}$.
+A limit after cancellation
+Find $\lim_{x\to0}\frac{\sin x-x}{x^3}$.
+$\sin x=x-\frac{x^3}{6}+O(x^5)$.
+Cancel the linear term and divide by $x^3$; higher-order remainders vanish.
+$-\frac16$.
+An ellipsis is an error estimate.
+Specify the remainder's order or a numerical bound.
+No elementary antiderivative means no integral.
+Series and numerical methods can still calculate with controlled error.
+Find $\lim_{x\to0}\frac{1-\cos x}{x^2}$.
+$\frac12$.
+Find the first nonzero term.
+$1-\cos x=\frac{x^2}{2}+O(x^4)$; after division, the remainder vanishes.
+Use two terms to approximate $\int_0^{1/2}e^{-t^2}dt$.
+$\frac{11}{24}$, with error at most $\frac1{320}$.
+Integrate the constant and quadratic terms.
+$x-\frac{x^3}{3}$ on $x=\frac12$ gives $\frac{11}{24}$; the next term is $\frac{x^5}{10}=\frac1{320}$.
+Find $\lim_{x\to0}\frac{e^x-1-x}{x^2}$.
+$\frac12$.
+Retain the quadratic term.
+$e^x=1+x+\frac{x^2}{2}+O(x^3)$; cancel the first two terms.
+When approximating an integrand by $1-t^2+\frac{t^4}{2}$, can you just substitute the upper limit?
+No; integrate each term.
+A function value is not an accumulated integral.
+Integration raises each power and divides by the new exponent: $x-\frac{x^3}{3}+\frac{x^5}{10}$.
+After low-order cancellation in a limit, focus on what?
+The first uncancelled term and the remainder
+Substitution of zero alone
+Deleting every small quantity
+Order relative to the denominator determines which small terms matter.
+Expansion organizes contributions by size. Retain terms according to the calculation and allowed error.
+Low order
+Set order to 2 and input to 0.5.
+The finite polynomial matches low-order derivatives; the readout shows its actual error.
+Increase the order
+Set order to 6, keeping input 0.5.
+Observe how the actual error changes at this input.
+Farther from the center
+Set order to 10 and input to 0.9.
+Accuracy depends on input and function; range and remainder conditions still matter.
+Compare $e^{-x^2}$ with finite zero-centered expansions and read the error.
+Does raising the order give the same accuracy far away as near the center?
+Integrate series for nonelementary accumulation
+Identify the first uncancelled term in limits
+Bound truncation and remainder errors

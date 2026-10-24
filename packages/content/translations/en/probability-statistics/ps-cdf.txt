@@ -1,0 +1,66 @@
+Random variables, mass functions, and CDFs
+A random variable assigns a number to each outcome; its distribution describes those numbers' probabilities.
+A random variable assigns a number to each outcome; its distribution describes those numbers' probabilities.
+The same experiment may record total score or a threshold indicator. These are different random variables.
+Map outcomes to numbers
+Accumulate to a threshold
+Map outcomes to numbers
+A random variable maps the sample space to the reals. A discrete mass function assigns nonnegative probabilities to possible values, summing to one.
+Accumulate to a threshold
+A CDF gives the probability at or below a threshold. It is nondecreasing and right-continuous, with limits zero and one at the two infinities.
+Subtract for intervals
+CDF differences naturally describe intervals open on the left and closed on the right. Including a discrete endpoint can change the answer.
+The CDF definition covers discrete, continuous, and mixed distributions.
+The CDF definition covers discrete, continuous, and mixed distributions.
+Discrete mass is $P(X=x)=F_X(x)-F_X(x^-)$.
+Partition the threshold event by possible values.
+F_X(x)=\sum_{k\le x}p(k)\quad\text{in the discrete case}
+The interval event is the difference of nested events.
+Subtract to get its probability.
+Discrete accumulation
+Masses $P(X=0,1,2)$ are respectively $0.2,0.5,0.3$. Find $F_X(1)$.
+Add masses at zero and one.
+$0.2+0.5=0.7$.
+$0.7$.
+Endpoints matter
+In that distribution, find $P(1<X\le2)$ and $P(1\le X\le2)$.
+The first contains only two, giving $0.3$.
+The second also includes mass $0.5$ at one.
+Respectively $0.3,0.8$.
+$X$ has masses $0.2,0.5,0.3$ at $0,1,2$. Find $F_X(-1)$.
+The threshold is below every support point.
+No value enters the event.
+$0$.
+$X$ has masses $0.2,0.5,0.3$ at $0,1,2$. Find $P(X=1)$.
+Read the jump.
+$0.7-0.2=0.5$.
+$0.5$.
+May a CDF jump downward?
+How does the event change as the threshold grows?
+It can only include more outcomes.
+No.
+Can every distribution be recovered entirely by ordinary differentiation of its CDF?
+Where is discrete mass recorded?
+Jump mass cannot be represented by an ordinary density derivative.
+No.
+What does a CDF jump represent?
+Probability at that point
+The point's value
+The mean
+It is the probability mass at exactly that point.
+Every CDF is smooth
+Discrete distributions jump, and mixed distributions may too.
+All interval endpoints are irrelevant
+A singleton is irrelevant only when it carries no mass.
+Move the threshold. How do the mass plot and cumulative steps correspond?
+The discrete distribution is fixed; the display highlights mass up to the threshold and its CDF value.
+Discrete distributions jump, and mixed distributions may too.
+Value threshold: 1
+Set the threshold to $1$ and compare the figure and readouts.
+At these parameters: threshold $1$; cumulative probability $0.7$.
+Value threshold: -0.5
+Set the threshold to $-0.5$ and compare the figure and readouts.
+At these parameters: threshold $-0.5$; cumulative probability $0$.
+Value threshold: 2.5
+Set the threshold to $2.5$ and compare the figure and readouts.
+At these parameters: threshold $2.5$; cumulative probability $1$.

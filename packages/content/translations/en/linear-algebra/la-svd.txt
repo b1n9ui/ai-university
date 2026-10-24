@@ -1,0 +1,64 @@
+Singular value decomposition
+Two orthogonal direction sets with scaling between them
+Every real matrix factors into an orthogonal input transformation, nonnegative directional scaling, and an orthogonal output transformation.
+Rotate into suitable input directions, stretch separately, then place them in output directions. Rectangular and singular matrices are included.
+State dimensions in full and compact SVD
+Relate nonzero singular directions to rank
+What are the full factor sizes?
+If $A$ is $m\times n$, orthogonal $U$ has size $m\times m$ and $V$ size $n\times n$; $\Sigma$ is a nonnegative rectangular diagonal factor of size $m\times n$.
+How do nonzero directions correspond?
+$Av_i=\sigma_i u_i$. Distinct right singular directions have orthogonal outputs. For zero singular values, do not divide by zero to construct $u_i$; complete an orthonormal output basis instead.
+What is compact SVD?
+Retain just $r$ nonzero singular values to obtain $A=U_r\Sigma_rV_r^T$. Singular vectors can vary by signs or repeated-value choices, but singular values are unique.
+Singular value decomposition
+Every real matrix has an SVD. For complex matrices, replace transposes by conjugate transposes. Squareness and invertibility are unnecessary.
+Choose an eigenbasis for the input-side symmetric product.
+Positive singular values define unit output directions.
+Zero directions map to zero; complete the bases to obtain matrix form.
+A diagonal matrix with reversal
+Find one SVD of $A=\operatorname{diag}(-3,1)$.
+Choose $V=I,\Sigma=\operatorname{diag}(3,1)$.
+Record reversal in $U=\operatorname{diag}(-1,1)$ and multiply the factors to recover the matrix.
+$A=U\Sigma V^T$.
+A rank-one matrix
+Find a compact SVD of $A=\begin{pmatrix}1&1\\0&0\end{pmatrix}$.
+$v_1=(1,1)/\sqrt2,u_1=(1,0)$.
+$Av_1=(\sqrt2,0)$, so $\sigma_1=\sqrt2$.
+$A=\sqrt2(1,0)^T(1,1)/\sqrt2$.
+SVD and diagonalization both require enough eigenvectors.
+Every matrix has SVD, which uses two direction sets.
+A zero singular value requires dividing zero by zero to get a left vector.
+Handle zero directions separately and complete an orthonormal basis.
+If $A$ is $4\times2$, what size is full $U$?
+It is a full orthonormal basis of the output space.
+$4\times4$.
+$4\times4$.
+For rank $2$ and matrix size $5\times3$, what size is compact $\Sigma_r$?
+Retain only nonzero directions.
+$2\times2$.
+$2\times2$.
+Does changing both corresponding singular-vector signs change $A$?
+The two negative signs cancel in the outer product.
+$(-u)(-v)^T=uv^T$.
+No change.
+Which matrix acts first on the input in $A=U\Sigma V^T$?
+Read right to left.
+$V^T$.
+$V^T$.
+$A=R_\theta\operatorname{diag}(2,s)$: scale the unit circle along two directions, then rotate. Semiaxis lengths are singular values.
+How do two orthogonal direction sets reduce a general matrix to independent scalings?
+Which matrices admit an SVD?
+Symmetric matrices only
+Square invertible matrices only
+Every finite-dimensional real matrix
+Different orthonormal bases on each side allow different input and output dimensions.
+SVD is more general than eigendecomposition because input and output directions need not agree. The middle factor contains only nonnegative scaling.
+Two nonzero directions
+Set $\theta=0,s=1$.
+Semiaxes have lengths two and one; rank two.
+Change only output direction
+Set $\theta=\pi/4,s=1$.
+The semiaxes rotate without changing length.
+A zero singular value
+Set $\theta=\pi/4,s=0$.
+The ellipse collapses to a segment; rank one.

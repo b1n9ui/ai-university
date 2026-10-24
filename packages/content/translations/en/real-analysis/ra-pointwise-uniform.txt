@@ -1,0 +1,67 @@
+Pointwise and uniform convergence
+Pointwise convergence allows different waiting times for each input; uniform convergence uses one cutoff for the whole domain.
+Pointwise convergence allows different waiting times for each input; uniform convergence uses one cutoff for the whole domain.
+Measure error over the entire domain to detect bad points moving toward an endpoint.
+Compare quantifiers
+Use the supremum error
+Compare quantifiers
+Pointwise convergence fixes the input before choosing a cutoff. Uniform convergence chooses the cutoff from the error before allowing any input. Their permitted dependencies differ.
+Use the supremum error
+When the absolute error has finite supremum, uniform convergence is equivalent to that domain-wide error tending to zero. The supremum need not be attained.
+Check boundary layers
+Powers on the closed unit interval tend to zero except at the right endpoint, where they stay one. Bad inputs can move toward that endpoint, giving pointwise but not uniform convergence.
+Uniform convergence compares functions on the same domain to a real-valued target function.
+Pointwise cutoffs may depend on the input; uniform cutoffs may not.
+Uniform control immediately controls each fixed input.
+\text{uniform}\implies\text{pointwise}
+For powers, choose an input moving with the index.
+The limit function there is zero, while the error stays at least one half.
+Genuinely uniform
+How does $f_n(x)=x/n$ converge on $[0,1]$?
+It tends pointwise to zero.
+$\sup_{[0,1]}|x/n|=1/n\to0$.
+Uniformly to zero.
+Removing the endpoint is insufficient
+Does $x^n$ tend uniformly to zero on $[0,1)$?
+Every fixed input tends to zero.
+Each domain-wide supremum remains one, though unattained.
+Not uniformly; deleting one endpoint leaves the boundary layer.
+Does uniform convergence imply pointwise convergence?
+Fix any input.
+Yes.
+Yes.
+May pointwise convergence use an input-dependent cutoff?
+The input is fixed before the cutoff.
+Yes.
+Yes.
+What happens to $x^n$ on $[0,r]$ for fixed $0<r<1$?
+The right endpoint is the worst input.
+The supremum error is $r^n\to0$.
+Uniform convergence to zero.
+Prove $f_n(x)=x^n$ tends uniformly to zero on $[0,r]$ for fixed $0<r<1$.
+Bound the error on the entire domain.
+For all $x\in[0,r]$, $0\le x^n\le r^n$, with equality at $x=r$.
+Thus $\sup_{[0,r]}|f_n|=r^n\to0$.
+Given an error, one $N$ with $r^N<\varepsilon$ controls every input simultaneously.
+Given an error, one $N$ with $r^N<\varepsilon$ controls every input simultaneously.
+May a uniform-convergence cutoff vary with the input?
+Yes
+No
+Only at endpoints
+It must control the entire domain at once.
+Removing a bad endpoint always gives uniform convergence
+Bad inputs may persist near the endpoint.
+An unattained maximum error means zero error
+Use the supremum, not just an attained maximum.
+Follow a moving bad point. Does error remain that fixed-input inspection misses?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+Domain-wide supremum error detects points hiding near endpoints, even if one endpoint is removed.
+Function index: 2
+Set the index to $2$. Follow the moving point and compare its error with the supremum error.
+Analytic supremum error $1$; error at the selected point $0.5$; uniform convergence: no.
+Function index: 41
+Set the index to $41$. Follow the moving point and compare its error with the supremum error.
+Analytic supremum error $1$; error at the selected point $0.5$; uniform convergence: no.
+Function index: 80
+Set the index to $80$. Follow the moving point and compare its error with the supremum error.
+Analytic supremum error $1$; error at the selected point $0.5$; uniform convergence: no.

@@ -1,0 +1,221 @@
+{
+  "id": "conditions",
+  "chapterId": "chapter-2",
+  "number": "2.1",
+  "title": "Conditions and branches",
+  "subtitle": "Test a condition, then take one of two paths.",
+  "concept": "Test a condition, then take one of two paths.",
+  "intuition": "If you have enough money for the fare, take the bus. Otherwise, take the other path.",
+  "objectives": [
+    "Turn a question into a condition",
+    "Write two paths with if and else",
+    "Check the exact boundary"
+  ],
+  "body": [
+    {
+      "title": "Turn a question into a condition",
+      "text": "Suppose the fare is 5 and money holds the amount you have. money >= 5 asks whether you have at least 5; >= means greater than or equal to. A comparison returns True or False. Predict the result before following the program."
+    },
+    {
+      "title": "Write two paths with if and else",
+      "text": "if condition: starts the path taken when the condition is true; else: starts the other path. After each colon, start a new line and indent the body by four spaces. Indentation groups statements into a branch. This test takes one branch: it cannot print both messages."
+    },
+    {
+      "title": "Check the exact boundary",
+      "text": "Try 6, then 4, then exactly 5. The >= comparison includes equality, so 5 is enough. Replacing it with > would reject the exact fare. Use == to compare equality; a single = assigns a value."
+    }
+  ],
+  "formalDefinition": {
+    "text": "An if statement runs its indented body when the condition is true. Otherwise it runs the else body. Only one branch runs.",
+    "conditions": [
+      "Keep the colon and indentation. Use = for assignment and == for equality."
+    ]
+  },
+  "derivation": [
+    {
+      "text": "money holds 5."
+    },
+    {
+      "text": "5 >= 5 is true, so enter the if branch."
+    },
+    {
+      "text": "Skip the else branch."
+    }
+  ],
+  "interactiveVisual": {
+    "kind": "python-trace",
+    "prediction": "With exactly 5, which branch runs?",
+    "caption": "Choose an input and predict the result, then select Next step. The arrow marks the next statement to execute; the side panel shows current variables and output produced so far.",
+    "experiment": {
+      "code": "money = 5\nif money >= 5:\n    print(\"Take the bus\")\nelse:\n    print(\"Not enough money\")\n",
+      "stdout": "Take the bus\n",
+      "stdin": ""
+    },
+    "followUp": "Compare 4, 5, and 6. Which lines does the arrow skip?",
+    "codeTemplate": "money = {{money}}\nif money >= 5:\n    print(\"Take the bus\")\nelse:\n    print(\"Not enough money\")\n",
+    "controls": [
+      {
+        "name": "money",
+        "label": "Money available",
+        "values": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          8
+        ],
+        "defaultIndex": 3
+      }
+    ],
+    "watch": [
+      "money"
+    ]
+  },
+  "workedExamples": [
+    {
+      "title": "Enough for the fare?",
+      "problem": "You have 5 and the fare is 5. Display the decision.",
+      "steps": [
+        "money holds 5.",
+        "5 >= 5 is true, so enter the if branch.",
+        "Skip the else branch."
+      ],
+      "answer": {
+        "code": "money = 5\nif money >= 5:\n    print(\"Take the bus\")\nelse:\n    print(\"Not enough money\")\n",
+        "stdout": "Take the bus\n",
+        "stdin": ""
+      }
+    },
+    {
+      "title": "The other branch",
+      "problem": "Test the same condition with 4.",
+      "steps": [
+        "4 >= 5 is false.",
+        "Skip the if body and run the else body."
+      ],
+      "answer": {
+        "code": "money = 4\nif money >= 5:\n    print(\"Take the bus\")\nelse:\n    print(\"Not enough money\")\n",
+        "stdout": "Not enough money\n",
+        "stdin": ""
+      }
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "conditions-m1",
+      "claim": "Exactly 5 satisfies money > 5.",
+      "correction": "> excludes equality. Use >= when the exact fare is enough."
+    },
+    {
+      "id": "conditions-m2",
+      "claim": "Both the if and else bodies run.",
+      "correction": "This test takes one branch. When the condition is true, it skips else."
+    }
+  ],
+  "practice": [
+    {
+      "problem": "Predict the value of 6 >= 5.",
+      "hint": "Is 6 at least 5?",
+      "solution": [
+        "The result is True."
+      ],
+      "answer": {
+        "code": "print(6 >= 5)\n",
+        "stdout": "True\n",
+        "stdin": ""
+      },
+      "id": "conditions-p1",
+      "difficulty": 1,
+      "misconceptionTags": [
+        "conditions-m1"
+      ]
+    },
+    {
+      "problem": "With 3, display Not enough money.",
+      "hint": "Change money to 3.",
+      "solution": [
+        "The condition is false, so enter else."
+      ],
+      "answer": {
+        "code": "money = 3\nif money >= 5:\n    print(\"Take the bus\")\nelse:\n    print(\"Not enough money\")\n",
+        "stdout": "Not enough money\n",
+        "stdin": ""
+      },
+      "id": "conditions-p2",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "conditions-m2"
+      ]
+    },
+    {
+      "problem": "Display Pass for a score of at least 60 and Practice again otherwise. Test 60.",
+      "hint": "The threshold itself passes.",
+      "solution": [
+        "Use >= 60.",
+        "A score of 60 enters if."
+      ],
+      "answer": {
+        "code": "score = 60\nif score >= 60:\n    print(\"Pass\")\nelse:\n    print(\"Practice again\")\n",
+        "stdout": "Pass\n",
+        "stdin": ""
+      },
+      "id": "conditions-p3",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "conditions-m1"
+      ]
+    },
+    {
+      "problem": "Test the same program with 59.",
+      "hint": "Change only the score.",
+      "solution": [
+        "59 < 60, so display Practice again."
+      ],
+      "answer": {
+        "code": "score = 59\nif score >= 60:\n    print(\"Pass\")\nelse:\n    print(\"Practice again\")\n",
+        "stdout": "Practice again\n",
+        "stdin": ""
+      },
+      "id": "conditions-p4",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "conditions-m2"
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "Which condition includes having exactly 5?",
+    "correctIndex": 1,
+    "choices": [
+      "money > 5",
+      "money >= 5",
+      "money = 5"
+    ],
+    "explanation": ">= includes equality. A single = assigns a value.",
+    "feedback": [
+      "> requires more than 5 and excludes exactly 5.",
+      "Yes. >= means at least 5.",
+      "A single = assigns a value; it is not an equality test."
+    ]
+  },
+  "prerequisites": [
+    "strings-input"
+  ],
+  "difficulty": 2,
+  "misconceptionTags": [
+    "conditions-m1",
+    "conditions-m2"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.2.1",
+    "status": "revised",
+    "humanReviewed": false
+  },
+  "sources": [
+    "python-tutorial",
+    "python-control"
+  ],
+  "furtherReading": []
+}

@@ -1,0 +1,64 @@
+Linear systems and fundamental matrices
+Each column is an independent solution
+General form
+A linear system is $\mathbf x'=A(t)\mathbf x+\mathbf b(t)$; homogeneous means the forcing vector is zero.
+Fundamental matrices
+Put independent homogeneous solutions in columns of $\Phi$. It satisfies $\Phi'=A\Phi$ and is invertible.
+Initial-value solutions
+A homogeneous initial-value solution is $\Phi(t)\Phi(t_0)^{-1}\mathbf x_0$. A phase plane plots state coordinates, not time as an axis.
+Combine the column equations into matrix form.
+Constant-vector combinations remain solutions.
+Initial data determine the combination.
+A diagonal system
+Solve $x'=x,y'=-2y$ with initial state $(2,3)$.
+The components evolve exponentially and independently.
+Initial values give the exponential coefficients.
+$(x,y)=(2e^t,3e^{-2t})$.
+Test a fundamental matrix
+For $A=\operatorname{diag}(1,-1)$, is $\Phi=\operatorname{diag}(e^t,e^{-t})$ a fundamental matrix?
+Columnwise differentiation gives $\Phi'=A\Phi$.
+Its determinant is always one.
+Yes.
+What solves a homogeneous linear system with zero initial state?
+Use uniqueness and linearity.
+Zero satisfies the equation and initial data.
+The zero solution.
+If a fundamental matrix is not initially the identity, does its coefficient vector equal the initial state?
+Convert using its inverse.
+It is $\Phi(t_0)^{-1}\mathbf x_0$.
+Generally not.
+Give a fundamental matrix for $x'=2x,y'=3y$.
+Each column supplies one direction.
+Use a diagonal exponential matrix.
+$\operatorname{diag}(e^{2t},e^{3t})$.
+Can a fundamental matrix suddenly become singular within its interval?
+Independence persists for continuous linear systems.
+An invertible initial matrix retains nonzero determinant by Liouville's formula.
+No.
+Any two solutions form a fundamental matrix.
+Its columns must be independent.
+A phase plane's horizontal axis is always time.
+Both axes are state components.
+A fundamental matrix collects independent solution columns and maps initial states to later states.
+Study each independent starting direction, then combine them linearly to obtain all motions.
+Verify system solutions and fundamental matrices
+Distinguish phase trajectories from their time parameter
+Linear systems and fundamental matrices
+Matrix coefficients are continuous on the interval and the fundamental matrix remains invertible. Increasing time specifies trajectory orientation.
+What are fundamental-matrix columns?
+Independent homogeneous solution vectors
+Arbitrary initial numbers
+Equation coefficients
+They collect independent motions.
+A fundamental matrix gathers a complete set of initial-state experiments. Linearity reconstructs every other initial motion.
+An attracting node
+Both components decay.
+Set first exponent rate $\lambda_1$ to $-1$, second exponent rate $\lambda_2$ to $-0.5$, and observation time $t$ to $3$.
+A saddle
+One direction grows and the other decays.
+Set first exponent rate $\lambda_1$ to $1$, second exponent rate $\lambda_2$ to $-1$, and observation time $t$ to $2$.
+Repelling node
+Both directions grow.
+Set first exponent rate $\lambda_1$ to $0.5$, second exponent rate $\lambda_2$ to $1$, and observation time $t$ to $2$.
+Draw the analytic trajectory from $(1,1)$ and a normalized direction field. Vary parameters to compare nodes and saddles. One trajectory does not represent every initial state.
+What happens to a node when one negative eigenvalue becomes positive?

@@ -1,0 +1,62 @@
+Continuous moments and tail integrals
+Replace probability-weighted sums by integrals to calculate continuous averages.
+Replace probability-weighted sums by integrals to calculate continuous averages.
+Density supplies the probability weights; integration accumulates their contributions.
+Integrate directly
+Use second moments
+Integrate directly
+To find a function expectation, integrate over the original variable; a transformed density is unnecessary.
+Use second moments
+Variance is still second moment minus squared mean. Check convergence first: heavy tails may lack a finite expectation or variance.
+Compute waits from tails
+A nonnegative variable's expectation is the area under its survival function, connecting average waits with tail probability.
+Absolute integrability gives a finite expectation; nonnegative variables may have infinite expectation.
+Absolute integrability gives a finite expectation; nonnegative variables may have infinite expectation.
+The tail-integral derivation exchanges integrals using nonnegativity.
+Express a nonnegative number as an integral of height indicators.
+Exchange integrals for the nonnegative integrand.
+An indicator's expectation equals its event probability.
+Uniform variance
+For $X\sim U(0,2)$, find variance.
+$EX=1$ and $EX^2=\int_0^2x^2/2\,dx=4/3$.
+Subtract the squared mean.
+$1/3$.
+Exponential mean
+An exponential survival function is $e^{-3t}$. Find the mean.
+Integrate from zero to infinity.
+An antiderivative is $-e^{-3t}/3$.
+$1/3$.
+Find the second moment of $U(0,1)$.
+Integrate the square against density one.
+$\int_0^1x^2dx=1/3$.
+$1/3$.
+Find the variance of $U(0,1)$.
+Subtract squared mean from second moment.
+$1/3-1/4=1/12$.
+$1/12$.
+Does symmetry make a Cauchy variable's expectation zero?
+Check absolute integrability, not symmetric truncations.
+Its absolute first moment diverges.
+Its ordinary expectation does not exist; it is not zero.
+What does infinite tail area mean for a nonnegative variable?
+The tail formula permits infinity.
+The average wait has no finite value.
+Expectation is positive infinity.
+What is integrated for $E[X^2]$?
+Square values, not their probability weights.
+Symmetry guarantees a finite mean
+Integrability still needs checking.
+A normalized density guarantees finite variance
+The second moment may still diverge in the tails.
+Change a uniform interval's length. How do mean and variance scale?
+Integral-based readouts accompany density area; not every distribution has finite moments.
+Integrability still needs checking.
+Uniform upper endpoint: 2
+Set the upper endpoint to $2$ and compare the figure and readouts.
+At these parameters: expectation $1$; variance $0.333333$; density height $0.5$.
+Uniform upper endpoint: 0.5
+Set the upper endpoint to $0.5$ and compare the figure and readouts.
+At these parameters: expectation $0.25$; variance $0.0208333$; density height $2$.
+Uniform upper endpoint: 8
+Set the upper endpoint to $8$ and compare the figure and readouts.
+At these parameters: expectation $4$; variance $5.33333$; density height $0.125$.

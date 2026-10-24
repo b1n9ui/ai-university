@@ -1,0 +1,65 @@
+Growth, cooling, and mixing
+Balance quantities before solving
+A cooling model
+For constant ambient temperature $T_a$, Newton's cooling model is $T'=-k(T-T_a)$ with $k>0$.
+A mixing model
+With constant volume $V$, complete mixing, and equal volume flow rates $r$, the solute amount satisfies $S'=rc_{\rm in}-rS/V$. Outflow concentration is current amount divided by volume.
+When does the model fail?
+Changing volume, incomplete mixing, or changing surroundings require a new equation. Negative solute amounts have no physical meaning merely because an algebraic formula permits them.
+Write the amount balance.
+S'=\text{solute inflow rate}-\text{solute outflow rate}
+Substitute concentrations and flow rates.
+Subtract the steady state to obtain exponential decay.
+Cooling
+Ambient temperature is $20$ degrees, $k=1/2$, and initial temperature $80$ degrees. Find the temperature.
+Define temperature difference $u=T-20$; then $u'=-u/2$.
+Its initial value is $60$.
+$T=20+60e^{-t/2}$.
+Freshwater flushing
+A $10$-liter tank has equal freshwater inflow and outflow of $2$ liters per minute, with initial solute $5$ grams.
+Solute inflow is zero; outflow rate is $2S/10$.
+Solve $S'=-S/5,S(0)=5$.
+$S=5e^{-t/5}$ grams.
+With ambient temperature $15$ degrees, what is the long-term temperature?
+Inspect the temperature difference.
+A positive cooling coefficient makes the difference decay to zero.
+$15$ degrees.
+A constant $20$-liter tank has flow rate $4$ liters per minute. What is its flushing time scale in minutes?
+Divide volume by flow rate.
+$V/r=20/4=5$.
+$5$ minutes.
+A constant $6$-liter tank has incoming concentration $3$ grams per liter. What steady solute amount results?
+Steady concentration equals incoming concentration.
+$S_*=Vc_{\rm in}=6\times3$.
+$18$ grams.
+Why does faster inflow than outflow invalidate the constant-volume model?
+The outflow concentration denominator changes.
+Volume increases with time; outflow concentration must be $S(t)/V(t)$.
+Include the changing volume.
+Outflow concentration always equals initial concentration.
+A well-mixed concentration changes with current amount.
+Exponential models do not need time units.
+The inverse parameter must have the corresponding time units.
+Model inflow and outflow first. Units, initial conditions, and validity assumptions give the solution its physical meaning.
+An amount's rate of change equals its inflow rate minus its outflow rate.
+Build cooling and mixing models
+Interpret steady states and time scales
+Growth, cooling, and mixing
+$V>0,r>0$ is constant, volumetric inflow equals outflow, and the tank is well mixed without overflowing.
+What is the outflow concentration of a well-mixed tank?
+Initial concentration
+Current solute amount divided by current volume
+Incoming concentration
+The outlet removes the current mixture.
+List the actual amounts entering and leaving each minute before solving. Units help expose modeling mistakes.
+Approach from below
+The solution rises from zero toward steady state one.
+Set initial value $y_0$ to $0$ and observation time $t$ to $3$.
+Approach from above
+The solution falls from two toward steady state one.
+Set initial value $y_0$ to $2$ and observation time $t$ to $3$.
+Steady state
+Starting at the steady state keeps the solution fixed.
+Set initial value $y_0$ to $1$ and observation time $t$ to $3$.
+With steady state one, gold curves show first-order linear responses for different initial values. The cooling and mixing models differ only by scaling and translation.
+How do initial values above and below the steady state approach it?

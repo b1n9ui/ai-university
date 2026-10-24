@@ -1,0 +1,65 @@
+Integrals over infinite intervals
+Truncate first, then move the boundary outward
+An infinite-interval integral is a limit of finite integrals. Infinity is not an ordinary endpoint value.
+A region may extend forever yet have finite area. The tail's rate of decay decides.
+What does convergence mean?
+The integral $\int_a^R f$ must tend to a finite real number as $R\to\infty$. Unbounded growth and persistent oscillation both mean divergence.
+What if both endpoints are infinite?
+Split at a finite point; both halves must converge separately. Symmetric truncation alone may produce only a principal value.
+The power-tail threshold
+On $[1,\infty)$, $\int x^{-p}dx$ converges exactly when $p>1$. Even the slow logarithmic growth at $p=1$ is unbounded.
+Truncate first, then move the boundary outward
+Each finite truncation is integrable and the limiting value must be finite. For two infinite endpoints, both halves must converge.
+Evaluate a finite truncation.
+A negative exponent makes the far-end term vanish.
+Check the threshold separately.
+A finite tail area
+Evaluate $\int_1^\infty x^{-2}dx$.
+The truncated integral is $[-\frac1x]_1^R=1-\frac1R$.
+As $R\to\infty$, the tail $\frac1R$ tends to zero.
+$1$.
+An exponential tail
+Evaluate $\int_0^\infty e^{-2x}dx$.
+The finite integral is $\frac12(1-e^{-2R})$.
+The exponential tends to zero, leaving a finite limit.
+$\frac12$.
+If the function tends to zero, its integral converges.
+$\frac1x\to0$, but its integral from 1 to infinity diverges.
+The two infinite tails can cancel.
+Ordinary improper integration requires each half to converge. Principal value uses a different definition.
+Evaluate $\int_1^\infty x^{-3}dx$.
+$\frac12$.
+Use a finite upper endpoint first.
+$\int_1^R x^{-3}dx=\frac12(1-R^{-2})\to\frac12$.
+Does $\int_1^\infty x^{-1/2}dx$ converge?
+It diverges.
+Check the antiderivative's growth.
+$2(\sqrt R-1)\to\infty$.
+Evaluate $\int_0^\infty xe^{-x}dx$.
+$1$.
+Integrate by parts before taking the limit.
+An antiderivative is $-(x+1)e^{-x}$; the truncated value is $1-(R+1)e^{-R}\to1$.
+Can symmetry make $\int_{-\infty}^{\infty}x dx$ zero?
+No; the ordinary improper integral diverges.
+Calculate the halves separately.
+The integral from 0 to $R$ is $\frac{R^2}{2}\to\infty$. A zero symmetric principal value does not establish convergence.
+Does $f(x)\to0$ guarantee that $\int_1^\infty f(x)dx$ converges?
+Yes
+No
+Only for positive functions
+$f(x)=\frac1x$ is a positive counterexample.
+Infinite length need not mean infinite area. Track finite truncations and ask whether their values approach a finite limit.
+A convergent tail
+Set the exponent to 2 and upper endpoint to 4.
+The truncated area is $\frac34$, still $\frac14$ below its limit 1.
+Move the boundary outward
+Set the exponent to 2 and upper endpoint to 40.
+The area is $\frac{39}{40}$; the remaining tail is $\frac1{40}$.
+The threshold exponent
+Set the exponent to 1 and upper endpoint to 40.
+The area is $\ln40$; increasing the endpoint produces no finite limit.
+Truncate $\int_1^R x^{-p}dx$, varying both exponent and upper endpoint.
+How does extending the interval differ on either side of exponent one?
+Define infinite-interval integrals by truncation limits
+Determine convergence of power tails
+Distinguish improper integrals from principal values

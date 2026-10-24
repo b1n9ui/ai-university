@@ -1,0 +1,80 @@
+Probability & Statistics
+From uncertainty to evidence-based decisions
+Data and sampling, events and distributions, random variables, joint models, sampling limits, estimation, testing, regression, and Bayesian updating. Every lesson includes derivations, worked examples, exercise solutions, and local interactive demonstrations.
+Learners with elementary algebra; continuous probability requires single-variable integration, and joint densities use basic double integrals.
+A complete introductory course in ten chapters and fifty lessons. The first half develops probability and sampling models; the second develops frequentist inference, basic linear models, and Beta–binomial Bayesian inference. Measure-theoretic probability, advanced stochastic processes, multiple regression, comprehensive experimental design, and advanced nonparametric methods belong to later courses.
+Where Data Come From
+Identify what was measured and how it was collected
+How data were collected determines which conclusions they can support.
+Identify observational units and variables
+Distinguish sampling from random assignment
+Describe data with graphs and summary statistics
+Events and Probability
+Rules for reasoning about uncertainty
+Use sample spaces, counting, and conditional probability to distinguish relationships between events.
+Calculate event probabilities
+Choose a counting method
+Assess independence and conditional probabilities
+Random Variables and Average Behavior
+Turn outcomes into quantities we can calculate
+A distribution describes possible outcomes; expectation and variance describe their center and spread.
+Update information using Bayes' rule
+Read cumulative distribution functions
+Calculate expectation, variance, and probability bounds
+Discrete Probability Models
+Count successes, waiting times, and selected objects
+Before choosing a model, check the number of trials, independence, and whether sampling uses replacement.
+Use binomial, geometric, and negative binomial models
+Handle sampling without replacement
+Use Poisson models and discrete approximations
+Continuous Probability Models
+Probability is area; density is height
+Assign probabilities by integration, then study normal standardization and transformations.
+Calculate interval probabilities from a density
+Recognize uniform, exponential, and normal models
+Calculate transformations and expectations of continuous variables
+Several Random Variables
+Variables can change together
+Joint distributions retain relationships between variables; marginal distributions discard that information.
+Find marginal and conditional distributions
+Distinguish independence from zero correlation
+Calculate covariance and conditional expectation
+From Populations to Samples
+Statistics vary from sample to sample
+Larger samples improve precision but do not automatically remove bias.
+Distinguish the law of large numbers from the central limit theorem
+Calculate standard errors
+Use normal-sample theory and the bootstrap
+Estimation and Confidence Intervals
+Report an estimate and its precision
+Choose an estimator, then use its sampling distribution to construct an interval.
+Calculate bias and mean squared error
+Use the method of moments and maximum likelihood
+Construct intervals for means, proportions, and differences
+Hypothesis Testing and Decisions
+Measure disagreement between data and a hypothesis
+Specify hypotheses, the test statistic, relevant tails, and error control before testing.
+Interpret $p$-values correctly
+Compare means and proportions
+Account for power and multiple comparisons
+Relationships, Models, and Updating
+From comparisons to explanation and prediction
+Contingency tables, regression, ANOVA, and Bayesian inference answer different questions.
+Analyze categorical data and regression relationships
+Check model assumptions and residuals
+Explain Bayesian updating and write an analysis report
+Used to check course coverage. Explanations, derivations, and exercises were written independently; original course exercises are not reproduced.
+Used to verify the binomial model, probability mass function, and moments.
+Used to verify Poisson parameters, probability mass function, and moments.
+Used to verify normal parameterization and standardization.
+Used to verify the t density, degrees of freedom, and tails.
+Used to verify the chi-square distribution and its degrees-of-freedom parameterization.
+Used to verify normal-mean intervals and the interpretation of coverage.
+Used to verify two-sample standard errors, Welch degrees of freedom, and assumptions.
+Used to verify the least-squares model, parameters, and error assumptions.
+Used to verify the ANOVA decomposition, degrees of freedom, and F reference distribution.
+Used to verify Beta parameterization, density, and quantile definitions.
+Used to verify exact binomial test tails and discreteness.
+Used to verify proportion score tests and interval inversion. This volume explicitly uses Wilson intervals without a continuity correction.
+Used to verify counts, expected counts, and reference distributions for contingency-table independence tests. Explanations were written independently.
+Checks cover structure, notation, prerequisites, independent recalculation, numerical distributions, and visual boundary cases. This does not claim a formal proof of every formula or measured teaching effectiveness.

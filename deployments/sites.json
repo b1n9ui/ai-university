@@ -1,0 +1,14 @@
+{
+  "zh": {
+    "project_id": "appgprj_6acaaba800a08191934aff048d4a7e0e",
+    "native_url": "https://ai-university-math-lab.vividrhea16.chatgpt.site",
+    "public_url": "https://b1n9ui.github.io/ai-university/",
+    "directory": "dist"
+  },
+  "en": {
+    "project_id": "appgprj_6adbc98de3348191a0f86170f03956ac",
+    "native_url": "https://ai-university-english.vividrhea16.chatgpt.site",
+    "public_url": "https://b1n9ui.github.io/ai-university/en/",
+    "directory": "dist-en"
+  }
+}

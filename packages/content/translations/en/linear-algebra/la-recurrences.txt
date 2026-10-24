@@ -1,0 +1,64 @@
+Matrix powers and linear recurrences
+Initial conditions select the modes present
+A linear recurrence repeatedly applies one matrix. Eigendirections determine how components grow, decay, or oscillate.
+Decompose the initial state into eigendirections, multiply each coefficient by an eigenvalue power, then recombine.
+Write recurrences as matrix iterations
+Identify growth, decay, and alternation
+How do you form the matrix state?
+Stack the quantities that must be remembered. A second-order scalar recurrence becomes a first-order two-dimensional system.
+How do you read long-term behavior?
+For diagonalizable systems, components with $|\lambda|<1$ decay and those with $|\lambda|>1$ grow. Negative eigenvalues alternate signs. A direction absent from the initial state contributes nothing.
+Does unit magnitude guarantee stability?
+No. A defective Jordan block can produce polynomial growth; for example, the off-diagonal entry of $\begin{pmatrix}1&1\\0&1\end{pmatrix}^k$ is $k$.
+Matrix powers and linear recurrences
+$k$ is a nonnegative integer. The separated eigendirection formula requires diagonalizability. Finite diagrams do not prove long-term limits.
+Substitute the recurrence repeatedly.
+Convert initial data to eigenvector coordinates.
+Raise each directional scale to the power.
+Initial data can avoid a growing direction
+Given $A=\operatorname{diag}(1/2,2)$ with initial state $(1,0)$.
+$x_k=(2^{-k},0)$.
+The initial state has no component in the second eigendirection. Despite a growing direction, this trajectory decays.
+It tends to zero.
+Fibonacci in matrix form
+$F_0=0,F_1=1,F_{k+2}=F_{k+1}+F_k$.
+State $(F_{k+1},F_k)^T$ updates by $A=\begin{pmatrix}1&1\\1&0\end{pmatrix}$.
+Eigenvalues are $\phi=(1+\sqrt5)/2$ and $\psi=(1-\sqrt5)/2$.
+Matching initial conditions gives $F_k=(\phi^k-\psi^k)/\sqrt5$.
+Matrix eigendecomposition produces the recurrence's closed form.
+An eigenvalue larger than one makes every initial state grow.
+The corresponding initial component may be zero.
+Eigenvalues of unit magnitude always give bounded trajectories.
+A nondiagonalizable repeated block can cause polynomial growth.
+$x_{k+1}=-x_k/2,x_0=1$, $x_3$?
+Multiply by the same scale three times.
+$(-1/2)^3=-1/8$.
+$A=\operatorname{diag}(2,3)$, $x_0=(1,1)$, $x_2$?
+Square each component independently.
+$(4,9)$.
+$(4,9)$.
+$J=I+N,N^2=0$, $J^k$?
+Higher binomial terms vanish.
+$J^k=I+kN$.
+$I+kN$.
+In a diagonalizable system with all eigenvalue magnitudes less than one, what happens to every trajectory?
+Sum finitely many decaying terms.
+Each $\lambda_i^k\to0$, so every fixed initial state's trajectory tends to zero.
+It tends to zero.
+Fix initial state $(1,1)$ and matrix $\operatorname{diag}(a,1/2)$. Inspect successive iteration states.
+How does the trajectory change when a scaling crosses one or becomes negative?
+Does a growing eigendirection affect every initial state?
+Always
+Only when the initial state has a component in that direction
+It depends only on matrix size
+A coefficient in the decomposition may be zero.
+The matrix specifies possible behaviors; the initial state determines which actually occur.
+Both directions decay
+Set $a=0.8,n=6$.
+Both components are smaller than their initial values.
+A growing direction
+Set $a=1.2,n=6$.
+The first component exceeds its initial value while the second keeps decaying.
+Alternating decay
+Set $a=-0.8,n=5$.
+The first component is negative and its magnitude decreases with iteration.

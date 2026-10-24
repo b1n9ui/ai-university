@@ -1,0 +1,198 @@
+{
+  "id": "data-flow",
+  "chapterId": "chapter-2",
+  "number": "2.2",
+  "title": "Follow one piece of data",
+  "subtitle": "Separate browser, server, API and storage roles.",
+  "concept": "Trace input, processing, persistence and display to locate failures and decide whether a server is needed.",
+  "intuition": "Track a parcel through dispatch, transport and delivery to find where progress stopped.",
+  "objectives": [
+    "Describe an action's input, processing, saving and display stages.",
+    "Explain whether shared data is required before introducing server-side services."
+  ],
+  "body": [
+    {
+      "title": "Trace this example first",
+      "text": "The input supplies text; app.mjs handles submission; tasks.mjs validates and produces a new list; app.mjs writes localStorage and renders it. Plans are not sent to a server. The local server only delivers HTML, CSS and JavaScript. A server.mjs file does not imply a cloud database."
+    },
+    {
+      "title": "Give each term a purpose",
+      "text": "The frontend presents and interacts in the browser. A backend commonly manages shared data, permissions or business rules on a server. An API defines communication, such as fields sent to /tasks and returned results. A database organizes stored data. Small projects do not automatically need all of them."
+    },
+    {
+      "title": "Let requirements determine structure",
+      "text": "A personal single-browser list can use local storage. Two devices sharing data need accessible shared storage and an identity/permission design. Publishing static files shares the program, not your browser's records. Decide data location and access before implementation."
+    }
+  ],
+  "formalDefinition": {
+    "text": "Trace input, processing, persistence and display to locate failures and decide whether a server is needed.",
+    "conditions": [
+      "For small personal learning projects. In shared repositories, follow the team's conventions.",
+      "This method produces checkable evidence; it cannot guarantee arbitrary AI output is correct."
+    ]
+  },
+  "workflow": [
+    "Describe an action's input, processing, saving and display stages.",
+    "Identify where data persists and who can access it.",
+    "Explain whether shared data is required before introducing server-side services."
+  ],
+  "workedExamples": [
+    {
+      "title": "Locate persistence failure",
+      "problem": "An item appears but disappears on refresh. Where first?",
+      "steps": [
+        "Creation and rendering have visible results.",
+        "Check storage errors and the key used.",
+        "Confirm protocol, host and port are unchanged after refresh."
+      ],
+      "answer": "Inspect saving and loading first. localStorage is origin-specific: http://127.0.0.1:5180 and another port use separate storage. Do not rewrite the entire interface first."
+    },
+    {
+      "title": "Explain a public URL",
+      "problem": "After static publication, will classmates see my list?",
+      "steps": [
+        "Separate program files from user data.",
+        "Records stay in your browser's origin-specific storage.",
+        "There are no accounts or shared data services."
+      ],
+      "answer": "Classmates receive the same program but use their own browser storage. Static publication does not upload your list or migrate it to a new origin."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "A server file implies backend business logic.",
+      "correction": "Here the server only serves static files; it does not handle list records."
+    },
+    {
+      "claim": "Publishing a page synchronizes every device.",
+      "correction": "A shared URL and shared user data are separate. Synchronization needs its own design."
+    }
+  ],
+  "practice": [
+    {
+      "id": "data-flow-p1",
+      "difficulty": 1,
+      "problem": "What stages does this example's data pass through?",
+      "hint": "Start at the input.",
+      "answer": "Input → app.mjs event → tasks.mjs rules → localStorage → rendered page.",
+      "solution": [
+        "Identify each stage's role.",
+        "A saving failure needs feedback, not a claim of success."
+      ]
+    },
+    {
+      "id": "data-flow-p2",
+      "difficulty": 2,
+      "problem": "Which requirements change the local-storage design?",
+      "hint": "Consider two people or devices.",
+      "answer": "Synchronization, multiuser sharing or permissions require a shared-data and identity design.",
+      "solution": [
+        "Identify readers and writers first.",
+        "Renaming localStorage does not implement synchronization."
+      ]
+    },
+    {
+      "id": "data-flow-p3",
+      "difficulty": 2,
+      "problem": "The mobile page works but lacks old records. Is this necessarily a bug?",
+      "hint": "Recall the no-synchronization scope.",
+      "answer": "No. Local storage is device-specific. If synchronization is required, the design is insufficient.",
+      "solution": [
+        "Judge against explicit requirements.",
+        "Explain current limitations accurately."
+      ]
+    },
+    {
+      "id": "data-flow-p4",
+      "difficulty": 2,
+      "problem": "Receiving API data does not mean what?",
+      "hint": "Processing and rendering still matter.",
+      "answer": "It does not prove the page displays correctly or that client input can be trusted.",
+      "solution": [
+        "Separate interface contracts, processing and presentation.",
+        "Locate failures stage by stage."
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "Does static publishing automatically upload the browser's list?",
+    "choices": [
+      "Yes, if URLs match",
+      "No; a separate data design is needed",
+      "Yes, by changing ports"
+    ],
+    "correctIndex": 1,
+    "feedback": [
+      "Static-file publishing does not read your records.",
+      "Program files and user data are distinct.",
+      "Changing ports instead changes the storage origin."
+    ]
+  },
+  "interactiveVisual": {
+    "kind": "decision",
+    "prediction": "A classmate opens the new URL and sees an empty list. How do you judge it?",
+    "steps": [
+      {
+        "question": "What do you ask first?",
+        "choices": [
+          "Was shared data actually required?",
+          "Which animation should change?",
+          "Should CSS be rewritten?"
+        ],
+        "correctIndex": 0,
+        "feedback": [
+          "Requirements decide whether this is an error.",
+          "Animation does not determine data location.",
+          "Appearance does not explain storage."
+        ]
+      },
+      {
+        "question": "The implementation uses only localStorage.",
+        "choices": [
+          "Claim synchronization works",
+          "Explain separate storage in each browser",
+          "Add a synchronization icon"
+        ],
+        "correctIndex": 1,
+        "feedback": [
+          "There is no shared-data evidence.",
+          "This accurately describes behavior.",
+          "An icon creates no shared service."
+        ]
+      },
+      {
+        "question": "The user really needs two-device synchronization.",
+        "choices": [
+          "Keep the original scope but declare completion",
+          "Revisit accounts, data location and permissions",
+          "Copy CSS"
+        ],
+        "correctIndex": 1,
+        "feedback": [
+          "The design cannot meet the changed requirement.",
+          "Establish data ownership and access before implementing.",
+          "Styles do not provide synchronization."
+        ]
+      }
+    ],
+    "followUp": "Draw your project's data path and mark where data persists."
+  },
+  "prerequisites": [
+    "project-map"
+  ],
+  "difficulty": 2,
+  "misconceptionTags": [
+    "data-flow-guess",
+    "data-flow-evidence"
+  ],
+  "sources": [
+    "mdn-flow",
+    "mdn-storage"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.1.1",
+    "status": "first-edition",
+    "humanReviewed": false
+  }
+}

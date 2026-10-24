@@ -1,0 +1,65 @@
+Least-squares lines and residuals
+Find the line minimizing the sum of squared vertical prediction errors.
+Find the line minimizing the sum of squared vertical prediction errors.
+Regression fits the average response at a given input; it does not require every observation to lie on the line.
+Separate fitting from modeling
+Calculate slope and intercept
+Separate fitting from modeling
+Least squares is a calculation on fixed data. Statistical inference additionally needs assumptions about the linear response mean and error behavior.
+Calculate slope and intercept
+Divide joint variation by squared input variation for the slope. The intercept makes the fitted line pass through the sample center.
+Inspect residuals
+A residual is observed minus fitted response, not perpendicular geometric distance to the line. Curvature, funnels, or time patterns can reveal omitted structure.
+Simple least squares with an intercept requires $S_{xx}>0$.
+Simple least squares with an intercept requires $S_{xx}>0$.
+Regression association alone does not justify causation or extrapolation beyond observed inputs.
+Minimize squared vertical errors.
+Differentiate with respect to the intercept to obtain residual sum zero.
+Substitute and differentiate with respect to slope.
+Fit three points
+Find the least-squares line for $(0,1),(1,2),(2,3)$.
+The sample center is $(1,2)$ and $S_{xx}=2,S_{xy}=2$.
+The slope and intercept are both one.
+$\hat y=1+x$; every residual is zero.
+An imperfect fit
+For points $(0,1),(1,1),(2,4)$, find slope and intercept.
+The center is $(1,2)$ and $S_{xx}=2,S_{xy}=3$.
+The slope is $1.5$ and intercept $0.5$.
+$\hat y=0.5+1.5x$.
+Given $S_{xy}=6,S_{xx}=3$, find the slope.
+Divide the two quantities.
+$6/3=2$.
+$2$.
+An observation is five and its prediction is three. Find the residual.
+Subtract prediction from observation.
+$5-3=2$.
+$2$.
+If all inputs are identical, is the slope uniquely determined?
+The denominator is zero.
+No input variation is available to identify a slope.
+No.
+If residuals show clear curvature, should you simply keep reporting a high correlation?
+A linear mean structure may be inappropriate.
+Check the model and make justified changes if needed.
+Do not ignore the pattern.
+What does ordinary least squares minimize?
+The sum of squared vertical residuals
+Every point's input coordinate
+All perpendicular geometric distances
+The error direction comes from the response variable's definition.
+A regression line always establishes causation
+Causal conclusions still depend on design and identification assumptions.
+A good fit permits unlimited extrapolation
+Outside the observed range, the relationship or conditions may change.
+Move one observation. How do slope, residuals, and squared error change?
+Keep four observations fixed and adjust only the fifth response. Compare exact least squares with vertical residuals.
+Causal conclusions still depend on design and identification assumptions.
+Fifth response: 3
+Set the fifth response to $3$ and compare the diagram and readings.
+At this preset: slope $0.5$; intercept $1$; residual sum of squares $1.5$; observations $5$.
+Fifth response: -1
+Set the fifth response to $-1$ and compare the diagram and readings.
+At this preset: slope $-0.3$; intercept $1.8$; residual sum of squares $7.9$; observations $5$.
+Fifth response: 8
+Set the fifth response to $8$ and compare the diagram and readings.
+At this preset: slope $1.5$; intercept $0$; residual sum of squares $11.5$; observations $5$.

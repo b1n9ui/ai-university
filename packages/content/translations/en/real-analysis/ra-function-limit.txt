@@ -1,0 +1,67 @@
+Function limits and continuity
+A function limit controls nearby inputs. Continuity additionally makes that limit equal the value at the center.
+A function limit controls nearby inputs. Continuity additionally makes that limit equal the value at the center.
+Receive the output error, then choose an input radius. Limits exclude the center; continuity checks its value.
+Specify the limit point and domain
+Separate limits from function values
+Specify the limit point and domain
+Discuss a function limit at a limit point of its domain. Inputs must be in the domain and differ from the center. Relative endpoints use the available one-sided approach.
+Separate limits from function values
+Changing only the center value preserves a punctured limit but may break continuity. At an isolated domain point, every function is automatically continuous.
+Work backward to a radius
+For a square function at a fixed center, factor output error into input difference and a magnitude factor. First restrict the radius below one, then obtain a uniform estimate.
+Continuity at a domain point means outputs at all sufficiently nearby domain inputs approach the value there.
+A function limit additionally requires the center to be a domain limit point and uses punctured neighborhoods.
+For continuity, the center belongs to the domain.
+First restrict inputs to within one of the center.
+Factor the square error.
+Choose a radius meeting both requirements.
+An incorrect center value
+Let $f(x)=x$ for nonzero inputs and $f(0)=1$. Find the limit and continuity at zero.
+Punctured inputs still approach zero under the identity rule.
+The value at the center is one.
+Limit zero; discontinuous.
+A linear radius
+For $f(x)=3x+1$, which input radius gives output error less than $0.06$?
+$|f(x)-f(a)|=3|x-a|$.
+Use radius zero point zero two. Strictly interior inputs give strictly bounded output error.
+$0.02$.
+Can changing a single value alter the punctured limit there?
+The limit excludes the center input.
+Other domain values stay unchanged, so the limit is unchanged.
+No.
+Does continuity at an isolated point require other nearby inputs?
+Choose a radius containing only the point itself.
+The condition is automatic.
+No.
+For $f(x)=x^2$ at center one, what radius does this lesson's conservative formula give for error $0.3$?
+Use twice the center magnitude plus one.
+$\delta=\min(1,0.3/3)=0.1$.
+$0.1$.
+Prove directly that $f(x)=x^2$ is continuous at every $a\in\mathbb R$.
+Require the input error to be below both one and the needed proportional bound.
+Given $\varepsilon>0$, take $\delta=\min(1,\varepsilon/(2|a|+1))$.
+If $|x-a|<\delta$, then $|x+a|\le|x-a|+2|a|<2|a|+1$.
+Thus $|x^2-a^2|=|x-a||x+a|<\delta(2|a|+1)\le\varepsilon$.
+Thus $|x^2-a^2|=|x-a||x+a|<\delta(2|a|+1)\le\varepsilon$.
+Why does a punctured limit not determine the center value?
+The input condition excludes the center
+The function has no domain
+The error must be fixed
+Continuity connects the limit to the function value.
+A limit guarantees continuity
+The center must also be defined with the same value.
+Choose a separate radius after each input is known
+One radius must first control every nearby input.
+Move the center and output error. How does the conservative radius guarantee all nearby inputs qualify?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+Choose an input radius after receiving the output error. Continuity also requires a defined center value equal to the limit.
+Output error: 1
+Set the output error to $1$. Compare input radius and output band, checking the analytic guarantee.
+Guaranteed radius $0.3333333$; worst closed-boundary error $0.7777778$.
+Output error: 0.505
+Set the output error to $0.505$. Compare input radius and output band, checking the analytic guarantee.
+Guaranteed radius $0.1683333$; worst closed-boundary error $0.3650028$.
+Output error: 0.01
+Set the output error to $0.01$. Compare input radius and output band, checking the analytic guarantee.
+Guaranteed radius $0.003333333$; worst closed-boundary error $0.006677778$.

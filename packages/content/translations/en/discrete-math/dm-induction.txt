@@ -1,0 +1,65 @@
+Mathematical induction
+Check a starting case, then prove that each case passes the result to its successor.
+Check a starting case, then prove that each case passes the result to its successor.
+Induction does not guess the next case from a few examples. It proves that every step connects to the next.
+Choose the starting case
+Use the induction hypothesis
+Choose the starting case
+If a statement starts at a specified integer, verify that starting case. The inductive step must then hold at every index from that point onward.
+Use the induction hypothesis
+Assume the statement at an arbitrary fixed current index only to prove it at the next. Do not assume the next case too.
+Isolate the change
+For sum identities, separate the last summand. For inequalities, check whether the added term can be controlled by the induction hypothesis.
+The statement is defined for all integers at or above its starting index.
+The base case and the range of the inductive step must connect.
+Verify the base case.
+Separate the next term and substitute the induction hypothesis.
+Factor to obtain the desired expression.
+Sum of odd integers
+Prove that the first $n$ positive odd integers sum to $n^2$.
+The base case $n=1$ holds.
+If the first $k$ terms sum to $k^2$, add $2k+1$.
+$k^2+2k+1=(k+1)^2$.
+The identity holds for every positive integer.
+A missing base case
+“If an integer exceeds one, its successor exceeds one.” Does this prove that every nonnegative integer exceeds one?
+The inductive step holds.
+The starting case zero fails.
+No; a valid base case is missing.
+Which base case should be checked for induction starting at three?
+Match the statement's domain.
+Verify three.
+Three.
+Find the sum of the first ten positive odd integers.
+Use the square formula.
+$10^2=100$.
+One hundred.
+Does the induction hypothesis permanently accept an unproved conclusion?
+It is a temporary assumption in a conditional argument.
+It proves the implication between arbitrary consecutive cases, which is then combined with the base case.
+No.
+If the first two cases hold, can a step advancing by two suffice?
+Separate odd and even chains.
+Two base cases covering the two parities let two-step induction reach every index.
+Yes, provided both chains have a base case.
+Does the base case alone complete an induction proof?
+Yes
+A general inductive step is also needed
+Checking ten more terms suffices
+Finitely many starting cases cannot replace an arbitrary inductive step.
+A valid step makes the base case unnecessary
+The chain needs a starting point.
+The next case may be assumed
+That would assume the desired conclusion circularly.
+Increase the number of terms. How does the new border enlarge the square by one layer?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+The chain needs a starting point.
+Current layer: 1
+Set the control to $1$. Compare the current step with the complete reference result.
+At this setting: total cells $1$; new cells in this layer $1$.
+Current layer: 5
+Set the control to $5$. Compare the current step with the complete reference result.
+At this setting: total cells $25$; new cells in this layer $9$.
+Current layer: 10
+Set the control to $10$. Compare the current step with the complete reference result.
+At this setting: total cells $100$; new cells in this layer $19$.

@@ -1,0 +1,62 @@
+Initial values and solution intervals
+A formula alone is not a complete answer
+What does an initial value specify?
+A first-order equation usually specifies $y(t_0)=y_0$. Second order usually also needs an initial derivative, representing initial velocity.
+Why state the interval?
+The solution of $y'=y^2,y(0)=1$ is $1/(1-t)$. Its maximal interval containing the initial time is $(-\infty,1)$.
+What about the formula beyond the pole?
+On $t>1$, the expression describes another solution segment. It cannot continue through blow-up or include the original initial value.
+Separate the nonzero solution.
+Integrate and apply the initial condition.
+Choose the connected interval containing the starting time.
+An exponential initial-value problem
+Solve $y'=-2y,y(0)=3$.
+The general solution is $Ce^{-2t}$.
+The initial condition gives $C=3$; the exponential has no finite singularity.
+$y=3e^{-2t}$, on the whole real line.
+Finite-time blow-up
+Solve $y'=y^2,y(0)=2$.
+Integration gives $-1/y=t+C$.
+The initial condition gives $C=-1/2$; the first pole is $t=1/2$.
+$y=2/(1-2t)$, on $(-\infty,1/2)$.
+Solve $y'=3y,y(0)=4$.
+Determine the exponential coefficient.
+$y=Ce^{3t}$; the initial condition gives $C=4$.
+$y=4e^{3t}$.
+Find the maximal interval for $y'=y^2,y(0)=-1$.
+Write the denominator from the initial value.
+The solution is $y=-1/(1+t)$, with a pole at $-1$.
+$(-1,\infty)$.
+Does specifying only $y(0)=1$ for $y''=-y$ determine a unique solution?
+Count the constants still free.
+Every $y=\cos t+C\sin t$ satisfies that condition.
+No; one more independent condition is needed.
+Give one solution of $y'=y^2,y(0)=0$.
+Do not divide by the unknown first.
+The zero function has derivative zero and right-hand side zero.
+$y\equiv0$.
+All points where the formula exists can be joined into one initial-value interval.
+A solution interval is connected and contains the initial time.
+Every first-order equation has a solution for all time.
+Local existence does not guarantee global existence.
+Initial data select a member of a solution family. The answer must also state how far it extends.
+A curve may become unbounded in finite time. Using the formula beyond its vertical asymptote does not continue the same solution.
+Determine constants from initial data
+Find the maximal interval containing the initial time
+Initial values and solution intervals
+An initial-value solution satisfies the equation and initial condition on an interval containing $t_0$, remaining within the equation's domain during extension.
+What is the maximal interval for $y=1/(1-t)$ with initial value $y(0)=1$?
+All real numbers except one
+Choose only a connected interval containing the initial time.
+After finding the formula, move in both time directions to check for domain boundaries and blow-up.
+Smaller initial value
+Blow-up occurs at time two.
+Set positive initial value $y_0$ to $0.5$ and observation time $t$ to $1$.
+Larger initial value
+Blow-up moves to time one.
+Set positive initial value $y_0$ to $1$ and observation time $t$ to $0.5$.
+Request beyond the endpoint
+The display explicitly reports that the solution cannot extend to the requested time.
+Set positive initial value $y_0$ to $1$ and observation time $t$ to $2$.
+The analytic solution is drawn only before blow-up. Drawing stops outside the viewport; no point is fabricated beyond blow-up.
+What happens to blow-up time when the positive initial value doubles?

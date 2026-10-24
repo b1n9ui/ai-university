@@ -1,0 +1,65 @@
+Binary relations and relation matrices
+A relation records which ordered pairs hold, allowing more associations than a function.
+A relation records which ordered pairs hold, allowing more associations than a function.
+In a relation matrix, rows are starting objects and columns are destination objects; a true cell marks a related pair.
+Represent a relation
+Check its properties
+Represent a relation
+A binary relation on a set is a subset of its Cartesian square. An object may relate to several objects or to none.
+Check its properties
+Reflexivity requires every diagonal cell. Symmetry requires matching mirror cells. Antisymmetry forbids two-way links between distinct objects, but permits loops.
+Find the transitive closure
+Transitivity requires a direct relation whenever two relation steps connect a pair. Transitive closure adds every pair joined by a positive-length path; reflexive transitive closure also includes length-zero paths.
+Transitivity lets every two-step relation be replaced by one step.
+Antisymmetry permits two-way relations when both objects are the same.
+Transitive and reflexive transitive closures use different allowed path lengths.
+The matrix records one-step relations.
+Boolean multiplication records two-step reachability.
+Combine all positive-length paths.
+Symmetry and antisymmetry
+Can the identity relation, containing only diagonal pairs, be both symmetric and antisymmetric?
+Every two-way relation concerns the same object.
+Both definitions are satisfied.
+Yes. These properties are not negations of each other.
+A missing edge
+If $1R2,2R3$ but not $1R3$, is the relation transitive?
+The first two relations satisfy the premise of transitivity.
+The required conclusion fails.
+It is not transitive; the missing edge must be added.
+How many binary relations exist on a three-element set?
+Each of nine ordered pairs can be included or omitted.
+$2^9=512$.
+Five hundred twelve.
+Is the empty relation transitive?
+Can both premises ever hold?
+There is no two-step premise, so no violation occurs.
+Yes.
+May an antisymmetric relation have loops?
+Antisymmetry restricts distinct objects.
+An object may relate to itself.
+Yes.
+Does the transitive closure of a directed three-cycle contain loops?
+Three steps return to the starting point.
+Each vertex has a positive-length closed walk.
+Yes.
+Can symmetry and antisymmetry both hold?
+No
+Yes
+Not for a nonempty relation
+The identity relation is an example.
+Antisymmetric means asymmetric
+Antisymmetry permits loops, and permits two-way links only at the same object.
+Closure stops after adding two-step edges
+Added edges can create longer connections; the full closure is required.
+Switch relation modes. Is the matrix reflexive, symmetric, and transitive?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+Antisymmetry permits loops, and permits two-way links only at the same object.
+Relation mode: 0
+Set the control to $0$. Observe which objects, relations, or counts change.
+At this setting: reflexive: yes; symmetric: no; transitive: yes.
+Relation mode: 1
+Set the control to $1$. Observe which objects, relations, or counts change.
+At this setting: reflexive: yes; symmetric: yes; transitive: no.
+Relation mode: 2
+Set the control to $2$. Observe which objects, relations, or counts change.
+At this setting: reflexive: yes; symmetric: no; transitive: no.

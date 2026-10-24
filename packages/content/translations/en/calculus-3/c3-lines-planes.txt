@@ -1,0 +1,67 @@
+Lines and planes in space
+Directions define lines; normals define planes
+A line moves from one point in a fixed direction. Every displacement within a plane is perpendicular to its normal.
+One direction controls a line; one perpendicular direction constrains all motion in a plane.
+Write equations of lines and planes
+Check intersections, parallelism and distances
+Why parametrize a line?
+One parameter controls three coordinates. Zero direction components are allowed; do not force a symmetric form that divides by zero.
+Deriving a plane equation
+The displacement from a known plane point to any other plane point dots to zero with the normal. Cross two nonparallel in-plane directions to find a normal.
+Computing distance
+Project displacement from a plane point onto its unit normal and take absolute value. Test line direction dotted with normal to analyze parallelism and intersections.
+Directions define lines; normals define planes
+Line direction $\mathbf d\ne0$ and plane normal $\mathbf n\ne0$. Dot-product distances use Euclidean coordinates.
+In-plane displacement has no normal component.
+Substitute the line into the plane.
+Convert the perpendicular component to distance.
+An intersection parameter
+Where do line $(x,y,z)=(t,1-t,2t)$ and plane $x+y+z=3$ intersect?
+Substitution gives $1+2t=3$, hence $t=1$.
+Insert this into the line to obtain $(1,0,2)$.
+Intersection $(1,0,2)$.
+Point-to-plane distance
+Find the distance from $(0,0,0)$ to $x+2y+2z=6$.
+The normal has length $\sqrt{1+4+4}=3$.
+The plane equation's absolute residual at the origin is 6.
+Distance 2.
+Nonparallel spatial lines must intersect.
+They can be skew. Check for a common point.
+The equation's constant magnitude is the distance.
+Divide by normal length and account for the chosen point.
+Write the line through the origin in direction $\langle1,0,2\rangle$.
+Use one parameter for displacement.
+$\mathbf r(t)=t\langle1,0,2\rangle$; its vertical coordinate in the horizontal plane stays zero.
+$(x,y,z)=(t,0,2t)$.
+Find the plane through $(1,1,1)$ with normal $\langle1,-1,2\rangle$.
+Dot the normal with displacement.
+$(x-1)-(y-1)+2(z-1)=0$.
+Simplification gives $x-y+2z=2$.
+$x-y+2z=2$.
+Does the horizontal axis in $z=0$ intersect line $(0,1,t)$?
+Compare all coordinates.
+The horizontal axis has second coordinate zero; the other line has second coordinate 1, so no intersection.
+Their directions are nonparallel, making them skew.
+They neither intersect nor are parallel.
+Does $\mathbf n\cdot\mathbf d=0$ ensure the line is not contained in the plane?
+Check a point on the line too.
+It only makes the direction parallel to the plane.
+If the starting point lies in the plane, so does the whole line.
+No.
+If line direction dots nontrivially with plane normal, how many intersections exist?
+Zero
+One
+Infinitely many
+Substitution gives a linear parameter equation with nonzero coefficient and one solution.
+Plane $x+y+z=1$ and line $\mathbf r(t)=(0,0,1)+t(1,1,1)$.
+How does the line cross from one side of the plane to the other?
+Substituting a parametrized line into a plane reduces spatial intersection to one equation.
+Below the plane
+Set line parameter $t$ to $-1$.
+The point is below the plane; the signed normal residual is negative.
+Crossing the plane
+Set line parameter $t$ to $0$.
+The line passes through the plane's center; signed residual is zero.
+Above the plane
+Set line parameter $t$ to $1$.
+The point is on the opposite side; the residual changes sign.

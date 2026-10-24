@@ -1,0 +1,230 @@
+{
+  "id": "ai-development",
+  "title": "Building Projects with AI",
+  "englishTitle": "Building Projects with AI",
+  "subtitle": "From clear requests to judgment, verification and delivery",
+  "version": "0.1.1",
+  "status": "published",
+  "language": "en",
+  "audience": "People who have tried AI coding but lack an overview of project development. No prior Python, Git or terminal experience is required.",
+  "baseline": "Tool-neutral, using a personal study-list webpage throughout. Practice decisions in the book, then work in a separate directory. Commands use Git 2.28+ and Node.js 22.12+ capabilities; QA.md records the actual verification environment.",
+  "outcomes": [
+    "Turn an idea into a user scenario, first-release scope and acceptance cases",
+    "Explain the roles of files, data, browsers and servers",
+    "Make focused Git commits and distinguish local commits, pushes, PRs and deployment",
+    "Give an agent accurate context and tasks, then inspect important changes",
+    "Use reproduction, boundary cases and requirements to judge results",
+    "Deliver a runnable small project with backups, recovery and clear limitations"
+  ],
+  "outOfScope": [
+    "Full algorithms and language training for professional engineering",
+    "Implementation of realtime collaboration, payments, authentication or production databases",
+    "Cloud account registration, paid service selection and automatic deployment",
+    "Advanced Git history rewriting, complex rebases and merge-commit reverts",
+    "Guaranteed prompt outcomes, arbitrary code execution or runtime model services"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "humanReviewed": false,
+    "date": "2026-10-11"
+  },
+  "licenses": {
+    "content": "CC0-1.0",
+    "toolsAndProject": "MIT"
+  },
+  "chapters": [
+    {
+      "id": "chapter-1",
+      "title": "Define the problem",
+      "objective": "Describe one real scenario, narrow the first release and agree on observable completion criteria.",
+      "lessons": [
+        "user-problem",
+        "small-scope",
+        "acceptance"
+      ]
+    },
+    {
+      "id": "chapter-2",
+      "title": "Understand how a project runs",
+      "objective": "Locate entry points, trace data and follow instructions to run locally.",
+      "lessons": [
+        "project-map",
+        "data-flow",
+        "run-environment"
+      ]
+    },
+    {
+      "id": "chapter-3",
+      "title": "Keep recoverable records with Git",
+      "objective": "Distinguish working tree, index and commits; understand branches, remotes, PRs and recovery.",
+      "lessons": [
+        "git-snapshot",
+        "git-collaboration",
+        "git-recovery"
+      ]
+    },
+    {
+      "id": "chapter-4",
+      "title": "Work with an agent",
+      "objective": "Provide accurate context, give small tasks, review changes and require verification evidence.",
+      "lessons": [
+        "agent-context",
+        "task-prompts",
+        "review-changes"
+      ]
+    },
+    {
+      "id": "chapter-5",
+      "title": "Judge reliability",
+      "objective": "Choose tests yourself, reproduce failures and maintain data and permission boundaries.",
+      "lessons": [
+        "testing",
+        "debugging",
+        "security"
+      ]
+    },
+    {
+      "id": "chapter-6",
+      "title": "Finish and deliver a small project",
+      "objective": "Choose suitable storage, check the published version and deliver something runnable and explainable.",
+      "lessons": [
+        "data-design",
+        "release",
+        "capstone"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "mdn-start",
+      "title": "MDN: Your first website",
+      "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website",
+      "purpose": "Check webpage components and the process from planning to publication."
+    },
+    {
+      "id": "mdn-flow",
+      "title": "MDN: Client and server",
+      "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/First_steps/Client-Server_overview",
+      "purpose": "Check requests, responses and client/server responsibilities."
+    },
+    {
+      "id": "mdn-storage",
+      "title": "MDN: localStorage",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage",
+      "purpose": "Check origin-scoped persistence, string storage and storage exceptions."
+    },
+    {
+      "id": "mdn-text",
+      "title": "MDN: textContent",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent",
+      "purpose": "Check inserting input as text."
+    },
+    {
+      "id": "git-record",
+      "title": "Pro Git: Recording changes",
+      "url": "https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository",
+      "purpose": "Check working-tree, staging and commit distinctions."
+    },
+    {
+      "id": "git-diff",
+      "title": "Git: diff",
+      "url": "https://git-scm.com/docs/git-diff",
+      "purpose": "Check comparisons for unstaged and staged changes."
+    },
+    {
+      "id": "git-branch",
+      "title": "Pro Git: Branching and merging",
+      "url": "https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging",
+      "purpose": "Check branches and conflict handling."
+    },
+    {
+      "id": "git-push",
+      "title": "Git: push",
+      "url": "https://git-scm.com/docs/git-push",
+      "purpose": "Check pushing, remote branches and upstream relationships."
+    },
+    {
+      "id": "git-restore",
+      "title": "Git: restore",
+      "url": "https://git-scm.com/docs/git-restore",
+      "purpose": "Check the different consequences of unstaging and discarding working edits."
+    },
+    {
+      "id": "git-revert",
+      "title": "Git: revert",
+      "url": "https://git-scm.com/docs/git-revert",
+      "purpose": "Check reversing ordinary commits through new commits; merge-commit reversal is out of scope."
+    },
+    {
+      "id": "git-stash",
+      "title": "Git: stash",
+      "url": "https://git-scm.com/docs/git-stash",
+      "purpose": "Check temporary storage and untracked-file options."
+    },
+    {
+      "id": "github-pr",
+      "title": "GitHub: Pull requests",
+      "url": "https://docs.github.com/en/pull-requests/reference/pull-requests",
+      "purpose": "Check review and merge-proposal concepts."
+    },
+    {
+      "id": "npm-ci",
+      "title": "npm: ci",
+      "url": "https://docs.npmjs.com/cli/v11/commands/npm-ci/",
+      "purpose": "Check clean lockfile-based installation and failure on mismatch."
+    },
+    {
+      "id": "node-test",
+      "title": "Node.js: Test runner",
+      "url": "https://nodejs.org/api/test.html",
+      "purpose": "Check node --test and assertions."
+    },
+    {
+      "id": "prompt",
+      "title": "Anthropic: Prompting practices",
+      "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices",
+      "purpose": "Used only for general principles of explicit tasks, relevant context and examples. Task briefs and collaboration exercises are original teaching material, without model-performance guarantees."
+    },
+    {
+      "id": "secrets",
+      "title": "OWASP: Secrets management",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html",
+      "purpose": "Check credential lifecycle, least privilege and revocation/rotation after exposure."
+    },
+    {
+      "id": "git-fetch",
+      "title": "Git: fetch",
+      "url": "https://git-scm.com/docs/git-fetch",
+      "purpose": "Check downloading remote history versus merging into the current branch."
+    },
+    {
+      "id": "git-pull",
+      "title": "Git: pull",
+      "url": "https://git-scm.com/docs/git-pull",
+      "purpose": "Check --ff-only fast-forwards and refusal of divergent histories."
+    },
+    {
+      "id": "git-init",
+      "title": "Git: init",
+      "url": "https://git-scm.com/docs/git-init",
+      "purpose": "Check initial branch selection and new repository creation."
+    },
+    {
+      "id": "git-install",
+      "title": "Git: Installation",
+      "url": "https://git-scm.com/install/",
+      "purpose": "Provide the official tool-installation entry point."
+    },
+    {
+      "id": "node-install",
+      "title": "Node.js: Downloads",
+      "url": "https://nodejs.org/en/download",
+      "purpose": "Provide the official runtime-installation entry point."
+    }
+  ],
+  "contribution": {
+    "submittedBy": "aby0120",
+    "pullRequest": "https://github.com/b1n9ui/ai-university/pull/5",
+    "acceptedOn": "2026-10-21"
+  }
+}

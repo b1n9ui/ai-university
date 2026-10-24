@@ -1,0 +1,67 @@
+Bernoulli and binomial distributions
+Count successes in a fixed number of independent trials sharing one success probability.
+Count successes in a fixed number of independent trials sharing one success probability.
+Sequences with the same success count have equal probability; a combination counts their possible positions.
+Check model assumptions
+Find an exact success-count probability
+Check model assumptions
+Require a fixed trial count, two outcomes, mutual independence, and constant success probability. Unequal probabilities or substantial sampling without replacement do not automatically fit.
+Find an exact success-count probability
+Find one sequence probability with specified success positions, then multiply by the number of such position sets.
+Use indicators for moments
+Record each success as zero or one and add. Independence also lets their variances add.
+Integers satisfy $n\ge0$, $0\le p\le1$, and $k=0,\ldots,n$.
+Integers satisfy $n\ge0$, $0\le p\le1$, and $k=0,\ldots,n$.
+Bernoulli trials are mutually independent with the same success probability.
+Fix one sequence.
+P(\text{sequence})=p^k(1-p)^{n-k}
+Count the successful positions.
+\#\text{sequences}={n\choose k}
+Add independent indicators.
+Two successes in four trials
+Four independent trials each succeed with probability one half. Find exactly two successes probability.
+Choose positions: $\binom42=6$.
+Each sequence has probability $1/16$.
+$3/8$.
+Mean and spread
+For $X\sim\operatorname{Bin}(20,0.2)$, find mean and variance.
+$np=4$.
+$np(1-p)=3.2$.
+Mean $4$; variance $3.2$.
+What is the probability of all heads in three fair independent tosses?
+One sequence qualifies.
+$(1/2)^3=1/8$.
+$1/8$.
+Find the probability of exactly one head in three independent fair tosses.
+Three success positions are possible.
+$3/8$.
+$3/8$.
+Find the expectation of $\operatorname{Bin}(10,0.3)$.
+Multiply trial count by success probability.
+$10(0.3)=3$.
+$3$.
+Is the count still necessarily binomial if success probability varies over time?
+Check the common-probability assumption.
+That assumption fails.
+Generally not.
+What does the binomial coefficient do in this model?
+Changes each success probability
+Counts choices of successful positions
+Guarantees a normal approximation
+The same success count can arise from several sequences.
+One sequence probability suffices
+An exact-count event usually contains multiple sequences.
+Two outcomes always imply a binomial model
+Fixed count, common probability, and independence are also required.
+Change success probability or trial count. How does the mass plot shift and spread?
+Masses use the exact binomial formula; one selected success count and its probability are highlighted.
+An exact-count event usually contains multiple sequences.
+Success probability: 0.4
+Set success probability to $0.4$ and compare the figure and readouts.
+At these parameters: binomial mean $4.8$; variance $2.88$; selected successes $4$; exact selected probability $0.212841$.
+Success probability: 0
+Set success probability to $0$ and compare the figure and readouts.
+At these parameters: binomial mean $0$; variance $0$; selected successes $4$; exact selected probability $0$.
+Success probability: 1
+Set success probability to $1$ and compare the figure and readouts.
+At these parameters: binomial mean $12$; variance $0$; selected successes $4$; exact selected probability $0$.

@@ -1,0 +1,64 @@
+Least squares and normal equations
+Find the nearest reachable output
+When an exact system has no solution, least squares minimizes squared residual length.
+Project the unreachable right-hand side onto the column space, then find an input producing that nearest output.
+Form and solve normal equations
+Distinguish uniqueness of the optimal output and input
+Where do normal equations come from?
+The optimal residual $r=b-A\hat x$ is perpendicular to every column, giving $A^T(A\hat x-b)=0$.
+Is the solution unique?
+Optimal output $A\hat x$ is always unique. The optimal input is unique exactly for full column rank. With dependent columns, adding kernel vectors leaves the error unchanged.
+How should it be calculated?
+With full column rank, use QR and solve $R\hat x=Q^Tb$. Forming $A^TA$ directly can amplify conditioning problems and is not always the best numerical method.
+Least squares and normal equations
+Use the finite-dimensional real Euclidean norm. Writing $(A^TA)^{-1}$ additionally requires full column rank.
+The optimal remainder is perpendicular to the column space.
+Every other input adds a nonnegative squared-error term.
+Full column rank makes the input unique too.
+A(x-\hat x)=0\Rightarrow x=\hat x\quad\text{if }\ker A=0
+Fit a line
+Fit $(0,1),(1,2),(2,2)$ using $y=\beta_0+\beta_1x$.
+$A=\begin{pmatrix}1&0\\1&1\\1&2\end{pmatrix}$; the normal equations are $\begin{pmatrix}3&3\\3&5\end{pmatrix}\binom{\beta_0}{\beta_1}=\binom56$.
+Solving gives $\beta_1=1/2,\beta_0=7/6$.
+The residual is $(-1/6,1/3,-1/6)$ and its squared norm is $1/6$.
+$\hat y=7/6+x/2$.
+Nonunique optimal inputs
+Minimize $(x+y-1)^2$.
+Every input with $x+y=1$ gives zero error.
+For example, both $(1,0)$ and $(0,1)$ are optimal.
+The unique output is one; inputs are not unique.
+Least squares always makes every residual zero.
+Zero residual is possible only when the right-hand side lies in the column space.
+Normal equations can always be solved by an inverse.
+Dependent columns make their coefficient matrix singular.
+What constant best fits 1, 2, and 3?
+Project onto the all-ones direction.
+$c=(1+2+3)/3=2$.
+How does the optimal residual relate to the columns of $A$?
+Use the normal equations.
+$A^Tr=0$.
+Perpendicular to every column.
+If $b\in\operatorname{col}A$, what is the minimum error?
+An exact solution exists.
+Choose zero residual.
+Does adding a kernel vector to an optimal input change the error?
+Its matrix image stays unchanged.
+$A(\hat x+z)=A\hat x$.
+Unchanged.
+Fit the three points $(0,1),(1,2),(2,2)$ using $y=ax+b$. The vertical segments show individual residuals.
+Where is the residual sum of squares minimized as the line changes?
+Is the optimal least-squares output unique?
+Always unique
+Unique only for square matrices
+Never unique
+Orthogonal projection is unique; input uniqueness additionally depends on the kernel.
+An inconsistent exact system can still have a meaningful best fit. Find the nearest reachable output, then ask whether its generating input is unique.
+Constant fit
+Set $a=0,b=1$.
+The residual sum of squares is two.
+An overly steep line
+Set $a=1,b=1$.
+The residual sum of squares is one.
+The best-fit line
+Set $a=1/2,b=7/6$.
+The residual sum of squares drops to $1/6$, but remains nonzero.

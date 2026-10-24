@@ -1,0 +1,65 @@
+Quantifiers, domains, and negation
+A quantifier specifies “every” or “at least one”; the domain specifies which objects it concerns.
+A quantifier specifies “every” or “at least one”; the domain specifies which objects it concerns.
+One failure refutes “every object works.” Refuting “some object works” requires ruling out every object.
+Specify the domain
+Change quantifier order
+Specify the domain
+“Every number has a successor” means different things on a finite set and on the integers. Specify the domain before applying quantifiers.
+Change quantifier order
+Everyone liking some dish does not imply that one dish is liked by everyone. An existential witness may depend on preceding variables.
+Negate quantifiers
+Negate a universal statement by asserting a counterexample; negate an existential statement by denying it for every object. For nested quantifiers, switch each from outside inward.
+Quantifiers bind variables. Their order determines how existential witnesses may depend on other variables.
+Use the specified domain.
+The displayed two-dimensional table has nonempty row and column sets.
+A universal statement is true when every object satisfies it.
+It is false exactly when some object fails.
+Apply this rule successively to nested quantifiers.
+Different witnesses
+Two people each like only one dish, and their dishes differ. Does everyone liking something imply a shared favorite?
+Each row contains a true cell.
+No column is entirely true.
+No.
+An empty domain
+Is “Every element is positive” true on the empty set?
+A false universal statement requires a counterexample in the set.
+The empty set has no counterexample.
+True; the claim that a positive element exists in the empty set is false.
+Negate $\exists x\,P(x)$.
+No object satisfies the property.
+Every object fails the property.
+$\forall x\,\neg P(x)$.
+Is $\forall x\exists y:y>x$ true over the integers?
+Construct a witness depending on the preceding variable.
+Take $y=x+1$.
+True.
+Is $\exists y\forall x:y>x$ true over the integers?
+Choose an integer greater than the proposed fixed witness.
+Given $y$, take $x=y+1$.
+False.
+Can a single counterexample refute a universal statement?
+A universal statement permits no exceptions.
+One failing object suffices.
+Yes.
+If every row has a true cell, must some column be entirely true?
+Always
+Only in a square table
+No
+Different rows may use different columns as witnesses.
+Quantifiers can be exchanged freely
+Reordering mixed quantifiers changes witness dependencies.
+The domain does not matter
+Truth depends on the objects being considered.
+Switch relation tables. How does a witness in each row differ from a single column witnessing every row?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+Reordering mixed quantifiers changes witness dependencies.
+Relation-table mode: 0
+Set the control to $0$. Observe which objects, relations, or counts change.
+At this setting: a true cell in every row: true; an entirely true column: false.
+Relation-table mode: 1
+Set the control to $1$. Observe which objects, relations, or counts change.
+At this setting: a true cell in every row: true; an entirely true column: true.
+Relation-table mode: 2
+Set the control to $2$. Observe which objects, relations, or counts change.
+At this setting: a true cell in every row: false; an entirely true column: false.

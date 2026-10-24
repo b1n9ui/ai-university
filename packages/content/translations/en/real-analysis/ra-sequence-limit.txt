@@ -1,0 +1,67 @@
+Quantifiers in sequence limits
+Convergence requires every term after some cutoff to meet any prescribed positive error.
+Convergence requires every term after some cutoff to meet any prescribed positive error.
+The error is given first; you then choose a cutoff. Selecting a few favorable terms is insufficient.
+Order the quantifiers
+Find a valid cutoff
+Order the quantifiers
+The cutoff may depend on the error, not on a subsequently chosen term index. One fixed wide band does not prove convergence.
+Find a valid cutoff
+For reciprocals, the index must strictly exceed the reciprocal error. Taking its floor plus one respects both strictness and integer indexing.
+Prove uniqueness
+For two distinct proposed limits, use one third of their distance as the error. Enter both tails; the triangle inequality then makes their distance less than itself.
+Sequence indices start at one unless stated otherwise.
+The limit is a finite real number.
+Divergence to infinity is defined separately, not a finite real limit.
+Rewrite the reciprocal error as an index constraint.
+Choose a strictly larger integer.
+Every subsequent term then satisfies it.
+A cutoff
+For $a_n=1/n$ and error $0.1$, what is the smallest integer cutoff?
+We need $n>10$.
+Starting at eleven, every term is strictly less than one tenth.
+Eleven.
+Nonconvergent oscillation
+Why does $a_n=(-1)^n$ not converge?
+Even terms equal one; odd terms equal negative one.
+Convergence would give both subsequences the same limit. Alternatively, two tail terms distance two apart violate the Cauchy condition.
+The oscillation does not shrink as the index increases.
+What is the smallest valid cutoff for $1/n$ with error $1/4$?
+The error must be strictly less than one quarter.
+The index must exceed four.
+Five.
+May finitely many initial terms lie far from a sequence's limit?
+The definition restricts only a tail.
+A finite prefix does not affect the limit.
+Yes.
+Do infinitely many terms within each error suffice?
+Other terms might remain outside forever.
+This controls some subsequences, not the entire tail.
+No.
+Using the limit definition, prove that changing finitely many terms of $a_n\to L$ leaves the limit unchanged.
+Move the cutoff beyond every modified term.
+Suppose only the first $M$ terms change, giving $b_n$.
+Given $\varepsilon>0$, choose the original cutoff $N_0$ so $n\ge N_0$ implies $|a_n-L|<\varepsilon$.
+Take $N=\max(N_0,M+1)$. Then $n\ge N$ gives $b_n=a_n$, with the same error bound.
+Take $N=\max(N_0,M+1)$. Then $n\ge N$ gives $b_n=a_n$, with the same error bound.
+What may a cutoff depend on?
+The error
+A subsequently selected term index
+Nothing at all
+First receive the error, then choose one cutoff controlling every later term.
+Some nearby terms establish convergence
+Every sufficiently late term must be nearby.
+Equality with the error boundary meets the strict definition
+The definition requires strictly less; choose a later cutoff.
+Narrow the error band. How does the analytically computed cutoff change?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+The error comes first, then the cutoff. Every sufficiently late term must be controlled, not just selected terms.
+Final displayed index: 1
+Set the final displayed index to $1$. Compare the analytic cutoff and last term; check all terms beyond the cutoff.
+Analytic cutoff $11$; last displayed term $1$; cutoff reached: no.
+Final displayed index: 100
+Set the final displayed index to $100$. Compare the analytic cutoff and last term; check all terms beyond the cutoff.
+Analytic cutoff $11$; last displayed term $0.01$; cutoff reached: yes.
+Final displayed index: 200
+Set the final displayed index to $200$. Compare the analytic cutoff and last term; check all terms beyond the cutoff.
+Analytic cutoff $11$; last displayed term $0.005$; cutoff reached: yes.

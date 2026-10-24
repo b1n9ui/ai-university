@@ -1,0 +1,65 @@
+Pressure and work by layers
+Depth and lifting distance vary with position
+Total force and work accumulate layer contributions; force or travel distance can differ between layers.
+Water pressure increases with depth. Using one depth for an entire gate only works if it is the correct average.
+Force on a gate
+Hydrostatic gauge pressure is $\rho g h$. Strip area is width times thickness, so $dF=\rho g h\,dA$.
+What changes for pumping work?
+A layer weighs $\rho g\,dV$; multiply by its lift to the outlet: $dW=\rho g\ell\,dV$. Tank shape is specified by horizontal cross-sectional area $A(y)$, not base area alone. The water examples use $\rho=1000\,\mathrm{kg/m^3}$, $g=9.8\,\mathrm{m/s^2}$.
+Why draw coordinates first?
+Mark the surface, bottom, outlet and positive direction. Then express both depth and lift as functions of position.
+Depth and lifting distance vary with position
+Water is at rest, with known density and gravity. Use gauge pressure, neglect flow losses and keep units consistent.
+Depth is nearly constant across a thin horizontal strip.
+Refine the strips to obtain total hydrostatic force.
+Multiply each layer's weight by its lift to obtain work.
+A rectangular gate
+A vertical gate has width $2\,\mathrm m$ and extends $3\,\mathrm m$ below the surface. With water density $1000\,\mathrm{kg/m^3}$ and $g=9.8\,\mathrm{m/s^2}$, find the resultant force.
+Measure depth $y$ downward; $dA=2dy$.
+$F=9800\int_0^3 2y dy=88200$.
+$88200\,\mathrm N$.
+Pumping a cylindrical tank
+A vertical cylindrical tank has constant horizontal cross-sectional area $1\,\mathrm{m^2}$ and water depth $2\,\mathrm m$. Pump it empty to a fixed outlet $2\,\mathrm m$ above the bottom, neglecting losses. Find the work.
+Set the bottom at $y=0$. A layer has volume $1\,dy$, weight $9800\,dy$ and lifting distance $2-y$ to the fixed outlet.
+$W=9800\int_0^2(2-y)\,dy=19600\,\mathrm J$. The water level falls; the outlet height stays fixed.
+$19600\,\mathrm J$.
+Total work equals total weight.
+Multiply weight by distance too; each layer generally travels a different distance.
+Pressure and resultant force are the same quantity.
+Pressure is force per area. Integrate it over area to obtain force.
+A rectangular gate has width $1\,\mathrm m$ and depth $2\,\mathrm m$ below the surface. Find the resultant force.
+$19600\,\mathrm N$.
+Slice by depth.
+$F=9800\int_0^2y dy=19600$.
+A vertical cylindrical tank has cross-sectional area $1\,\mathrm{m^2}$, water depth $2\,\mathrm m$ and a fixed outlet $3\,\mathrm m$ above its bottom. With $\rho=1000\,\mathrm{kg/m^3}$, $g=9.8\,\mathrm{m/s^2}$ and no losses, find the work to empty it.
+$39200\,\mathrm J$.
+Each layer travels one additional meter.
+$W=9800\int_0^2(3-y)dy=39200$.
+A spring has $k=20\,\mathrm{N/m}$. Find the work to stretch it from 0 to $0.5\,\mathrm m$.
+$2.5\,\mathrm J$.
+The force changes with extension.
+$W=\int_0^{0.5}20x dx=2.5$.
+Does bottom pressure times total area overestimate or underestimate force on a vertical gate?
+Overestimate, for a nondegenerate vertical gate.
+The bottom has the greatest depth.
+Every other point has lower pressure; replacing all pressures by the maximum overestimates the integral.
+For pumping, what is one layer's work contribution?
+Mass times height
+Weight times lifting distance
+Pressure times volume
+Weight is the ideal lifting force; multiply by displacement to obtain work.
+First define a small layer's physical contribution, then sum. The integral follows the model.
+One meter deep
+Set depth to 1.
+Force per unit width is $4900\,\mathrm N$.
+Two meters deep
+Set depth to 2.
+Force per unit width is $19600\,\mathrm N$, four times the previous value.
+Three meters deep
+Set depth to 3.
+Force per unit width is $44100\,\mathrm N$; bottom pressure does not represent the whole gate.
+Slice a rectangular gate by depth; pressure increases linearly downward.
+If depth doubles, does force per unit width only double?
+Model hydrostatic force using thin strips
+Set up work integrals with varying lift
+Check directions, units and assumptions

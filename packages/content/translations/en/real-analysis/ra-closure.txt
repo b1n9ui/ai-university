@@ -1,0 +1,66 @@
+Limit points, closure, and sequential criteria
+The closure contains every point whose arbitrarily small neighborhoods meet the original set.
+The closure contains every point whose arbitrarily small neighborhoods meet the original set.
+Closure allows meeting the point itself; a limit point requires other set members nearby.
+Distinguish closure and limit points
+Establish a sequential criterion
+Distinguish closure and limit points
+A closure point has every neighborhood meeting the set. A limit point has every punctured neighborhood meeting it. Thus isolated members are closure points but not limit points.
+Establish a sequential criterion
+At a closure point, select a set member within each reciprocal radius to form a convergent sequence. Conversely, convergence ensures every neighborhood meets the set.
+Characterize closed sets by limits
+A closed set contains limits of all convergent sequences from itself. If not closed, a missing closure point supplies a contradicting sequence by the same construction.
+The closure is the union of the set and all its limit points.
+These sequential criteria hold for reals and metric spaces.
+Every small neighborhood contains a set member.
+Select members successively.
+Errors vanish, giving a sequence approaching the closure point.
+The reciprocal set
+Find the closure of $A=\{1/n:n\ge1\}$.
+Every original member belongs, and zero is a limit point.
+Every other point has a small neighborhood avoiding the set.
+$A\cup\{0\}$.
+Closure of the rationals
+What is the closure of the rationals in the real line?
+Every nonempty neighborhood of every real contains a rational.
+Thus every real is included.
+The whole real line.
+Does an isolated member belong to the closure?
+A set is contained in its closure.
+Yes, although it need not be a limit point.
+Yes.
+Does a singleton have a limit point?
+Use punctured neighborhoods.
+After removing the center there are no other members.
+No.
+Can a convergent sequence in a closed set have its limit outside?
+Use the sequential criterion for closedness.
+No.
+No.
+Show that an isolated closure point need not be a limit point, using the smallest example.
+Compare neighborhoods containing the center with punctured neighborhoods.
+Take $A=\{0\}$. Every neighborhood of zero meets $A$, so $0\in\overline A$.
+But $( -r,r)\setminus\{0\}$ does not meet $A$.
+Thus zero is a closure point but not a limit point. The closure definition permits meeting the center itself.
+Thus zero is a closure point but not a limit point. The closure definition permits meeting the center itself.
+What distinguishes limit points from closure points?
+Whether punctured neighborhoods must still meet the set
+Whether the point is positive
+Whether it has a decimal representation
+An isolated member meets only the closure condition.
+Closure contains only original members
+It also adds missing limit points.
+Every member is a limit point
+Isolated points are counterexamples.
+Show more reciprocal terms. Why is zero a limit point without being an original member?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+A limit point needs other members nearby; closure may meet the center itself and includes missing limit points.
+Displayed reciprocal terms: 1
+Set the reciprocal term count to $1$. Watch the points accumulate at zero and distinguish the set from its closure.
+Finite displayed terms $1$; zero belongs to the full closure: yes.
+Displayed reciprocal terms: 50
+Set the reciprocal term count to $50$. Watch the points accumulate at zero and distinguish the set from its closure.
+Finite displayed terms $50$; zero belongs to the full closure: yes.
+Displayed reciprocal terms: 100
+Set the reciprocal term count to $100$. Watch the points accumulate at zero and distinguish the set from its closure.
+Finite displayed terms $100$; zero belongs to the full closure: yes.

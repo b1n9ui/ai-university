@@ -1,0 +1,65 @@
+Confidence intervals for a mean and coverage
+Confidence level describes a method's long-run coverage, not a posterior probability for an observed interval.
+Confidence level describes a method's long-run coverage, not a posterior probability for an observed interval.
+Repeated samples produce different intervals. A specified fraction of them cover the same true mean.
+Start with a pivot
+Choose $z$ or $t$
+Start with a pivot
+For a normal sample with unknown variance, the mean's $t$ statistic has a distribution free of unknown parameters. Solve its central probability statement for a random interval.
+Choose $z$ or $t$
+Use $z$ when population standard deviation is genuinely known; use the sample standard deviation and $t$ when it is unknown. Nonnormal settings require a separate assessment of approximation conditions.
+Interpret coverage correctly
+Before sampling, a random interval covers the fixed parameter with a specified probability. After observation the interval is fixed; frequentist confidence is not a posterior probability for the parameter.
+An exact $t$ interval requires independent normal observations and $n\ge2$.
+An exact $t$ interval requires independent normal observations and $n\ge2$.
+For a normal model with known scale, replace the margin by $z_{1-\alpha/2}\sigma/\sqrt n$.
+The standardized statistic's central region has nominal coverage.
+Multiply by the positive standard error and rearrange.
+Obtain a repeated-sampling coverage statement.
+Calculate a $t$ interval
+For normal data with $n=16,\bar x=10,s=4$ and $t_{0.975,15}\approx2.131$, find the interval.
+The standard error is one.
+Extend $2.131$ to either side of the sample mean.
+Approximately $[7.869,12.131]$.
+Known scale
+A normal population has known standard deviation ten. Given $n=100,\bar x=50$, find an approximate $95\%$ interval.
+The standard error is one.
+Use the standard normal critical value, approximately $1.96$.
+Approximately $[48.04,51.96]$.
+With other conditions fixed, how does increasing confidence level usually change an interval?
+A larger central probability needs a larger critical value.
+The margin increases.
+It widens.
+For a known-scale interval, what happens to its margin if sample size quadruples?
+Standard error halves.
+With the same critical value, the margin halves.
+It halves.
+An observed frequentist interval has confidence level $95\%$. Can its parameter be assigned posterior probability $95\%$ from that alone?
+Was the parameter made random in the model?
+A frequentist interval does not specify a prior distribution.
+No.
+If one interval misses the true value, does that prove the method is invalid?
+Nominal coverage is below one hundred percent.
+A correct method still allows some intervals to miss.
+Not from a single interval.
+What is usually held fixed in a coverage experiment?
+The true parameter
+Every interval's endpoints
+Each sample mean
+The repeated objects are the samples and their intervals.
+A confidence interval assigns probability directly to a fixed parameter
+Frequentist coverage is a sampling property of the interval-generating procedure.
+Sample standard deviation can replace known scale in $z$ without a cost
+Finite normal samples require the extra scale uncertainty represented by $t$.
+Keep the true mean fixed and repeatedly form intervals. Do they all cover it?
+The display uses known-scale normal intervals and distinguishes nominal confidence from the observed finite-simulation coverage.
+Frequentist coverage is a sampling property of the interval-generating procedure.
+Observations per sample: 25
+Set observations per sample to $25$ and compare the diagram and readings.
+At this preset: nominal confidence level $0.95$; simulated coverage fraction $0.96$; interval margin $0.391993$; repetitions $100$.
+Observations per sample: 4
+Set observations per sample to $4$ and compare the diagram and readings.
+At this preset: nominal confidence level $0.95$; simulated coverage fraction $0.96$; interval margin $0.979982$; repetitions $100$.
+Observations per sample: 100
+Set observations per sample to $100$ and compare the diagram and readings.
+At this preset: nominal confidence level $0.95$; simulated coverage fraction $0.96$; interval margin $0.195996$; repetitions $100$.

@@ -1,0 +1,65 @@
+The product rule, permutations, and combinations
+First decide whether order matters, then choose the counting method.
+First decide whether order matters, then choose the counting method.
+Seating three people and selecting two from three are different questions.
+Choose in stages
+Identify whether order matters
+Choose in stages
+Multiply stage counts when they correctly account for restrictions imposed by earlier choices. Allowing repetition and forbidding it give different counts.
+Identify whether order matters
+Ordered selections without repetition use permutations. If order is irrelevant, each group has been counted once for every internal ordering.
+Connect counts to probability
+Count ratios give probability only for equally likely outcomes. A familiar formula does not excuse ignoring the sampling mechanism.
+Integers satisfy $0\le k\le n$; selection here is without repetition.
+Integers satisfy $0\le k\le n$; selection here is without repetition.
+If repetition is allowed, build the model for that task separately.
+Ordered sampling has successively fewer options.
+Each unordered group corresponds to all its internal orders.
+Remove that duplication.
+Select representatives
+Choose two interchangeable representatives from five people. How many ways?
+Ordered selection first gives twenty.
+Each pair was counted twice.
+$10$ ways.
+A numeric password
+A four-digit password uses any of ten digits at each position, with repetition. How many passwords?
+Each position has ten choices.
+Leading zero is permitted.
+$10^4=10000$ ways.
+How many two-person groups can be chosen from four people?
+Ignore order.
+$\binom42=6$.
+$6$.
+Choose a president and vice president from four people. How many ways?
+The roles are distinct.
+$4\times3=12$.
+$12$.
+Uniformly select two of six distinct cards. What is the probability of including a specified card?
+Fix that card, then choose its partner.
+$5/\binom62=1/3$.
+$1/3$.
+Does the combination formula directly count ordered independent draws with replacement?
+Check repetition and order.
+Both differ from that formula's assumptions.
+Not directly.
+When choosing three of five people, does reordering the group create a new combination?
+No
+Yes
+It depends on name length
+A combination records a set, not an ordering.
+Every people-selection problem uses permutations
+First determine whether roles or order are recorded.
+Distinct outcomes are naturally equally likely
+The selection mechanism must support that assumption.
+With the population fixed, vary the selected count. By what factor do permutations exceed combinations?
+The ratio is the selection count's factorial. The illustration avoids overflowing enormous integers.
+First determine whether roles or order are recorded.
+Selected people: 3
+Set the selection count to $3$ and compare the figure and readouts.
+At these parameters: selected from eight $3$; combinations $56$; permutations $336$; internal ordering factor $6$.
+Selected people: 1
+Set the selection count to $1$ and compare the figure and readouts.
+At these parameters: selected from eight $1$; combinations $8$; permutations $8$; internal ordering factor $1$.
+Selected people: 8
+Set the selection count to $8$ and compare the figure and readouts.
+At these parameters: selected from eight $8$; combinations $1$; permutations $40320$; internal ordering factor $40320$.

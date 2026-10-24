@@ -1,0 +1,228 @@
+{
+  "id": "arguments",
+  "chapterId": "chapter-4",
+  "number": "4.2",
+  "title": "Arguments and default values",
+  "subtitle": "Pass values by position or parameter name. Give a parameter a default for common cases.",
+  "concept": "Pass values by position or parameter name. Give a parameter a default for common cases.",
+  "intuition": "Order drinks by specifying price and quantity. If no quantity is given, prepare one.",
+  "objectives": [
+    "Identify what each input means",
+    "Give a common value a default",
+    "Decide whether a list input may change"
+  ],
+  "body": [
+    {
+      "title": "Identify what each input means",
+      "text": "def cost(price, count): has two parameters. cost(3, 2) passes 3 to price and 2 to count by position, producing 6. Reordering arguments can change their meaning. State the units of inputs such as unit price and quantity."
+    },
+    {
+      "title": "Give a common value a default",
+      "text": "def cost(price, count=1): uses 1 when count is omitted. cost(3) buys one item; cost(3, 2) buys two. cost(price=3, count=2) uses keyword arguments to name the parameters explicitly. Here the defaulted parameter follows the required one."
+    },
+    {
+      "title": "Decide whether a list input may change",
+      "text": "To total a list, read its items and return total without adding to or deleting from the input. This makes the function easier to predict. Start with numbers or strings as defaults: a default [] can be shared across calls. The optional note explains why."
+    }
+  ],
+  "formalDefinition": {
+    "text": "Arguments can be supplied by position or by name. A default applies when its argument is omitted.",
+    "conditions": [
+      "An explicit argument overrides the default. Required parameters precede defaulted parameters here."
+    ]
+  },
+  "derivation": [
+    {
+      "text": "count defaults to 1."
+    },
+    {
+      "text": "Passing 2 overrides that default."
+    },
+    {
+      "text": "The results are 3 and 6."
+    }
+  ],
+  "interactiveVisual": {
+    "kind": "python-trace",
+    "prediction": "With unit price 3 and quantity 2, what is returned?",
+    "caption": "Choose an input and predict the result, then select Next step. The arrow marks the next statement to execute; the side panel shows current variables and output produced so far.",
+    "experiment": {
+      "code": "def cost(price, count=1):\n    return price * count\n\nresult = cost(3, 2)\nprint(result)\n",
+      "stdout": "6\n",
+      "stdin": ""
+    },
+    "followUp": "Select a quantity of 0. To test the default locally, change the call to cost(3).",
+    "codeTemplate": "def cost(price, count=1):\n    return price * count\n\nresult = cost(3, {{count}})\nprint(result)\n",
+    "controls": [
+      {
+        "name": "count",
+        "label": "Quantity to buy",
+        "values": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "defaultIndex": 2
+      }
+    ],
+    "watch": [
+      "price",
+      "count",
+      "result"
+    ]
+  },
+  "workedExamples": [
+    {
+      "title": "One item by default",
+      "problem": "At unit price 3, buy one item and then two.",
+      "steps": [
+        "count defaults to 1.",
+        "Passing 2 overrides that default.",
+        "The results are 3 and 6."
+      ],
+      "answer": {
+        "code": "def cost(price, count=1):\n    return price * count\n\nprint(cost(3))\nprint(cost(3, 2))\n",
+        "stdout": "3\n6\n",
+        "stdin": ""
+      }
+    },
+    {
+      "title": "Name the arguments",
+      "problem": "Buy 3 items at unit price 4.",
+      "steps": [
+        "price explicitly receives 4.",
+        "count explicitly receives 3."
+      ],
+      "answer": {
+        "code": "def cost(price, count=1):\n    return price * count\n\nprint(cost(count=3, price=4))\n",
+        "stdout": "12\n",
+        "stdin": ""
+      }
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "arguments-m1",
+      "claim": "Passing quantity 0 still activates the default 1.",
+      "correction": "An explicit 0 is used as 0. The default applies only when the argument is omitted."
+    },
+    {
+      "id": "arguments-m2",
+      "claim": "Positional arguments can be reordered freely.",
+      "correction": "Each position corresponds to a parameter. Use keyword arguments when the order is unclear."
+    }
+  ],
+  "practice": [
+    {
+      "problem": "Use unit price 5 and the default quantity 1.",
+      "hint": "Pass only price.",
+      "solution": [
+        "5 * 1 = 5."
+      ],
+      "answer": {
+        "code": "def cost(price, count=1):\n    return price * count\n\nprint(cost(5))\n",
+        "stdout": "5\n",
+        "stdin": ""
+      },
+      "id": "arguments-p1",
+      "difficulty": 1,
+      "misconceptionTags": [
+        "arguments-m1"
+      ]
+    },
+    {
+      "problem": "Call with unit price 5 and quantity 2 using parameter names.",
+      "hint": "Write price=5 and count=2.",
+      "solution": [
+        "The result is 10."
+      ],
+      "answer": {
+        "code": "def cost(price, count=1):\n    return price * count\n\nprint(cost(price=5, count=2))\n",
+        "stdout": "10\n",
+        "stdin": ""
+      },
+      "id": "arguments-p2",
+      "difficulty": 1,
+      "misconceptionTags": [
+        "arguments-m2"
+      ]
+    },
+    {
+      "problem": "Write total_of to read [2, 3] and return its sum.",
+      "hint": "Do not modify the input list.",
+      "solution": [
+        "The accumulated sum is 5.",
+        "The original list still has two items."
+      ],
+      "answer": {
+        "code": "def total_of(values):\n    total = 0\n    for value in values:\n        total = total + value\n    return total\n\nvalues = [2, 3]\nprint(total_of(values))\nprint(values)\n",
+        "stdout": "5\n[2, 3]\n",
+        "stdin": ""
+      },
+      "id": "arguments-p3",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "arguments-m1"
+      ]
+    },
+    {
+      "problem": "What is the cost of quantity 0 at unit price 5?",
+      "hint": "Pass 0 explicitly.",
+      "solution": [
+        "0 overrides the default 1.",
+        "The cost is 0."
+      ],
+      "answer": {
+        "code": "def cost(price, count=1):\n    return price * count\n\nprint(cost(5, 0))\n",
+        "stdout": "0\n",
+        "stdin": ""
+      },
+      "id": "arguments-p4",
+      "difficulty": 1,
+      "misconceptionTags": [
+        "arguments-m2"
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "For cost(price, count=1), what is count in cost(5, 0)?",
+    "correctIndex": 1,
+    "choices": [
+      "1, because defaults always apply",
+      "0, the explicit argument",
+      "5, because argument order does not matter"
+    ],
+    "explanation": "An explicit argument overrides its default.",
+    "feedback": [
+      "A default is used only when that argument is omitted.",
+      "Yes. Passing 0 computes the price of zero items.",
+      "The second position supplies count, not the first."
+    ]
+  },
+  "prerequisites": [
+    "functions"
+  ],
+  "difficulty": 4,
+  "misconceptionTags": [
+    "arguments-m1",
+    "arguments-m2"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.2.1",
+    "status": "revised",
+    "humanReviewed": false
+  },
+  "sources": [
+    "python-tutorial",
+    "python-control"
+  ],
+  "furtherReading": [
+    {
+      "title": "Optional: why [] is a risky default",
+      "text": "A default value is created once when the function is defined. In def add(item, items=[]):, appending to items makes calls that omit items share one list. Use items=None, then if items is None: items = [] inside the function. None marks an omitted list, and is None checks for that marker. Beginners can instead make the list argument required to avoid hidden state."
+    }
+  ]
+}

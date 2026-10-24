@@ -1,0 +1,62 @@
+Standard Taylor series
+Build from a few basic expansions
+Exponential, sine, cosine, geometric and logarithmic expansions generate many others by substitution and calculus. Keep each convergence range.
+You rarely need ten fresh derivatives. Substituting into a familiar expansion often suffices.
+Which work everywhere?
+The exponential, sine and cosine Maclaurin series converge to their functions at every finite real input, as vanishing remainders show.
+Which have boundaries?
+The geometric series works on $|x|<1$; logarithm $\ln(1+x)$ on $-1<x\leq1$; arctangent on $[-1,1]$. Endpoint identification for logarithm and arctangent needs a remainder argument or Abel's continuity theorem, not interior termwise integration alone.
+Substituting inputs
+Replace the entire input and transform the range too. For example, the zero-centered expansion of $\ln(1+x^2)$ works on $|x|\leq1$.
+Build from a few basic expansions
+The first two formulas hold for all real inputs; the logarithmic formula requires $-1<x\leq1$. Cosine is $\sum_{n=0}^\infty\frac{(-1)^nx^{2n}}{(2n)!}$, for all real inputs.
+All exponential derivatives at zero equal one.
+For a fixed finite input, factorial growth drives the remainder to zero.
+Integrate the geometric series for logarithm, first inside the radius.
+Substitute a square
+Find the first four nonzero terms of $e^{-x^2}$.
+Replace the exponential series input by $-x^2$.
+The terms are $1,-x^2,\frac{x^4}{2},-\frac{x^6}{6}$.
+$1-x^2+\frac{x^4}{2}-\frac{x^6}{6}+\cdots$, for every real input.
+A logarithmic endpoint
+Find the convergence range of the zero-centered series for $\ln(1+2x)$.
+The input $u=2x$ must satisfy $-1<u\leq1$.
+The series is $\sum_{n=1}^\infty\frac{(-1)^{n-1}(2x)^n}{n}$.
+$-\frac12<x\leq\frac12$.
+Correct coefficients allow every input.
+Transform and check the convergence range too.
+Squaring the input leaves term powers unchanged.
+Substitute the whole expression into every power, including its sign.
+Find the first three nonzero terms of $\cos(2x)$.
+$1-2x^2+\frac23x^4$.
+Replace the entire input by twice the input.
+$1-\frac{(2x)^2}{2!}+\frac{(2x)^4}{4!}$.
+Find the zero-centered expansion of $\frac1{1+x^2}$.
+$\sum_{n=0}^\infty(-1)^nx^{2n}$, $|x|<1$.
+The ratio is a negative square.
+The geometric ratio $-x^2$ must have magnitude below one.
+Find the first three nonzero terms of $\arctan x$.
+$x-\frac{x^3}{3}+\frac{x^5}{5}$.
+Integrate the previous expansion.
+Integrate from 0 term by term. It is guaranteed on $|x|<1$; handle endpoints using convergence and a boundary theorem.
+What are the constant and linear coefficients of $e^x$ at $x=0$?
+Both are 1.
+Check function value and derivative separately.
+$e^0=1$, $f\prime(0)=1$; the expansion does not start at power one.
+What is the fourth-degree term of $e^{-x^2}$?
+The exponential's quadratic term is the squared input divided by two.
+A few well-understood expansions and valid transformations are easier to retain than disconnected formulas.
+Low order
+Set order to 2 and input to 0.5.
+The finite polynomial matches low-order derivatives; the readout shows its actual error.
+Increase the order
+Set order to 6, keeping input 0.5.
+Observe how the actual error changes at this input.
+Farther from the center
+Set order to 10 and input to 0.9.
+Accuracy depends on input and function; range and remainder conditions still matter.
+Compare $\sin x$ with finite zero-centered expansions and read the error.
+Does raising the order give the same accuracy far away as near the center?
+Use basic exponential, trigonometric and logarithmic series
+Transform inputs and valid ranges together
+Justify endpoint identification with function values

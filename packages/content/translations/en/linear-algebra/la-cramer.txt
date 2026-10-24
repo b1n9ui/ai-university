@@ -1,0 +1,64 @@
+Determinants, inverses, and Cramer's rule
+A nonzero determinant gives a unique solution
+A square matrix is invertible exactly when its determinant is nonzero. Cramer's rule expresses the unique solution using determinants of replaced columns.
+If all input directions stay independent, volume does not collapse and the input can be recovered uniquely.
+Connect determinants with invertibility
+Apply Cramer's rule under its hypotheses
+Why does nonzero imply invertible?
+Missing a pivot leaves a zero triangular diagonal product. With full pivots, swaps and nonzero scales cannot turn a nonzero determinant into zero.
+How do you write Cramer's rule?
+Replace column $j$ of $A$ with the right-hand side to obtain $A_j(b)$. Use the determinant ratio to find $x_j$.
+When is it inefficient?
+It is useful for theory and small matrices. For large systems, factoring is usually faster than computing separate determinants. A zero determinant forbids division, and a ratio cannot classify all singular cases.
+Determinants, inverses, and Cramer's rule
+\det A\ne0\iff A\text{ invertible},\qquad x_j=\frac{\det A_j(b)}{\det A}
+Cramer's rule requires a square matrix with nonzero determinant. Invertibility is also equivalent to zero not being an eigenvalue, as a later chapter explains.
+Write the right-hand side as a column combination.
+Expand the replaced column using linearity.
+Repeated-column terms vanish, leaving only its own term.
+Solve a two-by-two system
+Use Cramer's rule for $x+y=3,2x+3y=8$.
+$\det A=3-2=1$.
+Replacing column one gives determinant $9-8=1$; replacing column two gives $8-6=2$.
+$x=1,y=2$.
+A zero denominator requires elimination
+Can Cramer ratios solve $x+y=1,2x+2y=2$?
+The coefficient determinant is zero.
+The system is consistent but has a free variable; division by zero is invalid.
+No; describe the full solution set instead.
+A zero determinant always means no solution.
+Infinitely many solutions are also possible; check the right-hand side.
+Small entries make a matrix noninvertible.
+Invertibility depends on independence, not overall scale.
+Is $A=\begin{pmatrix}2&1\\1&1\end{pmatrix}$ invertible?
+Calculate the two-by-two determinant.
+$2-1=1\ne0$.
+Invertible.
+Given $\det A=3,\det A_2(b)=12$, find $x_2$.
+Apply the ratio with a nonzero denominator.
+$x_2=12/3=4$.
+If $\det A=0$, is a unique solution possible?
+A singular square matrix has a nonzero kernel.
+Add a nonzero kernel vector to any solution to get another.
+Impossible.
+Does $\det A=0.0001$ alone establish numerical ill-conditioning?
+Compare a uniform scale change.
+$A=0.01I_2$ has a small determinant but scales both directions equally, giving condition number one.
+Insufficient.
+The constraints are $x+y=2$ and $x+cy=b$. For a singular matrix, distinguish coincident lines from distinct parallel lines.
+Why do determinant ratios fail when the constraints become parallel?
+What can happen when the square coefficient determinant is zero?
+Always no solution
+Always a unique solution
+No solution or infinitely many solutions
+Consistency depends on the right-hand side; a nonzero kernel already rules out uniqueness.
+A determinant can immediately rule out uniqueness, but a singular case still needs the right-hand side checked for conflicts.
+One intersection
+Set $c=2,b=3$.
+The solution is $(1,1)$; the determinant is one.
+Repeated constraints
+Set $c=1,b=2$.
+The lines coincide. The coefficient rank is one, with infinitely many solutions.
+Conflicting constraints
+Keep $c=1$ and change $b$ to $3$.
+Distinct parallel lines never meet. The augmented rank exceeds the coefficient rank.

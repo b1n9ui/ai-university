@@ -1,0 +1,65 @@
+Variance, standard deviation, and covariance terms
+Variance measures expected squared fluctuation around the mean.
+Variance measures expected squared fluctuation around the mean.
+Two variables can share a mean while one barely changes and the other fluctuates widely.
+Compute squared deviations
+Use the shortcut formula
+Compute squared deviations
+Variance is the expectation of squared deviation, not expected deviation, which is zero.
+Use the shortcut formula
+Expand the square to obtain second moment minus squared mean. Thus the mean alone cannot determine variance.
+Keep cross terms in sums
+Covariance terms generally remain. Independence with finite second moments makes them zero; constant scaling multiplies variance by the factor's square.
+Finite second moments are required.
+Finite second moments are required.
+Independent variances add; correlated variables generally retain cross terms.
+Expand the square.
+Take expectation using $EX=\mu$.
+Translation cancels; squared scaling remains.
+Two-point variation
+$X$ is equally likely zero or two. Find the variance.
+Mean one, second moment two.
+Variance $2-1=1$.
+$1$.
+Adding a variable to itself
+If $\operatorname{Var}(X)=3$, why is $\operatorname{Var}(X+X)$ not six?
+These are the same variable, not independent copies.
+It equals $\operatorname{Var}(2X)=4(3)$.
+$12$.
+$X$ is constantly five. Find its variance.
+There is no fluctuation.
+Every squared deviation is zero.
+$0$.
+If $\operatorname{Var}(X)=4$, find $\operatorname{Var}(3X+2)$.
+Square the multiplier.
+$9(4)=36$.
+$36$.
+Independent variables have variances two and five. Find their sum's variance.
+The cross term vanishes.
+$2+5=7$.
+$7$.
+Can standard deviation be negative?
+It is the square root of variance.
+Take the nonnegative root.
+No.
+What happens to variance after adding a constant?
+Add that constant
+No change
+Multiply by the constant squared
+Values and mean shift together, leaving deviations unchanged.
+Two variances always add directly
+They add directly only with zero covariance.
+Variance equals standard deviation
+Standard deviation is variance's nonnegative square root.
+Keep the center fixed and separate two values. How do variance and standard deviation change?
+The two-point model shows deviations, squared deviations, and expectation; graphical distance is not a variance unit.
+They add directly only with zero covariance.
+Distance from center: 1
+Set the distance from center to $1$ and compare the figure and readouts.
+At these parameters: expectation $0$; second moment $1$; variance $1$; standard deviation $1$.
+Distance from center: 0.1
+Set the distance from center to $0.1$ and compare the figure and readouts.
+At these parameters: expectation $0$; second moment $0.01$; variance $0.01$; standard deviation $0.1$.
+Distance from center: 4
+Set the distance from center to $4$ and compare the figure and readouts.
+At these parameters: expectation $0$; second moment $16$; variance $16$; standard deviation $4$.

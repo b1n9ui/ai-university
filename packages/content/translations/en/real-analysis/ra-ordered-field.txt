@@ -1,0 +1,67 @@
+Ordered fields and real arithmetic
+Real numbers support arithmetic and comparison, but division, roots, and reciprocals have conditions.
+Real numbers support arithmetic and comparison, but division, roots, and reciprocals have conditions.
+Arithmetic laws follow from field axioms and order compatibility, not from a few plotted examples.
+Derive consequences of axioms
+Handle inequalities
+Derive consequences of axioms
+This book starts with the reals as a complete ordered field, rather than constructing them from decimals. Field axioms supply associative, commutative, and distributive laws, and inverses for nonzero elements.
+Handle inequalities
+Adding the same number preserves order. Multiplying by a positive number preserves it; multiplying by a negative number reverses it. Considering signs proves squares nonnegative.
+Distinguish number systems
+The rationals also form an ordered field, but some bounded-above subsets lack a least upper bound there. Completeness is the extra property needed for later limit theorems.
+In an ordered field, addition and multiplication of positive elements are compatible with order.
+Division is defined only for nonzero divisors.
+The real order is total and compatible with addition and multiplication.
+Negative one is nonzero and its square is one.
+Express the difference of two ordered numbers as a positive number.
+Positive multiplication keeps that difference positive; negative multiplication makes it negative.
+Multiplication by a negative number
+Solve: negative two times a real number is less than six.
+For $-2x<6$, division by negative two reverses the inequality.
+$x>-3$; zero verifies the direction.
+$x>-3$.
+Order of reciprocals
+Compare reciprocals when $0<a<b$.
+Since $ab>0$, divide $a<b$ by $ab$.
+This gives $1/b<1/a$.
+$0<1/b<1/a$.
+Does $x^2<0$ have a real solution?
+Consider positive, negative, and zero inputs.
+Every real square is nonnegative.
+No.
+May an inequality be multiplied by a number of unknown sign without changing its direction?
+Its sign must be known.
+Positive, negative, and zero multipliers have different effects.
+No.
+Are the rationals missing a division rule?
+A nonzero rational has a rational reciprocal.
+They lack completeness, not field operations.
+No.
+Prove that $0<a<b$ implies $1/b<1/a$.
+Check the sign of the denominator product first.
+$ab>0$, so multiplication by positive $1/(ab)$ preserves the inequality.
+From $a<b$, obtain $a/(ab)<b/(ab)$.
+Cancel to get $1/b<1/a$. Without first checking positivity, this step is not justified.
+Cancel to get $1/b<1/a$. Without first checking positivity, this step is not justified.
+What happens to an inequality when multiplied by a negative number?
+It is preserved
+It reverses
+It becomes equality
+The difference becomes negative.
+Real square roots require no domain check
+The radicand must be nonnegative.
+Every ordered field is complete
+The rationals are a counterexample.
+Change the multiplier's sign. How does the order of the two numbers change?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+Arithmetic laws follow from field axioms and order compatibility, not from a few plotted examples. Real square roots require a nonnegative radicand.
+Multiplier: -3
+Set the multiplier to $-3$. Compare the two points' order before and after multiplication.
+Multiplier $-3$; resulting order: reversed.
+Multiplier: 0
+Set the multiplier to $0$. Compare the two points' order before and after multiplication.
+Multiplier $0$; resulting order: equal.
+Multiplier: 3
+Set the multiplier to $3$. Compare the two points' order before and after multiplication.
+Multiplier $3$; resulting order: preserved.

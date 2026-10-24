@@ -1,0 +1,66 @@
+Intervals for two means and paired differences
+First decide whether groups are independent. For paired data, analyze within-pair differences.
+First decide whether groups are independent. For paired data, analyze within-pair differences.
+Before-and-after measurements on the same person inform us about that person's change, not about two unrelated populations.
+Independent groups
+Approximate degrees of freedom
+Independent groups
+Welch's method estimates each group's variance separately without imposing equality. Add the variances of the two means to obtain the squared standard error.
+Approximate degrees of freedom
+Welch–Satterthwaite degrees of freedom can be noninteger. The pooled method needs the additional assumption of a common variance.
+Paired data
+Form independent paired differences, then apply a one-sample $t$ interval to them. The effective sample size is the number of pairs, not the total record count.
+The independent two-sample Welch interval is a standard approximation; small samples need an assessment of within-group normality.
+The independent two-sample Welch interval is a standard approximation; small samples need an assessment of within-group normality.
+Paired intervals require independence between pairs and are exact $t$ intervals when differences are normal.
+Both groups must have $n_j\ge2$ and $s_1^2/n_1+s_2^2/n_2>0$ for the formulas to be defined. Paired analysis requires at least two differences with nonzero sample standard deviation.
+The variance of a difference of independent means is the sum of their variances.
+Estimate these using the two sample variances.
+For pairs, subtract first to retain within-pair covariance.
+Independent-group standard error
+Two independent groups have $n_1=n_2=25,s_1=3,s_2=4$. Find the difference's standard error.
+The mean variances are $9/25,16/25$.
+Add and take the square root.
+$1$.
+Paired differences
+For paired differences $1,2,3$, find the mean difference and its standard error.
+The mean is two and the sample standard deviation is one.
+Use three pairs rather than six records in the standard error.
+Mean $2$; standard error $1/\sqrt3$.
+Two independent means have standard errors two and three. Find the standard error of their difference.
+Add their squares, then take the square root.
+$\sqrt{4+9}=\sqrt{13}$.
+$\sqrt{13}$.
+Ten people are measured before and after. What are the paired $t$ degrees of freedom?
+People are the independent units.
+Ten differences give nine degrees of freedom.
+$9$.
+Must Welch degrees of freedom be rounded to an integer?
+The $t$ distribution allows positive real degrees of freedom.
+The formula often produces a noninteger.
+No forced rounding is needed.
+Why can paired analysis be more precise?
+Common within-pair factors can cancel.
+Positive covariance reduces the variance of a difference.
+Positive within-pair correlation can reduce noise, but improvement is not unconditional.
+What should a paired before-and-after interval model first?
+All records mixed into one group
+Each pair's difference
+Duplicated data from each group
+Differences preserve the pairing.
+Every two-group problem uses independent samples
+Paired and independent designs need different standard errors.
+Welch corrects every anomaly and bias
+It addresses unequal variances, not dependence, outliers, or selection bias automatically.
+Change group sample sizes or scales. How do the standard error and Welch degrees of freedom change?
+The display gives an approximate difference interval for two independent normal groups; the text works through paired analysis separately.
+Paired and independent designs need different standard errors.
+Sample size per group: 25
+Set sample size per group to $25$ and compare the diagram and readings.
+At this preset: estimated standard error $1$; Welch degrees of freedom $44.5104$; lower endpoint $-0.0147151$; upper endpoint $4.01472$.
+Sample size per group: 3
+Set sample size per group to $3$ and compare the diagram and readings.
+At this preset: estimated standard error $2.88675$; Welch degrees of freedom $3.7092$; lower endpoint $-6.26891$; upper endpoint $10.2689$.
+Sample size per group: 60
+Set sample size per group to $60$ and compare the diagram and readings.
+At this preset: estimated standard error $0.645497$; Welch degrees of freedom $109.421$; lower endpoint $0.720701$; upper endpoint $3.2793$.

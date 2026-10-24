@@ -1,0 +1,71 @@
+Partial fractions
+Split a rational function into integrable pieces
+Factor the denominator and split the fraction into simpler terms. Divide first, then match coefficients.
+$\frac1{x(x+1)}=\frac1x-\frac1{x+1}$. The simpler terms still add up to the original function.
+What if the numerator's degree is too large?
+Use polynomial division first. The remaining numerator must have lower degree than the denominator.
+Repeated roots and quadratic factors
+For a repeated root $(x-a)^m$, include every power through $m$. Use a linear numerator $Ax+B$ over each irreducible quadratic, including each repeated power.
+How can the result be checked?
+Combine fractions to check the decomposition, then differentiate the antiderivative. Use absolute values in logarithms; constants may differ across poles.
+Split a rational function into integrable pieces
+$x\neq0,-1$; integrate on a connected interval containing no pole.
+Introduce coefficients and combine fractions.
+Match constant and linear coefficients.
+Integrate term by term.
+Distinct linear factors
+Evaluate $\int\frac{3x+1}{x(x+1)}dx$.
+Set $3x+1=A(x+1)+Bx$; this gives $A=1,B=2$.
+Integrate $\frac1x$ and $\frac2{x+1}$ separately.
+$\ln|x|+2\ln|x+1|+C$.
+Include every repeated power
+Evaluate $\int\frac{dx}{x(x+1)^2}$.
+Decompose as $\frac1x-\frac1{x+1}-\frac1{(x+1)^2}$; combine fractions to verify it.
+The last term has antiderivative $\frac1{x+1}$.
+$\ln|x|-\ln|x+1|+\frac1{x+1}+C$.
+An irreducible quadratic
+Evaluate $\int\frac{2x+3}{x(x^2+1)}\,dx$.
+Write $A/x+(Bx+C)/(x^2+1)$. Match coefficients in $2x+3=(A+B)x^2+Cx+A$ to obtain $A=3,B=-3,C=2$.
+Integrate $3/x-3x/(x^2+1)+2/(x^2+1)$ term by term. Use $u=x^2+1$ for the second term and arctangent for the third.
+$x^2+1>0$; the only pole is $x=0$. Choose integration constants separately on the positive and negative half-lines.
+$3\ln|x|-\frac32\ln(x^2+1)+2\arctan x+C$, $x\ne0$.
+Only the highest repeated power is needed.
+Lower-power terms generally must also be included.
+For a denominator factor $x^2+1$, use only a constant numerator.
+Use $Ax+B$ in general; either coefficient may turn out to be zero.
+Decompose $\frac1{x^2-1}$.
+$\frac1{2(x-1)}-\frac1{2(x+1)}$.
+Factor the denominator as a difference of squares.
+Write $\frac A{x-1}+\frac B{x+1}$; substituting $x=1,-1$ gives $A=\frac12,B=-\frac12$.
+Evaluate $\int_1^2\frac{dx}{x(x+1)}$.
+$\ln\frac43$.
+Evaluate the logarithm at both endpoints.
+$[\ln x-\ln(x+1)]_1^2=\ln\frac23-\ln\frac12=\ln\frac43$.
+Evaluate $\int\frac{x^2}{x^2+1}dx$.
+$x-\arctan x+C$.
+Divide first.
+$\frac{x^2}{x^2+1}=1-\frac1{x^2+1}$; integrate term by term.
+Write the decomposition form for $\frac1{(x-1)^2(x^2+1)}$, without finding coefficients.
+$\frac A{x-1}+\frac B{(x-1)^2}+\frac{Cx+D}{x^2+1}$.
+Treat the repeated root and irreducible quadratic separately.
+Keep both linear-factor powers; the quadratic's numerator has lower degree.
+How many fraction terms correspond to the factor $(x-2)^3$?
+One
+Two
+Three
+Include powers one through three, not just the highest.
+Decomposition preserves the function while making integration easier. Combining denominators determines the coefficients.
+Positive input
+Set the input to 0.5.
+$\frac1{x(x+1)}=\frac43$; the difference of the two fractions agrees.
+Another point
+Set the input to 1.
+Both forms equal $\frac12$.
+Farther out
+Set the input to 3.
+Both forms equal $\frac1{12}$.
+Compare the rational function with its two partial fractions, avoiding poles.
+Does adding the fractions recover the original function?
+Divide before decomposing a proper fraction
+Include all repeated and quadratic factors
+Check by combining fractions and differentiating

@@ -1,0 +1,64 @@
+Exact equations and potential functions
+Find a conserved quantity
+What does exact mean?
+If $M(t,y)dt+N(t,y)dy=0$ equals $d\Phi$, then $\Phi$ stays constant along a solution curve.
+How do you test exactness?
+With continuous partial derivatives, $M_y=N_t$ is necessary. On a simply connected region such as a rectangle, it also ensures a potential exists. A partial derivative holds the other variable fixed.
+How do you find a potential?
+Integrate in one variable, then use the other partial derivative to determine the missing single-variable function. A level set at $N=0$ may not be a graph over time.
+Consider the differential relation for a circle.
+Integrate in time and include the missing single-variable term.
+Its total derivative along the curve is zero.
+A cross term
+Solve $(2t+y)dt+(t+2y)dy=0$.
+Both cross partials equal $1$.
+Integration gives $\Phi=t^2+ty+y^2$, matching both partial derivatives.
+$t^2+ty+y^2=C$.
+The upper semicircle
+Solve $t+y y'=0,y(0)=2$.
+Choose potential $(t^2+y^2)/2$; the initial value gives $t^2+y^2=4$.
+Select the positive branch; derivatives cease to be finite at the endpoints.
+$y=\sqrt{4-t^2}$, on $(-2,2)$.
+Is $M=y,N=t$ exact?
+Compare cross partials.
+$M_y=1=N_t$, with potential $ty$.
+Yes: $ty=C$.
+Is $M=y,N=2t$ exact?
+Calculate the two partial derivatives.
+$M_y=1$, whereas $N_t=2$.
+No.
+Give an implicit solution of $d(t^2+3y^2)=0$.
+Keep the potential relation directly.
+The potential is constant along the curve.
+$t^2+3y^2=C$.
+Is a circular level set always globally single-valued?
+One time can correspond to two points.
+There are generally upper and lower branches away from endpoints; choose using the initial value.
+No.
+Equal cross partials guarantee a global potential on every region.
+Global existence also needs a domain condition; simple connectivity is a common sufficient one.
+After finding a potential, initial-value branches need no checking.
+An implicit curve can have multiple function branches.
+An exact equation is a total differential along solutions, making each solution a level curve.
+If the coefficients are partial derivatives of one landscape, solution directions follow its contours.
+Test exactness
+Construct potentials and handle vertical tangents
+Exact equations and potential functions
+On a simply connected open region, $M,N$ is continuously differentiable and $M_y=N_t$. Writing $y(t)$ additionally requires local $N\ne0$.
+What stays constant after solving an exact equation?
+The potential value
+Each coordinate separately
+The slope at every point
+A zero total differential means constant potential along the curve.
+Recognizing a total differential turns finding a solution curve into finding a level set.
+Level curve
+The potential stays constant on the entire circle.
+Set level radius $R$ to $1$ and trajectory angle $\theta$ to $0.5$.
+Vertical tangent
+No finite state derivative represents this point.
+Set level radius $R$ to $1$ and trajectory angle $\theta$ to $0$.
+Another level curve
+Changing radius changes the potential constant.
+Set level radius $R$ to $2$ and trajectory angle $\theta$ to $1$.
+This parameterizes an implicit solution curve. The full circle is not a globally single-valued time function, and moving the point does not continue the original equation through a vertical tangent.
+Can the entire level curve be written as a single-valued function of time?

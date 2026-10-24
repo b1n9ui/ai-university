@@ -1,0 +1,64 @@
+Cylindrical and spherical coordinates
+Match coordinates to geometry
+Cylindrical coordinates suit axial shapes; spherical coordinates suit shapes naturally described by distance from the origin.
+Cylindrical coordinates add height to polar coordinates. Spherical coordinates use distance, azimuth and inclination from the positive vertical axis.
+Convert between three spatial coordinate systems
+Identify angle conventions and degenerate points
+Where are angles measured from?
+Azimuth $\theta$ is measured in the horizontal plane from the positive first axis. Inclination $\phi$ is measured downward from the positive vertical axis, from zero to $\pi$.
+Are coordinates unique?
+Adding a full turn changes no point. Azimuth is undefined on the vertical axis, and all angles are nonunique at the origin. These are coordinate degeneracies, not different spatial points.
+Position formulas or volume elements first?
+Understand position geometrically first. Multiple integrals will derive area and volume factors; multiplying three coordinate differentials alone does not give actual volume.
+Match coordinates to geometry
+Cylindrical $r\ge0$; spherical $\rho\ge0,0\le\phi\le\pi$. Azimuths differing by full turns are equivalent. Use radians.
+Project onto the horizontal plane.
+Use distance from the origin and inclination.
+Resolve the horizontal radius into components.
+Reading spherical coordinates
+Find spherical coordinates of $(x,y,z)=(1,1,\sqrt2)$.
+Distance $\rho=2$; horizontal radius $r=\sqrt2$.
+The first quadrant gives $\theta=\frac\pi4$, $\cos\phi=\frac{\sqrt2}2$.
+$(\rho,\theta,\phi)=(2,\frac\pi4,\frac\pi4)$.
+A coordinate surface
+What does spherical equation $\phi=\frac\pi3$ describe?
+$z=\rho/2\ge0$, $r=\sqrt3\rho/2$.
+Eliminate distance to obtain $z=r/\sqrt3$.
+A cone in the upper half-space, including its vertex.
+Every book uses the same symbols for spherical angles.
+Check conventions. Here inclination is measured from the positive vertical axis.
+Cylindrical radius is distance from the origin.
+It is distance from the vertical axis; these agree only at zero height.
+Convert cylindrical $(r,\theta,z)=(2,\frac\pi2,-1)$ to Cartesian coordinates.
+Use sine and cosine.
+$x=0,y=2$; height remains $-1$.
+$(0,2,-1)$.
+What surface is spherical equation $\rho=3$?
+Distance is fixed.
+Every point is distance 3 from the origin.
+A radius-3 sphere.
+Is the azimuth of $(0,0,2)$ unique?
+Inspect the horizontal projection.
+Horizontal radius is zero; every azimuth gives the same point.
+No.
+Which inclination gives the spherical equator?
+Set height zero and distance nonzero.
+$\cos\phi=0$, hence $\phi=\frac\pi2$.
+$\frac\pi2$.
+At zero inclination, where is the point under this convention?
+On the positive vertical axis or at the origin
+On the equator
+On the negative first axis
+Inclination is measured from the positive vertical axis.
+Fix spherical radius $\rho=1.5$ and vary inclination and azimuth. Dashed lines show horizontal projection and origin distance.
+Near a pole, does the same azimuth change cover the same distance as at the equator?
+Cylindrical radius measures distance to the axis; spherical radius to the origin. Inclination starts at the positive vertical axis.
+North pole
+Set inclination $\phi$ to $0$.
+The point lies on the positive vertical axis; azimuth does not change it.
+Equator
+Set inclination $\phi$ to $\frac\pi2$.
+Height is zero; horizontal radius equals spherical radius.
+South pole
+Set inclination $\phi$ to $\pi$.
+The point lies on the negative vertical axis; horizontal radius is zero again.

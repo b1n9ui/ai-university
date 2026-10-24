@@ -1,0 +1,65 @@
+Method of moments and maximum likelihood
+To connect model parameters with data, first specify the sampling model.
+To connect model parameters with data, first specify the sampling model.
+Method of moments matches average features. Maximum likelihood finds parameter values that make the observed data most likely under the model.
+Match moments
+Construct a likelihood
+Match moments
+Replace population moments with sample moments and solve the parameter equations. Check the parameter range and uniqueness of the solution.
+Construct a likelihood
+Treat the independent sample's joint mass or density as a function of parameters. Data stay fixed while parameters vary. This is not automatically a normalized probability distribution over parameters.
+Check interior points and boundaries
+Logarithms simplify products, but differentiation finds only interior candidates. Zero successes, all successes, and other boundaries need separate comparison.
+Specify the parameter space, independence assumptions, and probability-mass or density model.
+Specify the parameter space, independence assumptions, and probability-mass or density model.
+A maximum can be nonunique or fail to exist. A zero derivative alone does not settle the problem.
+Summarize Bernoulli observations by the success count.
+At interior points, take logarithms and differentiate.
+Solve for the sample proportion, then include zero-success and all-success boundaries.
+Estimate a success probability
+There are six successes in twenty independent Bernoulli trials. Find the MLE.
+The likelihood is a constant times $p^6(1-p)^{14}$.
+Its maximum occurs at the sample success proportion.
+$0.3$.
+An exponential rate
+Four independent exponential waiting times total eight. Find the rate MLE.
+The log-likelihood is $4\log\lambda-8\lambda$.
+Set its derivative to zero and check the second derivative is negative.
+$\hat\lambda=4/8=0.5$.
+Ten Bernoulli trials all fail. Find the MLE in parameter space $[0,1]$.
+Compare boundaries.
+The likelihood $(1-p)^{10}$ decreases with the parameter.
+$0$.
+A Poisson sample has mean three. Find the parameter MLE.
+Match the Poisson mean count.
+Differentiating the log-likelihood gives the sample mean.
+$3$.
+Must the area under a likelihood curve be one?
+What kind of function of the parameter is it?
+It is not an automatically normalized parameter density.
+Not necessarily.
+When a normal mean is unknown, what denominator appears in the variance MLE?
+MLE and unbiased estimation differ.
+Maximizing likelihood divides the squared-deviation sum by sample size.
+$n$.
+What is held fixed when maximizing likelihood?
+The data
+The parameters
+Both are resampled randomly
+Likelihood is a function of parameters for the given data.
+Likelihood is the parameter's posterior probability
+A posterior also needs a prior and normalization.
+A zero derivative guarantees a global maximum
+Check curvature, boundaries, and all other candidates.
+Change the success count. How does the likelihood peak move?
+For a fixed trial count, compare relative likelihoods and the MLE. The curve is not presented as a posterior parameter density.
+A posterior also needs a prior and normalization.
+Observed successes: 6
+Set observed successes to $6$ and compare the diagram and readings.
+At this preset: successes $6$; trials $20$; maximum likelihood estimate $0.3$.
+Observed successes: 0
+Set observed successes to $0$ and compare the diagram and readings.
+At this preset: successes $0$; trials $20$; maximum likelihood estimate $0$.
+Observed successes: 10
+Set observed successes to $10$ and compare the diagram and readings.
+At this preset: successes $10$; trials $20$; maximum likelihood estimate $0.5$.

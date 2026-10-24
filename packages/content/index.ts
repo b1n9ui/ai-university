@@ -1,5 +1,3 @@
-import english from "./translations/en/calculus-1.generated.json";
-import {locale} from "./locale.mjs";
 import metadata from "./book.json";
 import supplements1 from "./supplements.json";
 import metadata2 from "./calculus-2/book.json";
@@ -83,9 +81,8 @@ const chineseCollections = [
   collection(metadata8, supplements8, "./real-analysis/lessons", "Real-Analysis.md", "real-analysis.html"),
 ];
 export type Collection = (typeof chineseCollections)[number];
-const englishCalculus: Collection = {...chineseCollections[0], book: english.book, supplements: english.supplements, lessons: english.lessons as Lesson[], filename: "Calculus-I-English.md", printFile: "calculus-1-en.html"};
-export const collections = locale === "en" ? [englishCalculus,...chineseCollections.slice(1)] : chineseCollections;
-export const availableCollections = locale === "en" ? [englishCalculus] : collections;
+export const collections = chineseCollections;
+export const availableCollections = collections;
 export const allLessons = collections.flatMap((c) => c.lessons);
 export const lessonById = Object.fromEntries(allLessons.map((l) => [l.id, l]));
 export const collectionForLesson = (id: string) =>

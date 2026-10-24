@@ -1,0 +1,68 @@
+Power series, convergence radii, and termwise operations
+On smaller closed intervals inside the convergence radius, both the power series and its derivative series have uniform bounds.
+On smaller closed intervals inside the convergence radius, both the power series and its derivative series have uniform bounds.
+Interior intervals leave a safe margin. Check boundary points separately; the radius alone does not decide them.
+Define the radius
+Restrict to an interior closed interval
+Define the radius
+Take the limsup of index-th roots of coefficient magnitudes; its reciprocal is the radius, with extended zero and infinity conventions. Inside, convergence is absolute; outside, terms fail to tend to zero.
+Restrict to an interior closed interval
+Choose a slightly larger radius still inside convergence. Root or comparison estimates give geometric bounds. Extra index factors in derivative coefficients do not change exponential growth, so derivative series also have uniform control.
+Differentiate and integrate termwise
+Both function and derivative series converge uniformly on that closed interval, allowing the previous interchange theorems. Power-series coefficients are center derivatives divided by factorials. Conversely, an arbitrary smooth function still needs vanishing Taylor remainders to equal its series.
+Power series converge locally uniformly inside their radius and may be differentiated and integrated termwise there.
+Use reciprocal zero equals infinity and reciprocal infinity equals zero.
+Check convergence at boundary points separately.
+Fix a closed-subinterval radius smaller than the convergence radius.
+Control coefficients at a larger radius; the smaller radius absorbs derivative index factors.
+n(r/\rho)^{n-1}\quad\text{has a summable majorant}
+Apply the M-test and limit-interchange theorem.
+The geometric power series
+Find the radius and endpoint behavior of $\sum_{n=0}^{\infty}x^n$.
+All coefficients are one, giving radius one.
+At the right endpoint all terms are one; at the left they alternate positive and negative one. Neither series converges.
+Its sum is $1/(1-x)$ on $(-1,1)$; both endpoints diverge.
+Different endpoint behavior
+What happens at both endpoints for $\sum_{n=1}^{\infty}x^n/n$?
+The root test gives radius one.
+The right endpoint is harmonic and divergent; the left is negative alternating harmonic and conditionally convergent.
+One radius does not imply equal endpoint behavior.
+Is convergence uniform on every closed subinterval strictly inside the radius?
+Leave a positive margin to the boundary.
+The M-test gives a uniform majorant.
+Yes.
+Is convergence necessarily uniform on the entire open convergence interval?
+Inspect geometric-series tails near the boundary.
+Domain-wide uniform control may fail.
+No.
+Does multiplying coefficients by the index change the derivative series' radius?
+The index-th root of the index tends to one.
+The radius remains unchanged.
+No.
+Find the radius and full real convergence interval of $\sum_{n=1}^{\infty}x^n/n$.
+Use roots for the interior and check each endpoint.
+The coefficient root satisfies $n^{-1/n}\to1$, giving radius one. For $|x|<1$, convergence is absolute.
+At $x=1$ the harmonic series diverges; at $x=-1$ the negative alternating harmonic series converges conditionally.
+For $|x|>1$, terms fail to vanish, so the series diverges. The real convergence set is $[-1,1)$.
+For $|x|>1$, terms fail to vanish, so the series diverges. The real convergence set is $[-1,1)$.
+Does the radius determine endpoint convergence?
+Yes
+No; check each endpoint
+Only the left endpoint
+Equal radii can have different boundary behavior.
+Interior results apply directly at the boundary
+The geometric margin may vanish there.
+Smooth means representable by a power series
+Analyticity or a vanishing remainder still needs proof.
+Push the closed-interval radius toward the boundary. Why does the uniform tail budget grow so quickly?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+Interior intervals leave a geometric margin. Boundary points can lose it and require separate convergence tests.
+Closed-interval radius: 0.1
+Set the interval radius to $0.1$. Compare supremum tail bounds, especially as the radius approaches one.
+Closed-interval radius $0.1$; retained through index $8$; exact uniform tail bound $1.111111\times10^{-9}$.
+Closed-interval radius: 0.545
+Set the interval radius to $0.545$. Compare supremum tail bounds, especially as the radius approaches one.
+Closed-interval radius $0.545$; retained through index $8$; exact uniform tail bound $0.009323031$.
+Closed-interval radius: 0.99
+Set the interval radius to $0.99$. Compare supremum tail bounds, especially as the radius approaches one.
+Closed-interval radius $0.99$; retained through index $8$; exact uniform tail bound $91.35172$.

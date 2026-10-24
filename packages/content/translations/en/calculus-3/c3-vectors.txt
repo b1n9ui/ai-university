@@ -1,0 +1,64 @@
+Spatial coordinates and vectors
+Points give positions; vectors give displacements
+A vector records direction and distance of motion. The same displacement can start at different positions.
+Each coordinate measures travel along one perpendicular axis. Adding components joins two displacements end to end.
+Compute displacement, length and unit direction
+Distinguish points from free vectors
+Point or vector?
+A point is a position. The vector from $A$ to $B$ is $B-A$; moving both endpoints equally leaves it unchanged.
+Computing length
+Apply Pythagoras in three directions. Length is nonnegative and vanishes only for the zero vector. Distance is the length of the difference between points.
+Why use unit vectors?
+Divide a nonzero vector by its length to retain direction alone. Negative scaling reverses direction; zero has no normalizable direction.
+Points give positions; vectors give displacements
+Use orthogonal Cartesian coordinates and Euclidean distance. Normalization requires $\mathbf v\ne\mathbf0$.
+Subtract to find displacement.
+Join displacements end to end.
+Scaling components scales length by the absolute factor.
+Displacement and distance
+Given $A=(1,-1,2),B=(3,2,-4)$, find displacement and distance.
+Subtract coordinates to obtain $\langle2,3,-6\rangle$.
+Distance is $\sqrt{4+9+36}=7$.
+Displacement $\langle2,3,-6\rangle$; distance 7.
+Keeping the direction
+Find a length-2 vector in the direction of $\mathbf v=\langle0,3,4\rangle$.
+Its length is 5; first divide by 5.
+Multiply by 2 to obtain $\langle0,6/5,8/5\rangle$.
+$\langle0,\frac65,\frac85\rangle$.
+Vectors must start at the origin.
+The origin is a convenient display choice; free vectors can be translated.
+Negative multiples have negative length.
+Length scales by the absolute factor; the sign reverses direction.
+Find $\|\langle2,-3,6\rangle\|$.
+Square components and add.
+$4+9+36=49$; its square root is 7.
+Find the midpoint of $A=(0,2,1),B=(2,0,2)$.
+Average corresponding coordinates.
+$\frac12(A+B)=(1,1,\frac32)$.
+$(1,1,\frac32)$.
+Given $\mathbf u=\langle1,0,1\rangle,\mathbf v=\langle-1,2,0\rangle$, find $2\mathbf u+\mathbf v$.
+Scale first, then add components.
+$2\mathbf u=\langle2,0,2\rangle$.
+The sum is $\langle1,2,2\rangle$.
+$\langle1,2,2\rangle$.
+What is the zero vector's unit direction?
+Check the denominator.
+Its length is zero; division cannot select a unique direction.
+Normalization gives no unit direction.
+Multiplying a nonzero vector by $-2$ changes its length how?
+It becomes negative
+It doubles
+It stays unchanged
+The sign reverses direction; magnitude scales by 2.
+Join $\mathbf u=\langle1,1,0\rangle$ and $\mathbf v=\langle c,0,1\rangle$ end to end. Dashed sides complete the parallelogram.
+Does reversing a horizontal component make length negative?
+Vector addition joins displacements; translating their starting point leaves the displacement unchanged.
+Negative multiple
+Set horizontal component $c$ to $-1$.
+The second vector's horizontal component reverses; length stays nonnegative.
+Zero component
+Set horizontal component $c$ to $0$.
+The second vector keeps its vertical component; it is not zero.
+Positive multiple
+Set horizontal component $c$ to $2$.
+The sum's horizontal component increases while its vertical component stays fixed.

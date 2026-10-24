@@ -165,7 +165,7 @@ export function PublishedBook({ volume }: { volume: PublishedVolume }) {
       </Link>
       <div className="edition-card-copy">
         <span className="edition-subject">{localizeNode(areaFor(volume.areaId).title)}</span>
-        <span className="edition-language">{volume.id === "calculus-1" ? "EN / 中文" : locale === "en" ? "Chinese edition" : "中文版"}</span>
+        <span className="edition-language">{locale === "en" ? "English edition" : "中文版"}</span>
         <h3><Link to={volume.route}>{localizeNode(volume.title)}</Link></h3>
         <p>{localizeNode(bookTopics[volume.id]??volume.tagline)}</p>
         <div className="edition-card-footer">

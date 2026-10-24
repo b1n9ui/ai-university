@@ -1,0 +1,66 @@
+Euler trails and Hamilton cycles
+Euler asks to use each edge once; Hamilton asks to visit each vertex once.
+Euler asks to use each edge once; Hamilton asks to visit each vertex once.
+The names are often encountered together, but the constraints concern different objects.
+Check Euler conditions
+Pair arrivals and departures
+Check Euler conditions
+After isolated vertices are ignored, the positive-degree part must be connected and have exactly zero or two odd-degree vertices for an Euler trail. An Euler circuit requires every degree even.
+Pair arrivals and departures
+At an intermediate vertex, each arrival needs a different departure edge, pairing its incident edges. In an open trail, the endpoints may each have one unpaired edge.
+Do not transfer this test to Hamilton cycles
+A Hamilton cycle visits every vertex once before returning to its start. Degree parity does not decide its existence; examples cannot establish a criterion for every graph.
+These Euler criteria require only the part containing edges to be connected.
+\text{Euler circuit}\iff\text{positive-degree part connected and all degrees even}
+The graph is finite and undirected. An edgeless graph's empty walk is treated separately as a trivial case.
+Hamilton cycles in this book require at least three vertices.
+A circuit pairs arrivals and departures at every vertex.
+For sufficiency, first follow unused edges to form a circuit.
+\text{Even degrees prevent getting stuck early elsewhere}
+If unused edges remain, splice in another circuit from a vertex on the existing one.
+\text{Each round uses at least one edge, so finitely many rounds suffice}
+A star
+Does a star with four leaves have an Euler trail?
+Its four leaves have degree one.
+There are four odd-degree vertices, not zero or two.
+No.
+Two triangles sharing one vertex
+Two triangles share exactly one vertex and no edges. Does their union have an Euler circuit or a Hamilton cycle?
+The center has degree four and every other vertex degree two; the graph is connected, so it has an Euler circuit.
+The center is a cut vertex. A Hamilton cycle cannot connect both sides while visiting it only once.
+An Euler circuit exists; no Hamilton cycle exists.
+Does a four-cycle have an Euler circuit?
+It is connected, with every degree two.
+It satisfies the circuit criterion.
+Yes.
+How many odd-degree vertices does a three-edge path have?
+Endpoints have degree one; internal vertices have degree two.
+Only the two endpoints have odd degree.
+Two.
+May an Euler trail revisit vertices?
+Only repeated edges are prohibited.
+Vertices may be visited repeatedly.
+Yes.
+Must a Hamilton cycle use every edge?
+Its constraint concerns vertices.
+Edges outside the cycle need not be used.
+No.
+Which problem asks to use every edge exactly once?
+Vertex coloring
+Euler constrains edges; Hamilton constrains vertices.
+The two path notions are interchangeable
+They constrain different objects.
+Degree criteria need no connectedness condition
+Separate edge-containing components cannot form one trail.
+Compare a cycle, path, star, and two triangles sharing a vertex. Do Euler and Hamilton conclusions agree?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+They constrain different objects.
+Graph mode: 0
+Set the control to $0$. Observe which objects, relations, or counts change.
+At this setting: vertices $6$; edges $6$; odd-degree vertices $0$; Euler trail: yes; Euler circuit: yes; Hamilton cycle: yes.
+Graph mode: 2
+Set the control to $2$. Observe which objects, relations, or counts change.
+At this setting: vertices $6$; edges $5$; odd-degree vertices $6$; Euler trail: no; Euler circuit: no; Hamilton cycle: no.
+Graph mode: 5
+Set the control to $5$. Observe which objects, relations, or counts change.
+At this setting: vertices $5$; edges $6$; odd-degree vertices $0$; Euler trail: yes; Euler circuit: yes; Hamilton cycle: no.

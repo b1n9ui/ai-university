@@ -1,0 +1,197 @@
+{
+  "id": "small-scope",
+  "chapterId": "chapter-1",
+  "number": "1.2",
+  "title": "Keep the first release finishable",
+  "subtitle": "Validate the idea with one small, complete workflow.",
+  "concept": "Build only enough to complete the initial scenario. Record other ideas for later.",
+  "intuition": "Build a usable bicycle before deciding whether it needs a basket; do not commission an entire transport system at once.",
+  "objectives": [
+    "List the essential features forming one complete workflow.",
+    "Attach an immediate check to each small change."
+  ],
+  "body": [
+    {
+      "title": "Draw the smallest complete workflow",
+      "text": "For the study list: add a plan, see it, complete or delete it, then find it next time. Display and persistence are essential. Accounts, rankings, reminders and cross-device synchronization are deferred deliberately."
+    },
+    {
+      "title": "Separate now from later",
+      "text": "Use two lists: required now and consider later. Ask of each requirement: without it, can the user still complete this scenario? If yes, defer it. Scope can change, but update the plan and acceptance criteria honestly."
+    },
+    {
+      "title": "Deliver one checkable change at a time",
+      "text": "First show an empty list, then add items, then completion, then persistence. Each task needs a check. A single finish-the-site task postpones discovering unsuitable data or storage design. Small steps reveal errors early, not merely shorten prompts."
+    }
+  ],
+  "formalDefinition": {
+    "text": "Build only enough to complete the initial scenario. Record other ideas for later.",
+    "conditions": [
+      "For small personal learning projects. In shared repositories, follow the team's conventions.",
+      "This method produces checkable evidence; it cannot guarantee arbitrary AI output is correct."
+    ]
+  },
+  "workflow": [
+    "List the essential features forming one complete workflow.",
+    "Defer ideas unnecessary for that workflow.",
+    "Attach an immediate check to each small change."
+  ],
+  "workedExamples": [
+    {
+      "title": "Deciding about login",
+      "problem": "Does a personal single-browser first release need login?",
+      "steps": [
+        "The only user is you.",
+        "Cross-device sharing is not required.",
+        "Complete the scenario with local storage and state its limits."
+      ],
+      "answer": "No login initially. Data stays in this browser and does not synchronize to other devices. If synchronization becomes necessary, redesign accounts and storage then."
+    },
+    {
+      "title": "Split a large task",
+      "problem": "How would you divide finish the study list?",
+      "steps": [
+        "Display the page and empty state first.",
+        "Add creation, completion and deletion, checking each action.",
+        "Then add persistence and backup, checking refresh and restoration."
+      ],
+      "answer": "Task 1: empty list. Task 2: add nonblank plans and reject whitespace. Task 3: toggle and delete by ID. Task 4: refresh persistence and JSON backup. Verify each separately and fix failures before continuing."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "More features make a better first release.",
+      "correction": "First establish that one workflow is useful; extras add delay and ambiguity."
+    },
+    {
+      "claim": "Split tasks by files.",
+      "correction": "Prefer verifiable behaviors; one small behavior may touch several files."
+    }
+  ],
+  "practice": [
+    {
+      "id": "small-scope-p1",
+      "difficulty": 1,
+      "problem": "Which comes first: reminders, rankings or adding plans?",
+      "hint": "Use the scenario to choose.",
+      "answer": "Adding plans. The other two are not essential to a personal list.",
+      "solution": [
+        "Make recording and retrieval work first.",
+        "Keep other ideas on the later list."
+      ]
+    },
+    {
+      "id": "small-scope-p2",
+      "difficulty": 2,
+      "problem": "How should you explain the absence of cloud synchronization?",
+      "hint": "State what happens on another device.",
+      "answer": "Data is stored only in this browser. Changing devices or clearing storage will not restore it automatically; download a backup.",
+      "solution": [
+        "Scope decisions affect user experience.",
+        "Put limitations in user-facing instructions, not just the development plan."
+      ]
+    },
+    {
+      "id": "small-scope-p3",
+      "difficulty": 2,
+      "problem": "Turn finish the page into one small task.",
+      "hint": "Choose behavior you can verify by clicking.",
+      "answer": "Submitting a nonblank title adds an item; whitespace-only input gives a message without adding anything.",
+      "solution": [
+        "Specify the triggering action.",
+        "Specify successful and invalid-input outcomes."
+      ]
+    },
+    {
+      "id": "small-scope-p4",
+      "difficulty": 3,
+      "problem": "What if multiuser synchronization becomes mandatory midway?",
+      "hint": "It changes data location and permissions.",
+      "answer": "Revisit the plan, confirm sharing and permissions, rewrite scope and acceptance criteria, then estimate the new tasks.",
+      "solution": [
+        "Recognize a requirements change.",
+        "Do not pretend a personal-list design only needs another button."
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "Which belongs in the first release?",
+    "choices": [
+      "A personal list with automatic payments",
+      "Add, complete, delete and save locally",
+      "Community, rankings and synchronization together"
+    ],
+    "correctIndex": 1,
+    "feedback": [
+      "Payments add another business problem and risks.",
+      "This completes the original scenario with clear scope.",
+      "Several new scenarios make the first release harder to finish."
+    ]
+  },
+  "interactiveVisual": {
+    "kind": "decision",
+    "prediction": "Four tempting additions are suggested. Which deserve inclusion now?",
+    "steps": [
+      {
+        "question": "The agent proposes accounts, but only you use the app.",
+        "choices": [
+          "Add them immediately",
+          "Defer them and explain local-storage limits",
+          "Remove persistence"
+        ],
+        "correctIndex": 1,
+        "feedback": [
+          "Accounts expand the first release.",
+          "Scope stays clear and the user understands its limits.",
+          "This breaks finding plans on a later day."
+        ]
+      },
+      {
+        "question": "Refreshing loses the list.",
+        "choices": [
+          "Fix this gap in the first release",
+          "Build rankings first",
+          "Change the title"
+        ],
+        "correctIndex": 0,
+        "feedback": [
+          "Persistence is part of the current scenario.",
+          "New features cannot repair a broken core workflow.",
+          "A title change does not prevent data loss."
+        ]
+      },
+      {
+        "question": "One change includes creation, login and payments. How should it be adjusted?",
+        "choices": [
+          "Use a longer prompt for everything",
+          "Split it and verify creation first",
+          "Accept without checking"
+        ],
+        "correctIndex": 1,
+        "feedback": [
+          "A longer description does not reduce change scope.",
+          "Smaller changes are easier to understand and verify.",
+          "Reliability needs evidence."
+        ]
+      }
+    ],
+    "followUp": "Write required now and consider later lists for your project, explaining each choice."
+  },
+  "prerequisites": [
+    "user-problem"
+  ],
+  "difficulty": 1,
+  "misconceptionTags": [
+    "small-scope-guess",
+    "small-scope-evidence"
+  ],
+  "sources": [
+    "mdn-start"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.1.1",
+    "status": "first-edition",
+    "humanReviewed": false
+  }
+}

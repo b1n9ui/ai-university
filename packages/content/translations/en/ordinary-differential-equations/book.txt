@@ -1,0 +1,74 @@
+Ordinary Differential Equations
+From local change to complete motion
+First-order equations, existence and uniqueness, linear and nonlinear systems, damping and resonance, Laplace transforms, series, and numerical methods. Explanations, derivations, worked examples, exercises, and interactive figures form a complete introductory course.
+For readers with single-variable calculus. Linear systems use matrices and eigenvalues, with prerequisite links to Linear Algebra
+Eleven chapters and fifty-five lessons cover a complete undergraduate introduction: local theory, second- and higher-order linear equations, Laplace transforms, linear systems, basic nonlinear dynamics, series, and numerical methods. PDEs have a separate volume. Manifold dynamics, full distribution theory, and solver engineering are outside this scope. Fourier expansions and full Sturm-Liouville theory belong to the later PDE volume; here we introduce the simplest boundary eigenvalue problem.
+Equations, solutions, and rates
+Turn change rules into testable models
+Identify the constraint before choosing a solution method. A solution is a function on an interval satisfying conditions, not merely a formula.
+Distinguish order and linearity
+Verify solutions and initial data
+Read direction fields
+Solving first-order equations
+Choose operations by structure
+Separation, integrating factors, and substitutions fit different structures. Check every division for lost solutions.
+Separate variables and retain equilibria
+Use integrating factors
+Handle exact equations and substitutions
+Existence, uniqueness, and continuation
+Determine solvability before finding formulas
+Distinguish existence, uniqueness, global extension, and continuous dependence. Do not extend local results into all-time guarantees.
+Apply local existence and uniqueness hypotheses
+Recognize nonuniqueness and blow-up
+Understand initial-data sensitivity
+Second-order linear equations
+Determine motion from two initial conditions
+Build the solution space, then relate characteristic roots to exponentials, oscillations, and repeated-root solutions.
+Use superposition and Wronskians
+Solve constant-coefficient homogeneous equations
+Handle complex roots, repeated roots, and reduction of order
+Forced equations and vibration
+How inputs change motion
+Construct particular solutions and interpret damping and resonance, while distinguishing transients, steady states, and driving frequencies.
+Construct forced particular solutions
+Use variation of parameters
+Explain damping and resonance
+Higher-order linear equations
+Extend familiar structure to more initial data
+Higher constant-coefficient order, Euler-Cauchy equations, and boundary conditions have distinct structures.
+Handle higher root multiplicities
+Convert high-order equations into first-order systems
+Distinguish initial and boundary problems
+Laplace transforms
+Turn initial data and inputs into algebra
+Start from the integral definition and progressively handle derivatives, switched inputs, impulses, and convolution.
+Calculate transforms and inverses
+Handle switches and impulses
+Represent general responses by convolution
+Linear differential systems
+Use matrices to describe changing states
+Put linear-algebra eigendirections into continuous time, including repeated roots, complex roots, and forced systems.
+Construct matrix exponentials
+Read phase portraits from eigenstructure
+Calculate forced system responses
+Nonlinear systems and qualitative analysis
+Understand motion without explicit solutions
+Move from scalar phase lines to planar linearization, energy, and bifurcations, stating local scope and failure cases.
+Classify equilibria and local stability
+Use phase lines and nullclines
+Explain energy and basic bifurcations
+Power series and Frobenius methods
+Construct solutions without elementary formulas
+Use coefficient recurrences for local solutions, distinguishing ordinary points, regular singular points, and convergence domains.
+Derive series recurrences
+Distinguish ordinary from regular singular points
+Handle indicial roots and logarithmic solutions
+Numerical solutions, error, and stability
+Interpret calculations through their errors
+Compare Euler, second-order, and fourth-order methods, then analyze stability, stiffness, and adaptive steps.
+Implement basic time stepping
+Distinguish local and global errors
+Check stability and error control
+Used to check undergraduate scope for linear equations, oscillation, transforms, and systems. Text, worked examples, exercises, and figures are independently authored.
+Used to check scope for first-order equations, systems, Laplace transforms, series, and nonlinear topics. Source text, problems, and illustrations are not copied.
+Structure, formula rendering, prerequisites, independent substitution, numerical algorithms, visual boundaries, and actual-page checks; this does not formally verify every expression.

@@ -1,0 +1,65 @@
+Poisson counts and rare events
+Model the number of events in an interval using its expected count as the Poisson parameter.
+Model the number of events in an interval using its expected count as the Poisson parameter.
+Two events per hour on average does not mean exactly two every hour.
+Understand model conditions
+Compute masses and interval scaling
+Understand model conditions
+A Poisson process assumes independent increments on disjoint intervals, stable rate, and sufficiently rare multiple arrivals in very short intervals. Clustering can make it unsuitable.
+Compute masses and interval scaling
+Interval mean equals rate times length. Changing time units must also change the expected count accordingly.
+Check mean and variance
+Poisson mean equals variance. A sample variance far above its mean can suggest heterogeneity or clustering, but one sample alone does not settle model adequacy.
+The parameter $\lambda\ge0$ is the expected count in the interval considered.
+The parameter $\lambda\ge0$ is the expected count in the interval considered.
+Deriving the law from a process needs independent increments, stable rate, and related assumptions.
+Interpret mass through a rare-event binomial limit.
+The zero-count probability tends to an exponential.
+Fixed-count combinatorial terms supply the power coefficient.
+No arrivals
+With mean two events per interval, find zero-event probability.
+Use the zero mass.
+Zero factorial is one.
+$e^{-2}\approx0.1353$.
+Change the interval
+At a stable rate of three per hour, what are the half-hour mean and variance?
+Scaling the interval gives mean $1.5$.
+Poisson variance equals the interval mean.
+Both $1.5$.
+With mean count one, find exactly one probability.
+Substitute into the mass function.
+$e^{-1}$.
+$e^{-1}\approx0.3679$.
+With mean count two, find at least one probability.
+Complement zero events.
+$1-e^{-2}$.
+$1-e^{-2}\approx0.8647$.
+Independent Poisson counts have means two and three. Find the sum's distribution and mean.
+Use convolution or multiplying generating functions.
+Independent Poisson counts add to a Poisson count with summed parameters.
+$\operatorname{Pois}(5)$.
+If rate changes substantially over time, can a constant-rate process directly explain it?
+Check model conditions.
+The stable-rate assumption fails; build another model.
+Not with that process explanation.
+What does the Poisson parameter represent?
+Success probability
+Expected count in this interval
+Maximum count
+It may exceed one and changes with interval length.
+The expected count is the fixed arrival count
+Actual counts fluctuate; the model gives their probabilities.
+A parameter above one is invalid
+It is an expected count, not a probability.
+Increase the expected count. How do zero probability and distribution shape change?
+The finite count window reports probability beyond it; masses use the Poisson formula.
+Actual counts fluctuate; the model gives their probabilities.
+Interval mean count: 2
+Set the mean count to $2$ and compare the figure and readouts.
+At these parameters: mean and variance $2$; zero probability $0.135335$; selected count probability $0.270671$; outside-window tail $2.220\times10^{-16}$.
+Interval mean count: 0
+Set the mean count to $0$ and compare the figure and readouts.
+At these parameters: mean and variance $0$; zero probability $1$; selected count probability $0$; outside-window tail $0$.
+Interval mean count: 12
+Set the mean count to $12$ and compare the figure and readouts.
+At these parameters: mean and variance $12$; zero probability $6.144\times10^{-6}$; selected count probability $0.000442383$; outside-window tail $3.372\times10^{-6}$.

@@ -1,0 +1,199 @@
+{
+  "id": "release",
+  "chapterId": "chapter-6",
+  "number": "6.2",
+  "title": "Know which version you are delivering",
+  "subtitle": "Verify local execution, builds and live deployment separately.",
+  "concept": "Deliver runnable instructions, a checked version, evidence, limitations and recovery steps. Check the real URL after deployment.",
+  "intuition": "A workshop sample working locally does not establish that the delivered version works at the customer's site.",
+  "objectives": [
+    "Prepare setup, version, check results and known limitations.",
+    "Keep a previous working version and recovery instructions; distinguish code rollback from data migration."
+  ],
+  "body": [
+    {
+      "title": "Prepare the delivery materials",
+      "text": "README should explain tools, commands, scope and limits. Match commits and version notes to actual checks. Projects with dependencies install from lockfiles and build. This example needs no bundling: publish index.html, style.css, app.mjs and tasks.mjs. Tests and the local server are not browser entry files."
+    },
+    {
+      "title": "Recheck the public URL",
+      "text": "A development server is local. Deployment puts runnable artifacts in the target environment. At the real URL, check resource requests, actions, keyboard, narrow screens and saving. Localhost records do not migrate to the new origin. Hosting paths vary; follow the target's instructions. This book does not create hosting accounts or buy services for readers."
+    },
+    {
+      "title": "Separate code and data recovery",
+      "text": "Record the previous working code and publication procedure. Restore a usable artifact and verify it after failure. Old code may not understand new data; format changes need backup and migration planning. Even without upgrades, this example's restoration replaces records. Keep an error-reporting route after release."
+    }
+  ],
+  "formalDefinition": {
+    "text": "Deliver runnable instructions, a checked version, evidence, limitations and recovery steps. Check the real URL after deployment.",
+    "conditions": [
+      "For small personal learning projects. In shared repositories, follow the team's conventions.",
+      "This method produces checkable evidence; it cannot guarantee arbitrary AI output is correct."
+    ]
+  },
+  "workflow": [
+    "Prepare setup, version, check results and known limitations.",
+    "Check artifacts and destination, publish within authorization and inspect the real URL.",
+    "Keep a previous working version and recovery instructions; distinguish code rollback from data migration."
+  ],
+  "workedExamples": [
+    {
+      "title": "Hand the project to a friend",
+      "problem": "What is needed besides source files?",
+      "steps": [
+        "State tool versions and directory.",
+        "Give tests, startup and URL.",
+        "Explain local data, no synchronization and backups."
+      ],
+      "answer": "README: Node.js 22.12+; run npm test then npm start in the project directory; open local port 5180. Include version, actual checks, restoration and untested environments. Record your friend's results after they run it."
+    },
+    {
+      "title": "Empty data after publication",
+      "problem": "Why is a local list absent on the public site?",
+      "steps": [
+        "Compare URL origins.",
+        "They use different localStorage.",
+        "Restore a validated backup explicitly rather than claiming automatic migration."
+      ],
+      "answer": "Different local data locations explain it. Export locally, then validate and confirm restoration at the destination. Do not publish user backups publicly as a migration shortcut."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "Opening locally verifies deployment.",
+      "correction": "Record local and actual deployment checks separately."
+    },
+    {
+      "claim": "Old code repairs every new-data problem.",
+      "correction": "Formats may be incompatible; code and data have separate recovery paths."
+    }
+  ],
+  "practice": [
+    {
+      "id": "release-p1",
+      "difficulty": 1,
+      "problem": "Which files does this example publish?",
+      "hint": "Server and tests are not needed by the page.",
+      "answer": "index.html, style.css, app.mjs and tasks.mjs, preserving relative paths.",
+      "solution": [
+        "Browsers load the entry point and its referenced resources.",
+        "Hosting serves the files; local server.mjs does not become a business backend."
+      ]
+    },
+    {
+      "id": "release-p2",
+      "difficulty": 2,
+      "problem": "What belongs in local and public check records?",
+      "hint": "Environment and actual version.",
+      "answer": "URL, deployed/commit version, check actions, results and gaps.",
+      "solution": [
+        "Identify which artifact was checked.",
+        "Do not relabel local evidence as public-site evidence."
+      ]
+    },
+    {
+      "id": "release-p3",
+      "difficulty": 3,
+      "problem": "Old code cannot read the new backup after rollback. What follows?",
+      "hint": "Program and format may be incompatible.",
+      "answer": "Handle the data version or restore a compatible backup too. Code rollback alone does not prove recovery.",
+      "solution": [
+        "Separate code state from data state.",
+        "Preserve current data before following a deliberate recovery procedure."
+      ]
+    },
+    {
+      "id": "release-p4",
+      "difficulty": 2,
+      "problem": "What final consequential check precedes publication?",
+      "hint": "Destination and effects.",
+      "answer": "Confirm authorization, target repository or URL, artifact version and absence of secrets; prepare recovery.",
+      "solution": [
+        "Do not reapprove every reversible edit.",
+        "Publication and real-data actions have separate consequences."
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "What supports the claim public version verified?",
+    "choices": [
+      "A local screenshot",
+      "Checks tied to the live URL and version",
+      "A PR title"
+    ],
+    "correctIndex": 1,
+    "feedback": [
+      "This does not establish public execution.",
+      "The evidence matches the actual deployment.",
+      "A PR does not establish publication."
+    ]
+  },
+  "interactiveVisual": {
+    "kind": "decision",
+    "prediction": "Which delivery states must remain distinct?",
+    "steps": [
+      {
+        "question": "npm test passed but the page was never opened.",
+        "choices": [
+          "The whole site is accepted",
+          "Rules checked; page checks pending",
+          "The site is published"
+        ],
+        "correctIndex": 1,
+        "feedback": [
+          "Rule tests do not cover the interface.",
+          "The evidence scope is accurate.",
+          "Tests do not automatically deploy."
+        ]
+      },
+      {
+        "question": "Code merged. Is the live URL updated?",
+        "choices": [
+          "Certainly",
+          "Check deployment and actual version",
+          "All old data migrated"
+        ],
+        "correctIndex": 1,
+        "feedback": [
+          "This depends on publication configuration.",
+          "Identify the deployed artifact before concluding.",
+          "Data migration is separate."
+        ]
+      },
+      {
+        "question": "A release changes data format. What before rollback?",
+        "choices": [
+          "Roll back code alone",
+          "Backup data and inspect compatibility/migration",
+          "Clear every record"
+        ],
+        "correctIndex": 1,
+        "feedback": [
+          "Old code may not read new data.",
+          "Plan the recovery's effects.",
+          "This enlarges data loss."
+        ]
+      }
+    ],
+    "followUp": "Write a delivery checklist distinguishing local, merged and deployed states."
+  },
+  "prerequisites": [
+    "data-design"
+  ],
+  "difficulty": 4,
+  "misconceptionTags": [
+    "release-guess",
+    "release-evidence"
+  ],
+  "sources": [
+    "mdn-start",
+    "mdn-storage",
+    "github-pr"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.1.1",
+    "status": "first-edition",
+    "humanReviewed": false
+  }
+}

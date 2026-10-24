@@ -1,0 +1,244 @@
+Integration techniques: chapter review
+Evaluate $\int x\ln x\,dx$, $x>0$.
+$\frac{x^2}{2}\ln x-\frac{x^2}{4}+C$.
+Differentiate the logarithm.
+$u=\ln x,v=\frac{x^2}{2}$; the remaining integral is $\frac12\int x dx$.
+Evaluate $\int_0^{\pi/2}\cos^2x\,dx$.
+$\frac\pi4$.
+Reduce the power first.
+$\cos^2x=\frac{1+\cos2x}{2}$; sine terms vanish at the endpoints.
+What should you do first for $\int\frac{x^3+1}{x^2}dx$? Evaluate it.
+Divide first; the result is $\frac{x^2}{2}-\frac1x+C$.
+Simplify before choosing a method.
+$\frac{x^3+1}{x^2}=x+x^{-2}$; integrate term by term; $x\neq0$.
+Approximating, extending and modeling integrals: chapter review
+Do $\int_1^\infty\frac{dx}{x^{3/2}}$ and $\int_0^1\frac{dx}{x^{3/2}}$ have the same convergence behavior?
+The first converges to 2; the second diverges.
+Distinguish a distant tail from a spike near zero.
+Their truncated integrals are $2-\frac2{\sqrt R}\to2$ and $\frac2{\sqrt\delta}-2\to\infty$.
+Find the center of mass of a rod on $[0,1]$ with density $\rho=1+2x$.
+$\frac7{12}$.
+Integrate mass and moment separately.
+$M=2$, $P=\frac12+\frac23=\frac76$, hence $P/M=\frac7{12}$.
+Rotate $y=x$ on $[0,2]$ about the horizontal axis. Find lateral area.
+$4\pi\sqrt2$.
+Keep both radius and arc-length element.
+$S=2\pi\int_0^2 x\sqrt2 dx=4\pi\sqrt2$; end caps excluded.
+From sequences to infinite sums: chapter review
+Find $\lim\frac{2n-1}{n+3}$.
+$2$.
+Divide by the highest power.
+$\frac{2-1/n}{1+3/n}\to2$.
+For $a_1=1,a_{n+1}=\frac{a_n+5}{2}$, prove convergence and find the limit.
+$5$.
+Track distance from the fixed point.
+$5-a_{n+1}=\frac12(5-a_n)$, hence $a_n=5-\frac4{2^{n-1}}\to5$.
+Evaluate $\sum_{n=1}^\infty\frac2{n(n+1)}$.
+$2$.
+Split into differences of consecutive reciprocals.
+$S_N=2(1-\frac1{N+1})\to2$.
+Series convergence and error: chapter review
+Does $\sum_{n=1}^\infty\frac{4n+1}{n^3+1}$ converge?
+It converges.
+Use limit comparison with reciprocal squares.
+Ratio $\frac{(4n+1)n^2}{n^3+1}\to4$; the series share convergence behavior.
+Does $\sum_{n=0}^\infty\frac{5^n}{n!}$ converge? Does this test alone give its sum?
+Absolutely convergent; the ratio test itself does not give the exact sum.
+Compute consecutive ratios first.
+Ratio $\frac5{n+1}\to0$; geometric decay bounds the tail.
+Bound the error after 9 terms of $\sum\frac{(-1)^{n-1}}{n^3}$.
+$\frac1{1000}$.
+Use the next term's magnitude.
+Magnitudes decrease to zero; $b_{10}=\frac1{10^3}$.
+From convergence to function representation: chapter review
+Classify $\sum\frac{(-1)^n}{n^{2/3}}$.
+Conditionally convergent.
+Test the signed and absolute-value series separately.
+Alternating magnitudes decrease to zero; the absolute-value exponent $\frac23\leq1$ gives divergence.
+Find the convergence interval of $\sum_{n=1}^\infty\frac{(x+2)^n}{2^n n}$.
+$[-4,0)$.
+Find the open interval, then test both endpoints.
+$|x+2|<2$; left is alternating harmonic, right is harmonic.
+Given $f(1)=2,f\prime(1)=3,f^{(2)}(1)=-2$, find the quadratic Taylor polynomial.
+$2+3(x-1)-(x-1)^2$.
+Keep the center shift and factorial.
+The quadratic coefficient is $-2/2!=-1$.
+Taylor expansions in calculation: chapter review
+Approximate $e^{0.2}$ with a cubic polynomial and give a Taylor error bound.
+At most $e^{0.2}\frac{0.2^4}{24}$.
+Bound the fourth derivative throughout the interval.
+On $[0,0.2]$, $f^{(4)}\leq e^{0.2}$; insert it into the cubic remainder.
+Find $\lim_{x\to0}\frac{\tan x-x}{x^3}$.
+$\frac13$.
+Expand sine and cosine, then divide.
+$\tan x=(x-\frac{x^3}{6}+O(x^5))(1+\frac{x^2}{2}+O(x^4))=x+\frac{x^3}{3}+O(x^5)$.
+Find the quadratic expansion and basic valid range of $(1+2x)^{1/2}$.
+$1+x-\frac{x^2}{2}$; the infinite expansion is initially guaranteed on $|x|<\frac12$.
+Replace the entire input.
+Replace the square-root expansion's increment by $2x$; check endpoints separately.
+Parametric curves and polar coordinates: chapter review
+For $x=t^2,y=2t$ at $t=1$, find slope and speed.
+Slope 1; speed $2\sqrt2$.
+A ratio and a vector length are different calculations.
+$x\prime=2t,y\prime=2$; slope $2/(2t)=1$, speed $\sqrt{4+4}=2\sqrt2$.
+Convert $(-3,\frac\pi2)$ to Cartesian coordinates and a positive-radius representation.
+$(0,-3)$; $(3,\frac{3\pi}{2})$.
+Move in the opposite direction.
+$x=-3\cos\frac\pi2=0,y=-3\sin\frac\pi2=-3$; changing radius to positive adds half a turn to the angle.
+Find the full-turn area of $r=2+\cos\theta$.
+$\frac{9\pi}{2}$.
+Square and integrate, handling sine and cosine terms separately.
+$A=\frac12\int_0^{2\pi}(4+4\cos\theta+\cos^2\theta)d\theta=\frac12(8\pi+\pi)$.
+First-order differential equations: chapter review
+Solve $y\prime=3xy,y(0)=2$.
+$2e^{3x^2/2}$.
+Keep equilibria, then separate the nonzero branch.
+$\ln|y|=\frac32x^2+C$; the initial value makes the exponential coefficient 2.
+Solve $y\prime+3y=6,y(0)=0$.
+$2-2e^{-3x}$.
+The integrating factor is exponential.
+$(e^{3x}y)\prime=6e^{3x}$; integrating gives $y=2+Ce^{-3x}$, and the initial value gives $C=-2$.
+For $y\prime=y,y(0)=2$ with $h=0.2$, compute two Euler steps.
+$2.88$.
+Update the slope each step.
+$y_1=2+0.2\cdot2=2.4$; $y_2=2.4+0.2\cdot2.4=2.88$.
+Evaluate $\int_0^1x^2e^x dx$.
+$e-2$.
+Integrate by parts twice and keep both endpoints.
+An antiderivative is $e^x(x^2-2x+2)$; its endpoint difference is $e-2$.
+Evaluate $\int_1^2\frac{x^2+2}{x}dx$.
+$\frac32+2\ln2$.
+Split into two terms first.
+$\int_1^2(x+\frac2x)dx=[\frac{x^2}{2}+2\ln x]_1^2$.
+For a trapezoidal bound with $M_2=3$ on an interval of length 2, what is the smallest integer count ensuring error at most $0.005$?
+$20$.
+Simplify the error bound first.
+The bound is $\frac{3\cdot8}{12n^2}=\frac2{n^2}$, so $n^2\geq400$.
+Evaluate $\int_2^\infty x^{-3}dx$.
+$\frac18$.
+Truncate first; note the lower endpoint.
+$[-\frac1{2x^2}]_2^R=\frac18-\frac1{2R^2}\to\frac18$.
+Evaluate $\int_0^4x^{-1/2}dx$.
+$4$.
+Take a right-hand limit at the lower endpoint.
+$[2\sqrt x]_\delta^4=4-2\sqrt\delta\to4$.
+Find the center of mass on $[0,2]$ with linear density $\rho=x$.
+$\frac43$.
+Divide moment by mass.
+$M=2$, $P=\int_0^2x^2dx=\frac83$; the center of mass is $\frac43$.
+Find $\lim_{n\to\infty}\sqrt{n^2+4n}-n$.
+$2$.
+Use the conjugate to remove subtraction of radicals.
+The expression becomes $\frac{4n}{\sqrt{n^2+4n}+n}=\frac4{\sqrt{1+4/n}+1}\to2$.
+Does $\sum\frac{2n+1}{n^3+4}$ converge?
+It converges.
+Use limit comparison with reciprocal squares.
+The ratio is $\frac{(2n+1)n^2}{n^3+4}\to2$; the reference series converges.
+For 9 terms of $\sum_{n=1}^\infty\frac{(-1)^{n-1}}{n^2}$, bound the error and determine its sign.
+Error at most $0.01$; the remainder is negative.
+The first omitted term is the tenth.
+Magnitudes decrease to zero; the tenth term is $-\frac1{100}$, so the sum is below the ninth partial sum.
+Find the convergence interval of $\sum_{n=1}^\infty\frac{(2x-1)^n}{n}$.
+$[0,1)$.
+Constrain the ratio's magnitude, then test endpoints.
+$|2x-1|<1$ gives $0<x<1$; the left alternating harmonic series converges, the right harmonic series diverges.
+Use $1-\frac{x^2}{2}+\frac{x^4}{24}$ to estimate $\cos0.3$, with the Taylor bound from the next nonzero order.
+Error at most $\frac{0.3^6}{720}$.
+The fifth-degree coefficient is zero, so regard it as a fifth-degree polynomial.
+The sixth derivative has magnitude at most 1; use the fifth-order remainder.
+Find $\lim_{x\to0}\frac{\ln(1+x)-x}{x^2}$.
+$-\frac12$.
+Expand through degree two with a remainder.
+$\ln(1+x)=x-\frac{x^2}{2}+O(x^3)$; cancel the linear term and divide by the square.
+Find the area enclosed by $r=1+\sin\theta$.
+$\frac{3\pi}{2}$.
+Use squared radius over one full turn.
+$A=\frac12\int_0^{2\pi}(1+2\sin\theta+\sin^2\theta)d\theta=\frac12(2\pi+\pi)$.
+For $y\prime=-2y,y(0)=1$, compute two Euler steps of size $h=1.5$. Do they match the exact trend?
+$1\to-2\to4$; they do not.
+Compute the discrete multiplier and compare continuous behavior.
+The multiplier is $1-2h=-2$; the exact solution $e^{-2x}$ stays positive and decays.
+Integration by parts
+Differentiate one factor and integrate the other; aim to simplify the remaining integral.
+Trigonometric integrals
+For odd powers, reserve a derivative factor; for even powers, use power-reduction identities.
+Trigonometric substitution
+Match the substitution to the radical, then choose an angle interval to handle absolute values correctly.
+Partial fractions
+Factor the denominator and split the fraction into simpler terms. Divide first, then match coefficients.
+Choosing an integration method
+Simplify and look for an inner derivative, then examine products, radicals or rational functions. A definite integral can exist without an elementary antiderivative.
+Numerical integration and error
+Trapezoids use straight lines; Simpson's rule uses parabolas. Error bounds tell you how many subintervals suffice.
+Integrals over infinite intervals
+An infinite-interval integral is a limit of finite integrals. Infinity is not an ordinary endpoint value.
+Unbounded integrands on finite intervals
+Avoid an unbounded endpoint or interior point, integrate on a truncated interval, then take one-sided limits.
+Surface area of revolution
+Rotating a small arc produces a narrow band, with area approximately circumference times arc length.
+Mass, moments and center of mass
+The center of mass is a mass-weighted average, not a simple average of boundary positions.
+Pressure and work by layers
+Total force and work accumulate layer contributions; force or travel distance can differ between layers.
+Sequences and limits
+A sequence converges when every sufficiently late term stays close to one number. Finitely many initial terms do not determine its limit.
+Monotone bounded sequences and recurrences
+A bounded monotone real sequence converges. Pass a recurrence to its limit only after proving convergence.
+Infinite series and partial sums
+A series converges when its partial sums converge. Terms tending to zero are necessary, not sufficient.
+Geometric and telescoping series
+Find finite partial sums before taking a limit. Do not manipulate an infinite expression whose convergence is unknown.
+The integral test and tail bounds
+A positive, continuous, decreasing function links an integral to a series and bounds the tail after a finite partial sum.
+Comparison and limit comparison
+Compare positive terms with a known series. Limit comparison checks whether their tails differ by a finite positive factor.
+Ratio and root tests
+A limiting consecutive ratio or nth root below one gives a convergent geometric bound. A limit equal to one is inconclusive.
+Alternating series and error
+An alternating series with eventually nonincreasing positive magnitudes tending to zero converges. Once truncation enters that decreasing tail, its error is at most the next magnitude.
+Absolute and conditional convergence
+Absolute convergence means the absolute-value series converges. Conditional convergence means the original series converges but its absolute-value series diverges.
+Power series and convergence intervals
+A power series converges inside its radius and diverges outside. Test each boundary point separately.
+Differentiating and integrating power series
+Inside the convergence interval, power series can be differentiated and integrated term by term. The radius stays the same; endpoints may change.
+Taylor polynomials
+A Taylor polynomial matches the value and first few derivatives at its center. This local agreement does not guarantee accuracy far away.
+Taylor remainders and error bounds
+A Taylor polynomial gives an approximation; a bound on the next derivative limits its error.
+Standard Taylor series
+Exponential, sine, cosine, geometric and logarithmic expansions generate many others by substitution and calculus. Keep each convergence range.
+Using series for integrals and limits
+Series approximate integrals without elementary antiderivatives and reveal the first surviving term in a limit.
+The generalized binomial series
+Binomial coefficients extend to any real exponent. Nonnegative integer exponents terminate; others generally yield infinite series with limited convergence ranges.
+Parametric equations and motion
+Parametric equations specify how a point moves. The same geometric curve can have different directions and speeds.
+Tangents and arc length of parametric curves
+Parametric slope is vertical rate divided by horizontal rate. Arc length accumulates speed.
+Polar coordinates and curves
+Polar coordinates give radius and angle. A negative radius moves opposite the stated direction.
+Polar area and arc length
+Polar area accumulates small sectors, while arc length accumulates short arcs. Check tracing ranges to avoid repetition.
+Differential equations and direction fields
+A differential equation specifies slope; an initial value specifies a starting point. A direction field shows the local directions allowed.
+Separable equations
+If a rate factors into a function of each variable, separate and integrate. Find equilibria before dividing by the dependent-variable factor.
+First-order linear equations
+For $y\prime+p(x)y=q(x)$, multiply by a suitable function to combine the left side into one product derivative.
+Euler's method and the logistic model
+Euler advances using the current slope. Logistic growth slows as remaining capacity decreases.
+Factorial
+$n!=1\cdot2\cdots n$, with $0!=1$.
+$p$-series
+$\sum_{n=1}^\infty\frac1{n^p}$; it converges exactly when $p>1$.
+Big-O notation
+$R(x)=O(x^k)$ means there is a fixed constant $C$ such that $|R(x)|\leq C|x|^k$ near zero.
+Why Taylor's theorem uses an intermediate point
+Fix the target $x\neq a$. Write $F(t)=f(t)-T_m(t)-K(t-a)^{m+1}$, choosing $K$ so that $F(x)=0$. The function and its first $m$ derivatives vanish at the center. Repeated Rolle applications yield an intermediate point $\xi$ with $F^{(m+1)}(\xi)=0$, hence $K=\frac{f^{(m+1)}(\xi)}{(m+1)!}$. This gives the remainder formula. Handle endpoint or zero-distance cases by continuity or direct equality.
+Power-series endpoints and Abel's continuity theorem
+If $\sum c_n$ converges, Abel's theorem gives $\lim_{r\to1^-}\sum c_nr^n=\sum c_n$. This links an interior function representation to a convergent endpoint; the theorem is cited, not fully proved here. Finite geometric sums and summation by parts control tails. Endpoint convergence alone does not replace the linking argument. This result identifies logarithm at 1 and arctangent at plus or minus one.
+Why the generalized binomial series represents the function
+For a nonterminating series, the ratio test proves convergence on $|x|<1$. Termwise differentiation inside the interval and the coefficient recurrence show its sum $S$ satisfies $(1+x)S\prime=\alpha S$, $S(0)=1$. The function $(1+x)^\alpha$ solves the same initial-value problem. Continuous coefficients and first-order linear uniqueness make them equal. The ratio test alone establishes convergence, not the sum's identity.
+The scope of differential-equation existence and uniqueness
+Continuity of the right side and its vertical partial derivative near the initial point gives a unique local solution. This theorem is cited, not fully proved here. Local uniqueness does not guarantee existence on the entire real axis: $y\prime=y^2$, $y(0)=1$ blows up at a finite time. Higher-order equations, systems, rigorous numerical stability and full existence theory belong to the differential-equations volumes.

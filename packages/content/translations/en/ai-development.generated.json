@@ -1,0 +1,4207 @@
+{
+  "locale": "en",
+  "sourceVersion": "0.1.1",
+  "provenance": {
+    "authorship": "AI-generated",
+    "humanReviewed": false
+  },
+  "book": {
+    "id": "ai-development",
+    "title": "Building Projects with AI",
+    "englishTitle": "Building Projects with AI",
+    "subtitle": "From clear requests to judgment, verification and delivery",
+    "version": "0.1.1",
+    "status": "published",
+    "language": "en",
+    "audience": "People who have tried AI coding but lack an overview of project development. No prior Python, Git or terminal experience is required.",
+    "baseline": "Tool-neutral, using a personal study-list webpage throughout. Practice decisions in the book, then work in a separate directory. Commands use Git 2.28+ and Node.js 22.12+ capabilities; QA.md records the actual verification environment.",
+    "outcomes": [
+      "Turn an idea into a user scenario, first-release scope and acceptance cases",
+      "Explain the roles of files, data, browsers and servers",
+      "Make focused Git commits and distinguish local commits, pushes, PRs and deployment",
+      "Give an agent accurate context and tasks, then inspect important changes",
+      "Use reproduction, boundary cases and requirements to judge results",
+      "Deliver a runnable small project with backups, recovery and clear limitations"
+    ],
+    "outOfScope": [
+      "Full algorithms and language training for professional engineering",
+      "Implementation of realtime collaboration, payments, authentication or production databases",
+      "Cloud account registration, paid service selection and automatic deployment",
+      "Advanced Git history rewriting, complex rebases and merge-commit reverts",
+      "Guaranteed prompt outcomes, arbitrary code execution or runtime model services"
+    ],
+    "provenance": {
+      "author": "AI-generated",
+      "humanReviewed": false,
+      "date": "2026-10-11"
+    },
+    "licenses": {
+      "content": "CC0-1.0",
+      "toolsAndProject": "MIT"
+    },
+    "chapters": [
+      {
+        "id": "chapter-1",
+        "title": "Define the problem",
+        "objective": "Describe one real scenario, narrow the first release and agree on observable completion criteria.",
+        "lessons": [
+          "user-problem",
+          "small-scope",
+          "acceptance"
+        ]
+      },
+      {
+        "id": "chapter-2",
+        "title": "Understand how a project runs",
+        "objective": "Locate entry points, trace data and follow instructions to run locally.",
+        "lessons": [
+          "project-map",
+          "data-flow",
+          "run-environment"
+        ]
+      },
+      {
+        "id": "chapter-3",
+        "title": "Keep recoverable records with Git",
+        "objective": "Distinguish working tree, index and commits; understand branches, remotes, PRs and recovery.",
+        "lessons": [
+          "git-snapshot",
+          "git-collaboration",
+          "git-recovery"
+        ]
+      },
+      {
+        "id": "chapter-4",
+        "title": "Work with an agent",
+        "objective": "Provide accurate context, give small tasks, review changes and require verification evidence.",
+        "lessons": [
+          "agent-context",
+          "task-prompts",
+          "review-changes"
+        ]
+      },
+      {
+        "id": "chapter-5",
+        "title": "Judge reliability",
+        "objective": "Choose tests yourself, reproduce failures and maintain data and permission boundaries.",
+        "lessons": [
+          "testing",
+          "debugging",
+          "security"
+        ]
+      },
+      {
+        "id": "chapter-6",
+        "title": "Finish and deliver a small project",
+        "objective": "Choose suitable storage, check the published version and deliver something runnable and explainable.",
+        "lessons": [
+          "data-design",
+          "release",
+          "capstone"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "id": "mdn-start",
+        "title": "MDN: Your first website",
+        "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website",
+        "purpose": "Check webpage components and the process from planning to publication."
+      },
+      {
+        "id": "mdn-flow",
+        "title": "MDN: Client and server",
+        "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/First_steps/Client-Server_overview",
+        "purpose": "Check requests, responses and client/server responsibilities."
+      },
+      {
+        "id": "mdn-storage",
+        "title": "MDN: localStorage",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage",
+        "purpose": "Check origin-scoped persistence, string storage and storage exceptions."
+      },
+      {
+        "id": "mdn-text",
+        "title": "MDN: textContent",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent",
+        "purpose": "Check inserting input as text."
+      },
+      {
+        "id": "git-record",
+        "title": "Pro Git: Recording changes",
+        "url": "https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository",
+        "purpose": "Check working-tree, staging and commit distinctions."
+      },
+      {
+        "id": "git-diff",
+        "title": "Git: diff",
+        "url": "https://git-scm.com/docs/git-diff",
+        "purpose": "Check comparisons for unstaged and staged changes."
+      },
+      {
+        "id": "git-branch",
+        "title": "Pro Git: Branching and merging",
+        "url": "https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging",
+        "purpose": "Check branches and conflict handling."
+      },
+      {
+        "id": "git-push",
+        "title": "Git: push",
+        "url": "https://git-scm.com/docs/git-push",
+        "purpose": "Check pushing, remote branches and upstream relationships."
+      },
+      {
+        "id": "git-restore",
+        "title": "Git: restore",
+        "url": "https://git-scm.com/docs/git-restore",
+        "purpose": "Check the different consequences of unstaging and discarding working edits."
+      },
+      {
+        "id": "git-revert",
+        "title": "Git: revert",
+        "url": "https://git-scm.com/docs/git-revert",
+        "purpose": "Check reversing ordinary commits through new commits; merge-commit reversal is out of scope."
+      },
+      {
+        "id": "git-stash",
+        "title": "Git: stash",
+        "url": "https://git-scm.com/docs/git-stash",
+        "purpose": "Check temporary storage and untracked-file options."
+      },
+      {
+        "id": "github-pr",
+        "title": "GitHub: Pull requests",
+        "url": "https://docs.github.com/en/pull-requests/reference/pull-requests",
+        "purpose": "Check review and merge-proposal concepts."
+      },
+      {
+        "id": "npm-ci",
+        "title": "npm: ci",
+        "url": "https://docs.npmjs.com/cli/v11/commands/npm-ci/",
+        "purpose": "Check clean lockfile-based installation and failure on mismatch."
+      },
+      {
+        "id": "node-test",
+        "title": "Node.js: Test runner",
+        "url": "https://nodejs.org/api/test.html",
+        "purpose": "Check node --test and assertions."
+      },
+      {
+        "id": "prompt",
+        "title": "Anthropic: Prompting practices",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices",
+        "purpose": "Used only for general principles of explicit tasks, relevant context and examples. Task briefs and collaboration exercises are original teaching material, without model-performance guarantees."
+      },
+      {
+        "id": "secrets",
+        "title": "OWASP: Secrets management",
+        "url": "https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html",
+        "purpose": "Check credential lifecycle, least privilege and revocation/rotation after exposure."
+      },
+      {
+        "id": "git-fetch",
+        "title": "Git: fetch",
+        "url": "https://git-scm.com/docs/git-fetch",
+        "purpose": "Check downloading remote history versus merging into the current branch."
+      },
+      {
+        "id": "git-pull",
+        "title": "Git: pull",
+        "url": "https://git-scm.com/docs/git-pull",
+        "purpose": "Check --ff-only fast-forwards and refusal of divergent histories."
+      },
+      {
+        "id": "git-init",
+        "title": "Git: init",
+        "url": "https://git-scm.com/docs/git-init",
+        "purpose": "Check initial branch selection and new repository creation."
+      },
+      {
+        "id": "git-install",
+        "title": "Git: Installation",
+        "url": "https://git-scm.com/install/",
+        "purpose": "Provide the official tool-installation entry point."
+      },
+      {
+        "id": "node-install",
+        "title": "Node.js: Downloads",
+        "url": "https://nodejs.org/en/download",
+        "purpose": "Provide the official runtime-installation entry point."
+      }
+    ],
+    "contribution": {
+      "submittedBy": "aby0120",
+      "pullRequest": "https://github.com/b1n9ui/ai-university/pull/5",
+      "acceptedOn": "2026-10-21"
+    }
+  },
+  "supplements": {
+    "chapterReviews": [
+      {
+        "chapterId": "chapter-1",
+        "questions": [
+          {
+            "problem": "Turn build an amazing study tool with every feature into a first release.",
+            "hint": "Return to one person's specific difficulty.",
+            "answer": "User: yourself. Scenario: finding plans in the evening. First release: add, complete, delete and save. Accounts and synchronization are deferred.",
+            "solution": [
+              "Identify the user and purpose.",
+              "Keep features needed for the complete workflow.",
+              "Write criteria for ordinary input, whitespace and refresh."
+            ]
+          },
+          {
+            "problem": "How do you verify creation works?",
+            "hint": "Specify state, action and outcome.",
+            "answer": "From an empty list, submitting Learn Git creates an unfinished item; whitespace creates nothing; surrounding whitespace is trimmed.",
+            "solution": [
+              "State the successful result.",
+              "State rejected input.",
+              "Make results observable, rather than merely absence of an error."
+            ]
+          }
+        ]
+      },
+      {
+        "chapterId": "chapter-2",
+        "questions": [
+          {
+            "problem": "Trace one addition and explain the server's role.",
+            "hint": "Distinguish file delivery from business-data persistence.",
+            "answer": "Input → app.mjs event → tasks.mjs rules → localStorage → rendering. server.mjs serves static files only.",
+            "solution": [
+              "Read entry-point references.",
+              "Follow submission to validation and saving.",
+              "Confirm there is no shared-list API."
+            ]
+          },
+          {
+            "problem": "npm start fails. What information should the agent receive?",
+            "hint": "Enable reproduction.",
+            "answer": "Current directory, tool versions, command and complete error; relevant configuration if needed.",
+            "solution": [
+              "Check the environment against instructions.",
+              "Distinguish directory, tools and port failures.",
+              "Do not delete dependency records casually."
+            ]
+          }
+        ]
+      },
+      {
+        "chapterId": "chapter-3",
+        "questions": [
+          {
+            "problem": "HEAD v1, index v2, working tree v3: what does committing and pushing share?",
+            "hint": "Push shares commits, not the working tree directly.",
+            "answer": "The commit records v2 and the remote branch receives it; v3 remains local unstaged work.",
+            "solution": [
+              "Commit reads staged content.",
+              "Push transfers branch history.",
+              "Sharing v3 requires reviewing, staging, committing and pushing it."
+            ]
+          },
+          {
+            "problem": "Distinguish unstaging, discarding edits and reversing a pushed commit.",
+            "hint": "Inspect state and effects.",
+            "answer": "restore --staged keeps edits; ordinary restore overwrites unstaged working changes; revert can reverse an ordinary shared commit through a new record.",
+            "solution": [
+              "Inspect status and diffs first.",
+              "Backup needed content.",
+              "Choose the matching operation and verify again."
+            ]
+          }
+        ]
+      },
+      {
+        "chapterId": "chapter-4",
+        "questions": [
+          {
+            "problem": "Write a brief for fixing list loss after refresh.",
+            "hint": "Give current behavior, scope, criteria and evidence.",
+            "answer": "Require persistence; provide URL, steps, actual/expected results and save/load files. Diagnose first without adding synchronization. Request actual tests and browser evidence.",
+            "solution": [
+              "Make the failure reproducible.",
+              "Constrain unrelated structural changes.",
+              "Deliver command results and verification gaps."
+            ]
+          },
+          {
+            "problem": "The agent changes 20 files for button color. How do you review?",
+            "hint": "Can each change be justified?",
+            "answer": "Inspect files and diffs, ask why unrelated changes are necessary, reduce to styling scope and check keyboard and narrow screens.",
+            "solution": [
+              "File count alone does not decide correctness.",
+              "Check whether data and dependency changes are necessary.",
+              "Record checks after acceptance."
+            ]
+          }
+        ]
+      },
+      {
+        "chapterId": "chapter-5",
+        "questions": [
+          {
+            "problem": "Why do green automated tests not establish whole-site verification?",
+            "hint": "What actually executed?",
+            "answer": "Rule tests do not exercise browser events, storage or layout. Perform relevant page checks and report gaps.",
+            "solution": [
+              "List coverage.",
+              "Add normal, boundary and failure interaction checks.",
+              "Limit conclusions to actual evidence."
+            ]
+          },
+          {
+            "problem": "A backup is valid JSON but has invalid fields. What happens?",
+            "hint": "Syntax differs from business validity.",
+            "answer": "Reject the entire file without replacing the list. Validate version, fields, types, IDs and limits.",
+            "solution": [
+              "Parse first.",
+              "Validate every record.",
+              "Write only after validity and confirmation."
+            ]
+          }
+        ]
+      },
+      {
+        "chapterId": "chapter-6",
+        "questions": [
+          {
+            "problem": "What should a personal-list handoff include?",
+            "hint": "Let someone else run and understand it.",
+            "answer": "Source, runtime requirements, commands, version, acceptance evidence, limitations, backup/recovery instructions and deferred ideas.",
+            "solution": [
+              "Prepare runnable materials.",
+              "Match the delivered version to checks.",
+              "Explain data location and restoration."
+            ]
+          },
+          {
+            "problem": "How should upgrading to multiuser synchronization begin?",
+            "hint": "Sharing changes access and permissions.",
+            "answer": "Confirm separate/shared records, read/write permissions, conflicts and recovery, then rewrite scope and acceptance.",
+            "solution": [
+              "An icon is not synchronization.",
+              "The original local-storage design has limits.",
+              "Build around confirmed scenarios."
+            ]
+          }
+        ]
+      }
+    ],
+    "exam": [
+      {
+        "problem": "Capstone: independently deliver a personal study list.",
+        "hint": "Follow the four checkpoints.",
+        "answer": "Deliver a one-page plan, at least 6 acceptance cases, data/file maps, 2 briefs, at least 3 focused commits, test and browser evidence, README and runnable source.",
+        "solution": [
+          "Specify the user and first release, excluding synchronization.",
+          "Include ordinary creation, whitespace, duplicate titles, toggling, refresh and valid/invalid restoration.",
+          "Implement creation, manipulation, storage and handoff checkpoints, reviewing and checking each.",
+          "Compare with the appendix rather than merely copying; record unchecked environments and limits."
+        ]
+      },
+      {
+        "problem": "Evaluate: AI adds a cloud service and embeds a key in the webpage to change a button color.",
+        "hint": "Check goal, scope and secrets.",
+        "answer": "Reject unrelated cloud services and client-side secrets. If exposed, revoke/rotate first. Return to styling scope and recheck.",
+        "solution": [
+          "The change does not match the color task.",
+          "Read/edit permissions do not authorize a new external service.",
+          "Inspect diffs, lockfiles and artifacts; check keyboard and mobile layout."
+        ]
+      },
+      {
+        "problem": "Evaluate: tests were deleted, saving reports success, but refresh loses records.",
+        "hint": "Green results and success text can both mislead.",
+        "answer": "Do not accept. Restore requirement-based checks, reproduce and distinguish writing, reading and origin failures. Retest after fixing.",
+        "solution": [
+          "Preserve errors and version evidence.",
+          "Do not hide exceptions to report success.",
+          "Judge completion against original criteria."
+        ]
+      },
+      {
+        "problem": "Evaluate: after pushing, the agent claims public deployment and synchronized user lists.",
+        "hint": "Separate remote code, deployment and user data.",
+        "answer": "Request accessible branch/PR, deployed URL and version evidence. localStorage does not provide multiuser synchronization; revisit the requirement.",
+        "solution": [
+          "Push updates a target remote branch only.",
+          "A public page needs deployment and acceptance separately.",
+          "Shared user data needs additional architecture and permissions."
+        ]
+      }
+    ],
+    "glossary": [
+      {
+        "term": "Agent",
+        "definition": "An AI assistant that uses context and may operate tools. Capability does not authorize every operation."
+      },
+      {
+        "term": "User scenario",
+        "definition": "A person's actions at a particular moment toward a goal, explaining a feature's purpose."
+      },
+      {
+        "term": "First release",
+        "definition": "The essential complete workflow agreed for the current scenario, not every future idea."
+      },
+      {
+        "term": "Acceptance criteria",
+        "definition": "Specific inputs, actions and expected outcomes for judging completion."
+      },
+      {
+        "term": "Terminal",
+        "definition": "A command-entry and execution window. Its directory affects which files commands operate on."
+      },
+      {
+        "term": "Runtime environment",
+        "definition": "Tools, versions, operating system and configuration required to run code."
+      },
+      {
+        "term": "Dependency",
+        "definition": "An external package or tool whose versions and maintenance costs need management."
+      },
+      {
+        "term": "Lockfile",
+        "definition": "Records exact dependency resolution to support reproducible installation; do not delete reflexively on errors."
+      },
+      {
+        "term": "Entry point",
+        "definition": "Where loading or execution begins, helping trace behavior through files."
+      },
+      {
+        "term": "Frontend",
+        "definition": "Presentation and interaction in a client such as a browser."
+      },
+      {
+        "term": "Backend",
+        "definition": "The part commonly handling server-side data, permissions and business logic."
+      },
+      {
+        "term": "API",
+        "definition": "An agreed program interface specifying inputs, outputs and their meaning."
+      },
+      {
+        "term": "localStorage",
+        "definition": "Origin-scoped browser string storage, subject to clearing, permissions and capacity."
+      },
+      {
+        "term": "Data structure",
+        "definition": "Fields, types and relationships governing access, changes and validation."
+      },
+      {
+        "term": "ID",
+        "definition": "A record's identity, distinct from a display title that may repeat."
+      },
+      {
+        "term": "Git repository",
+        "definition": "Stores file-version history; distinct from the hosting website."
+      },
+      {
+        "term": "Working tree",
+        "definition": "The file contents currently being edited."
+      },
+      {
+        "term": "Staging area",
+        "definition": "Selected content for the next commit, potentially different from current files."
+      },
+      {
+        "term": "Commit",
+        "definition": "A local version snapshot and record, not created merely by saving a file."
+      },
+      {
+        "term": "HEAD",
+        "definition": "The currently checked-out commit position, usually following the current branch tip."
+      },
+      {
+        "term": "Branch",
+        "definition": "A name pointing to a history tip, organizing changes by purpose."
+      },
+      {
+        "term": "Remote",
+        "definition": "A configured repository location; origin is a conventional name."
+      },
+      {
+        "term": "Push",
+        "definition": "Update a target remote branch with local branch commits."
+      },
+      {
+        "term": "PR",
+        "definition": "Review material proposing a merge into a target branch; not automatic merge or deployment."
+      },
+      {
+        "term": "Diff",
+        "definition": "Comparison of text changes between states, used to inspect scope and behavior."
+      },
+      {
+        "term": "Conflict",
+        "definition": "An automatic merge cannot decide the result; understand both intentions and resolve explicitly."
+      },
+      {
+        "term": "Task brief",
+        "definition": "This book's six-part collaboration material: goal, context, scope, acceptance, verification and delivery."
+      },
+      {
+        "term": "Assertion",
+        "definition": "A test expression checking an expected condition."
+      },
+      {
+        "term": "Regression check",
+        "definition": "After a fix, recheck existing behavior and relevant boundaries for unintended breakage."
+      },
+      {
+        "term": "Secret",
+        "definition": "A credential such as a key, token or password. Revoke or rotate after exposure."
+      },
+      {
+        "term": "Deployment",
+        "definition": "Place runnable artifacts in the intended user-accessible environment."
+      },
+      {
+        "term": "Rollback",
+        "definition": "Restore usable code or data state, treating each separately."
+      }
+    ],
+    "projectPlan": [
+      {
+        "title": "Checkpoint 1: record a plan",
+        "task": "Build the page and creation rule. Ordinary input appears, whitespace is rejected; persistence is deferred.",
+        "evidence": [
+          "Rule tests: ordinary, whitespace, 80 and 81",
+          "Browser submission and feedback",
+          "Review the diff and commit"
+        ]
+      },
+      {
+        "title": "Checkpoint 2: operate on the correct record",
+        "task": "Toggle and delete by ID without affecting duplicate titles.",
+        "evidence": [
+          "Toggle twice to restore state",
+          "Check the remaining ID after deletion",
+          "Keyboard interaction and empty state"
+        ]
+      },
+      {
+        "title": "Checkpoint 3: persist and restore",
+        "task": "Refresh persistence, JSON backup and validated, confirmed restoration with failure feedback.",
+        "evidence": [
+          "Refresh the same URL",
+          "Restore IDs, titles and completion from a valid backup",
+          "Reject invalid backups without changing existing data"
+        ]
+      },
+      {
+        "title": "Checkpoint 4: enable a handoff",
+        "task": "Complete README, acceptance records, version and known limits.",
+        "evidence": [
+          "Run from instructions with another person or clean directory",
+          "Narrow-screen, keyboard and resource checks",
+          "Record local, remote and deployment states separately"
+        ]
+      }
+    ]
+  },
+  "lessons": [
+    {
+      "id": "user-problem",
+      "chapterId": "chapter-1",
+      "number": "1.1",
+      "title": "Start with a real problem",
+      "subtitle": "Replace an impressive-sounding product idea with an observable situation.",
+      "concept": "Before building, identify who faces what difficulty, when it occurs, and what should improve.",
+      "intuition": "If a friend asks for something tasty, you ask who is eating, where and with what constraints. Software needs that context too.",
+      "objectives": [
+        "Describe one user, one moment and one specific difficulty.",
+        "State an observable sign that the problem has improved."
+      ],
+      "body": [
+        {
+          "title": "Start with a small inconvenience",
+          "text": "Lin wants to study each evening but forgets yesterday's plan. The user is Lin; the moment is the start of study; the problem is plans buried in chats. Describe that before choosing buttons or technology. Wanting a cool website does not explain its purpose."
+        },
+        {
+          "title": "Describe actions, not feature names",
+          "text": "Turn list management into actions: enter a plan and add it; mark it complete; delete it when no longer needed. These actions suggest a simple page. You need not know the code yet, but each action needs a purpose."
+        },
+        {
+          "title": "Give the agent a checkable starting point",
+          "text": "Ask the agent to identify missing information, while choosing the intended user yourself. Whether plans survive refresh matters here. Whether to add particle effects does not solve the missing-plan problem."
+        }
+      ],
+      "formalDefinition": {
+        "text": "Before building, identify who faces what difficulty, when it occurs, and what should improve.",
+        "conditions": [
+          "For small personal learning projects. In shared repositories, follow the team's conventions.",
+          "This method produces checkable evidence; it cannot guarantee arbitrary AI output is correct."
+        ]
+      },
+      "workflow": [
+        "Describe one user, one moment and one specific difficulty.",
+        "List the actions needed to achieve the user's goal.",
+        "State an observable sign that the problem has improved."
+      ],
+      "workedExamples": [
+        {
+          "title": "From wish to scenario",
+          "problem": "Rewrite: Build me an amazing learning tool.",
+          "steps": [
+            "Choose yourself rather than every learner.",
+            "Identify difficulty finding plans before studying each day.",
+            "Define success as seeing unfinished plans on opening the page."
+          ],
+          "answer": "Before studying each day, I want to find yesterday's plans. Build a study-list page where I can add plans, mark them complete and delete unwanted ones. Initially, only I will use it in my own browser."
+        },
+        {
+          "title": "Find missing requirements",
+          "problem": "A friend wants a class-wide study list. Can you build it exactly like a personal list?",
+          "steps": [
+            "Shared use means multiple readers and writers.",
+            "Ask whether lists are separate and whether people may edit others' items.",
+            "Agree on scope before discussing accounts and servers."
+          ],
+          "answer": "Ask whether everyone shares one list, who may edit, and whether cross-device synchronization is required. These answers change the architecture; personal browser storage is not shared storage."
+        }
+      ],
+      "commonMistakes": [
+        {
+          "claim": "Choosing technology makes requirements clear.",
+          "correction": "A framework describes implementation, not the actions a user needs."
+        },
+        {
+          "claim": "AI should infer my real intention.",
+          "correction": "Have it state assumptions and questions. Confirm answers that would change the project's direction."
+        }
+      ],
+      "practice": [
+        {
+          "id": "user-problem-p1",
+          "difficulty": 2,
+          "problem": "Rewrite: I want a productivity tool, as a use scenario.",
+          "hint": "Add a user, moment and difficulty.",
+          "answer": "After dinner, I waste time searching chats for study plans. I want one page showing unfinished items.",
+          "solution": [
+            "Choose yourself as the user.",
+            "Describe current behavior and friction instead of using efficient as a substitute for an observable change."
+          ]
+        },
+        {
+          "id": "user-problem-p2",
+          "difficulty": 1,
+          "problem": "Is use React a user problem or an implementation choice?",
+          "hint": "A user can describe the goal without knowing a framework.",
+          "answer": "An implementation choice. A user problem might be plans disappearing after refresh.",
+          "solution": [
+            "Separate the goal from the method.",
+            "Specify persistence before discussing how to implement it."
+          ]
+        },
+        {
+          "id": "user-problem-p3",
+          "difficulty": 2,
+          "problem": "What is missing from a shared-list request?",
+          "hint": "Consider who may see and edit data.",
+          "answer": "Whether it is one shared list, who has editing rights, and whether synchronization and login are needed.",
+          "solution": [
+            "List questions affecting permissions and data location.",
+            "Decide about a server after confirming the answers."
+          ]
+        },
+        {
+          "id": "user-problem-p4",
+          "difficulty": 1,
+          "problem": "Give the simplest observable success for this example.",
+          "hint": "Use one action and one visible result.",
+          "answer": "After adding Practice Git, it appears in the list and can be found next time.",
+          "solution": [
+            "The action is adding a plan.",
+            "The result is seeing and finding it again; later lessons specify persistence conditions."
+          ]
+        }
+      ],
+      "learningCheck": {
+        "question": "Which statement is most useful before coding?",
+        "choices": [
+          "Build a world-class learning platform",
+          "Let me find unfinished plans each day",
+          "Use the most advanced technology stack"
+        ],
+        "correctIndex": 1,
+        "feedback": [
+          "No concrete scenario makes completion hard to judge.",
+          "The user goal can now be broken into actions.",
+          "Technology still does not explain the problem."
+        ]
+      },
+      "interactiveVisual": {
+        "kind": "decision",
+        "prediction": "Would you accept an agent's immediate suggestion of a leaderboard?",
+        "steps": [
+          {
+            "question": "The agent proposes building a leaderboard first. How do you respond?",
+            "choices": [
+              "Build it; it looks cooler",
+              "Ask how it helps me find my plans",
+              "Build every suggested feature"
+            ],
+            "correctIndex": 1,
+            "feedback": [
+              "This shifts the first release toward a different problem.",
+              "Relate the suggestion to the user goal before deciding.",
+              "Scope grows and verification becomes harder."
+            ]
+          },
+          {
+            "question": "The agent asks whether plans should survive refresh. What do you choose?",
+            "choices": [
+              "Explicitly require persistence",
+              "Let it guess",
+              "Adjust button colors first"
+            ],
+            "correctIndex": 0,
+            "feedback": [
+              "Finding tomorrow's plans depends on saving; answer explicitly.",
+              "Core behavior needs confirmed requirements.",
+              "Appearance does not answer the storage question."
+            ]
+          },
+          {
+            "question": "Which material is most useful to retain now?",
+            "choices": [
+              "Framework rankings",
+              "The user scenario and three essential actions",
+              "Every future idea"
+            ],
+            "correctIndex": 1,
+            "feedback": [
+              "Rankings do not establish whether the user problem is solved.",
+              "These anchor scope and acceptance criteria.",
+              "Record future ideas separately so they do not obscure the first release."
+            ]
+          }
+        ],
+        "followUp": "Choose a real difficulty of your own. Describe its user, timing, actions and outcome."
+      },
+      "prerequisites": [],
+      "difficulty": 1,
+      "misconceptionTags": [
+        "user-problem-guess",
+        "user-problem-evidence"
+      ],
+      "sources": [
+        "mdn-start"
+      ],
+      "provenance": {
+        "author": "AI-generated",
+        "version": "0.1.1",
+        "status": "first-edition",
+        "humanReviewed": false
+      }
+    },
+    {
+      "id": "small-scope",
+      "chapterId": "chapter-1",
+      "number": "1.2",
+      "title": "Keep the first release finishable",
+      "subtitle": "Validate the idea with one small, complete workflow.",
+      "concept": "Build only enough to complete the initial scenario. Record other ideas for later.",
+      "intuition": "Build a usable bicycle before deciding whether it needs a basket; do not commission an entire transport system at once.",
+      "objectives": [
+        "List the essential features forming one complete workflow.",
+        "Attach an immediate check to each small change."
+      ],
+      "body": [
+        {
+          "title": "Draw the smallest complete workflow",
+          "text": "For the study list: add a plan, see it, complete or delete it, then find it next time. Display and persistence are essential. Accounts, rankings, reminders and cross-device synchronization are deferred deliberately."
+        },
+        {
+          "title": "Separate now from later",
+          "text": "Use two lists: required now and consider later. Ask of each requirement: without it, can the user still complete this scenario? If yes, defer it. Scope can change, but update the plan and acceptance criteria honestly."
+        },
+        {
+          "title": "Deliver one checkable change at a time",
+          "text": "First show an empty list, then add items, then completion, then persistence. Each task needs a check. A single finish-the-site task postpones discovering unsuitable data or storage design. Small steps reveal errors early, not merely shorten prompts."
+        }
+      ],
+      "formalDefinition": {
+        "text": "Build only enough to complete the initial scenario. Record other ideas for later.",
+        "conditions": [
+          "For small personal learning projects. In shared repositories, follow the team's conventions.",
+          "This method produces checkable evidence; it cannot guarantee arbitrary AI output is correct."
+        ]
+      },
+      "workflow": [
+        "List the essential features forming one complete workflow.",
+        "Defer ideas unnecessary for that workflow.",
+        "Attach an immediate check to each small change."
+      ],
+      "workedExamples": [
+        {
+          "title": "Deciding about login",
+          "problem": "Does a personal single-browser first release need login?",
+          "steps": [
+            "The only user is you.",
+            "Cross-device sharing is not required.",
+            "Complete the scenario with local storage and state its limits."
+          ],
+          "answer": "No login initially. Data stays in this browser and does not synchronize to other devices. If synchronization becomes necessary, redesign accounts and storage then."
+        },
+        {
+          "title": "Split a large task",
+          "problem": "How would you divide finish the study list?",
+          "steps": [
+            "Display the page and empty state first.",
+            "Add creation, completion and deletion, checking each action.",
+            "Then add persistence and backup, checking refresh and restoration."
+          ],
+          "answer": "Task 1: empty list. Task 2: add nonblank plans and reject whitespace. Task 3: toggle and delete by ID. Task 4: refresh persistence and JSON backup. Verify each separately and fix failures before continuing."
+        }
+      ],
+      "commonMistakes": [
+        {
+          "claim": "More features make a better first release.",
+          "correction": "First establish that one workflow is useful; extras add delay and ambiguity."
+        },
+        {
+          "claim": "Split tasks by files.",
+          "correction": "Prefer verifiable behaviors; one small behavior may touch several files."
+        }
+      ],
+      "practice": [
+        {
+          "id": "small-scope-p1",
+          "difficulty": 1,
+          "problem": "Which comes first: reminders, rankings or adding plans?",
+          "hint": "Use the scenario to choose.",
+          "answer": "Adding plans. The other two are not essential to a personal list.",
+          "solution": [
+            "Make recording and retrieval work first.",
+            "Keep other ideas on the later list."
+          ]
+        },
+        {
+          "id": "small-scope-p2",
+          "difficulty": 2,
+          "problem": "How should you explain the absence of cloud synchronization?",
+          "hint": "State what happens on another device.",
+          "answer": "Data is stored only in this browser. Changing devices or clearing storage will not restore it automatically; download a backup.",
+          "solution": [
+            "Scope decisions affect user experience.",
+            "Put limitations in user-facing instructions, not just the development plan."
+          ]
+        },
+        {
+          "id": "small-scope-p3",
+          "difficulty": 2,
+          "problem": "Turn finish the page into one small task.",
+          "hint": "Choose behavior you can verify by clicking.",
+          "answer": "Submitting a nonblank title adds an item; whitespace-only input gives a message without adding anything.",
+          "solution": [
+            "Specify the triggering action.",
+            "Specify successful and invalid-input outcomes."
+          ]
+        },
+        {
+          "id": "small-scope-p4",
+          "difficulty": 3,
+          "problem": "What if multiuser synchronization becomes mandatory midway?",
+          "hint": "It changes data location and permissions.",
+          "answer": "Revisit the plan, confirm sharing and permissions, rewrite scope and acceptance criteria, then estimate the new tasks.",
+          "solution": [
+            "Recognize a requirements change.",
+            "Do not pretend a personal-list design only needs another button."
+          ]
+        }
+      ],
+      "learningCheck": {
+        "question": "Which belongs in the first release?",
+        "choices": [
+          "A personal list with automatic payments",
+          "Add, complete, delete and save locally",
+          "Community, rankings and synchronization together"
+        ],
+        "correctIndex": 1,
+        "feedback": [
+          "Payments add another business problem and risks.",
+          "This completes the original scenario with clear scope.",
+          "Several new scenarios make the first release harder to finish."
+        ]
+      },
+      "interactiveVisual": {
+        "kind": "decision",
+        "prediction": "Four tempting additions are suggested. Which deserve inclusion now?",
+        "steps": [
+          {
+            "question": "The agent proposes accounts, but only you use the app.",
+            "choices": [
+              "Add them immediately",
+              "Defer them and explain local-storage limits",
+              "Remove persistence"
+            ],
+            "correctIndex": 1,
+            "feedback": [
+              "Accounts expand the first release.",
+              "Scope stays clear and the user understands its limits.",
+              "This breaks finding plans on a later day."
+            ]
+          },
+          {
+            "question": "Refreshing loses the list.",
+            "choices": [
+              "Fix this gap in the first release",
+              "Build rankings first",
+              "Change the title"
+            ],
+            "correctIndex": 0,
+            "feedback": [
+              "Persistence is part of the current scenario.",
+              "New features cannot repair a broken core workflow.",
+              "A title change does not prevent data loss."
+            ]
+          },
+          {
+            "question": "One change includes creation, login and payments. How should it be adjusted?",
+            "choices": [
+              "Use a longer prompt for everything",
+              "Split it and verify creation first",
+              "Accept without checking"
+            ],
+            "correctIndex": 1,
+            "feedback": [
+              "A longer description does not reduce change scope.",
+              "Smaller changes are easier to understand and verify.",
+              "Reliability needs evidence."
+            ]
+          }
+        ],
+        "followUp": "Write required now and consider later lists for your project, explaining each choice."
+      },
+      "prerequisites": [
+        "user-problem"
+      ],
+      "difficulty": 1,
+      "misconceptionTags": [
+        "small-scope-guess",
+        "small-scope-evidence"
+      ],
+      "sources": [
+        "mdn-start"
+      ],
+      "provenance": {
+        "author": "AI-generated",
+        "version": "0.1.1",
+        "status": "first-edition",
+        "humanReviewed": false
+      }
+    },
+    {
+      "id": "acceptance",
+      "chapterId": "chapter-1",
+      "number": "1.3",
+      "title": "Define what done means",
+      "subtitle": "Turn useful into results you can check yourself.",
+      "concept": "Acceptance criteria specify inputs, actions and expected outcomes so you and the agent share a definition of done.",
+      "intuition": "Not too sweet is ambiguous when ordering a cake; size, flavor and delivery date are easier to check.",
+      "objectives": [
+        "Specify the starting state, action and expected result.",
+        "Judge completion using your checks, not the agent's report alone."
+      ],
+      "body": [
+        {
+          "title": "Write a check in three parts",
+          "text": "Use Given, When, Then. Given an empty list, when Practice Git is submitted, then one unfinished item appears. This specifies state, action and outcome. Define it before coding so the current implementation does not lower the requirement."
+        },
+        {
+          "title": "Boundary cases expose omissions",
+          "text": "Normal input covers only the normal path. Check whitespace, duplicate titles, refresh and storage failure too. This first release allows duplicate titles with distinct IDs and rejects whitespace-only titles. After trimming, the limit is 80 UTF-16 code units; some symbols use more than one. JavaScript length is not a universal character count."
+        },
+        {
+          "title": "Separate behavior, experience and limits",
+          "text": "Functional criteria describe results; experience criteria include keyboard submission and no mobile overflow. State that devices do not synchronize. Limits cannot excuse failing promised refresh persistence. Change goals only by revisiting the original purpose."
+        }
+      ],
+      "formalDefinition": {
+        "text": "Acceptance criteria specify inputs, actions and expected outcomes so you and the agent share a definition of done.",
+        "conditions": [
+          "For small personal learning projects. In shared repositories, follow the team's conventions.",
+          "This method produces checkable evidence; it cannot guarantee arbitrary AI output is correct."
+        ]
+      },
+      "workflow": [
+        "Specify the starting state, action and expected result.",
+        "Include at least one boundary or failure input.",
+        "Judge completion using your checks, not the agent's report alone."
+      ],
+      "workedExamples": [
+        {
+          "title": "Checking blank input",
+          "problem": "How do you test that blank plans cannot be added?",
+          "steps": [
+            "Start with an empty list.",
+            "Enter three spaces and submit.",
+            "Check unchanged count and an understandable message."
+          ],
+          "answer": "Given zero items, submitting only spaces leaves zero items and displays Please enter a study plan. Checking that the button clicks is insufficient."
+        },
+        {
+          "title": "Checking duplicate titles",
+          "problem": "Two items are titled Learn Git. What should deleting the second do?",
+          "steps": [
+            "Create two same-title records.",
+            "Confirm distinct IDs.",
+            "Delete the second and check that the first remains."
+          ],
+          "answer": "Only the first remains. Deletion targets the chosen record; allowed duplicate titles cannot identify records uniquely."
+        }
+      ],
+      "commonMistakes": [
+        {
+          "claim": "No page error means done.",
+          "correction": "Check inputs and results too; silent data loss may produce no visible error."
+        },
+        {
+          "claim": "Green tests guarantee requirements are met.",
+          "correction": "If refresh or blank-input cases are missing, green results support only the cases that exist."
+        }
+      ],
+      "practice": [
+        {
+          "id": "acceptance-p1",
+          "difficulty": 2,
+          "problem": "Write a criterion for completion toggling.",
+          "hint": "Specify the initial state and click outcome.",
+          "answer": "Given an unfinished item, checking it marks it complete; unchecking restores unfinished status.",
+          "solution": [
+            "Define the first change.",
+            "Check reversal so completion is not one-way."
+          ]
+        },
+        {
+          "id": "acceptance-p2",
+          "difficulty": 2,
+          "problem": "Make the requirement premium interface checkable.",
+          "hint": "Focus on reading, screen size and controls.",
+          "answer": "At 390px width, titles wrap without horizontal scrolling and every button is keyboard-focusable.",
+          "solution": [
+            "Translate preferences into specific layout requirements.",
+            "Do not rely on premium as the only criterion."
+          ]
+        },
+        {
+          "id": "acceptance-p3",
+          "difficulty": 2,
+          "problem": "What is missing from ordinary creation, deletion and completion checks?",
+          "hint": "Consider returning the next day.",
+          "answer": "Refresh persistence, whitespace rejection and deleting one of duplicate titles.",
+          "solution": [
+            "Check the cross-day scenario.",
+            "Include invalid and ambiguous inputs, not just the happy path."
+          ]
+        },
+        {
+          "id": "acceptance-p4",
+          "difficulty": 2,
+          "problem": "The agent reports tests passed. What else do you need?",
+          "hint": "Which checks passed?",
+          "answer": "Commands, actual results, covered cases and unchecked items, followed by your own key-action checks.",
+          "solution": [
+            "Ask for evidence and scope.",
+            "One conclusion does not guarantee every feature."
+          ]
+        }
+      ],
+      "learningCheck": {
+        "question": "Which criterion can you execute directly?",
+        "choices": [
+          "Stable functionality",
+          "Whitespace submission leaves the count unchanged and shows a message",
+          "As many tests as possible"
+        ],
+        "correctIndex": 1,
+        "feedback": [
+          "No specific input or result.",
+          "The action and expected result can be checked directly.",
+          "Test count alone says nothing about coverage."
+        ]
+      },
+      "interactiveVisual": {
+        "kind": "decision",
+        "prediction": "What does checking only normal input miss?",
+        "steps": [
+          {
+            "question": "What should happen after entering three spaces?",
+            "choices": [
+              "Add a blank item",
+              "Add nothing and show a message",
+              "Crash and reopen"
+            ],
+            "correctIndex": 1,
+            "feedback": [
+              "A blank item expresses no plan.",
+              "This meets whitespace-rejection criteria.",
+              "Expected invalid inputs need handling and explanation."
+            ]
+          },
+          {
+            "question": "Deleting one of two same-title records removes both.",
+            "choices": [
+              "Accept as simpler logic",
+              "Treat as acceptance failure",
+              "Change wording only"
+            ],
+            "correctIndex": 1,
+            "feedback": [
+              "Allowed duplicates cannot all be deleted by title.",
+              "Use independent IDs to target the selected record.",
+              "Wording cannot fix incorrect data changes."
+            ]
+          },
+          {
+            "question": "All written tests pass, but none tests refresh.",
+            "choices": [
+              "Claim refresh is verified",
+              "Record the gap and check refresh yourself",
+              "Remove the saving requirement"
+            ],
+            "correctIndex": 1,
+            "feedback": [
+              "There is no evidence for that claim.",
+              "Complete the evidence for the cross-day workflow.",
+              "Do not lower the core goal to fit the implementation."
+            ]
+          }
+        ],
+        "followUp": "Choose a feature and write normal, boundary and failure acceptance cases."
+      },
+      "prerequisites": [
+        "small-scope"
+      ],
+      "difficulty": 1,
+      "misconceptionTags": [
+        "acceptance-guess",
+        "acceptance-evidence"
+      ],
+      "sources": [
+        "mdn-start",
+        "node-test"
+      ],
+      "provenance": {
+        "author": "AI-generated",
+        "version": "0.1.1",
+        "status": "first-edition",
+        "humanReviewed": false
+      }
+    },
+    {
+      "id": "project-map",
+      "chapterId": "chapter-2",
+      "number": "2.1",
+      "title": "Understand the project's files",
+      "subtitle": "Find the entry point, then each file's responsibility.",
+      "concept": "A project is a set of cooperating files. Start with README, then trace entry points to interface, logic, configuration and tests.",
+      "intuition": "A restaurant has a menu, kitchen and accounts. Mixing them on one sheet makes changes difficult.",
+      "objectives": [
+        "Read README and configuration to find entry points and commands.",
+        "Trace one user action through its files; do not delete unfamiliar files casually."
+      ],
+      "body": [
+        {
+          "title": "Start with instructions",
+          "text": "Read README for purpose, setup and limitations. In a Node project, package.json defines scripts as command aliases and dependencies as external packages. This example has none; other web projects may require installation."
+        },
+        {
+          "title": "Trace four kinds of files",
+          "text": "index.html supplies structure and loads style.css and app.mjs. CSS controls appearance. app.mjs connects controls to data; tasks.mjs defines creation, toggling and deletion; tasks.test.mjs tests those rules. server.mjs serves files locally, and README explains operation. Identify responsibilities before choosing frameworks."
+        },
+        {
+          "title": "Read enough to explain behavior",
+          "text": "You need not understand every syntax detail yet. Know who receives input, validates it, saves it and redraws the page. Ask the agent to explain a line with concrete input and compare its explanation with the file. Why is ID checked before deletion? is more verifiable than explain everything."
+        }
+      ],
+      "formalDefinition": {
+        "text": "A project is a set of cooperating files. Start with README, then trace entry points to interface, logic, configuration and tests.",
+        "conditions": [
+          "For small personal learning projects. In shared repositories, follow the team's conventions.",
+          "This method produces checkable evidence; it cannot guarantee arbitrary AI output is correct."
+        ]
+      },
+      "workflow": [
+        "Read README and configuration to find entry points and commands.",
+        "Identify interface, logic, tests and tooling files.",
+        "Trace one user action through its files; do not delete unfamiliar files casually."
+      ],
+      "workedExamples": [
+        {
+          "title": "Change appearance only",
+          "problem": "Where should you look to enlarge buttons?",
+          "steps": [
+            "Find button rules in CSS.",
+            "Check button structure and classes in HTML and JavaScript.",
+            "Check narrow screens and keyboard operation afterward."
+          ],
+          "answer": "Primarily style.css; inspect index.html and app.mjs as needed. Button size does not require changing data structures or deleting tests."
+        },
+        {
+          "title": "Change the title limit",
+          "problem": "Where does changing the limit from 80 to 100 have consequences?",
+          "steps": [
+            "tasks.mjs contains the validation constant.",
+            "Tests cover boundaries 80 and 81.",
+            "Instructions and feedback mention the limit too."
+          ],
+          "answer": "Confirm the requirement, then update the rule, boundary tests and README together. Changing only the message leaves actual validation at 80."
+        }
+      ],
+      "commonMistakes": [
+        {
+          "claim": "Delete unfamiliar files to simplify the project.",
+          "correction": "Check references and purpose first. Configuration, lockfiles and tests may be essential."
+        },
+        {
+          "claim": "If AI can edit, I need not know the entry point.",
+          "correction": "Knowing entry points helps judge whether changes fit the goal and diagnose failures."
+        }
+      ],
+      "practice": [
+        {
+          "id": "project-map-p1",
+          "difficulty": 1,
+          "problem": "What do CSS and tasks.mjs control?",
+          "hint": "Appearance versus data rules.",
+          "answer": "CSS controls styling. tasks.mjs defines creation, toggling, deletion and backup format.",
+          "solution": [
+            "Remember responsibilities rather than extensions alone.",
+            "Test rule changes; inspect the page for style changes."
+          ]
+        },
+        {
+          "id": "project-map-p2",
+          "difficulty": 1,
+          "problem": "How do you find what npm start runs?",
+          "hint": "Read scripts in the configuration.",
+          "answer": "Inspect scripts.start in package.json; here it is node server.mjs.",
+          "solution": [
+            "Command aliases vary by project.",
+            "Do not assume every start script does the same thing."
+          ]
+        },
+        {
+          "id": "project-map-p3",
+          "difficulty": 1,
+          "problem": "You downloaded a project but cannot open it. What first?",
+          "hint": "Find instructions before guessing commands.",
+          "answer": "Read README, check tools and directory. If instructions are missing, ask the agent to inspect files and add them.",
+          "solution": [
+            "Follow actual project evidence.",
+            "Avoid unrelated guessed commands."
+          ]
+        },
+        {
+          "id": "project-map-p4",
+          "difficulty": 2,
+          "problem": "Why might tests change when the title limit changes?",
+          "hint": "Tests specify boundaries.",
+          "answer": "A genuine new limit requires updated accepted and rejected boundaries, not deletion of failing assertions.",
+          "solution": [
+            "Confirm that the criterion changed.",
+            "Update tests while keeping invalid-input coverage."
+          ]
+        }
+      ],
+      "learningCheck": {
+        "question": "Where should you first look to change button color?",
+        "choices": [
+          "style.css",
+          "Rewrite every file",
+          "Backup data"
+        ],
+        "correctIndex": 0,
+        "feedback": [
+          "The styling responsibility matches the goal.",
+          "Broad changes make review harder.",
+          "Data storage does not control color."
+        ]
+      },
+      "interactiveVisual": {
+        "kind": "decision",
+        "prediction": "The goal is one color change. Is the proposed file list reasonable?",
+        "steps": [
+          {
+            "question": "The agent plans to read README and CSS first.",
+            "choices": [
+              "Reasonable: identify setup and styling",
+              "A waste of time",
+              "Delete configuration first"
+            ],
+            "correctIndex": 0,
+            "feedback": [
+              "Understanding entry points and styles supports focused changes.",
+              "It helps avoid editing the wrong place.",
+              "Configuration may be required to run."
+            ]
+          },
+          {
+            "question": "It also proposes rewriting tasks.mjs.",
+            "choices": [
+              "Ask how that relates to color",
+              "Accept immediately",
+              "Delete tests to match"
+            ],
+            "correctIndex": 0,
+            "feedback": [
+              "Explain or remove unrelated logic changes.",
+              "They may change data behavior.",
+              "Weakening checks can conceal errors."
+            ]
+          },
+          {
+            "question": "What evidence should be delivered?",
+            "choices": [
+              "Just done",
+              "Changed files plus narrow-screen and keyboard results",
+              "The model sounds confident"
+            ],
+            "correctIndex": 1,
+            "feedback": [
+              "No actual evidence is supplied.",
+              "These checks match the change and experience criteria.",
+              "Confidence does not replace inspecting the page."
+            ]
+          }
+        ],
+        "followUp": "Map the appendix project's file responsibilities and trace which files adding one item uses."
+      },
+      "prerequisites": [
+        "acceptance"
+      ],
+      "difficulty": 2,
+      "misconceptionTags": [
+        "project-map-guess",
+        "project-map-evidence"
+      ],
+      "sources": [
+        "mdn-start",
+        "node-test"
+      ],
+      "provenance": {
+        "author": "AI-generated",
+        "version": "0.1.1",
+        "status": "first-edition",
+        "humanReviewed": false
+      }
+    },
+    {
+      "id": "data-flow",
+      "chapterId": "chapter-2",
+      "number": "2.2",
+      "title": "Follow one piece of data",
+      "subtitle": "Separate browser, server, API and storage roles.",
+      "concept": "Trace input, processing, persistence and display to locate failures and decide whether a server is needed.",
+      "intuition": "Track a parcel through dispatch, transport and delivery to find where progress stopped.",
+      "objectives": [
+        "Describe an action's input, processing, saving and display stages.",
+        "Explain whether shared data is required before introducing server-side services."
+      ],
+      "body": [
+        {
+          "title": "Trace this example first",
+          "text": "The input supplies text; app.mjs handles submission; tasks.mjs validates and produces a new list; app.mjs writes localStorage and renders it. Plans are not sent to a server. The local server only delivers HTML, CSS and JavaScript. A server.mjs file does not imply a cloud database."
+        },
+        {
+          "title": "Give each term a purpose",
+          "text": "The frontend presents and interacts in the browser. A backend commonly manages shared data, permissions or business rules on a server. An API defines communication, such as fields sent to /tasks and returned results. A database organizes stored data. Small projects do not automatically need all of them."
+        },
+        {
+          "title": "Let requirements determine structure",
+          "text": "A personal single-browser list can use local storage. Two devices sharing data need accessible shared storage and an identity/permission design. Publishing static files shares the program, not your browser's records. Decide data location and access before implementation."
+        }
+      ],
+      "formalDefinition": {
+        "text": "Trace input, processing, persistence and display to locate failures and decide whether a server is needed.",
+        "conditions": [
+          "For small personal learning projects. In shared repositories, follow the team's conventions.",
+          "This method produces checkable evidence; it cannot guarantee arbitrary AI output is correct."
+        ]
+      },
+      "workflow": [
+        "Describe an action's input, processing, saving and display stages.",
+        "Identify where data persists and who can access it.",
+        "Explain whether shared data is required before introducing server-side services."
+      ],
+      "workedExamples": [
+        {
+          "title": "Locate persistence failure",
+          "problem": "An item appears but disappears on refresh. Where first?",
+          "steps": [
+            "Creation and rendering have visible results.",
+            "Check storage errors and the key used.",
+            "Confirm protocol, host and port are unchanged after refresh."
+          ],
+          "answer": "Inspect saving and loading first. localStorage is origin-specific: http://127.0.0.1:5180 and another port use separate storage. Do not rewrite the entire interface first."
+        },
+        {
+          "title": "Explain a public URL",
+          "problem": "After static publication, will classmates see my list?",
+          "steps": [
+            "Separate program files from user data.",
+            "Records stay in your browser's origin-specific storage.",
+            "There are no accounts or shared data services."
+          ],
+          "answer": "Classmates receive the same program but use their own browser storage. Static publication does not upload your list or migrate it to a new origin."
+        }
+      ],
+      "commonMistakes": [
+        {
+          "claim": "A server file implies backend business logic.",
+          "correction": "Here the server only serves static files; it does not handle list records."
+        },
+        {
+          "claim": "Publishing a page synchronizes every device.",
+          "correction": "A shared URL and shared user data are separate. Synchronization needs its own design."
+        }
+      ],
+      "practice": [
+        {
+          "id": "data-flow-p1",
+          "difficulty": 1,
+          "problem": "What stages does this example's data pass through?",
+          "hint": "Start at the input.",
+          "answer": "Input → app.mjs event → tasks.mjs rules → localStorage → rendered page.",
+          "solution": [
+            "Identify each stage's role.",
+            "A saving failure needs feedback, not a claim of success."
+          ]
+        },
+        {
+          "id": "data-flow-p2",
+          "difficulty": 2,
+          "problem": "Which requirements change the local-storage design?",
+          "hint": "Consider two people or devices.",
+          "answer": "Synchronization, multiuser sharing or permissions require a shared-data and identity design.",
+          "solution": [
+            "Identify readers and writers first.",
+            "Renaming localStorage does not implement synchronization."
+          ]
+        },
+        {
+          "id": "data-flow-p3",
+          "difficulty": 2,
+          "problem": "The mobile page works but lacks old records. Is this necessarily a bug?",
+          "hint": "Recall the no-synchronization scope.",
+          "answer": "No. Local storage is device-specific. If synchronization is required, the design is insufficient.",
+          "solution": [
+            "Judge against explicit requirements.",
+            "Explain current limitations accurately."
+          ]
+        },
+        {
+          "id": "data-flow-p4",
+          "difficulty": 2,
+          "problem": "Receiving API data does not mean what?",
+          "hint": "Processing and rendering still matter.",
+          "answer": "It does not prove the page displays correctly or that client input can be trusted.",
+          "solution": [
+            "Separate interface contracts, processing and presentation.",
+            "Locate failures stage by stage."
+          ]
+        }
+      ],
+      "learningCheck": {
+        "question": "Does static publishing automatically upload the browser's list?",
+        "choices": [
+          "Yes, if URLs match",
+          "No; a separate data design is needed",
+          "Yes, by changing ports"
+        ],
+        "correctIndex": 1,
+        "feedback": [
+          "Static-file publishing does not read your records.",
+          "Program files and user data are distinct.",
+          "Changing ports instead changes the storage origin."
+        ]
+      },
+      "interactiveVisual": {
+        "kind": "decision",
+        "prediction": "A classmate opens the new URL and sees an empty list. How do you judge it?",
+        "steps": [
+          {
+            "question": "What do you ask first?",
+            "choices": [
+              "Was shared data actually required?",
+              "Which animation should change?",
+              "Should CSS be rewritten?"
+            ],
+            "correctIndex": 0,
+            "feedback": [
+              "Requirements decide whether this is an error.",
+              "Animation does not determine data location.",
+              "Appearance does not explain storage."
+            ]
+          },
+          {
+            "question": "The implementation uses only localStorage.",
+            "choices": [
+              "Claim synchronization works",
+              "Explain separate storage in each browser",
+              "Add a synchronization icon"
+            ],
+            "correctIndex": 1,
+            "feedback": [
+              "There is no shared-data evidence.",
+              "This accurately describes behavior.",
+              "An icon creates no shared service."
+            ]
+          },
+          {
+            "question": "The user really needs two-device synchronization.",
+            "choices": [
+              "Keep the original scope but declare completion",
+              "Revisit accounts, data location and permissions",
+              "Copy CSS"
+            ],
+            "correctIndex": 1,
+            "feedback": [
+              "The design cannot meet the changed requirement.",
+              "Establish data ownership and access before implementing.",
+              "Styles do not provide synchronization."
+            ]
+          }
+        ],
+        "followUp": "Draw your project's data path and mark where data persists."
+      },
+      "prerequisites": [
+        "project-map"
+      ],
+      "difficulty": 2,
+      "misconceptionTags": [
+        "data-flow-guess",
+        "data-flow-evidence"
+      ],
+      "sources": [
+        "mdn-flow",
+        "mdn-storage"
+      ],
+      "provenance": {
+        "author": "AI-generated",
+        "version": "0.1.1",
+        "status": "first-edition",
+        "humanReviewed": false
+      }
+    },
+    {
+      "id": "run-environment",
+      "chapterId": "chapter-2",
+      "number": "2.3",
+      "title": "Run the project locally",
+      "subtitle": "Distinguish terminal, directory, runtime and dependencies.",
+      "concept": "Follow project instructions with suitable tools in the correct directory. Read failures before choosing the next step.",
+      "intuition": "A recipe's oven instruction assumes the right appliance, temperature and dish. Commands have prerequisites too.",
+      "objectives": [
+        "Use a separate practice directory and check README and tool versions.",
+        "Keep errors and identify whether they occur during setup, installation or execution."
+      ],
+      "body": [
+        {
+          "title": "A terminal runs commands",
+          "text": "Editors change files; terminals execute commands. Save appendix files by name in a separate practice directory and open it in your editor. Integrated terminals often start there; check the path. cd learning-list changes directory. Quote paths containing spaces. The wrong directory hides configuration and files."
+        },
+        {
+          "title": "Check tools before running",
+          "text": "Install Git and Node.js using the official links for your system. Check git --version, node --version and npm --version. This example requires Node.js 22.12+ and defines npm test and npm start. Run tests, then start and open the printed local URL. Keep the terminal running; Ctrl+C stops the server."
+        },
+        {
+          "title": "Do not install blindly",
+          "text": "Node projects with dependencies usually need packages installed. If README requires it and package-lock.json matches, npm ci recreates node_modules from the lockfile and fails on mismatch. This example needs no external packages. Keep errors and directory details; do not delete lockfiles, downgrade everything or run unfamiliar scripts without cause."
+        }
+      ],
+      "formalDefinition": {
+        "text": "Follow project instructions with suitable tools in the correct directory. Read failures before choosing the next step.",
+        "conditions": [
+          "For small personal learning projects. In shared repositories, follow the team's conventions.",
+          "This method produces checkable evidence; it cannot guarantee arbitrary AI output is correct."
+        ]
+      },
+      "workflow": [
+        "Use a separate practice directory and check README and tool versions.",
+        "Run this project's tests and start command; inspect actual results.",
+        "Keep errors and identify whether they occur during setup, installation or execution."
+      ],
+      "workedExamples": [
+        {
+          "title": "Run the example",
+          "problem": "How do you start the study list?",
+          "steps": [
+            "Save project files in learning-list and open a terminal there.",
+            "Check node --version, then run npm test.",
+            "Run npm start, open its URL and keep the terminal active."
+          ],
+          "answer": "Expect passing tests and http://127.0.0.1:5180 in the terminal. Open that URL; Ctrl+C stops the server. No external packages means npm install is unnecessary here.",
+          "code": "node --version\nnpm test\nnpm start"
+        },
+        {
+          "title": "An occupied port",
+          "problem": "Does EADDRINUSE mean upgrade every dependency?",
+          "steps": [
+            "Record npm start and the full error.",
+            "The requested address or port is already in use.",
+            "Stop your own previous server, or explicitly change port and URL."
+          ],
+          "answer": "Use Ctrl+C in your old terminal before restarting. Do not kill unknown processes. Changing port changes origin, so old localStorage records do not appear automatically."
+        }
+      ],
+      "commonMistakes": [
+        {
+          "claim": "Every project uses the same commands.",
+          "correction": "Commands come from project configuration and README; inspect first."
+        },
+        {
+          "claim": "Deleting a lockfile is the simplest error fix.",
+          "correction": "It supports reproducible installation. Deletion changes dependency resolution; diagnose first."
+        }
+      ],
+      "practice": [
+        {
+          "id": "run-environment-p1",
+          "difficulty": 1,
+          "problem": "package.json cannot be found. What first?",
+          "hint": "Where are the file and terminal?",
+          "answer": "Check whether the terminal is at the project root and configuration has the correct name and location.",
+          "solution": [
+            "Verify the path first.",
+            "Do not install random packages in the wrong directory."
+          ]
+        },
+        {
+          "id": "run-environment-p2",
+          "difficulty": 1,
+          "problem": "What if node --version is unavailable?",
+          "hint": "Fix tool availability first.",
+          "answer": "Follow official Node.js installation instructions or inspect PATH, reopen the terminal and check again.",
+          "solution": [
+            "A missing tool is not a business-logic error.",
+            "Meet README's runtime requirements first."
+          ]
+        },
+        {
+          "id": "run-environment-p3",
+          "difficulty": 2,
+          "problem": "npm ci fails because the lockfile does not match. What next?",
+          "hint": "Configuration and recorded dependencies disagree.",
+          "answer": "Check branch, package.json and lockfile. Update consistently under repository conventions and review dependency changes; do not bypass by deleting the lockfile.",
+          "solution": [
+            "Confirm the cause.",
+            "Commit matching dependency files together when they change."
+          ]
+        },
+        {
+          "id": "run-environment-p4",
+          "difficulty": 1,
+          "problem": "Why does the local URL stop working after closing the terminal?",
+          "hint": "What serves the files?",
+          "answer": "The local server stopped. Restart it in the correct directory. Saved files and a running service are different states.",
+          "solution": [
+            "Inspect the terminal process.",
+            "Open the browser after startup succeeds."
+          ]
+        }
+      ],
+      "learningCheck": {
+        "question": "What does EADDRINUSE directly mean?",
+        "choices": [
+          "All code is broken",
+          "The requested listening address or port is occupied",
+          "A Git commit failed"
+        ],
+        "correctIndex": 1,
+        "feedback": [
+          "It does not identify business-code failure.",
+          "Check your previous server first.",
+          "This is a runtime-environment issue, separate from Git."
+        ]
+      },
+      "interactiveVisual": {
+        "kind": "decision",
+        "prediction": "Which next step reduces guessing after startup failure?",
+        "steps": [
+          {
+            "question": "package.json cannot be found.",
+            "choices": [
+              "Check directory and file location",
+              "Delete every test",
+              "Change button color"
+            ],
+            "correctIndex": 0,
+            "feedback": [
+              "The command may be running in the wrong directory.",
+              "Tests do not determine configuration location.",
+              "Styling cannot make the command find a file."
+            ]
+          },
+          {
+            "question": "Port 5180 is occupied.",
+            "choices": [
+              "Kill arbitrary system processes",
+              "Inspect and stop your own old server",
+              "Reinstall all packages"
+            ],
+            "correctIndex": 1,
+            "feedback": [
+              "An unknown process may support other work.",
+              "Resolve the already-running instance first.",
+              "Installing dependencies does not free a port."
+            ]
+          },
+          {
+            "question": "The page now opens. What do you record?",
+            "choices": [
+              "Versions, command, URL and results",
+              "Only success",
+              "A guarantee for every machine"
+            ],
+            "correctIndex": 0,
+            "feedback": [
+              "Others can reproduce these details.",
+              "Setup and actions are missing.",
+              "One local success does not prove all platforms."
+            ]
+          }
+        ],
+        "followUp": "Run the appendix project and record versions, directory, commands and results."
+      },
+      "prerequisites": [
+        "data-flow"
+      ],
+      "difficulty": 2,
+      "misconceptionTags": [
+        "run-environment-guess",
+        "run-environment-evidence"
+      ],
+      "sources": [
+        "npm-ci",
+        "mdn-start",
+        "mdn-storage",
+        "git-install",
+        "node-install"
+      ],
+      "provenance": {
+        "author": "AI-generated",
+        "version": "0.1.1",
+        "status": "first-edition",
+        "humanReviewed": false
+      }
+    },
+    {
+      "id": "git-snapshot",
+      "chapterId": "chapter-3",
+      "number": "3.1",
+      "title": "Saving a file is not a Git commit",
+      "subtitle": "Understand the working tree, staging area and commits.",
+      "concept": "Saving changes the working tree. git add stages the content at that moment. git commit records staged content locally.",
+      "intuition": "A draft on your desk, a version inside an envelope and a sent letter are distinct. Editing the draft does not change the envelope.",
+      "objectives": [
+        "Use status to inspect branch and file states, then read relevant diffs.",
+        "Verify the change and create a focused local commit."
+      ],
+      "body": [
+        {
+          "title": "Know which repository you are in",
+          "text": "Git records versions; GitHub can host repositories. In a new practice directory, git init -b main creates a repository. Use git clone for an existing remote project; do not casually initialize inside another repository. Start with git status. Repository-local user.name and user.email set commit identity here; a public commit can expose that email."
+        },
+        {
+          "title": "Three versions can differ",
+          "text": "The working tree holds current files; the index stages the next commit; HEAD identifies the checked-out commit, usually the branch tip. After git add README.md, later edits do not update its staged version. git diff compares working tree with index; git diff --staged compares index with HEAD. New unstaged files normally need status and direct inspection too."
+        },
+        {
+          "title": "Give each commit one purpose",
+          "text": "Read diffs, run relevant checks and stage explicit files before committing. Describe the reason, such as reject whitespace-only plans. .gitignore prevents ordinary addition of matching untracked files, including dependencies and local secrets. It neither removes tracked content nor erases leaked history."
+        }
+      ],
+      "formalDefinition": {
+        "text": "Saving changes the working tree. git add stages the content at that moment. git commit records staged content locally.",
+        "conditions": [
+          "For small personal learning projects. In shared repositories, follow the team's conventions.",
+          "This method produces checkable evidence; it cannot guarantee arbitrary AI output is correct."
+        ]
+      },
+      "workflow": [
+        "Use status to inspect branch and file states, then read relevant diffs.",
+        "Stage only intended files and inspect the staged diff.",
+        "Verify the change and create a focused local commit."
+      ],
+      "workedExamples": [
+        {
+          "title": "A first practice commit",
+          "problem": "Record README in a new learning-list practice directory.",
+          "steps": [
+            "Initialize main and configure this repository's identity.",
+            "Save README.md, inspect it and stage it.",
+            "Review the staged diff, commit and inspect the log."
+          ],
+          "answer": "Use init only in a new practice repository; start existing projects with status. Create and save README.md first, and replace the identity placeholders with your chosen public commit identity.",
+          "code": "git init -b main\ngit config user.name \"Your Name\"\ngit config user.email \"your-public-email@example.com\"\ngit status\ngit add README.md\ngit diff --staged\ngit commit -m \"Document how to run the study list\"\ngit log --oneline"
+        },
+        {
+          "title": "Editing after staging",
+          "problem": "v1 is committed. Edit to v2 and stage it, then edit to v3. Without staging again, what is committed?",
+          "steps": [
+            "HEAD is v1, index v2, working tree v3.",
+            "Ordinary diff shows v2 to v3.",
+            "Staged diff shows v1 to v2."
+          ],
+          "answer": "The commit records v2. The working tree remains v3 with unstaged changes. To commit v3, review and stage it first; commit does not collect every latest edit automatically."
+        }
+      ],
+      "commonMistakes": [
+        {
+          "claim": "Saving creates a recoverable commit.",
+          "correction": "Editor saving only writes the working tree; staging and committing are separate."
+        },
+        {
+          "claim": "git add . is always the best choice.",
+          "correction": "It may include unrelated files. Inspect status and prefer explicit paths while learning."
+        }
+      ],
+      "practice": [
+        {
+          "id": "git-snapshot-p1",
+          "difficulty": 2,
+          "problem": "Working tree v3, index v2, HEAD v1: what happens on commit without add?",
+          "hint": "Which version does commit read?",
+          "answer": "HEAD becomes v2; working tree stays v3 with its unstaged diff.",
+          "solution": [
+            "Staged content enters the commit.",
+            "Committing does not automatically overwrite your working edits."
+          ]
+        },
+        {
+          "id": "git-snapshot-p2",
+          "difficulty": 2,
+          "problem": "Does empty ordinary diff mean nothing can be committed?",
+          "hint": "Compare index with HEAD.",
+          "answer": "No. Changes may already be staged; inspect git diff --staged and status.",
+          "solution": [
+            "The comparisons differ.",
+            "Check status for new files too."
+          ]
+        },
+        {
+          "id": "git-snapshot-p3",
+          "difficulty": 1,
+          "problem": "How do you stage only the instructions?",
+          "hint": "Use an explicit path.",
+          "answer": "git add README.md, then git diff --staged to check for other content.",
+          "solution": [
+            "Exclude unrelated changes.",
+            "Check the staged scope before committing."
+          ]
+        },
+        {
+          "id": "git-snapshot-p4",
+          "difficulty": 2,
+          "problem": "If .env reached public history, does ignoring it fix the leak?",
+          "hint": "History remains.",
+          "answer": "No. Revoke or rotate exposed credentials first, then follow repository procedures to remove tracking and clean history.",
+          "solution": [
+            "Stop using the compromised secret first.",
+            "Ignore rules only prevent ordinary addition of matching untracked files."
+          ]
+        }
+      ],
+      "learningCheck": {
+        "question": "After staging and then editing, what does commit record by default?",
+        "choices": [
+          "Every latest saved edit",
+          "The staged content",
+          "The GitHub version"
+        ],
+        "correctIndex": 1,
+        "feedback": [
+          "Commit does not run add again automatically.",
+          "The index supplies the next commit.",
+          "Local commits do not read a remote webpage."
+        ]
+      },
+      "interactiveVisual": {
+        "kind": "git",
+        "prediction": "Predict what happens after staging v2, editing to v3 and committing.",
+        "steps": [
+          {
+            "question": "Which command should first inspect the situation?",
+            "choices": [
+              "git status",
+              "git push --force",
+              "Delete .git"
+            ],
+            "correctIndex": 0,
+            "feedback": [
+              "Inspect branch and change states first.",
+              "Push does not explain local staging.",
+              "Deleting repository records loses history."
+            ]
+          },
+          {
+            "question": "With index v2 and working tree v3, what does ordinary diff compare?",
+            "choices": [
+              "v1 and v2",
+              "v2 and v3",
+              "Remote and v3"
+            ],
+            "correctIndex": 1,
+            "feedback": [
+              "That is the staged comparison.",
+              "Ordinary diff compares index and working tree.",
+              "Remote content is not the default comparison."
+            ]
+          },
+          {
+            "question": "Commit without staging again records what?",
+            "choices": [
+              "v3",
+              "v2",
+              "v1"
+            ],
+            "correctIndex": 1,
+            "feedback": [
+              "v3 was not staged.",
+              "The commit records staged v2.",
+              "v1 was the previous HEAD."
+            ]
+          }
+        ],
+        "followUp": "Reproduce the process in the practice lab and inspect all three versions and both diffs."
+      },
+      "prerequisites": [
+        "run-environment"
+      ],
+      "difficulty": 2,
+      "misconceptionTags": [
+        "git-snapshot-guess",
+        "git-snapshot-evidence"
+      ],
+      "sources": [
+        "git-record",
+        "git-diff",
+        "secrets",
+        "git-init"
+      ],
+      "provenance": {
+        "author": "AI-generated",
+        "version": "0.1.1",
+        "status": "first-edition",
+        "humanReviewed": false
+      }
+    },
+    {
+      "id": "git-collaboration",
+      "chapterId": "chapter-3",
+      "number": "3.2",
+      "title": "Branches, pushes and pull requests",
+      "subtitle": "Give a change a place and a review process.",
+      "concept": "A branch maintains a line of history, push updates a remote branch, and a PR proposes merging changes into another branch. None automatically means deployment.",
+      "intuition": "Revising your own draft, sending it out and asking an editor to accept it are different steps.",
+      "objectives": [
+        "Check the working tree before creating a branch for one change.",
+        "Explain the trigger, changed behavior and verification in a PR; distinguish commit, push, merge and release."
+      ],
+      "body": [
+        {
+          "title": "One focused branch",
+          "text": "From a clean working tree, git switch -c feature/empty-title creates and switches branches. Commits there do not advance main automatically. Branches are not isolated folders: uncommitted changes may follow a switch or prevent it. Inspect status and preserve work first."
+        },
+        {
+          "title": "A remote is another repository location",
+          "text": "git remote -v shows configured names and URLs. origin is conventional, not a fixed service. git push -u origin feature/empty-title uploads that branch and sets its upstream. You need permission; without it, commonly fork first and open a PR from your fork. Use supported authentication rather than source-code credentials."
+        },
+        {
+          "title": "A PR is a proposal with evidence",
+          "text": "State the original triggering input, old and new behavior, changed files, checks and limits. Reviewers inspect diffs and request changes. PR creation, passing checks and merging are separate states. Website updates depend on build and release configuration; some projects deploy manually."
+        },
+        {
+          "title": "First sharing and later updates",
+          "text": "A repository initialized from a ZIP has no origin. Create your own empty hosted repository and pass its actual URL to git remote add origin. For existing projects, git clone the real URL and follow README. Before updates inspect status and preserve local work. git fetch origin downloads records without merging. With upstream set and a clean tree, git pull --ff-only accepts only fast-forwards. If histories diverge, inspect both and follow project conventions; do not hide divergence with force-push."
+        }
+      ],
+      "formalDefinition": {
+        "text": "A branch maintains a line of history, push updates a remote branch, and a PR proposes merging changes into another branch. None automatically means deployment.",
+        "conditions": [
+          "For small personal learning projects. In shared repositories, follow the team's conventions.",
+          "This method produces checkable evidence; it cannot guarantee arbitrary AI output is correct."
+        ]
+      },
+      "workflow": [
+        "Check the working tree before creating a branch for one change.",
+        "Verify remote and permissions, then push the checked branch.",
+        "Explain the trigger, changed behavior and verification in a PR; distinguish commit, push, merge and release."
+      ],
+      "workedExamples": [
+        {
+          "title": "Share a whitespace fix",
+          "problem": "How do you share a branch in a personal practice repository with origin configured?",
+          "steps": [
+            "Create a branch from a clean state.",
+            "Edit, run relevant checks, review and commit.",
+            "Check the remote, push and create a PR on the hosting service."
+          ],
+          "answer": "Assumptions: clean working tree, matching filenames and an origin you may push to. Create the PR on the hosting service; these commands do not create it or deploy the site.",
+          "code": "git status\ngit switch -c feature/empty-title\n# Edit and verify, then:\ngit add tasks.mjs tasks.test.mjs\ngit diff --staged\ngit commit -m \"Reject whitespace-only plans\"\ngit remote -v\ngit push -u origin feature/empty-title"
+        },
+        {
+          "title": "Write a useful PR description",
+          "problem": "How should the whitespace-title fix be described?",
+          "steps": [
+            "Give the input and old behavior.",
+            "State the new behavior and user outcome.",
+            "List actual checks and remaining gaps."
+          ],
+          "answer": "Submitting three spaces previously added an unreadable empty item. The change trims input, rejects empty titles and shows feedback. Added blank and ordinary-title tests; npm test passed locally and browser feedback was checked. Other browsers remain unchecked."
+        }
+      ],
+      "commonMistakes": [
+        {
+          "claim": "A successful push puts the original project live.",
+          "correction": "Push updates a remote branch; review, merge and publication are further steps."
+        },
+        {
+          "claim": "A PR directly changes someone else's main branch.",
+          "correction": "It proposes a merge; repository maintenance rules determine acceptance."
+        }
+      ],
+      "practice": [
+        {
+          "id": "git-collaboration-p1",
+          "difficulty": 1,
+          "problem": "Can a friend see my local commit?",
+          "hint": "Was it sent to an accessible remote?",
+          "answer": "Usually not until you push to a remote they can access and share its branch or PR link.",
+          "solution": [
+            "Local and remote records are separate.",
+            "Check access permissions on the link."
+          ]
+        },
+        {
+          "id": "git-collaboration-p2",
+          "difficulty": 1,
+          "problem": "Does origin always mean my friend's original repository?",
+          "hint": "It is a configured name.",
+          "answer": "No. git remote -v shows the address; a fork may use origin for your own repository.",
+          "solution": [
+            "Check the target first.",
+            "Do not infer ownership from the name."
+          ]
+        },
+        {
+          "id": "git-collaboration-p3",
+          "difficulty": 2,
+          "problem": "After branching from clean main and committing on feature, does main advance automatically?",
+          "hint": "Branches point to their own tips.",
+          "answer": "No. Advancing main requires an explicit merge or update.",
+          "solution": [
+            "Compare the branch histories.",
+            "Uncommitted working-tree behavior is separate from commits."
+          ]
+        },
+        {
+          "id": "git-collaboration-p4",
+          "difficulty": 2,
+          "problem": "A PR merged but the website did not change. What do you inspect?",
+          "hint": "The project's publication process.",
+          "answer": "Release workflows, build results, deployment targets and commit versions; manual deployment may be required.",
+          "solution": [
+            "Confirm the merged version first.",
+            "Then identify the version actually deployed."
+          ]
+        }
+      ],
+      "learningCheck": {
+        "question": "When can a friend review the change?",
+        "choices": [
+          "Only saved locally",
+          "Pushed with an accessible PR",
+          "When I say it is done"
+        ],
+        "correctIndex": 1,
+        "feedback": [
+          "Local content is not shared.",
+          "Shared commits and diffs can be reviewed.",
+          "A claim supplies no review material."
+        ]
+      },
+      "interactiveVisual": {
+        "kind": "git",
+        "prediction": "Does pushing a feature branch necessarily update the public site?",
+        "steps": [
+          {
+            "question": "A feature branch has a new commit. What happens to main?",
+            "choices": [
+              "It automatically matches",
+              "It keeps its tip until explicitly updated",
+              "It is deleted"
+            ],
+            "correctIndex": 1,
+            "feedback": [
+              "Separate history lines do not automatically advance together.",
+              "The commit belongs to the feature branch.",
+              "A commit does not delete main."
+            ]
+          },
+          {
+            "question": "What does push success mean?",
+            "choices": [
+              "The remote branch was updated",
+              "The PR merged",
+              "The website deployed"
+            ],
+            "correctIndex": 0,
+            "feedback": [
+              "Local commits reached the target remote branch.",
+              "Merge is a separate operation.",
+              "Deployment follows project configuration and procedure."
+            ]
+          },
+          {
+            "question": "Which PR description is useful?",
+            "choices": [
+              "The code is great",
+              "Trigger, new behavior and verification results",
+              "The model name alone"
+            ],
+            "correctIndex": 1,
+            "feedback": [
+              "This does not help assess behavior.",
+              "These details provide reviewable evidence.",
+              "The generation tool does not establish correctness."
+            ]
+          }
+        ],
+        "followUp": "Create a branch, commit and push in the practice lab; compare main, local feature and remote positions."
+      },
+      "prerequisites": [
+        "git-snapshot"
+      ],
+      "difficulty": 2,
+      "misconceptionTags": [
+        "git-collaboration-guess",
+        "git-collaboration-evidence"
+      ],
+      "sources": [
+        "git-branch",
+        "git-push",
+        "github-pr",
+        "git-fetch",
+        "git-pull"
+      ],
+      "provenance": {
+        "author": "AI-generated",
+        "version": "0.1.1",
+        "status": "first-edition",
+        "humanReviewed": false
+      }
+    },
+    {
+      "id": "git-recovery",
+      "chapterId": "chapter-3",
+      "number": "3.3",
+      "title": "Identify what you need to undo",
+      "subtitle": "Different kinds of recovery need different operations.",
+      "concept": "Distinguish unstaging, discarding working edits, reversing commits and resolving conflicts before choosing an undo operation.",
+      "intuition": "Removing a draft from an envelope, discarding a desk copy and sending a correction have different costs.",
+      "objectives": [
+        "Inspect working tree, index and log to identify the state being undone.",
+        "After recovery or conflict resolution, review diffs, verify and record the outcome."
+      ],
+      "body": [
+        {
+          "title": "Inspect before clearing",
+          "text": "Start with git status, git diff and git diff --staged. git restore --staged README.md unstages while preserving edits. git restore README.md overwrites unstaged edits from the index; preserve anything needed first. Git may not recover never-recorded drafts. Do not reflexively use reset --hard or clean -fd."
+        },
+        {
+          "title": "Correct shared history with a new commit",
+          "text": "For an ordinary shared commit, git revert creates a reverse commit while retaining history. Start clean and identify the correct commit. Revert may conflict; merge-commit reversal is beyond scope. stash temporarily saves work, excluding untracked files unless -u is specified. Applying it can conflict; it is not permanent backup."
+        },
+        {
+          "title": "Understand both sides of a conflict",
+          "text": "When branches edit the same area differently, Git may need a decision. Read requirements and both intentions, write the final content, remove markers, test, stage and complete the operation. Do not randomly choose ours or theirs. To stop, use the abort command appropriate to the active merge or revert, after inspecting status."
+        }
+      ],
+      "formalDefinition": {
+        "text": "Distinguish unstaging, discarding working edits, reversing commits and resolving conflicts before choosing an undo operation.",
+        "conditions": [
+          "For small personal learning projects. In shared repositories, follow the team's conventions.",
+          "This method produces checkable evidence; it cannot guarantee arbitrary AI output is correct."
+        ]
+      },
+      "workflow": [
+        "Inspect working tree, index and log to identify the state being undone.",
+        "Preserve needed content and choose the least extensive suitable operation.",
+        "After recovery or conflict resolution, review diffs, verify and record the outcome."
+      ],
+      "workedExamples": [
+        {
+          "title": "Unstage only",
+          "problem": "Keep README edits but exclude them from this commit.",
+          "steps": [
+            "Use status to confirm they are staged.",
+            "Use --staged to preserve working edits.",
+            "Inspect status and the file afterward."
+          ],
+          "answer": "Unstaging does not discard editing. Compare ordinary restore in the lab. Practice on the corresponding file in a repository that already has a commit.",
+          "code": "git restore --staged README.md\ngit status\ngit diff"
+        },
+        {
+          "title": "Conflicting title limits",
+          "problem": "One branch says 80, another 100. May you arbitrarily keep either?",
+          "steps": [
+            "Check whether the confirmed requirement is still 80 or now 100.",
+            "Update validation, feedback and boundary tests consistently.",
+            "Remove markers, test and complete the merge."
+          ],
+          "answer": "If the change is unconfirmed, revisit requirements or ask. Missing conflict markers does not imply correct behavior. Keep the final limit and tests aligned at 80/81 or 100/101."
+        }
+      ],
+      "commonMistakes": [
+        {
+          "claim": "Every undo operation is recoverable.",
+          "correction": "Never-recorded edits may be lost. Inspect and preserve first."
+        },
+        {
+          "claim": "Resolving conflicts means deleting marker lines.",
+          "correction": "Marker removal only resolves textual conflict; verify resulting behavior against requirements."
+        }
+      ],
+      "practice": [
+        {
+          "id": "git-recovery-p1",
+          "difficulty": 1,
+          "problem": "How do you unstage while keeping edits?",
+          "hint": "Change only the index.",
+          "answer": "git restore --staged README.md.",
+          "solution": [
+            "Restore the staged version from HEAD.",
+            "Working edits remain; check status."
+          ]
+        },
+        {
+          "id": "git-recovery-p2",
+          "difficulty": 2,
+          "problem": "Where does ordinary git restore README.md get content?",
+          "hint": "Not the remote by default.",
+          "answer": "From the index by default, discarding unstaged modifications to that file.",
+          "solution": [
+            "Compare index and working tree.",
+            "Save any needed draft elsewhere first."
+          ]
+        },
+        {
+          "id": "git-recovery-p3",
+          "difficulty": 2,
+          "problem": "How do you reverse an ordinary pushed bad commit while preserving history?",
+          "hint": "Add a reverse record.",
+          "answer": "From a clean tree, identify it and use git revert. Resolve conflicts, verify and push the new commit.",
+          "solution": [
+            "Do not casually rewrite shared history.",
+            "Ordinary and merge commits have different reversal rules."
+          ]
+        },
+        {
+          "id": "git-recovery-p4",
+          "difficulty": 2,
+          "problem": "Does stash save newly created untracked files by default?",
+          "hint": "Distinguish tracked and untracked.",
+          "answer": "No. Specify -u to include untracked files; it still does not replace permanent backup.",
+          "solution": [
+            "Inspect file categories with status first.",
+            "Restoration may conflict; preserve the stash and useful records."
+          ]
+        }
+      ],
+      "learningCheck": {
+        "question": "To unstage only while keeping edits, choose what?",
+        "choices": [
+          "git restore --staged README.md",
+          "git restore README.md",
+          "Delete the whole directory"
+        ],
+        "correctIndex": 0,
+        "feedback": [
+          "This restores index content from HEAD only.",
+          "This overwrites unstaged edits, violating the preservation goal.",
+          "This destroys far more than intended."
+        ]
+      },
+      "interactiveVisual": {
+        "kind": "git",
+        "prediction": "With staged v2 and working v3, do the two restore operations agree?",
+        "steps": [
+          {
+            "question": "Keep v3 in the file but unstage first.",
+            "choices": [
+              "restore --staged",
+              "Restore the file",
+              "reset --hard"
+            ],
+            "correctIndex": 0,
+            "feedback": [
+              "Only the index changes; working v3 remains.",
+              "This restores working content from the index.",
+              "This may discard a broader range of unrecorded changes."
+            ]
+          },
+          {
+            "question": "You deliberately discard v3 and retain staged v2. After ordinary restore?",
+            "choices": [
+              "Working tree v2",
+              "Working tree v1",
+              "Remote v3"
+            ],
+            "correctIndex": 0,
+            "feedback": [
+              "Default restoration copies index content to the working tree.",
+              "That occurs only if the index is v1.",
+              "This does not upload anything."
+            ]
+          },
+          {
+            "question": "The agent says clear all changes before debugging.",
+            "choices": [
+              "Ask it to inspect status and diffs and preserve useful work",
+              "Run it immediately",
+              "Delete tests"
+            ],
+            "correctIndex": 0,
+            "feedback": [
+              "Identify what would be lost first.",
+              "Never-recorded work may disappear.",
+              "Deleting tests does not replace investigating the error."
+            ]
+          }
+        ],
+        "followUp": "Use unstaging and edit-discarding separately in the lab and record each column's change."
+      },
+      "prerequisites": [
+        "git-collaboration"
+      ],
+      "difficulty": 2,
+      "misconceptionTags": [
+        "git-recovery-guess",
+        "git-recovery-evidence"
+      ],
+      "sources": [
+        "git-restore",
+        "git-revert",
+        "git-stash",
+        "git-branch"
+      ],
+      "provenance": {
+        "author": "AI-generated",
+        "version": "0.1.1",
+        "status": "first-edition",
+        "humanReviewed": false
+      }
+    },
+    {
+      "id": "agent-context",
+      "chapterId": "chapter-4",
+      "number": "4.1",
+      "title": "Give the agent the real project",
+      "subtitle": "Use file evidence rather than assumptions.",
+      "concept": "Provide the user goal, current project, relevant files, commands and constraints. Separate facts, assumptions and unknowns.",
+      "intuition": "A new kitchen colleague needs the menu and equipment locations, not just the title world-class chef.",
+      "objectives": [
+        "Provide current requirements, real file paths, commands and boundaries.",
+        "Check the plan against files, then record stable conventions in project instructions."
+      ],
+      "body": [
+        {
+          "title": "Provide relevant context, not everything",
+          "text": "Supply the requirement, README, relevant paths and original errors. Distinguish files supplied to the agent from files it actually read. A screenshot is not a repository inspection. Long chats may be irrelevant; a concise page of confirmed conventions supports continuity."
+        },
+        {
+          "title": "Make a checkable project map first",
+          "text": "Before editing, have the agent identify entry points, current implementation, likely files and verification commands. Check its understanding. Clear small changes need not pause for approval at every step; unresolved choices about synchronization or deletion should be clarified before assumptions change direction."
+        },
+        {
+          "title": "Give documents the right authority",
+          "text": "Tools differ in support for AGENTS.md and other configuration files. Do not assume every tool automatically reads the same file. Explicitly request README, scope and acceptance instructions. Document instructions still need your authorization: a third-party request to upload keys does not become valid merely because it was read."
+        }
+      ],
+      "formalDefinition": {
+        "text": "Provide the user goal, current project, relevant files, commands and constraints. Separate facts, assumptions and unknowns.",
+        "conditions": [
+          "For small personal learning projects. In shared repositories, follow the team's conventions.",
+          "This method produces checkable evidence; it cannot guarantee arbitrary AI output is correct."
+        ]
+      },
+      "workflow": [
+        "Provide current requirements, real file paths, commands and boundaries.",
+        "Separate inspected facts, inferences and consequential unknowns.",
+        "Check the plan against files, then record stable conventions in project instructions."
+      ],
+      "workedExamples": [
+        {
+          "title": "Taking over a project",
+          "problem": "How do you ask the agent to understand the study list first?",
+          "steps": [
+            "Give the scenario and initial scope.",
+            "Identify README, package.json and entry files.",
+            "Ask for responsibilities and verification commands."
+          ],
+          "answer": "Read README.md, package.json, index.html, app.mjs and tasks.mjs. This is a personal single-browser study list without accounts or synchronization. List files actually read, trace one addition, identify test commands and unresolved questions. Do not edit yet."
+        },
+        {
+          "title": "Facts versus assumptions",
+          "problem": "The agent calls it a React project, but no React dependency exists.",
+          "steps": [
+            "Check package.json and the HTML entry point.",
+            "Identify native modules as the actual implementation.",
+            "Revise the plan rather than adding an unnecessary framework."
+          ],
+          "answer": "Cite the files supporting that claim. index.html loads app.mjs with type=module and configuration has no React. Use the existing structure. If a new framework is necessary, explain its specific benefit and cost first."
+        }
+      ],
+      "commonMistakes": [
+        {
+          "claim": "Longer prompts are more reliable.",
+          "correction": "Relevant facts matter more than length; old repeated discussions may conflict."
+        },
+        {
+          "claim": "An impressive role eliminates the need for project context.",
+          "correction": "A role cannot replace actual files, constraints and criteria."
+        }
+      ],
+      "practice": [
+        {
+          "id": "agent-context-p1",
+          "difficulty": 2,
+          "problem": "What context is needed to fix persistence?",
+          "hint": "Trace the saving path.",
+          "answer": "Refresh reproduction steps, URL, original error, app.mjs saving/loading logic, README scope and test commands.",
+          "solution": [
+            "Explain what fails.",
+            "Do not supply all private files by default."
+          ]
+        },
+        {
+          "id": "agent-context-p2",
+          "difficulty": 2,
+          "problem": "How can you check a claim that files were read?",
+          "hint": "Make conclusions traceable to locations.",
+          "answer": "Ask for the read-file list and relevant implementation explanation, then compare with the actual files.",
+          "solution": [
+            "Do more than ask whether it read them.",
+            "Check that the claimed entry point or function exists."
+          ]
+        },
+        {
+          "id": "agent-context-p3",
+          "difficulty": 2,
+          "problem": "Which unknowns need confirmation first?",
+          "hint": "Choices affecting data, permissions or scope.",
+          "answer": "Replacing old data, requiring synchronization or adding external services, for example.",
+          "solution": [
+            "Routine implementation details can be resolved autonomously.",
+            "Consequential unknowns should not be silently guessed."
+          ]
+        },
+        {
+          "id": "agent-context-p4",
+          "difficulty": 1,
+          "problem": "Does AGENTS.md automatically apply in every tool?",
+          "hint": "Tool support varies.",
+          "answer": "No. Check the tool's conventions and explicitly request project instructions.",
+          "solution": [
+            "A filename is not universal magic.",
+            "State essential conventions in the current session too."
+          ]
+        }
+      ],
+      "learningCheck": {
+        "question": "What context is most useful?",
+        "choices": [
+          "You are the world's best engineer",
+          "Relevant files, current behavior, goal and criteria",
+          "All chat history without organization"
+        ],
+        "correctIndex": 1,
+        "feedback": [
+          "A role supplies no project facts.",
+          "These identify appropriate changes and checks.",
+          "Irrelevant material can obscure the task."
+        ]
+      },
+      "interactiveVisual": {
+        "kind": "prompt",
+        "prediction": "What happens if the agent builds on an incorrect project map?",
+        "steps": [
+          {
+            "question": "It assumes React. What first?",
+            "choices": [
+              "Recheck configuration and entry files",
+              "Accept the guess",
+              "Add React to make the guess true"
+            ],
+            "correctIndex": 0,
+            "feedback": [
+              "Correct facts before making unrelated changes.",
+              "The plan may assume nonexistent structure.",
+              "Do not redesign merely to vindicate a guess."
+            ]
+          },
+          {
+            "question": "Cross-device synchronization is undecided.",
+            "choices": [
+              "Assume it is required",
+              "Ask and record the scope",
+              "Pretend it already exists"
+            ],
+            "correctIndex": 1,
+            "feedback": [
+              "This affects architecture and permissions.",
+              "This unknown needs your directional decision.",
+              "The claim has no implementation or evidence."
+            ]
+          },
+          {
+            "question": "What should be recorded for the next session?",
+            "choices": [
+              "Stable scope, setup and conventions",
+              "Every informal model exchange",
+              "Real credentials"
+            ],
+            "correctIndex": 0,
+            "feedback": [
+              "These support a later handoff.",
+              "Unrelated chatter adds noise.",
+              "Do not store secrets as context."
+            ]
+          }
+        ],
+        "followUp": "Write a takeover prompt in the lab and connect each claim to project evidence."
+      },
+      "prerequisites": [
+        "git-recovery"
+      ],
+      "difficulty": 3,
+      "misconceptionTags": [
+        "agent-context-guess",
+        "agent-context-evidence"
+      ],
+      "sources": [
+        "prompt",
+        "mdn-start"
+      ],
+      "provenance": {
+        "author": "AI-generated",
+        "version": "0.1.1",
+        "status": "first-edition",
+        "humanReviewed": false
+      },
+      "promptTemplate": {
+        "goal": "Understand the project without editing yet.",
+        "context": "Personal single-browser study list. Read README.md, package.json, index.html, app.mjs and tasks.mjs.",
+        "scope": "No accounts, synchronization, private-data uploads or new framework.",
+        "acceptance": "List inspected files and responsibilities; trace one addition; separate facts, assumptions and unknowns.",
+        "verification": "Check actual files and npm start/test script definitions. State commands not run.",
+        "delivery": "Provide a project map, proposed change locations, verification approach and questions needing my decision."
+      }
+    },
+    {
+      "id": "task-prompts",
+      "chapterId": "chapter-4",
+      "number": "4.2",
+      "title": "Write an actionable task brief",
+      "subtitle": "Precision comes from goals and evidence, not incantations.",
+      "concept": "A task brief states goal, context, scope, acceptance, verification and delivery. Plain wording is enough if it directs action.",
+      "intuition": "Telling a colleague what to change, why, the expected result and how to check it works better than repeated urging.",
+      "objectives": [
+        "Limit this task to one behavior change and give current context.",
+        "Request reviewable checks, change explanations and verification gaps."
+      ],
+      "body": [
+        {
+          "title": "One brief, one change",
+          "text": "Replace optimize the entire site with reject whitespace-only titles while preserving trimming for valid ones. Describe the failure, files and confirmed constraints. Specify autonomous scope and changes needing discussion, such as dependencies, data format or services. Avoid approval for every action while making consequential boundaries clear."
+        },
+        {
+          "title": "Replace adjectives with examples",
+          "text": "Robust, elegant and high-quality express preferences, not sufficient criteria. Add examples: three spaces add nothing; surrounding whitespace is trimmed; 80 code units are accepted and 81 rejected. These are ordinary collaboration details, not model-specific tricks."
+        },
+        {
+          "title": "Make verification reviewable",
+          "text": "Request changed files, actual commands and outcomes, and unchecked items. Without execution access, the agent should say not run and provide steps. Demanding green results at any cost invites false reports. Filling six headings checks structure, not correctness; inspect whether their contents are specific and consistent."
+        }
+      ],
+      "formalDefinition": {
+        "text": "A task brief states goal, context, scope, acceptance, verification and delivery. Plain wording is enough if it directs action.",
+        "conditions": [
+          "For small personal learning projects. In shared repositories, follow the team's conventions.",
+          "This method produces checkable evidence; it cannot guarantee arbitrary AI output is correct."
+        ]
+      },
+      "workflow": [
+        "Limit this task to one behavior change and give current context.",
+        "Specify normal, boundary and failure outcomes, and scope that must not silently expand.",
+        "Request reviewable checks, change explanations and verification gaps."
+      ],
+      "workedExamples": [
+        {
+          "title": "A whitespace-title brief",
+          "problem": "Rewrite fix input as an actionable task.",
+          "steps": [
+            "State that three spaces currently create an item.",
+            "Give accepted and rejected cases.",
+            "Limit scope and request tests and browser checks."
+          ],
+          "answer": "Goal: reject whitespace-only plans.\nContext: read tasks.mjs, app.mjs and tests.\nScope: no storage-format changes or new dependencies.\nAcceptance: three spaces add nothing and show feedback; '  Learn Git  ' is saved as 'Learn Git'.\nVerification: run npm test and inspect input/feedback in the page; state any checks unavailable.\nDelivery: files changed, command results and limitations."
+        },
+        {
+          "title": "Make a style request concrete",
+          "problem": "How can make the button more premium become actionable?",
+          "steps": [
+            "Give usable visual references or preferences and their purpose.",
+            "Limit the change to styles.",
+            "Add mobile and keyboard criteria."
+          ],
+          "answer": "Make the Add button dark green with rounded corners, preserving current typography. Change styling only. At 390px width there must be no horizontal scrolling, focus must be visible and text unclipped. Report changed locations and actual page checks. Adjectives cannot guarantee universal taste."
+        }
+      ],
+      "commonMistakes": [
+        {
+          "claim": "Precise prompts require many technical terms.",
+          "correction": "Plain descriptions of inputs and outcomes can be precise; misused terminology adds confusion."
+        },
+        {
+          "claim": "A filled template is automatically an excellent prompt.",
+          "correction": "It confirms structure only. Goals, truthful context and consistency still require judgment."
+        }
+      ],
+      "practice": [
+        {
+          "id": "task-prompts-p1",
+          "difficulty": 2,
+          "problem": "Rewrite optimize all code.",
+          "hint": "Choose an observed failure.",
+          "answer": "Fix only whitespace-only titles being added, preserving other behavior and data format.",
+          "solution": [
+            "Narrow the behavior scope.",
+            "Add normal, boundary and failure criteria."
+          ]
+        },
+        {
+          "id": "task-prompts-p2",
+          "difficulty": 2,
+          "problem": "Should you demand passing tests at any cost?",
+          "hint": "Could the standard be weakened?",
+          "answer": "No. Require the agreed behavior and honest results, failures and unrun checks.",
+          "solution": [
+            "Correct behavior is the goal.",
+            "Do not permit deleted assertions, skipped checks or fabricated results."
+          ]
+        },
+        {
+          "id": "task-prompts-p3",
+          "difficulty": 2,
+          "problem": "What can happen without current-project context?",
+          "hint": "Which facts must the agent guess?",
+          "answer": "Wrong files, duplicate functionality or unnecessary structure.",
+          "solution": [
+            "Provide relevant paths and inspected facts.",
+            "Confirm consequential unknowns first."
+          ]
+        },
+        {
+          "id": "task-prompts-p4",
+          "difficulty": 2,
+          "problem": "When should a new dependency be discussed?",
+          "hint": "Does it change an agreed boundary?",
+          "answer": "If the task excludes new dependencies, explain why existing tools are insufficient and the benefit and maintenance cost before asking you to decide.",
+          "solution": [
+            "Dependencies are not inherently bad.",
+            "But small changes should not silently expand costs."
+          ]
+        }
+      ],
+      "learningCheck": {
+        "question": "Which sentence reduces ambiguity?",
+        "choices": [
+          "Be extremely professional",
+          "Three spaces add nothing and give understandable feedback",
+          "Change as many files as possible"
+        ],
+        "correctIndex": 1,
+        "feedback": [
+          "No outcome is specified.",
+          "Concrete input and result support direct acceptance checks.",
+          "File count is not quality."
+        ]
+      },
+      "interactiveVisual": {
+        "kind": "prompt",
+        "prediction": "Does this task brief let you judge the result?",
+        "steps": [
+          {
+            "question": "The goal only says improve the site.",
+            "choices": [
+              "Already clear",
+              "Specify one behavior change",
+              "Add more expert role titles"
+            ],
+            "correctIndex": 1,
+            "feedback": [
+              "There is no completion criterion.",
+              "Define this task's outcome first.",
+              "Titles do not constrain behavior."
+            ]
+          },
+          {
+            "question": "Acceptance only says good experience.",
+            "choices": [
+              "Write input, action and result",
+              "Skip acceptance",
+              "Let AI choose every standard"
+            ],
+            "correctIndex": 0,
+            "feedback": [
+              "Turn preferences into checkable outcomes.",
+              "Without criteria, changes are hard to judge.",
+              "You should confirm standards serve the user goal."
+            ]
+          },
+          {
+            "question": "The agent has no browser. What should it report?",
+            "choices": [
+              "Claim page checks passed",
+              "List unchecked items and your check steps",
+              "Hide the limitation"
+            ],
+            "correctIndex": 1,
+            "feedback": [
+              "That fabricates evidence.",
+              "This accurately describes capabilities and evidence.",
+              "Limits affect whether you can accept the result."
+            ]
+          }
+        ],
+        "followUp": "Turn a vague request into a lab brief. For each line, ask whether you can check it."
+      },
+      "prerequisites": [
+        "agent-context"
+      ],
+      "difficulty": 3,
+      "misconceptionTags": [
+        "task-prompts-guess",
+        "task-prompts-evidence"
+      ],
+      "sources": [
+        "prompt"
+      ],
+      "provenance": {
+        "author": "AI-generated",
+        "version": "0.1.1",
+        "status": "first-edition",
+        "humanReviewed": false
+      },
+      "promptTemplate": {
+        "goal": "Reject whitespace-only plans while retaining trimming for valid titles.",
+        "context": "Read tasks.mjs, app.mjs and tasks.test.mjs. Existing personal list; no third-party dependencies.",
+        "scope": "No backup-format changes, new dependencies or synchronization service.",
+        "acceptance": "Three spaces add nothing and show feedback; '  Learn Git  ' saves as 'Learn Git'; accept 80 and reject 81 UTF-16 code units.",
+        "verification": "Run npm test and inspect page input and feedback. Without a browser, state gaps and manual steps.",
+        "delivery": "Changed files, key diffs, actual command results, page checks and unverified items."
+      }
+    },
+    {
+      "id": "review-changes",
+      "chapterId": "chapter-4",
+      "number": "4.3",
+      "title": "Finish collaboration with evidence",
+      "subtitle": "Move from AI says done to I know why I accept it.",
+      "concept": "Review diffs, acceptance results and verification evidence before accepting, correcting or splitting the task further.",
+      "intuition": "For a renovation handover, inspect the room rather than just reading the contractor's done message.",
+      "objectives": [
+        "Read changed files and key diffs, explaining their relation to the goal.",
+        "After acceptance, leave a focused commit and handoff notes; otherwise return specific evidence."
+      ],
+      "body": [
+        {
+          "title": "Read diffs from the problem outward",
+          "text": "Inspect file scope, then key changes. Title validation should include trimming, rejection and feedback, with matching tests. A new framework, broad renames or lockfile changes need a reason. Ask for concrete inputs through unfamiliar syntax, then try them yourself."
+        },
+        {
+          "title": "Do not adjust tests to suit incorrect code",
+          "text": "If the limit remains 80, deleting the rejection test at 81 is not a fix. A confirmed new standard may change tests, but must preserve complete boundary coverage. Instead of still broken, provide input, actual and expected results, and reproduction steps."
+        },
+        {
+          "title": "Leave handoff records",
+          "text": "Commit accepted changes with a clear purpose and record implementation, checks and gaps. Future sessions should read those records. Track accepted, awaiting checks and deferred separately. Read, tested and deployed are distinct states; one done label should not hide them."
+        }
+      ],
+      "formalDefinition": {
+        "text": "Review diffs, acceptance results and verification evidence before accepting, correcting or splitting the task further.",
+        "conditions": [
+          "For small personal learning projects. In shared repositories, follow the team's conventions.",
+          "This method produces checkable evidence; it cannot guarantee arbitrary AI output is correct."
+        ]
+      },
+      "workflow": [
+        "Read changed files and key diffs, explaining their relation to the goal.",
+        "Follow predefined acceptance cases and check real results and gaps.",
+        "After acceptance, leave a focused commit and handoff notes; otherwise return specific evidence."
+      ],
+      "workedExamples": [
+        {
+          "title": "Review a whitespace fix",
+          "problem": "The change adds a large dependency. Is it reasonable?",
+          "steps": [
+            "Check whether trim and existing validation suffice.",
+            "Ask for the dependency's necessity and maintenance cost.",
+            "Remove unrelated changes if unnecessary, then reverify."
+          ],
+          "answer": "The current functions can implement this rule. Explain the dependency's specific purpose; if unnecessary, retain the existing dependency structure. Rerun existing tests and report results rather than deleting tests to reduce files."
+        },
+        {
+          "title": "A useful correction request",
+          "problem": "Items disappear after refresh. How should you report it?",
+          "steps": [
+            "List input and action order.",
+            "State actual and expected results.",
+            "Provide URL, console details and checked scope."
+          ],
+          "answer": "At http://127.0.0.1:5180, adding Learn Git displays it, but refresh empties the list. It should persist. Inspect saving, loading and error handling; explain the cause and make a minimal fix without adding synchronization."
+        }
+      ],
+      "commonMistakes": [
+        {
+          "claim": "Accept every diff you do not understand.",
+          "correction": "Choose key behavior, ask for concrete-input explanation and verify it yourself."
+        },
+        {
+          "claim": "Delete failing tests.",
+          "correction": "Decide whether implementation violates requirements or requirements were deliberately changed; green alone is not the goal."
+        }
+      ],
+      "practice": [
+        {
+          "id": "review-changes-p1",
+          "difficulty": 2,
+          "problem": "Twenty files changed for one color. What first?",
+          "hint": "Does scope match the purpose?",
+          "answer": "Inspect files and diffs, explain unrelated changes and reduce to necessary style changes.",
+          "solution": [
+            "Keep review manageable.",
+            "Many files are not automatically wrong, but every change needs a reason."
+          ]
+        },
+        {
+          "id": "review-changes-p2",
+          "difficulty": 2,
+          "problem": "How can the agent explain an unfamiliar condition?",
+          "hint": "Provide concrete inputs.",
+          "answer": "Trace three spaces and an ordinary title through the branch, stating intermediate values and whether an item is created.",
+          "solution": [
+            "Make the explanation executable.",
+            "Do not settle for abstract praise."
+          ]
+        },
+        {
+          "id": "review-changes-p3",
+          "difficulty": 2,
+          "problem": "The limit is 80 but its test was deleted. Accept?",
+          "hint": "Was the standard explicitly changed?",
+          "answer": "Not just because results are green. Restore boundary coverage and fix behavior, unless a confirmed new standard has complete replacement tests.",
+          "solution": [
+            "Compare with original criteria.",
+            "Tests provide evidence, not decoration."
+          ]
+        },
+        {
+          "id": "review-changes-p4",
+          "difficulty": 2,
+          "problem": "Write a handoff note.",
+          "hint": "State done, checked and unchecked.",
+          "answer": "Whitespace rejection is fixed and committed. npm test passed and browser feedback was checked. Other browsers and concurrent tabs remain unverified.",
+          "solution": [
+            "State the evidence scope.",
+            "The next task can continue from it."
+          ]
+        }
+      ],
+      "learningCheck": {
+        "question": "What supports accepting a change?",
+        "choices": [
+          "Agent confidence",
+          "Relevant diffs, acceptance results and actual tests",
+          "More lines of code"
+        ],
+        "correctIndex": 1,
+        "feedback": [
+          "Confidence does not replace checks.",
+          "This evidence can be compared with the goal.",
+          "Line count has no direct relation to user outcomes."
+        ]
+      },
+      "interactiveVisual": {
+        "kind": "prompt",
+        "prediction": "If tests pass, must you still review diffs?",
+        "steps": [
+          {
+            "question": "A color change adds a data migration.",
+            "choices": [
+              "Ask why it is necessary",
+              "Accept immediately",
+              "Skip the file list"
+            ],
+            "correctIndex": 0,
+            "feedback": [
+              "The link between data changes and styling is unclear.",
+              "Existing data may be changed unintentionally.",
+              "You lose scope awareness."
+            ]
+          },
+          {
+            "question": "Tests were deleted and results are green.",
+            "choices": [
+              "Declare completion",
+              "Restore necessary coverage against criteria",
+              "Praise the model more"
+            ],
+            "correctIndex": 1,
+            "feedback": [
+              "Green may reflect a lowered standard.",
+              "Keep both criteria and evidence.",
+              "Praise does not establish behavior."
+            ]
+          },
+          {
+            "question": "You find a refresh failure. How next?",
+            "choices": [
+              "Repeat think harder",
+              "Give reproduction, actual and expected results",
+              "Rewrite everything"
+            ],
+            "correctIndex": 1,
+            "feedback": [
+              "No new diagnostic evidence is supplied.",
+              "The next change can target a concrete failure.",
+              "Diagnose before rewriting."
+            ]
+          }
+        ],
+        "followUp": "Fill a correction brief in the lab with evidence instead of still broken."
+      },
+      "prerequisites": [
+        "task-prompts"
+      ],
+      "difficulty": 3,
+      "misconceptionTags": [
+        "review-changes-guess",
+        "review-changes-evidence"
+      ],
+      "sources": [
+        "git-diff",
+        "node-test"
+      ],
+      "provenance": {
+        "author": "AI-generated",
+        "version": "0.1.1",
+        "status": "first-edition",
+        "humanReviewed": false
+      },
+      "promptTemplate": {
+        "goal": "Diagnose and fix list loss after refresh within existing scope.",
+        "context": "At http://127.0.0.1:5180, adding Learn Git works, then refresh empties the list. Persistence is expected. I will attach the original error.",
+        "scope": "Inspect save/load and origin first. No site rewrite, new service or overwriting old data.",
+        "acceptance": "At the same URL, ordinary additions survive refresh; whitespace remains rejected; failed writes clearly say data was not saved.",
+        "verification": "Repeat reproduction, run rule tests and inspect related errors. State anything you cannot execute.",
+        "delivery": "Root cause and evidence, minimal fix, actual verification and remaining risks."
+      }
+    },
+    {
+      "id": "testing",
+      "chapterId": "chapter-5",
+      "number": "5.1",
+      "title": "Choose checks that matter",
+      "subtitle": "Make tests answer user questions.",
+      "concept": "Tests compare given inputs with expected results. Normal, boundary and failure coverage matter more than test count.",
+      "intuition": "Opening an umbrella in sunshine does not establish how it handles rain and wind.",
+      "objectives": [
+        "Choose normal, boundary and failure cases from acceptance criteria.",
+        "Report commands, results, coverage and remaining checks."
+      ],
+      "body": [
+        {
+          "title": "Start with acceptance cases",
+          "text": "For creation, check ordinary text, whitespace, 80/81 code units, duplicate titles and capacity. Expectations come from requirements, not copying current function results. Fast data-rule tests complement browser checks of feedback, refresh, keyboard and narrow layouts."
+        },
+        {
+          "title": "Read one test first",
+          "text": "This example uses Node's built-in test runner. test names a case; assert.equal compares values; assert.throws checks rejection. npm test runs node --test tasks.test.mjs. Start by explaining one test's input, expected outcome and purpose rather than learning every framework."
+        },
+        {
+          "title": "Do not let implementation and expected answer share a mistake",
+          "text": "Recomputing the same algorithm in an assertion may repeat its error. Establish expectations with simple manual cases, before/after comparison or an independent method. When deleting the second duplicate title, inspect which record remains. Passing tests establish their cases, not all security, browsers and inputs."
+        }
+      ],
+      "formalDefinition": {
+        "text": "Tests compare given inputs with expected results. Normal, boundary and failure coverage matter more than test count.",
+        "conditions": [
+          "For small personal learning projects. In shared repositories, follow the team's conventions.",
+          "This method produces checkable evidence; it cannot guarantee arbitrary AI output is correct."
+        ]
+      },
+      "workflow": [
+        "Choose normal, boundary and failure cases from acceptance criteria.",
+        "Check rules against independent expectations, then inspect browser interactions.",
+        "Report commands, results, coverage and remaining checks."
+      ],
+      "workedExamples": [
+        {
+          "title": "Read a blank-input test",
+          "problem": "What does assert.throws(() => addTask([], \"   \", \"a\")) check?",
+          "steps": [
+            "Inputs are an empty array, three spaces and an ID.",
+            "Expect addTask to throw a handled error.",
+            "The page must separately catch it and display feedback."
+          ],
+          "answer": "It supports rejection by the data rule, not visible feedback. No page event or rendering was exercised, so browser acceptance is still needed."
+        },
+        {
+          "title": "A deletion test",
+          "problem": "How can deletion of one duplicate title be checked independently?",
+          "steps": [
+            "Create same-title records with IDs a and b.",
+            "Delete b.",
+            "Expect only a, with its original content and state."
+          ],
+          "answer": "Compare the explicit remaining record, not just length 1. Otherwise deleting the wrong record might pass."
+        }
+      ],
+      "commonMistakes": [
+        {
+          "claim": "More tests always mean more reliability.",
+          "correction": "Repeating one path can hide omissions. Prioritize important behavior and boundaries."
+        },
+        {
+          "claim": "AI-written tests mean verification is complete.",
+          "correction": "Run them and compare expectations with requirements."
+        }
+      ],
+      "practice": [
+        {
+          "id": "testing-p1",
+          "difficulty": 2,
+          "problem": "Give three creation-rule cases.",
+          "hint": "Happy path, boundary and rejection.",
+          "answer": "Ordinary Learn Git; 80 accepted and 81 rejected; whitespace-only rejected.",
+          "solution": [
+            "Cover the three behaviors.",
+            "State an expected outcome for each."
+          ]
+        },
+        {
+          "id": "testing-p2",
+          "difficulty": 2,
+          "problem": "Does length changing from 2 to 1 prove the correct item was removed?",
+          "hint": "The wrong one could be removed.",
+          "answer": "No. Check the remaining ID and content.",
+          "solution": [
+            "Length establishes only count.",
+            "Identity determines which item was deleted."
+          ]
+        },
+        {
+          "id": "testing-p3",
+          "difficulty": 2,
+          "problem": "Do passing rule tests establish refresh persistence?",
+          "hint": "Did the test access browser storage?",
+          "answer": "No. These do not exercise app.mjs and storage. Add and refresh in the browser.",
+          "solution": [
+            "Separate data functions from page integration.",
+            "Obtain evidence in the relevant environment."
+          ]
+        },
+        {
+          "id": "testing-p4",
+          "difficulty": 1,
+          "problem": "How should an agent unable to run tests report?",
+          "hint": "Evidence must be truthful.",
+          "answer": "State not run and why, give commands and expected behavior, and let you execute and record actual results. Do not claim passed.",
+          "solution": [
+            "Existing test code is not successful execution.",
+            "Verification gaps should affect acceptance."
+          ]
+        }
+      ],
+      "learningCheck": {
+        "question": "Which is a good deletion test?",
+        "choices": [
+          "Only check that the array shrinks",
+          "Check the intended remaining ID and original content",
+          "Only check the page did not crash"
+        ],
+        "correctIndex": 1,
+        "feedback": [
+          "The wrong object might be deleted.",
+          "This matches the selected record's behavior.",
+          "The data result is unchecked."
+        ]
+      },
+      "interactiveVisual": {
+        "kind": "decision",
+        "prediction": "Which kind of check supports which conclusion?",
+        "steps": [
+          {
+            "question": "A pure-function whitespace test passed. What does it prove?",
+            "choices": [
+              "The data rule rejects that input",
+              "Page feedback is visible",
+              "All browsers are compatible"
+            ],
+            "correctIndex": 0,
+            "feedback": [
+              "The assertion covers this rule.",
+              "The page was not run.",
+              "This case does not cover every browser."
+            ]
+          },
+          {
+            "question": "A duplicate-title deletion test checks only length.",
+            "choices": [
+              "Enough",
+              "Add remaining-ID and content assertions",
+              "Disallow duplicate titles"
+            ],
+            "correctIndex": 1,
+            "feedback": [
+              "Wrong-item deletion might still pass.",
+              "Identity checks match the behavior.",
+              "Do not remove allowed inputs to suit a weak test."
+            ]
+          },
+          {
+            "question": "Only Node tests were run. What report fits?",
+            "choices": [
+              "The whole site is verified",
+              "Rules tested; browser checks pending",
+              "Publish without looking at the page"
+            ],
+            "correctIndex": 1,
+            "feedback": [
+              "This overstates the evidence.",
+              "This states what the checks support.",
+              "Interaction failures may remain."
+            ]
+          }
+        ],
+        "followUp": "Read one project test yourself. Write its input, expectation and what it does not check."
+      },
+      "prerequisites": [
+        "review-changes"
+      ],
+      "difficulty": 3,
+      "misconceptionTags": [
+        "testing-guess",
+        "testing-evidence"
+      ],
+      "sources": [
+        "node-test"
+      ],
+      "provenance": {
+        "author": "AI-generated",
+        "version": "0.1.1",
+        "status": "first-edition",
+        "humanReviewed": false
+      }
+    },
+    {
+      "id": "debugging",
+      "chapterId": "chapter-5",
+      "number": "5.2",
+      "title": "Reproduce before guessing",
+      "subtitle": "Turn a vague complaint into diagnostic evidence.",
+      "concept": "Record environment, actions, actual and expected results. Reproduce reliably, narrow the failing data stage and make a minimal fix.",
+      "intuition": "If one tap has no water, check whether other taps work before dismantling the house.",
+      "objectives": [
+        "Record environment, steps, actual and expected behavior and original errors.",
+        "Retest the failure and nearby boundaries, recording cause and evidence."
+      ],
+      "body": [
+        {
+          "title": "Preserve the first error",
+          "text": "Record directory, command, URL, input and full error. Browser Console shows script errors; Network shows requests. Screenshots help, but text and steps are easier to reproduce. Replace credentials and private log content with descriptive placeholders before sharing."
+        },
+        {
+          "title": "Test one hypothesis",
+          "text": "Refresh loss might mean failed saving, failed loading or changed origin. Inspect one hypothesis at a time: same URL, write errors, matching keys. Ask for the next check that distinguishes causes. Changing ten things obscures the cause and can introduce side effects."
+        },
+        {
+          "title": "Retest the original and neighboring cases",
+          "text": "After a minimal fix, repeat the failure and related cases: ordinary saving, whitespace rejection and invalid backup preservation. Record cause, fix, checks and remaining issues. Abandon guesses contradicted by evidence. Swallowing exceptions is not success; users need to know data was not saved."
+        }
+      ],
+      "formalDefinition": {
+        "text": "Record environment, actions, actual and expected results. Reproduce reliably, narrow the failing data stage and make a minimal fix.",
+        "conditions": [
+          "For small personal learning projects. In shared repositories, follow the team's conventions.",
+          "This method produces checkable evidence; it cannot guarantee arbitrary AI output is correct."
+        ]
+      },
+      "workflow": [
+        "Record environment, steps, actual and expected behavior and original errors.",
+        "Test one hypothesis along the data path to narrow the cause.",
+        "Retest the failure and nearby boundaries, recording cause and evidence."
+      ],
+      "workedExamples": [
+        {
+          "title": "Data disappears on refresh",
+          "problem": "What diagnostic material should the agent receive?",
+          "steps": [
+            "State browser and URL.",
+            "Record add-visible-refresh-empty steps.",
+            "Give persistence expectations and the original console error."
+          ],
+          "answer": "Environment: http://127.0.0.1:5180 locally. Add Learn Git, confirm it appears, then refresh. Actual: empty list. Expected: retained item. Original console error attached. Distinguish save failure, load failure and origin changes before rewriting anything."
+        },
+        {
+          "title": "Storage is blocked",
+          "problem": "Should a saving exception be caught and reported as success?",
+          "steps": [
+            "Observe the write did not persist.",
+            "Keep the previous reliable state and report not saved.",
+            "When storage works, verify refresh again."
+          ],
+          "answer": "Do not claim saved. Handle failure visibly and distinguish memory changes from persisted data. This example updates the displayed list only after a successful write; failure preserves the previous state."
+        }
+      ],
+      "commonMistakes": [
+        {
+          "claim": "If a fix fails, rewrite everything.",
+          "correction": "Reproduce and narrow first; a rewrite discards already-verified behavior."
+        },
+        {
+          "claim": "Hiding errors makes the app stable.",
+          "correction": "Suppressed exceptions can silently lose data. Give understandable feedback."
+        }
+      ],
+      "practice": [
+        {
+          "id": "debugging-p1",
+          "difficulty": 2,
+          "problem": "Expand the report saving is broken.",
+          "hint": "Supply four kinds of information.",
+          "answer": "URL and environment, steps, actual versus expected results, and original errors.",
+          "solution": [
+            "Enable another person to reproduce it.",
+            "Give evidence, not only a conclusion."
+          ]
+        },
+        {
+          "id": "debugging-p2",
+          "difficulty": 2,
+          "problem": "The list is empty after changing ports. What first?",
+          "hint": "How is storage isolated?",
+          "answer": "Check origin changes. Ports have separate localStorage and do not migrate automatically.",
+          "solution": [
+            "Confirm the cause before editing.",
+            "Expected isolation does not mean all persistence code is broken."
+          ]
+        },
+        {
+          "id": "debugging-p3",
+          "difficulty": 2,
+          "problem": "Five simultaneous edits made it work. What is missing?",
+          "hint": "Which one fixed it?",
+          "answer": "The cause is unclear and other edits may have side effects. Narrow the diff and verify each part.",
+          "solution": [
+            "Prefer an explainable fix.",
+            "Temporary disappearance of the symptom is insufficient."
+          ]
+        },
+        {
+          "id": "debugging-p4",
+          "difficulty": 2,
+          "problem": "What should be checked after a persistence fix?",
+          "hint": "The original case and nearby failures.",
+          "answer": "Refresh reproduction, ordinary creation, whitespace rejection, write-failure feedback and invalid-import preservation.",
+          "solution": [
+            "Avoid fixing one behavior while breaking another.",
+            "Choose boundaries related to the change."
+          ]
+        }
+      ],
+      "learningCheck": {
+        "question": "Which debugging request is useful?",
+        "choices": [
+          "Broken again; think harder",
+          "Environment, steps, actual/expected results and original errors",
+          "Rewrite everything"
+        ],
+        "correctIndex": 1,
+        "feedback": [
+          "No new diagnostic evidence.",
+          "This enables reproduction and diagnosis.",
+          "Scope is broad before the cause is known."
+        ]
+      },
+      "interactiveVisual": {
+        "kind": "decision",
+        "prediction": "Refresh loss has three plausible causes. How do you narrow them?",
+        "steps": [
+          {
+            "question": "Ports differ before and after refresh. What first?",
+            "choices": [
+              "Check origin-specific storage",
+              "Change all JavaScript",
+              "Hide errors"
+            ],
+            "correctIndex": 0,
+            "feedback": [
+              "The port change itself may explain missing records.",
+              "There is no evidence for rewriting all code.",
+              "Hiding information obstructs diagnosis."
+            ]
+          },
+          {
+            "question": "A write definitely throws. What should the page do?",
+            "choices": [
+              "Report success",
+              "Report not saved and retain reliable state",
+              "Silently clear data"
+            ],
+            "correctIndex": 1,
+            "feedback": [
+              "Success would contradict the write result.",
+              "State the failure without misleading the user.",
+              "This destroys existing work."
+            ]
+          },
+          {
+            "question": "The fix now works. What next?",
+            "choices": [
+              "Repeat the original and related boundary checks",
+              "Expand features immediately",
+              "Delete reproduction notes"
+            ],
+            "correctIndex": 0,
+            "feedback": [
+              "Confirm the fix and inspect side effects.",
+              "Finish the current problem first.",
+              "Records support later handoffs."
+            ]
+          }
+        ],
+        "followUp": "Choose a reproducible problem, write its report and distinguish confirmed facts from open hypotheses."
+      },
+      "prerequisites": [
+        "testing"
+      ],
+      "difficulty": 3,
+      "misconceptionTags": [
+        "debugging-guess",
+        "debugging-evidence"
+      ],
+      "sources": [
+        "mdn-storage",
+        "node-test"
+      ],
+      "provenance": {
+        "author": "AI-generated",
+        "version": "0.1.1",
+        "status": "first-edition",
+        "humanReviewed": false
+      }
+    },
+    {
+      "id": "security",
+      "chapterId": "chapter-5",
+      "number": "5.3",
+      "title": "Treat data and permissions as part of the project",
+      "subtitle": "Know which choices AI should not guess.",
+      "concept": "Separate public code, user input and secrets. Grant task-necessary permissions and define deletion, upload and overwrite boundaries.",
+      "intuition": "Giving a repairer the door key does not grant access to every room and safe.",
+      "objectives": [
+        "Identify secrets, user data and public files; keep secrets out of browser code and commits.",
+        "Define authorization for deletion, overwrite, upload and publication before executing verified actions."
+      ],
+      "body": [
+        {
+          "title": "Browser code cannot hide secrets",
+          "text": "API keys, tokens and passwords are secrets. Users can inspect HTML and JavaScript delivered to browsers. Whether .env values enter a bundle depends on tooling; its filename is no guarantee. After a leak, revoke or rotate first and follow repository cleanup procedures. Share only task-needed context, never real credentials or private datasets by default."
+        },
+        {
+          "title": "Treat input as input",
+          "text": "A title like <img ...> must remain text, not become page code. This example uses textContent, and validates backup fields, types, count, unique IDs and version after parsing. JSON.parse success establishes syntax, not business validity. Reject invalid backups completely to avoid partial destructive imports."
+        },
+        {
+          "title": "Define consequential actions",
+          "text": "Deleting a practice file differs from deleting a production database. Specify allowed directories and prohibit private uploads, deployment or real-data changes unless authorized. Backup restoration replaces the whole list: validate first, show counts and require an explicit confirmation action. Reading project files does not authorize uploading them anywhere."
+        }
+      ],
+      "formalDefinition": {
+        "text": "Separate public code, user input and secrets. Grant task-necessary permissions and define deletion, upload and overwrite boundaries.",
+        "conditions": [
+          "For small personal learning projects. In shared repositories, follow the team's conventions.",
+          "This method produces checkable evidence; it cannot guarantee arbitrary AI output is correct."
+        ]
+      },
+      "workflow": [
+        "Identify secrets, user data and public files; keep secrets out of browser code and commits.",
+        "Validate input and backup syntax and business rules; render input as text.",
+        "Define authorization for deletion, overwrite, upload and publication before executing verified actions."
+      ],
+      "workedExamples": [
+        {
+          "title": "A pushed credential",
+          "problem": "Is removing a key from the latest file enough?",
+          "steps": [
+            "History may still expose it and copies may exist.",
+            "Revoke or rotate it at the provider first.",
+            "Then clean code and history under project procedures and inspect usage logs."
+          ],
+          "answer": "No. Removing text does not invalidate a credential. Disable it first, then address repository and logs. Do not paste the real key into agent context for evaluation."
+        },
+        {
+          "title": "An invalid backup",
+          "problem": "The JSON parses, but done is the string \"false\". Accept it?",
+          "steps": [
+            "Valid syntax does not guarantee valid field types.",
+            "done must be a boolean.",
+            "Reject the entire backup and preserve the current list."
+          ],
+          "answer": "Reject it. The string \"false\" is truthy in many conditions and could display completion incorrectly. Validate every record; replace only after full validity and user confirmation."
+        }
+      ],
+      "commonMistakes": [
+        {
+          "claim": "Run suggested commands without understanding them.",
+          "correction": "Understand affected paths, data and permissions first. Consequences need deliberate judgment."
+        },
+        {
+          "claim": "An obscure variable name protects a browser-side key.",
+          "correction": "Clients can inspect delivered code. Renaming does not restrict access."
+        }
+      ],
+      "practice": [
+        {
+          "id": "security-p1",
+          "difficulty": 1,
+          "problem": "A real token appears in a public commit. What first?",
+          "hint": "Make the old credential unusable.",
+          "answer": "Revoke or rotate at its provider, then handle history and usage records.",
+          "solution": [
+            "Deleting text does not revoke it.",
+            "Do not forward it into AI context."
+          ]
+        },
+        {
+          "id": "security-p2",
+          "difficulty": 1,
+          "problem": "How should an HTML-looking title be displayed?",
+          "hint": "Treat it as text.",
+          "answer": "Use textContent or equivalent safe text rendering rather than concatenating input into HTML.",
+          "solution": [
+            "Do not judge safety by whether input looks like code.",
+            "Input should not acquire execution privileges."
+          ]
+        },
+        {
+          "id": "security-p3",
+          "difficulty": 2,
+          "problem": "A parsed backup lacks id. May it replace the list?",
+          "hint": "There is an agreed data schema.",
+          "answer": "No. Reject it entirely, retain old data and explain invalid record format.",
+          "solution": [
+            "Validate required fields and types.",
+            "Do not partially import and overwrite existing data."
+          ]
+        },
+        {
+          "id": "security-p4",
+          "difficulty": 2,
+          "problem": "Does asking an agent to fix CSS authorize deployment?",
+          "hint": "Editing and publication are separate actions.",
+          "answer": "No. Styling permission does not authorize deployment, uploads or real-data operations.",
+          "solution": [
+            "Permissions follow task scope.",
+            "A tool's capability is not user authorization."
+          ]
+        }
+      ],
+      "learningCheck": {
+        "question": "What does putting a secret in webpage JavaScript mean?",
+        "choices": [
+          "Only I can see it",
+          "Clients can inspect it; it is not secret",
+          "A complicated name protects it"
+        ],
+        "correctIndex": 1,
+        "feedback": [
+          "Delivered browser code is inspectable.",
+          "Choose appropriate secret storage and permissions.",
+          "Name complexity does not restrict reading."
+        ]
+      },
+      "interactiveVisual": {
+        "kind": "decision",
+        "prediction": "Where must you make decisions about imports and uploads?",
+        "steps": [
+          {
+            "question": "A backup parses, but done is a string.",
+            "choices": [
+              "Accept all records",
+              "Reject invalid types and preserve old data",
+              "Silently rewrite every field"
+            ],
+            "correctIndex": 1,
+            "feedback": [
+              "Invalid content would enter the state.",
+              "Syntax and business validation are different.",
+              "Unspecified automatic repair can misinterpret data."
+            ]
+          },
+          {
+            "question": "The agent wants to upload logs externally.",
+            "choices": [
+              "Check secrets, purpose and authorization first",
+              "Approve every upload",
+              "Paste all passwords to help"
+            ],
+            "correctIndex": 0,
+            "feedback": [
+              "Read access does not automatically permit disclosure.",
+              "Logs may contain private information or credentials.",
+              "Do not expose secrets in context."
+            ]
+          },
+          {
+            "question": "A valid backup will replace the current list.",
+            "choices": [
+              "Overwrite immediately",
+              "Show counts, recommend backup and confirm",
+              "Join arrays randomly"
+            ],
+            "correctIndex": 1,
+            "feedback": [
+              "Existing data could be lost.",
+              "Explain the effect and act on confirmation.",
+              "Random merging may duplicate IDs and corrupt records."
+            ]
+          }
+        ],
+        "followUp": "Write one input-validation rule and one agent permission boundary for your project."
+      },
+      "prerequisites": [
+        "debugging"
+      ],
+      "difficulty": 3,
+      "misconceptionTags": [
+        "security-guess",
+        "security-evidence"
+      ],
+      "sources": [
+        "secrets",
+        "mdn-text"
+      ],
+      "provenance": {
+        "author": "AI-generated",
+        "version": "0.1.1",
+        "status": "first-edition",
+        "humanReviewed": false
+      }
+    },
+    {
+      "id": "data-design",
+      "chapterId": "chapter-6",
+      "number": "6.1",
+      "title": "Decide how data persists",
+      "subtitle": "Choose a simple design and know its limits.",
+      "concept": "Storage design depends on readers and writers, retention, recovery and future format changes.",
+      "intuition": "Notes on one computer and a shared cloud document have different access, recovery and collaboration behavior.",
+      "objectives": [
+        "Specify fields, types, unique identity and allowed input.",
+        "Practice valid restoration and invalid rejection; handle format versions explicitly."
+      ],
+      "body": [
+        {
+          "title": "Give records a clear shape",
+          "text": "Each record has id, title and done: identity, readable text and completion state. Backups wrap tasks in a versioned object. Versions identify formats. Duplicate titles are allowed; IDs must be unique. These contracts affect creation, display, deletion, tests and restoration, so renaming one field in isolation is unsafe."
+        },
+        {
+          "title": "Local storage can fail",
+          "text": "localStorage stores strings for an origin across page loads. Users can clear it; browsers may restrict or reject writes; capacity is limited. Tabs may overwrite one another, and this example has no concurrency coordination. It suits a personal first release, not a reliable multiuser database."
+        },
+        {
+          "title": "A backup matters only if it restores",
+          "text": "Export JSON and actually restore it. Reject bad data without replacing existing records. Report failed writes. If reading fails, pause writes rather than overwriting damaged data with an empty list. Recognize versions and migrate or reject explicitly. This example implements no complex migration and rejects versions other than 1."
+        }
+      ],
+      "formalDefinition": {
+        "text": "Storage design depends on readers and writers, retention, recovery and future format changes.",
+        "conditions": [
+          "For small personal learning projects. In shared repositories, follow the team's conventions.",
+          "This method produces checkable evidence; it cannot guarantee arbitrary AI output is correct."
+        ]
+      },
+      "workflow": [
+        "Specify fields, types, unique identity and allowed input.",
+        "Explain data location, retention and failure cases.",
+        "Practice valid restoration and invalid rejection; handle format versions explicitly."
+      ],
+      "workedExamples": [
+        {
+          "title": "Why titles are not IDs",
+          "problem": "Two plans are titled Practice Git. How can only the second be completed?",
+          "steps": [
+            "Assign independent IDs.",
+            "Pass the chosen ID from the interface action.",
+            "Locate by ID instead of matching every title."
+          ],
+          "answer": "Titles support reading; IDs locate records. Same-title items can have different completion states, giving identity a practical purpose."
+        },
+        {
+          "title": "Why version backups?",
+          "problem": "A new backup replaces done with status. Can the old program read it?",
+          "steps": [
+            "The current program expects boolean done.",
+            "An unknown format may render incorrectly.",
+            "Recognize the version and deliberately migrate or reject."
+          ],
+          "answer": "The program accepts only version: 1 with id/title/done. Reject unknown versions while preserving the list. Future upgrades need explicit migration rules and tests, not assumed compatibility."
+        }
+      ],
+      "commonMistakes": [
+        {
+          "claim": "Local saving means data cannot be lost.",
+          "correction": "Clearing, storage errors, changed devices and changed origins can remove access. Keep restorable backups."
+        },
+        {
+          "claim": "A download button proves backups are reliable.",
+          "correction": "Download a valid file and restore its complete content and state."
+        }
+      ],
+      "practice": [
+        {
+          "id": "data-design-p1",
+          "difficulty": 2,
+          "problem": "Document the record fields.",
+          "hint": "Give names, types and purpose.",
+          "answer": "id: nonempty unique string; title: 1–80 code units after trimming; done: boolean.",
+          "solution": [
+            "Distinguish identity from display text.",
+            "Explicit bounds support validation."
+          ]
+        },
+        {
+          "id": "data-design-p2",
+          "difficulty": 2,
+          "problem": "Do localhost and 127.0.0.1 share data on the same port?",
+          "hint": "Different hosts mean different origins.",
+          "answer": "No. Protocol, host and port jointly determine localStorage origin.",
+          "solution": [
+            "One computer does not imply one storage space.",
+            "Use backup restoration to migrate instead of assuming it happens."
+          ]
+        },
+        {
+          "id": "data-design-p3",
+          "difficulty": 2,
+          "problem": "Why avoid writing an empty list after a damaged read?",
+          "hint": "Original data may remain recoverable.",
+          "answer": "That overwrites old content. Pause writes, explain the failure and restore deliberately from a valid backup.",
+          "solution": [
+            "Preserve diagnostic evidence.",
+            "A read failure does not mean the user had no data."
+          ]
+        },
+        {
+          "id": "data-design-p4",
+          "difficulty": 2,
+          "problem": "Can the first release handle concurrent multiuser editing unchanged?",
+          "hint": "It lacks shared storage, permissions and conflict coordination.",
+          "answer": "No. Reconfirm requirements and design shared storage, identity, permissions and conflicts.",
+          "solution": [
+            "Simple designs have limits.",
+            "Changing domains or adding a button is insufficient."
+          ]
+        }
+      ],
+      "learningCheck": {
+        "question": "Why use IDs rather than titles alone?",
+        "choices": [
+          "To look professional",
+          "To target one of several same-title records",
+          "To synchronize every device"
+        ],
+        "correctIndex": 1,
+        "feedback": [
+          "Identity has a concrete use.",
+          "Titles may repeat; IDs distinguish records.",
+          "IDs do not provide shared storage."
+        ]
+      },
+      "interactiveVisual": {
+        "kind": "decision",
+        "prediction": "Are parseable backups and reliable restoration equivalent?",
+        "steps": [
+          {
+            "question": "Reading the current list fails.",
+            "choices": [
+              "Immediately save an empty list",
+              "Pause writes, preserve old data and explain",
+              "Show saved successfully"
+            ],
+            "correctIndex": 1,
+            "feedback": [
+              "This overwrites potentially useful data.",
+              "Preserve records and diagnostic clues.",
+              "This contradicts the actual state."
+            ]
+          },
+          {
+            "question": "A backup has an unknown version.",
+            "choices": [
+              "Reject explicitly until migration is designed",
+              "Ignore the version and load anyway",
+              "Assume every done value is true"
+            ],
+            "correctIndex": 0,
+            "feedback": [
+              "This prevents misreading field meanings.",
+              "The format may differ and loading can corrupt records.",
+              "This changes recorded state."
+            ]
+          },
+          {
+            "question": "What should a restoration rehearsal inspect?",
+            "choices": [
+              "Only whether a file downloads",
+              "Every ID, title and completion state",
+              "Only file size"
+            ],
+            "correctIndex": 1,
+            "feedback": [
+              "Download success is not recoverability.",
+              "Complete records support the restoration conclusion.",
+              "Size does not establish correct meaning."
+            ]
+          }
+        ],
+        "followUp": "Inspect the sample records, run backup round-trip tests and perform an actual restoration."
+      },
+      "prerequisites": [
+        "security"
+      ],
+      "difficulty": 4,
+      "misconceptionTags": [
+        "data-design-guess",
+        "data-design-evidence"
+      ],
+      "sources": [
+        "mdn-storage",
+        "node-test"
+      ],
+      "provenance": {
+        "author": "AI-generated",
+        "version": "0.1.1",
+        "status": "first-edition",
+        "humanReviewed": false
+      }
+    },
+    {
+      "id": "release",
+      "chapterId": "chapter-6",
+      "number": "6.2",
+      "title": "Know which version you are delivering",
+      "subtitle": "Verify local execution, builds and live deployment separately.",
+      "concept": "Deliver runnable instructions, a checked version, evidence, limitations and recovery steps. Check the real URL after deployment.",
+      "intuition": "A workshop sample working locally does not establish that the delivered version works at the customer's site.",
+      "objectives": [
+        "Prepare setup, version, check results and known limitations.",
+        "Keep a previous working version and recovery instructions; distinguish code rollback from data migration."
+      ],
+      "body": [
+        {
+          "title": "Prepare the delivery materials",
+          "text": "README should explain tools, commands, scope and limits. Match commits and version notes to actual checks. Projects with dependencies install from lockfiles and build. This example needs no bundling: publish index.html, style.css, app.mjs and tasks.mjs. Tests and the local server are not browser entry files."
+        },
+        {
+          "title": "Recheck the public URL",
+          "text": "A development server is local. Deployment puts runnable artifacts in the target environment. At the real URL, check resource requests, actions, keyboard, narrow screens and saving. Localhost records do not migrate to the new origin. Hosting paths vary; follow the target's instructions. This book does not create hosting accounts or buy services for readers."
+        },
+        {
+          "title": "Separate code and data recovery",
+          "text": "Record the previous working code and publication procedure. Restore a usable artifact and verify it after failure. Old code may not understand new data; format changes need backup and migration planning. Even without upgrades, this example's restoration replaces records. Keep an error-reporting route after release."
+        }
+      ],
+      "formalDefinition": {
+        "text": "Deliver runnable instructions, a checked version, evidence, limitations and recovery steps. Check the real URL after deployment.",
+        "conditions": [
+          "For small personal learning projects. In shared repositories, follow the team's conventions.",
+          "This method produces checkable evidence; it cannot guarantee arbitrary AI output is correct."
+        ]
+      },
+      "workflow": [
+        "Prepare setup, version, check results and known limitations.",
+        "Check artifacts and destination, publish within authorization and inspect the real URL.",
+        "Keep a previous working version and recovery instructions; distinguish code rollback from data migration."
+      ],
+      "workedExamples": [
+        {
+          "title": "Hand the project to a friend",
+          "problem": "What is needed besides source files?",
+          "steps": [
+            "State tool versions and directory.",
+            "Give tests, startup and URL.",
+            "Explain local data, no synchronization and backups."
+          ],
+          "answer": "README: Node.js 22.12+; run npm test then npm start in the project directory; open local port 5180. Include version, actual checks, restoration and untested environments. Record your friend's results after they run it."
+        },
+        {
+          "title": "Empty data after publication",
+          "problem": "Why is a local list absent on the public site?",
+          "steps": [
+            "Compare URL origins.",
+            "They use different localStorage.",
+            "Restore a validated backup explicitly rather than claiming automatic migration."
+          ],
+          "answer": "Different local data locations explain it. Export locally, then validate and confirm restoration at the destination. Do not publish user backups publicly as a migration shortcut."
+        }
+      ],
+      "commonMistakes": [
+        {
+          "claim": "Opening locally verifies deployment.",
+          "correction": "Record local and actual deployment checks separately."
+        },
+        {
+          "claim": "Old code repairs every new-data problem.",
+          "correction": "Formats may be incompatible; code and data have separate recovery paths."
+        }
+      ],
+      "practice": [
+        {
+          "id": "release-p1",
+          "difficulty": 1,
+          "problem": "Which files does this example publish?",
+          "hint": "Server and tests are not needed by the page.",
+          "answer": "index.html, style.css, app.mjs and tasks.mjs, preserving relative paths.",
+          "solution": [
+            "Browsers load the entry point and its referenced resources.",
+            "Hosting serves the files; local server.mjs does not become a business backend."
+          ]
+        },
+        {
+          "id": "release-p2",
+          "difficulty": 2,
+          "problem": "What belongs in local and public check records?",
+          "hint": "Environment and actual version.",
+          "answer": "URL, deployed/commit version, check actions, results and gaps.",
+          "solution": [
+            "Identify which artifact was checked.",
+            "Do not relabel local evidence as public-site evidence."
+          ]
+        },
+        {
+          "id": "release-p3",
+          "difficulty": 3,
+          "problem": "Old code cannot read the new backup after rollback. What follows?",
+          "hint": "Program and format may be incompatible.",
+          "answer": "Handle the data version or restore a compatible backup too. Code rollback alone does not prove recovery.",
+          "solution": [
+            "Separate code state from data state.",
+            "Preserve current data before following a deliberate recovery procedure."
+          ]
+        },
+        {
+          "id": "release-p4",
+          "difficulty": 2,
+          "problem": "What final consequential check precedes publication?",
+          "hint": "Destination and effects.",
+          "answer": "Confirm authorization, target repository or URL, artifact version and absence of secrets; prepare recovery.",
+          "solution": [
+            "Do not reapprove every reversible edit.",
+            "Publication and real-data actions have separate consequences."
+          ]
+        }
+      ],
+      "learningCheck": {
+        "question": "What supports the claim public version verified?",
+        "choices": [
+          "A local screenshot",
+          "Checks tied to the live URL and version",
+          "A PR title"
+        ],
+        "correctIndex": 1,
+        "feedback": [
+          "This does not establish public execution.",
+          "The evidence matches the actual deployment.",
+          "A PR does not establish publication."
+        ]
+      },
+      "interactiveVisual": {
+        "kind": "decision",
+        "prediction": "Which delivery states must remain distinct?",
+        "steps": [
+          {
+            "question": "npm test passed but the page was never opened.",
+            "choices": [
+              "The whole site is accepted",
+              "Rules checked; page checks pending",
+              "The site is published"
+            ],
+            "correctIndex": 1,
+            "feedback": [
+              "Rule tests do not cover the interface.",
+              "The evidence scope is accurate.",
+              "Tests do not automatically deploy."
+            ]
+          },
+          {
+            "question": "Code merged. Is the live URL updated?",
+            "choices": [
+              "Certainly",
+              "Check deployment and actual version",
+              "All old data migrated"
+            ],
+            "correctIndex": 1,
+            "feedback": [
+              "This depends on publication configuration.",
+              "Identify the deployed artifact before concluding.",
+              "Data migration is separate."
+            ]
+          },
+          {
+            "question": "A release changes data format. What before rollback?",
+            "choices": [
+              "Roll back code alone",
+              "Backup data and inspect compatibility/migration",
+              "Clear every record"
+            ],
+            "correctIndex": 1,
+            "feedback": [
+              "Old code may not read new data.",
+              "Plan the recovery's effects.",
+              "This enlarges data loss."
+            ]
+          }
+        ],
+        "followUp": "Write a delivery checklist distinguishing local, merged and deployed states."
+      },
+      "prerequisites": [
+        "data-design"
+      ],
+      "difficulty": 4,
+      "misconceptionTags": [
+        "release-guess",
+        "release-evidence"
+      ],
+      "sources": [
+        "mdn-start",
+        "mdn-storage",
+        "github-pr"
+      ],
+      "provenance": {
+        "author": "AI-generated",
+        "version": "0.1.1",
+        "status": "first-edition",
+        "humanReviewed": false
+      }
+    },
+    {
+      "id": "capstone",
+      "chapterId": "chapter-6",
+      "number": "6.3",
+      "title": "Lead one complete development cycle with AI",
+      "subtitle": "Keep control from the initial idea to acceptance.",
+      "concept": "A full cycle defines the problem, limits scope, sets criteria, implements in steps, verifies, records and delivers. It is more than one request.",
+      "intuition": "An assistant can prepare and cook, while you still choose the menu, judge the result and decide whether to serve it.",
+      "objectives": [
+        "Write a one-page plan and three kinds of acceptance cases, then delegate one small task.",
+        "Deliver a reproducible project and explain its behavior, limits and next learning steps independently."
+      ],
+      "body": [
+        {
+          "title": "Write your own plan first",
+          "text": "Use the study list without reading the reference implementation initially. Write scenario, now/later scope, file responsibilities, data fields and acceptance cases. Give the agent one small task brief. The reference is a comparison, not proof of your understanding. Explain each step's purpose and check yourself."
+        },
+        {
+          "title": "Progress through checkpoints",
+          "text": "Checkpoint 1: page and creation. 2: completion and deletion. 3: persistence and backup. 4: tests, diagnosis and instructions. At each, review diffs, run checks, inspect the browser and commit. Suggestions for chat, payments or synchronization should be judged against agreed scope, not novelty."
+        },
+        {
+          "title": "Use explanation to find the next lesson",
+          "text": "Have another person run README. Explain where data lives, what commit records, why blanks are rejected, how to diagnose refresh loss, who sees data and which cases remain unchecked. Revisit lessons you cannot explain. This framework supports small projects; further study of programming, HTTP, data and security remains valuable."
+        }
+      ],
+      "formalDefinition": {
+        "text": "A full cycle defines the problem, limits scope, sets criteria, implements in steps, verifies, records and delivers. It is more than one request.",
+        "conditions": [
+          "For small personal learning projects. In shared repositories, follow the team's conventions.",
+          "This method produces checkable evidence; it cannot guarantee arbitrary AI output is correct."
+        ]
+      },
+      "workflow": [
+        "Write a one-page plan and three kinds of acceptance cases, then delegate one small task.",
+        "At each checkpoint, review, verify, correct and record a focused change.",
+        "Deliver a reproducible project and explain its behavior, limits and next learning steps independently."
+      ],
+      "workedExamples": [
+        {
+          "title": "One creation-feature cycle",
+          "problem": "How do you go from requirement to commit?",
+          "steps": [
+            "Scenario: record tomorrow's study plan in the evening.",
+            "Task: create nonblank titles and reject blanks, deferring persistence for now.",
+            "Review the diff, run rule tests, try both inputs and commit."
+          ],
+          "answer": "Record: creation and blank rejection implemented; tests actually passed; ordinary and blank browser submissions checked. Refresh persistence is not implemented and belongs to the next checkpoint. Do not call one checkpoint the entire completed project."
+        },
+        {
+          "title": "Choose the next step",
+          "problem": "After a personal list, should you add search or multiuser synchronization?",
+          "steps": [
+            "Ask whether the problem is finding many items or actually sharing them.",
+            "Search extends local filtering; synchronization changes data location and permissions.",
+            "Choose the actual problem, then write new scope and criteria."
+          ],
+          "answer": "For many hard-to-find plans, add search and test empty queries, case handling and completed items. For genuine sharing, design permissions and conflicts first; this is not an equally small change."
+        }
+      ],
+      "commonMistakes": [
+        {
+          "claim": "Finishing means I no longer need to understand code.",
+          "correction": "Understand the key path at least. Learning the language improves your judgment."
+        },
+        {
+          "claim": "Good developers never use AI.",
+          "correction": "AI can implement and explain while you determine goals, inspect results and own decisions."
+        }
+      ],
+      "practice": [
+        {
+          "id": "capstone-p1",
+          "difficulty": 2,
+          "problem": "Name seven steps in one collaboration cycle.",
+          "hint": "From problem to delivery.",
+          "answer": "Problem → scope → acceptance → small implementation steps → verification and correction → Git records → delivery instructions.",
+          "solution": [
+            "Each step provides evidence for the next.",
+            "The process goes beyond prompting."
+          ]
+        },
+        {
+          "id": "capstone-p2",
+          "difficulty": 2,
+          "problem": "Creation alone is complete. May you claim the whole project finished?",
+          "hint": "Separate a checkpoint from the first-release goal.",
+          "answer": "No. Record accepted creation while persistence and other checkpoints remain pending.",
+          "solution": [
+            "State progress accurately.",
+            "Keep incomplete work in the plan."
+          ]
+        },
+        {
+          "id": "capstone-p3",
+          "difficulty": 2,
+          "problem": "A plan cannot be found. Search or synchronization first?",
+          "hint": "Establish the cause.",
+          "answer": "Many items may call for search; records on another device concern synchronization. Reproduce the actual user difficulty first.",
+          "solution": [
+            "The same symptom may have different causes.",
+            "Choose the design that addresses this problem."
+          ]
+        },
+        {
+          "id": "capstone-p4",
+          "difficulty": 3,
+          "problem": "How can you tell you are learning this framework?",
+          "hint": "Explain without quoting the text.",
+          "answer": "You can write briefs, locate data, explain staging, choose boundary cases, report verification limits and help someone run the project.",
+          "solution": [
+            "Use independent explanation and actual operation.",
+            "Counted terminology is not understanding."
+          ]
+        }
+      ],
+      "learningCheck": {
+        "question": "What must you control in AI-assisted development?",
+        "choices": [
+          "An ever-growing wish list",
+          "Goals, boundaries, evidence and delivery responsibility",
+          "The most complicated framework every time"
+        ],
+        "correctIndex": 1,
+        "feedback": [
+          "Ideas do not automatically become verifiable projects.",
+          "These keep AI work aligned with your direction.",
+          "Complexity is not suitability."
+        ]
+      },
+      "interactiveVisual": {
+        "kind": "decision",
+        "prediction": "Without a reference answer next time, how would you start?",
+        "steps": [
+          {
+            "question": "What is the first material?",
+            "choices": [
+              "Every feature wish",
+              "User scenario, first-release scope and criteria",
+              "Model rankings"
+            ],
+            "correctIndex": 1,
+            "feedback": [
+              "Scope and completion are unclear.",
+              "This gives collaboration a checkable starting point.",
+              "Rankings do not decide user purpose."
+            ]
+          },
+          {
+            "question": "The agent reports completion. What do you do?",
+            "choices": [
+              "Review diffs, evidence and acceptance yourself",
+              "Accept everything immediately",
+              "Compare line counts"
+            ],
+            "correctIndex": 0,
+            "feedback": [
+              "Decide from actual outcomes.",
+              "Judgment and verification are missing.",
+              "Lines do not measure user value."
+            ]
+          },
+          {
+            "question": "What should delivery leave behind?",
+            "choices": [
+              "Source, setup, version, checks and limitations",
+              "Only screenshots",
+              "Only success"
+            ],
+            "correctIndex": 0,
+            "feedback": [
+              "Another person can reproduce and continue.",
+              "A screenshot cannot run or restore the project.",
+              "There are no usable materials."
+            ]
+          }
+        ],
+        "followUp": "Independently deliver the appendix project or one of comparable scope, including the capstone's evidence."
+      },
+      "prerequisites": [
+        "release"
+      ],
+      "difficulty": 4,
+      "misconceptionTags": [
+        "capstone-guess",
+        "capstone-evidence"
+      ],
+      "sources": [
+        "mdn-start",
+        "node-test",
+        "git-record"
+      ],
+      "provenance": {
+        "author": "AI-generated",
+        "version": "0.1.1",
+        "status": "first-edition",
+        "humanReviewed": false
+      }
+    }
+  ]
+}

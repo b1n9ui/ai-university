@@ -1,0 +1,62 @@
+Triple integrals and spatial regions
+Count every small volume once
+Triple integrals accumulate spatial density. Integrating one gives volume.
+Slice the solid into thin vertical columns, accumulate density in each, then sum the columns. Three integrals describe three coordinate sweeps.
+Set bounds for spatial regions
+Compute volume and total spatial density
+Building limits
+Draw the projection, then specify each point's allowed height interval. Split regions that cannot be described by one column, or change direction.
+Mass versus volume
+Integrating one gives volume; integrating volume density gives mass. Volume and area densities have different units.
+Changing order
+Continuous functions on bounded regular regions allow different orders, but each requires a fresh description of the same region. Other cases need integrability checks.
+Count every small volume once
+Here the region is bounded, piecewise smooth and describable between graphs, with continuous integrand. More general regions may be subdivided.
+Fix planar position and integrate a column.
+Accumulate over its projection.
+Use integrand one to check upper and lower surfaces.
+Tetrahedron volume
+Find the first-octant volume $x+y+z\le2$.
+One choice of limits is $0\le x\le2,0\le y\le2-x,0\le z\le2-x-y$.
+Integrate height, then the triangle, giving $\int_0^2(2-x)^2/2\,dx=4/3$.
+$\frac43$.
+Mass in a box
+Find the mass of $0\le x,y,z\le1$ with volume density $\rho=1+z$.
+Integrating height first gives $3/2$.
+The base has area 1, leaving mass $3/2$.
+$\frac32$.
+All triple-integral bounds must be constants.
+Curved regions generally need bounds depending on outer variables.
+Triple integrals compute surface area.
+Volume elements accumulate spatial quantities; surface area needs a surface integral.
+Find the volume of a side-2 cube.
+Integrate one.
+Multiply three side lengths to obtain 8.
+Find $\iiint xyz\,dV$ over the unit cube.
+Multiply three independent integrals.
+Each is $1/2$; their product is $1/8$.
+For region $0\le z\le1-x-y$, what must its projection satisfy?
+The upper height cannot be below the lower height.
+With nonnegative planar coordinates, require $x+y\le1$ too.
+The first-quadrant unit right triangle.
+Does changing integration order change density units?
+Does the region or physical quantity change?
+Only the sweep changes; density remains mass per volume.
+No.
+Integrating one over a spatial region gives what?
+Volume
+Surface area
+Boundary length
+Each contribution is a small volume.
+Move a horizontal slice through the first-octant tetrahedron $x+y+z\le1$.
+If slice edge lengths halve, does area merely halve?
+Find each column's height, then accumulate over the base.
+Low slice
+Set relative slice height to $0$.
+The bottom horizontal slice is largest.
+Middle slice
+Set relative slice height to $0.5$.
+Edge lengths halve, so area becomes one-quarter.
+Top slice
+Set relative slice height to $1$.
+The slice collapses to a point; the solid's integral remains valid.

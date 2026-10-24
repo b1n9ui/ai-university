@@ -1,0 +1,60 @@
+Quadratic forms and principal axes
+Rotate to remove cross terms
+A real symmetric quadratic form becomes a signed sum of squares in an orthonormal basis.
+Cross terms indicate that coordinates are not aligned with principal axes. Eigenvector coordinates separate each direction's curvature.
+Write a quadratic expression as a symmetric matrix
+Interpret positive, negative, and flat directions through eigenvalues
+How do cross terms enter the matrix?
+$ax^2+2bxy+cy^2$ corresponds to $\begin{pmatrix}a&b\\b&c\end{pmatrix}$. The antisymmetric part does not affect $x^TAx$, so take the symmetric part first.
+How do you find principal axes?
+Use the symmetric spectral decomposition and set old coordinates equal to the orthogonal matrix times new coordinates. Each eigenvalue multiplies one squared coordinate.
+How do you read the shape?
+Positive coefficients give a bowl; mixed signs give a saddle; zero gives a flat direction. Level sets also depend on the right-hand side's sign.
+Quadratic forms and principal axes
+Principal axes require real symmetric matrices and orthogonal coordinate changes. General similarity cannot replace the congruence transformation of a quadratic form.
+Substitute the spectral decomposition.
+Introduce orthogonal coordinates.
+A diagonal matrix creates no cross terms.
+A bowl with cross terms
+Put $q=2x^2+2xy+2y^2$ into principal-axis form.
+Its matrix is $\begin{pmatrix}2&1\\1&2\end{pmatrix}$.
+Set $u=(x+y)/\sqrt2,v=(x-y)/\sqrt2$.
+$q=3u^2+v^2$.
+A saddle
+What signs does $q=x^2-y^2$ take near the origin?
+On the horizontal axis, $q=x^2>0$.
+On the vertical axis, $q=-y^2<0$.
+Both signs occur, so the form is indefinite.
+Both off-diagonal entries for $2bxy$ are $2b$.
+Both symmetric positions contribute, so each entry must be $b$.
+Every quadratic-form basis change uses similarity.
+The general transformation is $S^TAS$; it matches similarity only for orthogonal changes.
+Find the symmetric matrix for $3x^2+4xy+5y^2$.
+Split the cross coefficient equally.
+Each off-diagonal entry is $2$.
+$\begin{pmatrix}3&2\\2&5\end{pmatrix}$.
+Which direction is flat for $x^2+0y^2$?
+Look for the missing square.
+The function is zero along the vertical axis.
+The vertical axis.
+Are $x^TAx$ and $x^T(A+A^T)x/2$ equal?
+Transposing a scalar leaves it unchanged.
+$x^TA^Tx=(x^TAx)^T=x^TAx$.
+Equal.
+Find the minimum of $q=4u^2+v^2$ on the unit circle.
+The two squared coordinates sum to one.
+$q=1+3u^2\ge1$, attained at $u=0$.
+Quadratic form $q=x^2+cy^2$: the gold point lies on the unit circle, and its vertical height gives the form's directional value.
+How does the surface change from a bowl to a saddle when one coefficient becomes negative?
+For cross term $6xy$, what are the two symmetric off-diagonal entries?
+Both symmetric positions contribute the same cross product.
+Eigenvalue signs describe directional square variation more reliably than individual entry signs.
+Positive definite
+Set $c=1,\theta=\pi/2$.
+The value is one everywhere on the unit circle.
+Positive semidefinite
+Set $c=0,\theta=\pi/2$.
+Nonzero vertical inputs give zero, so strict positive definiteness fails.
+A negative direction
+Set $c=-1,\theta=\pi/2$.
+Vertical inputs give minus one and horizontal inputs plus one: the form is indefinite.

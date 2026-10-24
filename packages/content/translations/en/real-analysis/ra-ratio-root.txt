@@ -1,0 +1,68 @@
+Ratio and root tests
+An eventual bound by a convergent geometric series establishes absolute convergence.
+An eventual bound by a convergent geometric series establishes absolute convergence.
+At the critical value one, geometric control fails and another test is needed.
+Get a geometric bound from ratios
+Use roots
+Get a geometric bound from ratios
+If absolute ratios are eventually bounded by one fixed constant strictly below one, repeated multiplication bounds the terms by a geometric tail.
+Use roots
+If the root limsup is below one, every sufficiently late absolute term is bounded by a geometric power. The appendix defines limsup and its properties.
+Recognize the critical case
+Ratio or root value one permits either convergence or divergence. A ratio limit above one prevents terms tending to zero; root limsup above one likewise gives a subsequence not tending to zero.
+The ratio test needs nonzero tail terms; the root test permits zeros.
+\lim\left|\frac{a_{n+1}}{a_n}\right|<1\quad\text{or}\quad\limsup |a_n|^{1/n}<1\implies\sum|a_n|<\infty
+The ratio is defined eventually.
+At value one, this test gives no conclusion.
+Choose a number strictly between the ratio limit and one.
+Uniformly bound all tail ratios by it.
+Iterate and sum the geometric bound.
+A factorial denominator
+Does $\sum 2^n/n!$ converge?
+The absolute consecutive ratio is $2/(n+1)$.
+Its limit is zero, below one.
+It converges absolutely.
+Compare critical cases
+What are the ratio limits for harmonic and reciprocal-square series?
+They are $n/(n+1)$ and $n^2/(n+1)^2$.
+Both tend to one, although one series diverges and the other converges.
+The critical value one is inconclusive.
+What root value does $\sum (3/4)^n$ have?
+Take the index-th root of each term.
+It is constantly three quarters.
+$3/4$.
+Does ratio limit one imply divergence?
+Reciprocal squares are a counterexample.
+Use another test.
+No.
+Can ratios always be taken when infinitely many terms are zero?
+A denominator may vanish.
+Ratios may be undefined; use roots or comparison instead.
+No.
+Use the ratio test to prove $\sum_{n\ge1}n/2^n$ converges, with an explicit geometric tail bound.
+Bound successive ratios by three quarters in the tail.
+Let $a_n=n/2^n$; then $a_{n+1}/a_n=(n+1)/(2n)$.
+For $n\ge2$, the ratio is at most $3/4$, so $a_{2+k}\le a_2(3/4)^k$.
+A convergent geometric series bounds the tail, giving absolute convergence.
+A convergent geometric series bounds the tail, giving absolute convergence.
+What does the critical value one mean?
+Always convergent
+Always divergent
+This test does not decide
+Different series at this value have different outcomes.
+One ratio below one suffices
+A uniform eventual bound is required.
+Root values are unrelated to term magnitudes
+An eventual root bound is exactly a geometric-power bound.
+Compare consecutive ratios for factorial, harmonic, and reciprocal-square terms. Why is value one insufficient?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+At value one, switch tests. A useful ratio estimate must control the entire tail uniformly.
+Final displayed index: 2
+Set the final displayed index to $2$. Inspect ratios and roots separately and check whether they stay away from one.
+Current case: factorial denominator; absolute convergence.
+Final displayed index: 21
+Set the final displayed index to $21$. Inspect ratios and roots separately and check whether they stay away from one.
+Current case: factorial denominator; absolute convergence.
+Final displayed index: 40
+Set the final displayed index to $40$. Inspect ratios and roots separately and check whether they stay away from one.
+Current case: factorial denominator; absolute convergence.

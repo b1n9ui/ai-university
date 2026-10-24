@@ -1,0 +1,65 @@
+Independence, disjointness, and repeated trials
+Independence means learning one event does not change the probability of another.
+Independence means learning one event does not change the probability of another.
+Disjoint events exclude each other. Independent positive-probability events therefore cannot be disjoint.
+Test two-event independence
+Distinguish pairwise and mutual independence
+Test two-event independence
+Check whether intersection probability equals the product of marginals. With positive conditioning probability, this is equivalent to unchanged conditional probability.
+Distinguish pairwise and mutual independence
+For three or more events, mutual independence requires the product rule for every subcollection. Pairwise checks alone are insufficient.
+Check repeated-trial assumptions
+Later binomial conclusions depend on independent trials. Replacement and adequate mixing can support the model; sampling without replacement usually creates dependence.
+Event independence is a property of the joint model.
+Event independence is a property of the joint model.
+Mutual independence requires the product relation for every finite subcollection.
+Under independence, conditional probability is unchanged.
+Combine this with conditional multiplication.
+Positive-probability disjoint events instead have zero intersection.
+Test independence
+If $P(A)=0.4,P(B)=0.5,P(A\cap B)=0.2$, are the events independent?
+The marginal product is $0.2$.
+It matches the intersection.
+Independent.
+Pairwise is insufficient
+For two independent fair tosses, consider first head, second head, and matching tosses. Are all three mutually independent?
+Each has probability one half and each pair intersection one quarter.
+The triple intersection is all heads, with probability one quarter rather than one eighth.
+Pairwise independent, but not mutually independent.
+Independent events have probabilities $0.2,0.3$. Find the intersection probability.
+Multiply.
+$0.2\times0.3=0.06$.
+$0.06$.
+Are two disjoint positive-probability events independent?
+Compare zero intersection with a positive product.
+They differ.
+Not independent.
+Two independent trials each succeed with probability one half. Find exactly one success probability.
+There are two paths.
+$2(1/2)^2=1/2$.
+$1/2$.
+Do the three pairwise checks suffice for three-event mutual independence?
+Which intersection remains?
+The triple intersection must also be checked.
+No.
+For disjoint positive-probability events, what happens to one probability after learning the other occurred?
+It becomes zero
+It is unchanged
+It becomes one
+They are therefore not independent.
+Pairwise independence is mutual independence
+Higher-order intersections also matter.
+Sampling without replacement is independent repetition
+Each draw changes the remaining composition.
+In an independent model, change one event's probability. Does conditioning on it change the other event's probability?
+Joint and conditional probabilities are displayed. Independence is built into the model, not inferred from finite samples.
+Higher-order intersections also matter.
+Event A probability: 0.4
+Set event A's probability to $0.4$ and compare the figure and readouts.
+At these parameters: first-row marginal $0.4$; first-column marginal $0.5$; upper-left joint probability $0.2$; first column given first row $0.5$.
+Event A probability: 0.05
+Set event A's probability to $0.05$ and compare the figure and readouts.
+At these parameters: first-row marginal $0.05$; first-column marginal $0.5$; upper-left joint probability $0.025$; first column given first row $0.5$.
+Event A probability: 0.95
+Set event A's probability to $0.95$ and compare the figure and readouts.
+At these parameters: first-row marginal $0.95$; first-column marginal $0.5$; upper-left joint probability $0.475$; first column given first row $0.5$.

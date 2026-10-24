@@ -1,0 +1,221 @@
+{
+  "id": "names-types",
+  "chapterId": "chapter-1",
+  "number": "1.2",
+  "title": "Give values names",
+  "subtitle": "Name a value so the next line can find it.",
+  "concept": "Name a value so the next line can find it.",
+  "intuition": "Attach an apple-count label to a basket holding 3 apples.",
+  "objectives": [
+    "Name a number",
+    "Updating a name replaces its value",
+    "Numbers and text serve different purposes"
+  ],
+  "body": [
+    {
+      "title": "Name a number",
+      "text": "apples = 3 associates the name apples with the number 3. Assignment evaluates the right side first, then updates the name on the left. print(apples) reads that value; print(\"apples\") instead displays the literal word."
+    },
+    {
+      "title": "Updating a name replaces its value",
+      "text": "In apples = apples + 2, the right side reads the old value 3 and adds 2 to obtain 5. Assignment then makes apples refer to 5. This is an instruction, not a mathematical equation that must hold forever. Follow the variable cards one line at a time."
+    },
+    {
+      "title": "Numbers and text serve different purposes",
+      "text": "3 is a number for arithmetic; \"3\" is text. Use a number for a count and text for a name. Names are case-sensitive: apples and Apples differ. This book uses lowercase English names and underscores between words, such as apple_count."
+    }
+  ],
+  "formalDefinition": {
+    "text": "Assignment evaluates the right side before updating the left-hand name. A quoted name is literal text.",
+    "conditions": [
+      "Each example runs independently from the beginning. Start with the stated inputs, then change one thing."
+    ]
+  },
+  "derivation": [
+    {
+      "text": "apples first refers to 3."
+    },
+    {
+      "text": "Evaluate 3 + 2 on the right, then update apples."
+    },
+    {
+      "text": "print reads the updated value 5."
+    }
+  ],
+  "interactiveVisual": {
+    "kind": "python-trace",
+    "prediction": "Starting with 3 apples and adding 2, what value will the variable hold?",
+    "caption": "Choose an input and predict the result, then select Next step. The arrow marks the next statement to execute; the side panel shows current variables and output produced so far.",
+    "experiment": {
+      "code": "apples = 3\napples = apples + 2\nprint(apples)\n",
+      "stdout": "5\n",
+      "stdin": ""
+    },
+    "followUp": "Start with 0 and watch the right side evaluate before assignment.",
+    "codeTemplate": "apples = {{start}}\napples = apples + 2\nprint(apples)\n",
+    "controls": [
+      {
+        "name": "start",
+        "label": "Initial apple count",
+        "values": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "defaultIndex": 3
+      }
+    ],
+    "watch": [
+      "apples"
+    ]
+  },
+  "workedExamples": [
+    {
+      "title": "Two more apples",
+      "problem": "Start with 3 apples, add 2, and display the new total.",
+      "steps": [
+        "apples first refers to 3.",
+        "Evaluate 3 + 2 on the right, then update apples.",
+        "print reads the updated value 5."
+      ],
+      "answer": {
+        "code": "apples = 3\napples = apples + 2\nprint(apples)\n",
+        "stdout": "5\n",
+        "stdin": ""
+      }
+    },
+    {
+      "title": "A variable or literal text?",
+      "problem": "Compare apples with and without quotes.",
+      "steps": [
+        "Without quotes, read the variable.",
+        "With quotes, display the text literally."
+      ],
+      "answer": {
+        "code": "apples = 3\nprint(apples)\nprint(\"apples\")\n",
+        "stdout": "3\napples\n",
+        "stdin": ""
+      }
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "names-types-m1",
+      "claim": "print(\"apples\") reads the apple count.",
+      "correction": "Quotes produce the word apples. Use print(apples) to read the variable."
+    },
+    {
+      "id": "names-types-m2",
+      "claim": "Updating a automatically updates b if b previously received a's value.",
+      "correction": "b = a reads the value at that moment. Later assignment of a number to a does not recompute b."
+    }
+  ],
+  "practice": [
+    {
+      "problem": "After count = 4, what does print(count) display?",
+      "hint": "Read the value associated with the name.",
+      "solution": [
+        "count refers to 4."
+      ],
+      "answer": {
+        "code": "count = 4\nprint(count)\n",
+        "stdout": "4\n",
+        "stdin": ""
+      },
+      "id": "names-types-p1",
+      "difficulty": 1,
+      "misconceptionTags": [
+        "names-types-m1"
+      ]
+    },
+    {
+      "problem": "Increase count from 4 to 5.",
+      "hint": "Read its old value and add 1.",
+      "solution": [
+        "The right side gives 5; assignment updates the name."
+      ],
+      "answer": {
+        "code": "count = 4\ncount = count + 1\nprint(count)\n",
+        "stdout": "5\n",
+        "stdin": ""
+      },
+      "id": "names-types-p2",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "names-types-m2"
+      ]
+    },
+    {
+      "problem": "Assign the text Lin to name, then display it.",
+      "hint": "Text needs quotes.",
+      "solution": [
+        "Use quotes when assigning the text, but not when reading the variable."
+      ],
+      "answer": {
+        "code": "name = \"Lin\"\nprint(name)\n",
+        "stdout": "Lin\n",
+        "stdin": ""
+      },
+      "id": "names-types-p3",
+      "difficulty": 1,
+      "misconceptionTags": [
+        "names-types-m1"
+      ]
+    },
+    {
+      "problem": "After a = 2; b = a; a = 5, what is b?",
+      "hint": "When b was assigned, a was still 2.",
+      "solution": [
+        "b refers to 2.",
+        "Updating a later does not recompute b."
+      ],
+      "answer": {
+        "code": "a = 2\nb = a\na = 5\nprint(a)\nprint(b)\n",
+        "stdout": "5\n2\n",
+        "stdin": ""
+      },
+      "id": "names-types-p4",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "names-types-m2"
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "After apples = 3, what does print(\"apples\") display?",
+    "correctIndex": 1,
+    "choices": [
+      "3 (always reading the variable)",
+      "apples (literal text)",
+      "Nothing (variables cannot be displayed)"
+    ],
+    "explanation": "Quotes make apples ordinary text.",
+    "feedback": [
+      "A quoted name is not looked up as a variable.",
+      "Correct: the quoted text is displayed as written.",
+      "print can display both numbers and text."
+    ]
+  },
+  "prerequisites": [
+    "first-program"
+  ],
+  "difficulty": 1,
+  "misconceptionTags": [
+    "names-types-m1",
+    "names-types-m2"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.2.1",
+    "status": "revised",
+    "humanReviewed": false
+  },
+  "sources": [
+    "python-tutorial",
+    "python-types"
+  ],
+  "furtherReading": []
+}

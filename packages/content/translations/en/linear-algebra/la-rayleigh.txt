@@ -1,0 +1,63 @@
+Rayleigh quotients and extrema on the unit sphere
+Compare directions at fixed length
+A symmetric matrix's quadratic-form extrema on the unit sphere are its smallest and largest eigenvalues.
+In eigenvector coordinates, squared components of a unit vector are nonnegative weights summing to one. The form is a weighted eigenvalue average.
+Calculate quadratic-form extrema on the unit sphere
+Explain the extreme-eigenvalue bounds
+Why divide by squared length?
+The Rayleigh quotient $x^TAx/(x^Tx)$ is unaffected by nonzero overall scaling, so it compares directions alone.
+Where are extrema attained?
+In the smallest or largest eigenspace. A repeated extreme eigenvalue permits more than one optimal direction.
+Does the same rule hold for nonsymmetric matrices?
+A quadratic form uses only the symmetric part. General nonsymmetric eigenvalues are not these real extrema.
+Rayleigh quotients and extrema on the unit sphere
+$A$ must be real symmetric; the unit-sphere constraint uses Euclidean length.
+Expand in orthogonal coordinates.
+Express the quotient as a weighted average.
+Every weight is nonnegative and they sum to one.
+A simple constrained quadratic form
+Given $q=2x^2+5y^2$ and $x^2+y^2=1$, find the extrema.
+$q=2+3y^2$.
+Minimum two occurs at $y=0$; maximum five at $x=0$.
+Minimum 2, maximum 5.
+An extremum with a cross term
+Find the maximum of $q=2x^2+2xy+2y^2$ on the unit circle.
+Its eigenvalues are three and one.
+The maximizing direction is $(1,1)/\sqrt2$ or its negative.
+Maximum 3.
+Fixed eigenvalue bounds constrain the quadratic form for every input length.
+For unnormalized inputs, multiply the bounds by squared length.
+The maximizing direction is the coordinate axis with the largest entry.
+Cross terms can tilt the optimal direction.
+Find the minimum Rayleigh quotient for $A=\operatorname{diag}(-2,4)$.
+Take the smallest eigenvalue.
+It attains $-2$ along the horizontal axis.
+Compare $R(3x)$ with $R(x)$.
+Numerator and denominator both scale by nine.
+Nonzero overall scaling cancels.
+Equal.
+If the smallest eigenvalue is zero and the rest positive, classify the form.
+All weighted terms are nonnegative, with zero in one direction.
+Positive semidefinite but not positive definite.
+Positive semidefinite.
+Is the optimal direction of $A=2I$ unique?
+Every unit vector gives the same value.
+$R(x)=2$ for every nonzero input.
+Not unique.
+Quadratic form $q=x^2+cy^2$: the gold point lies on the unit circle, and its vertical height gives the form's directional value.
+As input rotates on the unit circle, where does the form attain its bounds?
+Why does vector length not affect a Rayleigh quotient?
+The denominator is ignored
+Numerator and denominator scale by the same square factor
+The matrix must be the identity
+Numerator and denominator are both homogeneous quadratic expressions.
+At fixed length, the form compares directions. Symmetric eigendirections give its exact extreme values.
+Positive definite
+Set $c=1,\theta=\pi/2$.
+The value is one everywhere on the unit circle.
+Positive semidefinite
+Set $c=0,\theta=\pi/2$.
+Nonzero vertical inputs give zero, so strict positive definiteness fails.
+A negative direction
+Set $c=-1,\theta=\pi/2$.
+Vertical inputs give minus one and horizontal inputs plus one: the form is indefinite.

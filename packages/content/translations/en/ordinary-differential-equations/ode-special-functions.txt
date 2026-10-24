@@ -1,0 +1,64 @@
+From recurrences to special functions
+Precise definitions without elementary formulas
+An important equation
+The order-zero Bessel equation is $t^2y''+ty'+t^2y=0$, with a regular singular point at zero.
+How is its regular solution defined?
+Choose the analytic solution finite at zero and normalized to one, called $J_0$. It is one solution; the second independent solution has a logarithmic singularity near zero.
+Calculation and proof are separate
+The recurrence supplies partial sums to any desired accuracy. A ratio test proves this series converges everywhere, while finite truncations remain approximate.
+Substitute an ordinary power series into this special case.
+Normalize the constant coefficient to one.
+The term ratio tends to zero, giving convergence at every finite argument.
+Initial terms
+Write $J_0$ through degree four.
+The quadratic coefficient is minus one quarter.
+The quartic coefficient is one sixty-fourth.
+$1-t^2/4+t^4/64+\cdots$.
+Degree-six coefficient
+Find the degree-six coefficient of $J_0$.
+Use series index three.
+The denominator is $4^3(3!)^2=2304$ and the sign negative.
+$-1/2304$.
+What is $J_0(0)$?
+Only the constant term remains.
+Its normalization value is one.
+$1$.
+What is $J_0'(0)$?
+The series has only even powers.
+Every differentiated term vanishes at zero.
+$0$.
+What is its convergence radius?
+For every fixed argument, the term ratio tends to zero.
+It converges at every finite real or complex argument.
+Infinite.
+Why does $J_0$ alone not give the second-order general solution?
+Two independent solutions are needed.
+An independent singular solution also exists.
+The regular normalization selects only one solution.
+A special function is just an unexplained name.
+Its equation, normalization, and series explicitly construct it.
+Ordinary-point theorems can be applied at singularities without comment.
+Here a series and normalization provide a separate construction.
+Special functions are often defined by differential equations and normalization; recurrences make them computable and checkable.
+No elementary formula does not mean no precise answer. Equations, conditions, and convergent series can uniquely specify a function.
+Construct the regular order-zero Bessel solution
+Explain truncation and normalization
+From recurrences to special functions
+We construct only the regular order-zero solution. Use $J_0(0)=1,J_0'(0)=0$ as normalization, without treating the singular point as ordinary for the standard initial-value theorem.
+Without an elementary expression, what can still give an exact answer?
+Only a screenshot
+A convergent series with explicit conditions
+Any polynomial fit
+A convergent infinite series is a definition, not a finite fit.
+A function can be defined by its rule before receiving a name. What matters is being able to calculate and verify it.
+One term
+Only normalization constant one remains.
+Set retained series terms $n$ to $1$ and observation time $t$ to $2$.
+Four terms
+The recurrence includes terms through degree six.
+Set retained series terms $n$ to $4$ and observation time $t$ to $2$.
+More terms
+The partial sum approaches the reference within this finite window.
+Set retained series terms $n$ to $12$ and observation time $t$ to $4$.
+Gold is the selected partial sum. Blue uses more convergent terms as a numerical reference, with no external service.
+How does keeping only the constant differ from retaining more recurrence terms?

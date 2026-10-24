@@ -1,0 +1,64 @@
+Adaptive steps and the solving workflow
+Use error estimates to choose the next step
+How is error estimated?
+From the same start, compare one step $h$ with two steps $h/2$. For order $p$ in the asymptotic regime, fine-step local error is approximately their difference divided by $2^p-1$.
+How is a step accepted?
+Compare estimated error with combined absolute and relative tolerances. If too large, reduce the step and retry. Rejected states are not completed progress.
+A complete workflow
+Check domain, events, and known jumps, then choose method and tolerances. Record accepted steps and estimates, and verify through refinement or independent calculation. Report minimum-step or maximum-step stops rather than claiming success.
+Let the coarse leading local error be $Ch^{p+1}$.
+Two half steps reduce the leading error by factor $2^p$.
+Divide the difference by the scale-ratio difference to estimate fine-step error.
+A second-order estimate
+Fine and coarse results differ by $0.003$. Estimate fine-step local error magnitude.
+At order two, the denominator is $4-1=3$.
+Divide the absolute difference by three.
+About $0.001$.
+After rejection
+Estimated error is $0.02$ and tolerance $0.001$. Can the step be accepted?
+The estimate is twenty times tolerance.
+Reduce the step and recompute from the last accepted state.
+Reject it; do not advance from it.
+What denominator is used for fourth-order step doubling?
+Calculate two to the fourth minus one.
+$16-1=15$.
+$15$.
+Why is relative tolerance insufficient near zero?
+Its allowed absolute error would also approach zero.
+Add absolute tolerance for a reasonable near-zero scale.
+Combine it with absolute tolerance.
+Does passing local estimates prove global error stays below that tolerance?
+Local errors propagate and accumulate.
+Global analysis or independent verification is still needed.
+No proof.
+What should a solver report if minimum step size still fails tolerance?
+Do not pretend success.
+Report stopping location and reason, retaining the accepted interval.
+Stop explicitly and report.
+Adaptive stepping means always reducing the step.
+Smooth regions should also allow suitable increases.
+Returning numbers proves the target interval was covered.
+Verify actual endpoint completion and check failures or domain escapes.
+Adaptive methods accept or reject steps using local estimates and adjust their length, instead of always using the smallest step.
+Take larger steps in smooth regions and smaller ones where error estimates demand them.
+Understand step-doubling estimates
+Build a checked numerical solving workflow
+Adaptive steps and the solving workflow
+Use the same starting and ending points, smoothness, and an asymptotic error expansion, with $0<\eta<1$. Bound scale changes and maximum step size. This local estimate is not a global-error guarantee.
+What follows when a step exceeds tolerance?
+Accept it and warn later
+Reject, reduce the step, and recompute
+Simply display a smaller error
+Never advance from an unaccepted state.
+Numerical credibility comes from explained stopping criteria, error estimates, and recalculation, rather than a smooth-looking curve.
+Loose tolerance
+Larger accepted steps are allowed.
+Set local absolute tolerance $\mathrm{tol}$ to $0.01$ and target time $T$ to $2$.
+Tighten tolerance
+Usually more accepted nodes are needed.
+Set local absolute tolerance $\mathrm{tol}$ to $0.001$ and target time $T$ to $2$.
+Stricter still
+Continue controlling local estimates while reporting endpoint global error.
+Set local absolute tolerance $\mathrm{tol}$ to $1e-05$ and target time $T$ to $2$.
+Heun step doubling estimates fine-step local error. Actual accepted nodes and rejected attempts are shown. Tolerance is not a global-error promise.
+How do accepted step count and endpoint error change when local tolerance tightens?

@@ -1,0 +1,67 @@
+A uniform limit of continuous functions is continuous
+Split the error into three parts, transferring change in the limit to one continuous approximating function.
+Split the error into three parts, transferring change in the limit to one continuous approximating function.
+Choose a sufficiently good approximation first, then its local radius. The order matters.
+Allocate three error budgets
+Explain uniformity's role
+Allocate three error budgets
+Compare both limit-function values to the same approximation. Its continuity controls the middle difference.
+Explain uniformity's role
+The same approximation index must control errors at both ends for every nearby input. Uniform convergence provides this; pointwise convergence generally does not.
+Use the contrapositive
+If continuous functions have a discontinuous pointwise limit, convergence cannot be uniform there. A continuous limit alone, however, does not establish uniform convergence.
+A uniformly convergent sequence of continuous functions on the same real domain has a continuous limit.
+Each function is continuous on that domain.
+Convergence is uniform on the whole domain being considered.
+Choose one uniform approximation index from the error.
+Then choose a radius at the center for that continuous approximation.
+Combine three errors using the triangle inequality.
+A continuous uniform limit
+Is the limit of $f_n(x)=x/n$ on the closed unit interval continuous?
+Its supremum error is a vanishing reciprocal, so convergence is uniform.
+The limit is the continuous zero function.
+Yes.
+A continuous limit without uniform convergence
+Continuous triangular spikes have center at the reciprocal index, support from zero to twice that reciprocal, and height one. How do they converge on zero to one?
+For each fixed positive input the spike eventually moves away; the value at zero is always zero.
+The pointwise limit is continuously zero, but every supremum error is one.
+Not uniformly; continuity of the limit is insufficient.
+Must a pointwise limit of continuous functions be continuous?
+Use powers on an interval including its right endpoint.
+The limit jumps at the endpoint.
+No.
+Must each of the three error budgets be exactly one third?
+Only their total must be below the target.
+Other positive allocations work.
+No.
+After fixing an approximation index, may its local radius depend on that index?
+That index is already fixed.
+Yes.
+Yes.
+Does pointwise convergence of continuous functions to a continuous function imply uniform convergence? Give a counterexample on $[0,1]$.
+Use height-one triangular spikes moving toward zero.
+Let $f_n(x)=\max(0,1-|nx-1|)$ for $n\ge2$. Each function is continuous and zero at zero.
+For fixed $x>0$, once $n>2/x$, $nx>2$ and all later values are zero. The pointwise limit is the continuous zero function.
+But $f_n(1/n)=1$, so the supremum error remains one and convergence is not uniform.
+But $f_n(1/n)=1$, so the supremum error remains one and convergence is not uniform.
+What is the correct proof order?
+Choose one uniform approximation, then a local radius
+Choose an input first and freely switch approximations
+A matching plot suffices
+Use the same approximation at both ends.
+A continuous limit proves uniform convergence
+Moving spikes give a counterexample.
+Separate approximations for the two inputs suffice for continuity
+The middle comparison needs one and the same function.
+Compare endpoint jumps and moving spikes. What can continuity of the limit actually rule out?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+Choose the approximation before its local radius. Moving spikes show why continuity of the limit alone cannot establish uniform convergence.
+Function index: 2
+Set the index to $2$. Check each function's continuity, the pointwise limit's continuity, and uniform convergence separately.
+Analytic supremum error $1$; selected-point error $0.5$; uniform convergence: no; pointwise limit continuous: no.
+Function index: 41
+Set the index to $41$. Check each function's continuity, the pointwise limit's continuity, and uniform convergence separately.
+Analytic supremum error $1$; selected-point error $0.5$; uniform convergence: no; pointwise limit continuous: no.
+Function index: 80
+Set the index to $80$. Check each function's continuity, the pointwise limit's continuity, and uniform convergence separately.
+Analytic supremum error $1$; selected-point error $0.5$; uniform convergence: no; pointwise limit continuous: no.

@@ -1,0 +1,61 @@
+Double integrals in polar coordinates
+Sector area needs a radius factor
+Polar coordinates simplify circular boundaries, but actual patch area is radius times radial width times angular width.
+For the same small angle, a more distant arc is longer, making outer grid cells larger.
+Compute integrals over circular regions
+Keep area factors and avoid repeated coverage
+Why the radius factor?
+A sector's radial side is the radial increment; its angular side is approximately radius times angle increment. Their product gives area scaling.
+When is polar simpler?
+Disks, annuli, sectors and radially symmetric functions. Translate first if the circle's center is elsewhere.
+Can coverage repeat?
+Angles repeat after full turns. Use nonnegative radius and a range covering the region once. Boundary overlaps of zero area are harmless.
+Sector area needs a radius factor
+Radius is nonnegative; the smooth transformation is one-to-one except on negligible degenerate sets. The function is integrable; do not cover positive-area portions repeatedly.
+Find the radial side length.
+Find the angular side length.
+Their perpendicular product gives the area element.
+A disk integral
+Integrate $x^2+y^2$ over the radius-2 disk.
+The integrand becomes $r^2$; the area element supplies another $r$.
+$\int_0^{2\pi}\int_0^2r^3drd\theta=8\pi$.
+$8\pi$.
+An annulus
+Find the area of $1\le x^2+y^2\le4$.
+Radial bounds are $1\le r\le2$.
+Integrate $\int_0^{2\pi}\int_1^2r\,drd\theta=3\pi$.
+$3\pi$.
+Replacing the coordinates finishes the substitution.
+Transform the area element, including its radius.
+Sweeping two turns is just an alternative notation.
+It counts positive-area regions twice, doubling the integral.
+Find the area of a radius-3 disk.
+Integrate one, keeping the radius factor.
+$\int_0^{2\pi}\int_0^3r\,drd\theta=9\pi$.
+$9\pi$.
+Find $\iint(x^2+y^2)dA$ over the unit disk.
+The area factor adds one radial power.
+$\int_0^{2\pi}\int_0^1r^3drd\theta=\pi/2$.
+$\frac\pi2$.
+Find the area of a radius-2 sector of angular width $\pi/3$.
+Integrate radially, then multiply by angle width.
+$\frac{2^2}2\cdot\frac\pi3=\frac{2\pi}3$.
+$\frac{2\pi}3$.
+What happens if the unit disk is integrated over angles zero to $4\pi$?
+Count the covering multiplicity.
+Every interior nonorigin point is covered twice, giving twice the actual value.
+Double counting.
+What is the polar area element?
+Angular side length equals radius times angle width.
+Keep radial and angular increments fixed while moving a small polar sector outward.
+Why is the same parameter cell larger at greater radius?
+Fixed angle widths sweep longer edges outward, producing the radius factor.
+Small radius
+Set sector starting radius $r$ to $0.5$.
+Its angular side is short at this radius.
+Unit radius
+Set sector starting radius $r$ to $1$.
+Angular side length equals the numerical angle increment times unit length.
+Larger radius
+Set sector starting radius $r$ to $2$.
+For equal angle width, the small patch area roughly doubles.

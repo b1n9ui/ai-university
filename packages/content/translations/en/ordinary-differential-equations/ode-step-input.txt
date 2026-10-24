@@ -1,0 +1,61 @@
+Step inputs and time delay
+When does the switch turn on?
+The step function
+$H(t-a)$ is zero before switching and one afterward. Its single-point value does not affect the ordinary transform integral.
+The delay rule
+$H(t-a)f(t-a)$ transforms to $e^{-as}F(s)$. If the expression is $H(t-a)f(t)$, first rewrite it using elapsed time after the delay.
+What happens at a switch?
+Bounded step forcing usually keeps second-order position and velocity continuous while acceleration may jump. A first-order state stays continuous while its derivative may jump.
+Before switching, the integral contributes zero.
+Introduce elapsed time after the delay.
+Pull out the constant factor.
+A delayed ramp
+Find the transform of $H(t-2)(t-2)$.
+Recognize a ramp starting at time two.
+The unshifted function transforms to $1/s^2$.
+$e^{-2s}/s^2$.
+Switched driving
+Solve $y'+y=H(t-1),y(0)=0$.
+The unit-step response starting at zero is $1-e^{-t}$.
+Delay by one unit and set earlier values to zero.
+$y=H(t-1)(1-e^{-(t-1)})$.
+Find the transform of $H(t-3)$.
+Use delayed constant input.
+Constant one transforms to $1/s$.
+$e^{-3s}/s$.
+Can $H(t-2)t$ directly be written as $e^{-2s}/s^2$?
+After switching, time has not restarted at zero in the given expression.
+$t=(t-2)+2$.
+No; its transform is $e^{-2s}(1/s^2+2/s)$.
+Does bounded step forcing make a mass's position jump instantly?
+Integrating continuous velocity gives no position jump.
+A finite step changes piecewise acceleration values only.
+No.
+How do you write a unit pulse turning on at $t=1$ and off at $t=4$?
+Subtract the two switches.
+The first turns it on and the second off.
+$H(t-1)-H(t-4)$.
+Multiplying by a step lets any function use the delay rule directly.
+The internal function must use the delayed time variable.
+Steps and impulses are the same input.
+A step has finite height; an impulse represents concentrated area.
+Steps record when an input begins. The delay rule moves both the switch and the function's internal clock.
+A switched response is the entire zero-starting process shifted later.
+Express piecewise forcing
+Apply the second shifting theorem correctly
+Step inputs and time delay
+Assume $a\ge0$ and causal delay. Interpret switches piecewise; equalities do not depend on the step value at a single point.
+What is the standard time form of the second shifting theorem?
+Delay the switch and internal time together.
+Measure elapsed time since switching and express the function in that variable to avoid shift mistakes.
+Before switching
+Input and response are both zero.
+Set switch time $a$ to $2$ and observation time $t$ to $1$.
+Just switched on
+Output remains continuously zero while its right derivative starts changing.
+Set switch time $a$ to $1$ and observation time $t$ to $1$.
+After switching
+Output grows according to the two elapsed time units.
+Set switch time $a$ to $1$ and observation time $t$ to $3$.
+Before switching the response is zero; afterward it is the delayed first-order response. Disconnected input segments represent the jump without drawing a false ramp.
+Does delaying the switch delay the whole response too?

@@ -1,0 +1,63 @@
+Green's theorem and planar flux
+Replace boundary circulation by interior rotation
+Green's theorem converts positive boundary circulation to an integral of local rotation. A second form computes outward planar flux.
+Split the region into cells. Shared edges have opposite directions and cancel, leaving the overall boundary.
+Compute planar circulation and outward flux
+Check hole boundaries and field smoothness
+Choosing positive orientation
+Keep the region on your left: counterclockwise outer boundaries and clockwise hole boundaries. Include every inner boundary.
+Circulation versus flux
+Circulation accumulates tangential components; flux accumulates outward normal components. They use different derivative combinations.
+When is the theorem unavailable?
+The field must be continuously differentiable on an open neighborhood of the whole region. Excise undefined interior points and include the added boundaries.
+Replace boundary circulation by interior rotation
+The bounded region has finitely many piecewise smooth simple closed boundary curves, oriented with the region left. The field is continuously differentiable on an open neighborhood of the closed region.
+Apply the fundamental theorem to opposite rectangle edges.
+Combine the other pair.
+Subdivision cancels shared edges, leaving the boundary.
+Elliptical circulation
+Find circulation of $\mathbf F=(-y,x)$ around the semiaxis-2 and semiaxis-1 ellipse counterclockwise.
+Rotation density is $Q_x-P_y=2$.
+Ellipse area is $2\pi$; multiply by 2.
+$4\pi$.
+Outward planar flux
+Find outward flux of $\mathbf F=(x,y)$ across the radius-3 circle.
+Divergence is $P_x+Q_y=2$.
+Multiply by disk area $9\pi$.
+$18\pi$.
+Positive boundaries are always counterclockwise.
+Outer boundaries are counterclockwise; hole boundaries clockwise.
+Smoothness on the boundary alone suffices.
+The hypotheses cover the interior and an open neighborhood too. Do not ignore singularities.
+Evaluate $\oint x\,dy$ around the positively oriented unit square.
+Choose $P=0,Q=x$.
+Rotation density and area are both 1.
+Evaluate $\oint_C x\,dy$ clockwise around the unit square.
+Orientation reverses sign.
+The reversed integral is $-1$.
+For radial field $(x,y)$, find total outward flux from an annulus of radii 1 and 2.
+Multiply area by divergence, including the inner boundary.
+Area $3\pi$ times divergence 2 gives $6\pi$.
+$6\pi$.
+If the field has a central singularity, can zero rotation density establish zero circulation?
+Which set must satisfy the hypotheses?
+The interior hypothesis fails.
+Excise a small region around the singularity and include its boundary contribution.
+No.
+How is an inner boundary oriented?
+Counterclockwise
+Clockwise
+Either direction
+The actual region stays on the left.
+Field $(-y,x)$ over a variable-radius disk. Circulation is constant rotation density two times area.
+Does doubling radius double or quadruple circulation?
+Shared cell edges cancel, leaving the positively oriented outer boundary.
+Small circle
+Set disk radius $R$ to $0.5$.
+Rotation density stays two; circulation follows area.
+Unit circle
+Set disk radius $R$ to $1$.
+Circulation is $2\pi$.
+Large circle
+Set disk radius $R$ to $2$.
+Doubling radius quadruples both area and circulation.

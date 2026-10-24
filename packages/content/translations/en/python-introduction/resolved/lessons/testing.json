@@ -1,0 +1,233 @@
+{
+  "id": "testing",
+  "chapterId": "chapter-5",
+  "number": "5.3",
+  "title": "Tests and boundary cases",
+  "subtitle": "Specify inputs and correct results, then repeatedly compare them with the program's output.",
+  "concept": "Specify inputs and correct results, then repeatedly compare them with the program's output.",
+  "intuition": "Give a machine small problems with known answers and check whether it keeps answering correctly.",
+  "objectives": [
+    "Calculate expectations independently",
+    "Write a check with assert",
+    "Cover ordinary and boundary cases"
+  ],
+  "body": [
+    {
+      "title": "Calculate expectations independently",
+      "text": "For a doubling function, calculate expectations by hand: 3 gives 6, 0 gives 0, and -2 gives -4. Do not generate the expected answer by calling the function under test, or the same bug can appear on both sides. Tests preserve these checks so you can rerun them after changing the code."
+    },
+    {
+      "title": "Write a check with assert",
+      "text": "assert double(3) == 6 requires the comparison to be true. == tests equality. Success continues silently; failure raises AssertionError. A final print(\"Checks passed\") shows execution got through those assertions. Do not run these tests with Python's -O option: it disables assert statements."
+    },
+    {
+      "title": "Cover ordinary and boundary cases",
+      "text": "Passing for 3 is not enough. Try 0, negative inputs, and values that expose likely bugs. Passing tests does not prove correctness for every input, but explicit boundary checks help prevent known bugs from returning. The project appendix uses unittest to run a suite. Start with input, expectation, and comparison."
+    }
+  ],
+  "formalDefinition": {
+    "text": "A test compares an actual result with an independently determined expectation. assert requires its condition to be true.",
+    "conditions": [
+      "Calculate expected answers independently. Do not run assertion-based tests with -O, which disables assert."
+    ]
+  },
+  "derivation": [
+    {
+      "text": "Calculate the expectations 6, 0, and -4 by hand."
+    },
+    {
+      "text": "Each assert compares an actual result with its expectation."
+    },
+    {
+      "text": "After all checks pass, print Checks passed."
+    }
+  ],
+  "interactiveVisual": {
+    "kind": "python-trace",
+    "prediction": "For input 3, the correct answer is 6. What happens if the expectation is mistakenly 5?",
+    "caption": "Choose an input and predict the result, then select Next step. The arrow marks the next statement to execute; the side panel shows current variables and output produced so far.",
+    "experiment": {
+      "code": "def double(number):\n    return number * 2\n\nactual = double(3)\nexpected = 6\nif actual == expected:\n    print(\"Checks passed\")\nelse:\n    print(\"Check failed\")\n",
+      "stdout": "Checks passed\n",
+      "stdin": ""
+    },
+    "followUp": "Change only the expected value and inspect the comparison. This expands the check performed by assert.",
+    "codeTemplate": "def double(number):\n    return number * 2\n\nactual = double({{number}})\nexpected = {{expected}}\nif actual == expected:\n    print(\"Checks passed\")\nelse:\n    print(\"Check failed\")\n",
+    "controls": [
+      {
+        "name": "number",
+        "label": "Function input",
+        "values": [
+          0,
+          3,
+          -2
+        ],
+        "defaultIndex": 1
+      },
+      {
+        "name": "expected",
+        "label": "Your expected value",
+        "values": [
+          0,
+          5,
+          6,
+          -4
+        ],
+        "defaultIndex": 2
+      }
+    ],
+    "watch": [
+      "number",
+      "actual",
+      "expected"
+    ]
+  },
+  "workedExamples": [
+    {
+      "title": "Test a doubling function",
+      "problem": "Check an ordinary value, zero, and a negative value.",
+      "steps": [
+        "Calculate the expectations 6, 0, and -4 by hand.",
+        "Each assert compares an actual result with its expectation.",
+        "After all checks pass, print Checks passed."
+      ],
+      "answer": {
+        "code": "def double(number):\n    return number * 2\n\nassert double(3) == 6\nassert double(0) == 0\nassert double(-2) == -4\nprint(\"Checks passed\")\n",
+        "stdout": "Checks passed\n",
+        "stdin": ""
+      }
+    },
+    {
+      "title": "Observe a failure",
+      "problem": "Suppose doubling is mistakenly implemented as adding 2. Test input 3.",
+      "steps": [
+        "The incorrect function returns 5.",
+        "The expectation is 6, so assert fails.",
+        "We catch AssertionError only to demonstrate this failure. In a real test, let it fail directly."
+      ],
+      "answer": {
+        "code": "def double(number):\n    return number + 2\n\ntry:\n    assert double(3) == 6\nexcept AssertionError:\n    print(\"Check failed: input 3 should give 6\")\n",
+        "stdout": "Check failed: input 3 should give 6\n",
+        "stdin": ""
+      }
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "testing-m1",
+      "claim": "Generate the correct answer by calling the function under test again.",
+      "correction": "The same bug can affect both sides. Determine the expectation independently."
+    },
+    {
+      "id": "testing-m2",
+      "claim": "Passing one ordinary input means all cases are correct.",
+      "correction": "Add boundaries such as zero, an empty list, and invalid input. Tests support only the cases checked."
+    }
+  ],
+  "practice": [
+    {
+      "problem": "Write a check for add_one(3).",
+      "hint": "The hand-calculated expectation is 4.",
+      "solution": [
+        "Compare the actual result with 4."
+      ],
+      "answer": {
+        "code": "def add_one(number):\n    return number + 1\n\nassert add_one(3) == 4\nprint(\"Pass\")\n",
+        "stdout": "Pass\n",
+        "stdin": ""
+      },
+      "id": "testing-p1",
+      "difficulty": 1,
+      "misconceptionTags": [
+        "testing-m1"
+      ]
+    },
+    {
+      "problem": "Write a boundary check for add_one(0).",
+      "hint": "Expect 1.",
+      "solution": [
+        "Zero should also increase by 1."
+      ],
+      "answer": {
+        "code": "def add_one(number):\n    return number + 1\n\nassert add_one(0) == 1\nprint(\"Pass\")\n",
+        "stdout": "Pass\n",
+        "stdin": ""
+      },
+      "id": "testing-p2",
+      "difficulty": 1,
+      "misconceptionTags": [
+        "testing-m2"
+      ]
+    },
+    {
+      "problem": "Check that the sum of an empty list is 0.",
+      "hint": "There are no items to add.",
+      "solution": [
+        "total_of([]) should return 0."
+      ],
+      "answer": {
+        "code": "def total_of(values):\n    total = 0\n    for value in values:\n        total = total + value\n    return total\n\nassert total_of([]) == 0\nprint(\"Pass\")\n",
+        "stdout": "Pass\n",
+        "stdin": ""
+      },
+      "id": "testing-p3",
+      "difficulty": 1,
+      "misconceptionTags": [
+        "testing-m1"
+      ]
+    },
+    {
+      "problem": "Check that 3 candies in bags of 5 make 0 full bags with remainder 3.",
+      "hint": "Check the two results separately.",
+      "solution": [
+        "Use two assertions with the hand-calculated answers."
+      ],
+      "answer": {
+        "code": "assert 3 // 5 == 0\nassert 3 % 5 == 3\nprint(\"Pass\")\n",
+        "stdout": "Pass\n",
+        "stdin": ""
+      },
+      "id": "testing-p4",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "testing-m2"
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "How should you obtain an expected answer for a function test?",
+    "correctIndex": 1,
+    "choices": [
+      "Call the same function again",
+      "Calculate a small case independently",
+      "Treat absence of exceptions as success"
+    ],
+    "explanation": "Independent expectations can reveal errors in the function's calculation.",
+    "feedback": [
+      "A shared bug can affect both sides and escape the comparison.",
+      "Yes. Calculate independently, then compare with the program's result.",
+      "A program can return a wrong answer without raising an exception."
+    ]
+  },
+  "prerequisites": [
+    "json-csv",
+    "functions",
+    "exceptions"
+  ],
+  "difficulty": 5,
+  "misconceptionTags": [
+    "testing-m1",
+    "testing-m2"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.2.1",
+    "status": "revised",
+    "humanReviewed": false
+  },
+  "sources": [
+    "python-tutorial",
+    "python-unittest"
+  ],
+  "furtherReading": []
+}

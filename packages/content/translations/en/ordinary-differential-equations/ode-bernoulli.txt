@@ -1,0 +1,65 @@
+Bernoulli equations and the logistic model
+Turn a nonlinear power into a linear equation
+Which structure permits this?
+For $y'+p y=q y^m$ with $m\ne0,1$, set $v=y^{1-m}$ on a valid nonzero branch.
+How does logistic growth arise?
+$y'=r y(1-y/K)$ combines initial proportional growth with increasing inhibition. $K>0$ is the carrying capacity.
+Limits of the formula
+Positive initial values stay positive. Above capacity, they decrease toward it. Nonphysical negative initial values may encounter finite singularities, so positive-population conclusions do not extend automatically.
+Expand the logistic equation and use the reciprocal variable.
+Obtain a linear equation.
+Apply the positive initial value, then take reciprocals.
+Carrying capacity two
+Solve $y'=y(1-y/2),y(0)=1$.
+Use $r=1,K=2$.
+The coefficient is $K/y_0-1=1$.
+$y=2/(1+e^{-t})$.
+Another Bernoulli equation
+Find the nonzero solutions of $y'+y=y^2$.
+Set $v=1/y$ to obtain $v'-v=-1$.
+Solve to get $v=1+Ce^t$, then invert.
+$y=1/(1+Ce^t)$; the zero solution also exists. Avoid denominator zeros in the solution interval.
+What positive equilibrium has logistic equation $y'=2y(1-y/5)$?
+Set the right-hand side to zero.
+Its equilibria are zero and five.
+$5$.
+Under $0<y<K$, does the logistic solution increase or decrease?
+Inspect the three factor signs.
+Positive growth rate, population, and remaining-capacity factor give a positive derivative.
+Increasing.
+Under $y>K$, does exponential explosion continue?
+Inspect the capacity factor.
+$1-y/K<0$, so the population decreases.
+No; it decreases toward carrying capacity.
+For Bernoulli power $m=3$, which new variable is used?
+Calculate one minus the power.
+$1-m=-2$.
+$v=y^{-2}$ on a nonzero branch.
+A reciprocal-substitution family always includes the zero solution.
+Taking reciprocals has already excluded zero.
+Carrying capacity is an upper bound that no solution can exceed at any time.
+Initial values may exceed capacity; the model then makes them decrease.
+A Bernoulli substitution linearizes a specific power nonlinearity while requiring separate checks for divided-out solutions.
+The derivative of a power absorbs the nonlinear factor. The logistic equation is an important example.
+Apply a power substitution
+Interpret carrying capacity and equilibria
+Bernoulli equations and the logistic model
+Use $m\ne0,1$ for this nonlinear substitution. For $m=0$ or $m=1$, the original equation is already linear.
+Powers must be differentiable on the chosen real branch, with $y\ne0$. Check zero and other excluded cases in the original equation. The logistic model uses $r,K>0$.
+How does a positive logistic solution initially change above carrying capacity?
+Keep accelerating upward
+Decrease
+Jump instantly to capacity
+The right-hand side is negative, so the solution decreases continuously.
+Some nonlinear equations become linear through a specific, justified substitution. Check that structure first.
+Below capacity
+The population rises without crossing equilibrium one.
+Set initial value $y_0$ to $0.3$ and observation time $t$ to $5$.
+Above capacity
+The population decreases toward one.
+Set initial value $y_0$ to $1.8$ and observation time $t$ to $5$.
+Exactly at equilibrium
+The equilibrium solution stays fixed.
+Set initial value $y_0$ to $1$ and observation time $t$ to $5$.
+Capacity is one. Positive values below rise and those above fall. The dashed line marks equilibrium; the zero equilibrium is discussed separately in the text.
+Does a population above capacity keep growing?

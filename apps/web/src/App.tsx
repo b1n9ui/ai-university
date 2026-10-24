@@ -1,4 +1,4 @@
-import {LanguageSwitcher, EditionNotice, EnglishAbout, unavailableEdition} from "./i18n/LanguagePages";
+import {LanguageSwitcher, EnglishAbout} from "./i18n/LanguagePages";
 import {locale} from "./i18n";
 import {tr, localizeNode} from "./i18n";
 import {
@@ -133,10 +133,10 @@ export default function App() {
     clear,
     storageOk,
   };
-  if (locale === "zh" && (route.path === "book/python-introduction" || route.path.startsWith("book/python-introduction/"))) {
+  if ((route.path === "book/python-introduction" || route.path.startsWith("book/python-introduction/"))) {
     return <><Suspense fallback={<p role="status">{tr("正在打开 Python 教材…")}</p>}><PythonPreview path={route.path.replace("book/python-introduction","python")} /></Suspense><div className="floating-language"><LanguageSwitcher /></div></>;
   }
-  if (locale === "zh" && (route.path === "book/ai-development" || route.path.startsWith("book/ai-development/"))) {
+  if ((route.path === "book/ai-development" || route.path.startsWith("book/ai-development/"))) {
     return <><Suspense fallback={<p role="status">{tr("正在打开教材…")}</p>}><AIDevelopmentPreview path={route.path.replace("book/ai-development","ai-development")} /></Suspense><div className="floating-language"><LanguageSwitcher /></div></>;
   }
   return (
@@ -288,7 +288,7 @@ export default function App() {
           tabIndex={-1}
           className={reader ? "reader-main" : "site-main"}
         >
-          {localizeNode(unavailableEdition(route.path, route.params.get("book")) ? <EditionNotice /> : current ? (
+          {localizeNode(current ? (
             <LessonPage key={current.id} lesson={current} />
           ) : route.path === "home" ? (
             <Home />

@@ -1,0 +1,221 @@
+{
+  "id": "functions",
+  "chapterId": "chapter-4",
+  "number": "4.1",
+  "title": "Functions, parameters, and return values",
+  "subtitle": "Name a reusable sequence of steps, give it input when calling it, and capture its result.",
+  "concept": "Name a reusable sequence of steps, give it input when calling it, and capture its result.",
+  "intuition": "A doubling machine takes 3 and returns 6.",
+  "objectives": [
+    "Give the steps a name",
+    "Call the function and capture its result",
+    "Returning and printing are different"
+  ],
+  "body": [
+    {
+      "title": "Give the steps a name",
+      "text": "def double(number): defines a function named double. A function is a reusable sequence of steps; number names its input and is called a parameter. The indented return number * 2 doubles it and sends the result to the caller. Defining the function records the steps; it does not yet compute with 3."
+    },
+    {
+      "title": "Call the function and capture its result",
+      "text": "result = double(3) makes the call: number receives 3, the calculation produces 6, and return sends 6 back for result to hold. print(result) displays it. Call again with a different input without rewriting the function body."
+    },
+    {
+      "title": "Returning and printing are different",
+      "text": "print displays content; return sends a value back to the caller. To continue calculating with the result, return it. A function that prints but has no return statement returns None, which cannot be used as a number in this calculation. Its parameter is local to the call."
+    }
+  ],
+  "formalDefinition": {
+    "text": "def defines a function; a call supplies input. return sends a result to the caller, while print displays content.",
+    "conditions": [
+      "Define the function before calling it. Use return when the caller needs a result for further calculation."
+    ]
+  },
+  "derivation": [
+    {
+      "text": "def records the steps."
+    },
+    {
+      "text": "double(3) binds number to 3 for this call."
+    },
+    {
+      "text": "return sends back 6, which result stores."
+    }
+  ],
+  "interactiveVisual": {
+    "kind": "python-trace",
+    "prediction": "Does defining the function print anything? What changes when it is called with 3?",
+    "caption": "Choose an input and predict the result, then select Next step. The arrow marks the next statement to execute; the side panel shows current variables and output produced so far.",
+    "experiment": {
+      "code": "def double(number):\n    return number * 2\n\nresult = double(3)\nprint(result)\n",
+      "stdout": "6\n",
+      "stdin": ""
+    },
+    "followUp": "Try 0. Follow execution from the call into the function and back.",
+    "codeTemplate": "def double(number):\n    return number * 2\n\nresult = double({{number}})\nprint(result)\n",
+    "controls": [
+      {
+        "name": "number",
+        "label": "Function input",
+        "values": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "defaultIndex": 3
+      }
+    ],
+    "watch": [
+      "number",
+      "result"
+    ]
+  },
+  "workedExamples": [
+    {
+      "title": "A doubling function",
+      "problem": "Pass in 3, capture its double, and display it.",
+      "steps": [
+        "def records the steps.",
+        "double(3) binds number to 3 for this call.",
+        "return sends back 6, which result stores."
+      ],
+      "answer": {
+        "code": "def double(number):\n    return number * 2\n\nresult = double(3)\nprint(result)\n",
+        "stdout": "6\n",
+        "stdin": ""
+      }
+    },
+    {
+      "title": "Use a returned value",
+      "problem": "Pass in 4 and add 1 to the returned result.",
+      "steps": [
+        "double(4) returns 8.",
+        "The caller adds 1 to get 9."
+      ],
+      "answer": {
+        "code": "def double(number):\n    return number * 2\n\nresult = double(4) + 1\nprint(result)\n",
+        "stdout": "9\n",
+        "stdin": ""
+      }
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "functions-m1",
+      "claim": "Writing def already calculates the result.",
+      "correction": "def records the steps. Calling the function runs them."
+    },
+    {
+      "id": "functions-m2",
+      "claim": "print and return are interchangeable.",
+      "correction": "print displays a value; return gives it to the caller for further use."
+    }
+  ],
+  "practice": [
+    {
+      "problem": "Call the doubling function with 5.",
+      "hint": "Define it, then call it.",
+      "solution": [
+        "It returns 10."
+      ],
+      "answer": {
+        "code": "def double(number):\n    return number * 2\n\nprint(double(5))\n",
+        "stdout": "10\n",
+        "stdin": ""
+      },
+      "id": "functions-p1",
+      "difficulty": 1,
+      "misconceptionTags": [
+        "functions-m1"
+      ]
+    },
+    {
+      "problem": "Write add_one to return its input plus 1.",
+      "hint": "Use return.",
+      "solution": [
+        "With input 3, it returns 4."
+      ],
+      "answer": {
+        "code": "def add_one(number):\n    return number + 1\n\nprint(add_one(3))\n",
+        "stdout": "4\n",
+        "stdin": ""
+      },
+      "id": "functions-p2",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "functions-m2"
+      ]
+    },
+    {
+      "problem": "Call add_one twice, with 1 and then 4.",
+      "hint": "Each call receives its own input.",
+      "solution": [
+        "The results are 2 and 5."
+      ],
+      "answer": {
+        "code": "def add_one(number):\n    return number + 1\n\nprint(add_one(1))\nprint(add_one(4))\n",
+        "stdout": "2\n5\n",
+        "stdin": ""
+      },
+      "id": "functions-p3",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "functions-m1"
+      ]
+    },
+    {
+      "problem": "What should the doubling function return for 0?",
+      "hint": "0 is a valid input.",
+      "solution": [
+        "0 * 2 = 0."
+      ],
+      "answer": {
+        "code": "def double(number):\n    return number * 2\n\nprint(double(0))\n",
+        "stdout": "0\n",
+        "stdin": ""
+      },
+      "id": "functions-p4",
+      "difficulty": 1,
+      "misconceptionTags": [
+        "functions-m2"
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "What sends a computed result back to a function's caller?",
+    "correctIndex": 1,
+    "choices": [
+      "print",
+      "return",
+      "Writing def alone performs the calculation"
+    ],
+    "explanation": "return gives a value to the caller; print only displays it.",
+    "feedback": [
+      "print displays output. It does not return the computed value to the caller.",
+      "Yes. The caller can capture the return value and use it.",
+      "def records the steps; a call executes them."
+    ]
+  },
+  "prerequisites": [
+    "comprehensions"
+  ],
+  "difficulty": 4,
+  "misconceptionTags": [
+    "functions-m1",
+    "functions-m2"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.2.1",
+    "status": "revised",
+    "humanReviewed": false
+  },
+  "sources": [
+    "python-tutorial",
+    "python-control"
+  ],
+  "furtherReading": []
+}

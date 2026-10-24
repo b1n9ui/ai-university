@@ -1,0 +1,65 @@
+Normal distributions and standardization
+Subtract the mean and divide by standard deviation to put normal probabilities on one common scale.
+Subtract the mean and divide by standard deviation to put normal probabilities on one common scale.
+Bell curves with different locations and widths align after changing units.
+Identify both parameters
+Standardize interval bounds
+Identify both parameters
+Mean controls location and standard deviation width. In $N(\mu,\sigma^2)$, the second parameter is variance.
+Standardize interval bounds
+Subtract mean and divide each threshold by standard deviation, then use the standard normal CDF. Keep left and right tails distinct.
+Limit the empirical rule
+Approximately sixty-eight, ninety-five, and ninety-nine point seven percent within one, two, and three standard deviations is a normal-model rule, not a universal one.
+$X\sim N(\mu,\sigma^2)$ with $\sigma>0$.
+$X\sim N(\mu,\sigma^2)$ with $\sigma>0$.
+Nonnormal variables can be standardized without thereby becoming normal.
+Center on the mean.
+Normalize the scale.
+Affine transformations preserve normality.
+Read a left tail
+If $X\sim N(10,4)$, find $P(X\le12)$.
+Standard deviation is two.
+The standardized threshold is one.
+$\Phi(1)\approx0.8413$.
+A central interval
+What probability lies within $1.96$ standard deviations of a normal mean?
+Each tail has approximately $0.025$.
+The middle probability is approximately $0.95$.
+Approximately $0.95$.
+For $N(5,9)$, standardize $x=8$.
+Standard deviation is three.
+$(8-5)/3=1$.
+$1$.
+What is the standard normal probability above zero?
+Use symmetry.
+Half the area lies to the right.
+$0.5$.
+Does standardization make every distribution normal?
+It changes location and scale only.
+Skewness or discreteness can remain.
+No.
+What is the standard deviation of $N(2,16)$?
+Its second parameter is variance.
+$\sqrt{16}=4$.
+$4$.
+What is the second parameter in $N(\mu,\sigma^2)$?
+Standard deviation
+Variance
+Standard error
+Take its square root for the standardizing denominator.
+Standardization creates normality
+Standardization and the normal assumption are separate steps.
+A normal curve vanishes outside a finite interval
+Its support is the whole real line; probability remains outside finite windows.
+For a fixed threshold, vary mean or standard deviation. How does the left area change?
+Normal density and CDF are shown; the CDF also computes unplotted tails.
+Standardization and the normal assumption are separate steps.
+Population mean: 0
+Set the population mean to $0$ and compare the figure and readouts.
+At these parameters: standardized threshold $1$; left probability $0.841345$.
+Population mean: -2
+Set the population mean to $-2$ and compare the figure and readouts.
+At these parameters: standardized threshold $3$; left probability $0.99865$.
+Population mean: 2
+Set the population mean to $2$ and compare the figure and readouts.
+At these parameters: standardized threshold $-1$; left probability $0.158655$.

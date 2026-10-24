@@ -1,0 +1,64 @@
+Basic transforms, shifts, and inverses
+Split expressions into recognizable parts
+Where does the table come from?
+The definition or integration by parts gives $\mathcal L\{t^n\}=n!/s^{n+1}$ and the sine-cosine transforms.
+Exponential shifting
+Multiplication by $e^{at}$ replaces the transform parameter by $s-a$ and shifts the convergence domain too.
+How do you invert?
+Decompose rational expressions into simple poles, repeated poles, or irreducible quadratics. Divide polynomials first when needed; our classical-function inversions mainly use proper fractions.
+Combine the exponential with the kernel.
+Split into simple fractions.
+Invert term by term.
+A shifted sine
+Invert $2/((s+1)^2+4)$.
+Numerator two matches angular frequency two.
+Shifting the parameter by plus one gives time factor $e^{-t}$.
+$e^{-t}\sin2t$.
+A repeated pole
+Invert $3/(s-2)^2$.
+$1/s^2$ corresponds to the time function.
+Shift the parameter right by two and multiply by three.
+$3te^{2t}$.
+Find the transform of $\cos3t$.
+A cosine's numerator is the parameter.
+The basic formula is $s/(s^2+\omega^2)$.
+$s/(s^2+9)$, $\operatorname{Re}s>0$.
+Find the transform of $t^2$.
+Use the factorial formula.
+Two factorial equals two.
+$2/s^3$, $\operatorname{Re}s>0$.
+Invert $1/(s+4)$.
+Recognize an exponential pole.
+The exponent rate is minus four.
+$e^{-4t}$.
+Invert $s/(s^2+4)$.
+Match the cosine formula.
+Its angular frequency is two.
+$\cos2t$.
+Shifting a denominator only translates the time function horizontally.
+Parameter shifts multiply by exponentials. Time delay follows a different rule.
+The sine-transform numerator may omit its frequency.
+That factor determines amplitude.
+Linearity, exponential shifts, and partial fractions reduce many inversions to basic functions.
+Identify the denominator structure before deciding between exponential and oscillatory behavior.
+Use exponential shifting
+Invert simple rational functions by decomposition
+Basic transforms, shifts, and inverses
+Apply rules in their convergence domains. In the piecewise-continuous exponential-order class, the inverse is unique apart from values at jumps.
+Replacing $s$ by $s-a$ in transform space corresponds to which time operation?
+Differentiate
+Delay until a later time
+Multiply by $e^{at}$
+Combining exponential weights derives the rule directly.
+Read each inverse-transform term as a familiar time behavior and combine them.
+Convergent region
+The kernel decays and the truncated integral approaches the transform.
+Set signal exponent $a$ to $0.5$, real transform parameter $s$ to $2$, and truncation limit $T$ to $6$.
+Threshold
+The integrand is one and its integral grows linearly with the upper limit.
+Set signal exponent $a$ to $1$, real transform parameter $s$ to $1$, and truncation limit $T$ to $6$.
+Divergent region
+The integrand grows. A finite truncated value is not the infinite integral.
+Set signal exponent $a$ to $1$, real transform parameter $s$ to $0.5$, and truncation limit $T$ to $6$.
+Display the integrand and truncated integral. The infinite transform converges only when the real parameter exceeds the signal growth rate; a finite integral is not the full transform.
+Does the integral converge when the weighting decay rate is no greater than signal growth?

@@ -1,0 +1,62 @@
+Graphs, incidence matrices, and flow conservation
+From edge flows to net node inflows
+An incidence matrix converts directed edge flows into net inflows at nodes.
+Each edge subtracts flow at its source and adds the same flow at its destination. Total net inflow is therefore zero.
+Construct a directed incidence matrix
+Explain conservation using kernels and Laplacians
+How is the matrix built?
+Assign each edge an orientation. Its column has $-1$ at the source, $1$ at the destination, and zeros elsewhere. A negative flow means the actual direction is reversed.
+What do the kernels mean?
+$Bf=0$ describes circulating flows conserving every node. $B^Tp=0$ means equal potentials at both ends of each edge, so $p$ is constant on each connected component.
+What is the Laplacian?
+$L=BB^T$ is symmetric positive semidefinite. Its quadratic form sums squared differences across adjacent nodes; a connected graph's kernel is spanned by the all-ones vector.
+Graphs, incidence matrices, and flow conservation
+Start with a finite undirected graph and choose edge orientations, using the usual convention without self-loops. Each connected component must separately have zero total net inflow.
+Each edge column sums to zero.
+Thus total net inflow is zero.
+Equal neighboring potentials make the square sum zero.
+\ker L=\ker B^T=\{\text{constants on each connected component}\}
+Circulation on a triangle
+Orient three-node edges by $1\to2,2\to3,3\to1$, with flows $(1,1,1)$.
+$B=\begin{pmatrix}-1&0&1\\1&-1&0\\0&1&-1\end{pmatrix}$.
+Each node has one inflow and one outflow: $Bf=0$.
+This is a nonzero circulation.
+Every flow with prescribed net inflow
+On the same graph, require $b=(1,-1,0)$.
+The equations give $f_3-f_1=1,f_1-f_2=-1,f_2-f_3=0$.
+Set $f_2=f_3=t$; then $f_1=t-1$.
+$f=(-1,0,0)+t(1,1,1)$.
+A negative flow makes a solution invalid.
+The edge orientation is a convention; negative means actual flow is opposite.
+Zero total net inflow suffices on every graph.
+Each connected component must conserve separately.
+What rank has the incidence matrix of a connected four-node graph?
+The transpose kernel contains only constant potentials.
+Its rank is $4-1=3$.
+What is the circulation-space dimension of a three-node tree?
+A tree has two edges and rank two.
+Nullity is $2-2=0$.
+Does reversing one edge's chosen orientation change the Laplacian?
+The corresponding column of $B$ changes sign.
+Its outer product is unchanged, so $BB^T$ is unchanged.
+Unchanged.
+In the triangle example, find squared flow norm at $t=1/3$.
+Substitute all three edge flows.
+$(-2/3)^2+(1/3)^2+(1/3)^2=2/3$.
+Orient triangle edges cyclically. Flows may be negative; node readings are $c-a,a-b,b-c$.
+Does adding the same circulation to every edge change any node's net inflow?
+What does an incidence matrix's kernel describe?
+Circulating edge flows conserving every node
+All node potentials
+Any right-hand side
+Kernel inputs lie in edge space and produce zero net node inflow.
+A particular supply-demand flow plus any circulation preserves supply and demand. Separate node space from edge space before applying the kernel description.
+Conserved circulation
+Set $a=b=c=1$.
+Every node has zero net inflow.
+One edge only
+Set $a=1,b=c=0$.
+Net inflows are $(-1,1,0)$ and sum to zero.
+Reverse an edge
+Set $a=-1,b=c=0$.
+Net inflows are $(1,-1,0)$; negative flow means reversal.

@@ -1,0 +1,65 @@
+Infinite series and partial sums
+Define infinite addition through finite sums
+A series converges when its partial sums converge. Terms tending to zero are necessary, not sufficient.
+Ever smaller contributions can still produce an unbounded total. $\frac1n$ is the key counterexample.
+Sequence versus series
+$a_n$ describes one contribution; $S_N$ describes the accumulated total. Their limits answer different questions.
+What if terms do not tend to zero?
+If partial sums have a finite limit, $a_n=S_n-S_{n-1}\to0$. Thus terms not tending to zero force divergence. The converse fails.
+Can finitely many terms change convergence?
+Adding or removing finitely many terms changes the sum but not convergence. The infinite tail decides.
+Define infinite addition through finite sums
+Use the specified summation order. Convergence means a finite real limit.
+Assume partial sums converge.
+Their consecutive difference is one term.
+Subtract limits to obtain the necessary condition.
+Terms fail to vanish
+Does $\sum_{n=1}^\infty\frac n{n+1}$ converge?
+The individual term satisfies $\frac n{n+1}\to1$.
+The necessary condition fails; no further partial-sum test is needed.
+It diverges.
+The harmonic series
+Why does $\sum\frac1n$ diverge although its terms vanish?
+Group terms by $[2^{k-1}+1,2^k]$; each group has $2^{k-1}$ terms.
+Each term in a group is at least $\frac1{2^k}$; each group contributes at least $\frac12$, with arbitrarily many groups.
+Partial sums are unbounded; the series diverges.
+$a_n\to0$ implies convergence of the series.
+The harmonic series disproves this.
+A divergent series must have terms tending to infinity.
+Terms may tend to zero while the accumulated sum remains unbounded.
+Does $\sum_{n=1}^\infty\frac{n+2}{n}$ converge?
+It diverges.
+Check the terms first.
+Terms tend to 1, not zero.
+What happens to the partial sums of $\sum_{n=1}^\infty(-1)^n$?
+They oscillate between two values and do not converge.
+Compute odd and even partial sums separately.
+$S_{2k}=0$, $S_{2k-1}=-1$.
+Increase the first term of a convergent series by 7. What changes?
+It still converges; its sum increases by 7.
+Compare the partial sums.
+Every partial sum increases by 7, so does the limit.
+Given $a_n\to0$, what must you examine next to decide $\sum a_n$?
+Examine partial sums or use an applicable convergence test.
+A necessary condition is not sufficient.
+Vanishing terms exclude only the simplest cause of divergence. Geometric and harmonic tails behave differently.
+What follows from $a_n\to0$?
+The series converges
+The series diverges
+The test is inconclusive
+This condition is necessary. The harmonic series shows it is insufficient.
+Track the entire running total, not just its newest contribution. Does that total approach a finite value?
+Ten terms
+Set the count to 10.
+The last term is 0.1, yet the partial sum exceeds 2.
+Forty terms
+Set the count to 40.
+Terms keep shrinking while partial sums keep growing.
+Eighty terms
+Set the count to 80.
+A finite window cannot prove unboundedness; the grouping argument does.
+Display harmonic terms $a_n$ and partial sums $S_n$ together.
+If individual terms shrink, must the running total shrink too?
+Distinguish terms from partial sums
+Use the term test to establish divergence
+Prove harmonic divergence by grouping

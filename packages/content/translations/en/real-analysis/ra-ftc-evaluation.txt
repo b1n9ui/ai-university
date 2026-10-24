@@ -1,0 +1,68 @@
+Integral evaluation, substitution, and integration by parts
+An antiderivative's endpoint difference computes an integral only when the antiderivative and integrability hypotheses hold.
+An antiderivative's endpoint difference computes an integral only when the antiderivative and integrability hypotheses hold.
+The mean value theorem turns each endpoint increment into a tagged Riemann-sum contribution.
+Prove the endpoint formula
+State substitution conditions
+Prove the endpoint formula
+If an antiderivative is continuous, differentiable inside, and has integrable derivative, apply the mean value theorem on each piece. Increments telescope; the tagged derivative sums converge to the integral as mesh vanishes.
+State substitution conditions
+Assume a continuously differentiable inner function and an outer integrand continuous on an interval containing its image. Take an integral antiderivative, then apply the chain rule and endpoint formula. The inner function need not be monotone.
+Integration by parts
+Integrate the product rule for two continuously differentiable functions and rearrange. The hypotheses make all terms integrable.
+This Riemann version gives sufficient conditions for the Newton–Leibniz formula.
+F\in C([a,b]),\ F'=f\text{ on }(a,b),\ f\text{ Riemann integrable}\implies\int_a^bf=F(b)-F(a)
+Assigning arbitrary finite endpoint values to the derivative does not change its integral.
+Derivative existence alone does not guarantee Riemann integrability.
+Apply the mean value theorem on each subinterval.
+Endpoint increments telescope.
+Integrability ensures fine tagged sums approach the integral.
+Substitution
+Integrate $2x e^{x^2}$ from zero to one.
+Take $u=x^2$, which is continuously differentiable.
+An antiderivative is $e^{x^2}$, whose endpoint difference is $e-1$.
+$e-1$.
+Integration by parts
+Integrate $xe^x$ from zero to one.
+The product $xe^x$ has derivative $e^x+xe^x$.
+$\int_0^1xe^x dx=[xe^x]_0^1-\int_0^1e^x dx=e-(e-1)$.
+One.
+Must a continuously differentiable substitution be monotone?
+The antiderivative chain rule handles reversals directly.
+No; oriented endpoint differences account for them.
+Not necessarily.
+Is every derivative Riemann integrable?
+A derivative may be unbounded or fail integrability conditions.
+Existence alone is insufficient.
+Not necessarily.
+Find $\int_0^2 2x\,dx$.
+Use the square antiderivative.
+$2^2-0^2=4$.
+Four.
+For $u,v\in C^1([a,b])$, prove integration by parts.
+Integrate the product rule and justify integrability.
+The product is continuously differentiable, with $(uv)'=u'v+uv'$. Each term is continuous, hence Riemann integrable.
+The fundamental theorem gives $u(b)v(b)-u(a)v(a)=\int_a^b u'v+\int_a^b uv'$.
+Rearrange to $\int_a^b uv'=[uv]_a^b-\int_a^b u'v$.
+Rearrange to $\int_a^b uv'=[uv]_a^b-\int_a^b u'v$.
+What is still needed after applying the mean value theorem in the endpoint proof?
+Integrability of the derivative to make tagged sums converge
+Identical tags in every interval
+A monotone function
+Otherwise the finite-sum limit cannot be identified with the integral.
+An antiderivative makes derivative-integrability checks unnecessary
+This Riemann version still requires its hypotheses.
+A substitution that reverses direction is invalid
+With sufficient smoothness, oriented integrals cancel automatically.
+Compare antiderivative endpoint increments with the derivative's Riemann sums. How do they correspond?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+The mean value theorem turns endpoint increments into tagged sums. This Riemann argument still needs derivative integrability.
+Partition intervals: 1
+Set the partition count to $1$. Compare increments and areas row by row, then verify the endpoint difference.
+Antiderivative endpoint difference $0.3333333$; mean-value tagged sum (identity) $0.3333333$; midpoint sum (approximation) $0.25$.
+Partition intervals: 20
+Set the partition count to $20$. Compare increments and areas row by row, then verify the endpoint difference.
+Antiderivative endpoint difference $0.3333333$; mean-value tagged sum (identity) $0.3333333$; midpoint sum (approximation) $0.333125$.
+Partition intervals: 40
+Set the partition count to $40$. Compare increments and areas row by row, then verify the endpoint difference.
+Antiderivative endpoint difference $0.3333333$; mean-value tagged sum (identity) $0.3333333$; midpoint sum (approximation) $0.3332813$.

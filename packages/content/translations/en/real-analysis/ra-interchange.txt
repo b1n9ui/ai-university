@@ -1,0 +1,68 @@
+Conditions for interchanging integrals and derivatives
+Uniform convergence passes integrals on finite intervals, but alone does not pass derivatives.
+Uniform convergence passes integrals on finite intervals, but alone does not pass derivatives.
+Area error is bounded by total width times uniform height error. Slopes can stay large despite small oscillation amplitudes.
+Interchange integration and limits
+Sufficient conditions for derivative interchange
+Interchange integration and limits
+If integrable approximations converge uniformly, first use small-gap partitions to prove the limit integrable. Then bound integral error by interval width times uniform function error.
+Sufficient conditions for derivative interchange
+If each function is continuously differentiable, derivatives converge uniformly to a continuous limit, and function values converge at one input, integral accumulation proves uniform convergence of the functions and differentiability of the limit.
+Identify insufficient conditions
+High-frequency sine divided by frequency tends uniformly to zero, but derivatives are high-frequency cosines. At zero, each derivative is one while the limiting function's derivative is zero.
+Integration and differentiation need different sufficient hypotheses.
+Integration: a finite closed interval, each function Riemann integrable, and uniform convergence.
+Differentiation: each function continuously differentiable, derivatives uniformly convergent, and function values convergent at one point.
+Uniform error first establishes integrability of the limit, then controls integral differences.
+For derivatives, write every function using its integral representation.
+Uniform derivative error and the anchored value error together control the functions.
+A continuous limit and the fundamental theorem identify the derivative.
+Pointwise convergence is insufficient for integrals
+Triangular spikes have support zero to twice the reciprocal index, height equal to the index, and index at least two. What are their integrals?
+Every fixed input eventually lies outside the support, so values tend pointwise to zero.
+Half the base times the height gives integral one for every spike.
+Integral limits are one, unlike the zero function's integral.
+Uniform function convergence is insufficient for derivatives
+Let $f_n(x)=\sin(nx)/n$ converge uniformly on $[0,1]$. Each function is differentiable on the real line. Can derivatives at zero pass to the limit?
+Function magnitude is at most $1/n$, so convergence to zero is uniform.
+$f_n'(0)=1$, but the zero function's derivative is zero.
+Differentiation cannot be interchanged here.
+What controls integral error on the unit interval?
+The total width is one.
+It is at most the uniform function error.
+The uniform error.
+Does uniform function convergence automatically give derivative convergence?
+Use high-frequency sine.
+No.
+Not automatically.
+Can uniformly convergent derivatives coexist with divergent functions if no value is anchored?
+Take growing constant functions.
+All derivatives are zero, while each function may equal its index.
+Yes.
+Construct continuous functions on $[0,1]$ tending pointwise to zero with every integral equal to one, and prove both facts.
+Raise the moving triangular spike's height to its index.
+Let $f_n(x)=n\max(0,1-|nx-1|)$ for $n\ge2$. Its support is $[0,2/n]$ and peak at $1/n$.
+At zero it vanishes; every fixed positive input is eventually outside the support, giving pointwise convergence to zero.
+The triangle has base $2/n$ and height $n$, hence integral one. The zero limit has integral zero, so limit and integration cannot be exchanged here.
+The triangle has base $2/n$ and height $n$, hence integral one. The zero limit has integral zero, so limit and integration cannot be exchanged here.
+What does uniform function convergence directly preserve under the stated hypotheses?
+Integrals of integrable functions on finite intervals
+Derivatives of arbitrary functions
+Integrals on arbitrary infinite intervals
+Interval length and integrability enter the error estimate.
+Every limit operation shares one condition
+Differentiation needs stronger control than integration.
+Derivative control needs no anchored value
+Constant offsets may drift indefinitely.
+Compare high-frequency oscillations and moving spikes. Why do amplitude, slope, and area behave differently?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+Uniform height error controls finite-interval area, while slopes can remain large. Differentiation requires stronger information.
+Function index: 2
+Set the index to $2$. Compare amplitude, derivative, and integral separately rather than assuming all vanish together.
+Uniform function-error bound $0.5$; approximation derivative at zero $1$; limit derivative $0$; current integral $0.3540367$.
+Function index: 31
+Set the index to $31$. Compare amplitude, derivative, and integral separately rather than assuming all vanish together.
+Uniform function-error bound $0.03225806$; approximation derivative at zero $1$; limit derivative $0$; current integral $0.00008871763$.
+Function index: 60
+Set the index to $60$. Compare amplitude, derivative, and integral separately rather than assuming all vanish together.
+Uniform function-error bound $0.01666667$; approximation derivative at zero $1$; limit derivative $0$; current integral $0.0005423369$.

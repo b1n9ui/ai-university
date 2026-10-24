@@ -1,0 +1,65 @@
+First-order linear equations
+Turn the left side into a product derivative
+For $y\prime+p(x)y=q(x)$, multiply by a suitable function to combine the left side into one product derivative.
+Design a factor that supplies the missing term in the product rule, rather than guessing a solution.
+Deriving the integrating factor
+We want $\mu y\prime+\mu p y=(\mu y)\prime$, requiring $\mu\prime=\mu p$; choose $\mu=e^{\int p dx}$.
+Why omit its multiplicative constant?
+Any nonzero constant scales the whole equation equally and is absorbed into the solution's constant.
+What makes an equation linear?
+The unknown and its derivative appear to the first power, with coefficients depending only on the independent variable. Terms $y^2$ or $yy\prime$ do not fit.
+Turn the left side into a product derivative
+$p,q$ are continuous on the interval. Normalize the derivative coefficient to one; the integrating factor is nonzero there.
+Apply the product rule to identify the condition.
+Choose a factor satisfying it.
+Integrate and divide by the nonzero factor.
+A constant input
+Solve $y\prime+2y=4$, $y(0)=1$.
+The integrating factor is $e^{2x}$; the left side becomes $(e^{2x}y)\prime$.
+$e^{2x}y=2e^{2x}+C$; the initial value gives $C=-1$.
+$y=2-e^{-2x}$.
+A variable coefficient
+On $x>0$, solve $y\prime+\frac1xy=x$.
+Choose integrating factor $x$, since $e^{\ln x}=x$.
+$(xy)\prime=x^2$, so $xy=\frac{x^3}{3}+C$.
+$y=\frac{x^2}{3}+\frac Cx$, $x>0$.
+Add the integrating factor directly to the solution.
+Multiply the entire equation by it to create a product derivative.
+Skip normalization of the derivative coefficient.
+The factor uses the coefficient in standard form.
+Solve $y\prime+y=0,y(0)=2$.
+$2e^{-x}$.
+Use an exponential integrating factor.
+$(e^xy)\prime=0$, hence $e^xy=2$.
+Solve $y\prime+y=1,y(0)=0$.
+$1-e^{-x}$.
+The equilibrium is one.
+$(e^xy)\prime=e^x$; integration gives $y=1+Ce^{-x}$, and the initial value gives $C=-1$.
+Give an integrating factor for $2y\prime+4y=6$.
+$e^{2x}$.
+Divide by two first.
+Standard form is $y\prime+2y=3$; integrate coefficient 2.
+Is $y\prime+y^2=x$ a linear equation of this type?
+No.
+Check the unknown's powers.
+The term $y^2$ prevents direct use of this linear integrating-factor formula.
+What should the integrating factor make on the left?
+A product of two integrals
+The derivative of one product
+A constant
+Then integration can recover the unknown function directly.
+Specify the desired product derivative, then find the factor that creates it. This uses the same product rule as integration by parts.
+Coarse steps
+Set the count to 4.
+Four steps on $[0,4]$ oscillate between 1 and 3, while the continuous solution approaches 2.
+Reduce the step size
+Set the count to 16.
+At step size 0.25, the approximation lies closer to the exact solution.
+Refine further
+Set the count to 64.
+Reduce steps further and inspect endpoint error; distinguish algorithm from continuous model.
+Compare exact and Euler solutions of $y\prime=4-2y$, $y(0)=1$.
+How does reducing step size change the gap between polygon and exact curve?
+Normalize a first-order linear equation
+Derive and use an integrating factor
+Check initial values and domains by substitution

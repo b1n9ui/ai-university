@@ -1,0 +1,64 @@
+The binomial theorem and Pascal's identity
+Expansion coefficients count which factors contribute the same term.
+Expansion coefficients count which factors contribute the same term.
+Choose the left or right term in each factor. The selected position set determines how many identical terms occur.
+Explain binomial coefficients
+Partition subsets
+Explain binomial coefficients
+To select a given number of right-hand terms from identical binomial factors, choose their positions. Every such choice produces the same monomial.
+Partition subsets
+Classify subsets by whether they contain one specified element. The two classes reduce to choices from a smaller set, yielding Pascal's recurrence.
+Use special substitutions
+Setting both variables to one counts all subsets. Setting them to one and negative one gives the difference between even-sized and odd-sized subset counts.
+The binomial theorem here has a nonnegative integer exponent.
+Only nonnegative integer exponents are considered.
+The specified element is absent.
+The specified element is present.
+The classes are disjoint and exhaustive.
+Extract a coefficient
+Find the coefficient of $x^2$ in $(1+x)^5$.
+Choose two of the five factors to contribute a variable.
+$\binom52=10$.
+Ten.
+Sum a row
+With rows numbered from zero, what is the sum of row four of Pascal's triangle?
+Set both terms of the binomial to one.
+$2^4=16$.
+Sixteen.
+Compute $\binom63$ from the preceding row.
+Add the two neighboring contributions.
+$\binom53+\binom52=10+10=20$.
+Twenty.
+What is the coefficient of $ab^2$ in $(a+b)^3$?
+Choose two positions for the right-hand term.
+$\binom32=3$.
+Three.
+Does every nonempty finite set have equally many even-sized and odd-sized subsets?
+Toggle one fixed element.
+This gives a bijection between even-sized and odd-sized subsets.
+Yes.
+Does the empty set have equally many even-sized and odd-sized subsets?
+Check the starting case separately.
+Only its empty subset is even-sized; there are no odd-sized subsets.
+No.
+Why can the two classes in Pascal's recurrence be added?
+Their values are close
+They are disjoint and cover every case
+They have equal size
+Classify by whether a specified element is selected.
+Pascal's triangle starts at row one
+Here exponent zero corresponds to row zero.
+Equal parity counts also hold for an empty base set
+The toggling bijection needs at least one element.
+Select an entry. Which two entries from the preceding row contribute to it?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+Here exponent zero corresponds to row zero.
+Row: 1
+Set the control to $1$. Observe which objects, relations, or counts change.
+At this setting: actual column $1$; coefficient $1$; upper-left contribution $1$; upper-right contribution $0$.
+Row: 5
+Set the control to $5$. Observe which objects, relations, or counts change.
+At this setting: actual column $2$; coefficient $10$; upper-left contribution $4$; upper-right contribution $6$.
+Row: 10
+Set the control to $10$. Observe which objects, relations, or counts change.
+At this setting: actual column $2$; coefficient $45$; upper-left contribution $9$; upper-right contribution $36$.

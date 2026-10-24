@@ -1,0 +1,66 @@
+Continuous functions on compact sets and extrema
+Continuous functions map compact sets to compact sets, ensuring both extrema are attained.
+Continuous functions map compact sets to compact sets, ensuring both extrema are attained.
+Boundedness prevents infinite outputs. Attainment also needs points approaching an extremum to remain within the domain.
+Prove continuous images compact
+Obtain bounds and extrema
+Prove continuous images compact
+Pull back an arbitrary open cover of the image under the continuous map. It gives a relatively open cover of the domain. Select finitely many by compactness, then map back.
+Obtain bounds and extrema
+A compact real image is closed and bounded. Approach its supremum by image members; closedness keeps that supremum in the image, giving a maximum. Similarly for a minimum.
+Check missing hypotheses
+The identity on an open interval is bounded but misses endpoint extrema. A discontinuous function on a closed bounded interval can be unbounded. The word “interval” alone is insufficient.
+A continuous real-valued function on a nonempty compact domain attains its maximum and minimum.
+The domain is nonempty and compact; the function is continuous and real-valued.
+Take the image supremum and choose inputs whose values approach it.
+Compactness gives a convergent input subsequence with limit still in the domain.
+Continuity transfers the limit to the outputs.
+Attained extrema
+Find extrema of $f(x)=x^2$ on $[-1,2]$.
+The function is continuous on a closed bounded interval.
+Zero gives minimum zero; the right endpoint two gives maximum four.
+Minimum zero; maximum four.
+Without continuity
+Let $f(0)=0,f(x)=1/x$ for $0<x\le1$. Is it bounded on $[0,1]$?
+Reciprocal inputs tend to zero.
+Their outputs are the natural numbers.
+Unbounded; continuity at zero fails.
+Does compactness of a continuous image require differentiability?
+The proof uses only open preimages or sequential continuity.
+Differentiability is unnecessary.
+No.
+Must a continuous function on an open interval attain a maximum?
+Use the identity.
+The upper endpoint is omitted.
+No.
+Is a continuous function on a compact set bounded?
+Its image is compact.
+Compact real subsets are bounded.
+Yes.
+Prove a continuous real-valued function on a nonempty compact set attains a minimum too.
+Apply the maximum theorem to which function?
+If $f$ is continuous, so is $g=-f$.
+The maximum theorem gives $x_*\in K$ with $-f(x)\le-f(x_*)$ for all $x\in K$.
+Multiply by negative one to get $f(x_*)\le f(x)$, so $f$ attains its minimum at $x_*$.
+Multiply by negative one to get $f(x_*)\le f(x)$, so $f$ attains its minimum at $x_*$.
+Must a continuous bounded function attain a maximum?
+Yes
+Appropriate domain conditions are also needed
+Yes, if positive
+The identity on an open interval is bounded but does not attain its supremum.
+Bounded means attaining the bound
+The supremum need not lie in the image.
+A closed interval gives boundedness without continuity
+Discontinuous examples can grow without bound near an endpoint.
+Compare closed-interval, open-interval, and discontinuous cases. Which extremum hypotheses fail?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+Boundedness rules out infinite outputs, not an unattained supremum. The limiting input must remain in the domain too.
+Continuous on a closed interval
+Select “Continuous on a closed interval” and check the readouts. Inspect endpoint membership and distinguish the supremum from an attained maximum.
+Supremum $1$; maximum attained: yes; minimum $0$.
+Continuous on an open interval
+Select “Continuous on an open interval” and check the readouts. Inspect endpoint membership and distinguish the supremum from an attained maximum.
+Supremum $1$; maximum attained: no; minimum $0$.
+Discontinuous on a closed interval
+Select “Discontinuous on a closed interval” and check the readouts. Inspect endpoint membership and distinguish the supremum from an attained maximum.
+Current output $1$; bounded: no.

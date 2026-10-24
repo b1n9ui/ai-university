@@ -1,0 +1,61 @@
+Flux and oriented area
+Accumulate only what crosses the surface
+Flux integrates the field's component along a chosen normal. Tangential flow does not cross the surface.
+A field crossing a net head-on contributes most; flow along it contributes none. Reversing its front side reverses the sign.
+Compute oriented surface flux
+Keep normal and area element consistent
+Unit normal or cross product?
+A unit normal needs the actual area element. The unnormalized parameter cross product already includes area scaling: do not multiply it again.
+Outward on a closed surface
+Normals point away from the enclosed material. On a cavity boundary they point into the cavity, not necessarily away from the origin.
+Does zero flux imply no flow?
+Tangential flow or cancellation of inward and outward flow can give zero net flux. Net flow differs from total crossing magnitude.
+Accumulate only what crosses the surface
+The surface is orientable and piecewise regular; the field is continuous on it. The parameter cross product must match the chosen normal; otherwise negate it.
+Take the normal component.
+Multiply by actual patch area.
+Combine unit normal and area scaling.
+Flux through a tilted plane
+Find upward flux of $\mathbf F=(0,0,2)$ across $z=x$ above the unit square.
+The oriented area vector is $(-1,0,1)dxdy$.
+The dot product is constantly 2, so flux is 2. Tilt scaling is already included.
+2.
+Radial field on a sphere
+Find outward flux of $\mathbf F=(x,y,z)$ through the radius-2 sphere.
+The unit normal is position divided by 2, so the normal field component is 2.
+Sphere area is $16\pi$; multiplication gives $32\pi$.
+$32\pi$.
+After using a parameter cross product, multiply by area scaling again.
+The cross product already contains that factor.
+Zero net flux means the field vanishes everywhere.
+Tangential flow or balanced crossing can give zero net flux.
+Find flux of constant field $(0,0,3)$ through an upward horizontal patch of area 2.
+Multiply the normal component by area.
+$3\cdot2=6$.
+Find flux of constant field $(0,0,3)$ through a downward horizontal patch of area $2$.
+Reverse the normal.
+The value changes from 6 to $-6$.
+Find flux of a horizontal field through a horizontal surface.
+Dot it with the vertical normal.
+Every dot product is zero.
+When using an unnormalized cross product for flux, must $\sqrt{1+g_x^2+g_y^2}$ be included separately?
+Is the area factor already present?
+The cross product supplies direction and area scaling; another radical duplicates it.
+No.
+How does reversing surface orientation change flux?
+Unchanged
+Negates it
+Turns it into area
+The chosen normal determines flux sign.
+Vertical field $(0,0,1)$ through upward patch $z=cx$; show unit normal and area factor together.
+Must vertical flux increase as the tilted surface's area grows?
+Multiply the normal component by actual area; a parameter cross product already combines them.
+Horizontal patch
+Set plane slope $c$ to $0$.
+The field crosses head-on; unit-parameter-patch flux is 1.
+Tilted patch
+Set plane slope $c$ to $1$.
+The normal component decreases while area grows; they compensate.
+Steeper patch
+Set plane slope $c$ to $2$.
+For fixed horizontal projection, flux stays 1 while actual area grows.

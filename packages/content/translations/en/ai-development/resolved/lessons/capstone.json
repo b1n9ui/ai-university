@@ -1,0 +1,199 @@
+{
+  "id": "capstone",
+  "chapterId": "chapter-6",
+  "number": "6.3",
+  "title": "Lead one complete development cycle with AI",
+  "subtitle": "Keep control from the initial idea to acceptance.",
+  "concept": "A full cycle defines the problem, limits scope, sets criteria, implements in steps, verifies, records and delivers. It is more than one request.",
+  "intuition": "An assistant can prepare and cook, while you still choose the menu, judge the result and decide whether to serve it.",
+  "objectives": [
+    "Write a one-page plan and three kinds of acceptance cases, then delegate one small task.",
+    "Deliver a reproducible project and explain its behavior, limits and next learning steps independently."
+  ],
+  "body": [
+    {
+      "title": "Write your own plan first",
+      "text": "Use the study list without reading the reference implementation initially. Write scenario, now/later scope, file responsibilities, data fields and acceptance cases. Give the agent one small task brief. The reference is a comparison, not proof of your understanding. Explain each step's purpose and check yourself."
+    },
+    {
+      "title": "Progress through checkpoints",
+      "text": "Checkpoint 1: page and creation. 2: completion and deletion. 3: persistence and backup. 4: tests, diagnosis and instructions. At each, review diffs, run checks, inspect the browser and commit. Suggestions for chat, payments or synchronization should be judged against agreed scope, not novelty."
+    },
+    {
+      "title": "Use explanation to find the next lesson",
+      "text": "Have another person run README. Explain where data lives, what commit records, why blanks are rejected, how to diagnose refresh loss, who sees data and which cases remain unchecked. Revisit lessons you cannot explain. This framework supports small projects; further study of programming, HTTP, data and security remains valuable."
+    }
+  ],
+  "formalDefinition": {
+    "text": "A full cycle defines the problem, limits scope, sets criteria, implements in steps, verifies, records and delivers. It is more than one request.",
+    "conditions": [
+      "For small personal learning projects. In shared repositories, follow the team's conventions.",
+      "This method produces checkable evidence; it cannot guarantee arbitrary AI output is correct."
+    ]
+  },
+  "workflow": [
+    "Write a one-page plan and three kinds of acceptance cases, then delegate one small task.",
+    "At each checkpoint, review, verify, correct and record a focused change.",
+    "Deliver a reproducible project and explain its behavior, limits and next learning steps independently."
+  ],
+  "workedExamples": [
+    {
+      "title": "One creation-feature cycle",
+      "problem": "How do you go from requirement to commit?",
+      "steps": [
+        "Scenario: record tomorrow's study plan in the evening.",
+        "Task: create nonblank titles and reject blanks, deferring persistence for now.",
+        "Review the diff, run rule tests, try both inputs and commit."
+      ],
+      "answer": "Record: creation and blank rejection implemented; tests actually passed; ordinary and blank browser submissions checked. Refresh persistence is not implemented and belongs to the next checkpoint. Do not call one checkpoint the entire completed project."
+    },
+    {
+      "title": "Choose the next step",
+      "problem": "After a personal list, should you add search or multiuser synchronization?",
+      "steps": [
+        "Ask whether the problem is finding many items or actually sharing them.",
+        "Search extends local filtering; synchronization changes data location and permissions.",
+        "Choose the actual problem, then write new scope and criteria."
+      ],
+      "answer": "For many hard-to-find plans, add search and test empty queries, case handling and completed items. For genuine sharing, design permissions and conflicts first; this is not an equally small change."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "Finishing means I no longer need to understand code.",
+      "correction": "Understand the key path at least. Learning the language improves your judgment."
+    },
+    {
+      "claim": "Good developers never use AI.",
+      "correction": "AI can implement and explain while you determine goals, inspect results and own decisions."
+    }
+  ],
+  "practice": [
+    {
+      "id": "capstone-p1",
+      "difficulty": 2,
+      "problem": "Name seven steps in one collaboration cycle.",
+      "hint": "From problem to delivery.",
+      "answer": "Problem → scope → acceptance → small implementation steps → verification and correction → Git records → delivery instructions.",
+      "solution": [
+        "Each step provides evidence for the next.",
+        "The process goes beyond prompting."
+      ]
+    },
+    {
+      "id": "capstone-p2",
+      "difficulty": 2,
+      "problem": "Creation alone is complete. May you claim the whole project finished?",
+      "hint": "Separate a checkpoint from the first-release goal.",
+      "answer": "No. Record accepted creation while persistence and other checkpoints remain pending.",
+      "solution": [
+        "State progress accurately.",
+        "Keep incomplete work in the plan."
+      ]
+    },
+    {
+      "id": "capstone-p3",
+      "difficulty": 2,
+      "problem": "A plan cannot be found. Search or synchronization first?",
+      "hint": "Establish the cause.",
+      "answer": "Many items may call for search; records on another device concern synchronization. Reproduce the actual user difficulty first.",
+      "solution": [
+        "The same symptom may have different causes.",
+        "Choose the design that addresses this problem."
+      ]
+    },
+    {
+      "id": "capstone-p4",
+      "difficulty": 3,
+      "problem": "How can you tell you are learning this framework?",
+      "hint": "Explain without quoting the text.",
+      "answer": "You can write briefs, locate data, explain staging, choose boundary cases, report verification limits and help someone run the project.",
+      "solution": [
+        "Use independent explanation and actual operation.",
+        "Counted terminology is not understanding."
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "What must you control in AI-assisted development?",
+    "choices": [
+      "An ever-growing wish list",
+      "Goals, boundaries, evidence and delivery responsibility",
+      "The most complicated framework every time"
+    ],
+    "correctIndex": 1,
+    "feedback": [
+      "Ideas do not automatically become verifiable projects.",
+      "These keep AI work aligned with your direction.",
+      "Complexity is not suitability."
+    ]
+  },
+  "interactiveVisual": {
+    "kind": "decision",
+    "prediction": "Without a reference answer next time, how would you start?",
+    "steps": [
+      {
+        "question": "What is the first material?",
+        "choices": [
+          "Every feature wish",
+          "User scenario, first-release scope and criteria",
+          "Model rankings"
+        ],
+        "correctIndex": 1,
+        "feedback": [
+          "Scope and completion are unclear.",
+          "This gives collaboration a checkable starting point.",
+          "Rankings do not decide user purpose."
+        ]
+      },
+      {
+        "question": "The agent reports completion. What do you do?",
+        "choices": [
+          "Review diffs, evidence and acceptance yourself",
+          "Accept everything immediately",
+          "Compare line counts"
+        ],
+        "correctIndex": 0,
+        "feedback": [
+          "Decide from actual outcomes.",
+          "Judgment and verification are missing.",
+          "Lines do not measure user value."
+        ]
+      },
+      {
+        "question": "What should delivery leave behind?",
+        "choices": [
+          "Source, setup, version, checks and limitations",
+          "Only screenshots",
+          "Only success"
+        ],
+        "correctIndex": 0,
+        "feedback": [
+          "Another person can reproduce and continue.",
+          "A screenshot cannot run or restore the project.",
+          "There are no usable materials."
+        ]
+      }
+    ],
+    "followUp": "Independently deliver the appendix project or one of comparable scope, including the capstone's evidence."
+  },
+  "prerequisites": [
+    "release"
+  ],
+  "difficulty": 4,
+  "misconceptionTags": [
+    "capstone-guess",
+    "capstone-evidence"
+  ],
+  "sources": [
+    "mdn-start",
+    "node-test",
+    "git-record"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.1.1",
+    "status": "first-edition",
+    "humanReviewed": false
+  }
+}

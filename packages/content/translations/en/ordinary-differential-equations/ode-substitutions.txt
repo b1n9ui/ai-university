@@ -1,0 +1,61 @@
+Homogeneous substitutions and integrating-factor tests
+A substitution should reduce variable dependence
+A ratio substitution
+For $y'=F(y/t)$ on an interval with $t\ne0$, set $y=tv$ to obtain $t v'=F(v)-v$.
+Two meanings of homogeneous
+Ratio homogeneity differs from homogeneous linearity. $y'=1+y/t$ has a ratio structure, but its standard linear right-hand side is nonzero.
+Another use of integrating factors
+For a nonexact equation, if $(M_y-N_t)/N$ depends only on time, exponentiate its integral for a time integrating factor. If $(N_t-M_y)/M$ depends only on state, use a state integrating factor. Work where denominators are nonzero.
+Substitute into $y'=1+y/t$.
+Separate the new variable.
+Return to the original unknown.
+A ratio equation
+Solve $y'=1+y/t,y(1)=0$.
+Set $y=tv$ to obtain $v'=1/t$.
+Integrate on positive time; the initial condition gives $C=0$.
+$y=t\ln t$, $t>0$.
+Find an integrating factor
+How can $2y\,dt+t\,dy=0$ become exact on $t>0$?
+$(M_y-N_t)/N=(2-1)/t=1/t$.
+The integrating factor is $t$ and new potential $t^2y$.
+$t^2y=C$.
+Is the derivative of $y=tv$ equal to $tv'$?
+Apply the product rule.
+The term $v$ is also required.
+$y'=v+tv'$.
+Solve $y'=2y/t$ on positive time.
+Separate variables or substitute the ratio.
+$dy/y=2dt/t$, retaining the zero solution too.
+$y=Ct^2$.
+Can the ratio substitution for $y'=F(y/t)$ directly include time zero?
+Check where the ratio is defined.
+$y/t$ is undefined at zero.
+No.
+If $(M_y-N_t)/N=2t$, give a time integrating factor.
+Integrate, then exponentiate.
+$\mu=e^{\int2t dt}$.
+$e^{t^2}$.
+Ratio-homogeneous and homogeneous linear are the same classification.
+They describe different structures.
+Substituting a new variable lets you ignore the product rule.
+Omitting a new-variable term changes the equation.
+When the right side depends only on a ratio, a ratio substitution can make the first-order equation separable.
+If slope depends only on height divided by time, use that ratio as the new unknown.
+Use ratio substitutions
+Identify integrating factors depending on one variable
+Homogeneous substitutions and integrating-factor tests
+Assume $t\ne0$. Check zeros of $F(v)-v$ before division and verify substituted solutions in the original equation.
+After setting $y=tv$, what is the first derivative?
+Both the independent variable and the new function vary with time.
+A useful substitution simplifies the equation. Differentiate correctly before checking separability.
+Reference solution
+The solution passes through time one and value zero.
+Set integration constant $C$ to $0$ and positive time $t$ to $1$.
+Larger ratio
+Increasing the constant raises the initial ratio.
+Set integration constant $C$ to $1$ and positive time $t$ to $1$.
+Approach time zero
+Approach the boundary within positive time without including the singularity in standard form.
+Set integration constant $C$ to $0$ and positive time $t$ to $0.25$.
+Draw only on positive time and vary the integration constant to compare solutions of the same ratio equation.
+How does changing the integration constant affect the value at time one?

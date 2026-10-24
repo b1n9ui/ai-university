@@ -1,0 +1,64 @@
+The divergence theorem and closed surfaces
+Replace outward boundary flux by interior net outflow
+The divergence theorem equates outward flux through a closed surface with the integral of divergence over its enclosed volume.
+Split a solid into boxes. Shared faces have opposite outward normals and cancel, leaving the exterior shell.
+Compute outward closed-surface flux
+Add missing pieces and handle cavities and singularities
+Must the surface be closed?
+The theorem needs the whole volume boundary. Add a missing cap, compute the closed flux, then subtract the cap's flux.
+Cavity normals
+Point outward from the actual material. On inner boundaries this means into the cavity, not always away from the origin.
+Singularities
+The field must be continuously differentiable on an open neighborhood of the solid. A point-source field undefined at the origin cannot have enclosing flux declared zero from its outside divergence.
+Replace outward boundary flux by interior net outflow
+The solid is bounded with piecewise smooth outward-oriented boundary. The field is continuously differentiable on an open neighborhood including solid and boundary. Include cavity boundaries.
+Apply the fundamental theorem to opposite box faces.
+Add all three coordinate contributions.
+Subdivision cancels oppositely oriented common faces.
+Radial flux through a sphere
+Find outward flux of $\mathbf F=(x,y,z)$ through the radius-2 sphere.
+Divergence is 3.
+Multiply by volume $32\pi/3$, giving $32\pi$, matching direct calculation.
+$32\pi$.
+Adding a base
+Find outward flux of $\mathbf F=(0,0,z+1)$ through the unit upper hemisphere.
+Add its base disk. Divergence one gives total closed flux $2\pi/3$.
+The base points down and the vertical field component is one, giving base flux $-\pi$.
+Subtract base flux from closed flux to obtain $5\pi/3$.
+$\frac{5\pi}3$.
+An open-surface flux directly equals a volume divergence integral.
+Close the surface first, then remove the added flux.
+A one-point singularity can be ignored.
+It may invalidate derivative hypotheses while retaining nonzero flux.
+Find outward flux of $(2x,2y,2z)$ through the unit sphere.
+Multiply divergence six by ball volume.
+$6\cdot4\pi/3=8\pi$.
+$8\pi$.
+Find net flux of a constant field through any regular closed surface.
+Its divergence vanishes.
+The field is smooth everywhere; its divergence integral is zero.
+What happens to radial-field flux if a sphere is oriented inward?
+Reverse the normal.
+Magnitude is unchanged and sign reversed.
+It changes sign.
+Where does a spherical shell's inner outward normal point?
+Out of the shell's material.
+The inner surface borders the cavity, so its normal points toward the center.
+Into the cavity.
+To which surface does the divergence theorem apply directly?
+Any surface patch
+The full outward boundary of a volume
+Only a disk
+Open surfaces require adding and subtracting missing pieces.
+Radial field $\mathbf F=(x,y,z)$ through a variable-radius sphere. Arrows use common scale 0.22.
+If radius doubles, why does flux grow by more than area's factor four?
+The shell's net outflow equals total net outflow of interior boxes; common-face contributions cancel.
+Small sphere
+Set sphere radius $R$ to $0.5$.
+Radial flux scales as radius cubed.
+Unit sphere
+Set sphere radius $R$ to $1$.
+Outward flux is $4\pi$.
+Large sphere
+Set sphere radius $R$ to $2$.
+Doubling radius multiplies flux by eight; boundary field strength also increases.

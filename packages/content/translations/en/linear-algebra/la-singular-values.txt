@@ -1,0 +1,63 @@
+Singular values and length scaling
+Independent length scales of a general matrix
+Singular values measure length scaling along special orthogonal input directions and are always nonnegative.
+A general planar matrix maps a unit circle to an ellipse. Its semiaxis lengths are singular values; a collapsed semiaxis has length zero.
+Find singular values from the transpose product
+Distinguish singular values from eigenvalues
+How do you calculate an inverse?
+$A^TA$ is symmetric positive semidefinite. Its nonnegative eigenvalue square roots are singular values, usually listed in decreasing order.
+Why do they describe length?
+$\|Av\|^2=v^TA^TAv$. If $v$ is a unit eigenvector of $A^TA$, its output length is the square root of the eigenvalue.
+How do they differ from eigenvalues?
+Eigenvalues require a square matrix and preserve a direction line. Singular values allow rectangular matrices and measure length scaling only. A negative eigenvalue reverses direction without producing a negative singular value.
+Singular values and length scaling
+For real matrices, the number of nonzero singular values equals rank. A rectangular full diagonal factor has $\min(m,n)$ positions; extra input-kernel directions correspond to zero eigenvalues.
+Write squared length as a quadratic form.
+The symmetric spectral theorem supplies orthogonal input directions.
+Calculate output length for a unit input.
+Signs do not carry into singular values
+Find the singular values of $A=\operatorname{diag}(-3,2)$.
+$A^TA=\operatorname{diag}(9,4)$.
+Take nonnegative square roots and sort.
+3, 2.
+A rectangular matrix
+Find the nonzero singular values and kernel of $A=\begin{pmatrix}2&0&0\\0&1&0\end{pmatrix}$.
+$A^TA=\operatorname{diag}(4,1,0)$.
+Nonzero singular values are $2,1$; the kernel is the third coordinate axis.
+Two nonzero singular values; one input direction is lost.
+Singular values are eigenvalues.
+Generally not. Rectangular matrices do not even have ordinary eigenvalues.
+Singular values can be negative.
+They measure length scaling and are nonnegative by definition.
+Find the largest singular value of $A=\operatorname{diag}(4,-1)$.
+Square, then take the nonnegative root.
+The result is $4,1$.
+What singular values does an orthogonal matrix have?
+Examine transpose times itself.
+$Q^TQ=I$, whose eigenvalues are all one.
+All one.
+What does a zero singular value mean?
+Some input direction has zero output length.
+A direction is collapsed, so the matrix lacks the corresponding full rank.
+A degenerate direction exists.
+Which maximum does $\|A\|_2$ represent?
+Restrict the input to unit length.
+$\max_{\|x\|=1}\|Ax\|=\sigma_1$.
+The largest output length for a unit input.
+$A=R_\theta\operatorname{diag}(2,s)$: scale the unit circle along two directions, then rotate. Semiaxis lengths are singular values.
+How do the ellipse's semiaxes reflect length scaling?
+What signs can singular values have?
+Any real sign
+Strictly positive only
+Nonnegative, including zero
+Collapse gives zero; reversing direction does not give negative length.
+Eigenvalues ask whether direction is preserved; singular values ask how much length changes. General matrices require separate answers.
+Two nonzero directions
+Set $\theta=0,s=1$.
+Semiaxes have lengths two and one; rank two.
+Change only output direction
+Set $\theta=\pi/4,s=1$.
+The semiaxes rotate without changing length.
+A zero singular value
+Set $\theta=\pi/4,s=0$.
+The ellipse collapses to a segment; rank one.

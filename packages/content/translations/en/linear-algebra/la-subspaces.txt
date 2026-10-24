@@ -1,0 +1,66 @@
+Vector spaces and subspaces
+Closed under addition and scaling
+A subspace is a subset that remains closed under the original addition and scalar multiplication.
+Lines and planes through the origin support vector operations on their own. Translating them generally breaks closure because sums leave the set.
+Test subspace closure
+Recognize counterexamples excluding the origin
+Must vectors be arrows?
+Matrices and polynomials can also be added and scaled. They are vectors when the vector space axioms hold. This book mainly uses finite-dimensional real spaces.
+How do you test a subspace?
+Check that zero belongs, then that every linear combination of two members remains inside. This avoids checking every vector space axiom again.
+Does the zero set count?
+The set containing only zero is a subspace. The empty set is not, since it lacks zero.
+Vector spaces and subspaces
+W\le V\iff 0\in W\text{ and }au+bv\in W\quad(u,v\in W;\ a,b\in\mathbb R)
+Use the original space's operations. Do not change them during the test.
+Check that zero belongs.
+Check every linear combination.
+The other axioms are inherited from the original space.
+W\text{ uses the same operations as }V
+Homogeneous constraints define a subspace
+Is $W=\{(x,y,z):x+y-z=0\}$ a subspace?
+The zero vector satisfies the constraint.
+If $u,v$ satisfy the homogeneous equality, so does $au+bv$.
+It is a plane through the origin.
+Translation breaks closure
+Is the point set $x+y=1$ a subspace?
+Zero does not satisfy the equation.
+Adding two members changes the coordinate sum to $2$.
+No.
+Every line is a subspace.
+It must pass through the origin and use the original operations.
+Checking a few sums is enough.
+Closure must hold for every member and scalar.
+Is $\{(x,0):x\in\mathbb R\}$ a subspace?
+Check zero and linear combinations.
+The vertical coordinate stays zero under every linear combination.
+Yes.
+Is the first quadrant including its boundary a subspace?
+Test negative scaling.
+$(1,0)$ belongs, but $-(1,0)$ does not.
+No.
+Do real polynomials of degree at most $2$, including zero, form a space?
+Addition cannot create higher-degree terms.
+Addition and scaling preserve the degree bound, and zero is included.
+They form a vector space.
+Is the intersection of two subspaces a subspace?
+Where do linear combinations of vectors in both spaces belong?
+Zero belongs to the intersection; every linear combination stays in both spaces.
+Yes.
+The generators are $u=(1,0,0),v=(1,c,0)$. The faint plane shows their full span; the outline shows only the part drawn with bounded coefficients.
+How does the span change when the two generating directions become parallel?
+Which set cannot be a subspace?
+The set containing only zero
+A nonempty set that excludes zero
+The solution set of a homogeneous linear system
+Every vector space contains zero.
+A subspace is not an arbitrary region. You must be able to add, subtract, and scale its members freely without leaving it.
+Two independent directions
+Set $c=1$.
+The vectors span the entire horizontal plane, of dimension two.
+Nearly parallel
+Set $c=0.1$.
+The bounded-coefficient region is narrow, but the span is still the whole plane.
+Exactly dependent
+Set $c=0$.
+The vectors coincide, so their span is just a line.

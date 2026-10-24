@@ -1,0 +1,65 @@
+Partial orders, Hasse diagrams, and lattices
+A partial order permits incomparable objects; a total order requires every pair to be comparable.
+A partial order permits incomparable objects; a total order requires every pair to be comparable.
+Under inclusion, two different singletons are incomparable, yet may still have a common upper bound.
+Recognize partial orders
+Read a Hasse diagram
+Recognize partial orders
+A partial order is reflexive, antisymmetric, and transitive. Examples include numerical less-than-or-equal, set inclusion, and divisibility on positive integers.
+Read a Hasse diagram
+For a finite partial order, omit loops and transitive edges, draw only covering relations, and place greater elements above. Missing direct edges do not imply incomparability: check upward paths.
+Distinguish maximal elements and lattices
+A maximal element has nothing strictly above it. A greatest element is above every element. A lattice gives every pair a unique least upper bound and greatest lower bound.
+A power set ordered by inclusion is a lattice: union and intersection give the least upper bound and greatest lower bound.
+Hasse diagrams here represent finite partial orders.
+A least upper bound is below every other upper bound.
+The union contains both sets.
+Every common upper bound contains their union.
+Dually, intersection gives the greatest lower bound.
+Incomparability
+Compare $\{1\}$ and $\{2\}$ under inclusion.
+Each has an element missing from the other.
+Neither inclusion holds.
+They are incomparable.
+Two meanings of “largest”
+A partial order consists of two incomparable elements. How many maximal and greatest elements does it have?
+Neither element has anything strictly above it.
+Neither is above the other.
+Two maximal elements; no greatest element.
+How many greatest elements does the power set of a three-element set have?
+Consider the set containing every base element.
+The universe uniquely contains every subset.
+One.
+Under divisibility on positive integers, what is the greatest lower bound of six and ten?
+Find their greatest common divisor.
+$\gcd(6,10)=2$.
+Two.
+Does the absence of a direct Hasse edge mean incomparability?
+There may be an upward path through other vertices.
+Transitive edges are omitted; a path can still establish comparison.
+No.
+Can a partial order have two different greatest elements?
+Use antisymmetry.
+If each is above the other, they are equal.
+No.
+Is every maximal element greatest?
+Yes
+No
+Yes, for every nonempty order
+Several incomparable maximal elements may coexist.
+Every pair in a partial order is comparable
+That is the additional requirement for a total order.
+Relations omitted from a Hasse diagram do not hold
+Reflexive and transitive relations still hold.
+Change the number of base elements. How do covering edges and incomparable pairs change in the power-set lattice?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+That is the additional requirement for a total order.
+Base-set size: 1
+Set the control to $1$. Observe which objects, relations, or counts change.
+At this setting: subsets $2$; covering edges $1$.
+Base-set size: 2
+Set the control to $2$. Observe which objects, relations, or counts change.
+At this setting: subsets $4$; covering edges $4$.
+Base-set size: 3
+Set the control to $3$. Observe which objects, relations, or counts change.
+At this setting: subsets $8$; covering edges $12$.

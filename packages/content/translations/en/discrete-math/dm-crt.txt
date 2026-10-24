@@ -1,0 +1,66 @@
+Modular inverses and the Chinese remainder theorem
+Coprimality gives inverses and lets two remainder conditions determine a unique class modulo the product.
+Coprimality gives inverses and lets two remainder conditions determine a unique class modulo the product.
+Follow the arithmetic progression satisfying the first congruence, then find where it also satisfies the second.
+Check invertibility
+Combine coprime moduli
+Check invertibility
+An integer is invertible modulo a given modulus exactly when they are coprime. Its coefficient in Bézout's identity, reduced modulo that modulus, is an inverse.
+Combine coprime moduli
+For coprime moduli, repeatedly adding the first modulus visits every residue modulo the second. A common solution therefore exists and is unique modulo the product.
+Handle noncoprime moduli
+A solution exists only when the difference of the remainders is divisible by the gcd of the moduli. If compatible, the solution is unique modulo the lcm.
+Uniqueness modulo the product in the Chinese remainder theorem requires pairwise coprime moduli.
+\gcd(m,n)=1\implies x\equiv a\pmod m,\ x\equiv b\pmod n\text{ is unique modulo }mn\text{}
+Moduli are positive integers.
+Check compatibility when the moduli are not coprime.
+Parameterize the first congruence.
+Substitute into the second.
+Use an inverse to solve for the parameter.
+Combine two remainders
+$x\equiv2\pmod3,\ x\equiv3\pmod5$.
+$x=2+3t$, so $3t\equiv1\pmod5$.
+The inverse of three is two, so $t\equiv2\pmod5$.
+$x\equiv8\pmod{15}$.
+Incompatible conditions
+Can $x\equiv0\pmod2,\ x\equiv1\pmod4$ both hold?
+The first requires an even integer.
+The second requires an odd integer; the remainder difference is not divisible by two.
+No solution.
+What is the inverse of three modulo seven?
+Find a product with remainder one.
+$3\cdot5=15\equiv1\pmod7$.
+Five.
+Does four have an inverse modulo six?
+Compute the gcd first.
+The gcd is two.
+No.
+Find the least nonnegative solution of $x\equiv1\pmod2,\ x\equiv2\pmod3$.
+List odd integers.
+One and three fail; five works.
+Five.
+Do noncoprime moduli always make a system unsolvable?
+Consider two zero remainders.
+Zero satisfies both zero congruences.
+No; compatibility must be checked.
+What is the necessary and sufficient condition for invertibility?
+The integer is less than the modulus
+The integer and modulus are coprime
+The modulus is even
+Bézout proves sufficiency; the inverse equation also proves necessity.
+Noncoprime moduli always give no solution
+Compatible remainders can still have solutions.
+A solvable system has just one integer solution
+Uniqueness concerns a residue class, not a single integer.
+Change the remainders modulo three and five. How does their unique intersection move?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+Compatible remainders can still have solutions.
+Remainder modulo three: 0
+Set the control to $0$. Observe which objects, relations, or counts change.
+At this setting: least nonnegative solution $3$.
+Remainder modulo three: 1
+Set the control to $1$. Observe which objects, relations, or counts change.
+At this setting: least nonnegative solution $13$.
+Remainder modulo three: 2
+Set the control to $2$. Observe which objects, relations, or counts change.
+At this setting: least nonnegative solution $8$.

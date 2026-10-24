@@ -258,7 +258,7 @@ export function LessonPage({ lesson: l }: { lesson: Lesson }) {
                 {localizeNode(l.workedExamples.map((ex, i) => (
                   <div className="worked-example" key={i}>
                     <header>
-                      <span>{tr("例题")}{localizeNode(i + 1)}</span>
+                      <span>{tr(`例题 ${i + 1}`)}</span>
                       <h3><MathText text={tr(ex.title)} /></h3>
                     </header>
                     <p className="example-problem">

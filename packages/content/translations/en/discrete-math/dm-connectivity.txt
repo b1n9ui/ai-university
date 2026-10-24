@@ -1,0 +1,67 @@
+Connectivity, breadth-first search, and bipartite graphs
+Breadth-first search explores by distance layers; the layer number is the minimum number of edges from the source.
+Breadth-first search explores by distance layers; the layer number is the minimum number of edges from the source.
+Visit vertices one edge away before those two edges away. For now, every edge costs one.
+Find connected components
+Use a queue to build layers
+Find connected components
+Traverse every vertex reachable from an unvisited vertex to obtain one component. Repeat until all vertices are visited to count the whole graph's components.
+Use a queue to build layers
+A first-in, first-out queue expands shorter distances first. Record a parent when discovering each vertex to reconstruct a shortest edge-count path.
+Test bipartiteness
+Color by the parity of BFS distance. An edge joining same-colored vertices produces an odd cycle. Every component must be conflict-free for the graph to be bipartite.
+A finite undirected graph is bipartite exactly when it has no odd cycle.
+The shortest-edge-count result applies to unweighted graphs or equal-weight edges.
+A bipartiteness test must cover all components.
+In a bipartite graph, each edge alternates between the two sides.
+Returning to the start takes an even number of steps.
+\text{bipartite}\implies\text{no odd cycle}
+Conversely, color by distance parity; a same-color edge closes an odd cycle.
+\text{no odd cycle}\implies\text{two-colorable}
+Fewest edges
+In a four-cycle, how many edges are needed to reach the opposite vertex?
+Adjacent vertices are at distance one.
+The opposite vertex is first discovered in the next layer.
+Two.
+A triangle
+Is a triangle bipartite?
+Alternate colors around its three edges.
+Returning forces the starting vertex to have both colors, a contradiction.
+No.
+Is every tree bipartite?
+A tree has no cycle.
+It therefore has no odd cycle.
+Yes.
+Does BFS directly solve shortest paths with arbitrary unequal nonnegative weights?
+Layers count edges only.
+Unequal weights require a weighted-path algorithm.
+Not directly.
+How many components do two disjoint triangles have?
+Start separately from unvisited vertices.
+There are two individually connected parts.
+Two.
+Does an isolated vertex count as a component?
+A length-zero path reaches itself.
+It forms a one-vertex component.
+Yes.
+Why is the first discovered BFS distance shortest?
+Smaller-distance layers expand first
+The vertices are drawn nearby
+The smallest-numbered vertex is always chosen
+Every shorter layer is processed first.
+A bipartite graph needs equally large sides
+Only edges crossing between sides are required.
+One component suffices to test bipartiteness
+Another component may still contain an odd cycle.
+Expand the queue step by step. How do the distance layers and two color classes form?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+Only edges crossing between sides are required.
+Steps executed: 0
+Set the control to $0$. Compare the current step with the complete reference result.
+At this setting: vertices $6$; edges $6$; graph components $1$; graph bipartite: yes.
+Steps executed: 3
+Set the control to $3$. Compare the current step with the complete reference result.
+At this setting: vertices $6$; edges $6$; graph components $1$; graph bipartite: yes.
+Steps executed: 6
+Set the control to $6$. Compare the current step with the complete reference result.
+At this setting: vertices $6$; edges $6$; graph components $1$; graph bipartite: yes.

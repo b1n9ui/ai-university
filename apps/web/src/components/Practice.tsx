@@ -106,7 +106,7 @@ export function PracticeSet({
         <div className="question-pagination">
           <button disabled={index === 0} onClick={() => choose(index - 1)}>
             <ArrowLeft size={15} />{tr("上一题")}</button>
-          <span>{tr("第")}{localizeNode(index + 1)} / {localizeNode(questions.length)}{tr("题")}</span>
+          <span>{tr(`第 ${index + 1} / ${questions.length} 题`)}</span>
           <button
             disabled={index === questions.length - 1}
             onClick={() => choose(index + 1)}

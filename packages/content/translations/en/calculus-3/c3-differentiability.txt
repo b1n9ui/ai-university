@@ -1,0 +1,66 @@
+Differentiability, tangent planes and error
+Can one plane predict every small displacement?
+Differentiability means one linear expression explains the increment, with remainder negligible relative to displacement length.
+A tangent plane must approximate all nearby directions, not merely match two coordinate tangents.
+Construct tangent planes and linear approximations
+Check differentiability through the remainder
+What goes beyond partial derivatives?
+Partials test coordinate directions. Differentiability requires uniformly smaller-than-first-order error in every direction. It implies continuity; partials alone do not.
+A practical sufficient condition
+Continuous partial derivatives in a neighborhood guarantee differentiability. This is not necessary, so failure does not prove nondifferentiability.
+Approximation versus equality
+The tangent plane gives first-order approximation. Bound actual error separately; do not assume accuracy far from the center.
+Can one plane predict every small displacement?
+Little $o$ means remainder divided by displacement length tends to zero. Tangent-plane approximation requires differentiability, guaranteed by continuous partials nearby.
+Define the linear model's remainder.
+Compare it with displacement length.
+Expand the sum of squares directly to check.
+A tangent plane
+Find the tangent plane of $f=x^2+y^2$ at $(1,-1)$.
+Value is 2 and gradient $(2,-2)$.
+The linear model is $2+2(x-1)-2(y+1)$.
+$z=2x-2y-2$.
+Approximation and error
+Use origin linearization to approximate $f(0.1,0.2)$, with $f=1+x+y+x^2+y^2$.
+The linear model gives $1+0.1+0.2=1.3$.
+The actual value is $1.35$; error $0.05$ is exactly the sum of squares.
+Approximation 1.3; actual error 0.05.
+Existing partials guarantee a tangent-plane approximation.
+Establish differentiability first; partials only suggest a candidate linear model.
+A remainder tending to zero proves differentiability.
+It must tend to zero after division by displacement length, a stronger requirement than continuity.
+What is the linearization error for $f=3x-2y+1$?
+The function is already a plane.
+The linear model equals the function exactly.
+For $f=x^2+y^2$ at the origin, find remainder divided by distance.
+Set distance to $r$.
+Remainder $r^2$ divided by $r>0$ gives $r$.
+This tends to zero, proving differentiability.
+$r=\sqrt{x^2+y^2}$.
+Is $f=\sqrt{x^2+y^2}$ differentiable at the origin?
+Inspect the first-axis partial.
+The slice is $|x|$, without an origin derivative.
+Therefore the original function is not differentiable.
+Not differentiable.
+Do discontinuous partials always imply nondifferentiability?
+Separate sufficient from necessary conditions.
+Continuous partials are sufficient.
+If that condition fails, the remainder definition may still apply; do not reject differentiability automatically.
+Not necessarily.
+For a differentiable function, what does remainder divided by displacement length approach?
+Zero
+One
+Any constant
+The error beyond the linear term must be negligible compared with distance.
+The tangent plane of $f=x^2+y^2$ at $(0.5,0.5)$; along diagonal displacement $(h,h)$, compare exact and normalized errors.
+If displacement shrinks tenfold, about how much does quadratic error shrink?
+Subtract the linear prediction and divide by displacement length. Differentiability means this ratio tends to zero.
+Larger displacement
+Set diagonal displacement $h$ to $1$.
+A visible quadratic error separates bowl and tangent plane.
+Reduce displacement
+Set diagonal displacement $h$ to $0.2$.
+Error shrinks faster than distance.
+Approach the center
+Set diagonal displacement $h$ to $0.0001$.
+The remainder-to-distance ratio keeps approaching zero; calculations retain finite precision.

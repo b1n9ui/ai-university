@@ -1,0 +1,65 @@
+Covariance, correlation, and variance of a sum
+Covariance measures the direction of joint deviations; correlation removes the units.
+Covariance measures the direction of joint deviations; correlation removes the units.
+Positive correlation means deviations often point together. They need not do so every time, and correlation does not establish causation.
+Calculate cross-deviations
+Standardize covariance
+Calculate cross-deviations
+Multiply each variable's deviation from its own mean, then average. The balance of positive and negative products determines the sign.
+Standardize covariance
+With nonzero standard deviations, correlation lies between minus one and one. It measures linear association, not every form of nonlinear dependence.
+Keep covariance in a sum's variance
+Expanding the square produces twice the covariance. Uncorrelated variables make that term zero but need not be independent.
+Finite second moments are required; correlation also requires both standard deviations to be positive.
+Finite second moments are required; correlation also requires both standard deviations to be positive.
+Independence implies zero covariance when these moments exist; the converse generally fails.
+Expand the product of centered variables.
+Apply Cauchy–Schwarz to bound the covariance.
+Expand the squared deviation of the sum.
+Rescale correlation
+Standard deviations are two and three, with correlation one half. Find the covariance.
+Multiply correlation by both standard deviations.
+$0.5(2)(3)=3$.
+$3$.
+Uncorrelated but dependent
+$X$ takes $-1,0,1$ with equal probabilities and $Y=X^2$. Are they independent?
+$EX=EXY=0$, so covariance is zero.
+Given $X=0$, $Y=0$ is determined, so independence fails.
+Uncorrelated, but not independent.
+Variances are four and nine and covariance is three. Find the variance of the sum.
+Keep the cross term.
+$4+9+2(3)=19$.
+$19$.
+Does adding ten to one variable change the correlation?
+Centering cancels a shift.
+Standard deviations and centered deviations are unchanged.
+No.
+Can correlation be defined by the usual formula when one variable is constant?
+Check the denominator.
+That variable has standard deviation zero.
+No.
+Does correlation minus one indicate independence?
+It describes a nondegenerate exact linear relationship.
+One variable is determined by a decreasing line in the other.
+No.
+Does zero correlation rule out nonlinear dependence?
+Yes
+No
+Only when variance is small
+Correlation primarily describes linear joint variation.
+Zero correlation means independence
+Strong nonlinear dependence can remain.
+Correlation carries the original units
+Correlation is dimensionless. Covariance has the product of the two variables' units.
+Change correlation from negative to positive. How do the scatterplot and variance of the sum change?
+The fixed standardized point cloud is constructed to have the chosen correlation; finite points do not prove a population property.
+Strong nonlinear dependence can remain.
+Specified correlation: 0.5
+Set the specified correlation to $0.5$ and compare the diagram and readings.
+At this preset: specified population correlation $0.5$; common marginal variance $1$; variance of the sum $3$.
+Specified correlation: -0.95
+Set the specified correlation to $-0.95$ and compare the diagram and readings.
+At this preset: specified population correlation $-0.95$; common marginal variance $1$; variance of the sum $0.1$.
+Specified correlation: 0.95
+Set the specified correlation to $0.95$ and compare the diagram and readings.
+At this preset: specified population correlation $0.95$; common marginal variance $1$; variance of the sum $3.9$.

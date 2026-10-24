@@ -1,0 +1,64 @@
+Direct proofs, cases, and counterexamples
+A proof establishes a conclusion from its hypotheses. A counterexample refutes a universal claim.
+A proof establishes a conclusion from its hypotheses. A counterexample refutes a universal claim.
+A hundred examples may suggest a pattern, but a general theorem needs an argument covering every allowed object.
+Start with definitions
+Cover every case
+Start with definitions
+To prove that two even integers have an even sum, write each as twice an integer and factor two from their sum.
+Cover every case
+Cases must cover all possibilities. Overlap is allowed; omissions are not. Integer parity gives exactly two mutually exclusive cases.
+Locate an error with a counterexample
+One valid counterexample refutes a universal claim. It must satisfy the hypotheses; an object outside the domain cannot refute the claim.
+Every step in a valid proof follows from hypotheses, definitions, or established results.
+Parity arguments here concern integers.
+Express an even integer using its definition.
+Substitute into the expression to be studied.
+The expression in parentheses is still an integer.
+Parity of a square
+Prove that an integer and its square have the same parity.
+An even integer $2k$ has square $4k^2$.
+An odd integer $2k+1$ has square $2(2k^2+2k)+1$.
+The claim holds in both cases.
+A false universal claim
+What is wrong with “Every odd integer is prime”?
+Nine is odd.
+Nine factors as three times three.
+Nine is a counterexample.
+Is the product of three consecutive integers divisible by three?
+Classify their remainders on division by three.
+Exactly one of the three consecutive remainders is zero.
+Yes.
+Give a counterexample to “Every even integer is composite.”
+Use the only even prime.
+Two has exactly two positive divisors: one and itself.
+Two.
+Can checking the first ten integers prove a claim about all integers?
+Does the finite check cover the domain?
+An unchecked object could still fail.
+No.
+Prove that the sum of two odd integers is even.
+Write each as twice an integer plus one.
+$(2r+1)+(2s+1)=2(r+s+1)$.
+The sum is even.
+Must a counterexample satisfy the original claim's hypotheses?
+Yes
+No
+Only the conclusion matters
+Otherwise it lies outside the claim's scope.
+Enough examples constitute a proof
+An infinite domain requires a general argument.
+Proof by cases may omit small cases
+Every allowed object must belong to at least one case.
+Change the integer. How do the parity cases cover every possibility?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+An infinite domain requires a general argument.
+Current integer: 1
+Set the control to $1$. Observe which objects, relations, or counts change.
+At this setting: integer $1$; parity: odd; square's parity: odd.
+Current integer: 6
+Set the control to $6$. Observe which objects, relations, or counts change.
+At this setting: integer $6$; parity: even; square's parity: even.
+Current integer: 12
+Set the control to $12$. Observe which objects, relations, or counts change.
+At this setting: integer $12$; parity: even; square's parity: even.

@@ -1,0 +1,68 @@
+Connectedness and intervals
+A real subset is connected exactly when it omits no point between two of its members.
+A real subset is connected exactly when it omits no point between two of its members.
+A missing middle point separates the left and right parts.
+Define a separation
+Connected sets cannot skip points
+Define a separation
+A separation divides a set into two nonempty, disjoint, relatively open parts. Relative openness, rather than openness in the whole line, is essential.
+Connected sets cannot skip points
+A missing point between two members separates the set using intersections with the open half-lines on either side.
+Intervals admit no separation
+Suppose an interval is separated. Choose one point in each part and take the supremum of one side between them. Relative openness of either part leads to a contradiction whichever part contains the boundary.
+The empty set and singletons are connected by convention.
+A\subseteq\mathbb R\text{ connected}\iff x<z<y,\ x,y\in A\implies z\in A
+Intervals may be open, closed, half-open, or unbounded.
+A missing middle point gives separation by open half-lines.
+For a supposed interval separation, take a boundary supremum between two selected members.
+Whichever relatively open part contains the boundary either permits extending it or excludes the required approach, a contradiction.
+c\in U\ \text{or}\ c\in V
+Two separated intervals
+Is $[0,1]\cup[2,3]$ connected?
+Points between one and two are missing.
+Separate using the two sides of one point five.
+No.
+An unbounded interval
+Is the whole real line connected?
+Every point between two reals is still real.
+It has the interval property; boundedness is unnecessary.
+Connected but not compact.
+Is an open interval connected?
+Does it skip any internal point?
+It does not, so it is connected.
+Yes.
+Is a set of two distinct points connected?
+A point between them is missing.
+The two sides separate it.
+No.
+Must a compact set be connected?
+Two distinct points form a compact set.
+Finite sets are compact but may be disconnected.
+No.
+Prove $\mathbb Q$ is disconnected in the relative topology of the real line.
+Separate it at the irrational $\sqrt2$.
+Let $U=\mathbb Q\cap(-\infty,\sqrt2)$ and $V=\mathbb Q\cap(\sqrt2,\infty)$.
+Both are relatively open, disjoint, and nonempty. Since $\sqrt2\notin\mathbb Q$, their union is $\mathbb Q$.
+They form a separation, so $\mathbb Q$ is disconnected. Density does not imply connectedness.
+They form a separation, so $\mathbb Q$ is disconnected. Density does not imply connectedness.
+What characterizes connected real subsets?
+Finiteness
+No missing intermediate points
+Closedness
+This is precisely the interval property.
+Connected means bounded
+These are independent properties.
+A continuous-looking drawing needs no proof
+Check that no intermediate points are missing.
+Remove an interior point of an interval. How do the two sides form a separation?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+A missing middle point separates the sides. Connectedness and boundedness are independent.
+Whole interval
+Select “Whole interval” and check the conditions and readouts. Look for a missing point between two members.
+Connected: yes.
+Remove zero
+Select “Remove zero” and check the conditions and readouts. Look for a missing point between two members.
+Connected: no.
+Remove an interval
+Select “Remove an interval” and check the conditions and readouts. Look for a missing point between two members.
+Connected: no.

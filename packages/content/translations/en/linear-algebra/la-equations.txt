@@ -1,0 +1,63 @@
+Row and column views of a system
+Two views of the same constraints
+A system describes both an intersection of geometric constraints and a linear combination.
+The row view asks whether a point lies on every line. The column view asks whether the columns can combine to produce the right-hand side.
+Build row and column views
+Distinguish one solution, no solution, and infinitely many solutions
+What makes an equation linear?
+Unknowns appear only to the first power, with known coefficients. Neither $xy=1$ nor $x^2+y=0$ is linear.
+What does the row view show?
+A nondegenerate equation in two variables describes a line. Common points solve the system. Distinct parallel lines have no solution; coincident lines share every point. A degenerate equation may describe the whole plane or the empty set.
+How does the column view match?
+Treat unknowns as coefficients of column vectors. In $A\mathbf x=\mathbf b$, their linear combination equals the right-hand side.
+Row and column views of a system
+Each matrix row represents an equation. The row count must match the length of the right-hand side.
+Expand by rows.
+Collect terms for each unknown.
+Both forms impose the same equalities.
+\{\mathbf x:A\mathbf x=\mathbf b\}=\text{intersection of the equation solution sets}
+Two lines meet at one point
+Solve $x+y=3,x-y=1$.
+Adding gives $2x=4$.
+From $x=2$ we get $y=1$, satisfying both equations.
+$(2,1)$.
+Conflicting constraints
+Does $x+y=1,2x+2y=3$ have a solution?
+Doubling the first equation requires $2x+2y=2$.
+It cannot also equal $3$.
+No solution.
+Two equations always have exactly one solution.
+Equations can repeat or conflict.
+A plotted intersection is accurate enough by itself.
+A diagram helps identify the situation; substitute exact coordinates to verify the solution.
+Does $(1,2)$ satisfy $x+2y=5$?
+Substitute on the left.
+$1+2\cdot2=5$.
+Yes.
+How many solutions does $x+y=2,2x+2y=4$ have?
+Does the second equation add a constraint?
+The second equation is twice the first.
+Infinitely many: $(t,2-t)$.
+In $x+y=2,x+2y=3$, what is $y$?
+Subtract the equations.
+$y=1$, followed by $x=1$.
+If $A$ has $3$ rows and $2$ columns, how many unknowns occur in $A\mathbf x=\mathbf b$?
+Each column corresponds to one unknown.
+$\mathbf x\in\mathbb R^2$.
+The constraints are $x+y=2$ and $x+cy=b$. For a singular matrix, distinguish coincident lines from distinct parallel lines.
+When do the lines intersect, coincide, or run parallel?
+In the column view of $A\mathbf x=\mathbf b$, what does $\mathbf x$ represent?
+A target position
+Coefficients of the column vectors
+The number of matrix rows
+Each unknown multiplies its corresponding column.
+Solving a system is finding a recipe: columns are ingredients and unknowns specify how much of each to use.
+One intersection
+Set $c=2,b=3$.
+The solution is $(1,1)$; the determinant is one.
+Repeated constraints
+Set $c=1,b=2$.
+The lines coincide. The coefficient rank is one, with infinitely many solutions.
+Conflicting constraints
+Keep $c=1$ and change $b$ to $3$.
+Distinct parallel lines never meet. The augmented rank exceeds the coefficient rank.

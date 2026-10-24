@@ -1,0 +1,67 @@
+Pivots, consistency, and free variables
+Check contradictions before counting free variables
+Pivots identify independent constraints on variables. A contradiction row signals no solution.
+Some equations repeat earlier constraints. Nonzero rows left after elimination reveal how many independent constraints remain.
+Identify pivots and contradiction rows
+Classify systems using consistency and free variables
+Where are the pivots?
+In echelon form, each nonzero row begins with a pivot. Successive pivots lie strictly farther right; zero rows appear at the bottom.
+How do you recognize inconsistency?
+An augmented row $[0\ \cdots\ 0\mid d]$ with $d\ne0$ states $0=d$, so no solution exists.
+How do you classify a consistent system?
+Without contradiction rows, nonpivot columns correspond to free variables. No free variables gives one solution; at least one gives infinitely many real solutions.
+Pivots, consistency, and free variables
+A\mathbf x=b\text{ is consistent}\iff\operatorname{rank}A=\operatorname{rank}[A\mid b]
+Rank counts pivots in echelon form. Count only coefficient columns when identifying free variables.
+The coefficient pivot count is the rank.
+r=\#\{\text{coefficient pivots}\}
+Each nonpivot unknown can be chosen freely.
+\#\{\text{free variables}\}=n-r
+First check whether the augmented column adds a pivot.
+\operatorname{rank}[A\mid b]>r\Rightarrow\text{no solution}
+A free variable
+Classify the echelon form $\left[\begin{array}{ccc|c}1&2&0&3\\0&0&1&1\end{array}\right]$.
+Coefficient pivots lie in columns one and three; the second unknown is free.
+There is no contradiction row and one free variable.
+Infinitely many solutions.
+More equations can still be consistent
+Does $x=1,y=2,x+y=3$ have too many constraints to be consistent?
+The third equation is the sum of the first two.
+Elimination produces a zero row rather than a contradiction.
+The unique solution is $(1,2)$.
+A zero row means no solution.
+$0=0$ is redundant; $0=d\ne0$ is contradictory.
+The augmented column represents another unknown.
+It records the right-hand side, rather than a variable coefficient.
+A consistent system has $3$ unknowns and coefficient rank $2$. How many free variables remain?
+Subtract pivots from unknowns.
+$3-2=1$.
+What does $[0\ 0\mid 5]$ mean?
+Read the row as an equation.
+$0=5$ is false.
+No solution.
+Can $4$ equations in $2$ unknowns have a unique solution?
+Extra equations may be redundant.
+For example, $x=1,y=2,2x=2,2y=4$.
+Yes.
+Can the homogeneous system $A\mathbf x=0$ produce a contradiction row?
+The zero vector is always a solution.
+A zero right-hand side remains zero after row operations.
+No.
+The constraints are $x+y=2$ and $x+cy=b$. For a singular matrix, distinguish coincident lines from distinct parallel lines.
+After changing the right-hand side, must coefficient rank and the existence of a solution change together?
+How many real solutions does a consistent system with a free variable have?
+One solution
+No solution
+Infinitely many solutions
+A free variable ranges continuously over real values.
+First check for conflicting constraints, then count what remains free. The number of equations alone answers neither question.
+One intersection
+Set $c=2,b=3$.
+The solution is $(1,1)$; the determinant is one.
+Repeated constraints
+Set $c=1,b=2$.
+The lines coincide. The coefficient rank is one, with infinitely many solutions.
+Conflicting constraints
+Keep $c=1$ and change $b$ to $3$.
+Distinct parallel lines never meet. The augmented rank exceeds the coefficient rank.

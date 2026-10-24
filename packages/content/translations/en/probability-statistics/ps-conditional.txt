@@ -1,0 +1,62 @@
+Conditional probability and the multiplication rule
+Given an event has occurred, renormalize probability within its remaining outcomes.
+Given an event has occurred, renormalize probability within its remaining outcomes.
+The denominator changes from the full population to the group satisfying the condition.
+Identify the conditioning event
+Renormalize
+Identify the conditioning event
+Once $B$ is known, retain only outcomes in $B$. The original intersection is the target event in this restricted space.
+Renormalize
+Divide intersection probability by conditioning probability, which must be positive. Zero-probability conditioning needs a different definition.
+Multiply along a path
+First reach a branch, then the target within that branch. Path probability multiplies the two probabilities.
+The conditioning event satisfies $P(B)>0$.
+The conditioning event satisfies $P(B)>0$.
+The direction of conditioning cannot be freely reversed.
+Retain the conditioning event.
+The intersection still marks target outcomes.
+Divide by the restricted space's total probability.
+Change the denominator
+Of one hundred people, forty commute and ten of those cycle. Given commuting, what proportion cycle?
+The conditional group has forty people.
+Ten are targets.
+$10/40=1/4$.
+Path probability
+If $P(B)=0.3,P(A\mid B)=0.8$, find the intersection probability.
+First reach the conditioning event.
+Multiply $0.3\times0.8$.
+$0.24$.
+Given $P(B)=0.4,P(A\cap B)=0.1$, find the conditional probability.
+Divide by the conditioning probability.
+$0.1/0.4=0.25$.
+$0.25$.
+Given $P(A)=0.5,P(B\mid A)=0.2$, find the intersection.
+Use conditional multiplication.
+$0.5(0.2)=0.1$.
+$0.1$.
+Given an even fair-die result, what is the chance it is six?
+The restricted space has three equally likely outcomes.
+Six is one of them.
+$1/3$.
+May $P(A\mid B)$ simply be replaced by $P(B\mid A)$?
+Their denominators generally differ.
+They share a numerator, not generally a denominator.
+No.
+Given $B$, what is the denominator?
+The conditioning event defines the new total.
+Conditional probability is just intersection probability
+Divide by the conditioning probability too.
+Conditioning can be reversed freely
+Reversal changes the reference group.
+With the intersection fixed, how does changing the conditioning group's size affect conditional probability?
+Ten equally likely outcomes illustrate renormalization; zero-probability conditioning is excluded.
+Divide by the conditioning probability too.
+Conditioning-event starting position: 4
+Set the conditioning-event starting position to $4$ and compare the figure and readouts.
+At these parameters: A probability $0.6$; B probability $0.5$; intersection $0.2$; A given B $0.4$.
+Conditioning-event starting position: 0
+Set the conditioning-event starting position to $0$ and compare the figure and readouts.
+At these parameters: A probability $0.6$; B probability $0.5$; intersection $0.5$; A given B $1$.
+Conditioning-event starting position: 9
+Set the conditioning-event starting position to $9$ and compare the figure and readouts.
+At these parameters: A probability $0.6$; B probability $0.5$; intersection $0.4$; A given B $0.8$.

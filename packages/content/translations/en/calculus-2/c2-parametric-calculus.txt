@@ -1,0 +1,69 @@
+Tangents and arc length of parametric curves
+Differentiate with respect to the parameter first
+Parametric slope is vertical rate divided by horizontal rate. Arc length accumulates speed.
+Over a short time, displacement has components $dx$ and $dy$. Slope uses their ratio; distance uses their Pythagorean length.
+What if the horizontal derivative is zero?
+A nonzero vertical derivative gives a vertical tangent. If both vanish, analyze the local path separately; the quotient formula fails.
+Computing the second derivative
+Differentiate the slope with respect to the parameter, then divide by $x\prime(t)$. The parameter derivative alone is not enough.
+Can arc length count repetitions?
+If the path retraces a segment, the integral measures total travel. To measure the geometric curve once, choose a nonrepeating interval.
+Area in parametric form
+Replace $dx$ by $x\prime(t)dt$: $\int y\,dx=\int y(t)x\prime(t)dt$. Increasing horizontal coordinate and nonnegative height give area beneath the curve. Reverse direction when the horizontal coordinate decreases; split at reversals and sign changes. Signed accumulation is not automatically geometric area.
+Differentiate with respect to the parameter first
+Slope and second-derivative formulas require $x\prime(t)\neq0$ and sufficient smoothness. Arc length requires piecewise continuous differentiability; check repeated tracing.
+Use the chain rule to relate parameter and horizontal coordinate.
+Combine the two displacement components for distance.
+Accumulate over the parameter interval.
+A parametric slope
+For $x=t^2,y=t^3$, find slope and second derivative at $t=1$.
+$\frac{dy}{dx}=\frac{3t^2}{2t}=\frac32t$; here $t\neq0$.
+The second derivative is $\frac{3/2}{2t}=\frac3{4t}$.
+Slope $\frac32$; second derivative $\frac34$.
+Length and area of the same semicircle
+Find path length and upper-semicircle area for $x=\cos t,y=\sin t$, $0\leq t\leq\pi$.
+Speed is $\sqrt{\sin^2t+\cos^2t}=1$.
+$L=\int_0^\pi1dt=\pi$.
+The horizontal coordinate decreases from 1 to $-1$, so $\int_0^\pi y(t)x\prime(t)dt=-\int_0^\pi\sin^2t dt=-\frac\pi2$ is a negative directed integral.
+Height is nonnegative. Reverse horizontal direction for geometric area, giving $\frac\pi2$; check with the semicircle formula.
+Path length $\pi$; area $\frac\pi2$. They accumulate different pieces.
+The second derivative equals $\frac{y^{(2)}(t)}{x^{(2)}(t)}$.
+Differentiate the slope in the parameter, then divide by the horizontal derivative.
+Zero velocity means there is no tangent.
+Failure of the quotient formula does not rule out a tangent; inspect the local path.
+Find the slope for $x=2t,y=t^2$ at $t=1$.
+$1$.
+Divide vertical derivative by horizontal derivative.
+$\frac{2t}{2}=t$; substitution gives 1.
+For $x=2t,y=t^2$ at $t=1$, find the second derivative $d^2y/dx^2$.
+$\frac12$.
+Divide again by the horizontal derivative.
+$\frac d{dt}(t)=1$; dividing by 2 gives $\frac12$.
+Find the length of $x=3t,y=4t$, $0\leq t\leq2$.
+$10$.
+Multiply constant speed by the parameter interval's length.
+Speed is 5; $L=\int_0^2 5dt=10$.
+What tangent does the unit circle have at $t=0$?
+A vertical tangent.
+Check both coordinate derivatives.
+$x\prime(0)=0$, $y\prime(0)=1$; at $(1,0)$ the tangent is $x=1$.
+How is the parametric second derivative calculated?
+Divide the two second parameter derivatives
+Differentiate slope in the parameter, then divide by the horizontal derivative
+Only differentiate slope in the parameter
+The extra division changes the differentiation variable back to horizontal position.
+Compute rates per unit parameter, then convert to rise per unit horizontal displacement.
+Rightmost point
+Set the parameter to 0.
+The point is $(2,0)$, speed is 1 and the tangent is vertical.
+Top point
+Set the parameter to 1.5707963267948966.
+The point is $(0,1)$, speed is 2 and the tangent is horizontal.
+Leftmost point
+Set the parameter to 3.141592653589793.
+The point is $(-2,0)$; speed returns to 1 and motion remains counterclockwise.
+Move along the ellipse $(2\cos t,\sin t)$, displaying velocity and parameter position.
+Is speed constant around this ellipse?
+Compute parametric slopes and second derivatives
+Identify vertical tangents and degenerate points
+Use speed for length and directed substitution for area

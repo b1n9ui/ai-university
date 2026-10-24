@@ -1,0 +1,66 @@
+Power, effect size, and multiple comparisons
+Detection probability depends on the true effect, noise, sample size, and decision threshold.
+Detection probability depends on the true effect, noise, sample size, and decision threshold.
+Larger samples can make tiny effects statistically significant, so report practical magnitude too.
+Separate errors from power
+Specify the design objective
+Separate errors from power
+Type I error is defined under a true null. Type II error is defined under a specific alternative. Power is the probability of correctly rejecting under that alternative.
+Specify the design objective
+Power calculations need a meaningful target effect and scale. Post-hoc observed power based on the same estimated effect usually adds no substitute for interval information.
+Control multiple opportunities
+Testing many hypotheses creates more chances for false positives. Bonferroni uses the union bound to control familywise error under any dependence, though it can be conservative. Repeated looking and selection also need treatment.
+Power refers to a specified alternative parameter and test rule.
+\operatorname{Power}(\theta)=P_\theta(\text{reject }H_0),\qquad P(\text{any false rejection})\le\sum_{j=1}^{m}\alpha_j
+Power refers to a specified alternative parameter and test rule.
+If every Bonferroni test has level at most $\alpha/m$, familywise error is at most $\alpha$.
+Set the rejection region under the null.
+Under the specified alternative, calculate probability of the same region.
+For multiple tests, use the union bound to limit any false rejection.
+Multiple opportunities
+For ten tests with familywise level at most $0.05$, what is the largest Bonferroni level per test?
+Divide the total error budget equally among ten tests.
+$0.05/10=0.005$.
+$0.005$.
+Precision and significance
+With effect and scale fixed, how does quadrupling sample size change the standardized normal effect?
+The standardized effect is $\delta\sqrt n/\sigma$.
+The square root of sample size doubles.
+It doubles, usually increasing power for the given two-sided test.
+Type II error probability is $0.2$. Find power.
+Take its complement.
+$1-0.2=0.8$.
+$0.8$.
+For twenty tests and familywise level $0.05$, find the Bonferroni level per test.
+Divide by the number of tests.
+$0.05/20=0.0025$.
+$0.0025$.
+Must statistical significance imply practical importance?
+Significance also depends on sample size.
+Tiny effects can be significant in large samples.
+Not necessarily.
+Can a fixed-sample $p$-value be used without adjustment if data collection continues until significance?
+The stopping rule changes rejection opportunities.
+Use a prespecified sequential method or another adjustment.
+The original error level is not guaranteed.
+With other conditions fixed, what usually happens to power when the significance threshold becomes stricter?
+Increases
+Decreases
+Must remain unchanged
+A smaller rejection region usually reduces rejection probability under the alternative too.
+Significance means a large effect
+Also report effect size and an interval.
+Trying repeatedly and reporting the smallest $p$-value has no effect
+Selection and repeated inspection can increase false positives and must be part of the procedure.
+Change true effect and sample size. What happens to null error level and power?
+For a known-scale two-sided normal test, calculate null rejection probability separately from power at the specified alternative.
+Also report effect size and an interval.
+Planned sample size: 25
+Set planned sample size to $25$ and compare the diagram and readings.
+At this preset: null significance level $0.05$; power at the specified alternative $0.705418$; standardized true effect $2.5$.
+Planned sample size: 5
+Set planned sample size to $5$ and compare the diagram and readings.
+At this preset: null significance level $0.05$; power at the specified alternative $0.200956$; standardized true effect $1.11803$.
+Planned sample size: 150
+Set planned sample size to $150$ and compare the diagram and readings.
+At this preset: null significance level $0.05$; power at the specified alternative $0.999984$; standardized true effect $6.12372$.

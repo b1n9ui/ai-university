@@ -1,3 +1,4 @@
+import {tr, localizeNode} from "../i18n";
 import { useEffect, useId, useRef, useState } from "react";
 import { Pause, Play, RotateCcw } from "lucide-react";
 import type {
@@ -69,12 +70,10 @@ export function Calculus2Plot({
       className="plot calculus2-plot"
       viewBox={`0 0 ${W} ${H}`}
       role="img"
-      aria-label={title}
+      aria-label={tr(title)}
     >
-      <title>{title}</title>
-      <desc>
-        蓝色为数学模型，金色为近似或对照。有限窗口会裁切超出范围的曲线，图示不代替证明。下面的控件支持键盘与数值输入。
-      </desc>
+      <title>{localizeNode(title)}</title>
+      <desc>{tr("蓝色为数学模型，金色为近似或对照。有限窗口会裁切超出范围的曲线，图示不代替证明。下面的控件支持键盘与数值输入。")}</desc>
       <defs>
         <marker
           id={clip + "-arrow"}
@@ -90,7 +89,7 @@ export function Calculus2Plot({
           <rect x={P} y={P} width={W - 2 * P} height={H - 2 * P} />
         </clipPath>
       </defs>
-      {Array.from({ length: 6 }, (_, i) => {
+      {localizeNode(Array.from({ length: 6 }, (_, i) => {
         const x = a + ((b - a) * i) / 5,
           y = c + ((d - c) * i) / 5;
         return (
@@ -98,17 +97,17 @@ export function Calculus2Plot({
             <line x1={X(x)} x2={X(x)} y1={P} y2={H - P} stroke="#e0e7df" />
             <line x1={P} x2={W - P} y1={Y(y)} y2={Y(y)} stroke="#e0e7df" />
             <text x={X(x)} y={H - P + 18} textAnchor="middle">
-              {number(x)}
+              {localizeNode(number(x))}
             </text>
             <text x={P - 7} y={Y(y) + 4} textAnchor="end">
-              {number(y)}
+              {localizeNode(number(y))}
             </text>
           </g>
         );
-      })}
+      }))}
       <g clipPath={`url(#${clip})`}>
-        {base && <path d={path(base) + " Z"} fill="#55aaba" opacity=".16" />}
-        {frame.field.map(([x, y, slope], i) => {
+        {localizeNode(base && <path d={path(base) + " Z"} fill="#55aaba" opacity=".16" />)}
+        {localizeNode(frame.field.map(([x, y, slope], i) => {
           const angle = Math.atan2(
               (-slope * (H - 2 * P)) / (d - c),
               (W - 2 * P) / (b - a),
@@ -126,8 +125,8 @@ export function Calculus2Plot({
               strokeWidth="1.2"
             />
           );
-        })}
-        {frame.lines.map((l, i) => (
+        }))}
+        {localizeNode(frame.lines.map((l, i) => (
           <path
             key={i}
             d={path(l.points)}
@@ -145,8 +144,8 @@ export function Calculus2Plot({
             }
             strokeDasharray={l.dash ? "5 5" : undefined}
           />
-        ))}
-        {frame.dots
+        )))}
+        {localizeNode(frame.dots
           .filter((p) => p.every(Number.isFinite))
           .map(([x, y], i) => (
             <circle
@@ -158,13 +157,13 @@ export function Calculus2Plot({
               stroke="#f4fff3"
               strokeWidth="1.2"
             />
-          ))}
+          )))}
       </g>
       <text x={W - P} y={H - 7} textAnchor="end">
-        {frame.axes[0]}
+        {localizeNode(frame.axes[0])}
       </text>
       <text x={P} y={20}>
-        {frame.axes[1]}
+        {localizeNode(frame.axes[1])}
       </text>
     </svg>
   );
@@ -265,16 +264,16 @@ export function Calculus2Visual({
     <section
       ref={card}
       className={"visual-card calculus2-visual " + (compact ? "compact" : "")}
-      aria-label="交互演示"
+      aria-label={tr("交互演示")}
     >
       <div className="visual-heading">
         <div>
           <span className="eyebrow">EXPLORE THE IDEA / CALCULUS II</span>
-          <h3>{lesson.title}</h3>
+          <h3>{localizeNode(lesson.title)}</h3>
         </div>
         <button
           className="icon-btn"
-          aria-label="重置演示"
+          aria-label={tr("重置演示")}
           onClick={() => {
             setPlaying(false);
             setDone(false);
@@ -288,11 +287,9 @@ export function Calculus2Visual({
       <div className="c2-formula">
         <Formula latex={frame.formula} />
       </div>
-      {familyFor(lesson.id) === "polar" && (
-        <label className="c2-curve-select">
-          曲线
-          <select
-            aria-label="切换极坐标曲线"
+      {localizeNode(familyFor(lesson.id) === "polar" && (
+        <label className="c2-curve-select">{tr("曲线")}<select
+            aria-label={tr("切换极坐标曲线")}
             value={curve}
             onChange={(e) => {
               setPlaying(false);
@@ -300,52 +297,50 @@ export function Calculus2Visual({
               setCurve(e.target.value);
             }}
           >
-            <option value="cardioid">心形线：非负半径</option>
-            <option value="rose">玫瑰线：观察负半径</option>
+            <option value="cardioid">{tr("心形线：非负半径")}</option>
+            <option value="rose">{tr("玫瑰线：观察负半径")}</option>
           </select>
         </label>
-      )}
-      <Calculus2Plot frame={frame} title={lesson.title} />
+      ))}
+      <Calculus2Plot frame={frame} title={tr(lesson.title)} />
       <div className="c2-legend">
-        {frame.lines.map((l, i) => (
+        {localizeNode(frame.lines.map((l, i) => (
           <span key={i}>
             <i style={{ background: l.color }} />
-            {l.label}
+            {localizeNode(l.label)}
           </span>
-        ))}
+        )))}
       </div>
       <div className="c2-readouts">
-        {frame.stats.map((s) => (
+        {localizeNode(frame.stats.map((s) => (
           <div key={s.label}>
             <small>
-              <MathText text={s.label} />
+              <MathText text={tr(s.label)} />
             </small>
-            <strong>{s.value}</strong>
+            <strong>{localizeNode(s.value)}</strong>
           </div>
-        ))}
+        )))}
       </div>
       <div className="controls">
-        {controls.map((c) => (
+        {localizeNode(controls.map((c) => (
           <ParameterControl
             key={c.key}
-            label={c.label}
+            label={tr(c.label)}
             min={c.min}
             max={c.max}
             step={c.step}
             value={values[c.key]}
             onChange={(v) => update(c.key, v)}
           />
-        ))}
+        )))}
       </div>
       <div className="animation-transport">
         <button className="play-btn" onClick={play}>
-          {playing ? <Pause size={16} /> : <Play size={16} />}{" "}
-          {playing ? "暂停动画" : "自动推进"}
+          {localizeNode(playing ? <Pause size={16} /> : <Play size={16} />)}{localizeNode(" ")}
+          {localizeNode(playing ? "暂停动画" : "自动推进")}
         </button>
-        <label>
-          速度
-          <select
-            aria-label="动画速度"
+        <label>{tr("速度")}<select
+            aria-label={tr("动画速度")}
             value={speed}
             onChange={(e) => {
               setPlaying(false);
@@ -358,27 +353,25 @@ export function Calculus2Visual({
           </select>
         </label>
       </div>
-      {done && (
-        <p className="playback-finish" role="status">
-          已到本次演示的参数终点。图中仍是有限截断或有限精度计算；收敛与误差条件见正文。
-        </p>
-      )}
+      {localizeNode(done && (
+        <p className="playback-finish" role="status">{tr("已到本次演示的参数终点。图中仍是有限截断或有限精度计算；收敛与误差条件见正文。")}</p>
+      ))}
       <p className="visual-caption">
         <span>
           <MathText
             text={
-              familyFor(lesson.id) === "polar" && curve === "rose"
+              tr(familyFor(lesson.id) === "polar" && curve === "rose"
                 ? "当前曲线为 $r=2\\cos(2\\theta)$。负半径把点放在角度反方向；阴影按参数扫过，可能重叠。"
-                : lesson.interactiveVisual.caption
+                : lesson.interactiveVisual.caption)
             }
           />
         </span>
       </p>
-      <p className="visual-disclaimer">读数保留有限精度。{frame.note}</p>
+      <p className="visual-disclaimer">{tr("读数保留有限精度。")}{localizeNode(frame.note)}</p>
     </section>
   );
 }
 export function Calculus2Preview({ lesson }: { lesson: Lesson }) {
   const frame = calculus2Frame(lesson.id, calculus2Defaults(lesson.id));
-  return <Calculus2Plot frame={frame} title={lesson.title} />;
+  return <Calculus2Plot frame={frame} title={tr(lesson.title)} />;
 }

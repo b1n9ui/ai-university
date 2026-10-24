@@ -1,0 +1,65 @@
+Numerical integration and error
+Approximate an integral with an error bound
+Trapezoids use straight lines; Simpson's rule uses parabolas. Error bounds tell you how many subintervals suffice.
+Finer partitions often improve accuracy, but a close-looking graph gives no guarantee. Derivative bounds supply that guarantee.
+Simpson's weights
+Use equal spacing and an even $n$. Endpoints have weight 1; interior odd-indexed nodes have weight 4 and even-indexed nodes weight 2.
+Why do the error bounds differ?
+The trapezoidal bound scales with $n^{-2}$. With a bounded fourth derivative, Simpson's bound scales with $n^{-4}$. Higher-order guarantees require more smoothness.
+Choosing the partition
+Specify a tolerance, insert a derivative bound and solve for a sufficient $n$. The actual error may be smaller than this conservative bound.
+Approximate an integral with an error bound
+For trapezoids require $f\in C^2[a,b]$ and $|f^{(2)}|\leq M_2$; for Simpson require $f\in C^4[a,b]$ and $|f^{(4)}|\leq M_4$, with positive even $n$.
+Approximate each pair of subintervals with a parabola.
+Add the pairs; interior even-indexed nodes occur twice.
+Insert a fourth-derivative bound to bound the error.
+Exact for a quadratic
+Use Simpson's rule with two subintervals for $\int_0^1x^2dx$.
+$h=\frac12$; the three node values are $0,\frac14,1$.
+$S_2=\frac16(0+4\cdot\frac14+1)=\frac13$; the fourth derivative is zero.
+$\frac13$; this approximation is exact.
+Choosing the number of subintervals
+Approximate $\int_0^1e^x dx$ by trapezoids with error below $0.001$. Give a sufficient number of subintervals.
+$M_2=e$, so the error is at most $\frac e{12n^2}$.
+$n^2>\frac e{0.012}$; choose $n=16$.
+Choose 16 subintervals; the bound guarantees the tolerance.
+Simpson's rule permits any odd number of subintervals.
+This composite rule groups subintervals in pairs and requires an even count.
+Two close approximations prove that the error is small.
+Agreement is a diagnostic; a guarantee still needs the hypotheses and an error bound.
+Approximate $\int_0^1x^2dx$ with two trapezoids.
+$\frac38$.
+Use half weight at the endpoints and full weight internally.
+$T_2=\frac14(0+2\cdot\frac14+1)=\frac38$.
+What does two-subinterval Simpson give for $\int_0^1x^3dx$?
+$\frac14$.
+It is exact for cubics too.
+$S_2=\frac16(0+4\cdot\frac18+1)=\frac14$.
+The trapezoidal bound uses $M_2=12$ on an interval of length 1. What is the smallest count guaranteeing error at most $0.01$?
+$10$.
+Solve the inequality.
+$\frac1{n^2}\leq0.01$ gives $n\geq10$.
+Can the fourth-derivative bound be used directly when the graph has a corner?
+No.
+Check smoothness.
+The fourth derivative may not exist. Split at the corner or use an applicable estimate.
+Composite Simpson's rule requires which number of subintervals?
+Any positive integer
+A positive even integer
+Exactly two
+Fit a parabola to each pair; interior weights depend on the node's parity.
+The algorithm supplies a number; error theory supplies a guaranteed range. Keep them separate.
+Two subintervals
+Set the count to 2.
+Simpson uses a three-point parabola; trapezoids use two line segments.
+Eight subintervals
+Set the count to 8.
+For this smooth exponential model, both errors decrease.
+Thirty-two subintervals
+Set the count to 32.
+Actual errors and conservative bounds are displayed separately.
+Compare trapezoidal and Simpson approximations of $e^x$ on $[0,1]$ with the exact value.
+With the same partition, which method has the smaller error?
+Use composite trapezoidal and Simpson rules
+Check even counts and smoothness
+Choose sufficient counts for a tolerance

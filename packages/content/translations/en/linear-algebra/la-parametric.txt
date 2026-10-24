@@ -1,0 +1,65 @@
+Parametric form and the full solution set
+A particular solution locates the set; homogeneous solutions give directions
+A particular solution plus every homogeneous solution describes all solutions of a consistent linear system.
+Two solutions share a right-hand side. Subtracting cancels it, so their difference belongs to the homogeneous solution set.
+Describe every solution with free parameters
+Distinguish a linear subspace from an affine solution set
+Where do parameters come from?
+Give each free variable a parameter and express pivot variables in those parameters. Do not add restrictions absent from the equations.
+Why split the solution into two parts?
+Fix a particular solution $\mathbf x_p$ and add any homogeneous solution $\mathbf z$. The identity $A\mathbf z=0$ preserves the right-hand side.
+Must the set contain the origin?
+Homogeneous solution sets contain the origin. A consistent nonhomogeneous set is generally a translate, called an affine set.
+Parametric form and the full solution set
+A particular solution must exist. Do not invent one for an inconsistent system. Parameters range over all real numbers.
+Here $\ker A=\{z:Az=0\}$ is the homogeneous solution set.
+Subtract any two solutions.
+Conversely, add a homogeneous solution.
+This proves every solution is included.
+An affine line
+Solve $x+y+z=2,x-y+z=0$.
+Subtract to get $y=1$, then $x+z=1$.
+Set $z=t$; then $(x,y,z)=(1,1,0)+t(-1,0,1)$.
+The entire line $t\in\mathbb R$.
+Two free variables
+Solve $x+2y-z=3$.
+Set $y=s,z=t$.
+From $x=3-2s+t$, collect the constant and parameter terms.
+$(x,y,z)=(3,0,0)+s(-2,1,0)+t(1,0,1)$.
+Finding one solution finishes the problem.
+Identify and describe every free variable.
+A nonhomogeneous solution set is always a subspace.
+A nonzero right-hand side generally excludes the origin.
+How do you write all solutions of $x+y=4$?
+Choose a free variable.
+Set $y=t$; then $x=4-t$.
+$(4-t,t)$, $t\in\mathbb R$.
+Does the solution set of $x-y=0$ contain the origin?
+Substitute the zero vector.
+$(t,t)=t(1,1)$.
+Yes.
+If $A x_1=A x_2=b$, what is $A(x_1-x_2)$?
+Use linearity.
+$b-b=0$.
+The zero vector.
+Is the sum of two solutions of $x+y=1$ also a solution?
+The right-hand sides add too.
+The sum satisfies $x+y=2$.
+No.
+The solution set $(1,1,0)+t(-1,0,1)$ satisfies both $x+y+z=2$ and $x-y+z=0$.
+Why does moving in a homogeneous direction preserve the right-hand side?
+What must you add to a particular solution to obtain every solution?
+Every homogeneous solution
+Any vector
+Another right-hand side
+Only homogeneous directions leave the right-hand side unchanged.
+A particular solution places the line or plane; homogeneous solutions give directions along which movement preserves the constraints.
+Choose a particular solution
+Set $t=0$.
+This gives the particular solution $(1,1,0)$.
+Move in a homogeneous direction
+Set $t=1$.
+The result is $(0,1,1)$; the left-hand sides remain two and zero.
+Move backward
+Set $t=-1$.
+The result is $(2,1,-1)$; a direction can have a negative parameter.

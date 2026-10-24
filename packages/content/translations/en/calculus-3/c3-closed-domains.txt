@@ -1,0 +1,64 @@
+Global extrema on closed regions
+Check interior, boundary and corners
+A continuous function on a nonempty closed bounded region attains its maximum and minimum. Compare all candidates.
+A room's highest point may be in the interior, along a wall or at a corner. Interior stationary points alone miss the edges.
+Check existence of global extrema
+Compare interior and boundary candidates
+What guarantees attainment?
+A nonempty closed bounded subset of Euclidean space is compact. Continuous functions on it attain extrema. Missing hypotheses require another argument.
+Analyzing boundaries
+Parametrize each boundary piece as a one-variable problem. Include endpoints, corners and nondifferentiable points, then compare with interior candidates.
+Unbounded regions
+Growth at infinity sometimes reduces the problem to a bounded region. Sometimes a supremum or infimum is never attained. Distinguish a maximum from an upper bound.
+Check interior, boundary and corners
+\min_D f,\max_D f\in f(D)\quad\text{if }D\ne\varnothing\text{ is compact and }f\text{ is continuous}
+Existence here requires a nonempty closed bounded domain and continuity. Calculations must also handle boundary pieces and nondifferentiable points.
+Smooth interior candidates have zero gradient.
+Restrict each boundary piece to one variable.
+Compare all feasible candidate values.
+Squared distance on a disk
+Find extrema of $f=(x-1)^2+y^2$ on $x^2+y^2\le4$.
+Interior point $(1,0)$ gives zero.
+On the boundary set $(x,y)=(2\cos t,2\sin t)$; the function is $5-4\cos t$, with maximum 9.
+Minimum 0; maximum 9.
+An open-domain warning
+Does $f=x+y$ have a maximum and minimum on $0<x<1,0<y<1$?
+Values lie strictly between zero and 2.
+They approach endpoint values without attaining them.
+Neither is attained; infimum 0, supremum 2.
+Continuity guarantees extrema on every domain.
+Domain hypotheses or another argument are needed.
+Stop after finding interior stationary points.
+Global extrema may occur on boundaries or corners.
+Find the maximum of $f=x+y$ on the closed unit square.
+Check allowed coordinate endpoints.
+Both coordinates equal 1, giving 2.
+Find the minimum of $f=x^2+y^2$ on the closed radius-3 disk.
+Is the origin allowed?
+It is in the domain and the function is nonnegative.
+Does $f=x$ have a maximum over the plane?
+Travel outward along the positive first axis.
+The first coordinate and function value are unbounded.
+No.
+Must an extremal corner on a closed region have zero gradient?
+Compare with a one-variable endpoint.
+Allowed directions at a corner are restricted; interior Fermat conditions do not apply directly.
+Include corners separately.
+No.
+Should global-extremum candidates include the boundary?
+Only where gradient vanishes
+Yes, including corners and endpoints
+No
+Interior necessary conditions cannot replace boundary checks.
+Compare values at target $(1,0)$ inside the disk and at a moving boundary point.
+Must the boundary minimum be the disk's global minimum?
+Establish attainment, then compare interior, boundary and corner candidates together.
+Nearest boundary point
+Set direction angle $\theta$ to $0$.
+The radius-2 boundary point is squared distance 1 from $(1,0)$.
+Side boundary
+Set direction angle $\theta$ to $\frac\pi2$.
+Its function value is 5.
+Farthest boundary point
+Set direction angle $\theta$ to $\pi$.
+The boundary value reaches 9; the global minimum remains inside.

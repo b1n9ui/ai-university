@@ -1,0 +1,65 @@
+Joint and marginal distributions
+A joint distribution records the probabilities of paired values.
+A joint distribution records the probabilities of paired values.
+Knowing each subject's grade distribution does not tell you how the two grades are paired.
+Build a joint table
+Find marginals
+Build a joint table
+Each cell gives the probability of a pair of values. All entries are nonnegative and sum to one.
+Find marginals
+To ignore the other variable, sum over its rows or columns. For continuous variables, integrate along the other coordinate.
+Retain dependence information
+Different joint distributions can have identical marginals. Marginals alone cannot recover the pairing.
+Joint probabilities sum to one; a joint density integrates to one.
+Joint probabilities sum to one; a joint density integrates to one.
+To find a marginal, sum or integrate over the other variable's entire support.
+Partition the event by the other coordinate's possible values.
+Different values give mutually exclusive events.
+In the continuous case, accumulate along the other coordinate.
+Find a row sum
+A joint table has rows $(0.1,0.2)$ and $(0.3,0.4)$. Find the first row's marginal probability.
+Add the entries in that row.
+$0.1+0.2=0.3$.
+$0.3$.
+Identical marginals
+Two Bernoulli variables each have success probability one half. Can one model make them always equal and another always opposite?
+The equal model puts half the mass in each diagonal cell.
+The opposite model puts half the mass in each off-diagonal cell.
+Yes. The marginals agree but the joint distributions differ.
+Using the first example, find the second column's marginal probability.
+Add the entries in the column.
+$0.2+0.4=0.6$.
+$0.6$.
+Using the first example, find the probability that both variables are in their second category.
+Read the corresponding joint cell.
+The second row, second column contains $0.4$.
+$0.4$.
+Do two marginal distributions determine the joint distribution?
+Compare matching and opposite pairings.
+Both can have the same marginals.
+Not in general.
+The joint density is one on the unit square. Find $P(X<1/2,Y<1/3)$.
+Integrate over the rectangle's area.
+$1/2\times1/3=1/6$.
+$1/6$.
+When finding one variable's marginal, which variable do you sum over?
+The other variable
+Only the diagonal
+Square the probabilities
+A marginal ignores the specific value of the other coordinate.
+A joint table records only marginals
+Each cell retains the pairing between variables.
+A joint density's value at one point is a probability
+Probability still requires integration over a region.
+Keep the marginals fixed and move probability toward the diagonal. How does the relationship change?
+Cell areas and values display the joint probabilities; marginals appear at the sides.
+Each cell retains the pairing between variables.
+Upper-left probability: 0.1
+Set the upper-left probability to $0.1$ and compare the diagram and readings.
+At this preset: first-row marginal $0.5$; first-column marginal $0.5$; upper-left probability $0.1$; probability of equal categories $0.2$.
+Upper-left probability: 0
+Set the upper-left probability to $0$ and compare the diagram and readings.
+At this preset: first-row marginal $0.5$; first-column marginal $0.5$; upper-left probability $0$; probability of equal categories $0$.
+Upper-left probability: 0.5
+Set the upper-left probability to $0.5$ and compare the diagram and readings.
+At this preset: first-row marginal $0.5$; first-column marginal $0.5$; upper-left probability $0.5$; probability of equal categories $1$.

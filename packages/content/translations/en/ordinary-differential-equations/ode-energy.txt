@@ -1,0 +1,64 @@
+Energy, pendulums, and Lyapunov functions
+Find a quantity that cannot increase
+The pendulum state equation
+With dimensionless time, use $\theta'=v,v'=-\sin\theta-cv$. A small-angle linearization cannot replace large-angle motion.
+How does energy evolve?
+Choose $E=v^2/2+1-\cos\theta$ to obtain $E'=-cv^2$. Energy is conserved without damping and nonincreasing with damping.
+Nonincrease does not yet prove convergence
+Zero derivative may occur on a whole set. To prove asymptotic convergence, analyze the invariant motions possible within it. A nonpositive derivative alone is insufficient.
+Differentiate along a solution.
+Substitute both state equations.
+The restoring-force terms cancel.
+An undamped pendulum
+With $c=0$ starting at $(\theta,v)=(0,1)$, find the energy.
+Potential energy is zero.
+Kinetic energy is half the squared speed.
+$E=1/2$, conserved along the trajectory.
+Dissipation rate
+For $c=2,v=3$, find the energy derivative.
+Substitute into the dissipation formula.
+$-2\times9=-18$.
+$E'=-18$.
+What is the energy at the stationary bottom equilibrium?
+Both angle and velocity are zero.
+Both terms vanish.
+$0$.
+Does nonzero small oscillation eventually stop without damping?
+Positive energy remains constant.
+It cannot approach the zero-energy bottom state.
+No.
+What energy does a stationary pendulum at the top have?
+Its angle is pi.
+$1-\cos\pi=2$.
+$2$.
+Does a nonpositive Lyapunov derivative automatically prove asymptotic stability?
+Its zero-derivative set may support continuing motion.
+The undamped oscillator is a counterexample.
+No.
+Nonincreasing energy means it strictly decreases immediately everywhere.
+At zero velocity, its instantaneous derivative can vanish.
+Small-angle approximation exactly describes full rotations.
+The sine approximation needs sufficiently small angles.
+Energy or a Lyapunov function controls a whole state using one scalar without solving every trajectory.
+A positive measure of distance from equilibrium that cannot increase restricts how far trajectories can move away.
+Differentiate energy along trajectories
+Distinguish nonincrease from attraction
+Energy, pendulums, and Lyapunov functions
+Assume $c\ge0$. Energy is positive definite near the bottom equilibrium. Physical angles are modulo $2\pi$; top equilibria and high-energy rotations need separate analysis.
+How does undamped pendulum energy change?
+It stays constant
+It rises each cycle
+It decays exponentially
+Kinetic and potential energy exchange while their sum is conserved.
+Energy compares two-dimensional motion with one quantity. Staying close and eventually stopping still need distinct proofs.
+No damping
+Numerical energy is approximately conserved; theoretical energy is exactly conserved.
+Set initial angle $\theta_0$ to $1.5$, damping coefficient $c$ to $0$, and observation time $t$ to $6$.
+With damping
+Trajectories contract and energy is nonincreasing.
+Set initial angle $\theta_0$ to $1.5$, damping coefficient $c$ to $0.5$, and observation time $t$ to $6$.
+Small angle
+Local motion approximates a linear oscillator.
+Set initial angle $\theta_0$ to $0.2$, damping coefficient $c$ to $0.2$, and observation time $t$ to $6$.
+Phase angle is not wrapped and initial velocity is zero. Readouts give RK4 state and energy; analytic dissipation establishes the energy trend.
+How do energy and phase trajectories change when damping is removed?

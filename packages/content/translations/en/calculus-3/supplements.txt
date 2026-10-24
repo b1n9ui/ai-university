@@ -1,0 +1,297 @@
+Vectors and space: chapter review
+Find the plane through $A=(1,0,0),B=(0,2,0),C=(0,0,3)$.
+Cross two edges to find a normal.
+Edges $(-1,2,0),(-1,0,3)$ have cross product $(6,3,2)$.
+Substituting a point gives $6x+3y+2z=6$.
+$6x+3y+2z=6$.
+Given $\mathbf u=(1,2,2)$, find scalar projection of vector $(3,0,0)$ in that direction.
+Find the direction's unit vector first.
+Direction length is 3; dot product is 3.
+Divide the dot product by direction length to get 1.
+Parametrize the intersection of sphere $x^2+y^2+z^2=4$ and plane $z=1$.
+Find the horizontal slice radius.
+The slice is $x^2+y^2=3$.
+Choose $(\sqrt3\cos t,\sqrt3\sin t,1)$, from zero through one turn.
+$\mathbf r(t)=(\sqrt3\cos t,\sqrt3\sin t,1)$.
+Spatial curves and motion: chapter review
+Find the arc length of $\mathbf r(t)=(3t,4t,0)$ from zero to 2.
+Speed is constant.
+Speed 5 times time 2 gives 10.
+A radius-2 circle is traveled at speed 3. Find normal acceleration magnitude.
+Compute curvature first.
+Curvature $1/2$ times speed squared 9.
+Find curvature of trajectory $(\cos(2t),\sin(2t),t)$.
+Find velocity and acceleration, then use perpendicularity.
+Velocity length is $\sqrt5$; acceleration length is 4; their dot product is zero.
+Cross-product length $4\sqrt5$, divided by $5\sqrt5$.
+Multivariable change and differentiation: chapter review
+Find the derivative of $f=x^2+xy+3y^2$ at $(1,-1)$ along $(1,1)$.
+Normalize the direction first.
+Gradient $(1,-5)$ dotted with $(1,1)/\sqrt2$.
+This gives $-4/\sqrt2=-2\sqrt2$.
+$-2\sqrt2$.
+Find the tangent plane of $z=e^{xy}$ at $(0,1)$.
+Evaluate value and both partials at the center.
+Value one; first partial one; second partial zero.
+Tangent plane $z=1+x$.
+$z=1+x$.
+For $f=\frac{x^2y^2}{x^2+y^2}$, extended by zero at the origin, is it differentiable?
+Bound the remainder uniformly by distance.
+Both axis partials are zero, and $x^2y^2\le(x^2+y^2)^2/4$.
+Magnitude is at most one-quarter distance squared; division by distance tends to zero.
+Differentiable, with zero gradient.
+Local models and optimization: chapter review
+Find the global minimum of $f=x^2+4y^2-2x+8y$.
+Complete squares rather than just solving for stationary points.
+$f=(x-1)^2+4(y+1)^2-5$.
+The squared terms are nonnegative, with equality at $(1,-1)$.
+Find maximum and minimum of $f=xy$ on $x^2+y^2\le2$.
+Bound the product above and below, then find equality points.
+$(x-y)^2\ge0$ gives $xy\le1$; $(x+y)^2\ge0$ gives $xy\ge-1$.
+The bounds are attained at $(1,1)$ and $(1,-1)$ respectively.
+Maximum 1; minimum $-1$.
+Find the second-order origin model of $f=e^{x-y}$.
+Apply the one-variable exponential expansion to the difference.
+$1+(x-y)+(x-y)^2/2$.
+The mixed coefficient is minus one.
+$1+x-y+\frac{x^2}2-xy+\frac{y^2}2$.
+Double integrals: chapter review
+Integrate $y$ over region $0\le y\le x\le2$.
+Integrate the second coordinate, then the first.
+$\int_0^2\int_0^x y\,dy\,dx=\int_0^2x^2/2\,dx$.
+$\frac43$.
+Find the center of mass of the unit disk with area density $\sigma=1+x$.
+Cancel odd moments and evaluate the squared-coordinate integral.
+Mass is $\pi$; the second-coordinate moment is zero.
+The first-coordinate moment is the disk integral of $x^2$, equal to $\pi/4$.
+$(\frac14,0)$.
+Reverse and evaluate $\int_0^1\int_y^1 \cos(x^2)\,dxdy$.
+The region has second coordinate below the first.
+Rewrite as $\int_0^1\int_0^x\cos(x^2)\,dydx$.
+The result is $\int_0^1x\cos(x^2)dx=\sin1/2$.
+$\frac{\sin1}2$.
+Triple integrals and substitution: chapter review
+Find mean squared origin distance inside a radius-2 ball.
+Divide the squared-distance integral by volume.
+The integral is $4\pi\cdot2^5/5=128\pi/5$.
+Divide by volume $32\pi/3$ to obtain $12/5$.
+Write spherical bounds for the first-octant unit ball.
+Bound azimuth, inclination and radial distance.
+Nonnegative coordinates give both angles from zero to $\pi/2$; radial distance from zero to one.
+$0\le\rho\le1,0\le\phi\le\pi/2,0\le\theta\le\pi/2$.
+Find the area of the image of the unit square under $x=2u+v,y=u+2v$.
+Compute the determinant.
+Jacobian $4-1=3$; invertibility gives area scaling by three.
+Vector fields and line integrals: chapter review
+Find work of $(y,x,0)$ along any path from $(1,0,0)$ to $(2,3,0)$.
+Find a product potential.
+Potential $xy$ has endpoint difference $6-0$.
+Evaluate $\oint -2y\,dx+2x\,dy$ around a radius-2 counterclockwise circle.
+Use Green to compute rotation density.
+Rotation density is 4; area is $4\pi$.
+$16\pi$.
+Find work of $(-y/(x^2+y^2),x/(x^2+y^2))$ around a radius-2 counterclockwise circle.
+Parametrize the circle; radius factors cancel.
+The field is $(-\sin t/2,\cos t/2)$; velocity is $(-2\sin t,2\cos t)$.
+Their dot product is one; integrate through one turn.
+$2\pi$; changing radius does not remove circulation around the hole.
+Surfaces and flux: chapter review
+Find the area of $z=3x$ over a square of side 2.
+The area factor is constant.
+Factor $\sqrt{10}$ times base area 4.
+$4\sqrt{10}$.
+Find upward flux of $(0,0,4)$ through $z=x+y$ over the unit square.
+Use the oriented area vector directly.
+The cross product is $(-1,-1,1)$; its field dot product is 4.
+The base area is one.
+Find divergence and curl of $(z,x,y)$.
+Apply each definition separately.
+All pure partials vanish, giving zero divergence.
+All three curl components equal one.
+Divergence 0; curl $(1,1,1)$.
+From local change to boundaries: chapter review
+Find positive circulation of $(-y/2,x/2,z)$ around a horizontal radius-2 circle.
+The vertical curl component is one.
+Disk area is $4\pi$; Stokes gives circulation $4\pi$.
+$4\pi$.
+Find inward flux of $(x,2y,3z)$ through the unit sphere.
+Compute outward flux, then reverse.
+Divergence is 6; outward flux $8\pi$.
+Negate for inward flux.
+$-8\pi$.
+A fixed container receives mass 7, loses 4 and produces 1 per unit time. Find mass derivative.
+Net inflow plus source.
+$7-4+1=4$.
+Find distance from point $(1,2,2)$ to plane $2x-y+2z=1$.
+Divide absolute residual by normal length.
+Residual is $2-2+4-1=3$.
+Normal length 3 gives distance one.
+Find triangle area with vertices at the origin, $(1,1,0)$, $(0,1,1)$.
+Take half the cross-product length.
+Cross product $(1,-1,1)$ has length $\sqrt3$.
+$\frac{\sqrt3}2$.
+Find distance traveled by $(\cos t,\sin t,2t)$ from zero to $\pi$.
+Speed is constant.
+Multiply speed $\sqrt5$ by time $\pi$.
+$\pi\sqrt5$.
+Find the gradient and steepest rate of $f=x^2y+y^2$ at $(2,1)$.
+Compute both partials and gradient length.
+Gradient $(4,6)$.
+Maximum directional derivative $\sqrt{16+36}=2\sqrt{13}$.
+Gradient $(4,6)$; maximum rate $2\sqrt{13}$.
+For $f=\frac{xy^2}{x^2+y^2}$, extended by zero at the origin, check continuity and differentiability.
+Squeeze first, then inspect diagonal linearization error.
+Magnitude is at most $|x|$, giving continuity; both partials are zero.
+Along $x=y=t$, the function is $t/2$. Its absolute error-to-distance ratio is $1/(2\sqrt2)$, not tending to zero.
+Continuous but not differentiable.
+Classify the origin of $3x^2+2xy+3y^2$.
+Use the second-derivative test or complete squares.
+$D=6\cdot6-2^2=32>0$; the first pure second partial is positive.
+A strict global minimum.
+Find the maximum of $x+2y+2z$ on the unit sphere.
+Dot the constant objective gradient with a unit position.
+Gradient length 3 gives upper bound 3.
+Equality occurs at $(1/3,2/3,2/3)$.
+Integrate $x+y$ over $0\le x\le1,0\le y\le1-x$.
+Evaluate the inner integral or use the triangle's centroid.
+The inner integral is $x(1-x)+(1-x)^2/2$.
+Integrate the first coordinate from zero to one to get $1/3$.
+$\frac13$.
+Integrate $1/r$ over annulus $1\le r\le3$.
+The radial area factor cancels the density denominator.
+$\int_0^{2\pi}\int_1^3 1\,drd\theta=4\pi$.
+$4\pi$.
+Find mass in the unit ball with volume density $\rho=x^2+y^2+z^2$.
+Use spherical coordinates.
+Squared radial density times squared radial volume factor gives radial integral $1/5$.
+The angular factor is $4\pi$.
+$\frac{4\pi}5$.
+Find work of field $(2xy,x^2,1)$ from $(0,0,0)$ to $(2,1,3)$.
+A potential must match all three components.
+Potential $x^2y+z$.
+Endpoint difference $4+3=7$.
+Find work of $(-y,x,0)$ around the unit circle clockwise twice.
+Compute one turn, then account for orientation and repetition.
+One counterclockwise turn gives $2\pi$; two reversed turns give $-4\pi$.
+$-4\pi$.
+Find the upward unit normal of $z=2x-y$ over the unit square.
+Normalize the cross product.
+The unnormalized normal is $(-2,1,1)$, with length $\sqrt6$.
+$\frac{(-2,1,1)}{\sqrt6}$.
+Find outward flux of $(x,y,z)$ through the entire boundary of shell $1\le r\le2$.
+Multiply divergence by shell volume, or handle inner and outer orientations separately.
+Volume is $28\pi/3$; divergence 3.
+The inner normal points toward the center, giving total flux $32\pi-4\pi=28\pi$.
+$28\pi$.
+Find work of $(0,0,x)$ around the positive unit-circle boundary in plane $z=0$.
+The displacement has no vertical component.
+The direct dot product is zero everywhere.
+Curl $(0,-1,0)$ also dots to zero with the upward disk normal.
+For density $\rho=e^{-2t}$ and velocity $(x,y,0)$ in a fixed region, does source-free conservation hold?
+Compute time derivative and mass-flux divergence.
+The time derivative is $-2e^{-2t}$; divergence is $2e^{-2t}$.
+Their sum is zero, satisfying continuity.
+The source-free continuity equation holds.
+Spatial coordinates and vectors
+A vector records direction and distance of motion. The same displacement can start at different positions.
+Dot products and projections
+The dot product measures alignment. Projection gives the part pointing along a chosen direction.
+Cross products, area and normals
+The cross product is perpendicular to both input vectors. Its length is their parallelogram's area.
+Lines and planes in space
+A line moves from one point in a fixed direction. Every displacement within a plane is perpendicular to its normal.
+Quadric surfaces and cross-sections
+Fix one coordinate to obtain a cross-section. Key slices are more reliable than memorized silhouettes.
+Cylindrical and spherical coordinates
+Cylindrical coordinates suit axial shapes; spherical coordinates suit shapes naturally described by distance from the origin.
+Vector-valued functions and tangents
+A vector-valued function gives position. Its derivative is instantaneous velocity, pointing along the path.
+Velocity, acceleration and distance
+Velocity is position's rate of change. Speed is its length. Integrating speed gives distance; integrating velocity gives displacement.
+Arc-length parameters and curvature
+Curvature measures tangent-direction change per unit distance. It describes the curve's shape.
+Multivariable functions and level sets
+A two-variable function assigns height to each allowed planar position. A contour joins positions with the same height.
+Multivariable limits and continuity
+A multivariable limit controls every approach within the domain. Two conflicting paths disprove it; finitely many agreeing paths do not prove it.
+Partial and higher-order derivatives
+A partial derivative measures instantaneous change in one variable while all others stay fixed.
+Differentiability, tangent planes and error
+Differentiability means one linear expression explains the increment, with remainder negligible relative to displacement length.
+The multivariable chain rule and implicit functions
+When a quantity depends on several intermediate variables, sum the products of local rates along every dependency path.
+Directional derivatives and gradients
+For a differentiable function, the gradient encodes every directional first-order rate in one vector.
+Second-order Taylor models
+Second-order Taylor polynomials record directional curvature and interactions beyond the tangent plane.
+Critical points and the second-derivative test
+A differentiable interior extremum must have zero gradient. Second-order shape distinguishes a bowl bottom, top or saddle.
+Global extrema on closed regions
+A continuous function on a nonempty closed bounded region attains its maximum and minimum. Compare all candidates.
+Lagrange multipliers and constrained extrema
+On a smooth equality constraint, an extremal objective gradient is normally parallel to the constraint gradient. Multipliers express that alignment.
+Double integrals and Fubini's theorem
+A double integral accumulates density or signed height over a planar region into one number.
+General regions and changing integration order
+Limits describe a region. Changing integration order requires reading its boundaries afresh.
+Double integrals in polar coordinates
+Polar coordinates simplify circular boundaries, but actual patch area is radius times radial width times angular width.
+Density, centers of mass and inertia
+Density times area gives mass; multiplying by position gives first moment; multiplying by squared axis distance gives moment of inertia.
+Triple integrals and spatial regions
+Triple integrals accumulate spatial density. Integrating one gives volume.
+Triple integrals in cylindrical coordinates
+Cylindrical coordinates retain height and use polar coordinates horizontally. The volume element keeps one radial factor.
+Triple integrals in spherical coordinates
+The spherical volume element contains distance squared and sine of inclination, arising from two different angular arcs.
+General changes of variables and Jacobians
+A Jacobian determinant gives a smooth coordinate map's local area or volume scaling. Integration uses its absolute value.
+Vector fields and streamlines
+A vector field assigns a vector to each point. A streamline's tangent follows the field at each point.
+Scalar line integrals
+A scalar line integral weights a wire's density by arc length. Reversing direction leaves it unchanged.
+Work and vector line integrals
+A work integral dots force with each directed displacement. Reversing the path reverses its sign.
+Potentials, path independence and holes
+For a field equal to the gradient of a single-valued function, work is final potential minus initial potential.
+Green's theorem and planar flux
+Green's theorem converts positive boundary circulation to an integral of local rotation. A second form computes outward planar flux.
+Parametric surfaces and orientation
+Two parameters generate a spatial surface. Their independent tangent vectors have a cross product giving the local normal.
+Surface area and scalar surface integrals
+A surface element is the length of the tangent cross product times parameter area. Scalar surface integrals add a weight.
+Flux and oriented area
+Flux integrates the field's component along a chosen normal. Tangential flow does not cross the surface.
+Divergence and curl
+Divergence measures net outflow per unit volume. Curl's normal component measures local circulation per unit area.
+Stokes' theorem
+Stokes' theorem connects boundary circulation with curl flux through a surface.
+The divergence theorem and closed surfaces
+The divergence theorem equates outward flux through a closed surface with the integral of divergence over its enclosed volume.
+Choosing an integral theorem
+Path work, curl flux and closed-surface flux are different objects. Identify dimension, direction and field before choosing a theorem.
+Conservation and local-to-global balance
+The continuity equation connects local density change with divergence of flux. Integrating gives mass balance on a fixed region.
+Little-$o$ notation
+$R(\mathbf h)=o(\|\mathbf h\|^p)$ means the remainder divided by distance to power $p$ tends to zero.
+The matrix of all second partials; symmetric under continuous second partial derivatives.
+Regular point
+A nondegenerate point: nonzero curve velocity, nonzero parameter-surface cross product, or nonzero level-constraint gradient, as appropriate.
+Simply connected
+A connected domain in which every loop contracts continuously to a point within the domain. Planar regions with holes generally fail this.
+Compact set
+In finite-dimensional Euclidean space, a closed bounded set. Continuous functions attain extrema on nonempty compact sets.
+Flux
+Accumulate a field's chosen unit-normal component over actual area. Reversing the normal reverses its sign.
+Determinants, Jacobians and derivative matrices
+The determinant of matrix $\begin{pmatrix}a&b\\c&d\end{pmatrix}$ is $ad-bc$. Expanding a three-dimensional determinant by its first row gives $a(ei-fh)-b(di-fg)+c(dh-eg)$. Each matrix-product entry is a row-column dot product; derivative-matrix multiplication sums over intermediate variables in the chain rule. These local tools do not replace a full linear-algebra course.
+The scope of mixed-partial, implicit-function and Taylor results
+This volume cites interchange of continuous mixed partials, local implicit functions at regular points and multivariable Taylor's theorem. Restriction to segment $g(t)=f(\mathbf a+t\mathbf h)$ reduces Taylor to one variable; the chain rule generates mixed terms. If that parameter function's third derivative is bounded by $M$, its remainder is at most $M/6$. This $M$ already includes the displacement vector; do not multiply by distance cubed again.
+Green's proof on rectangles and extension limits
+For rectangle $[a,b]\times[c,d]$, horizontal sides contribute $\int_a^b[P(x,c)-P(x,d)]dx=-\iint P_y\,dA$, vertical sides $\int_c^d[Q(b,y)-Q(a,y)]dy=\iint Q_x\,dA$. Adding yields Green's theorem. Shared edges cancel across pieces. General piecewise smooth boundaries additionally need suitable approximation and integrability arguments; a drawn mesh is not a complete general proof.
+Why graph-surface Stokes reduces to Green
+For graph $\mathbf r(u,v)=(u,v,g(u,v))$, pullback line-integral coefficients are $A=P+Rg_u,B=Q+Rg_v$, with field components evaluated on the surface. For a twice continuously differentiable graph, expanding $B_u-A_v$ and applying the chain rule yields $(\nabla\times\mathbf F)\cdot(\mathbf r_u\times\mathbf r_v)$, with mixed second partials cancelling. Apply Green on the parameter domain. The general theorem for piecewise regular surfaces also needs compatible coverage and orientation; that form is cited here.
+Divergence, singularities and point sources
+For a box, pair its six face fluxes with the single-variable fundamental theorem. Across pieces, internal faces cancel. General boundaries require approximation arguments. Field $\mathbf F=\mathbf r/\|\mathbf r\|^3$ has zero divergence away from the origin; on a radius-$R$ sphere its normal component is $1/R^2$ and flux $4\pi$. It is undefined at the origin, so a containing ball fails the classical theorem's hypotheses. A zero-volume singularity cannot simply be deleted from those hypotheses.
+What numerical visuals can and cannot establish
+Figures use finite meshes and floating-point numbers. Midpoint sums for linear functions may be exact; polygonal sphere areas are usually approximate. A model's analytic formulas supply readouts labeled exact. Animations reach stated control endpoints; parameters approaching zero retain positive lower bounds. No finite operation completes an infinite limit. Three-dimensional projection preserves equal axis scales; top view loses height, recoverable by rotation.

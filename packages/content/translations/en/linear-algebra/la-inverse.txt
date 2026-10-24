@@ -1,0 +1,65 @@
+Inverses and the invertible matrix theorem
+Can every output recover its unique input?
+An invertible square matrix allows each output to recover exactly one input.
+Collapsing a direction merges different inputs, so the output cannot identify the original input.
+Decide whether a square matrix is invertible
+Compute inverses by augmentation or the two-by-two formula
+What does an inverse satisfy?
+$A^{-1}A=AA^{-1}=I$. This definition uses square matrices. Left and right inverses of rectangular matrices are separate notions.
+How do you calculate an inverse?
+Eliminate in $[A\mid I]$. If the left side becomes $I$, the right side is the inverse. To solve a single system, elimination usually avoids computing an inverse first.
+Which conditions are equivalent?
+For an $n\times n$ matrix, invertibility, a pivot in every column, only the zero homogeneous solution, and a unique solution for every right-hand side are equivalent. Equivalently, every vector has a unique representation using its columns; such a list is called a basis later.
+Inverses and the invertible matrix theorem
+The two-by-two formula requires $ad-bc\ne0$. The invertible matrix theorem here applies directly to square matrices.
+An inverse forces the homogeneous solution to be zero.
+Full-pivot elimination recovers an input for every right-hand side.
+The same row operations produce the inverse.
+BA=I\quad\Rightarrow\quad B=A^{-1}\quad(A\text{ square})
+A two-by-two inverse
+Find the inverse of $A=\begin{pmatrix}1&2\\0&1\end{pmatrix}$.
+Undo the addition of $2y$ in $x$.
+Test $B=\begin{pmatrix}1&-2\\0&1\end{pmatrix}$: multiplying on either side gives $I$.
+$A^{-1}=B$.
+Collapse prevents inversion
+Is $A=\operatorname{diag}(1,0)$ invertible?
+$A(0,1)=0$: a nonzero input disappears.
+Multiple inputs share the same output.
+Not invertible.
+Take each entry's reciprocal to find the inverse.
+Verify the inverse using a product equal to the identity.
+An invertible matrix has no zero entries.
+The identity contains zeros and is invertible.
+Find the inverse of $\operatorname{diag}(2,4)$.
+Undo the scale in each direction.
+Use diagonal entries $1/2,1/4$.
+$\operatorname{diag}(1/2,1/4)$.
+Is $\begin{pmatrix}1&2\\2&4\end{pmatrix}$ invertible?
+Is the second row independent?
+Row two is twice row one, leaving one pivot missing.
+Not invertible.
+What is the inverse of the product of invertible $A,B$?
+Undo the last operation first.
+$(B^{-1}A^{-1})(AB)=I$.
+$(AB)^{-1}=B^{-1}A^{-1}$.
+Can an $2\times3$ matrix have a two-sided inverse as defined here?
+The identity matrices on the two sides have different sizes.
+It cannot be both one-to-one and onto between spaces of different dimensions.
+No.
+Matrix $A=\begin{pmatrix}1&c\\0&a\end{pmatrix}$ acts on $(1,1)$. Inversion fails when $a$ is zero.
+Which compression makes the original input unrecoverable?
+Can a square matrix sending a nonzero vector to zero be invertible?
+Yes
+No
+Yes, if its entries are large enough
+An inverse cannot recover two different inputs from zero.
+Invertibility requires reaching every output without merging inputs. For square matrices, full pivots guarantee both.
+Recoverable
+Set $a=1,c=1$.
+The output is $(2,1)$; an inverse recovers $(1,1)$.
+Reversal remains invertible
+Set $a=-1,c=1$.
+The determinant is minus one. Reversing orientation does not prevent inversion.
+A direction is lost
+Set $a=0,c=1$.
+The output collapses onto the horizontal axis. The nonzero kernel prevents an inverse.

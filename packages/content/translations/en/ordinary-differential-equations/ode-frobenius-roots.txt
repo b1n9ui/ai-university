@@ -1,0 +1,64 @@
+Repeated indicial roots and logarithmic solutions
+One series is not every solution
+Noninteger root differences
+For the usual real-root regular-singular case, a noninteger difference allows two independent Frobenius constructions.
+What about repeated roots?
+Usually find one solution, then obtain the second by reduction of order. A logarithmic term may appear.
+Integer difference does not force a logarithm
+Some equations already have two pure-power solutions; others need logarithms. Inspect the recurrence or reduce order before asserting a form.
+Take constant one as a known solution.
+The reduction-of-order exponential factor is reciprocal time.
+Integration gives an independent logarithmic solution.
+Logarithmic independence
+Verify independence of $1,\ln t$ on positive time.
+Their Wronskian is $1/t$.
+It is nowhere zero on the positive interval.
+They form a complete fundamental pair.
+Integer difference without a logarithm
+For $t^2y''-2y=0$, the roots differ by three. Is a logarithm required?
+The roots are two and minus one.
+The powers $t^2,t^{-1}$ are already independent.
+No logarithm is needed.
+Does writing the same Frobenius solution twice work for a repeated root?
+Check independence.
+Repetition supplies only one direction.
+Invalid.
+Does an integer root difference always give a nonzero logarithmic term?
+Consider the Euler-Cauchy counterexample.
+Distinct powers may already form the full solution.
+Not necessarily.
+Differentiate $\ln t$.
+Work on positive time.
+Differentiate directly.
+$1/t$.
+Does a logarithm diverging at zero contradict regular singularity?
+Regularity constrains scaled coefficients, not finiteness of every solution.
+The definition permits this weak singularity.
+No contradiction.
+A repeated indicial root supplies only one solution.
+Second order still needs another independent solution.
+Integer root differences automatically specify one logarithmic formula.
+The actual recurrence or reduction determines the logarithmic term.
+Repeated or integer-separated roots may need a logarithmic second solution rather than two mechanically written power series.
+When starting directions coincide, another form supplies the missing degree of freedom.
+Recognize exceptions with integer root differences
+Construct logarithmic solutions by reducing order
+Repeated indicial roots and logarithmic solutions
+This example has a double zero indicial root. In general integer-difference cases the logarithmic coefficient can vanish.
+What should you do when indicial roots differ by an integer?
+Write two identical solutions
+Delete the smaller root immediately
+Inspect the recurrence or use reduction of order
+An integer difference signals additional analysis.
+The indicial equation finds the starting exponent; the recurrence determines the full solution. Do not stop at the starting point.
+Constant direction
+Only the first solution remains.
+Set logarithmic coefficient $D$ to $0$ and positive time $t$ to $2$.
+Logarithmic direction
+The second direction adds independent variation.
+Set logarithmic coefficient $D$ to $1$ and positive time $t$ to $2$.
+Near the singularity
+The logarithmic term reveals the near-singular change.
+Set logarithmic coefficient $D$ to $1$ and positive time $t$ to $0.25$.
+Use a repeated-root Euler-Cauchy example to compare constant and logarithmic directions.
+Which independent direction disappears when the logarithmic term is removed?

@@ -1,0 +1,65 @@
+Choosing an integral theorem
+Identify the integral, hypotheses and orientation
+Path work, curl flux and closed-surface flux are different objects. Identify dimension, direction and field before choosing a theorem.
+Are you traveling along a line or crossing a surface? Does the surface have a boundary or close a volume? These questions eliminate unsuitable tools.
+Match the theorem to the integral
+Check domains, closure and orientation
+When are endpoints simplest?
+For a global potential field, use endpoint differences on open or closed paths. Otherwise inspect the path or another applicable theorem.
+Green or Stokes?
+Green concerns planar-region boundaries; Stokes concerns spatial-surface boundaries. Both connect circulation and local rotation, agreeing in the planar case.
+What does divergence handle?
+The full outward flux of a closed volume boundary. It integrates divergence, not curl. Close open surfaces with consistently oriented added pieces.
+Identify the integral, hypotheses and orientation
+\nabla\varphi\ \longleftrightarrow\ \text{endpoint difference};\quad \nabla\times\mathbf F\ \longleftrightarrow\ \text{boundary circulation};\quad\nabla\cdot\mathbf F\ \longleftrightarrow\ \text{outward closed-surface flux}
+Each conversion requires its own domain, smoothness, geometry and orientation hypotheses. No formula removes these requirements.
+The chain rule links potential to endpoints.
+An oriented surface links curl to circulation.
+A complete boundary links divergence to volume.
+One field, two integrals
+For $\mathbf F=(-y/2,x/2,z)$, find positive circulation around the unit horizontal circle and outward flux through the unit sphere.
+Curl is $(0,0,1)$, giving circle circulation $\pi$.
+Divergence is 1, giving sphere flux equal to volume $4\pi/3$.
+Results $\pi$ and $\frac{4\pi}3$ answer different questions.
+Choosing endpoints
+Find work of field $(2x,2y,2z)$ along any path from the origin to $(1,1,1)$.
+Recognize potential $x^2+y^2+z^2$.
+Subtract endpoint values to get 3; no surface is needed.
+3.
+Use Stokes for every surface integral.
+Only curl flux corresponds to boundary circulation; arbitrary flux does not.
+Divergence and curl are interchangeable.
+They describe net outflow and local rotation, with different types and geometric objects.
+Which planar-region theorem suits boundary integral $Pdx+Qdy$?
+The integral follows the boundary tangent.
+Use Green's circulation form if the field covers the region and orientation matches.
+Green's theorem.
+Which theorem suits outward flux through an entire sphere?
+The object is a full closed surface.
+Use divergence if the field is continuously differentiable across the ball.
+The divergence theorem.
+Must a conservative-field path be closed before computing work?
+What does a potential already give?
+Endpoint potential difference gives work directly.
+No.
+May a replacement surface cross a field singularity?
+Do its hypotheses hold on the new surface?
+Check the required neighborhood's smoothness; do not cross invalid regions blindly.
+Not directly.
+Which theorem turns spatial closed-loop work into a surface integral?
+The divergence theorem
+Stokes' theorem
+Taylor's theorem
+Boundary circulation corresponds to curl flux.
+Field $(-y/2,x/2,z)$; surface $z=c(1-r^2)$ and its base enclose a solid. Compare boundary circulation with full outward flux.
+If a fixed boundary keeps circulation unchanged, must closed-surface flux also stay unchanged?
+Identify line versus surface, boundary versus closure and available potentials before choosing a theorem.
+Flat
+Set bulge height $c$ to $0$.
+The unit-circle circulation is $\pi$; the enclosed solid degenerates to volume zero.
+Bulging
+Set bulge height $c$ to $0.5$.
+Circulation is unchanged; added-base volume and closed flux are $\pi/4$.
+Higher
+Set bulge height $c$ to $1$.
+Circulation stays $\pi$, while closed flux increases to $\pi/2$.

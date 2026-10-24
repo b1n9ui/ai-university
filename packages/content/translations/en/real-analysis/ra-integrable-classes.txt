@@ -1,0 +1,68 @@
+Integrability of continuous, monotone, and finite-jump functions
+Continuous and monotone functions on closed bounded intervals are integrable, for different reasons.
+Continuous and monotone functions on closed bounded intervals are integrable, for different reasons.
+Continuity gives uniformly small oscillation; monotonicity gives telescoping increments.
+Continuous functions
+Monotone functions
+Continuous functions
+Continuity on a closed interval gives boundedness by the extreme value theorem and uniformly small subinterval oscillations by uniform continuity. Fine mesh bounds the gap by small oscillation times total width.
+Monotone functions
+Even with jumps, endpoint differences control each subinterval's oscillation. The total gap is at most maximum mesh width times the full function increment.
+Finitely many exceptional points
+Cover finitely many discontinuities by intervals of arbitrarily small total length, controlling their contribution by the global magnitude bound. Use uniform continuity on the remaining closed pieces. Changing finitely many values therefore leaves the integral unchanged.
+Continuous and monotone functions on closed bounded intervals are Riemann integrable.
+U(f,P)-L(f,P)\le\|P\|\,[f(b)-f(a)]\quad\text{if }f\text{ is nondecreasing}
+A monotone function defined on the closed interval is bounded.
+The finite-exception result still requires global boundedness.
+For a nondecreasing function, subinterval oscillation equals its endpoint difference.
+Every width is at most the mesh size.
+Endpoint differences telescope; vanishing mesh makes the gap vanish.
+A single jump
+On zero to one, output zero below one half and one otherwise. Is the function integrable?
+It is bounded and nondecreasing.
+Only intervals meeting the jump contribute uncertain area, and their widths can be arbitrarily small.
+Integrable, with integral one half.
+Change one point
+If squaring is changed to one hundred at one point, does its integral change?
+The function stays bounded, with one added exceptional point.
+Enclose that point in an arbitrarily short interval.
+No change.
+Must a monotone function be continuous to be integrable?
+The monotone proof does not use continuity.
+No.
+No.
+Can this result apply to an unbounded function with finitely many discontinuities?
+Global boundedness is a hypothesis.
+It cannot be omitted.
+No.
+For the identity on zero to one with mesh at most one hundredth, what is the largest guaranteed gap?
+The total increment is one.
+$0.01\cdot1=0.01$.
+$0.01$.
+Use uniform continuity to prove continuous functions on closed intervals are integrable.
+Uniformly bound each oscillation and multiply by the total width.
+Let $a<b$. The continuous function is bounded and uniformly continuous on $[a,b]$. Given $\varepsilon>0$, choose $\delta>0$ so inputs less than $\delta$ apart have output difference less than $\varepsilon/[2(b-a)]$.
+Take a partition of mesh below $\delta$. Every subinterval oscillation is at most that error bound.
+Hence $U-L\le(b-a)\varepsilon/[2(b-a)]=\varepsilon/2<\varepsilon$. A degenerate interval has integral zero directly.
+Hence $U-L\le(b-a)\varepsilon/[2(b-a)]=\varepsilon/2<\varepsilon$. A degenerate interval has integral zero directly.
+What drives the monotone integrability bound?
+Telescoping endpoint differences
+Existence of a derivative
+Continuity everywhere
+Jumps fit within the total-increment budget too.
+Integrable means continuous
+Continuity is only sufficient.
+Finitely many exceptional points may be ignored without boundedness
+Unbounded peaks defeat finite-height control.
+Compare a continuous curve and a single jump. Why can refinement shrink uncertain area in both?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+Uniform small oscillations handle continuity; telescoping increments handle monotonicity. Continuity is sufficient, not necessary.
+Equal subintervals: 1
+Set the count to $1$. Switch among continuous, jump, and dense zero–one examples and compare whether their gaps vanish.
+Lower sum $0$; upper sum $1$; gap $1$; integral $0.5$.
+Equal subintervals: 20
+Set the count to $20$. Switch among continuous, jump, and dense zero–one examples and compare whether their gaps vanish.
+Lower sum $0.5$; upper sum $0.55$; gap $0.05$; integral $0.5$.
+Equal subintervals: 40
+Set the count to $40$. Switch among continuous, jump, and dense zero–one examples and compare whether their gaps vanish.
+Lower sum $0.5$; upper sum $0.525$; gap $0.025$; integral $0.5$.

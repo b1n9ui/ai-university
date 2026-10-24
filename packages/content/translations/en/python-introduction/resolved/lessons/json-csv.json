@@ -1,0 +1,226 @@
+{
+  "id": "json-csv",
+  "chapterId": "chapter-5",
+  "number": "5.2",
+  "title": "JSON and CSV: structures and tables",
+  "subtitle": "JSON stores structures; CSV stores tables. After parsing, check both types and meaning.",
+  "concept": "JSON stores structures; CSV stores tables. After parsing, check both types and meaning.",
+  "intuition": "Store a dictionary in a text file or organize a bill into table rows.",
+  "objectives": [
+    "Store a dictionary as JSON",
+    "Read a small CSV table",
+    "Numeric CSV fields arrive as text"
+  ],
+  "body": [
+    {
+      "title": "Store a dictionary as JSON",
+      "text": "json.dumps(data, ensure_ascii=False) converts a dictionary to JSON text. Remember the s in dumps as string. ensure_ascii=False leaves non-ASCII characters readable. json.loads(text) converts the text back to data. This uses a standard data format rather than merely saving a dictionary's printed appearance."
+    },
+    {
+      "title": "Read a small CSV table",
+      "text": "Each CSV row is a record, and the first row can name the columns. csv.DictReader reads each row as a dictionary using those names. Here io.StringIO wraps sample text as a file-like object; io provides input/output tools. You can also pass a real file opened with open to DictReader. A small text table separates table handling from path issues."
+    },
+    {
+      "title": "Numeric CSV fields arrive as text",
+      "text": "An amount field may look like 125, but row[\"amount\"] is the string \"125\". Convert it with int to integer cents before adding. A complete project also checks column names, missing values, and negative amounts. Successful parsing does not validate each row. Likewise, check that parsed JSON has the dictionary or list structure you need."
+    }
+  ],
+  "formalDefinition": {
+    "text": "JSON converts between structures and text; CSV reads column-based records. Validate structures and values after parsing.",
+    "conditions": [
+      "CSV fields are text by default. Convert and validate before calculating.",
+      "The parsed JSON structure must match what the program expects."
+    ]
+  },
+  "derivation": [
+    {
+      "text": "Import json first."
+    },
+    {
+      "text": "dumps produces text in the standard format."
+    },
+    {
+      "text": "After loads restores the data, read the name and count by key."
+    }
+  ],
+  "interactiveVisual": {
+    "kind": "python-trace",
+    "prediction": "After a JSON round trip, does count remain the same number?",
+    "caption": "Choose an input and predict the result, then select Next step. The arrow marks the next statement to execute; the side panel shows current variables and output produced so far.",
+    "experiment": {
+      "code": "import json\ndata = {\"name\": \"Lin\", \"count\": 3}\ntext = json.dumps(data, ensure_ascii=False)\nrestored = json.loads(text)\nprint(restored[\"count\"])\n",
+      "stdout": "3\n",
+      "stdin": ""
+    },
+    "followUp": "Choose 0. Compare the quotes in text with the dictionary structure in restored.",
+    "codeTemplate": "import json\ndata = {\"name\": \"Lin\", \"count\": {{count}}}\ntext = json.dumps(data, ensure_ascii=False)\nrestored = json.loads(text)\nprint(restored[\"count\"])\n",
+    "controls": [
+      {
+        "name": "count",
+        "label": "Count to save",
+        "values": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "defaultIndex": 3
+      }
+    ],
+    "watch": [
+      "data",
+      "text",
+      "restored"
+    ]
+  },
+  "workedExamples": [
+    {
+      "title": "Save and restore a record",
+      "problem": "Convert a name and count to JSON, then read them back.",
+      "steps": [
+        "Import json first.",
+        "dumps produces text in the standard format.",
+        "After loads restores the data, read the name and count by key."
+      ],
+      "answer": {
+        "code": "import json\ndata = {\"name\": \"Lin\", \"count\": 3}\ntext = json.dumps(data, ensure_ascii=False)\nrestored = json.loads(text)\nprint(restored[\"name\"])\nprint(restored[\"count\"])\n",
+        "stdout": "Lin\n3\n",
+        "stdin": ""
+      }
+    },
+    {
+      "title": "Add two amounts",
+      "problem": "The CSV amount column contains 125 and 200, in cents.",
+      "steps": [
+        "DictReader reads two rows by column name.",
+        "Convert each amount string to an integer.",
+        "The total is 325 cents."
+      ],
+      "answer": {
+        "code": "import csv\nimport io\ntext = \"category,amount\\nfood,125\\ntransport,200\\n\"\ntotal = 0\nfor row in csv.DictReader(io.StringIO(text)):\n    total = total + int(row[\"amount\"])\nprint(total)\n",
+        "stdout": "325\n",
+        "stdin": ""
+      }
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "json-csv-m1",
+      "claim": "CSV numeric fields automatically become numbers.",
+      "correction": "Fields are text by default. Convert them explicitly before calculation."
+    },
+    {
+      "id": "json-csv-m2",
+      "claim": "If a file parses, its data needs no further checks.",
+      "correction": "Check column names, value types, and permitted ranges too."
+    }
+  ],
+  "practice": [
+    {
+      "problem": "Read count from JSON text.",
+      "hint": "Use loads, then look up the key.",
+      "solution": [
+        "The result is the integer 3."
+      ],
+      "answer": {
+        "code": "import json\ndata = json.loads('{\"count\": 3}')\nprint(data[\"count\"])\n",
+        "stdout": "3\n",
+        "stdin": ""
+      },
+      "id": "json-csv-p1",
+      "difficulty": 1,
+      "misconceptionTags": [
+        "json-csv-m1"
+      ]
+    },
+    {
+      "problem": "Convert [1, 2] to JSON and back, then print its length.",
+      "hint": "Use dumps and loads.",
+      "solution": [
+        "The restored list has two items."
+      ],
+      "answer": {
+        "code": "import json\ntext = json.dumps([1, 2])\nvalues = json.loads(text)\nprint(len(values))\n",
+        "stdout": "2\n",
+        "stdin": ""
+      },
+      "id": "json-csv-p2",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "json-csv-m2"
+      ]
+    },
+    {
+      "problem": "Read a CSV amount of 50 and add 10.",
+      "hint": "Use int first.",
+      "solution": [
+        "50 + 10 = 60."
+      ],
+      "answer": {
+        "code": "import csv\nimport io\ntext = \"amount\\n50\\n\"\nfor row in csv.DictReader(io.StringIO(text)):\n    print(int(row[\"amount\"]) + 10)\n",
+        "stdout": "60\n",
+        "stdin": ""
+      },
+      "id": "json-csv-p3",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "json-csv-m1"
+      ]
+    },
+    {
+      "problem": "With only a CSV header and no data rows, what is the total?",
+      "hint": "The loop receives no records.",
+      "solution": [
+        "total remains 0."
+      ],
+      "answer": {
+        "code": "import csv\nimport io\ntotal = 0\nfor row in csv.DictReader(io.StringIO(\"amount\\n\")):\n    total = total + int(row[\"amount\"])\nprint(total)\n",
+        "stdout": "0\n",
+        "stdin": ""
+      },
+      "id": "json-csv-p4",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "json-csv-m2"
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "A CSV row contains row[\"amount\"] equal to \"125\". What should happen before adding amounts?",
+    "correctIndex": 1,
+    "choices": [
+      "Add a number directly",
+      "Convert to integer cents with int",
+      "Append the string \"200\""
+    ],
+    "explanation": "CSV fields are text by default. Convert and validate before calculating.",
+    "feedback": [
+      "A string and integer cannot be added that way.",
+      "Yes. Conversion enables numeric addition; also check the range.",
+      "Concatenation gives \"125200\", not a monetary sum."
+    ]
+  },
+  "prerequisites": [
+    "text-files",
+    "dictionaries",
+    "modules"
+  ],
+  "difficulty": 5,
+  "misconceptionTags": [
+    "json-csv-m1",
+    "json-csv-m2"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.2.1",
+    "status": "revised",
+    "humanReviewed": false
+  },
+  "sources": [
+    "python-tutorial",
+    "python-formats",
+    "python-csv"
+  ],
+  "furtherReading": []
+}

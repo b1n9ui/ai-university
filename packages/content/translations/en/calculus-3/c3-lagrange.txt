@@ -1,0 +1,65 @@
+Lagrange multipliers and constrained extrema
+At an optimum, feasible directions have zero first-order change
+On a smooth equality constraint, an extremal objective gradient is normally parallel to the constraint gradient. Multipliers express that alignment.
+If the objective gradient has a feasible tangent component, moving one way still increases the objective. At a regular extremal candidate, normals align.
+Set up multiplier equations
+Check regularity and missing candidates
+Why not set the objective gradient to zero?
+The constraint restricts directions. The objective can rise in forbidden directions while no allowed direction increases it.
+What points may be missed?
+A zero constraint gradient can invalidate the multiplier condition. Check singular points separately, as well as boundaries, inequalities and escape to infinity.
+Multiple constraints
+With independent constraint gradients, the objective gradient is their linear combination. Otherwise inspect degeneracy and potentially missed candidates.
+At an optimum, feasible directions have zero first-order change
+Functions and constraints are continuously differentiable nearby. A single constraint needs nonzero gradient; multiple constraints need independent gradients. Solutions are only candidates: compare them and check omissions.
+Feasible tangents are perpendicular to the constraint gradient.
+An extremum has zero first-order change along every feasible tangent.
+The two normals are therefore parallel.
+A linear objective on a circle
+Find extrema of $f=2x+y$ subject to $x^2+y^2=5$.
+$(2,1)=\lambda(2x,2y)$, so $(x,y)$ and $(2,1)$ are parallel.
+The constraint gives $(2,1)$ and $(-2,-1)$, with objective values plus and minus 5.
+Maximum 5; minimum $-5$.
+A product on a sphere
+Maximize $xy$ subject to $x^2+y^2+z^2=2$.
+$2xy\le x^2+y^2\le2$, hence $xy\le1$.
+Equality occurs at $(1,1,0)$ and $(-1,-1,0)$, checking the multiplier candidates.
+Maximum 1.
+Every multiplier solution is an extremum.
+It is only a candidate and may not be optimal.
+A zero constraint gradient rules out extrema.
+It invalidates regularity, not optimality. Check singular points separately.
+Find the maximum of $x+y$ on the unit circle.
+Use parallel gradients or a dot-product bound.
+$(1,1)\cdot(x,y)\le\sqrt2$.
+Equality occurs at $(1/\sqrt2,1/\sqrt2)$.
+$\sqrt2$.
+Minimize $x^2+y^2$ on line $x+y=4$.
+Eliminate one variable.
+$x^2+(4-x)^2=2(x-2)^2+8$.
+For constraint $x^2+y^2=0$, minimize $f=x$. Do ordinary multiplier equations find a candidate?
+The feasible set is a single point.
+The origin is necessarily the optimum, but the constraint gradient is zero.
+The objective gradient is nonzero, so the ordinary equations cannot hold.
+No; inspect the singular point separately.
+When may two-constraint multiplier necessary conditions be applied directly?
+Check independence of normals.
+All functions must be continuously differentiable and both constraint gradients independent there.
+Under smoothness and independent constraint gradients.
+What follows solving the multiplier equations?
+Declare a maximum immediately
+Compare values and check singularities, boundaries and existence
+Ignore the constraint
+Multipliers give necessary conditions, not automatic optimality.
+Move on the unit circle with objective $f=2x+y$; compare objective and constraint gradients.
+Must parallel gradients indicate a maximum?
+At an extremum, feasible tangents cannot increase the objective to first order; its gradient lies in the constraint-normal direction.
+Aligned candidate
+Set direction angle $\theta$ to $0.463648$.
+Position aligns with $(2,1)$; the linear objective is maximal.
+Perpendicular direction
+Set direction angle $\theta$ to $2.03444$.
+The objective is zero, neither maximum nor minimum here.
+Opposing candidate
+Set direction angle $\theta$ to $3.60524$.
+Position opposes the objective gradient, giving the minimum.

@@ -1,0 +1,65 @@
+Proportion tests and exact binomial tails
+Construct a proportion test's reference distribution using the null proportion.
+Construct a proportion test's reference distribution using the null proportion.
+The observed success proportion is data. Assess its extremeness using probabilities calculated under the null.
+Use the exact binomial model
+Use a large-sample score approximation
+Use the exact binomial model
+For independent trials with a common success probability fixed by the null, the success count has a binomial distribution. Sum its tail in the prespecified direction.
+Use a large-sample score approximation
+The approximate standard error uses the null proportion, not the observed proportion. Prefer an exact method when either expected null count is too small.
+Specify the two-sided convention
+Discrete two-sided $p$-values do not have one universal doubling convention. Probability ordering sums null outcomes no more probable than the observed outcome; state the method used.
+The exact model assumes a fixed number of independent Bernoulli trials with a common success probability.
+The exact model assumes a fixed number of independent Bernoulli trials with a common success probability.
+The approximation requires $0<p_0<1$ and adequate tail accuracy. The exact demonstration uses a right-sided alternative.
+The null specifies the count distribution.
+A right-tail event includes the observed count and every larger count.
+Add their exact masses.
+An exact right tail
+Four flips of a fair coin all show heads. Testing success probability above one half, find the $p$-value.
+Under the null, at least four successes means exactly four.
+The probability is $1/16$.
+$0.0625$.
+Approximation scale
+Observe sixty successes in 100 trials under null probability one half. Find $z$.
+The null standard error is $\sqrt{0.25/100}=0.05$.
+Divide the proportion difference $0.1$ by it.
+$z=2$; continuity correction and exact tails produce different approximations.
+For four fair flips, find the exact right tail for at least three heads.
+Include three and four heads.
+$(4+1)/16=5/16$.
+$0.3125$.
+Which proportion belongs in the score-test denominator?
+Calibrate using the null distribution.
+Use $p_0$.
+The null proportion.
+Does zero observed successes make the score-test standard error zero?
+Consider an interior null probability.
+Zero successes do not change the null probability.
+Not when $0<p_0<1$.
+Must every discrete two-sided $p$-value equal twice the smaller one-sided tail?
+Different definitions order two-sided extremes differently.
+Probability ordering need not equal simple doubling.
+No. State the convention.
+Four heads under the fair model give right-sided $p$-value $0.0625$. Reject at $0.05$?
+Reject
+Do not reject
+The null has been proved
+At this level, the discrete sample does not provide enough evidence to reject.
+The observed proportion calibrates the score standard error
+The score test uses the null proportion for calibration.
+All discrete two-sided algorithms are equivalent
+Probability ordering and doubled-tail conventions can differ.
+Increase the observed count cell by cell. Does the exact right-sided $p$-value vary continuously?
+The exact binomial tail forms discrete steps. The one-sided alternative always points toward greater success probability.
+The score test uses the null proportion for calibration.
+Observed success proportion: 0.8
+Set observed success proportion to $0.8$ and compare the diagram and readings.
+At this preset: binomial mean $5$; binomial variance $2.5$; observed successes after rounding $8$; exact right-sided $p$-value $0.0546875$.
+Observed success proportion: 0
+Set observed success proportion to $0$ and compare the diagram and readings.
+At this preset: binomial mean $5$; binomial variance $2.5$; observed successes after rounding $0$; exact right-sided $p$-value $1$.
+Observed success proportion: 1
+Set observed success proportion to $1$ and compare the diagram and readings.
+At this preset: binomial mean $5$; binomial variance $2.5$; observed successes after rounding $10$; exact right-sided $p$-value $0.000976563$.

@@ -1,0 +1,67 @@
+Monotone convergence and nested intervals
+A bounded monotone real sequence converges to its appropriate supremum or infimum.
+A bounded monotone real sequence converges to its appropriate supremum or infimum.
+An increasing sequence never retreats and cannot pass its upper bound; its supremum describes where it settles.
+Prove with the supremum
+Distinguish boundedness from monotonicity
+Prove with the supremum
+For an increasing bounded-above sequence, take the supremum of its terms. Once a term enters any left neighborhood, monotonicity keeps every later term there.
+Distinguish boundedness from monotonicity
+Neither condition alone suffices: a monotone sequence may be unbounded, and a bounded one may oscillate. Negation gives the decreasing bounded-below case.
+Connect nested intervals
+For nested nonempty closed bounded intervals, left endpoints increase and right endpoints decrease within the first interval. Completeness gives a common point; vanishing lengths make it unique.
+Nested closed bounded intervals have a common point, unique if their lengths tend to zero.
+The real sequence is monotone and bounded in the required direction.
+The intervals are nonempty, closed, bounded, and nested.
+Take the supremum and find a term near it.
+Monotonicity controls the entire tail.
+The supremum of left endpoints gives a point in every nested interval.
+A monotone approach
+Use monotone convergence to find the limit of $a_n=1-1/n$.
+It increases and stays below one.
+One is the supremum of its terms, hence its limit.
+One.
+Closedness matters
+What is the intersection of the nested intervals $(0,1/n)$?
+Zero is excluded from all of them.
+Every positive number eventually lies outside.
+Empty; these intervals are not closed.
+What is the intersection of $[0,1/n]$?
+Meet all upper bounds simultaneously.
+Only zero does so.
+$\{0\}$.
+Without lengths tending to zero, is the common point necessarily unique?
+Take every interval to be the same.
+Their intersection can be a whole interval.
+No.
+Can an increasing sequence unbounded above have a finite limit?
+A finite limit implies boundedness.
+That contradicts unboundedness.
+No.
+Give and prove an example of nested nonempty bounded intervals that are not closed and have empty intersection.
+Consider $(0,1/n)$.
+Let $I_n=(0,1/n)$. Each is nonempty and bounded, with $I_{n+1}\subseteq I_n$.
+A common member $x$ would satisfy $x>0$. Choose $n>1/x$; then $1/n<x$, a contradiction.
+Zero belongs to none, so the intersection is empty. Closedness cannot be omitted.
+Zero belongs to none, so the intersection is empty. Closedness cannot be omitted.
+What underlies bounded monotone convergence?
+Completeness
+Finitely many plotted points
+A zero derivative
+The supremum or infimum supplies the real limit.
+Every nested interval family has a common point
+Open intervals, or families lacking a bounded initial interval, may fail.
+Constant interval length still gives uniqueness
+Uniqueness needs an extra condition such as lengths tending to zero.
+Shrink the closed intervals. What do their common point and lengths each tell you?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+Monotonicity and a bound allow a supremum argument. Open intervals or no bounded initial interval may invalidate the nested-interval conclusion.
+Nesting depth: 0
+Set the nesting depth to $0$. Check containment at each level and compare the last interval's length with the common point.
+Last interval length $1$; unique point common to the entire infinite family $0$.
+Nesting depth: 7
+Set the nesting depth to $7$. Check containment at each level and compare the last interval's length with the common point.
+Last interval length $0.0078125$; unique point common to the entire infinite family $0$.
+Nesting depth: 15
+Set the nesting depth to $15$. Check containment at each level and compare the last interval's length with the common point.
+Last interval length $0.00003051758$; unique point common to the entire infinite family $0$.

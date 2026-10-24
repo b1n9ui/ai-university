@@ -1,0 +1,61 @@
+Order, linearity, and standard form
+Identify structure before choosing a method
+How do you count order?
+Use the highest derivative actually present. $y''+t^2y=0$ is second order; $y'+y^2=0$ is first order.
+Linear in what?
+A linear equation has form $a_n(t)y^{(n)}+\cdots+a_0(t)y=g(t)$. Coefficients may depend on the independent variable, but not the unknown solution.
+Why can you not divide everywhere?
+Dividing $ty'+y=1$ by $t$ is valid only on intervals excluding zero. Check the original equation separately at zero.
+Identify the highest derivative.
+Separate coefficients from forcing.
+Divide by the leading coefficient only where it is nonzero.
+Squaring the independent variable
+Classify $y''+t^2y=\sin t$.
+The highest derivative is second order.
+The unknown and derivatives occur to the first power; the right side is nonzero.
+Second-order nonhomogeneous linear equation.
+Squaring a derivative
+Classify $(y')^2+y=0$.
+The highest derivative is first order.
+Squaring that derivative makes the equation nonlinear.
+First-order nonlinear equation.
+What is the order of $y'''+e^ty=0$?
+Find the highest derivative.
+A third derivative occurs and no higher one does.
+$3$.
+Is $y'+\sin y=0$ linear?
+Check what the sine acts on.
+Sine acts on the unknown, not as a time-dependent coefficient multiplying it.
+Nonlinear.
+On which maximal open intervals is the standard form of $t^2y''+y=0$ valid?
+Avoid zeros of the leading coefficient.
+Dividing by $t^2$ requires $t\ne0$.
+$(-\infty,0)$ and $(0,\infty)$.
+Is $y'+2y=5$ homogeneous?
+Inspect the right-hand side.
+In standard linear form, the right-hand side is a nonzero constant.
+Nonhomogeneous.
+Nonlinear-looking coefficients make the equation nonlinear.
+Coefficients may be any prescribed time functions.
+Dividing by a coefficient with a zero preserves equivalence on the whole original interval.
+Division restricts the valid interval.
+The highest derivative determines order. First-power dependence on the unknown and its derivatives determines linearity.
+A squared independent variable preserves linearity; a squared unknown changes the structure.
+Classify order and linearity
+State the interval for standard form
+Order, linearity, and standard form
+Standard form requires $a_n(t)\ne0$ on the interval. Homogeneous linear equations also require $g=0$.
+Which equation is linear?
+Linearity concerns the unknown function and its derivatives.
+Inspect how the unknown appears. Complicated time coefficients need not break linearity.
+A straight-line solution
+Initial value one gives a line following the field directions.
+Set initial value $y_0$ to $1$ and observation time $t$ to $2$.
+Deviate upward
+A higher initial value adds a positive exponential difference.
+Set initial value $y_0$ to $1.5$ and observation time $t$ to $1$.
+Deviate downward
+A lower initial value adds a negative exponential difference.
+Set initial value $y_0$ to $0.5$ and observation time $t$ to $1$.
+Segments show the direction field; the curve is the analytic initial-value solution. Segments are normalized, so read their slopes rather than lengths.
+How does raising or lowering the initial value from one move the solution away from the line?

@@ -1,0 +1,65 @@
+Real symmetric matrices and the spectral theorem
+Symmetry guarantees an orthonormal eigenbasis
+Every real symmetric matrix is diagonalizable in an orthonormal eigenbasis.
+Orthogonal coordinates separate its directional actions without oblique axes, and every eigenvalue is real.
+Construct a real symmetric spectral decomposition
+Choose orthonormal bases inside repeated eigenspaces
+Why are eigenvalues real?
+Temporarily allowing complex eigenvectors, $v^*Av$ is real for a real symmetric matrix and equals $\lambda v^*v$.
+Why are distinct eigenspaces perpendicular?
+Symmetry gives $u^TAv=(Au)^Tv$. Extract the eigenvalues on both sides to show distinct eigenspaces are perpendicular.
+What about repeated roots?
+Choose an orthonormal basis in each eigenspace. The spectral theorem guarantees these spaces cover all dimensions; the appendix outlines a proof.
+Real symmetric matrices and the spectral theorem
+A=A^T\Rightarrow A=Q\Lambda Q^T,\quad Q^TQ=I,\quad \Lambda\text{ real diagonal}
+Require a real symmetric square matrix. General real matrices do not satisfy this theorem. Over the complex numbers, the analogous hypothesis is Hermitian symmetry.
+Use symmetry to compare two inner products.
+Different eigenvalues force orthogonality.
+Choose a complete orthonormal eigenvector list.
+An orthonormal spectral decomposition
+$A=\begin{pmatrix}2&1\\1&2\end{pmatrix}$.
+Unit eigenvectors are $(1,1)/\sqrt2,(1,-1)/\sqrt2$.
+Their eigenvalues are $3,1$. Put the vectors in $Q$ to obtain $Q^{-1}=Q^T$.
+$A=Q\operatorname{diag}(3,1)Q^T$.
+Diagonalizable need not mean orthogonally diagonalizable
+Can $J=\begin{pmatrix}1&1\\0&2\end{pmatrix}$ be diagonalized by a real orthogonal matrix?
+A representation $QDQ^T$ would equal its own transpose.
+$J\ne J^T$.
+No. Ordinary diagonalization exists, but real orthogonal diagonalization does not.
+Every real matrix has a real orthonormal eigenbasis.
+Symmetry is needed for this guarantee.
+Any eigenvectors for the same repeated eigenvalue are perpendicular.
+They can be orthogonalized within that space; arbitrary choices need not be perpendicular.
+Is $\operatorname{diag}(2,-1)$ symmetric?
+Check its transpose.
+A diagonal matrix equals its transpose.
+Yes.
+Can a real symmetric matrix have nonreal eigenvalues?
+Apply the spectral theorem.
+All eigenvalues are real.
+No.
+Why does changing to an orthonormal basis preserve length?
+The transpose of $Q$ is its inverse.
+$\|Qx\|^2=x^TQ^TQx=\|x\|^2$.
+Inner products and lengths are preserved.
+Given $A=QDQ^T$, find $A^T$.
+Transposition reverses products, and $D$ is symmetric.
+$A^T=QD^TQ^T=QDQ^T=A$.
+$A$.
+$A=\begin{pmatrix}2&c\\c&2\end{pmatrix}$. Blue is the unit input; gold is its output. They are collinear on eigendirections.
+Why can the eigendirections of a symmetric matrix be chosen perpendicular?
+What property must a real orthogonally diagonalizable matrix have?
+Symmetry
+Every entry positive
+Invertibility
+Orthogonal conjugation of a real diagonal matrix is symmetric.
+Symmetry gives independent, perpendicular eigendirections, separating calculations without distorting length.
+First eigendirection
+Set $c=1,\theta=\pi/4$.
+Output length is three in the same direction, giving eigenvalue three.
+Second eigendirection
+Set $c=1,\theta=3\pi/4$.
+Output length is one, giving eigenvalue one; the directions are perpendicular.
+Repeated eigenvalue without missing directions
+Set $c=0$.
+The matrix is $2I$; every nonzero direction is an eigendirection.

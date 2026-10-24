@@ -1,0 +1,66 @@
+Repeated selections and stars and bars
+Distribute identical objects among distinct recipients by encoding counts with stars and bars.
+Distribute identical objects among distinct recipients by encoding counts with stars and bars.
+Stars represent objects and bars separate recipients. Adjacent bars mean a recipient receives zero.
+Check distinguishability
+Count nonnegative solutions
+Check distinguishability
+Stars and bars assumes identical objects and distinct recipients. Named objects or indistinguishable recipients give a different counting problem.
+Count nonnegative solutions
+Arrange one star per object and one fewer bar than recipients. Adjacent bars and bars at either end encode zero allocations.
+Add lower and upper bounds
+For at least one per recipient, distribute one to each first. Upper bounds cannot be handled by shifting alone: exclude excessive allocations, usually with inclusion–exclusion.
+Nonnegative integer solutions correspond bijectively to star-and-bar strings.
+The object count is a nonnegative integer and the recipient count a positive integer.
+Objects are identical; recipients are distinct.
+Encode each allocation as a run of stars.
+The string has fixed counts of two symbols.
+n\text{ stars},\ k-1\text{ bars}
+Choose the bar positions.
+Allow empty allocations
+Distribute five identical candies among three people, allowing zero. How many ways are there?
+There are five stars and two bars.
+$\binom72=21$.
+Twenty-one.
+At least one each
+Distribute the same five candies among three people, with at least one each.
+Give each person one, leaving two.
+$\binom42=6$.
+Six.
+How many ways can three identical candies go to two people, allowing zero?
+The first person's share ranges from zero through three.
+There are four allocations.
+Four.
+How many ways can zero candies go to four people, allowing zero?
+Every share is forced.
+All shares must be zero.
+One.
+Can the same formula distribute five individually named candies among three people?
+Are the objects identical?
+Each candy has three destinations, giving three to the fifth power.
+No.
+For at most two each, can we just subtract two and apply the formula?
+Upper bounds differ from lower bounds.
+Subtracting a fixed allocation handles lower bounds; upper bounds require excluding excess allocations.
+No.
+What do adjacent bars mean?
+An invalid encoding
+Someone receives zero objects
+The objects are identical
+There are no stars between those bars.
+Distinguishability does not affect the answer
+Distinct objects retain extra identity information.
+Bars cannot appear at the ends
+End bars encode zero for the first or last recipient.
+Change the object and recipient counts. How do valid strings correspond to allocation solutions?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+Distinct objects retain extra identity information.
+Identical-object count: 0
+Set the control to $0$. Observe which objects, relations, or counts change.
+At this setting: allocations $1$.
+Identical-object count: 4
+Set the control to $4$. Observe which objects, relations, or counts change.
+At this setting: allocations $15$.
+Identical-object count: 8
+Set the control to $8$. Observe which objects, relations, or counts change.
+At this setting: allocations $45$.

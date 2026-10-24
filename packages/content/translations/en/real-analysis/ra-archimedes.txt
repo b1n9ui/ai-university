@@ -1,0 +1,67 @@
+The Archimedean property and density
+Natural numbers exceed every real bound; every nonempty open interval contains a rational.
+Natural numbers exceed every real bound; every nonempty open interval contains a rational.
+Magnify the interval until its length exceeds one, fit an integer inside, then scale back.
+Rule out infinitely large reals
+Find a rational
+Rule out infinitely large reals
+If the natural numbers had a real upper bound, take their supremum. A natural number close enough to it has a successor above it, a contradiction.
+Find a rational
+Between strictly ordered reals, choose a denominator making the scaled gap exceed one. The integer-part function then supplies an integer numerator strictly inside.
+Distinguish density and completeness
+Rationals occur in every interval but do not fill the real line. Density gives local approximation, not closure under every limit.
+The natural numbers are unbounded in the reals, and the rationals are dense there.
+The denominator is a positive integer and the interval has strictly positive length.
+Assume the natural numbers have a supremum.
+Use approximation to choose a natural number close to it.
+Its successor exceeds the upper bound.
+Between two numbers
+Find a rational strictly between $1.41$ and $1.42$.
+Choose denominator one thousand.
+Numerator one thousand four hundred fifteen lies strictly inside the scaled interval.
+$1415/1000$.
+Irrationals too
+Does every nonempty open interval contain an irrational?
+Choose a rational $r$ in the interval's interior.
+Choose a sufficiently large positive integer $n$ so that $r+\sqrt2/n$ remains inside.
+A rational plus a nonzero irrational is irrational.
+Yes. Existence of the square root of two is proved later.
+For every positive error, can a natural number have reciprocal smaller than it?
+Use the Archimedean property.
+Take $n>1/\varepsilon$.
+Yes.
+Must a dense set equal the real line?
+Use the rationals as a counterexample.
+They are dense but omit irrational numbers.
+No.
+Find a rational between zero and one tenth.
+Choose a larger denominator.
+$1/20=0.05$.
+For example, $1/20$.
+Prove that every $a<b$ has a rational between them.
+Scale the interval, then find an integer inside.
+Choose a positive integer $n$ with $n(b-a)>1$.
+Set $m=\lfloor na\rfloor+1$; then $na<m\le na+1<nb$.
+Divide by positive $n$ to obtain $a<m/n<b$.
+Divide by positive $n$ to obtain $a<m/n<b$.
+What does density describe?
+A member in every nonempty open interval
+Containing all limits
+A finite number of elements
+It is an approximation property, not completeness.
+A small decimal gap contains no rational
+Choose a larger denominator.
+No largest natural number already proves unboundedness
+Lacking a maximum is not unboundedness; the full argument needs completeness.
+Increase the denominator. How does the rational grid enter a fixed small interval?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+Scale an interval to length greater than one, place an integer inside, then scale back. A larger denominator gives a finer grid.
+Common denominator: 1
+Set the common denominator to $1$. Check which grid points lie strictly inside the open interval.
+Denominator $1$; numerators strictly inside $0$.
+Common denominator: 150
+Set the common denominator to $150$. Check which grid points lie strictly inside the open interval.
+Denominator $150$; numerators strictly inside $1$.
+Common denominator: 300
+Set the common denominator to $300$. Check which grid points lie strictly inside the open interval.
+Denominator $300$; numerators strictly inside $2$.

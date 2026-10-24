@@ -1,0 +1,61 @@
+Condition numbers and error amplification
+Invertibility does not guarantee numerical reliability
+A condition number bounds how small data errors can amplify into relative solution errors in sensitive directions.
+Recovering a severely compressed direction needs large reverse amplification. Exact invertibility does not guarantee reliable floating-point solves.
+Calculate the two-norm condition number
+Distinguish problem sensitivity from algorithm stability
+How is the two-norm condition number defined?
+For an invertible square matrix, $\kappa_2(A)=\|A\|_2\|A^{-1}\|_2=\sigma_{\max}/\sigma_{\min}$. Singular matrices are usually assigned infinity.
+Does a small determinant mean ill-conditioning?
+No. Uniform scaling can make a determinant tiny without changing conditioning. The relative scaling between directions matters.
+Is ill-conditioning the same as an unstable algorithm?
+Ill-conditioning is sensitivity of the problem to data. Instability adds excessive computational error. A stable algorithm cannot recover precision absent from the input.
+Condition numbers and error amplification
+This bound perturbs only the right-hand side. Hold invertible $A$ fixed and assume $b$ nonzero. Perturbing matrix coefficients needs additional conditions and bounds.
+Bound the solution perturbation.
+Bound the original right-hand side too.
+Divide and combine the bounds.
+A compressed direction
+Given $A=\operatorname{diag}(1,0.01),b=(1,0.01)$, increase the right-hand side's vertical component by $0.001$.
+The original solution is $(1,1)$.
+The new solution is $(1,1.1)$. A data change of one thousandth changes the vertical solution by one tenth.
+The condition number is $100$, consistent with the relative-error bound.
+$\delta x=(0,0.1)$.
+Uniformly small need not mean ill-conditioned
+Find the condition number of $A=10^{-6}I_2$.
+Both singular values equal $10^{-6}$.
+Their ratio is one.
+1.
+A determinant near zero alone establishes ill-conditioning.
+Use a relative scale such as the singular-value ratio.
+A small residual guarantees a small solution error.
+An ill-conditioned system can amplify a small residual into a substantial solution error.
+Find the condition number of $\operatorname{diag}(10,0.1)$.
+Divide the largest singular value by the smallest.
+$10/0.1=100$.
+Find the two-norm condition number of an orthogonal matrix.
+Every singular value is one.
+Their ratio is one.
+How does multiplying invertible $A$ by a nonzero scalar affect its condition number?
+Numerator and denominator scale together.
+The ratio is unchanged.
+Unchanged.
+Can a singular square matrix use the finite inverse-based condition-number bound?
+Its inverse does not exist.
+No. Discuss pseudoinverses, rank, or regularization instead.
+No.
+$A=\operatorname{diag}(1,c)$ with original right-hand side $(1,c)$. Perturb only its vertical component. The plot uses equal units; large solutions may require a wider view.
+How much does a fixed right-hand-side perturbation amplify along a compressed direction?
+Which matrix can have a tiny determinant but condition number one?
+Every singular matrix
+Uniform scaling preserves the ratio of directional scales.
+Solution accuracy depends on both the computation and the problem itself. Conditioning indicates whether the data precision supports the requested answer precision.
+Uniform scale
+Set $c=1,\delta=0.01$.
+The vertical solution changes by $0.01$; condition number one.
+Compress by ten
+Set $c=0.1,\delta=0.01$.
+The vertical solution changes by $0.1$; condition number ten.
+Compress by one hundred
+Set $c=0.01,\delta=0.01$.
+The vertical solution changes by one; condition number one hundred.

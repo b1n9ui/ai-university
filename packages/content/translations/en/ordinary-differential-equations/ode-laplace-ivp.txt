@@ -1,0 +1,64 @@
+Solving initial-value problems with Laplace transforms
+Initial data enter the algebraic equation
+The derivative rule
+With $Y=\mathcal L\{y\}$, we have $\mathcal L\{y'\}=sY-y(0^+)$.
+Second order retains another initial value
+Applying the rule again gives $\mathcal L\{y''\}=s^2Y-sy(0^+)-y'(0^+)$.
+How do you check the result?
+After inversion, check both initial data and the original equation. For switched forcing, check continuity conditions at each switch too.
+Integrate the first derivative by parts.
+The infinite boundary term vanishes in a suitable convergence half-plane.
+Apply the rule once more.
+First order with constant input
+Solve $y'+y=1,y(0)=0$.
+Transforming gives $(s+1)Y=1/s$.
+Partial fractions give $Y=1/s-1/(s+1)$.
+$y=1-e^{-t}$.
+Second-order free motion
+Solve $y''+4y=0,y(0)=0,y'(0)=3$.
+Transforming gives $(s^2+4)Y=3$.
+Match the sine formula.
+$y=3\sin2t/2$.
+With initial value two, what is the transform of $y'$?
+Keep the endpoint term.
+A derivative transforms to parameter times transform minus initial value.
+$sY-2$.
+Given $y(0)=1,y'(0)=-1$, find the second-derivative transform.
+Substitute each term.
+$s^2Y-s\cdot1-(-1)$.
+$s^2Y-s+1$.
+Solve $y'+2y=0,y(0)=5$.
+Write its transform equation first.
+$(s+2)Y=5$ inverts to an exponential.
+$y=5e^{-2t}$.
+Should initial values be checked after transforming?
+Algebra mistakes can omit endpoint terms.
+Evaluate and differentiate the result for an independent check.
+Yes.
+Transforming a derivative only multiplies by the parameter.
+A one-sided transform also contains initial-data endpoint terms.
+The minus sign on initial velocity is optional.
+It changes the entire initial response.
+Derivative transforms retain initial data as algebraic terms, turning the differential solve into a transform-space algebraic solve.
+Integration by parts records the starting point in endpoint terms.
+Use first- and second-derivative rules
+Invert and verify initial data
+Solving initial-value problems with Laplace transforms
+Derivatives need appropriate piecewise continuity and exponential growth control. Endpoint values are right limits; impulses require a separate distributional interpretation.
+Which initial data appear in a second-derivative transform?
+Only function value
+Function value and first derivative
+First and second derivatives
+Both initial data needed for second order enter the algebraic expression.
+Laplace methods organize the solve into algebra while endpoint terms retain control of the starting state.
+Starting point
+The output satisfies zero initial data.
+Set observation time $t$ to $0$.
+One time unit
+Output has risen but has not reached steady state.
+Set observation time $t$ to $1$.
+Later
+Output continues approaching one.
+Set observation time $t$ to $4$.
+Blue is constant input; gold is the analytic response with zero initial data. Compare transform expression $Y=1/[s(s+1)]$.
+Does a response starting from zero immediately equal the input?

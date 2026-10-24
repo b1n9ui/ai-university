@@ -1,0 +1,64 @@
+Frequency response, amplitude, and phase
+How the steady state follows periodic forcing
+What is the transient?
+The homogeneous solution carries initial data. With positive mass, stiffness, and damping, it decays and describes startup.
+What is the steady state?
+For sinusoidal forcing, write a particular solution as $A\cos(\omega t-\phi)$. Amplitude is nonnegative; phase requires the correct quadrant.
+Where does the peak occur?
+If $c^2<2mk$, displacement amplitude peaks at $\sqrt{k/m-c^2/(2m^2)}$, not always at the natural frequency. Strong damping removes a positive-frequency peak.
+Use a complex trial solution.
+Substitute to obtain the complex response.
+Its magnitude and argument give amplitude and lag.
+Damped response at natural frequency
+Set $m=k=c=F=1,\omega=1$.
+The denominator has zero real part and imaginary part one.
+Amplitude one, lag $\pi/2$.
+Steady response $y=\sin t$.
+Static input
+Set $m=1,k=4,c=2,F=8,\omega=0$.
+The forcing is constant eight.
+Steady derivatives vanish, so $4y=8$.
+Steady displacement is two.
+Find the steady amplitude for $m=k=1,c=2,F=1,\omega=1$.
+Only the damping term remains in the denominator.
+The denominator is two.
+$1/2$.
+Does the long-term steady state retain initial-data dependence with positive damping?
+Check decay of homogeneous terms.
+Homogeneous roots have negative real parts, so initial responses disappear.
+No lasting difference remains.
+Is ordinary arctangent enough without checking quadrants?
+The denominator's real part may be negative.
+An arctangent of the ratio can lose the phase quadrant.
+Use a quadrant-aware phase calculation.
+Does $m=k=1,c=2$ have a positive-frequency displacement peak?
+Check the peak criterion.
+$c^2=4>2mk$; amplitude decreases from its static value.
+No.
+A damped peak always occurs at the natural frequency.
+The displacement peak also depends on damping.
+A steady-state formula automatically matches arbitrary initial data.
+Add decaying homogeneous terms to match them.
+A positively damped linear system eventually oscillates at the forcing frequency, with frequency-dependent amplitude and phase.
+Driving the same system at different rates gives different amplification and delay.
+Calculate steady amplitudes
+Separate transients, steady response, and resonance peaks
+Frequency response, amplitude, and phase
+Assume $m,k,c>0,F\ge0,\omega\ge0$. Zero frequency means constant input with steady displacement $F/k$.
+With positive damping, what determines the long-term periodic-response frequency?
+The real part of a homogeneous root
+Initial velocity
+Periodic forcing
+The initial-data transient decays.
+Separate startup from long-term response before comparing an amplitude curve with an individual initial-value trajectory.
+Weak damping
+Response near natural frequency is large but finite.
+Set driving angular frequency $\omega$ to $1$ and damping coefficient $c$ to $0.2$.
+More damping
+The same-frequency amplitude decreases.
+Set driving angular frequency $\omega$ to $1$ and damping coefficient $c$ to $1$.
+Static
+Static displacement is one and lag zero.
+Set driving angular frequency $\omega$ to $0$ and damping coefficient $c$ to $1$.
+Horizontal is driving angular frequency and vertical is steady displacement amplitude. The marker is not a time-evolution point. Phase readouts use the correct quadrant.
+How do the amplitude peak's position and height change with damping?

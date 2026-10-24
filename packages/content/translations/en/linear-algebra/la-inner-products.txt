@@ -1,0 +1,62 @@
+Inner products, lengths, and angles
+Measure alignment, length, and angle
+The inner product measures alignment and defines length and distance.
+Aligned components contribute positively, opposed components negatively; perpendicular directions have zero total contribution.
+Calculate inner products, norms, and distances
+Check angle-formula hypotheses
+How do you calculate the standard inner product?
+Multiply corresponding real components and sum. Length is $\|x\|=\sqrt{x^Tx}$; distance is the length of the difference vector.
+How do you obtain an angle?
+Nonzero vectors satisfy $\cos\theta=x^Ty/(\|x\|\|y\|)$. This does not define an angle for zero vectors.
+Why do these definitions work?
+A real inner product is linear in each variable, symmetric, and positive definite. An arbitrary bilinear expression need not define length.
+Inner products, lengths, and angles
+Use the real Euclidean inner product. Both vectors must be nonzero for the angle formula. Proofs of Cauchy-Schwarz and the triangle inequality appear in the appendix.
+A nonnegative square provides a bound.
+Choose the minimizing scalar along a nonzero direction.
+Expand the squared norm of a sum to obtain the triangle inequality.
+Length and angle
+Find the angle between $u=(1,0),v=(1,1)$.
+Their dot product is one and lengths are one and $\sqrt2$.
+The cosine is $1/\sqrt2$.
+$\pi/4$.
+Distance
+Find the distance between $(1,2,3)$ and $(3,1,1)$.
+Their difference is $(2,-1,-2)$.
+Its squared length is $4+1+4=9$.
+3.
+A zero dot product defines a right angle for the zero vector.
+Zero has zero dot product with every vector, but the angle formula divides by zero.
+Length is additive.
+Usually only an inequality holds; equality requires the same direction.
+$(1,-2,3)\cdot(2,1,0)$?
+Multiply corresponding components and sum.
+$2-2+0=0$.
+$\|(2,3,6)\|$?
+Take the square root of the sum of squares.
+$\sqrt{4+9+36}=7$.
+What does a negative $x^Ty$ say about the angle?
+For nonzero vectors, inspect the cosine's sign.
+A negative cosine means an angle greater than $\pi/2$.
+Obtuse.
+Is $B(x,y)=x_1y_1-x_2y_2$ a real inner product?
+Check positive definiteness.
+$B((0,1),(0,1))=-1$.
+No.
+Fix $u=(1,0)$. The other vector has length $b$ and the angle selected by the control. Zero length leaves the angle undefined.
+How does the inner product pass through zero as alignment reverses?
+What must you exclude before calculating an angle with inner products?
+Negative coordinates
+Zero vectors
+Three-component vectors
+A zero vector has zero length, so the angle formula is undefined.
+Inner products provide the length measurement behind nearest points, least error, and projection, not only angles.
+Same direction
+Set $b=1,\theta=0$.
+The dot product is one.
+Perpendicular
+Set $b=1,\theta=\pi/2$.
+The dot product is zero.
+Opposite direction
+Set $b=1,\theta=\pi$.
+The dot product is minus one.

@@ -1,0 +1,202 @@
+{
+  "id": "run-environment",
+  "chapterId": "chapter-2",
+  "number": "2.3",
+  "title": "Run the project locally",
+  "subtitle": "Distinguish terminal, directory, runtime and dependencies.",
+  "concept": "Follow project instructions with suitable tools in the correct directory. Read failures before choosing the next step.",
+  "intuition": "A recipe's oven instruction assumes the right appliance, temperature and dish. Commands have prerequisites too.",
+  "objectives": [
+    "Use a separate practice directory and check README and tool versions.",
+    "Keep errors and identify whether they occur during setup, installation or execution."
+  ],
+  "body": [
+    {
+      "title": "A terminal runs commands",
+      "text": "Editors change files; terminals execute commands. Save appendix files by name in a separate practice directory and open it in your editor. Integrated terminals often start there; check the path. cd learning-list changes directory. Quote paths containing spaces. The wrong directory hides configuration and files."
+    },
+    {
+      "title": "Check tools before running",
+      "text": "Install Git and Node.js using the official links for your system. Check git --version, node --version and npm --version. This example requires Node.js 22.12+ and defines npm test and npm start. Run tests, then start and open the printed local URL. Keep the terminal running; Ctrl+C stops the server."
+    },
+    {
+      "title": "Do not install blindly",
+      "text": "Node projects with dependencies usually need packages installed. If README requires it and package-lock.json matches, npm ci recreates node_modules from the lockfile and fails on mismatch. This example needs no external packages. Keep errors and directory details; do not delete lockfiles, downgrade everything or run unfamiliar scripts without cause."
+    }
+  ],
+  "formalDefinition": {
+    "text": "Follow project instructions with suitable tools in the correct directory. Read failures before choosing the next step.",
+    "conditions": [
+      "For small personal learning projects. In shared repositories, follow the team's conventions.",
+      "This method produces checkable evidence; it cannot guarantee arbitrary AI output is correct."
+    ]
+  },
+  "workflow": [
+    "Use a separate practice directory and check README and tool versions.",
+    "Run this project's tests and start command; inspect actual results.",
+    "Keep errors and identify whether they occur during setup, installation or execution."
+  ],
+  "workedExamples": [
+    {
+      "title": "Run the example",
+      "problem": "How do you start the study list?",
+      "steps": [
+        "Save project files in learning-list and open a terminal there.",
+        "Check node --version, then run npm test.",
+        "Run npm start, open its URL and keep the terminal active."
+      ],
+      "answer": "Expect passing tests and http://127.0.0.1:5180 in the terminal. Open that URL; Ctrl+C stops the server. No external packages means npm install is unnecessary here.",
+      "code": "node --version\nnpm test\nnpm start"
+    },
+    {
+      "title": "An occupied port",
+      "problem": "Does EADDRINUSE mean upgrade every dependency?",
+      "steps": [
+        "Record npm start and the full error.",
+        "The requested address or port is already in use.",
+        "Stop your own previous server, or explicitly change port and URL."
+      ],
+      "answer": "Use Ctrl+C in your old terminal before restarting. Do not kill unknown processes. Changing port changes origin, so old localStorage records do not appear automatically."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "Every project uses the same commands.",
+      "correction": "Commands come from project configuration and README; inspect first."
+    },
+    {
+      "claim": "Deleting a lockfile is the simplest error fix.",
+      "correction": "It supports reproducible installation. Deletion changes dependency resolution; diagnose first."
+    }
+  ],
+  "practice": [
+    {
+      "id": "run-environment-p1",
+      "difficulty": 1,
+      "problem": "package.json cannot be found. What first?",
+      "hint": "Where are the file and terminal?",
+      "answer": "Check whether the terminal is at the project root and configuration has the correct name and location.",
+      "solution": [
+        "Verify the path first.",
+        "Do not install random packages in the wrong directory."
+      ]
+    },
+    {
+      "id": "run-environment-p2",
+      "difficulty": 1,
+      "problem": "What if node --version is unavailable?",
+      "hint": "Fix tool availability first.",
+      "answer": "Follow official Node.js installation instructions or inspect PATH, reopen the terminal and check again.",
+      "solution": [
+        "A missing tool is not a business-logic error.",
+        "Meet README's runtime requirements first."
+      ]
+    },
+    {
+      "id": "run-environment-p3",
+      "difficulty": 2,
+      "problem": "npm ci fails because the lockfile does not match. What next?",
+      "hint": "Configuration and recorded dependencies disagree.",
+      "answer": "Check branch, package.json and lockfile. Update consistently under repository conventions and review dependency changes; do not bypass by deleting the lockfile.",
+      "solution": [
+        "Confirm the cause.",
+        "Commit matching dependency files together when they change."
+      ]
+    },
+    {
+      "id": "run-environment-p4",
+      "difficulty": 1,
+      "problem": "Why does the local URL stop working after closing the terminal?",
+      "hint": "What serves the files?",
+      "answer": "The local server stopped. Restart it in the correct directory. Saved files and a running service are different states.",
+      "solution": [
+        "Inspect the terminal process.",
+        "Open the browser after startup succeeds."
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "What does EADDRINUSE directly mean?",
+    "choices": [
+      "All code is broken",
+      "The requested listening address or port is occupied",
+      "A Git commit failed"
+    ],
+    "correctIndex": 1,
+    "feedback": [
+      "It does not identify business-code failure.",
+      "Check your previous server first.",
+      "This is a runtime-environment issue, separate from Git."
+    ]
+  },
+  "interactiveVisual": {
+    "kind": "decision",
+    "prediction": "Which next step reduces guessing after startup failure?",
+    "steps": [
+      {
+        "question": "package.json cannot be found.",
+        "choices": [
+          "Check directory and file location",
+          "Delete every test",
+          "Change button color"
+        ],
+        "correctIndex": 0,
+        "feedback": [
+          "The command may be running in the wrong directory.",
+          "Tests do not determine configuration location.",
+          "Styling cannot make the command find a file."
+        ]
+      },
+      {
+        "question": "Port 5180 is occupied.",
+        "choices": [
+          "Kill arbitrary system processes",
+          "Inspect and stop your own old server",
+          "Reinstall all packages"
+        ],
+        "correctIndex": 1,
+        "feedback": [
+          "An unknown process may support other work.",
+          "Resolve the already-running instance first.",
+          "Installing dependencies does not free a port."
+        ]
+      },
+      {
+        "question": "The page now opens. What do you record?",
+        "choices": [
+          "Versions, command, URL and results",
+          "Only success",
+          "A guarantee for every machine"
+        ],
+        "correctIndex": 0,
+        "feedback": [
+          "Others can reproduce these details.",
+          "Setup and actions are missing.",
+          "One local success does not prove all platforms."
+        ]
+      }
+    ],
+    "followUp": "Run the appendix project and record versions, directory, commands and results."
+  },
+  "prerequisites": [
+    "data-flow"
+  ],
+  "difficulty": 2,
+  "misconceptionTags": [
+    "run-environment-guess",
+    "run-environment-evidence"
+  ],
+  "sources": [
+    "npm-ci",
+    "mdn-start",
+    "mdn-storage",
+    "git-install",
+    "node-install"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.1.1",
+    "status": "first-edition",
+    "humanReviewed": false
+  }
+}

@@ -1,0 +1,65 @@
+Normal samples, chi-square, and $t$ distributions
+Replacing an unknown population scale with a sample standard deviation adds uncertainty.
+Replacing an unknown population scale with a sample standard deviation adds uncertainty.
+Small samples estimate scale less reliably, so the $t$ distribution has heavier tails than the standard normal.
+Correct the sample variance
+Use normal-sample theory
+Correct the sample variance
+Estimating the sample mean imposes one linear constraint. The expected sum of squared deviations equals degrees of freedom times population variance.
+Use normal-sample theory
+For an independent normal sample, the mean and sample variance are independent, and the standardized sum of squared deviations is chi-square. These exact facts do not hold for arbitrary populations.
+Construct a $t$ statistic
+Divide a standard normal by an independent chi-square scale estimate to obtain a $t$ distribution. Extra scale uncertainty decreases as degrees of freedom increase.
+Assume independent normal observations, $n\ge2$, and $\sigma>0$.
+Assume independent normal observations, $n\ge2$, and $\sigma>0$.
+Large nonnormal samples may support approximations under suitable conditions; those are not the exact results above.
+The sums of squares about the true and sample means differ by one term.
+Take expectations to obtain the degrees-of-freedom correction.
+For normal samples, replace the true standard deviation with the independent chi-square scale estimate.
+Degrees of freedom
+For ten independent normal observations, how many degrees of freedom does the mean's $t$ statistic have?
+Estimate the center with the sample mean.
+Subtract one from sample size.
+$9$.
+Calculate $t$
+For $n=9,\bar x=5,s=3$ and hypothesized center four, find the $t$ statistic.
+The estimated standard error is one.
+Divide the difference of one by the standard error.
+$t=1$, with $8$ degrees of freedom.
+For six observations, what are the degrees of freedom of the chi-square squared-deviation sum?
+Subtract one from sample size.
+$6-1=5$.
+$5$.
+Does a $t$ statistic use the known population standard deviation in its denominator?
+Distinguish $z$ from $t$.
+It uses the sample standard deviation.
+No.
+Does a small-sample $t$ statistic from every nonnormal population have an exact $t$ distribution?
+Check the exact theory's assumptions.
+The normal-population condition is missing.
+Not necessarily.
+What distribution does $t$ approach as its degrees of freedom increase?
+The scale estimate becomes more stable.
+The standard normal.
+$N(0,1)$.
+How do small-degrees-of-freedom $t$ curves compare with the standard normal?
+Heavier tails
+Greater total area
+Smaller total area
+Both are normalized, but small-degrees-of-freedom $t$ distributions assign more probability to the tails.
+Replacing population scale with sample scale leaves exact normality
+For normal samples, use the $t$ distribution.
+Degrees of freedom are merely a label
+They control scale-estimation uncertainty and tail shape.
+Increase degrees of freedom. How does the $t$ curve approach the standard normal?
+Compare two normalized densities and calculate their two-sided tail probabilities at the same threshold.
+For normal samples, use the $t$ distribution.
+$t$ degrees of freedom: 5
+Set $t$ degrees of freedom to $5$ and compare the diagram and readings.
+At this preset: $t$ degrees of freedom $5$; $t$ two-sided tail probability $0.101939$; normal two-sided tail probability $0.0455003$.
+$t$ degrees of freedom: 1
+Set $t$ degrees of freedom to $1$ and compare the diagram and readings.
+At this preset: $t$ degrees of freedom $1$; $t$ two-sided tail probability $0.295167$; normal two-sided tail probability $0.0455003$.
+$t$ degrees of freedom: 60
+Set $t$ degrees of freedom to $60$ and compare the diagram and readings.
+At this preset: $t$ degrees of freedom $60$; $t$ two-sided tail probability $0.050033$; normal two-sided tail probability $0.0455003$.

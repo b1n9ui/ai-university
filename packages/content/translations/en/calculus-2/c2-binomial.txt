@@ -1,0 +1,65 @@
+The generalized binomial series
+Expand noninteger powers locally
+Binomial coefficients extend to any real exponent. Nonnegative integer exponents terminate; others generally yield infinite series with limited convergence ranges.
+Square roots can be approximated by polynomial terms, but this expansion works only near its center.
+Defining the coefficients
+Multiply descending factors from the exponent, then divide by a factorial. The zeroth coefficient is one; no fractional or negative factorial is needed.
+The valid range
+For any real exponent, the series represents $(1+x)^\alpha$ on $|x|<1$; check endpoints separately. For a nonnegative integer, the finite polynomial identity has no radius restriction.
+Checking an approximation
+At the center, check the constant and derivative coefficients. For guaranteed accuracy, use a Taylor remainder rather than merely small terms.
+Expand noninteger powers locally
+$\alpha\in\mathbb R$, $|x|<1$. For a nonnegative integer, termination gives a polynomial identity valid for all real inputs.
+Compute derivatives of the power function at zero.
+Divide by factorials to obtain Taylor coefficients.
+For a nonterminating series, the absolute consecutive ratio tends to the input's magnitude. The binomial theorem identifies the represented function.
+Square root
+Find the quadratic approximation of $\sqrt{1+x}$.
+$\alpha=\frac12$; the linear coefficient is $\frac12$.
+The quadratic coefficient is $\frac{(1/2)(-1/2)}2=-\frac18$.
+$1+\frac x2-\frac{x^2}{8}$.
+Negative integer powers do not terminate
+Expand $\frac1{(1+x)^2}$.
+$\alpha=-2$; successive coefficients are $1,-2,3,-4,\ldots$.
+The general coefficient is $(-1)^n(n+1)$, valid on $|x|<1$.
+$\sum_{n=0}^\infty(-1)^n(n+1)x^n$.
+Every integer exponent gives termination.
+Only nonnegative integers terminate; negative integers generally give infinite series.
+A radical's domain equals its expansion's convergence interval.
+The function may exist on a larger domain than this particular centered expansion.
+Expand $(1+x)^3$.
+$1+3x+3x^2+x^3$.
+A nonnegative integer terminates.
+Coefficients from degree four onward contain a zero factor and vanish.
+Find the first three terms of $(1+x)^{-1/2}$.
+$1-\frac x2+\frac{3x^2}{8}$.
+Use the generalized coefficients.
+The quadratic coefficient is $\frac{(-1/2)(-3/2)}2=\frac38$.
+Use a quadratic expansion to estimate $\sqrt{1.04}$.
+$1.0198$.
+Take the small increment as 0.04.
+$1+\frac{0.04}{2}-\frac{0.04^2}{8}=1.0198$; this remains approximate.
+Can $x=2$ be substituted in the zero-centered infinite expansion of $\sqrt{1+x}$?
+Not directly: it is outside the convergence radius.
+Existence of the function does not validate this expansion.
+The noninteger binomial series centered at zero has radius 1; input 2 lies outside.
+Which exponents guarantee termination?
+Every integer
+Nonnegative integers
+Every real number
+Only nonnegative integers introduce a zero factor in the descending product.
+The infinite binomial extension comes with a range that must accompany its formula.
+Low order
+Set order to 2 and input to 0.5.
+The finite polynomial matches low-order derivatives; the readout shows its actual error.
+Increase the order
+Set order to 6, keeping input 0.5.
+Observe how the actual error changes at this input.
+Farther from the center
+Set order to 10 and input to 0.9.
+Accuracy depends on input and function; range and remainder conditions still matter.
+Compare $\sqrt{1+x}$ with finite zero-centered expansions and read the error.
+Does raising the order give the same accuracy far away as near the center?
+Compute generalized binomial coefficients
+Distinguish finite polynomials from infinite expansions
+Approximate radicals within valid ranges

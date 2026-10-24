@@ -1,0 +1,67 @@
+Trees and spanning trees
+A tree connects all its vertices with just enough edges and no cycle.
+A tree connects all its vertices with just enough edges and no cycle.
+A tree has exactly one simple path between any two vertices. Adding an edge creates a cycle.
+Connectivity and acyclicity
+Count tree edges
+Connectivity and acyclicity
+A tree is a finite nonempty connected undirected graph without cycles. A forest may have several components, each a tree.
+Count tree edges
+Delete a leaf and its sole incident edge: the remaining graph stays a tree. Induction gives one fewer edge than vertices; a forest has vertices minus components edges.
+Construct a spanning tree
+Repeatedly delete an edge from a cycle in a connected graph. Connectivity remains, and the finite process ends in a tree covering every vertex. Spanning trees need not be unique.
+A finite tree has a unique simple path between any two vertices.
+e=v-1,\quad e=v-c\ \text{for a forest}
+A tree is nonempty; a forest may have several components.
+The edge-count equality alone does not establish that a given graph is a tree.
+A tree with at least two vertices has a leaf.
+\text{Endpoints of a longest simple path have degree one}
+Deleting a leaf gives a smaller tree.
+Induct from a single-vertex tree.
+Tree edge count
+How many edges does an eight-vertex tree have?
+A nonempty tree has one fewer edge than vertices.
+$8-1=7$.
+Seven.
+An insufficient equality
+A triangle plus an isolated vertex has four vertices and three edges. Is it a tree?
+Its edge count equals its vertex count minus one.
+But it is disconnected and contains a cycle.
+No.
+A seven-vertex forest has three components. How many edges does it have?
+Use the forest formula.
+$7-3=4$.
+Four.
+What happens when a new edge is added to a tree?
+Its endpoints already have one simple path between them.
+The new edge and that path form one new cycle.
+A cycle forms.
+Does every connected graph have a spanning tree?
+Delete cycle edges successively.
+After finitely many steps it remains connected and becomes acyclic.
+Yes.
+Is a one-vertex, zero-edge graph a tree?
+Check connectivity and acyclicity.
+The length-zero path connects the vertex to itself, and there is no cycle.
+Yes.
+Does one fewer edge than vertices guarantee a tree?
+Yes
+Connectivity or acyclicity is also needed
+Only for an odd vertex count
+A triangle plus an isolated vertex is a counterexample.
+A spanning tree covers only some vertices
+Spanning means covering every vertex.
+A tree has only one path in total
+Each pair of endpoints has a unique path; different pairs have different paths.
+Compare trees with cyclic and disconnected graphs. Why is edge counting alone insufficient?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+Spanning means covering every vertex.
+Graph mode: 0
+Set the control to $0$. Observe which objects, relations, or counts change.
+At this setting: vertices $6$; edges $5$; components $1$; tree: yes.
+Graph mode: 1
+Set the control to $1$. Observe which objects, relations, or counts change.
+At this setting: vertices $6$; edges $5$; components $1$; tree: yes.
+Graph mode: 3
+Set the control to $3$. Observe which objects, relations, or counts change.
+At this setting: vertices $6$; edges $5$; components $2$; tree: no.

@@ -1,0 +1,65 @@
+Equivalence relations and partitions
+An equivalence relation divides objects into disjoint classes.
+An equivalence relation divides objects into disjoint classes.
+Belonging to the same class does not mean being equal; it means the chosen rule does not distinguish the objects.
+Check three properties
+Form equivalence classes
+Check three properties
+Equivalence requires reflexivity, symmetry, and transitivity. Being “very close” is usually not transitive, so it does not automatically define equivalence.
+Form equivalence classes
+An object's class contains everything equivalent to it. If two classes share an element, symmetry and transitivity force them to coincide.
+Recover a relation from a partition
+Given nonempty, pairwise disjoint blocks covering the universe, define equivalence as membership in the same block. This recovers exactly the original partition.
+Congruence modulo a positive integer is a standard equivalence relation.
+The modulus is a positive integer.
+Partition blocks are nonempty, disjoint, and cover the universe.
+An object's difference from itself is zero.
+Divisibility is preserved by negation.
+Add the two differences.
+Classify by remainders
+Partition the integers from zero through seven modulo three.
+Remainder zero: $\{0,3,6\}$; remainder one: $\{1,4,7\}$.
+Remainder two: $\{2,5\}$.
+Three classes.
+Closeness is not transitive
+On the reals, does distance less than one define equivalence?
+Zero is close to $0.6$, and $0.6$ is close to $1.2$.
+Zero is not close to $1.2$.
+It is not an equivalence relation.
+How many integer congruence classes are there modulo five?
+List the possible remainders.
+The remainders run from zero to four.
+Five.
+Can distinct equivalence classes share an element?
+Use a shared element to connect the classes.
+A shared element forces the two classes to coincide.
+No.
+Must elements of the same class have equal numerical values?
+Compare different congruent integers.
+One and four are congruent modulo three but unequal.
+No.
+May a partition contain an empty block?
+Recall the nonempty-block requirement.
+An empty block is not any object's equivalence class.
+Not under this book's definition.
+What happens if two equivalence classes intersect?
+Only their intersections coincide
+The entire classes coincide
+The relation ceases to be reflexive
+Symmetry and transitivity connect the classes through their shared member.
+Equivalent means equal
+Equivalence depends on the specified rule.
+Approximate equality always defines equivalence
+Transitivity often fails.
+Change the modulus. How are the same integers regrouped?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+Equivalence depends on the specified rule.
+Modulus: 2
+Set the control to $2$. Observe which objects, relations, or counts change.
+At this setting: equivalence classes $2$.
+Modulus: 4
+Set the control to $4$. Observe which objects, relations, or counts change.
+At this setting: equivalence classes $4$.
+Modulus: 6
+Set the control to $6$. Observe which objects, relations, or counts change.
+At this setting: equivalence classes $6$.

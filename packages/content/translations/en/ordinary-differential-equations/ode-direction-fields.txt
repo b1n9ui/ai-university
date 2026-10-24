@@ -1,0 +1,64 @@
+Direction fields and solution curves
+Read trends without an explicit formula
+What do the segments represent?
+At $(t,y)$, $y'=f(t,y)$ prescribes the slope. Normalizing segment length changes only drawing length, not slope.
+What does zero slope mean?
+$f(t,y)=0$ gives a horizontal tangent at that point, not necessarily a constant solution. A constant solution requires zero right-hand side for all times.
+How do you follow the field?
+The model is $y'=y-t$ with exact solution $y=t+1+(y_0-1)e^t$. The curve follows the field, but joining plotted pieces does not prove the solution.
+Solve the linear equation.
+Add a homogeneous term to a particular solution.
+Use the starting point to fix the curve.
+Read a slope
+For $y'=y-t$ at $(2,3)$, what is the slope?
+Substitute into the right-hand side.
+$3-2=1$, so the tangent rises to the right.
+$1$.
+A horizontal tangent need not give a constant solution
+$y'=t$ is horizontal along $t=0$. Is $y\equiv2$ a solution?
+A constant solution's derivative is zero everywhere.
+The right side is nonzero at nonzero times.
+No; the actual solution is $y=t^2/2+C$.
+Find the slope of $y'=y-t$ at $(1,-1)$.
+Substitute the point's coordinates.
+$-1-1=-2$.
+$-2$.
+Which curve consists of the zero-slope points?
+Set the right-hand side to zero.
+$y-t=0$.
+The line $y=t$.
+Solve $y'=y-t,y(0)=1$.
+Use the solution family from the text.
+The constant is $C=0$, giving $y=t+1$.
+$y=t+1$.
+Is line $y=t$ a solution of $y'=y-t$?
+Compare its derivative with the field slope.
+The line's derivative is $1$, but the right-hand side is $0$.
+No.
+The zero-slope locus is itself a solution.
+Its own derivative must still match the prescribed field slope.
+Longer segments mean steeper slopes.
+Segments are normalized; their direction gives the slope.
+A direction field draws the permitted slope at each point. A solution's tangent must match it.
+Each segment is a local guide; the initial value chooses the starting location.
+Read local slopes from an equation
+Distinguish a direction field from an explicit solution
+Direction fields and solution curves
+Draw only where $f$ is defined. The independent axis is $t$ and the vertical axis $y$.
+What must a solution curve satisfy at a point?
+Cross every nearby segment
+Its tangent slope equals the field slope there
+Always move toward the horizontal axis
+The field prescribes a derivative, not a fixed step length.
+Following a solution means reading the slope anew at every point and continuously obeying those local rules.
+A straight-line solution
+Initial value one gives a line following the field directions.
+Set initial value $y_0$ to $1$ and observation time $t$ to $2$.
+Deviate upward
+A higher initial value adds a positive exponential difference.
+Set initial value $y_0$ to $1.5$ and observation time $t$ to $1$.
+Deviate downward
+A lower initial value adds a negative exponential difference.
+Set initial value $y_0$ to $0.5$ and observation time $t$ to $1$.
+Segments show the direction field; the curve is the analytic initial-value solution. Segments are normalized, so read their slopes rather than lengths.
+How does raising or lowering the initial value from one move the solution away from the line?

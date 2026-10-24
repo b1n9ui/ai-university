@@ -1,0 +1,66 @@
+Slope tests, mean-response intervals, and prediction intervals
+Estimating an average response is easier than predicting a new observation.
+Estimating an average response is easier than predicting a new observation.
+A new observation adds its own random error to uncertainty about the fitted line.
+State the error model
+Estimate the slope's scale
+State the error model
+Classical exact inference treats inputs as fixed and errors as independent normal variables with zero mean and common variance. Residual plots can diagnose problems but cannot prove these assumptions.
+Estimate the slope's scale
+Divide residual sum of squares by sample size minus two to estimate common error variance: slope and intercept were both fitted.
+Distinguish the two intervals
+A mean-response interval includes uncertainty in estimating the mean. A prediction interval adds one new error variance. Both widen away from the mean input.
+Exact $t$ inference requires the stated linear model with independent homoscedastic normal errors and $n>2$.
+s^2=\frac{\mathrm{SSE}}{n-2},\quad \mathrm{SE}(\hat\beta_1)=\frac{s}{\sqrt{S_{xx}}},\quad \hat y_0\pm t_*s\sqrt{\frac1n+\frac{(x_0-\bar x)^2}{S_{xx}}}\quad\text{mean-response interval}
+Exact $t$ inference requires the stated linear model with independent homoscedastic normal errors and $n>2$.
+For a prediction interval, add one inside the square root. The new error must be independent and follow the same model.
+Estimate noise after fitting two parameters.
+The estimated mean response's variance depends on input position.
+Add the new observation's own error variance.
+Slope standard error
+For $n=12,\mathrm{SSE}=20,S_{xx}=22$, find the slope's standard error.
+The residual variance is $20/10=2$.
+The standard error is $\sqrt{2/22}$.
+Approximately $0.3015$, with ten reference degrees of freedom.
+Prediction is wider
+For $n=10,s=2,x_0=\bar x$, find standard errors for the mean response and a new observation.
+The mean-response standard error is $2/\sqrt{10}$.
+The prediction standard error is $2\sqrt{1+1/10}$.
+Approximately $0.6325$ and $2.0976$.
+A simple regression has eight observations. Find residual degrees of freedom.
+Both intercept and slope are fitted.
+$8-2=6$.
+$6$.
+At the same confidence level, input, and linear error model, can a new-observation prediction interval be narrower than a mean-response confidence interval?
+It adds an extra error variance.
+Under the same model and level, it cannot be narrower.
+No.
+How does a mean-response interval generally change as the input moves away from the center?
+Inspect the squared input-deviation term.
+That term increases and widens the interval.
+It widens.
+Does a significant slope prove all linear-model assumptions correct?
+Separate testing from model diagnosis.
+The significance calculation itself relies on those assumptions.
+No.
+What creates the extra one inside a prediction interval's square root?
+The new observation's own error
+An additional input variable
+A font correction
+Estimating the mean response does not include this new noise.
+A mean-response interval is also an individual prediction interval
+It omits the new observation's own random error.
+A slope test replaces residual diagnostics
+The test's validity depends on its error model.
+Move the prediction input. How do both mean-response and prediction intervals widen?
+Fit the fixed five-point data and distinguish the confidence band for a mean from the prediction band for a new observation.
+It omits the new observation's own random error.
+Prediction input: 2
+Set the prediction input to $2$ and compare the diagram and readings.
+At this preset: slope $0.5$; intercept $1$; residual sum of squares $1.5$; mean-response interval margin $1.00638$.
+Prediction input: -1
+Set the prediction input to $-1$ and compare the diagram and readings.
+At this preset: slope $0.5$; intercept $1$; residual sum of squares $1.5$; mean-response interval margin $2.36017$.
+Prediction input: 5
+Set the prediction input to $5$ and compare the diagram and readings.
+At this preset: slope $0.5$; intercept $1$; residual sum of squares $1.5$; mean-response interval margin $2.36017$.

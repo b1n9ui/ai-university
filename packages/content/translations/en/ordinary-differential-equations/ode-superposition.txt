@@ -1,0 +1,64 @@
+Superposition and second-order solution spaces
+Two independent solutions generate every homogeneous solution
+Why does superposition work?
+A linear differential operator satisfies $L[c_1y_1+c_2y_2]=c_1L[y_1]+c_2L[y_2]$. Linear combinations of homogeneous solutions remain solutions.
+Why are there two parameters?
+For a standard second-order linear equation with continuous coefficients, each initial position-velocity pair gives one solution. Its solution space therefore corresponds to two-dimensional initial data.
+What changes with forcing?
+Fix one particular solution and add every homogeneous solution. Subtracting solutions with the same forcing cancels that forcing.
+Apply the linear operator to a combination.
+Initial data form a two-variable linear system.
+An invertible initial-data matrix covers every initial-value solution.
+Free oscillation
+Solve $y''+y=0,y(0)=2,y'(0)=3$.
+The general solution is $c_1\cos t+c_2\sin t$.
+Data at zero give $c_1=2,c_2=3$.
+$y=2\cos t+3\sin t$.
+Difference of forced solutions
+Two functions satisfy $y''+y=5$. What does their difference satisfy?
+Subtract the equations.
+The forcing cancels and the left side stays linear.
+The difference satisfies $z''+z=0$.
+Find the general solution of $y''=0$.
+Integrate twice.
+The first integration gives a constant derivative; the second gives an affine function.
+$y=c_1+c_2t$.
+Do $\cos t$ and $2\cos t$ form a complete fundamental pair?
+Check independence.
+The second is a multiple of the first and cannot match arbitrary initial velocity.
+No.
+Solve $y''+y=0,y(0)=0,y'(0)=-2$.
+Match sine and cosine coefficients.
+The cosine coefficient is zero and the sine coefficient minus two.
+$y=-2\sin t$.
+Must doubling a forced solution preserve the original forcing equation?
+The operator doubles the forcing too.
+A nonzero forcing becomes twice as large.
+Not necessarily.
+Superposition holds for every nonlinear equation.
+Linearity is essential.
+Any two solutions represent all solutions.
+They must also be linearly independent.
+Every second-order homogeneous linear solution is a combination of two linearly independent solutions.
+Initial position and velocity are independent parameters carried by a fundamental pair.
+Identify the scope of superposition
+Determine two coefficients from initial data
+Superposition and second-order solution spaces
+$p,q$ is continuous on the interval and $y_1,y_2$ are independent solutions there. A forced general solution also includes a particular solution.
+Which pair is needed for a second-order homogeneous general solution?
+Any two nonzero solutions
+Two differently written expressions
+Two linearly independent solutions
+Different expressions may still be scalar multiples.
+A solution-space basis follows the vector-space idea: cover every solution without redundancy.
+Unit angular frequency
+Displacement is zero and velocity minus one.
+Set angular frequency $\omega$ to $1$ and observation time $t$ to $1.57079633$.
+Higher frequency
+At the same time, displacement is minus one and velocity zero.
+Set angular frequency $\omega$ to $2$ and observation time $t$ to $1.57079633$.
+One cycle
+Six time units nearly complete a cycle, but the exact period is twice pi.
+Set angular frequency $\omega$ to $1$ and observation time $t$ to $6$.
+Plot displacement and velocity against time. Changing frequency changes both period and velocity amplitude.
+What happens to period and velocity amplitude when angular frequency doubles?

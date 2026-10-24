@@ -1,0 +1,220 @@
+{
+  "id": "dictionaries",
+  "chapterId": "chapter-3",
+  "number": "3.2",
+  "title": "Dictionaries and key lookup",
+  "subtitle": "A dictionary associates keys with values so you can look up a value by name.",
+  "concept": "A dictionary associates keys with values so you can look up a value by name.",
+  "intuition": "An address book finds a phone number by name, without needing its position.",
+  "objectives": [
+    "Write a price table",
+    "Add and update by key",
+    "Choose a default for a missing key"
+  ],
+  "body": [
+    {
+      "title": "Write a price table",
+      "text": "prices = {\"apple\": 3, \"bread\": 5} is a dictionary. Each pair has a key on the left and its value on the right. A colon joins them; commas separate pairs. prices[\"apple\"] retrieves 3 by key. These square brackets contain a key, not a list position."
+    },
+    {
+      "title": "Add and update by key",
+      "text": "prices[\"milk\"] = 4 adds a new product; prices[\"apple\"] = 6 updates an existing price. Each key has one current value. for name in prices: visits the keys; prices[name] retrieves the corresponding value."
+    },
+    {
+      "title": "Choose a default for a missing key",
+      "text": "Indexing a missing key raises KeyError. prices.get(\"rice\", 0) retrieves the value if present and returns 0 otherwise, without inserting rice. This is useful for counting: counts[name] = counts.get(name, 0) + 1 starts an unseen item at 0 and adds one."
+    }
+  ],
+  "formalDefinition": {
+    "text": "A dictionary maps keys to values. Square brackets read an existing key; get can supply a default for a missing key.",
+    "conditions": [
+      "A key must exist for direct indexed lookup. For a missing key, get lets you choose a default."
+    ]
+  },
+  "derivation": [
+    {
+      "text": "The key \"apple\" initially maps to 3."
+    },
+    {
+      "text": "Assigning the same key again changes its value to 6."
+    },
+    {
+      "text": "It does not create a second apple key."
+    }
+  ],
+  "interactiveVisual": {
+    "kind": "python-trace",
+    "prediction": "What does looking up rice return? Does the dictionary gain an item?",
+    "caption": "Choose an input and predict the result, then select Next step. The arrow marks the next statement to execute; the side panel shows current variables and output produced so far.",
+    "experiment": {
+      "code": "prices = {\"apple\": 3, \"bread\": 5}\nname = 'apple'\nprice = prices.get(name, 0)\nprint(price)\n",
+      "stdout": "3\n",
+      "stdin": ""
+    },
+    "followUp": "Compare an existing key with a missing key. Does prices change?",
+    "codeTemplate": "prices = {\"apple\": 3, \"bread\": 5}\nname = {{name}}\nprice = prices.get(name, 0)\nprint(price)\n",
+    "controls": [
+      {
+        "name": "name",
+        "label": "Product to look up",
+        "values": [
+          "apple",
+          "bread",
+          "rice"
+        ],
+        "defaultIndex": 0
+      }
+    ],
+    "watch": [
+      "prices",
+      "name",
+      "price"
+    ]
+  },
+  "workedExamples": [
+    {
+      "title": "Find a price by product name",
+      "problem": "Look up apple, then change its price.",
+      "steps": [
+        "The key \"apple\" initially maps to 3.",
+        "Assigning the same key again changes its value to 6.",
+        "It does not create a second apple key."
+      ],
+      "answer": {
+        "code": "prices = {\"apple\": 3, \"bread\": 5}\nprint(prices[\"apple\"])\nprices[\"apple\"] = 6\nprint(prices[\"apple\"])\n",
+        "stdout": "3\n6\n",
+        "stdin": ""
+      }
+    },
+    {
+      "title": "Count each fruit",
+      "problem": "Count occurrences in apple, pear, apple.",
+      "steps": [
+        "For a new fruit, get returns 0.",
+        "Add 1 and store it under the same key.",
+        "On the second apple, update its count from 1 to 2."
+      ],
+      "answer": {
+        "code": "counts = {}\nfor name in [\"apple\", \"pear\", \"apple\"]:\n    counts[name] = counts.get(name, 0) + 1\nprint(counts[\"apple\"])\nprint(counts[\"pear\"])\n",
+        "stdout": "2\n1\n",
+        "stdin": ""
+      }
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "dictionaries-m1",
+      "claim": "[0] always reads the first dictionary value.",
+      "correction": "A dictionary uses keys. Lookup with 0 works only if 0 is an actual key."
+    },
+    {
+      "id": "dictionaries-m2",
+      "claim": "get inserts a missing key automatically.",
+      "correction": "get only reads and returns the default; it does not insert a key."
+    }
+  ],
+  "practice": [
+    {
+      "problem": "Look up the bread price, 5.",
+      "hint": "Use the product name as the key.",
+      "solution": [
+        "prices[\"bread\"] retrieves 5."
+      ],
+      "answer": {
+        "code": "prices = {\"apple\": 3, \"bread\": 5}\nprint(prices[\"bread\"])\n",
+        "stdout": "5\n",
+        "stdin": ""
+      },
+      "id": "dictionaries-p1",
+      "difficulty": 1,
+      "misconceptionTags": [
+        "dictionaries-m1"
+      ]
+    },
+    {
+      "problem": "Update the bread price to 6.",
+      "hint": "Assign a new value to the same key.",
+      "solution": [
+        "The new price replaces the old one."
+      ],
+      "answer": {
+        "code": "prices = {\"bread\": 5}\nprices[\"bread\"] = 6\nprint(prices[\"bread\"])\n",
+        "stdout": "6\n",
+        "stdin": ""
+      },
+      "id": "dictionaries-p2",
+      "difficulty": 1,
+      "misconceptionTags": [
+        "dictionaries-m2"
+      ]
+    },
+    {
+      "problem": "Return 0 for rice, which has no entry.",
+      "hint": "Use the second argument of get.",
+      "solution": [
+        "A missing key returns the default 0."
+      ],
+      "answer": {
+        "code": "prices = {\"apple\": 3}\nprint(prices.get(\"rice\", 0))\n",
+        "stdout": "0\n",
+        "stdin": ""
+      },
+      "id": "dictionaries-p3",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "dictionaries-m1"
+      ]
+    },
+    {
+      "problem": "Count fruits from an empty list. How many keys result?",
+      "hint": "An empty list runs no loop iterations.",
+      "solution": [
+        "The dictionary stays empty, with length 0."
+      ],
+      "answer": {
+        "code": "counts = {}\nfor name in []:\n    counts[name] = counts.get(name, 0) + 1\nprint(len(counts))\n",
+        "stdout": "0\n",
+        "stdin": ""
+      },
+      "id": "dictionaries-p4",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "dictionaries-m2"
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "prices has no rice key. Which expression returns a default of 0?",
+    "correctIndex": 1,
+    "choices": [
+      "prices[\"rice\"]",
+      "prices.get(\"rice\", 0)",
+      "prices[0]"
+    ],
+    "explanation": "get supplies a default for a missing key.",
+    "feedback": [
+      "Directly reading a missing key raises an exception.",
+      "Yes. A missing key returns the second argument, 0.",
+      "Dictionaries use keys. The key 0 does not mean the first position."
+    ]
+  },
+  "prerequisites": [
+    "lists"
+  ],
+  "difficulty": 3,
+  "misconceptionTags": [
+    "dictionaries-m1",
+    "dictionaries-m2"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.2.1",
+    "status": "revised",
+    "humanReviewed": false
+  },
+  "sources": [
+    "python-tutorial",
+    "python-data"
+  ],
+  "furtherReading": []
+}

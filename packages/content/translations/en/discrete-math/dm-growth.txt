@@ -1,0 +1,66 @@
+Algorithm growth and asymptotic notation
+Asymptotic notation describes eventual upper bounds, lower bounds, or matching orders of growth.
+Asymptotic notation describes eventual upper bounds, lower bounds, or matching orders of growth.
+It ignores fixed factors and sufficiently small inputs; it does not predict the seconds needed for one run.
+Define an upper bound
+Distinguish bounds from matching growth
+Define an upper bound
+Big-O bounds a function by a fixed multiple of another beyond some threshold. The constant cannot vary with input size.
+Distinguish bounds from matching growth
+A linear function also has a quadratic upper bound, but not quadratic order of growth. Tight growth requires both upper and lower bounds.
+Analyze bisection
+Each step discards about half the candidates until one remains. Iterations grow logarithmically with input size; sorting and access costs need separate assumptions.
+The compared functions are eventually nonnegative, and the input tends to positive infinity.
+The constant and threshold do not depend on subsequent input sizes.
+Binary search requires ordered data and available indexed access.
+Each step halves the candidate count.
+\text{remaining size}\le\left\lceil n/2^k\right\rceil
+Reaching size one requires a power of two large enough to cover the input.
+Take logarithms to obtain the iteration order.
+An upper bound
+Prove $3n+2\in O(n)$.
+For $n\ge1$, $2\le2n$.
+Thus $3n+2\le5n$.
+Use constant five and threshold one.
+Different orders
+Do $n$ and $n^2$ have the same order of growth?
+$n/n^2=1/n$ tends to zero.
+No eventually positive fixed lower-bound multiple exists.
+No, though the first has a quadratic upper bound.
+How many halvings reduce one thousand twenty-four to one?
+Use powers of two.
+$1024=2^{10}$.
+Ten.
+Must a Big-O bound be the tightest possible bound?
+A function can have many growth upper bounds.
+A linear function also has a quadratic bound.
+No.
+Can asymptotic notation ignore any fixed multiplier, however large?
+The definition permits a fixed constant.
+Yes, though that factor still affects practical runtimes.
+It can be absorbed asymptotically but matters in actual cost.
+Must a nested pair of loops have quadratic complexity?
+Check the actual range of each loop.
+The inner loop might run only a constant number of times; counting nesting levels is insufficient.
+Not necessarily.
+What establishes matching order of growth?
+Only an upper bound
+Only a lower bound
+Both upper and lower bounds
+Two-sided control establishes matching growth.
+Big-O gives exact elapsed time
+It constrains growth with input size.
+The comparison constant may change with the input
+A single fixed constant must work eventually.
+Increase the input size. How do linear scanning and repeated halving differ in step-count growth?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+It constrains growth with input size.
+Input size: 1
+Set the control to $1$. Observe which objects, relations, or counts change.
+At this setting: linear scan $1$; halvings to one $0$.
+Input size: 32
+Set the control to $32$. Observe which objects, relations, or counts change.
+At this setting: linear scan $32$; halvings to one $5$.
+Input size: 64
+Set the control to $64$. Observe which objects, relations, or counts change.
+At this setting: linear scan $64$; halvings to one $6$.

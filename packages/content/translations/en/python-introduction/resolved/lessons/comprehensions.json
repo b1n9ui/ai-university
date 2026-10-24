@@ -1,0 +1,222 @@
+{
+  "id": "comprehensions",
+  "chapterId": "chapter-3",
+  "number": "3.4",
+  "title": "Comprehensions and data processing",
+  "subtitle": "A list comprehension is shorthand for processing items and collecting results. Understand the ordinary loop first.",
+  "concept": "A list comprehension is shorthand for processing items and collecting results. Understand the ordinary loop first.",
+  "intuition": "Double each product's quantity and collect the results into a new list.",
+  "objectives": [
+    "Start with a familiar for loop",
+    "Express the same steps in one line",
+    "Add a filter when needed"
+  ],
+  "body": [
+    {
+      "title": "Start with a familiar for loop",
+      "text": "Starting with values = [1, 2, 3], create result = []. In a loop, calculate value * 2 and add it with result.append(...). The result is [2, 4, 6]. The original remains [1, 2, 3] because the additions went into a new list."
+    },
+    {
+      "title": "Express the same steps in one line",
+      "text": "result = [value * 2 for value in values] expresses the same simple process. Read the for clause first: take each value from values. Then read value * 2: what each item becomes. The surrounding brackets collect those results into a list."
+    },
+    {
+      "title": "Add a filter when needed",
+      "text": "[value * 2 for value in values if value >= 2] keeps values at least 2, then doubles them, giving [4, 6]. Check a small list by hand. For nested loops or complicated conditions, an ordinary for loop may be clearer. The goal is to explain each result, not to minimize line count."
+    }
+  ],
+  "formalDefinition": {
+    "text": "[expression for item in data if condition] filters items, evaluates an expression, and collects the results in a new list. The condition is optional.",
+    "conditions": [
+      "Each example runs independently from the beginning. Start with the stated inputs, then change one thing."
+    ]
+  },
+  "derivation": [
+    {
+      "text": "Start with an empty result."
+    },
+    {
+      "text": "Double and append each item."
+    },
+    {
+      "text": "The three results are 2, 4, 6."
+    }
+  ],
+  "interactiveVisual": {
+    "kind": "python-trace",
+    "prediction": "With a threshold of 2, which numbers remain and what are their doubled values?",
+    "caption": "Choose an input and predict the result, then select Next step. The arrow marks the next statement to execute; the side panel shows current variables and output produced so far.",
+    "experiment": {
+      "code": "values = [1, 2, 3]\nminimum = 2\nresult = []\nfor value in values:\n    if value >= minimum:\n        result.append(value * 2)\nprint(result)\n",
+      "stdout": "[4, 6]\n",
+      "stdin": ""
+    },
+    "followUp": "Set the threshold to 4. Does anything enter the result? This replay expands the comprehension into separate steps.",
+    "codeTemplate": "values = [1, 2, 3]\nminimum = {{minimum}}\nresult = []\nfor value in values:\n    if value >= minimum:\n        result.append(value * 2)\nprint(result)\n",
+    "controls": [
+      {
+        "name": "minimum",
+        "label": "Minimum value to keep",
+        "values": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "defaultIndex": 1
+      }
+    ],
+    "watch": [
+      "values",
+      "minimum",
+      "value",
+      "result"
+    ]
+  },
+  "workedExamples": [
+    {
+      "title": "Collect results with a loop",
+      "problem": "Double 1, 2, and 3 separately.",
+      "steps": [
+        "Start with an empty result.",
+        "Double and append each item.",
+        "The three results are 2, 4, 6."
+      ],
+      "answer": {
+        "code": "values = [1, 2, 3]\nresult = []\nfor value in values:\n    result.append(value * 2)\nprint(result)\n",
+        "stdout": "[2, 4, 6]\n",
+        "stdin": ""
+      }
+    },
+    {
+      "title": "Write a comprehension",
+      "problem": "Keep values at least 2, then double them.",
+      "steps": [
+        "1 fails the condition and is skipped.",
+        "2 and 3 remain.",
+        "Multiplying each by 2 gives 4 and 6."
+      ],
+      "answer": {
+        "code": "values = [1, 2, 3]\nresult = [value * 2 for value in values if value >= 2]\nprint(result)\n",
+        "stdout": "[4, 6]\n",
+        "stdin": ""
+      }
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "comprehensions-m1",
+      "claim": "A comprehension is always preferable to an ordinary loop.",
+      "correction": "A comprehension suits simple tasks. An ordinary loop is easier to inspect when the steps are complex."
+    },
+    {
+      "id": "comprehensions-m2",
+      "claim": "Creating result automatically changes values.",
+      "correction": "Here results go into a new list. The original list does not change."
+    }
+  ],
+  "practice": [
+    {
+      "problem": "Add 1 to each item in [1, 2] and collect a new list.",
+      "hint": "The leading expression is value + 1.",
+      "solution": [
+        "1 becomes 2; 2 becomes 3."
+      ],
+      "answer": {
+        "code": "values = [1, 2]\nresult = [value + 1 for value in values]\nprint(result)\n",
+        "stdout": "[2, 3]\n",
+        "stdin": ""
+      },
+      "id": "comprehensions-p1",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "comprehensions-m1"
+      ]
+    },
+    {
+      "problem": "Keep only values at least 2 from [1, 2, 3].",
+      "hint": "Keep value as the leading expression.",
+      "solution": [
+        "Filter without changing the retained values."
+      ],
+      "answer": {
+        "code": "values = [1, 2, 3]\nresult = [value for value in values if value >= 2]\nprint(result)\n",
+        "stdout": "[2, 3]\n",
+        "stdin": ""
+      },
+      "id": "comprehensions-p2",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "comprehensions-m2"
+      ]
+    },
+    {
+      "problem": "Solve the previous exercise with an ordinary loop.",
+      "hint": "Append only after the if condition passes.",
+      "solution": [
+        "Only 2 and 3 enter the new list."
+      ],
+      "answer": {
+        "code": "values = [1, 2, 3]\nresult = []\nfor value in values:\n    if value >= 2:\n        result.append(value)\nprint(result)\n",
+        "stdout": "[2, 3]\n",
+        "stdin": ""
+      },
+      "id": "comprehensions-p3",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "comprehensions-m1"
+      ]
+    },
+    {
+      "problem": "What results from doubling every item in an empty list?",
+      "hint": "There are no items to process.",
+      "solution": [
+        "The new list is empty too."
+      ],
+      "answer": {
+        "code": "values = []\nresult = [value * 2 for value in values]\nprint(result)\n",
+        "stdout": "[]\n",
+        "stdin": ""
+      },
+      "id": "comprehensions-p4",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "comprehensions-m2"
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "How can you check a comprehension you do not understand?",
+    "correctIndex": 1,
+    "choices": [
+      "Make it shorter first",
+      "Expand it into an ordinary for loop",
+      "Assume it modifies the original list directly"
+    ],
+    "explanation": "Expand it into for, if, and append, then trace the items by hand.",
+    "feedback": [
+      "Shorter code may hide the steps.",
+      "Yes. Use the familiar loop to check each item.",
+      "This comprehension creates a new list; the original does not change."
+    ]
+  },
+  "prerequisites": [
+    "tuples-sets"
+  ],
+  "difficulty": 3,
+  "misconceptionTags": [
+    "comprehensions-m1",
+    "comprehensions-m2"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.2.1",
+    "status": "revised",
+    "humanReviewed": false
+  },
+  "sources": [
+    "python-tutorial",
+    "python-data"
+  ],
+  "furtherReading": []
+}

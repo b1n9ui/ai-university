@@ -1,0 +1,65 @@
+Polar coordinates and curves
+Locate points using radius and direction
+Polar coordinates give radius and angle. A negative radius moves opposite the stated direction.
+One point has many polar representations. Different coordinate pairs need not represent different points.
+Converting to Cartesian coordinates
+$x=r\cos\theta,y=r\sin\theta$. Distance from the origin is $|r|$, not always the signed $r$.
+Plotting a negative radius
+Face the angle's direction, then move $|r|$ the opposite way. Equivalently, make the radius positive and add $\pi$ to the angle.
+Finding intersections
+Equal radii at the same angle find some intersections. Also check negative-radius representations and the origin: a point can have different angles.
+Locate points using radius and direction
+Use radians. Any angle represents the origin when radius is zero. Recover angles using the correct quadrant.
+Start with a direction unit vector.
+Multiply by the signed radius.
+Reverse direction and radius sign together to keep the point unchanged.
+A negative radius
+Which point has polar coordinates $(-2,\frac\pi6)$?
+$x=-2\cos\frac\pi6=-\sqrt3$, $y=-2\sin\frac\pi6=-1$.
+It can also be written $(2,\frac{7\pi}{6})$.
+Cartesian coordinates $(-\sqrt3,-1)$.
+A polar circle
+What curve is $r=2\cos\theta$?
+Multiply by $r$ to obtain $r^2=2r\cos\theta$.
+Thus $x^2+y^2=2x$; completing the square gives $(x-1)^2+y^2=1$.
+A circle with center $(1,0)$ and radius 1; $-\frac\pi2\leq\theta\leq\frac\pi2$ traces it once.
+Negative radius has no geometric meaning.
+It locates a point in the opposite direction.
+Equating the two radii always finds all intersections.
+Also check equivalent polar representations and the origin.
+Convert $(2,\frac\pi2)$ to Cartesian coordinates.
+$(0,2)$.
+Use sine and cosine.
+$x=2\cos\frac\pi2=0$, $y=2\sin\frac\pi2=2$.
+Which positive-radius representation equals $(-1,0)$?
+$(1,\pi)$.
+Reverse direction for a negative radius.
+Make the radius positive and add $\pi$ to the angle.
+What does $r=3$ describe?
+A radius-3 circle centered at the origin.
+Distance from the origin stays constant.
+$x^2+y^2=r^2=9$.
+Find the Cartesian equation of $r=2\sin\theta$.
+$x^2+(y-1)^2=1$.
+Multiply by the radius, then complete the square.
+$r^2=2r\sin\theta$ gives $x^2+y^2=2y$; rearrange and complete the square.
+What does polar coordinate $r<0$ mean?
+The point does not exist
+Move opposite the angle's direction
+The angle must be negative
+Signed radius encodes a direction reversal.
+Cartesian coordinates specify horizontal and vertical moves; polar coordinates specify direction and distance on the same plane.
+Starting point
+Set the angle to 0.
+The point is $(2,0)$; no area has been swept yet.
+Half a turn
+Set the angle to 3.141592653589793.
+The point returns to the origin, having swept upper-half area $\frac{3\pi}{4}$.
+A full turn
+Set the angle to 6.283185307179586.
+The full cardioid region has area $\frac{3\pi}{2}$.
+Move along $r=1+\cos\theta$ and show the region swept from angle zero.
+What relationship, if any, is there between half-turn swept area and half the radius?
+Convert between coordinate systems
+Explain negative radii and equivalent representations
+Check tracing ranges and missed intersections

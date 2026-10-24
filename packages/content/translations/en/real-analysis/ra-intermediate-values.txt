@@ -1,0 +1,67 @@
+Intermediate values and connected images
+A continuous function cannot pass between two values while skipping a value between them.
+A continuous function cannot pass between two values while skipping a value between them.
+An interval of inputs has no split in its output image. The function need not be monotone.
+Keep the interval and continuity hypotheses
+Locate a boundary with a supremum
+Keep the interval and continuity hypotheses
+The domain must contain the entire interval between the two inputs, with continuity throughout. A target between endpoint outputs is attained by an intermediate input.
+Locate a boundary with a supremum
+When the left value is below the target and the right above, take the supremum of inputs whose outputs are below it. Continuity rules out the boundary output being either too low or too high.
+Separate existence from uniqueness
+The theorem establishes existence only. Uniqueness needs extra information such as strict monotonicity. Bisection likewise does not show that all roots are unique.
+A continuous image of an interval is an interval.
+The function is continuous on the closed interval; reversed endpoint-value order is handled similarly.
+Take the supremum of inputs with output below the target.
+If its output is too low, continuity permits moving farther right while remaining below.
+If too high, continuity excludes arbitrarily close lower-output inputs on the left.
+Both contradict the supremum, so the output equals the target.
+Existence of a root
+Does $f(x)=x^3-x-1$ have a root between one and two?
+The polynomial is continuous; endpoint values are negative one and five.
+Zero lies between them, so the intermediate value theorem gives a root.
+Yes; this theorem alone does not give uniqueness.
+A missing input interval
+The identity on $\{-1,1\}$ is continuous. Must it attain zero?
+It is continuous relative to that domain.
+The domain is disconnected and omits the intervening interval.
+It does not attain zero.
+If a continuous function attains two outputs, must it attain every intermediate output?
+Check that the domain contains their connecting interval.
+Yes for an interval domain, but not in general.
+An interval or other appropriate connectedness condition is needed.
+Does the intermediate value theorem guarantee a unique root?
+A continuous oscillation may cross zero repeatedly.
+It guarantees at least one root only.
+No.
+Do same-sign endpoint values exclude roots?
+The function may cross below zero in between.
+$x^2-1$ can have positive endpoints and negative middle values while still having roots.
+No.
+Prove $x^3-x-1=0$ has exactly one root in $(1,2)$.
+Prove existence and uniqueness separately.
+The polynomial is continuous, with $f(1)=-1$ and $f(2)=5$; the intermediate value theorem gives an interior root.
+If $1\le u<v\le2$, then $f(v)-f(u)=(v-u)(v^2+uv+u^2-1)>0$.
+The function is strictly increasing there, so two roots are impossible. This algebraic uniqueness proof needs no mean value theorem.
+The function is strictly increasing there, so two roots are impossible. This algebraic uniqueness proof needs no mean value theorem.
+What does the intermediate value theorem directly guarantee?
+Existence of an intermediate output
+A unique input
+Monotonicity
+It gives existence only.
+Same-sign endpoints rule out roots
+The function may still cross zero inside.
+Continuity on an arbitrary discrete domain gives intermediate values
+The domain needs the connecting-interval property.
+Move the input to locate a target. Which conclusions give existence, and which remain unproved?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+Continuous interval images stay connected without requiring monotonicity. Same-sign endpoint outputs still permit interior roots.
+Root-bracketing bisections: 0
+Set the bisection count to $0$. Compare the current output with zero and watch the root bracket shrink.
+Current output $0.875$; bracket left endpoint $1$; right endpoint $2$.
+Root-bracketing bisections: 10
+Set the bisection count to $10$. Compare the current output with zero and watch the root bracket shrink.
+Current output $0.875$; bracket left endpoint $1.324219$; right endpoint $1.325195$.
+Root-bracketing bisections: 20
+Set the bisection count to $20$. Compare the current output with zero and watch the root bracket shrink.
+Current output $0.875$; bracket left endpoint $1.324718$; right endpoint $1.324718$.

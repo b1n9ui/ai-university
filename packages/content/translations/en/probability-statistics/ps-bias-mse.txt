@@ -1,0 +1,65 @@
+Bias, consistency, and mean squared error
+An estimator can have systematic error as well as large sample-to-sample fluctuations.
+An estimator can have systematic error as well as large sample-to-sample fluctuations.
+A slightly biased estimate with lower variability can have smaller average squared error.
+Define bias over repeated samples
+Decompose mean squared error
+Define bias over repeated samples
+Bias is the estimator's expectation minus its target parameter. It is not the error in one observed sample.
+Decompose mean squared error
+Average squared error equals variance plus squared bias. Unbiasedness removes only one component.
+Separate unbiasedness from consistency
+Unbiasedness is a finite-sample expectation property. Consistency is convergence as sample size tends to infinity. Neither concept can simply replace the other.
+This lesson assumes integrable squared error.
+This lesson assumes integrable squared error.
+An estimator comparison must specify the target, loss, and sampling model.
+Add and subtract the estimator's expectation inside the error.
+Expand the square; the centered cross term has expectation zero.
+Variance and squared bias remain.
+Compare errors
+Estimator A is unbiased with variance four. B has bias one and variance two. Which has smaller MSE?
+A has MSE four.
+B has $2+1=3$.
+B has the smaller MSE.
+A biased variance estimate
+If the sum of squared deviations is divided by $n$ instead of $n-1$, what is its expectation?
+The squared-deviation sum has expectation $(n-1)\sigma^2$.
+Divide by $n$.
+$(n-1)\sigma^2/n$, biased downward.
+Find MSE for bias two and variance three.
+Square the bias.
+$3+4=7$.
+$7$.
+Can zero error in one estimate prove unbiasedness?
+Bias uses the repeated-sampling expectation.
+One realization cannot determine an expectation.
+No.
+Must an unbiased estimator have lower MSE than every biased estimator?
+Compare both components.
+A biased estimator may greatly reduce variance.
+Not necessarily.
+How does the bias of the normal variance MLE with denominator $n$ change as sample size grows?
+Inspect $(n-1)/n$.
+This factor tends to one.
+Bias tends to zero; the estimate is also consistent under appropriate conditions.
+What equals MSE?
+Variance plus bias
+Variance plus squared bias
+Standard deviation plus mean
+Squared loss counts systematic deviation through its square.
+Unbiased means accurate every time
+It constrains only the repeated-sampling average.
+Biased estimators are never useful
+Also compare variance, MSE, and the task's objective.
+Move the estimator distribution's center and change its width. How do bias and MSE compare?
+A known target and normal estimator model separate MSE into components, with bias and standard deviation labeled distinctly.
+It constrains only the repeated-sampling average.
+Estimator bias: 1
+Set estimator bias to $1$ and compare the diagram and readings.
+At this preset: bias $1$; variance $1$; mean squared error $2$.
+Estimator bias: -3
+Set estimator bias to $-3$ and compare the diagram and readings.
+At this preset: bias $-3$; variance $1$; mean squared error $10$.
+Estimator bias: 3
+Set estimator bias to $3$ and compare the diagram and readings.
+At this preset: bias $3$; variance $1$; mean squared error $10$.

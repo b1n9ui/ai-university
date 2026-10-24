@@ -1,0 +1,64 @@
+Maximal intervals and finite-time blow-up
+Local solvability need not last forever
+What is continuation?
+Solve near an existing segment's endpoint and overlap consistently. Uniqueness lets neighboring segments join into one solution.
+Obstacles at finite endpoints
+Under local existence and uniqueness, a solution remaining inside a compact subset of the equation's domain can continue past a finite endpoint. Failure of continuation requires at least one condition to fail.
+Two different obstacles
+Positive data for $y'=y^2$ produce state blow-up. The coefficient in $y'=1/t$ is undefined at zero, so a solution starting at positive time cannot simply cross it.
+Integrate for the solution family.
+Initial data determine the blow-up time.
+The solution is unbounded near the endpoint.
+Triple initial value
+When does $y'=y^2,y(0)=3$ blow up?
+Its solution is $3/(1-3t)$.
+The first denominator zero is at $1/3$.
+Forward blow-up time $T=1/3$.
+A coefficient boundary
+Solve $y'=1/t,y(1)=0$.
+Integrating on positive time gives $\ln t+C$.
+The initial condition makes the constant zero; the right side is undefined at zero.
+$y=\ln t$, with maximal interval $(0,\infty)$.
+For positive initial value $1/4$ in the quadratic-growth model, when is blow-up?
+Take the positive initial value's reciprocal.
+$T=1/(1/4)=4$.
+$4$.
+Does $y'=y$ blow up in finite time?
+Check the exponential at finite times.
+It is finite at every finite time and extends over the real line.
+No.
+Does a curve leaving the screen prove blow-up?
+Distinguish a finite viewport from infinity.
+A large finite value also leaves the viewport. Analytic or theoretical evidence is needed.
+No.
+Can the solution of $y'=1/(1-t)$ starting at zero continue through $t=1$ as a solution of the original equation?
+Check the right-hand side's domain.
+It is undefined at that time.
+Not as a classical solution on an interval containing that time.
+A curve too large for the screen has mathematically blown up.
+The drawing range is finite; check analytic limits or continuation conditions separately.
+A regular initial point lets the solution cross later coefficient singularities.
+The entire solution interval must stay in the equation's domain.
+Local solutions can be continued repeatedly. A finite maximal endpoint usually signals a domain boundary or unbounded state.
+Identify the actual obstacle: the equation's domain ends, or the state becomes unbounded in finite time.
+Explain maximal solution intervals
+Distinguish coefficient singularities from state blow-up
+Maximal intervals and finite-time blow-up
+The maximal interval here is $(-\infty,1/a)$. General continuation assumes a continuous right-hand side on an open domain, locally Lipschitz in state.
+What does local existence and uniqueness directly guarantee?
+Solutions for all time
+A unique solution near the initial value
+A solution always inside the viewport
+Global continuation requires another argument.
+The interval states how long the process can be predicted; it is part of the answer.
+Smaller initial value
+Blow-up occurs at time two.
+Set positive initial value $y_0$ to $0.5$ and observation time $t$ to $1$.
+Larger initial value
+Blow-up moves to time one.
+Set positive initial value $y_0$ to $1$ and observation time $t$ to $0.5$.
+Request beyond the endpoint
+The display explicitly reports that the solution cannot extend to the requested time.
+Set positive initial value $y_0$ to $1$ and observation time $t$ to $2$.
+The analytic solution is drawn only before blow-up. Drawing stops outside the viewport; no point is fabricated beyond blow-up.
+What happens to blow-up time when the positive initial value doubles?

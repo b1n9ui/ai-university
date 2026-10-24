@@ -2,7 +2,7 @@
 
 [English](README.md) · 中文
 
-默认英文阅读，中文可在页头切换。微积分 I 已提供完整英文版（35 节、79 例题、191 练习与回顾题），其余九卷目前为中文版。语言切换保留当前小节与本地学习记录；英文书稿见 [Calculus I · English](book/Calculus-I-English.md)。
+中文与英文分别部署为独立静态站点，各包含十本完整教材。[中文站](https://b1n9ui.github.io/ai-university/) · [English site](https://b1n9ui.github.io/ai-university/en/)。页头链接可打开另一站的对应小节，不在同一站内切换语言；正文、图示提示、练习与下载使用所在站的语言。独立域名之间不自动同步本地学习记录。
 
 外部贡献先隔离、复核，再收录；正式版本由受保护的主分支发布。流程与验证边界见 [贡献保护](docs/CONTRIBUTION_SECURITY.md)。
 
@@ -46,7 +46,7 @@ npm run check     # 全部十卷：内容、程序回放、项目测试、公式
 npm run preview   # 查看构建后的静态版本
 ```
 
-首次运行开发预览前，可先 `npm run build` 生成整本阅读页与下载书稿。发布只需把 `dist/` 放到任意静态服务器。不要双击 `dist/index.html` 作为 file URL；使用静态 HTTP 服务器。
+首次运行开发预览前，可先 `npm run build` 生成整本阅读页与下载书稿。中文发布使用 `dist/`，英文使用 `dist-en/`；两站组合的 GitHub Pages 包为 `dist-github/`（根目录中文，`en/` 英文）。各自只携带对应语言的教材下载。不要双击 `dist/index.html` 作为 file URL；使用静态 HTTP 服务器。
 
 ## 分类与书库
 
@@ -105,7 +105,7 @@ npm run preview   # 查看构建后的静态版本
 
 ## 阅读与下载
 
-- 网站 v0.18.0：数学系列首页、按方向和出版状态筛选的书库、教材主页、数学八卷共 71 个章节主页、345 个知识点页面、实验室、分页练习中心、全文搜索、公式/术语/附录索引、阅读指南、下载、项目与贡献资料。
+- 网站 v0.19.0：数学系列首页、按方向和出版状态筛选的书库、教材主页、数学八卷共 71 个章节主页、345 个知识点页面、实验室、分页练习中心、全文搜索、公式/术语/附录索引、阅读指南、下载、项目与贡献资料。
 - 阅读页：专注模式、嵌入演示、页内定位、上下节翻页、收藏、较大字号与已读标记。练习支持逐题/连续查看、提示、完整解答与数值检查。
 - [微积分 I 书稿](book/Calculus-I.md)与[微积分 II 书稿](book/Calculus-II.md)、[微积分 III 书稿](book/Calculus-III.md)与[线性代数书稿](book/Linear-Algebra.md)、[常微分方程书稿](book/Ordinary-Differential-Equations.md)：版本化源产物，包含所有解答。
 - `dist/book.html` 与 `dist/calculus-2.html` 与 `dist/calculus-3.html` 与 `dist/linear-algebra.html`：数学八卷各自的完整阅读页（另含 `dist/ordinary-differential-equations.html` 、`dist/probability-statistics.html` 、`dist/discrete-math.html` 与 `dist/real-analysis.html`），公式预先排版，支持浏览器打印为 PDF。
@@ -129,7 +129,7 @@ docs/                      架构、内容规范、生成检查流程、部署�
 
 ## 质量与版本
 
-网站版本 **v0.18.0**；微积分 I 内容为 **v0.3.3**，微积分 II、III 为 **v0.1.2**，其余数学卷均为 **v0.1.1**。尚未逐节人工审校。结构校验、公式渲染、先修图与选定数值验证可以发现部分错误，但不等同于逐式形式化证明。欢迎用具体反例、章节位置和可复算步骤提交勘误。
+网站版本 **v0.19.0**；微积分 I 内容为 **v0.3.3**，微积分 II、III 为 **v0.1.2**，其余数学卷均为 **v0.1.1**。尚未逐节人工审校。结构校验、公式渲染、先修图与选定数值验证可以发现部分错误，但不等同于逐式形式化证明。欢迎用具体反例、章节位置和可复算步骤提交勘误。
 
 `npm run check` 检查所有章节结构、章节链接、公式语法、先修有向无环图、视觉函数配置与数学模型。浏览器验证记录见 [QA](docs/QA.md)。
 

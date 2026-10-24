@@ -1,0 +1,220 @@
+{
+  "id": "exceptions",
+  "chapterId": "chapter-4",
+  "number": "4.4",
+  "title": "Exceptions and input validation",
+  "subtitle": "When users may enter invalid data, give a fallible conversion a clear failure path.",
+  "concept": "When users may enter invalid data, give a fallible conversion a clear failure path.",
+  "intuition": "Someone enters two instead of a numeric quantity. Explain the requirement before asking again.",
+  "objectives": [
+    "Find the operation that can fail",
+    "Handle the expected failure with try and except",
+    "Conversion does not guarantee validity"
+  ],
+  "body": [
+    {
+      "title": "Find the operation that can fail",
+      "text": "int(\"3\") succeeds, but int(\"three\") raises ValueError: the text is unsuitable for this conversion. Without handling, the program stops there. Identify the error you intend to handle instead of wrapping everything in an indistinct failure case."
+    },
+    {
+      "title": "Handle the expected failure with try and except",
+      "text": "The try body attempts the conversion. except ValueError: handles only that exception type. Success skips except; failure skips the remaining try statements and enters except. Handling an exception does not make the failed operation succeed: it provides understandable feedback."
+    },
+    {
+      "title": "Conversion does not guarantee validity",
+      "text": "\"-2\" converts to an integer, but a shopping quantity cannot be negative. After conversion, test count < 0. A function can reject it with raise ValueError(\"Quantity cannot be negative\"). Do not catch every exception indiscriminately, or spelling bugs and file problems may be misreported as quantity errors."
+    }
+  ],
+  "formalDefinition": {
+    "text": "try attempts a fallible operation; except handles a specified exception. raise explicitly rejects invalid input.",
+    "conditions": [
+      "Catch only expected exception types. After conversion, check the allowed range."
+    ]
+  },
+  "derivation": [
+    {
+      "text": "try attempts the conversion."
+    },
+    {
+      "text": "The conversion fails, so execution enters the ValueError handler."
+    },
+    {
+      "text": "Print a clear requirement rather than continuing with a fabricated number."
+    }
+  ],
+  "interactiveVisual": {
+    "kind": "python-trace",
+    "prediction": "Do inputs three and -2 follow the same path?",
+    "caption": "Choose an input and predict the result, then select Next step. The arrow marks the next statement to execute; the side panel shows current variables and output produced so far.",
+    "experiment": {
+      "code": "text = '3'\ntry:\n    count = int(text)\n    if count < 0:\n        print(\"Cannot be negative\")\n    else:\n        print(count)\nexcept ValueError:\n    print(\"Enter an integer\")\n",
+      "stdout": "3\n",
+      "stdin": ""
+    },
+    "followUp": "Choose valid text, a negative value, and invalid text. Compare the paths.",
+    "codeTemplate": "text = {{text}}\ntry:\n    count = int(text)\n    if count < 0:\n        print(\"Cannot be negative\")\n    else:\n        print(count)\nexcept ValueError:\n    print(\"Enter an integer\")\n",
+    "controls": [
+      {
+        "name": "text",
+        "label": "Simulated input text",
+        "values": [
+          "3",
+          "0",
+          "-2",
+          "three"
+        ],
+        "defaultIndex": 0
+      }
+    ],
+    "watch": [
+      "text",
+      "count"
+    ]
+  },
+  "workedExamples": [
+    {
+      "title": "Handle invalid text",
+      "problem": "Try converting three into a quantity.",
+      "steps": [
+        "try attempts the conversion.",
+        "The conversion fails, so execution enters the ValueError handler.",
+        "Print a clear requirement rather than continuing with a fabricated number."
+      ],
+      "answer": {
+        "code": "text = \"three\"\ntry:\n    count = int(text)\n    print(count)\nexcept ValueError:\n    print(\"Enter an integer, such as 3\")\n",
+        "stdout": "Enter an integer, such as 3\n",
+        "stdin": ""
+      }
+    },
+    {
+      "title": "Reject a negative quantity",
+      "problem": "Define a quantity validator and test -2.",
+      "steps": [
+        "Conversion to -2 succeeds.",
+        "The negative-value check raises ValueError.",
+        "The caller displays the exception message."
+      ],
+      "answer": {
+        "code": "def read_count(text):\n    count = int(text)\n    if count < 0:\n        raise ValueError(\"Quantity cannot be negative\")\n    return count\n\ntry:\n    print(read_count(\"-2\"))\nexcept ValueError as error:\n    print(error)\n",
+        "stdout": "Quantity cannot be negative\n",
+        "stdin": ""
+      }
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "exceptions-m1",
+      "claim": "Anything convertible to an integer is a valid quantity.",
+      "correction": "Conversion checks the representation. Range requirements, such as nonnegativity, need a separate check."
+    },
+    {
+      "id": "exceptions-m2",
+      "claim": "After an exception is caught, Python automatically supplies a valid number.",
+      "correction": "except runs only the handler you wrote. It does not repair the input."
+    }
+  ],
+  "practice": [
+    {
+      "problem": "Convert valid text \"4\" and display it.",
+      "hint": "A successful conversion skips except.",
+      "solution": [
+        "The result is 4."
+      ],
+      "answer": {
+        "code": "try:\n    count = int(\"4\")\n    print(count)\nexcept ValueError:\n    print(\"Enter an integer\")\n",
+        "stdout": "4\n",
+        "stdin": ""
+      },
+      "id": "exceptions-p1",
+      "difficulty": 1,
+      "misconceptionTags": [
+        "exceptions-m1"
+      ]
+    },
+    {
+      "problem": "Handle the failure to convert \"4.5\" directly to an integer.",
+      "hint": "Catch only ValueError.",
+      "solution": [
+        "Conversion fails and prints Enter an integer."
+      ],
+      "answer": {
+        "code": "try:\n    count = int(\"4.5\")\n    print(count)\nexcept ValueError:\n    print(\"Enter an integer\")\n",
+        "stdout": "Enter an integer\n",
+        "stdin": ""
+      },
+      "id": "exceptions-p2",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "exceptions-m2"
+      ]
+    },
+    {
+      "problem": "Convert -1, then print Cannot be negative.",
+      "hint": "Check the range after successful conversion.",
+      "solution": [
+        "Conversion succeeds, but the value is not a valid quantity."
+      ],
+      "answer": {
+        "code": "count = int(\"-1\")\nif count < 0:\n    print(\"Cannot be negative\")\nelse:\n    print(count)\n",
+        "stdout": "Cannot be negative\n",
+        "stdin": ""
+      },
+      "id": "exceptions-p3",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "exceptions-m1"
+      ]
+    },
+    {
+      "problem": "Quantity 0 is allowed. What should the program display?",
+      "hint": "Reject values below 0, not equal to 0.",
+      "solution": [
+        "0 is not less than 0."
+      ],
+      "answer": {
+        "code": "count = int(\"0\")\nif count < 0:\n    print(\"Cannot be negative\")\nelse:\n    print(count)\n",
+        "stdout": "0\n",
+        "stdin": ""
+      },
+      "id": "exceptions-p4",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "exceptions-m2"
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "int can convert \"-2\". Does that make it a valid shopping quantity?",
+    "correctIndex": 1,
+    "choices": [
+      "Successful conversion always means valid input",
+      "It still needs a negative-value check",
+      "except automatically changes negative values to 0"
+    ],
+    "explanation": "Conversion checks whether text represents a number. Validation checks whether that number is allowed.",
+    "feedback": [
+      "Successful conversion only shows that the text represents an integer.",
+      "Yes. The application requirement needs a separate check.",
+      "except does not automatically change input or supply a replacement value."
+    ]
+  },
+  "prerequisites": [
+    "modules"
+  ],
+  "difficulty": 4,
+  "misconceptionTags": [
+    "exceptions-m1",
+    "exceptions-m2"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.2.1",
+    "status": "revised",
+    "humanReviewed": false
+  },
+  "sources": [
+    "python-tutorial",
+    "python-errors"
+  ],
+  "furtherReading": []
+}

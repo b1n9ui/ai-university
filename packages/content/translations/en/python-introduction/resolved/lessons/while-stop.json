@@ -1,0 +1,220 @@
+{
+  "id": "while-stop",
+  "chapterId": "chapter-2",
+  "number": "2.3",
+  "title": "while loops and countdowns",
+  "subtitle": "A while loop checks its condition before each iteration. True continues; false stops.",
+  "concept": "A while loop checks its condition before each iteration. True continues; false stops.",
+  "intuition": "A countdown takes another step while time remains and stops at 0.",
+  "objectives": [
+    "Check before each iteration",
+    "Move toward the stopping condition",
+    "Test small inputs and zero"
+  ],
+  "body": [
+    {
+      "title": "Check before each iteration",
+      "text": "while remaining > 0: runs its indented body only while remaining is positive. It tests the condition again on every iteration. A for loop is useful for going through items; a while loop is useful when a condition determines whether to continue."
+    },
+    {
+      "title": "Move toward the stopping condition",
+      "text": "remaining = remaining - 1 reduces the value by 1. Starting at 3, it becomes 2, 1, then 0. At 0 the condition is false and the loop stops. Without that update, the condition stays true and the loop repeats indefinitely. Do not run the version with the update removed."
+    },
+    {
+      "title": "Test small inputs and zero",
+      "text": "Count down from 3, then try 1, then 0. If the initial value is 0, the body never runs, but Done outside the loop still prints. Checking boundaries catches problems that a normal example can miss."
+    }
+  ],
+  "formalDefinition": {
+    "text": "A while loop checks first, runs its body only when the condition is true, then checks again after the body.",
+    "conditions": [
+      "Update the state so the condition eventually becomes false. Verify termination with small inputs first."
+    ]
+  },
+  "derivation": [
+    {
+      "text": "remaining starts at 3."
+    },
+    {
+      "text": "Print the value, then subtract 1 on each iteration."
+    },
+    {
+      "text": "At 0, leave the loop and print Done."
+    }
+  ],
+  "interactiveVisual": {
+    "kind": "python-trace",
+    "prediction": "Starting at 0, does the loop body run once?",
+    "caption": "Choose an input and predict the result, then select Next step. The arrow marks the next statement to execute; the side panel shows current variables and output produced so far.",
+    "experiment": {
+      "code": "remaining = 3\nwhile remaining > 0:\n    print(remaining)\n    remaining = remaining - 1\nprint(\"Done\")\n",
+      "stdout": "3\n2\n1\nDone\n",
+      "stdin": ""
+    },
+    "followUp": "Compare 0 and 3. How many times is the condition tested?",
+    "codeTemplate": "remaining = {{start}}\nwhile remaining > 0:\n    print(remaining)\n    remaining = remaining - 1\nprint(\"Done\")\n",
+    "controls": [
+      {
+        "name": "start",
+        "label": "Countdown start",
+        "values": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "defaultIndex": 3
+      }
+    ],
+    "watch": [
+      "remaining"
+    ]
+  },
+  "workedExamples": [
+    {
+      "title": "A three-step countdown",
+      "problem": "Print 3, 2, 1, then Done.",
+      "steps": [
+        "remaining starts at 3.",
+        "Print the value, then subtract 1 on each iteration.",
+        "At 0, leave the loop and print Done."
+      ],
+      "answer": {
+        "code": "remaining = 3\nwhile remaining > 0:\n    print(remaining)\n    remaining = remaining - 1\nprint(\"Done\")\n",
+        "stdout": "3\n2\n1\nDone\n",
+        "stdin": ""
+      }
+    },
+    {
+      "title": "Nothing left at the start",
+      "problem": "Start at 0.",
+      "steps": [
+        "0 > 0 is false.",
+        "Go straight to the print after the loop."
+      ],
+      "answer": {
+        "code": "remaining = 0\nwhile remaining > 0:\n    print(remaining)\n    remaining = remaining - 1\nprint(\"Done\")\n",
+        "stdout": "Done\n",
+        "stdin": ""
+      }
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "while-stop-m1",
+      "claim": "while runs once before checking its condition.",
+      "correction": "while checks first. If the initial condition is false, its body never runs."
+    },
+    {
+      "id": "while-stop-m2",
+      "claim": "Printing the remaining value makes the countdown finish.",
+      "correction": "You must update remaining. Printing it does not change it."
+    }
+  ],
+  "practice": [
+    {
+      "problem": "What prints if the countdown starts at 1?",
+      "hint": "After one iteration, the value becomes 0.",
+      "solution": [
+        "It prints 1, then Done."
+      ],
+      "answer": {
+        "code": "remaining = 1\nwhile remaining > 0:\n    print(remaining)\n    remaining = remaining - 1\nprint(\"Done\")\n",
+        "stdout": "1\nDone\n",
+        "stdin": ""
+      },
+      "id": "while-stop-p1",
+      "difficulty": 1,
+      "misconceptionTags": [
+        "while-stop-m1"
+      ]
+    },
+    {
+      "problem": "Count down from 2.",
+      "hint": "Subtract 1 on each iteration.",
+      "solution": [
+        "It prints 2, then 1."
+      ],
+      "answer": {
+        "code": "remaining = 2\nwhile remaining > 0:\n    print(remaining)\n    remaining = remaining - 1\n",
+        "stdout": "2\n1\n",
+        "stdin": ""
+      },
+      "id": "while-stop-p2",
+      "difficulty": 1,
+      "misconceptionTags": [
+        "while-stop-m2"
+      ]
+    },
+    {
+      "problem": "Count from 0 through 2: print the current value, then add 1.",
+      "hint": "Continue while current < 3.",
+      "solution": [
+        "After printing 0, 1, 2, current becomes 3."
+      ],
+      "answer": {
+        "code": "current = 0\nwhile current < 3:\n    print(current)\n    current = current + 1\n",
+        "stdout": "0\n1\n2\n",
+        "stdin": ""
+      },
+      "id": "while-stop-p3",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "while-stop-m1"
+      ]
+    },
+    {
+      "problem": "With remaining equal to 0, how often does the body of while remaining > 0 run?",
+      "hint": "The check comes before the body.",
+      "solution": [
+        "The body runs 0 times."
+      ],
+      "answer": {
+        "code": "remaining = 0\ntimes = 0\nwhile remaining > 0:\n    times = times + 1\n    remaining = remaining - 1\nprint(times)\n",
+        "stdout": "0\n",
+        "stdin": ""
+      },
+      "id": "while-stop-p4",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "while-stop-m2"
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "What must each countdown iteration do to make it stop?",
+    "correctIndex": 1,
+    "choices": [
+      "Only print the remaining value",
+      "Decrease the remaining value",
+      "Reset the remaining value to 3"
+    ],
+    "explanation": "Updating the variable can change the next condition result.",
+    "feedback": [
+      "Printing alone leaves the condition true.",
+      "Yes. Subtracting 1 eventually reaches 0.",
+      "Resetting to 3 every time prevents the countdown from finishing."
+    ]
+  },
+  "prerequisites": [
+    "for-range"
+  ],
+  "difficulty": 2,
+  "misconceptionTags": [
+    "while-stop-m1",
+    "while-stop-m2"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.2.1",
+    "status": "revised",
+    "humanReviewed": false
+  },
+  "sources": [
+    "python-tutorial",
+    "python-control"
+  ],
+  "furtherReading": []
+}

@@ -1,0 +1,63 @@
+Vector projection and nearest points
+Find the closest vector in a subspace
+Orthogonal projection is the vector in a specified subspace nearest to the target.
+Split the target into a subspace component and a perpendicular remainder. Movement within the subspace cannot remove that remainder.
+Calculate line and orthonormal-basis projections
+Verify the perpendicular residual
+How do you project onto a line?
+Projection along nonzero $u$ is $u(u^Tb)/(u^Tu)$. Its coefficient can be negative; the point need not lie on the drawn positive ray.
+Why is the nearest point unique?
+Any other candidate differs from the projection by a subspace vector, perpendicular to the residual. Pythagoras shows this can only increase distance.
+What if an orthonormal basis is available?
+For orthonormal $q_j$, take dot-product coefficients and sum. This formula cannot be copied directly for an oblique basis.
+Vector projection and nearest points
+The line formula requires $u\ne0$. The latter formula requires the columns of $Q$ to be an orthonormal basis of the target subspace.
+Require the remainder to be perpendicular to the direction.
+Solve for its coefficient.
+Every other candidate adds a nonnegative square.
+Project onto an oblique line
+Project $b=(3,1)$ onto $u=(1,1)$.
+The coefficient is $(3+1)/(1+1)=2$.
+$p=(2,2),r=(1,-1)$; the two vectors are perpendicular.
+Projection $(2,2)$, distance $\sqrt2$.
+A negative projection
+Project $(-3,2)$ onto the horizontal axis.
+With $u=(1,0)$, the coefficient is $-3$.
+The projection is on the negative horizontal axis; the residual is $(0,2)$.
+$(-3,0)$.
+Multiply length by cosine and the vector projection is complete.
+A scalar component differs from a vector projection, which includes direction.
+Projection matrices are always invertible.
+Projection onto a proper subspace loses perpendicular directions and is generally singular.
+Find the distance from $(2,5)$ to the horizontal axis.
+The residual is its vertical component.
+The projection is $(2,0)$ and residual length is five.
+Project $(1,1)$ onto the span of $(1,-1)$.
+Calculate the dot product first.
+A zero dot product gives zero projection.
+The zero vector.
+Does projecting an orthogonal projection again change it?
+It already lies in the subspace.
+$P^2b=Pb$.
+Unchanged.
+If $Q$ has orthogonal but unnormalized columns, can $QQ^T$ project directly?
+Divide each directional contribution by its squared length too.
+For example, with $Q=(2,0)^T$, $QQ^T$ multiplies the horizontal component by four.
+No.
+Project target $(1,a)$ onto line $\operatorname{span}((1,1))$. The gold residual is perpendicular to the green projection direction.
+Why does the residual remain perpendicular to the line as the projection moves?
+How does the nearest-point residual relate to the subspace?
+Parallel
+Perpendicular
+Equal length
+Any subspace component of the error could still be removed, so none remains at the nearest point.
+Only a perpendicular projection gives the nearest point; collapsing along an arbitrary direction does not.
+Target on the line
+Set $a=1$.
+The projection equals the target and the residual is zero.
+Cancellation
+Set $a=-1$.
+The target is perpendicular to the line, so its projection is zero.
+In the opposite direction
+Set $a=-2$.
+The coefficient is negative; the nearest point lies along the line's negative direction.

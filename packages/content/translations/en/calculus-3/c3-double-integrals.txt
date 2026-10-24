@@ -1,0 +1,63 @@
+Double integrals and Fubini's theorem
+Multiply height by small area and add
+A double integral accumulates density or signed height over a planar region into one number.
+Single integrals sum strips; double integrals sum small patches, each contributing height times area.
+Set up double integrals and averages
+Exchange integration order under sufficient hypotheses
+Volume or signed accumulation?
+Nonnegative height gives volume beneath the surface. Negative values cancel positives. For geometric volume, specify upper and lower surfaces or integrate absolute height.
+Why can integration be repeated?
+A continuous function on a rectangle can be integrated in either coordinate order with equal results. More general cases need integrability hypotheses.
+Computing an average
+Divide the total integral by region area: the area-weighted average output, not merely center height.
+Multiply height by small area and add
+Here Fubini uses continuity on a closed rectangle. Riemann grid diameters tend to zero. Averages require finite positive area.
+Fix the first coordinate and accumulate a strip.
+Sum strips across the first direction.
+Use constant density to check units.
+An integral over a rectangle
+Integrate $x+y$ over $0\le x\le2,0\le y\le1$.
+The inner integral is $x+\frac12$.
+The outer integral is $\int_0^2(x+\frac12)dx=3$.
+3.
+Average height
+Find the average of $f=x+y$ on that rectangle.
+Area is 2 and total integral 3.
+Their quotient is $3/2$; averaging each coordinate separately agrees.
+$\frac32$.
+A double integral merely repeats the integral symbol.
+Specify region, area element and integration order.
+Every function permits arbitrary order exchange.
+Continuity or other adequate integrability hypotheses matter, especially near singularities.
+Find $\iint 2\,dA$ on the unit square.
+Multiply the constant by area.
+Area 1 gives integral 2.
+Find $\iint xy\,dA$ on the unit square.
+Separate the independent variables.
+$\int_0^1x\,dx\int_0^1y\,dy=\frac14$.
+Is $\iint x\,dA$ over $[-1,1]^2$ geometric volume?
+How do negative heights accumulate?
+Odd symmetry gives zero signed integral.
+For absolute-height volume to the plane, integrate $|x|$, giving 2.
+The signed integral is zero, unlike absolute-height volume.
+Can integration order be exchanged for a continuous function on a rectangle?
+State the sufficient condition.
+Continuity on a closed rectangle gives integrability, and Fubini equates the orders.
+Yes.
+Integrating constant one over a planar region gives what?
+Region area
+Boundary length
+Surface area
+Each piece contributes its area.
+Midpoint columns for $f=1+x+y$ on the unit square; compare the finite sum with the exact integral.
+Why does refining the grid leave the region unchanged?
+Each height multiplies actual area. Accumulate each strip, then all strips.
+Coarse grid
+Set per-direction count $n$ to $2$.
+Midpoint heights form columns: a finite sum.
+Finer grid
+Set per-direction count $n$ to $6$.
+Columns narrow over the same region.
+Fine grid
+Set per-direction count $n$ to $16$.
+For this linear function, the midpoint sum is exact. That does not hold for every function.

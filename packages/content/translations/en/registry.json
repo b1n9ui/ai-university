@@ -1,0 +1,12 @@
+[
+ {"id":"calculus-1","type":"mathematics","filename":"Calculus-I-English.md","printFile":"calculus-1-en.html"},
+ {"id":"calculus-2","type":"mathematics","filename":"Calculus-II-English.md","printFile":"calculus-2-en.html"},
+ {"id":"calculus-3","type":"mathematics","filename":"Calculus-III-English.md","printFile":"calculus-3-en.html"},
+ {"id":"linear-algebra","type":"mathematics","filename":"Linear-Algebra-English.md","printFile":"linear-algebra-en.html"},
+ {"id":"ordinary-differential-equations","type":"mathematics","filename":"Ordinary-Differential-Equations-English.md","printFile":"ordinary-differential-equations-en.html"},
+ {"id":"probability-statistics","type":"mathematics","filename":"Probability-Statistics-English.md","printFile":"probability-statistics-en.html"},
+ {"id":"discrete-math","type":"mathematics","filename":"Discrete-Mathematics-English.md","printFile":"discrete-math-en.html"},
+ {"id":"real-analysis","type":"mathematics","filename":"Real-Analysis-English.md","printFile":"real-analysis-en.html"},
+ {"id":"python-introduction","type":"programming","filename":"Python-Introduction-English.md","printFile":"python-introduction-en.html"},
+ {"id":"ai-development","type":"programming","filename":"AI-Assisted-Development-English.md","printFile":"ai-development-en.html"}
+]

@@ -1,0 +1,353 @@
+Equations, solutions, and rates: chapter review
+Solve $y'=4y,y(0)=3$ and state its maximal interval.
+Match initial data in the exponential family.
+General solution $Ce^{4t}$ has constant $C=3$ and is defined at every finite time.
+$3e^{4t}$, on the real line.
+Classify $y''+(y')^2=0$.
+Inspect the highest derivative and unknown-derivative powers.
+The highest derivative is second order, but the first derivative is squared.
+Second-order nonlinear.
+Find the slope of $y'=t-y$ at $(2,5)$.
+Substitute into the right-hand side.
+$2-5=-3$.
+$-3$.
+Solving first-order equations: chapter review
+Solve $y'=3ty,y(0)=2$.
+Separate variables.
+Logarithmic integration gives $3t^2/2+C$; apply the initial data.
+$2e^{3t^2/2}$.
+Solve $y'+2y=8,y(0)=7$.
+Its equilibrium is four.
+General solution $4+Ce^{-2t}$ has initial-data constant $C=3$.
+$4+3e^{-2t}$.
+Find an implicit solution of $(3t^2+y)dt+(t+2y)dy=0$.
+Compare cross partials and find a potential.
+Both partials equal one; a potential is $t^3+ty+y^2$.
+$t^3+ty+y^2=C$.
+Existence, uniqueness, and continuation: chapter review
+Is $y'=\sqrt{\lvert y\rvert},y(0)=0$ locally unique?
+Construct a delayed-departure solution.
+Zero is a solution. For any $c\ge0$, use zero when $t\le c$ and $(t-c)^2/4$ afterward; this also solves it.
+Not unique.
+Find the maximal forward time for $y'=y^2,y(0)=5$.
+Locate the denominator zero.
+$y=5/(1-5t)$ blows up at one fifth.
+$1/5$.
+Two solutions of $y'=-2y$ start $0.4$ apart. Find their absolute difference after two time units.
+Solve the exact difference equation.
+The difference shrinks by $e^{-2t}$.
+$0.4e^{-4}$.
+Second-order linear equations: chapter review
+Solve $y''+6y'+9y=0$.
+The characteristic polynomial is a perfect square.
+A double root at minus three needs a time factor.
+$(C+Dt)e^{-3t}$.
+Solve $y''+16y=0,y(0)=2,y'(0)=4$.
+Angular frequency is four.
+The cosine coefficient is two and sine coefficient one.
+$2\cos4t+\sin4t$.
+In the same equation, $p=-1$ and $W(0)=2$. Find its Wronskian.
+Use Abel's formula.
+The negative integrated coefficient gives positive time.
+$2e^t$.
+Forced equations and vibration: chapter review
+Find a resonant particular solution of $y''+9y=3\cos3t$.
+Forcing matches the natural frequency.
+The coefficient is $F/(2\omega_0)=3/6$.
+$t\sin3t/2$.
+Find critical damping for mass one and stiffness nine.
+Use the discriminant equality.
+$c=2\sqrt{mk}=6$.
+$6$.
+Find the steady amplitude for $m=k=F=1,c=3,\omega=1$.
+The denominator's real part vanishes.
+Amplitude is $1/(c\omega)$.
+$1/3$.
+Higher-order linear equations: chapter review
+Solve $y''''=0$.
+Integrate four times.
+Four free coefficients give a cubic polynomial.
+$C_0+C_1t+C_2t^2+C_3t^3$.
+Solve $t^2y''-ty'=0$ on positive time.
+Its indicial equation is $r(r-2)$.
+The roots are zero and two.
+$C+Dt^2$.
+With $-y''=\lambda y$ and zero endpoints on length two, find the smallest eigenvalue.
+Apply the Dirichlet formula.
+Use mode one and length two.
+$\pi^2/4$.
+Laplace transforms: chapter review
+Invert $1/((s+2)(s+3))$.
+Split into two simple poles.
+It equals $1/(s+2)-1/(s+3)$.
+$e^{-2t}-e^{-3t}$.
+Write forcing of height three active from time two to five.
+Subtract the two switches.
+Switch on three at time two and subtract three at time five.
+$3[H(t-2)-H(t-5)]$.
+A mass-three oscillator receives impulse minus six at positive time. How do position and velocity change?
+Integrate across impact.
+Position is continuous; velocity change is minus six divided by three.
+No position jump; velocity jumps by $-2$.
+Linear differential systems: chapter review
+Solve $x'=-2x,y'=3y$ with initial state $(1,2)$.
+Use componentwise exponentials.
+Each initial component supplies its exponential coefficient.
+$(e^{-2t},2e^{3t})$.
+Find the exponential of $A=\begin{pmatrix}1&2\\0&1\end{pmatrix}$.
+Split into a scalar matrix and a square-zero part.
+The nilpotent exponential is $I+tN$.
+$e^t\begin{pmatrix}1&2t\\0&1\end{pmatrix}$.
+A linear system has eigenvalues $-1\pm3i$. Classify the origin.
+Inspect the real part.
+Strictly negative real parts give contracting rotation.
+An asymptotically stable spiral.
+Nonlinear systems and qualitative analysis: chapter review
+Classify equilibria of $y'=y(2-y)$.
+Find zeros and test derivatives.
+The zeros are zero and two; derivative $2-2y$.
+Zero is unstable and two asymptotically stable.
+Can the origin of $x'=-x^3,y'=-y$ be classified using only its Jacobian?
+Check for a zero eigenvalue.
+Jacobian eigenvalues zero and minus one make linearization inconclusive. A sum-of-squares argument can give more information.
+Linearization alone is insufficient.
+For $y'=\mu y-y^3$ at $\mu=4$, find the stable nonzero equilibria.
+Find nonzero roots.
+$y^2=4$; both derivatives are minus eight.
+$y=\pm2$.
+Power series and Frobenius methods: chapter review
+Find the fourth-degree Taylor truncation for $y''+2y=0,y(0)=1,y'(0)=0$.
+Use its coefficient recurrence.
+The quadratic coefficient is minus one and quartic one sixth.
+$1-t^2+t^4/6$.
+Find the indicial roots of $t^2y''+ty'-4y=0$.
+Form the indicial equation.
+$r^2-4=0$.
+$\pm2$.
+Why is the quartic coefficient of $J_0$ equal to $1/64$?
+Set the series index to two.
+$4^2(2!)^2=64$, with positive sign.
+The recurrence and normalization determine it.
+Numerical solutions, error, and stability: chapter review
+For $y'=-3y,y_0=2,h=1/3$, find one Euler step.
+Calculate the amplification factor.
+$1+h\lambda=0$ makes the numerical value zero, while the exact value remains $2/e$.
+$0$, not exact tracking.
+Halving a step reduces observed error by about eight. Estimate the order.
+Solve $2^p=8$.
+This gives third order, assuming the asymptotic regime.
+About third order.
+For $y'=-20y$, find the explicit Euler stability interval.
+Use negative-real-axis stability.
+$-2<-20h<0$.
+$0<h<1/10$.
+Solve $y'=5y,y(0)=-2$.
+Exponential solutions also allow negative initial values.
+The initial condition gives constant minus two.
+$-2e^{5t}$.
+Find the maximal interval for $y'=y^2,y(0)=1/3$.
+Locate the first denominator zero.
+$y=1/(3-t)$; the initial time zero lies left of the pole.
+$(-\infty,3)$.
+Solve $y'+3y=9,y(0)=0$.
+Subtract equilibrium three.
+The difference decays by $e^{-3t}$, starting at minus three.
+$3(1-e^{-3t})$.
+In logistic model $y'=3y(1-y/4)$, how does initial value four evolve?
+It is exactly equilibrium.
+The right side stays zero.
+$y\equiv4$.
+Does $y'=\lvert y\rvert$ satisfy a local state Lipschitz condition?
+Apply the triangle inequality for absolute values.
+$\lvert\lvert u\rvert-\lvert v\rvert\rvert\le\lvert u-v\rvert$.
+Yes, with constant one, despite nondifferentiability at zero.
+Solve $y''-4y=0,y(0)=0,y'(0)=4$.
+The roots are plus and minus two.
+Coefficient sum is zero and difference two.
+$e^{2t}-e^{-2t}$.
+Solve $y''+4y'+4y=0,y(0)=0,y'(0)=1$.
+A double root at minus two.
+General solution $(C+Dt)e^{-2t}$ has initial coefficients zero and one.
+$te^{-2t}$.
+Find a resonant particular solution of $y''+4y=2\cos2t$.
+Divide forcing amplitude by twice the natural frequency.
+$2/(2\times2)=1/2$.
+$t\sin2t/2$.
+Classify damping in $m=1,k=4,c=1$.
+Compare one with sixteen.
+The discriminant is negative.
+Underdamped.
+Solve $t^2y''+2ty'-2y=0$ on positive time.
+Its indicial equation is $r^2+r-2$.
+Roots are one and minus two.
+$Ct+Dt^{-2}$.
+Is $y''+y=0,y(0)=y(2\pi)=0$ unique?
+Retain the sine direction.
+Every scalar multiple of sine satisfies it.
+Not unique.
+Invert $4/((s+2)^2+16)$.
+Recognize a shifted sine.
+Angular frequency four and decay rate two.
+$e^{-2t}\sin4t$.
+Solve $y'+y=H(t-3)$ with zero initial data.
+Delay the unit-step response.
+Before switching it is zero; afterward $1-e^{-(t-3)}$.
+$H(t-3)(1-e^{-(t-3)})$.
+Find the convolution of constant one with the time function.
+Integrate $t-\tau$.
+$\int_0^t(t-\tau)d\tau=t^2/2$.
+$t^2/2$.
+For $x'=-x,y'=y$, which initial states tend to zero forward in time?
+Remove the growing direction.
+The second initial component must vanish; the first is arbitrary.
+$y_0=0$.
+Find the exponential of matrix $\begin{pmatrix}0&-2\\2&0\end{pmatrix}$.
+It is the standard rotation block.
+Angular velocity two, without radial scaling.
+$\begin{pmatrix}\cos2t&-\sin2t\\\sin2t&\cos2t\end{pmatrix}$.
+Is zero stable for $y'=y^2(1-y)$?
+Inspect signs on both sides.
+Near zero the right side is positive on both sides: negative states approach and positive states leave.
+Unstable overall, with one-sided attraction.
+An undamped pendulum starts at $(0,2)$. Find its energy.
+Only kinetic energy contributes.
+Half the squared velocity equals two.
+$2$, on the separatrix energy level.
+Find the degree-five truncation for $y''+y=0,y(0)=0,y'(0)=2$.
+Use twice the sine Taylor series.
+Odd coefficients are two, minus one third, and one sixtieth.
+$2t-t^3/3+t^5/60$.
+Which two coefficients are free in a second-order ordinary-point series?
+Read the function value and derivative.
+The constant and linear coefficients respectively.
+$a_0=y(0),a_1=y'(0)$.
+For $y'=-8y$, is explicit Euler with step $1/2$ stable?
+Inspect its amplification factor.
+$1-4=-3$ has magnitude greater than one.
+Unstable.
+In RK4 step doubling, fine and coarse results differ by $0.015$. Estimate local error magnitude.
+Divide by fifteen.
+$0.015/15=0.001$, only a local asymptotic estimate.
+About $0.001$.
+What a differential equation describes
+A differential equation constrains an unknown function and its derivatives. Solving means finding functions satisfying that constraint.
+Order, linearity, and standard form
+The highest derivative determines order. First-power dependence on the unknown and its derivatives determines linearity.
+Initial values and solution intervals
+Initial data select a member of a solution family. The answer must also state how far it extends.
+Direction fields and solution curves
+A direction field draws the permitted slope at each point. A solution's tangent must match it.
+Separable equations
+If the rate is a product of time and state factors, integrate the two variables separately.
+First-order linear equations and integrating factors
+An integrating factor turns a first-order linear equation into a product derivative ready to integrate.
+Growth, cooling, and mixing
+Model inflow and outflow first. Units, initial conditions, and validity assumptions give the solution its physical meaning.
+Exact equations and potential functions
+An exact equation is a total differential along solutions, making each solution a level curve.
+Homogeneous substitutions and integrating-factor tests
+When the right side depends only on a ratio, a ratio substitution can make the first-order equation separable.
+Bernoulli equations and the logistic model
+A Bernoulli substitution linearizes a specific power nonlinearity while requiring separate checks for divided-out solutions.
+Local existence and uniqueness
+Continuity commonly ensures local existence. Local Lipschitz dependence on state further ensures uniqueness.
+Integral equations and Picard iteration
+Rewriting an initial-value problem as an integral equation lets successive curve substitutions construct a local solution.
+Maximal intervals and finite-time blow-up
+Local solutions can be continued repeatedly. A finite maximal endpoint usually signals a domain boundary or unbounded state.
+Continuous dependence and error growth
+Under Lipschitz hypotheses on a common existence interval, an exponential upper bound controls initial-data error.
+Superposition and second-order solution spaces
+Every second-order homogeneous linear solution is a combination of two linearly independent solutions.
+Wronskians and Abel's formula
+The Wronskian combines values and derivatives in a determinant. For solutions of one linear equation, it tests independent matching of initial data.
+Characteristic equations and distinct real roots
+Substituting exponentials into a constant-coefficient linear equation turns derivatives into an algebraic equation for growth rates.
+Complex roots and real oscillations
+A conjugate root pair produces real oscillations with growth or decay.
+Repeated roots and reduction of order
+A double root needs a time-times-exponential second solution. A known solution also permits reduction of order to find another.
+Undetermined coefficients and resonance corrections
+For forcing closed under differentiation in finitely many forms, choose a trial family and solve for its coefficients.
+Variation of parameters
+Replace constants multiplying homogeneous solutions by functions and determine their change through two linear conditions.
+Damped oscillation and critical damping
+Damping dissipates energy through velocity. Characteristic roots distinguish underdamped, critical, and overdamped motion.
+Forced oscillation and resonance
+An undamped system driven at its natural frequency can develop a growing resonant term.
+Frequency response, amplitude, and phase
+A positively damped linear system eventually oscillates at the forcing frequency, with frequency-dependent amplitude and phase.
+Higher-order constant-coefficient linear equations
+Roots and multiplicities construct every independent homogeneous solution, with total count equal to the order.
+Euler-Cauchy equations
+Euler-Cauchy coefficients match derivative orders by powers, allowing power trials or logarithmic-time simplification.
+First-order systems and state variables
+A higher-order equation becomes a first-order system using the function and lower derivatives as state.
+Boundary conditions and eigenvalue problems
+Conditions at different locations can give no solution, multiple solutions, or nonzero solutions only for selected parameters.
+Laplace transforms and convergence
+A Laplace transform integrates the future against a decaying exponential, turning a time function into a function of a transform variable.
+Basic transforms, shifts, and inverses
+Linearity, exponential shifts, and partial fractions reduce many inversions to basic functions.
+Solving initial-value problems with Laplace transforms
+Derivative transforms retain initial data as algebraic terms, turning the differential solve into a transform-space algebraic solve.
+Step inputs and time delay
+Steps record when an input begins. The delay rule moves both the switch and the function's internal clock.
+Impulses and jump conditions
+An impulse is an ideal concentrated input defined through its integral action, not an ordinary infinitely tall function.
+Convolution and general forcing responses
+A linear time-invariant system's zero-state response is the convolution of its input with the causal impulse response.
+Linear systems and fundamental matrices
+A fundamental matrix collects independent solution columns and maps initial states to later states.
+Eigendirections, nodes, and saddles
+Constant-system eigenvectors give straight motion directions; eigenvalues give their exponential rates.
+Matrix exponentials and continuous evolution
+Matrix exponentials generalize scalar exponential evolution to linear systems, including nondiagonalizable matrices.
+Repeated-root systems and generalized eigendirections
+When eigenvectors are missing, the nilpotent part creates time polynomials in the exponential, supplying independent solutions.
+Complex eigenvalues, rotation, and stability
+Complex real parts control radial trends and imaginary parts rotation. A linear center is not asymptotically stable.
+Forced systems and variation of constants
+A forced linear solution has initial-state propagation and accumulated forcing propagation.
+Autonomous equations and phase lines
+Signs of a scalar autonomous field determine increase and decrease; equilibria divide the state axis into intervals.
+Jacobians and local linearization
+The Jacobian gives a nonlinear system's first-order model near equilibrium. Hyperbolic stability types can be classified by that linearization.
+Nullclines and predator-prey models
+Nullclines divide phase space into component-increase and decrease regions; their intersections are equilibria.
+Energy, pendulums, and Lyapunov functions
+Energy or a Lyapunov function controls a whole state using one scalar without solving every trajectory.
+Parameters and basic bifurcations
+A bifurcation is a change in equilibrium count or stability structure as a parameter crosses a critical value.
+Power-series solutions at ordinary points
+Near an ordinary point, substitute a power series and compare like powers to derive a recurrence.
+Regular singular points and indicial equations
+Near a regular singular point, a solution may need a power prefactor. Frobenius uses lowest-order balance to determine that exponent.
+Repeated indicial roots and logarithmic solutions
+Repeated or integer-separated roots may need a logarithmic second solution rather than two mechanically written power series.
+From recurrences to special functions
+Special functions are often defined by differential equations and normalization; recurrences make them computable and checkable.
+Euler's method
+Euler predicts the next state from the current slope, approximating continuous change with short tangent steps.
+Midpoint and Heun second-order methods
+Second-order methods add a slope evaluation and use a midpoint or averaged endpoint slope to improve the step.
+Classical fourth-order Runge-Kutta
+Classical RK4 combines four carefully placed slope evaluations for fourth-order global accuracy under smoothness hypotheses.
+Local and global errors
+Local error measures one update from a correct start. Global error also includes previous error propagation and accumulation.
+Absolute stability and stiffness
+Numerical methods have their own dynamics. Excessive steps can make a decaying problem oscillate or explode numerically.
+Adaptive steps and the solving workflow
+Adaptive methods accept or reject steps using local estimates and adjust their length, instead of always using the smallest step.
+Starting knowledge and prerequisites
+The first half needs single-variable differentiation, integration, exponentials, and trigonometry. Series chapters need Taylor expansions and convergence. Exact equations use only local partial derivatives, with the required rule explained in the text. Linear systems need matrix multiplication, eigenvalues, and bases, linked directly to Linear Algebra; completing all of Calculus III first is unnecessary.
+Scope of existence, uniqueness, and integral-inequality proofs
+Local existence and uniqueness use Picard-Lindelof: restrict the initial rectangle's time interval so the integral map stays inside and is a contraction. The contraction theorem on a complete function space is cited without its real-analysis proof. Peano's theorem supplies existence for continuous right-hand sides. Gronwall follows by applying an exponential integrating factor to an upper-bound function. None of these alone guarantees extension beyond finite time.
+Linear solution spaces and fundamental matrices
+A standard continuous-coefficient linear initial-value problem has a unique solution. Initial data and solutions correspond linearly and bijectively, making solution-space dimension equal to order. A fundamental determinant satisfies $\det\Phi(t)=\det\Phi(t_0)\exp(\int_{t_0}^t\operatorname{tr}A(s)ds)$, derived by differentiating its columns. Independent initial solutions therefore cannot suddenly lose independence on a regular interval.
+Transform, impulse, and jump conventions
+We use one-sided causal Laplace transforms with ordinary initial data taken as right limits at zero. Strictly positive-time impulses are generalized functions and transform into exponential delay factors. Full distribution theory and engineering conventions for impulses at zero are outside the derivation. Single-point values of ordinary piecewise functions do not affect transforms. Classical differential equalities hold separately on each side of jumps, with distributional jump conditions where needed.
+Scope of stability results
+Stability means all sufficiently close initial states stay close; asymptotic stability also requires convergence to equilibrium. Nonlinear linearization assumes continuous differentiability near equilibrium. Hyperbolic cases use the linearized stability theorem, while pure-imaginary or zero roots need further study. A nonpositive Lyapunov derivative directly gives a nonincrease estimate; attraction requires examining invariant motions within the zero-derivative set. We do not prove Hartman-Grobman or general invariance principles here.
+Evidence for series and numerical methods
+Ordinary-point analyticity and Frobenius existence are used as standard local theorems, with recurrences calculated independently in each lesson. Numerical-order claims require smoothness, a fixed finite interval, and stable error propagation. Test-equation stability regions are diagnostic tools. Step doubling estimates local asymptotic error rather than guaranteeing global error. Finite grids, fixed steps, and finite visual windows are not theorem proofs.

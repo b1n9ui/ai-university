@@ -1,0 +1,65 @@
+Monotone bounded sequences and recurrences
+Establish convergence before solving for a limit
+A bounded monotone real sequence converges. Pass a recurrence to its limit only after proving convergence.
+A sequence rising beneath a ceiling approaches a height without necessarily reaching it in finitely many steps.
+Which bound is needed?
+An increasing sequence needs an upper bound; a decreasing one needs a lower bound. An unbounded monotone sequence may tend to infinity. The supremum is the least upper bound.
+Finding a recursive limit
+Use induction to establish an invariant interval and monotonicity. Then use continuity of the recurrence function to pass to the limit.
+Is every fixed point a possible limit?
+No. The initial value and invariant interval select branches; solving a fixed-point equation does not prove convergence.
+Establish convergence before solving for a limit
+Use completeness of the real numbers, monotonicity and a finite bound in the appropriate direction.
+Take the supremum as candidate limit.
+Every smaller number fails to be an upper bound.
+Monotonicity traps all later terms in a narrow band.
+A square-root recurrence
+Given $a_1=1$, $a_{n+1}=\sqrt{2+a_n}$, find the limit.
+If $1\leq a_n<2$, the next term stays in the interval; also $\sqrt{2+x}>x$ holds for $1\leq x<2$.
+Increasing and bounded above, it converges. The nonnegative solution of $L=\sqrt{2+L}$ is 2.
+$2$.
+An averaging recurrence
+Given $a_1=0$, $a_{n+1}=\frac{a_n+3}{2}$, find the limit.
+$3-a_{n+1}=\frac12(3-a_n)$, hence $a_n=3-\frac3{2^{n-1}}$.
+The error decays geometrically; the sequence increases without exceeding 3.
+$3$.
+A recurrence with a fixed point must converge.
+$a_{n+1}=-a_n$ has fixed point zero, but nonzero initial values oscillate.
+Boundedness makes monotonicity unnecessary.
+Bounded oscillation need not converge.
+Is $a_n=1-\frac1n$ monotone and bounded? Find its limit.
+Increasing, bounded above by 1, with limit 1.
+Compare consecutive terms.
+$a_{n+1}-a_n=\frac1n-\frac1{n+1}>0$; $a_n<1$.
+Given $a_1=0,a_{n+1}=\frac{a_n+4}{2}$, find the limit.
+$4$.
+Write the error relative to the fixed point.
+$4-a_{n+1}=\frac12(4-a_n)$, so the error tends to zero.
+Can this theorem give a finite limit for the monotone sequence $a_n=n$?
+No; an upper bound is missing.
+Check both hypotheses.
+The sequence is strictly increasing and unbounded, so it tends to positive infinity.
+Given $a_1=1,a_{n+1}=2-a_n$, if $a_1$ is changed to 0, is the limit still 1?
+Starting at 1 gives the constant sequence 1; starting at 0 gives alternating 0 and 2.
+A fixed point does not guarantee convergence.
+The first four terms reveal the cycle; the two subsequences have different limits.
+What should come first when solving for a recursive limit?
+Assume convergence and accept all roots
+Prove convergence using bounds and monotonicity
+Ignore the initial value
+Passing to a limit requires a convergence argument first.
+A fixed-point equation identifies where a limit could be. Bounds and monotonicity establish that the sequence actually approaches one.
+Early terms
+Set the count to 3.
+The sequence increases and remains below 2.
+More terms
+Set the count to 10.
+The error shrinks; rounding may make displayed terms look equal.
+Continue the recurrence
+Set the count to 20.
+Numerical agreement cannot replace the monotone convergence proof.
+Display the recurrence $a_1=1,a_{n+1}=\sqrt{2+a_n}$ with upper bound 2.
+If the graph appears to reach 2, must a finite term equal 2 exactly?
+Prove monotonicity and invariant bounds
+Pass a recurrence to the limit after proving convergence
+Use initial values to exclude unsuitable fixed points

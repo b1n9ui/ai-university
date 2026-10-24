@@ -1,0 +1,62 @@
+Taylor polynomials
+Match a function's derivatives at one point
+A Taylor polynomial matches the value and first few derivatives at its center. This local agreement does not guarantee accuracy far away.
+The linear term matches slope; the quadratic term matches curvature. Higher terms match higher derivatives, with factorials cancelling differentiation factors.
+Why divide by a factorial?
+The $k$th derivative of $c_k(x-a)^k$ at the center leaves $k!c_k$. Divide by $k!$ to match the corresponding derivative of the function.
+Is Maclaurin a different method?
+It is simply Taylor expansion centered at zero, with the same formula and reasoning.
+Polynomial versus infinite series
+A finite Taylor polynomial exists when the required derivatives exist. Equality with the infinite series additionally requires the remainder to vanish.
+Match a function's derivatives at one point
+$f$ has derivatives through order $m$ at the center. Estimate the remainder separately to establish accuracy.
+Write a candidate polynomial.
+Differentiate repeatedly at the center to isolate each coefficient.
+Match these derivatives with the original function.
+Exponential derivatives
+Find the cubic Taylor polynomial of $e^x$ at zero.
+Every derivative at zero is 1.
+Divide each coefficient by $0!,1!,2!,3!$.
+$T_3=1+x+\frac{x^2}{2}+\frac{x^3}{6}$.
+A different center
+Find the quadratic Taylor polynomial of $\ln x$ at $a=1$.
+$f(1)=0,f\prime(1)=1,f^{(2)}(1)=-1$.
+Expand around 1 using $x-1$, not $x$.
+$T_2=(x-1)-\frac12(x-1)^2$.
+The quadratic coefficient is simply the second derivative.
+It must also be divided by $2!$.
+Matching more derivatives guarantees better accuracy everywhere.
+The information is local. Use a remainder estimate away from the center.
+Find the cubic Maclaurin polynomial of $\sin x$.
+$x-\frac{x^3}{6}$.
+Compute derivatives at zero.
+The constant and quadratic coefficients vanish; the first derivative is 1 and the third is $-1$.
+Find the fourth-degree Maclaurin polynomial of $\cos x$.
+$1-\frac{x^2}{2}+\frac{x^4}{24}$.
+Odd derivatives vanish at zero.
+Even derivatives are $1,-1,1$; divide by their factorials.
+Given $f(2)=3,f\prime(2)=-1,f^{(2)}(2)=4$, write the quadratic expansion.
+$3-(x-2)+2(x-2)^2$.
+Keep the center shift and factorial.
+The coefficients are $3,-1,\frac4{2!}=2$.
+Use the quadratic expansion of $e^x$ to estimate $e^{0.1}$.
+$1.105$, an approximation.
+Substitute into the finite polynomial.
+$1+0.1+\frac{0.1^2}{2}=1.105$; its error needs a separate estimate.
+What is a Taylor polynomial's quadratic coefficient?
+Twice differentiating the quadratic term introduces a factor of two.
+Build a local substitute: match value, then slope, curvature and successive derivatives.
+Low order
+Set order to 2 and input to 0.5.
+The finite polynomial matches low-order derivatives; the readout shows its actual error.
+Increase the order
+Set order to 6, keeping input 0.5.
+Observe how the actual error changes at this input.
+Farther from the center
+Set order to 10 and input to 0.9.
+Accuracy depends on input and function; range and remainder conditions still matter.
+Compare $e^x$ with finite expansions centered at zero and read the error.
+Does raising the order give the same accuracy far away as near the center?
+Construct polynomials from derivatives at the center
+Keep factorials and center shifts
+Distinguish local matching from error guarantees

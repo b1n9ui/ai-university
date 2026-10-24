@@ -1,0 +1,65 @@
+Conditional expectation and total variance
+Calculate within groups, then include differences between groups.
+Calculate within groups, then include differences between groups.
+Overall variation includes both variation within groups and variation in their means.
+Conditional means are functions
+Use the tower property
+Conditional means are functions
+Different conditioning values can give different conditional means. The conditional mean itself varies with the conditioning variable.
+Use the tower property
+Taking the overall expectation of a conditional mean recovers the original mean. Weight each group by its probability.
+Decompose total variance
+Split a deviation into a within-group deviation and a group-mean deviation. The cross term has conditional expectation zero, giving the law of total variance.
+Total expectation requires integrability; total variance requires a finite second moment.
+Total expectation requires integrability; total variance requires a finite second moment.
+Group weights must match the population composition.
+Write the conditional mean as $m(X)$ and split the total deviation.
+The within-group deviation has conditional mean zero.
+Square and take expectations; the cross term vanishes.
+A mixture's mean
+Two equally likely groups have conditional means zero and four. Find the overall mean.
+Weight by the two group probabilities.
+$0.5(0)+0.5(4)=2$.
+$2$.
+A mixture's variance
+In the preceding example, both within-group variances are one. Find the overall variance.
+The average within-group variance is one.
+The group means have variance four around the overall mean two.
+$1+4=5$.
+Two groups have probabilities $0.25,0.75$ and means two and six. Find the overall mean.
+Weight the group means.
+$0.25(2)+0.75(6)=5$.
+$5$.
+If all conditional means are equal, what is the between-group variance?
+Use the variance of a constant.
+Zero.
+$0$.
+If all within-group variances are zero, must overall variance be zero?
+Group means can still differ.
+Between-group variance may remain positive.
+Not necessarily.
+If two populations match within each group, must their overall means match?
+Are their group weights the same?
+Different weights can produce different mixture means.
+No.
+What remains after subtracting average within-group variance from total variance?
+Zero
+Variance of the group means
+The overall mean
+Differences in group locations also contribute to overall variation.
+Total variance is only average within-group variance
+Add the variance of conditional group means as well.
+Conditional expectation is always a fixed number
+It is generally a random variable depending on the conditioning variable.
+Move the group means farther apart while keeping within-group variance fixed. What happens to total variance?
+Compare the two group distributions and the within/between decomposition of total variance.
+Add the variance of conditional group means as well.
+Distance between group centers: 4
+Set the distance between group centers to $4$ and compare the diagram and readings.
+At this preset: overall mean $0$; average within-group variance $1$; between-group variance $4$; total variance $5$.
+Distance between group centers: 0
+Set the distance between group centers to $0$ and compare the diagram and readings.
+At this preset: overall mean $0$; average within-group variance $1$; between-group variance $0$; total variance $1$.
+Distance between group centers: 8
+Set the distance between group centers to $8$ and compare the diagram and readings.
+At this preset: overall mean $0$; average within-group variance $1$; between-group variance $16$; total variance $17$.

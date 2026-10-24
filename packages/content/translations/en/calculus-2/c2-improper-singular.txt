@@ -1,0 +1,62 @@
+Unbounded integrands on finite intervals
+Approach every singularity separately
+Avoid an unbounded endpoint or interior point, integrate on a truncated interval, then take one-sided limits.
+Infinite height near zero need not give infinite area. Both height and width matter.
+An interior singularity
+Split at the singularity; both sides must converge. Never subtract antiderivative values across a singularity directly.
+Is the power threshold the same as at infinity?
+It is reversed: $\int_0^1x^{-p}dx$ converges exactly when $p<1$. Here the issue is a spike near zero, not a distant tail.
+Can comparison help?
+Yes. A nonnegative function bounded above by an integrable spike is integrable. One bounded below by a divergent spike diverges.
+Approach every singularity separately
+Truncation points approach from inside the interval. Check every relevant side of every singularity.
+Avoid zero initially.
+A positive exponent makes the lower-end term vanish.
+The threshold still diverges.
+Unbounded but integrable
+Evaluate $\int_0^1\frac{dx}{\sqrt x}$.
+The truncated integral is $2-2\sqrt\delta$.
+As $\delta\to0^+$, the lower-end contribution vanishes.
+$2$.
+Do not cross an interior singularity
+Does $\int_{-1}^1\frac{dx}{x}$ exist?
+The left integral is $\ln\delta\to-\infty$; the right is $-\ln\delta\to\infty$.
+Neither converges, so cancellation is invalid.
+Divergent; a zero symmetric principal value is a different concept.
+Every vertical asymptote implies infinite area.
+$x^{-1/2}$ is unbounded at zero but has finite integral.
+Just substitute the endpoints into an antiderivative.
+Locate all singularities first. The fundamental theorem cannot be used across one.
+Evaluate $\int_0^1x^{-1/3}dx$.
+$\frac32$.
+Use a limit at the lower endpoint.
+$[\frac32x^{2/3}]_\delta^1\to\frac32$.
+Does $\int_0^1x^{-2}dx$ converge?
+It diverges.
+The issue is behavior near zero.
+$[-x^{-1}]_\delta^1=\delta^{-1}-1\to\infty$.
+Evaluate $\int_0^1\ln x dx$.
+$-1$.
+Integrate by parts, then take the lower-end limit.
+$[x\ln x-x]_\delta^1=-1-\delta\ln\delta+\delta$; $\delta\ln\delta\to0$.
+An antiderivative difference for $\int_0^2\frac{dx}{(x-1)^2}$ is negative. What went wrong?
+It crosses an interior singularity, invalidating the fundamental theorem.
+Split at 1.
+The integrand is positive on both sides, and both integrals tend to positive infinity near 1. It diverges.
+For which exponents does $\int_0^1x^{-p}dx$ converge?
+Near zero, the spike must be weak enough; this reverses the tail condition at infinity.
+Mark every unbounded point on the interval. The whole integral exists only if each required one-sided limit exists.
+An integrable spike
+Set the exponent to 0.5 and lower endpoint to 0.1.
+The limiting total is 2, but the truncation still omits $2\sqrt{0.1}$.
+Approach zero
+Set the exponent to 0.5 and lower endpoint to 0.001.
+The height grows, yet the omitted area shrinks.
+A nonintegrable spike
+Set the exponent to 1 and lower endpoint to 0.001.
+The area is $-\ln0.001$, unbounded as the lower endpoint approaches zero.
+Truncate the spike of $[0,\delta)$ and display $\int_\delta^1x^{-p}dx$.
+As the lower endpoint shrinks, which exponents keep the area finite?
+Check every endpoint and interior singularity
+Determine integrability of power spikes near zero
+Recognize invalid use of the fundamental theorem across singularities

@@ -1,0 +1,67 @@
+Uniform continuity and Heine–Cantor
+Uniform continuity uses one input radius across the entire domain, independently of the center.
+Uniform continuity uses one input radius across the entire domain, independently of the center.
+Local control at every point need not give one shared scale. Compactness makes continuous local control uniform.
+Move the quantifiers
+Argue using bad input pairs
+Move the quantifiers
+Ordinary continuity allows the radius to depend on the center and error. Uniform continuity chooses a radius after the error that works for every input pair.
+Argue using bad input pairs
+Failure on a compact set gives pairs with vanishing input gaps but a fixed positive output gap. A convergent subsequence of the first inputs forces the second to the same limit. Continuity makes the output gap vanish, a contradiction.
+Find noncompact counterexamples
+The square function is continuous but not uniformly continuous on the real line. Growing inputs differing by a reciprocal still have output gaps near two. A noncompact domain may also support uniform continuity, as the identity shows.
+A continuous function on a compact set is uniformly continuous.
+Heine–Cantor requires a compact domain and a continuous function.
+Compactness is sufficient, not necessary, for uniform continuity.
+Failure of uniform continuity supplies bad input pairs.
+Compactness gives a subsequence whose two inputs approach the same point.
+Continuity makes their output gap vanish, contradicting its fixed lower bound.
+The square-function counterexample
+For $x_n=n,y_n=n+1/n$, compare input distance and square difference.
+$|x_n-y_n|=1/n\to0$.
+$y_n^2-x_n^2=2+1/n^2\to2$.
+The square function is not uniformly continuous on the whole real line.
+Compactness is not necessary
+Is the identity uniformly continuous on the real line?
+$|f(x)-f(y)|=|x-y|$.
+For every error, choose the same input radius.
+Uniformly continuous despite a noncompact domain.
+Is squaring uniformly continuous on the closed interval from zero to one?
+Use compactness and continuity, or a direct factor bound.
+$|x^2-y^2|\le2|x-y|$.
+Yes.
+May a uniform-continuity radius depend on the selected center?
+The radius precedes the arbitrary input pair.
+No.
+It may not.
+Is sine uniformly continuous on the real line?
+Use a slope bound or trigonometric estimate.
+$|\sin x-\sin y|\le|x-y|$.
+Yes.
+Prove $f(x)=x^2$ is not uniformly continuous on the real line.
+Find vanishing input gaps with nonvanishing output gaps.
+Take $x_n=n$, $y_n=n+1/n$, so $|x_n-y_n|=1/n\to0$.
+But $|f(y_n)-f(x_n)|=2+1/n^2>2$.
+A common $\delta>0$ for output error one would fail at $n>1/\delta$: input gap below $\delta$, output gap above one.
+A common $\delta>0$ for output error one would fail at $n>1/\delta$: input gap below $\delta$, output gap above one.
+Which inputs does a uniform-continuity radius control?
+One center
+Every pair in the domain
+Finite-grid points
+Its quantifiers give domain-wide control.
+Continuity automatically implies uniform continuity
+Noncompact domains give counterexamples.
+A noncompact domain cannot support uniform continuity
+The identity is a counterexample.
+Move inputs farther out while bringing them closer together. Can the output gap stay bounded below?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+One local radius at each point need not give a shared radius. Noncompact domains can defeat uniform continuity.
+Outward input index: 1
+Set the outward index to $1$. Compare input and output gaps and check whether both shrink.
+Input gap $1$; output gap $3$.
+Outward input index: 50
+Set the outward index to $50$. Compare input and output gaps and check whether both shrink.
+Input gap $0.02$; output gap $2.0004$.
+Outward input index: 100
+Set the outward index to $100$. Compare input and output gaps and check whether both shrink.
+Input gap $0.01$; output gap $2.0001$.

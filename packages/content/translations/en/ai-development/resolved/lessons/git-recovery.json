@@ -1,0 +1,201 @@
+{
+  "id": "git-recovery",
+  "chapterId": "chapter-3",
+  "number": "3.3",
+  "title": "Identify what you need to undo",
+  "subtitle": "Different kinds of recovery need different operations.",
+  "concept": "Distinguish unstaging, discarding working edits, reversing commits and resolving conflicts before choosing an undo operation.",
+  "intuition": "Removing a draft from an envelope, discarding a desk copy and sending a correction have different costs.",
+  "objectives": [
+    "Inspect working tree, index and log to identify the state being undone.",
+    "After recovery or conflict resolution, review diffs, verify and record the outcome."
+  ],
+  "body": [
+    {
+      "title": "Inspect before clearing",
+      "text": "Start with git status, git diff and git diff --staged. git restore --staged README.md unstages while preserving edits. git restore README.md overwrites unstaged edits from the index; preserve anything needed first. Git may not recover never-recorded drafts. Do not reflexively use reset --hard or clean -fd."
+    },
+    {
+      "title": "Correct shared history with a new commit",
+      "text": "For an ordinary shared commit, git revert creates a reverse commit while retaining history. Start clean and identify the correct commit. Revert may conflict; merge-commit reversal is beyond scope. stash temporarily saves work, excluding untracked files unless -u is specified. Applying it can conflict; it is not permanent backup."
+    },
+    {
+      "title": "Understand both sides of a conflict",
+      "text": "When branches edit the same area differently, Git may need a decision. Read requirements and both intentions, write the final content, remove markers, test, stage and complete the operation. Do not randomly choose ours or theirs. To stop, use the abort command appropriate to the active merge or revert, after inspecting status."
+    }
+  ],
+  "formalDefinition": {
+    "text": "Distinguish unstaging, discarding working edits, reversing commits and resolving conflicts before choosing an undo operation.",
+    "conditions": [
+      "For small personal learning projects. In shared repositories, follow the team's conventions.",
+      "This method produces checkable evidence; it cannot guarantee arbitrary AI output is correct."
+    ]
+  },
+  "workflow": [
+    "Inspect working tree, index and log to identify the state being undone.",
+    "Preserve needed content and choose the least extensive suitable operation.",
+    "After recovery or conflict resolution, review diffs, verify and record the outcome."
+  ],
+  "workedExamples": [
+    {
+      "title": "Unstage only",
+      "problem": "Keep README edits but exclude them from this commit.",
+      "steps": [
+        "Use status to confirm they are staged.",
+        "Use --staged to preserve working edits.",
+        "Inspect status and the file afterward."
+      ],
+      "answer": "Unstaging does not discard editing. Compare ordinary restore in the lab. Practice on the corresponding file in a repository that already has a commit.",
+      "code": "git restore --staged README.md\ngit status\ngit diff"
+    },
+    {
+      "title": "Conflicting title limits",
+      "problem": "One branch says 80, another 100. May you arbitrarily keep either?",
+      "steps": [
+        "Check whether the confirmed requirement is still 80 or now 100.",
+        "Update validation, feedback and boundary tests consistently.",
+        "Remove markers, test and complete the merge."
+      ],
+      "answer": "If the change is unconfirmed, revisit requirements or ask. Missing conflict markers does not imply correct behavior. Keep the final limit and tests aligned at 80/81 or 100/101."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "Every undo operation is recoverable.",
+      "correction": "Never-recorded edits may be lost. Inspect and preserve first."
+    },
+    {
+      "claim": "Resolving conflicts means deleting marker lines.",
+      "correction": "Marker removal only resolves textual conflict; verify resulting behavior against requirements."
+    }
+  ],
+  "practice": [
+    {
+      "id": "git-recovery-p1",
+      "difficulty": 1,
+      "problem": "How do you unstage while keeping edits?",
+      "hint": "Change only the index.",
+      "answer": "git restore --staged README.md.",
+      "solution": [
+        "Restore the staged version from HEAD.",
+        "Working edits remain; check status."
+      ]
+    },
+    {
+      "id": "git-recovery-p2",
+      "difficulty": 2,
+      "problem": "Where does ordinary git restore README.md get content?",
+      "hint": "Not the remote by default.",
+      "answer": "From the index by default, discarding unstaged modifications to that file.",
+      "solution": [
+        "Compare index and working tree.",
+        "Save any needed draft elsewhere first."
+      ]
+    },
+    {
+      "id": "git-recovery-p3",
+      "difficulty": 2,
+      "problem": "How do you reverse an ordinary pushed bad commit while preserving history?",
+      "hint": "Add a reverse record.",
+      "answer": "From a clean tree, identify it and use git revert. Resolve conflicts, verify and push the new commit.",
+      "solution": [
+        "Do not casually rewrite shared history.",
+        "Ordinary and merge commits have different reversal rules."
+      ]
+    },
+    {
+      "id": "git-recovery-p4",
+      "difficulty": 2,
+      "problem": "Does stash save newly created untracked files by default?",
+      "hint": "Distinguish tracked and untracked.",
+      "answer": "No. Specify -u to include untracked files; it still does not replace permanent backup.",
+      "solution": [
+        "Inspect file categories with status first.",
+        "Restoration may conflict; preserve the stash and useful records."
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "To unstage only while keeping edits, choose what?",
+    "choices": [
+      "git restore --staged README.md",
+      "git restore README.md",
+      "Delete the whole directory"
+    ],
+    "correctIndex": 0,
+    "feedback": [
+      "This restores index content from HEAD only.",
+      "This overwrites unstaged edits, violating the preservation goal.",
+      "This destroys far more than intended."
+    ]
+  },
+  "interactiveVisual": {
+    "kind": "git",
+    "prediction": "With staged v2 and working v3, do the two restore operations agree?",
+    "steps": [
+      {
+        "question": "Keep v3 in the file but unstage first.",
+        "choices": [
+          "restore --staged",
+          "Restore the file",
+          "reset --hard"
+        ],
+        "correctIndex": 0,
+        "feedback": [
+          "Only the index changes; working v3 remains.",
+          "This restores working content from the index.",
+          "This may discard a broader range of unrecorded changes."
+        ]
+      },
+      {
+        "question": "You deliberately discard v3 and retain staged v2. After ordinary restore?",
+        "choices": [
+          "Working tree v2",
+          "Working tree v1",
+          "Remote v3"
+        ],
+        "correctIndex": 0,
+        "feedback": [
+          "Default restoration copies index content to the working tree.",
+          "That occurs only if the index is v1.",
+          "This does not upload anything."
+        ]
+      },
+      {
+        "question": "The agent says clear all changes before debugging.",
+        "choices": [
+          "Ask it to inspect status and diffs and preserve useful work",
+          "Run it immediately",
+          "Delete tests"
+        ],
+        "correctIndex": 0,
+        "feedback": [
+          "Identify what would be lost first.",
+          "Never-recorded work may disappear.",
+          "Deleting tests does not replace investigating the error."
+        ]
+      }
+    ],
+    "followUp": "Use unstaging and edit-discarding separately in the lab and record each column's change."
+  },
+  "prerequisites": [
+    "git-collaboration"
+  ],
+  "difficulty": 2,
+  "misconceptionTags": [
+    "git-recovery-guess",
+    "git-recovery-evidence"
+  ],
+  "sources": [
+    "git-restore",
+    "git-revert",
+    "git-stash",
+    "git-branch"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.1.1",
+    "status": "first-edition",
+    "humanReviewed": false
+  }
+}

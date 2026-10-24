@@ -1,0 +1,64 @@
+Characteristic equations and distinct real roots
+Turn differentiation into multiplication
+Why try an exponential?
+For $y=e^{rt}$, its first derivative is $re^{rt}$ and second derivative $r^2e^{rt}$. Cancel the nonzero exponential factor.
+How do two real roots work?
+Distinct real roots $r_1,r_2$ give independent $e^{r_1t},e^{r_2t}$; their combination is the general solution.
+Roots and long-term behavior
+Positive roots permit growth and negative roots give decay. Initial data determine whether the corresponding coefficient is nonzero.
+Substitute an exponential trial solution.
+Cancel its everywhere-nonzero factor.
+Distinct exponentials have nonzero Wronskian.
+Two decay rates
+Solve $y''+3y'+2y=0$.
+The characteristic polynomial is $(r+1)(r+2)=0$.
+Roots minus one and minus two give independent exponentials.
+$y=c_1e^{-t}+c_2e^{-2t}$.
+Match initial data
+Solve $y''-y=0,y(0)=1,y'(0)=0$.
+The general solution is $c_1e^t+c_2e^{-t}$.
+Initial data make the coefficient sum one and difference zero.
+$y=(e^t+e^{-t})/2$.
+Find the two roots for $y''-3y'+2y=0$.
+Factor the quadratic.
+$(r-1)(r-2)=0$.
+$1,2$.
+Find the general solution of $y''+4y'+3y=0$.
+The roots are minus one and minus three.
+Combine their exponentials.
+$c_1e^{-t}+c_2e^{-3t}$.
+Does one positive root make every solution grow?
+Check its coefficient.
+The growing coefficient can vanish; zero is also a solution.
+Not necessarily.
+Why may you divide by $e^{rt}$?
+Check for zeros.
+Real or complex exponentials never vanish at real times.
+The factor is nowhere zero.
+The constant-coefficient characteristic method directly handles arbitrary variable coefficients.
+With variable coefficients, an exponential generally cannot remove every time dependence.
+One characteristic root gives only one fixed solution.
+Its exponential can be multiplied by any constant.
+Substituting exponentials into a constant-coefficient linear equation turns derivatives into an algebraic equation for growth rates.
+Each exponential derivative adds a constant factor, separating the differential operator into algebra.
+Form characteristic equations
+Solve distinct-real-root initial-value problems
+Characteristic equations and distinct real roots
+$a,b,c$ are real constants with $a\ne0$; the two characteristic roots here are distinct and real.
+What is the main benefit of an exponential trial solution?
+Replace derivatives by multiplication involving the root
+Prove every equation integrable
+Remove the initial conditions
+Constant coefficients allow this simplification.
+Differentiate the exponential repeatedly to derive the characteristic rule, rather than treating it as an extra mnemonic.
+Distinct negative roots
+Both directions decay at different rates.
+Set first real root $r_1$ to $-1$, second real root $r_2$ to $-2$, and observation time $t$ to $1$.
+One positive root
+One direction grows and the other decays.
+Set first real root $r_1$ to $1$, second real root $r_2$ to $-1$, and observation time $t$ to $1$.
+Coincident roots
+The curves coincide; use the repeated-root method for another direction.
+Set first real root $r_1$ to $-1$, second real root $r_2$ to $-1$, and observation time $t$ to $1$.
+Two exponentials form an independent fundamental pair only for different roots. Coincident roots are explicitly marked as dependent, not as a complete basis.
+When the roots merge, do these two exponentials remain an independent pair?

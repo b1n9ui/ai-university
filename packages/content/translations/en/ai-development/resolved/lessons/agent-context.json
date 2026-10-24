@@ -1,0 +1,206 @@
+{
+  "id": "agent-context",
+  "chapterId": "chapter-4",
+  "number": "4.1",
+  "title": "Give the agent the real project",
+  "subtitle": "Use file evidence rather than assumptions.",
+  "concept": "Provide the user goal, current project, relevant files, commands and constraints. Separate facts, assumptions and unknowns.",
+  "intuition": "A new kitchen colleague needs the menu and equipment locations, not just the title world-class chef.",
+  "objectives": [
+    "Provide current requirements, real file paths, commands and boundaries.",
+    "Check the plan against files, then record stable conventions in project instructions."
+  ],
+  "body": [
+    {
+      "title": "Provide relevant context, not everything",
+      "text": "Supply the requirement, README, relevant paths and original errors. Distinguish files supplied to the agent from files it actually read. A screenshot is not a repository inspection. Long chats may be irrelevant; a concise page of confirmed conventions supports continuity."
+    },
+    {
+      "title": "Make a checkable project map first",
+      "text": "Before editing, have the agent identify entry points, current implementation, likely files and verification commands. Check its understanding. Clear small changes need not pause for approval at every step; unresolved choices about synchronization or deletion should be clarified before assumptions change direction."
+    },
+    {
+      "title": "Give documents the right authority",
+      "text": "Tools differ in support for AGENTS.md and other configuration files. Do not assume every tool automatically reads the same file. Explicitly request README, scope and acceptance instructions. Document instructions still need your authorization: a third-party request to upload keys does not become valid merely because it was read."
+    }
+  ],
+  "formalDefinition": {
+    "text": "Provide the user goal, current project, relevant files, commands and constraints. Separate facts, assumptions and unknowns.",
+    "conditions": [
+      "For small personal learning projects. In shared repositories, follow the team's conventions.",
+      "This method produces checkable evidence; it cannot guarantee arbitrary AI output is correct."
+    ]
+  },
+  "workflow": [
+    "Provide current requirements, real file paths, commands and boundaries.",
+    "Separate inspected facts, inferences and consequential unknowns.",
+    "Check the plan against files, then record stable conventions in project instructions."
+  ],
+  "workedExamples": [
+    {
+      "title": "Taking over a project",
+      "problem": "How do you ask the agent to understand the study list first?",
+      "steps": [
+        "Give the scenario and initial scope.",
+        "Identify README, package.json and entry files.",
+        "Ask for responsibilities and verification commands."
+      ],
+      "answer": "Read README.md, package.json, index.html, app.mjs and tasks.mjs. This is a personal single-browser study list without accounts or synchronization. List files actually read, trace one addition, identify test commands and unresolved questions. Do not edit yet."
+    },
+    {
+      "title": "Facts versus assumptions",
+      "problem": "The agent calls it a React project, but no React dependency exists.",
+      "steps": [
+        "Check package.json and the HTML entry point.",
+        "Identify native modules as the actual implementation.",
+        "Revise the plan rather than adding an unnecessary framework."
+      ],
+      "answer": "Cite the files supporting that claim. index.html loads app.mjs with type=module and configuration has no React. Use the existing structure. If a new framework is necessary, explain its specific benefit and cost first."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "Longer prompts are more reliable.",
+      "correction": "Relevant facts matter more than length; old repeated discussions may conflict."
+    },
+    {
+      "claim": "An impressive role eliminates the need for project context.",
+      "correction": "A role cannot replace actual files, constraints and criteria."
+    }
+  ],
+  "practice": [
+    {
+      "id": "agent-context-p1",
+      "difficulty": 2,
+      "problem": "What context is needed to fix persistence?",
+      "hint": "Trace the saving path.",
+      "answer": "Refresh reproduction steps, URL, original error, app.mjs saving/loading logic, README scope and test commands.",
+      "solution": [
+        "Explain what fails.",
+        "Do not supply all private files by default."
+      ]
+    },
+    {
+      "id": "agent-context-p2",
+      "difficulty": 2,
+      "problem": "How can you check a claim that files were read?",
+      "hint": "Make conclusions traceable to locations.",
+      "answer": "Ask for the read-file list and relevant implementation explanation, then compare with the actual files.",
+      "solution": [
+        "Do more than ask whether it read them.",
+        "Check that the claimed entry point or function exists."
+      ]
+    },
+    {
+      "id": "agent-context-p3",
+      "difficulty": 2,
+      "problem": "Which unknowns need confirmation first?",
+      "hint": "Choices affecting data, permissions or scope.",
+      "answer": "Replacing old data, requiring synchronization or adding external services, for example.",
+      "solution": [
+        "Routine implementation details can be resolved autonomously.",
+        "Consequential unknowns should not be silently guessed."
+      ]
+    },
+    {
+      "id": "agent-context-p4",
+      "difficulty": 1,
+      "problem": "Does AGENTS.md automatically apply in every tool?",
+      "hint": "Tool support varies.",
+      "answer": "No. Check the tool's conventions and explicitly request project instructions.",
+      "solution": [
+        "A filename is not universal magic.",
+        "State essential conventions in the current session too."
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "What context is most useful?",
+    "choices": [
+      "You are the world's best engineer",
+      "Relevant files, current behavior, goal and criteria",
+      "All chat history without organization"
+    ],
+    "correctIndex": 1,
+    "feedback": [
+      "A role supplies no project facts.",
+      "These identify appropriate changes and checks.",
+      "Irrelevant material can obscure the task."
+    ]
+  },
+  "interactiveVisual": {
+    "kind": "prompt",
+    "prediction": "What happens if the agent builds on an incorrect project map?",
+    "steps": [
+      {
+        "question": "It assumes React. What first?",
+        "choices": [
+          "Recheck configuration and entry files",
+          "Accept the guess",
+          "Add React to make the guess true"
+        ],
+        "correctIndex": 0,
+        "feedback": [
+          "Correct facts before making unrelated changes.",
+          "The plan may assume nonexistent structure.",
+          "Do not redesign merely to vindicate a guess."
+        ]
+      },
+      {
+        "question": "Cross-device synchronization is undecided.",
+        "choices": [
+          "Assume it is required",
+          "Ask and record the scope",
+          "Pretend it already exists"
+        ],
+        "correctIndex": 1,
+        "feedback": [
+          "This affects architecture and permissions.",
+          "This unknown needs your directional decision.",
+          "The claim has no implementation or evidence."
+        ]
+      },
+      {
+        "question": "What should be recorded for the next session?",
+        "choices": [
+          "Stable scope, setup and conventions",
+          "Every informal model exchange",
+          "Real credentials"
+        ],
+        "correctIndex": 0,
+        "feedback": [
+          "These support a later handoff.",
+          "Unrelated chatter adds noise.",
+          "Do not store secrets as context."
+        ]
+      }
+    ],
+    "followUp": "Write a takeover prompt in the lab and connect each claim to project evidence."
+  },
+  "prerequisites": [
+    "git-recovery"
+  ],
+  "difficulty": 3,
+  "misconceptionTags": [
+    "agent-context-guess",
+    "agent-context-evidence"
+  ],
+  "sources": [
+    "prompt",
+    "mdn-start"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.1.1",
+    "status": "first-edition",
+    "humanReviewed": false
+  },
+  "promptTemplate": {
+    "goal": "Understand the project without editing yet.",
+    "context": "Personal single-browser study list. Read README.md, package.json, index.html, app.mjs and tasks.mjs.",
+    "scope": "No accounts, synchronization, private-data uploads or new framework.",
+    "acceptance": "List inspected files and responsibilities; trace one addition; separate facts, assumptions and unknowns.",
+    "verification": "Check actual files and npm start/test script definitions. State commands not run.",
+    "delivery": "Provide a project map, proposed change locations, verification approach and questions needing my decision."
+  }
+}

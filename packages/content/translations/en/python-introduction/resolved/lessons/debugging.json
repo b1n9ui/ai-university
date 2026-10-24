@@ -1,0 +1,219 @@
+{
+  "id": "debugging",
+  "chapterId": "chapter-2",
+  "number": "2.4",
+  "title": "Errors and debugging",
+  "subtitle": "When a program differs from your expectation, find the first wrong step and change one thing.",
+  "concept": "When a program differs from your expectation, find the first wrong step and change one thing.",
+  "intuition": "Check a calculation by finding its first incorrect step, rather than looking only at the final answer.",
+  "objectives": [
+    "Write down the expected behavior",
+    "Distinguish exceptions from wrong results",
+    "Test nearby inputs after a fix"
+  ],
+  "body": [
+    {
+      "title": "Write down the expected behavior",
+      "text": "To check the sum from 1 through 3, calculate 6 independently first. That is your expected result. If the program gives 3, avoid editing many lines at once. List the values number actually takes and find why 3 was omitted."
+    },
+    {
+      "title": "Distinguish exceptions from wrong results",
+      "text": "An exception reports an error: a misspelled variable often causes NameError, and mixing a number with text often causes TypeError. Read the exception name on the last line, then follow the line number. A program that runs but gives 3 instead of 6 has a logic error: Python followed instructions that did not express your intention."
+    },
+    {
+      "title": "Test nearby inputs after a fix",
+      "text": "range(1, 3) excludes 3; change it to range(1, 4). After the fix, test endpoints 1, 2, and 3. One successful example is not enough. Temporarily print(number) to inspect intermediate values, then remove the diagnostic print."
+    }
+  ],
+  "formalDefinition": {
+    "text": "Debug by stating an expectation, observing actual steps, and finding the earliest difference. Change one thing at a time.",
+    "conditions": [
+      "Each example runs independently from the beginning. Start with the stated inputs, then change one thing."
+    ]
+  },
+  "derivation": [
+    {
+      "text": "Calculate the expected total, 6, by hand."
+    },
+    {
+      "text": "range(1, 3) produces only 1 and 2, omitting 3."
+    },
+    {
+      "text": "Changing stop to 4 makes the total 6."
+    }
+  ],
+  "interactiveVisual": {
+    "kind": "python-trace",
+    "prediction": "To add 1 + 2 + 3, should stop be 3 or 4?",
+    "caption": "Choose an input and predict the result, then select Next step. The arrow marks the next statement to execute; the side panel shows current variables and output produced so far.",
+    "experiment": {
+      "code": "stop = 3\ntotal = 0\nfor number in range(1, stop):\n    total = total + number\nprint(total)\n",
+      "stdout": "3\n",
+      "stdin": ""
+    },
+    "followUp": "Choose 3 to find the missing iteration, then 4 to check the fix.",
+    "codeTemplate": "stop = {{stop}}\ntotal = 0\nfor number in range(1, stop):\n    total = total + number\nprint(total)\n",
+    "controls": [
+      {
+        "name": "stop",
+        "label": "range stop value",
+        "values": [
+          3,
+          4
+        ],
+        "defaultIndex": 0
+      }
+    ],
+    "watch": [
+      "stop",
+      "number",
+      "total"
+    ]
+  },
+  "workedExamples": [
+    {
+      "title": "Missing the last number",
+      "problem": "Fix the sum from 1 through 3.",
+      "steps": [
+        "Calculate the expected total, 6, by hand.",
+        "range(1, 3) produces only 1 and 2, omitting 3.",
+        "Changing stop to 4 makes the total 6."
+      ],
+      "answer": {
+        "code": "total = 0\nfor number in range(1, 4):\n    total = total + number\nprint(total)\n",
+        "stdout": "6\n",
+        "stdin": ""
+      }
+    },
+    {
+      "title": "Inspect intermediate values",
+      "problem": "Print values to check each iteration.",
+      "steps": [
+        "Print number inside the loop.",
+        "Print total outside the loop to check the final answer."
+      ],
+      "answer": {
+        "code": "total = 0\nfor number in range(1, 4):\n    print(number)\n    total = total + number\nprint(total)\n",
+        "stdout": "1\n2\n3\n6\n",
+        "stdin": ""
+      }
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "debugging-m1",
+      "claim": "If the program reports no exception, its answer must be correct.",
+      "correction": "Compare the actual result with an independently calculated expectation."
+    },
+    {
+      "id": "debugging-m2",
+      "claim": "Change many lines together as soon as you find a bug.",
+      "correction": "Change one thing and rerun a small case so you can tell whether it fixed the problem."
+    }
+  ],
+  "practice": [
+    {
+      "problem": "Fix nmae so the program prints the value of name.",
+      "hint": "Use the same variable name each time.",
+      "solution": [
+        "Change the reference to name."
+      ],
+      "answer": {
+        "code": "name = \"Lin\"\nprint(name)\n",
+        "stdout": "Lin\n",
+        "stdin": ""
+      },
+      "id": "debugging-p1",
+      "difficulty": 1,
+      "misconceptionTags": [
+        "debugging-m1"
+      ]
+    },
+    {
+      "problem": "Fix the addition of the text \"3\" to the number 2.",
+      "hint": "Convert the text to an integer first.",
+      "solution": [
+        "int(\"3\") produces the integer 3."
+      ],
+      "answer": {
+        "code": "count = int(\"3\")\nprint(count + 2)\n",
+        "stdout": "5\n",
+        "stdin": ""
+      },
+      "id": "debugging-p2",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "debugging-m2"
+      ]
+    },
+    {
+      "problem": "Add 1 through 2 and print each number being added.",
+      "hint": "Set range stop to 3.",
+      "solution": [
+        "The values printed are 1 and 2.",
+        "The total is 3."
+      ],
+      "answer": {
+        "code": "total = 0\nfor number in range(1, 3):\n    print(number)\n    total = total + number\nprint(total)\n",
+        "stdout": "1\n2\n3\n",
+        "stdin": ""
+      },
+      "id": "debugging-p3",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "debugging-m1"
+      ]
+    },
+    {
+      "problem": "Test the fix with an endpoint of 0. What total do you expect?",
+      "hint": "With nothing to add, total stays 0.",
+      "solution": [
+        "The loop body does not run."
+      ],
+      "answer": {
+        "code": "total = 0\nfor number in range(1, 1):\n    total = total + number\nprint(total)\n",
+        "stdout": "0\n",
+        "stdin": ""
+      },
+      "id": "debugging-p4",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "debugging-m2"
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "A sum from 1 through 3 returns 3. What is wrong with range(1, 3)?",
+    "correctIndex": 1,
+    "choices": [
+      "Addition cannot go inside a loop",
+      "The stop excludes 3",
+      "total should start at 3"
+    ],
+    "explanation": "range excludes its stop. To include 3, use 4.",
+    "feedback": [
+      "A loop can add values one at a time.",
+      "Yes. The program added only 1 and 2.",
+      "The initial total should be 0. Starting at 3 would hide the missing value."
+    ]
+  },
+  "prerequisites": [
+    "while-stop"
+  ],
+  "difficulty": 2,
+  "misconceptionTags": [
+    "debugging-m1",
+    "debugging-m2"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.2.1",
+    "status": "revised",
+    "humanReviewed": false
+  },
+  "sources": [
+    "python-tutorial",
+    "python-errors"
+  ],
+  "furtherReading": []
+}

@@ -1,0 +1,67 @@
+Upper bounds, suprema, and completeness
+A supremum is the least upper bound; it need not belong to the set.
+A supremum is the least upper bound; it need not belong to the set.
+Keeping every point to the left of a boundary is not enough. No smaller boundary may still bound the set.
+Distinguish a maximum from a supremum
+Use the approximation property
+Distinguish a maximum from a supremum
+A maximum belongs to the set and is at least every member. A supremum is the least of all upper bounds. An open interval may have a supremum without a maximum.
+Use the approximation property
+Within every positive distance below a supremum lies a set member. Otherwise a smaller number would be an upper bound.
+State completeness
+Every nonempty bounded-above real subset has a real supremum. Neither hypothesis may be dropped: the empty set has no least real upper bound.
+This book takes the least-upper-bound property as the completeness axiom.
+The set is nonempty and bounded above in the reals.
+A least upper bound is an upper bound.
+Suppose some left neighborhood of the supremum contains no set member.
+That gives a smaller upper bound, a contradiction.
+Conversely, if a smaller number were an upper bound, use their difference as the error to find a member above it.
+Open and half-closed intervals
+Find the supremum and maximum of $(0,1)$ and $(0,1]$.
+Both sets are bounded by one and approach it arbitrarily closely.
+Only the second contains one.
+Both have supremum one; only the second has a maximum.
+A discrete approach
+Find the supremum of $A=\{1-1/n:n\ge1\}$.
+Every term is less than one.
+For a positive error, choose $n>1/\varepsilon$ to enter the left neighborhood of one.
+One; there is no maximum.
+Does an unbounded-above set have a real supremum?
+A real supremum must first be an upper bound.
+Without a real upper bound there is no real supremum.
+No.
+Must a supremum belong to its set?
+Use an open interval.
+Its right endpoint is absent.
+Not necessarily.
+What is the supremum of $\{2,5,7\}$?
+Find the finite set's maximum.
+Seven belongs to the set and is its least upper bound.
+Seven.
+A nonempty bounded set $A$ has supremum $s$. Prove there are $a_n\in A$ with $a_n\to s$.
+Apply the supremum approximation property at reciprocal errors.
+For every $n\ge1$, choose a member with $s-1/n<a_n\le s$.
+Then $0\le s-a_n<1/n$.
+Given $\varepsilon>0$, take $N>1/\varepsilon$. All $n\ge N$ satisfy $|a_n-s|<\varepsilon$.
+Given $\varepsilon>0$, take $N>1/\varepsilon$. All $n\ge N$ satisfy $|a_n-s|<\varepsilon$.
+What distinguishes a supremum from a maximum?
+Whether it is the greatest upper bound
+Whether it must belong to the set
+Whether it is positive
+A maximum must be a member.
+The supremum is the greatest upper bound
+Upper bounds can increase indefinitely; the supremum is the least one.
+Boundedness suffices without nonemptiness
+The empty set has no least real upper bound.
+Increase the displayed terms and reduce the error. How does the finite maximum differ from the supremum?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+An upper boundary must be impossible to move left while remaining an upper bound. Upper bounds can increase indefinitely; the supremum is the least one.
+Displayed terms: 1
+Set the displayed term count to $1$. Compare the finite maximum with the supremum and check for a member in the error band.
+Finite maximum $0$; full-set supremum $1$; gap $1$.
+Displayed terms: 50
+Set the displayed term count to $50$. Compare the finite maximum with the supremum and check for a member in the error band.
+Finite maximum $0.98$; full-set supremum $1$; gap $0.02$.
+Displayed terms: 100
+Set the displayed term count to $100$. Compare the finite maximum with the supremum and check for a member in the error band.
+Finite maximum $0.99$; full-set supremum $1$; gap $0.01$.

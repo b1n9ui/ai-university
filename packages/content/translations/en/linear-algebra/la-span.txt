@@ -1,0 +1,64 @@
+Span and spanning sets
+Where can these directions reach?
+The span is the set of all linear combinations of the given vectors.
+Two nonparallel directions in a plane reach the whole plane. Parallel directions cannot leave one line, regardless of the coefficients.
+Test whether a target lies in a span
+Identify redundant generators
+What does a span include?
+Allow all real coefficients, with any signs or sizes. A plotted parallelogram uses bounded coefficients and shows only part of the span.
+How do you test membership?
+Put the vectors in columns and solve $Ac=b$. The target is in their span exactly when the system is consistent.
+Must a spanning set be minimal?
+No. Adding a vector already expressible as a linear combination does not enlarge the space. Remove redundancy to obtain a basis. Dimension will count how many independent directions the space needs.
+Span and spanning sets
+Vectors belong to the same space. By convention, the empty list spans the zero subspace.
+Zero coefficients give the origin.
+Adding two combinations gives another combination.
+Any subspace containing the generators contains these combinations.
+Can the target be reached?
+Is $(2,3)$ in the span of $(1,0),(1,1)$?
+Solve $a+b=2,b=3$.
+$a=-1,b=3$ works.
+Yes.
+Redundancy adds no space
+What does $(1,0),(0,1),(1,1)$ span? Does the third vector add a direction?
+The first two already generate the plane.
+The third is their sum.
+The span is all of $\mathbb R^2$; the third vector is redundant.
+Restricting coefficients to $[0,1]$ gives the span.
+This draws only a bounded part.
+More vectors always give a larger span.
+A new vector may already lie in the old span.
+Is $(3,6)$ in the span of $(1,2)$?
+Check scalar multiples.
+$(3,6)=3(1,2)$.
+Yes.
+Is $(1,0)$ in the span of $(1,1),(2,2)$?
+What relation do all combinations share?
+Every combination has equal coordinates.
+No.
+What is $\operatorname{span}(0)$?
+Take any multiple of zero.
+It remains zero.
+The zero subspace.
+Is the union of two subspaces always a subspace?
+Use the coordinate axes as a counterexample.
+Both $(1,0),(0,1)$ lie in the union, but $(1,1)$ does not.
+Not necessarily.
+The generators are $u=(1,0,0),v=(1,c,0)$. The faint plane shows their full span; the outline shows only the part drawn with bounded coefficients.
+Do nearly parallel and exactly parallel arrows have the same span?
+What happens when you add a vector already in the span?
+The dimension increases by one
+The space stays unchanged
+The origin disappears
+It adds no new direction.
+Span asks which vectors can be represented, rather than how many generators are listed. Repeating a direction adds no reach.
+Two independent directions
+Set $c=1$.
+The vectors span the entire horizontal plane, of dimension two.
+Nearly parallel
+Set $c=0.1$.
+The bounded-coefficient region is narrow, but the span is still the whole plane.
+Exactly dependent
+Set $c=0$.
+The vectors coincide, so their span is just a line.

@@ -1,0 +1,67 @@
+Multivariable limits and continuity
+Every approach must lead to the same value
+A multivariable limit controls every approach within the domain. Two conflicting paths disprove it; finitely many agreeing paths do not prove it.
+Approach one junction by different roads. Conflicting limiting heights prevent a common limit.
+Disprove limits using conflicting paths
+Prove limits using distance estimates
+What becomes small?
+Euclidean input distance becomes small, forcing output error small. The chosen radius must work for all allowed directions.
+What can path tests establish?
+Two legitimate paths with different limits disprove existence. Finitely many agreeing paths do not suffice; even all straight lines may miss a curved-path failure.
+Proving existence
+Bound output error by a quantity depending only on distance and tending to zero. Continuity additionally requires agreement with the value at the point.
+Every approach must lead to the same value
+Approach within the domain toward an accumulation point. Continuity also requires the target in the domain and $L=f(\mathbf a)$.
+Vary straight-line slope to inspect path values.
+Two conflicting path limits give a contradiction.
+A uniform estimate proves the limit in another example.
+Conflicting paths
+Does $\frac{xy}{x^2+y^2}$ have a limit at the origin?
+Along the first axis, the function is zero.
+Along $y=x$, it equals $1/2$; the limits conflict.
+No limit.
+A uniform squeeze
+Find the origin limit of $\frac{x^2y}{x^2+y^2}$.
+Its magnitude is at most $|y|$.
+Also $|y|\le\sqrt{x^2+y^2}\to0$, valid for every approach.
+0.
+Matching limits on both axes prove existence.
+Only two paths were checked; control every direction together.
+A limit requires a defined value at the point.
+Limits concern nearby values; the target itself may be outside the domain.
+Does $\frac{x^2-y^2}{x^2+y^2}$ have a limit at the origin?
+Compare coordinate axes.
+The first gives 1; the second gives $-1$, a contradiction.
+No.
+Prove $x^2y\to0$.
+Control both coordinates by distance.
+Set $r=\sqrt{x^2+y^2}$; then $|x^2y|\le r^3$.
+Let $r\to0$; the right side tends to zero.
+The limit is 0.
+If every straight-line limit is zero, must the full limit be zero?
+Try a curved path.
+$\frac{x^2y}{x^4+y^2}$ tends to zero along each line through the origin.
+But along $y=x^2$, it is constantly $1/2$.
+No.
+Can assigning an origin value make $\frac{xy}{x^2+y^2}$ continuous?
+Would that alter nearby paths?
+The path conflict is independent of the origin's value.
+No assigned value can repair a missing limit.
+No.
+Two path limits differ. What follows?
+The limit does not exist
+Average the two limits
+Only nondifferentiability
+One limit must apply along every legitimate path.
+$f(x,y)=\frac{xy}{x^2+y^2}$ approaches the origin at direction angle $\theta$. Finite paths illustrate a counterexample, not existence.
+As distance shrinks, do values from different directions merge?
+Two conflicting paths disprove a limit; proving one requires an estimate valid in all directions.
+Along the first axis
+Set direction angle $\theta$ to $0$.
+The path height is always zero.
+Along the diagonal
+Set direction angle $\theta$ to $\frac\pi4$.
+Height is one-half, unlike on the axis.
+Look closer
+Set origin distance $h$ to $0.0001$.
+The directional difference remains even at small distance; zooming does not remove it.

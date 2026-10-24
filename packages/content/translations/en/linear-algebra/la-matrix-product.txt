@@ -1,0 +1,60 @@
+Matrices, transposes, and multiplication
+Combine columns; calculate by rows
+A matrix-vector product combines the matrix columns using the input coefficients.
+Count input and output components first. Multiplication is undefined when dimensions do not match.
+Check dimensions
+Calculate products and transposes
+What do matrix dimensions mean?
+An $m\times n$ matrix takes $n$ numbers in and produces $m$ numbers. Matrix addition requires matching dimensions; transposition swaps rows and columns.
+How do matrices multiply?
+Column $j$ of $AB$ is $A$ times column $j$ of $B$. Entrywise, take the sum of products of a left row and a right column.
+Does order matter?
+Usually $AB\ne BA$; sometimes only one order is defined. Transposition reverses the order of a product.
+Matrices, transposes, and multiplication
+If $A$ is $m\times n$, $B$ must have $n$ rows. The output row count comes from $A$ and column count from $B$.
+View the right matrix as columns.
+Apply the left matrix to each column.
+Expand by components.
+Calculate by columns
+Given $A=\begin{pmatrix}1&2\\0&1\end{pmatrix}$, find $A(3,1)^T$.
+By columns, this is $3(1,0)+(2,1)$.
+The result is $(5,1)$.
+$(5,1)^T$.
+Noncommutativity
+Given $S=\begin{pmatrix}1&1\\0&1\end{pmatrix},D=\operatorname{diag}(2,1)$, compare $DS$ and $SD$.
+$DS=\begin{pmatrix}2&2\\0&1\end{pmatrix}$.
+$SD=\begin{pmatrix}2&1\\0&1\end{pmatrix}$.
+They are unequal.
+Matrix multiplication multiplies matching entries.
+That defines a different operation, not matrix multiplication here.
+$(AB)^T=A^TB^T$.
+Transposition must reverse the order.
+What size results from multiplying an $2\times3$ matrix by an $3\times4$ matrix?
+Match the inner dimensions and retain the outer ones.
+The inner $3$ matches; the result is $2\times4$.
+$2\times4$.
+Given $A=\begin{pmatrix}1&2\\3&4\end{pmatrix}$, find $(A^T)_{12}$.
+Transposition swaps indices.
+It equals $A_{21}=3$.
+Given $A=\operatorname{diag}(2,3)$, find $A^2$.
+Each direction is scaled twice.
+$A^2=\operatorname{diag}(4,9)$.
+$\operatorname{diag}(4,9)$.
+Does $AB=0$ imply $A=0$ or $B=0$?
+Try projections onto complementary directions.
+Both $A=\operatorname{diag}(1,0),B=\operatorname{diag}(0,1)$ are nonzero, but their product is zero.
+No.
+Blue shows the original grid and unit circle; green shows their image under $A$. Gold shows the image of $(1,1)$. The four inputs change the matrix entries.
+Which two columns give the images of the unit square's edges?
+If $A$ is $3\times2$, how many components does the input have?
+Input length equals the column count.
+Each column tells you where one input basis direction goes. Multiplication adds these contributions.
+Identity
+Set $A=I$.
+The grid, circle, and vector stay unchanged.
+Shear
+Set $A=\begin{pmatrix}1&1\\0&1\end{pmatrix}$.
+The unit square tilts while its area remains one.
+Collapse to a line
+Set $A=\operatorname{diag}(1,0)$.
+Vertical information is lost; rank drops to one.

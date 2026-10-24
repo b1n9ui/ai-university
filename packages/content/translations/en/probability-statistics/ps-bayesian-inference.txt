@@ -1,0 +1,65 @@
+Beta–binomial updating and a complete analysis report
+Bayesian inference combines a prior and likelihood into a posterior parameter distribution.
+Bayesian inference combines a prior and likelihood into a posterior parameter distribution.
+It allows probability statements about parameters within a specified model; conclusions therefore depend on both prior and likelihood.
+Specify a prior
+Update the posterior
+Specify a prior
+A Beta density describes uncertainty about success probability between zero and one. Two positive shape parameters control location and concentration. They are not unconditionally literal historical success and failure counts.
+Update the posterior
+For independent Bernoulli trials, add success and failure exponents to the prior. The posterior mean combines prior and sample information and equals the posterior predictive success probability.
+Write a complete report
+State the question, observational units, sampling or assignment design, model assumptions, effect and interval, diagnostics, and limitations. A credible interval is a posterior probability statement conditional on prior, model, and data; do not conflate it with frequentist confidence.
+Prior shape parameters satisfy $a,b>0$. The likelihood assumes a fixed number of independent Bernoulli trials with a common probability.
+Prior shape parameters satisfy $a,b>0$. The likelihood assumes a fixed number of independent Bernoulli trials with a common probability.
+Posterior and prediction depend on the specified model. Do not hide prior sensitivity behind a point estimate.
+Write the parameter-dependent part of the prior density.
+Multiply by the binomial likelihood.
+Recognize the normalized Beta distribution and calculate its mean.
+Update a uniform prior
+The prior is $\operatorname{Beta}(1,1)$ and seven of ten trials succeed. Find the posterior and predictive success probability.
+Add seven successes and three failures to the shape parameters.
+The posterior is $\operatorname{Beta}(8,4)$.
+The posterior predictive success probability is $8/12=2/3$.
+Prior sensitivity
+For the same data but prior $\operatorname{Beta}(10,10)$, find the posterior mean.
+Update to $\operatorname{Beta}(17,13)$.
+The mean is $17/30$.
+Approximately $0.5667$, different from the weak-prior result.
+With prior $\operatorname{Beta}(2,3)$ and one success in four trials, find the posterior.
+Add successes and failures to the corresponding shapes.
+$(2+1,3+3)=(3,6)$.
+$\operatorname{Beta}(3,6)$.
+Success probability has posterior $\operatorname{Beta}(3,6)$. Find the posterior predictive probability of success in the next Bernoulli trial.
+Divide the first shape by the sum of shapes.
+$3/9=1/3$.
+$1/3$.
+Does a posterior $95\%$ credible interval mean the same thing as a frequentist $95\%$ confidence interval?
+Parameter probability and repeated-sampling coverage differ.
+The first uses the prior-updated parameter distribution; the second describes an interval-generating procedure.
+No.
+Is a report containing only significant or nonsignificant sufficient?
+Readers need to understand design and practical magnitude.
+Also give effects, intervals, assumptions, methods, and limitations.
+No.
+How do prior parameters change in Beta–binomial updating?
+Add the trial count to both
+Add successes to one and failures to the other
+Leave both unchanged
+Likelihood exponents add to prior exponents.
+Bayesian conclusions do not depend on the prior
+Prior influence can be especially visible in small samples. Check sensitivity.
+A credible interval is the same as a similarly named confidence interval
+Posterior probability and repeated-sampling coverage are different statements.
+Keep data fixed and change the prior shapes. How does the posterior move and concentrate?
+Compare prior and posterior Beta densities, posterior mean, central credible interval, and predictive probability.
+Prior influence can be especially visible in small samples. Check sensitivity.
+First prior shape: 1
+Set the first prior shape to $1$ and compare the diagram and readings.
+At this preset: first posterior shape $15$; second posterior shape $7$; posterior mean and predictive success probability $0.681818$; lower central credible endpoint $0.478249$.
+First prior shape: 0.5
+Set the first prior shape to $0.5$ and compare the diagram and readings.
+At this preset: first posterior shape $14.5$; second posterior shape $7$; posterior mean and predictive success probability $0.674419$; lower central credible endpoint $0.467928$.
+First prior shape: 8
+Set the first prior shape to $8$ and compare the diagram and readings.
+At this preset: first posterior shape $22$; second posterior shape $7$; posterior mean and predictive success probability $0.758621$; lower central credible endpoint $0.590469$.

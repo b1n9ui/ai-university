@@ -1,0 +1,64 @@
+Forced systems and variation of constants
+Propagate past inputs to the present
+Begin with a fundamental matrix
+Set $\mathbf x=\Phi\mathbf c(t)$, differentiate the product, and cancel homogeneous terms to obtain $\mathbf c'=\Phi^{-1}\mathbf b$.
+Constant-coefficient form
+Propagator $e^{A(t-\tau)}$ advances each past forcing contribution to the present.
+Check dimensions
+A propagation matrix multiplies a column-vector input, so the integral remains a state column. Do not omit nonzero initial-data terms.
+Differentiate the product and cancel terms.
+Find the coefficient-vector rate.
+Integrate and substitute back.
+Two independent inputs
+Solve $x'=-x+1,y'=-2y+2$ with zero initial state.
+Apply the first-order constant-input formula separately.
+Both steady values are one, with decay rates one and two.
+$(x,y)=(1-e^{-t},1-e^{-2t})$.
+A pure integration system
+$A=0,\mathbf b=(t,1)^T,\mathbf x(0)=0$.
+The propagation matrix is the identity.
+Integrate input components separately.
+$\mathbf x=(t^2/2,t)^T$.
+What remains when forcing is zero?
+The integral disappears.
+Only initial-state propagation remains.
+$e^{A(t-t_0)}\mathbf x_0$.
+What condition defines equilibrium under constant forcing?
+Set the state derivative to zero.
+$A\mathbf x_*+\mathbf b=0$.
+Solve that algebraic system.
+Find the equilibrium of $x'=-2x+6$.
+Set the derivative to zero.
+$-2x+6=0$.
+$3$.
+Why does the kernel use $t-\tau$ rather than just $t$?
+Inputs occur at different times.
+Each contribution propagates only from its occurrence to the present.
+Different inputs propagate for different lengths of time.
+Every input propagates for the full current time.
+Later inputs propagate for less time.
+Replace scalar denominators by matrices to obtain every formula.
+Matrix operations have order and invertibility requirements; arbitrary division is invalid.
+A forced linear solution has initial-state propagation and accumulated forcing propagation.
+Each input enters the state, then the system advances it to the current time.
+Use matrix variation of constants
+Interpret vector convolution
+Forced systems and variation of constants
+$A$ is constant and forcing continuous or handled piecewise continuously. Variable-coefficient forms use a fundamental matrix.
+What does the forcing integral represent?
+All future inputs
+Past inputs propagated to the present and accumulated
+Only an initial-value correction
+The kernel assigns each input time its own remaining propagation time.
+This is the state-vector form of convolution: receive input, then evolve by the system's rules.
+Zero initial value
+Both states rise toward steady state.
+Set initial first component $x_0$ to $0$, initial second component $y_0$ to $0$, and observation time $t$ to $3$.
+Start at steady state
+The state stays fixed.
+Set initial first component $x_0$ to $1$, initial second component $y_0$ to $1$, and observation time $t$ to $3$.
+Start on another side
+One component falls and the other rises toward the same equilibrium.
+Set initial first component $x_0$ to $2$, initial second component $y_0$ to $-1$, and observation time $t$ to $3$.
+Phase trajectories approach steady state $(1,1)$. The two directions decay at different rates; initial values can vary freely.
+Does changing initial data change the long-term steady state?

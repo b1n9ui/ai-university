@@ -1,0 +1,67 @@
+Compactness and Heine–Borel
+On the real line, compact means closed and bounded. Every open cover can then be reduced to finitely many members.
+On the real line, compact means closed and bounded. Every open cover can then be reduced to finitely many members.
+Closedness prevents missing boundary limits; boundedness prevents escape to infinity.
+Define finite subcovers
+Compactness implies closed and bounded
+Define finite subcovers
+An open cover covers every point at least once. Compactness requires a finite subfamily still covering the set, for every possible open cover.
+Compactness implies closed and bounded
+Integer-radius intervals cover the line; a finite subcover forces boundedness. For a point outside the set, neighborhoods based on distances to members, reduced to finitely many, leave a safe neighborhood around that outside point. Thus the set is closed.
+Prove closed intervals compact
+If an interval's open cover has no finite subcover, bisect and retain a half still lacking one. Nested shrinking intervals give a common point. An open set containing it eventually covers the whole retained interval, a contradiction. Closed subsets inherit compactness.
+Heine–Borel here uses the usual topology on the real line.
+K\subseteq\mathbb R\text{ compact}\iff K\text{ closed and bounded}
+Closed and bounded need not mean compact in an arbitrary metric space.
+Assume an open cover of a closed interval has no finite subcover, then bisect repeatedly.
+Its common point belongs to a covering open set, hence has a positive-radius neighborhood there.
+A sufficiently small retained interval lies wholly in that open set, a finite subcover and a contradiction.
+An open interval is not compact
+Exhibit an open cover proving $K=(0,1)$ noncompact.
+The sets $(1/n,1)$ for $n\ge2$ cover it.
+Any finite subfamily has a positive smallest left endpoint and misses points nearer zero.
+There is no finite subcover.
+Finite sets
+Why is a finite real set compact?
+Choose one covering open set for each point.
+Finitely many points require only finitely many chosen sets.
+It is compact.
+Is a closed bounded interval compact?
+Apply Heine–Borel.
+It is closed and bounded.
+Yes.
+The integers are closed in the real line. Are they compact?
+Also check boundedness.
+They are unbounded, hence noncompact.
+No.
+Does compactness require every given cover to be finite?
+The original cover may be infinite.
+Only a finite subcover must exist.
+No.
+Prove a compact real set $K$ is bounded.
+Use a specific countable open cover.
+Intervals $(-n,n)$, $n\ge1$, cover the real line and hence $K$.
+Compactness gives a finite subcover. Let $M$ be the largest selected radius.
+Its union lies in $(-M,M)$, so $K\subseteq(-M,M)$. The empty set is bounded too.
+Its union lies in $(-M,M)$, so $K\subseteq(-M,M)$. The empty set is bounded too.
+What does compactness require of open covers?
+The original cover is finite
+A finite subcover exists
+At most three open sets
+The initial cover may be arbitrarily large.
+Boundedness alone gives compactness
+Closedness is also needed; an open interval is a counterexample.
+A finite grid checks every open cover
+The definition quantifies over all open covers; a finite image illustrates only selected examples.
+Observe the gaps near an open interval's endpoint. Why does every finite subfamily leave a gap?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+Boundedness prevents escape, and closedness prevents missing boundary limits. Open bounded intervals are not compact.
+Retained covering sets: 1
+Set the retained cover count to $1$. Find an explicit point still missed by this finite family.
+Smallest left endpoint $0.5$; one missed point $0.25$.
+Retained covering sets: 10
+Set the retained cover count to $10$. Find an explicit point still missed by this finite family.
+Smallest left endpoint $0.09090909$; one missed point $0.04545455$.
+Retained covering sets: 20
+Set the retained cover count to $20$. Find an explicit point still missed by this finite family.
+Smallest left endpoint $0.04761905$; one missed point $0.02380952$.

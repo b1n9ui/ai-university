@@ -1,0 +1,64 @@
+Euler's method
+Take a short step along the current tangent
+How is one step calculated?
+At node $(t_n,y_n)$, calculate $f(t_n,y_n)$ and take time step $h$.
+What do the line segments mean?
+Lines between nodes are numerical interpolation, not exact piecewise-linear motion. Field directions change with location.
+When does it converge?
+On a fixed finite interval with sufficient smoothness and state Lipschitz conditions, Euler has first-order global error as step size tends to zero. Do not cross singularities arbitrarily.
+Taylor-expand the exact solution once.
+Replace its derivative using the equation.
+Drop the one-step second-order remainder to obtain the update.
+One growth step
+For $y'=y,y_0=1,h=1/2$, calculate one step.
+The current slope is one.
+The increment is one half.
+$y_1=3/2$.
+Two growth steps
+Take one more step in the same problem.
+The new slope is $3/2$.
+The added increment is $3/4$.
+$y_2=9/4$ at time one; the exact value is $e$.
+For $y'=-2y,y_0=3,h=0.1$, find one Euler step.
+The current slope is minus six.
+$3+0.1(-6)=2.4$.
+$2.4$.
+For $y'=t,y(0)=1,h=1$, find one Euler step.
+The starting time is zero.
+Its initial slope is zero, so the first increment vanishes.
+$1$; the exact value is $3/2$.
+Roughly what happens to first-order global error when the step is halved?
+Keep the same endpoint and use the asymptotic regime.
+The leading error is proportional to step size.
+Approximately one half.
+If finite numerical nodes cross blow-up time, does that continue the classical solution?
+A numerical recurrence is not the original solution.
+The algorithm may output numbers after the differential solution has ceased to extend.
+No.
+Use the very first slope at every step.
+Recalculate at the current numerical node.
+Node-joining lines give the exact solution.
+They are numerical interpolation.
+Euler predicts the next state from the current slope, approximating continuous change with short tangent steps.
+Each step treats the slope as temporarily constant. Larger steps usually increase the cost of ignoring its change.
+Calculate Euler updates
+Distinguish numerical nodes from exact continuous solutions
+Euler's method
+This is explicit Euler with $h>0$ and nodes inside the equation's domain. Error-order claims require a common finite interval and sufficient regularity.
+Which slope does Euler use at each step?
+The slope at the current numerical node
+The average slope over the whole interval
+The exact slope at the next point
+It is an explicit local tangent prediction.
+Euler makes each step and its source of error visible.
+Coarse mesh
+Methods have different errors at the same endpoint.
+Set equal step count $N$ to $2$ and target time $T$ to $2$.
+Refine the mesh
+Step size is one quarter of its previous value.
+Set equal step count $N$ to $8$ and target time $T$ to $2$.
+Finer mesh
+Compare order-dependent error reduction; finite precision still imposes a floor.
+Set equal step count $N$ to $32$ and target time $T$ to $2$.
+Compare explicit Euler, Heun, RK4, and the analytic exponential at one endpoint. Segments only connect numerical nodes.
+With endpoint fixed, how does Euler error change as the mesh is refined?

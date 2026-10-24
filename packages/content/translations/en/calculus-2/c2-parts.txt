@@ -1,0 +1,64 @@
+Integration by parts
+Replace a difficult product with an easier integral
+Differentiate one factor and integrate the other; aim to simplify the remaining integral.
+Integrate the product rule, then move one term to the other side.
+Which factor should be differentiated?
+Try differentiating a polynomial or logarithm. Check whether the new integral is actually simpler.
+When is repetition useful?
+For a polynomial times an exponential, repeat until the polynomial disappears. If the original integral returns, solve for it algebraically.
+What changes for definite integrals?
+Evaluate the boundary term at both endpoints. For an infinite limit, first truncate the interval, then take a limit.
+Replace a difficult product with an easier integral
+$u,v$ are continuously differentiable on $[a,b]$; indefinite integrals refer to one connected interval.
+Start with the product rule.
+Integrate and separate the terms.
+Rearrange to replace the original integral.
+One application
+Evaluate $\int x e^x\,dx$.
+Choose $u=x$, $dv=e^x dx$, giving $du=dx$, $v=e^x$.
+This gives $xe^x-\int e^x dx$; differentiation recovers $xe^x$.
+$e^x(x-1)+C$.
+Integrating a logarithm
+Evaluate $\int_1^e\ln x\,dx$.
+Use $1$ as the second factor: $u=\ln x$, $dv=dx$.
+This gives $[x\ln x-x]_1^e=0-(-1)$.
+$1$.
+Integration by parts always simplifies an integral.
+If the new integral is harder, swap the choices. Judge the method by what remains.
+Only the upper endpoint enters the boundary term.
+$[uv]_a^b=u(b)v(b)-u(a)v(a)$.
+Evaluate $\int x\cos x\,dx$.
+$x\sin x+\cos x+C$.
+Differentiate the polynomial.
+$u=x,v=\sin x$ gives $x\sin x-\int\sin x\,dx$.
+Evaluate $\int_0^1 xe^x\,dx$.
+$1$.
+Use the antiderivative from the example.
+$[e^x(x-1)]_0^1=0-(-1)=1$.
+Evaluate $\int x^2e^x\,dx$.
+$e^x(x^2-2x+2)+C$.
+Integrate by parts twice.
+$x^2e^x-2\int xe^x dx=e^x(x^2-2x+2)+C$.
+Evaluate $\int e^x\cos x\,dx$.
+$\frac{e^x(\sin x+\cos x)}2+C$.
+After two applications, rearrange.
+Call the integral $I$. The first application gives $I=e^x\cos x+\int e^x\sin x dx$.
+The second gives $I=e^x\cos x+e^x\sin x-I$; solve for $2I$.
+For $\int xe^x dx$, which choice leaves the simplest integral?
+Neither choice is valid
+The first choice reduces the polynomial to a constant.
+Split a product's total change into two contributions. Use the easily integrated contribution to replace the difficult one.
+Short interval
+Set the upper endpoint to 0.5.
+The area is $1-\frac12e^{1/2}$; the right side of the integration-by-parts identity agrees.
+Check the endpoint
+Set the upper endpoint to 1.
+The integral is 1; boundary term minus remaining integral is also 1.
+Extend the interval
+Set the upper endpoint to 2.
+The integral is $e^2+1$; both terms on the right must be evaluated.
+Compare $\int_0^b xe^x dx$ with its boundary term and remaining integral.
+As the upper endpoint increases, do both expressions give the same accumulated value?
+Choose factors that simplify the remaining integral
+Handle repeated and cyclic integration by parts
+Evaluate both endpoints of the boundary term
