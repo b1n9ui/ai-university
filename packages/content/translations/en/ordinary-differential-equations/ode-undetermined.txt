@@ -1,0 +1,64 @@
+Undetermined coefficients and resonance corrections
+Choose the form, then substitute for coefficients
+Which forcing terms allow this?
+Use constant-coefficient linear equations forced by finite sums and products of polynomials, exponentials, sines, and cosines.
+Why include all companion terms?
+Polynomial derivatives lower degree and trigonometric derivatives exchange sine with cosine. Include every needed lower power or trigonometric partner.
+What if the trial overlaps homogeneous solutions?
+If the associated characteristic root has multiplicity $m$, multiply the whole usual trial by $t^m$. Repeating homogeneous terms cannot produce the forcing.
+Consider a resonant forcing.
+Try a function outside the homogeneous solution space.
+Substitute to determine its coefficient.
+Exponential forcing
+Find the general solution of $y''-y=e^{2t}$.
+Its homogeneous solution is $C e^t+D e^{-t}$.
+Trying $Ae^{2t}$ gives left side $3Ae^{2t}$, hence $A=1/3$.
+$y=Ce^t+De^{-t}+e^{2t}/3$.
+Sinusoidal resonance
+Find one particular solution of $y''+y=\cos t$.
+The ordinary trigonometric trial already lies in the homogeneous space.
+Instead try $At\sin t$; substitution gives $A=1/2$.
+$y_p=t\sin t/2$.
+Find one particular solution of $y''+y=2$.
+Try a constant.
+Its second derivative vanishes; choose two.
+$y_p=2$.
+How many time factors must the trial for $y''-2y'+y=e^t$ include?
+Root one has multiplicity two.
+The exponential forcing overlaps a double characteristic root.
+Try $At^2e^t$.
+Give one particular solution of $y''+y=\sin2t$.
+Try a sine at the same frequency.
+Two derivatives multiply it by minus four, giving minus three times the trial on the left.
+$y_p=-\sin2t/3$.
+Can undetermined coefficients directly handle arbitrary $\ln t$ forcing?
+Check whether derivatives stay in a finite trial space.
+Logarithmic derivatives produce increasingly different negative powers, outside the usual rules here.
+Use variation of parameters or another method.
+Guessing a matching function finishes the solve.
+Determine coefficients by substitution and handle homogeneous overlap.
+A forced general solution contains only a particular solution.
+Add the full homogeneous solution too.
+For forcing closed under differentiation in finitely many forms, choose a trial family and solve for its coefficients.
+Guess the shape, not the coefficients. Multiply by time factors when homogeneous overlap would make the trial redundant.
+Choose a trial space
+Handle forcing overlapping homogeneous solutions
+Undetermined coefficients and resonance corrections
+Use constant-coefficient linear operators and forcing in finite differentiation-closed families. Always substitute the final result to verify it.
+What should you do when forcing overlaps a homogeneous solution?
+Multiply by a suitable power of time
+Delete the forcing
+Keep the original trial
+The associated root's multiplicity determines the time power.
+This method turns finding a function into finding finitely many numbers. Substitution turns the trial into a verified answer.
+Low-frequency driving
+Forcing combines with natural oscillation.
+Set forcing angular frequency $\omega$ to $0.5$ and observation time $t$ to $6$.
+Exact resonance
+The response contains time times sine, with a growing envelope.
+Set forcing angular frequency $\omega$ to $1$ and observation time $t$ to $6$.
+Higher-frequency driving
+The nonresonant response is a difference of bounded cosines.
+Set forcing angular frequency $\omega$ to $2$ and observation time $t$ to $6$.
+Display the zero-initial-data analytic response and forcing. At frequency one, use the resonance-limit formula to avoid division by zero.
+How does the response differ when driving and natural frequencies agree exactly?

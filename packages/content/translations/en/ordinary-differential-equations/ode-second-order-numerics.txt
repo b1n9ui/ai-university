@@ -1,0 +1,64 @@
+Midpoint and Heun second-order methods
+Evaluate another slope to reduce step error
+Explicit midpoint
+Predict the midpoint with a half Euler step, then use its slope for the full step.
+Heun's method
+Predict the endpoint, then average slopes at the start and predicted endpoint. Unlike implicit trapezoidal stepping, it needs no equation solve.
+What order means
+With suitable smoothness, both have third-order one-step error and second-order global error. They generally differ on nonlinear problems.
+Predict the endpoint with the current slope.
+Reevaluate the slope at that prediction.
+Average the two slopes for the accepted update.
+One Heun step
+$y'=y,y_0=1,h=1$.
+$k_1=1$ gives predicted value two.
+$k_2=2$ gives increment $3/2$.
+$y_1=5/2$.
+One midpoint step
+Apply explicit midpoint to the same problem.
+The midpoint prediction is $3/2$.
+Multiply its slope by the full step.
+$y_1=5/2$; agreement in this example does not imply identical methods.
+By what factor does second-order leading global error change when the step is halved?
+Error is proportional to the step squared.
+Squaring gives one quarter.
+About $1/4$.
+Does Heun evaluate its endpoint slope at the exact endpoint state?
+That exact state is unknown.
+It uses the Euler prediction.
+No; at the predicted value.
+For $y'=t,y(0)=0,h=1$, find one Heun step.
+Start and endpoint slopes are zero and one.
+Their average times step one gives the increment.
+$1/2$, exactly correct in this example.
+Is explicit Heun identical to implicit trapezoidal stepping?
+One endpoint state is predicted; the other must be solved for.
+The implicit method uses the unknown new state and requires solving an equation.
+Different.
+One extra slope evaluation makes every step exact.
+It raises error order under regularity assumptions only.
+Heun's second slope comes from the true future.
+It comes from a computable prediction.
+Second-order methods add a slope evaluation and use a midpoint or averaged endpoint slope to improve the step.
+Make a rough prediction, then step with a more representative slope.
+Distinguish explicit midpoint and Heun
+Calculate second-order updates and explain error orders
+Midpoint and Heun second-order methods
+This is explicit Heun. Midpoint instead uses a half-step prediction. Second-order convergence needs smoothness and stable error propagation.
+Which slope does Heun use in its final update?
+Only the original initial-value slope
+Only the starting slope
+The average of starting and predicted-endpoint slopes
+The second evaluation corrects the initial prediction.
+Predicting and correcting improves accuracy, while step size and stability still need checking.
+Coarse mesh
+Methods have different errors at the same endpoint.
+Set equal step count $N$ to $2$ and target time $T$ to $2$.
+Refine the mesh
+Step size is one quarter of its previous value.
+Set equal step count $N$ to $8$ and target time $T$ to $2$.
+Finer mesh
+Compare order-dependent error reduction; finite precision still imposes a floor.
+Set equal step count $N$ to $32$ and target time $T$ to $2$.
+Compare explicit Euler, Heun, RK4, and the analytic exponential at one endpoint. Segments only connect numerical nodes.
+For the same step count, how much can another slope evaluation improve the result?

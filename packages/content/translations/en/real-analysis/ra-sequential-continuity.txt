@@ -1,0 +1,66 @@
+Testing function limits with sequences
+A real function has a limit only if every admissible input sequence approaching the center gives the same output limit.
+A real function has a limit only if every admissible input sequence approaching the center gives the same output limit.
+One bad sequence refutes a candidate limit. One successful sequence cannot cover every approach.
+From a function limit to sequences
+Build a bad sequence from failure
+From a function limit to sequences
+Given an output error, the function limit gives an input radius. The input sequence eventually enters that radius, so outputs enter the error band.
+Build a bad sequence from failure
+Failure gives one fixed output error violated by some input in every radius. Choose such inputs at reciprocal radii to approach the center while outputs fail to approach the target.
+Detect jumps
+If two input sequences approach the same point but have different output limits, no common function limit exists. Continuity sequences may include the center; punctured-limit sequences must exclude it.
+The real sequential limit criterion quantifies over all admissible punctured input sequences.
+The center is a limit point of the domain.
+Negate the function-limit error statement.
+Choose a violating input at each reciprocal radius.
+Inputs approach the center while outputs keep violating the bound.
+A sign jump
+For nonzero inputs, output positive or negative one according to sign. Is there a limit at zero?
+For $x_n=1/n$, outputs are constantly one.
+For $y_n=-1/n$, outputs are constantly negative one.
+No limit.
+A dense discontinuity
+A function is one on rationals and zero on irrationals. Is it continuous at any real point?
+Both sets are dense, providing sequences of each type approaching any point.
+Their output sequences have different limits.
+It is nowhere continuous.
+Does one successful input sequence prove a function limit?
+Every admissible sequence is required.
+Other approaches remain unchecked.
+No.
+Must every input sequence be checked to refute a candidate limit?
+One bad sequence suffices.
+Give a sequence approaching the center whose outputs do not approach the target.
+No.
+May the punctured-limit criterion use the constant sequence equal to the center?
+Inputs must exclude the center.
+That sequence is inadmissible.
+No.
+Use two input sequences tending to zero to prove that the rational-indicator function has no limit at zero.
+Do not use only one sequence.
+Take $x_n=1/n\in\mathbb Q$ and $y_n=\sqrt2/n\notin\mathbb Q$, both nonzero and tending to zero.
+The first output sequence is constantly one and the second constantly zero.
+If the function limit existed, both output limits would coincide by the sequential criterion, contradicting one being different from zero.
+If the function limit existed, both output limits would coincide by the sequential criterion, contradicting one being different from zero.
+What can one bad input sequence do?
+Refute a candidate limit
+Prove all inputs work
+Replace the domain
+One counterexample refutes a universal statement.
+One straight-line approach suffices
+Even one-dimensional limits have left, right, and other input sequences.
+A shrinking violating output error suffices to refute convergence
+A fixed positive error must persist, or output limits must differ.
+Compare inputs approaching from left and right. Can their outputs have one common limit?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+One bad sequence can refute a limit; one good sequence cannot establish every approach, even in one dimension.
+Displayed terms: 2
+Set the term count to $2$. Compare outputs from both input sequences rather than only one.
+First output limit $1$; second output limit $-1$.
+Displayed terms: 16
+Set the term count to $16$. Compare outputs from both input sequences rather than only one.
+First output limit $1$; second output limit $-1$.
+Displayed terms: 30
+Set the term count to $30$. Compare outputs from both input sequences rather than only one.
+First output limit $1$; second output limit $-1$.

@@ -1,0 +1,62 @@
+Cofactor expansion and the determinant
+Reduce a larger determinant to smaller ones
+Expanding along one row or column recursively reduces a determinant's size.
+Each entry contributes a smaller determinant with alternating sign. Choosing a row or column with many zeros often shortens the calculation.
+Calculate cofactors correctly
+Choose an efficient expansion row or column
+What is a cofactor?
+Delete row $i$ and column $j$ to obtain $M_{ij}$. The cofactor is $C_{ij}=(-1)^{i+j}\det M_{ij}$.
+How does expansion work?
+Fix one row, multiply each entry by its cofactor, then sum. Expansion down a column works too.
+Should you use this for large matrices?
+It is useful for small or sparse matrices and proofs. Repeated recursive expansion is expensive for large matrices, where factorization is usually preferable.
+Cofactor expansion and the determinant
+Expand along one fixed row or column. A one-by-one determinant is its entry; the zero-by-zero determinant is one by convention.
+Group the permutation sum by the chosen column in a fixed row.
+Each group leaves a smaller permutation sum.
+\text{Fix }\pi(i)=j\Rightarrow a_{ij}(-1)^{i+j}\det M_{ij}
+Add these groups, with no term omitted.
+Expand along the first row
+Given $A=\begin{pmatrix}1&2&0\\0&3&1\\2&0&1\end{pmatrix}$, find its determinant.
+The first contribution is $1(3\cdot1-1\cdot0)=3$.
+The second is $-2(0\cdot1-1\cdot2)=4$; the third is zero.
+7.
+Choose a column with zeros
+Find $\det\begin{pmatrix}2&0&1\\3&4&5\\1&0&2\end{pmatrix}$.
+Only the middle entry of column two is nonzero.
+The result is $4\det\begin{pmatrix}2&1\\1&2\end{pmatrix}=4(4-1)$.
+12.
+Cofactor signs are always positive.
+Include the checkerboard factor $(-1)^{i+j}$.
+Delete just the entry to obtain the minor.
+Delete its entire row and column.
+What sign factor belongs to $C_{12}$?
+Add the row and column indices.
+$(-1)^3=-1$.
+For $A=\operatorname{diag}(2,3,4)$, which term remains in a first-row expansion?
+Only the first entry is nonzero.
+$2\det\operatorname{diag}(3,4)=24$.
+What is the determinant if a whole row is zero?
+Expand along that row.
+Every entry-times-cofactor contribution is zero.
+Should expansion along different rows give the same result?
+Each regroups the same permutation sum.
+Regrouping does not change the total.
+Equal.
+Fix a three-by-three matrix and expand along its first row. Switch entries to compare each contribution with the full determinant.
+How do contributions from different entries of one row add up?
+What are the first-row signs in order?
+All positive
+Positive, negative, positive
+Negative, positive, negative
+The sign depends on the parity of the row-plus-column index.
+Cofactor expansion is more general than a three-by-three diagonal mnemonic. It works in every size and lets you choose an efficient row or column.
+First contribution
+Select the first-column term.
+Its contribution is $1\cdot3=3$.
+Second contribution
+Select the second-column term.
+The signed cofactor gives contribution $-2(-2)=4$.
+Zero-entry contribution
+Select the third-column term.
+Its entry is zero, so its contribution is zero; the total remains seven.

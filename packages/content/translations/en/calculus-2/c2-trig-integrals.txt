@@ -1,0 +1,66 @@
+Trigonometric integrals
+Use identities to expose a substitution
+For odd powers, reserve a derivative factor; for even powers, use power-reduction identities.
+In $\sin^3x$, reserve $\sin x$ and replace the remaining $\sin^2x$ with $1-\cos^2x$.
+Products of sine and cosine
+For odd sine powers, reserve one sine and set $u=\cos x$; reverse the roles for odd cosine powers. If both powers are even, use half-angle identities.
+Powers of tangent and secant
+In $\tan^m x\sec^n x$ with nonnegative integer powers, if $n\ge2$ is even, reserve $\sec^2x\,dx$ and set $u=\tan x$. If $m\ge1$ is odd and $n\ge1$, reserve $\sec x\tan x\,dx$ and set $u=\sec x$. Other cases require another identity or integration by parts.
+Check the interval
+Formulas involving $\tan x$ or $\sec x$ apply on intervals avoiding $\cos x=0$. Differentiate to check signs.
+Use identities to expose a substitution
+Angles are in radians. Transform the differential along with the variable.
+Split the odd power.
+Substitution introduces a minus sign.
+Integrate the resulting polynomial.
+An even power
+Evaluate $\int_0^\pi\sin^2x\,dx$.
+Power reduction gives $\frac12\int_0^\pi(1-\cos2x)dx$.
+An antiderivative is $\frac{x}{2}-\frac{\sin2x}{4}$; the sine terms vanish at both endpoints.
+$\frac\pi2$.
+Reserve the derivative factor
+Evaluate $\int\tan^3x\sec^2x\,dx$.
+Set $u=\tan x$, so $du=\sec^2x dx$.
+This gives $\int u^3du=\frac{u^4}{4}+C$.
+$\frac{\tan^4x}{4}+C$.
+The integral of $\sin^2x$ is $\frac{\sin^3x}{3}$.
+Differentiating that expression introduces $\cos x$; reduce the power first.
+$d(\cos x)=\sin x dx$.
+Omitting the minus sign reverses the integral's sign.
+Evaluate $\int\cos^3x dx$.
+$\sin x-\frac{\sin^3x}{3}+C$.
+Reserve one cosine factor.
+Set $u=\sin x$; the integral becomes $\int(1-u^2)du$.
+Evaluate $\int_0^{\pi/2}\sin x\cos x dx$.
+$\frac12$.
+Use sine as the new variable.
+$[\frac12\sin^2x]_0^{\pi/2}=\frac12$.
+Evaluate $\int\tan^2x dx$.
+$\tan x-x+C$.
+Rewrite in terms of secant.
+$\tan^2x=\sec^2x-1$; integrate term by term on an interval avoiding tangent's poles.
+Evaluate $\int\sec^3x dx$.
+$\frac12(\sec x\tan x+\ln|\sec x+\tan x|)+C$.
+Differentiate secant and integrate the remaining secant-squared factor.
+$I=\sec x\tan x-\int\sec x\tan^2x dx$.
+Using $\tan^2x=\sec^2x-1$ gives $2I=\sec x\tan x+\int\sec x dx$; the final integral is $\ln|\sec x+\tan x|$.
+What is the most direct approach to $\sin^4x$?
+Apply the power rule immediately
+Use power reduction
+Set $u=\sin x$ and ignore the differential
+There is no cosine factor for a direct substitution; power reduction lowers the power.
+Trigonometric functions are not independent variables for the power rule. Identities reshape the integral into a form your tools can handle.
+Coarse partition
+Set the number of subintervals to 4.
+The rectangles give a finite approximation; the exact integral is $\frac23$.
+Refine the partition
+Set the number of subintervals to 20.
+The rectangles narrow; compare the approximate sum with the exact value.
+Refine further
+Set the number of subintervals to 80.
+A finite approximation is still not a convergence proof.
+Compare finite partitions of $\int_0^{\pi/2}\sin^3x\,dx$ with its exact integral.
+Does refining the partition bring the sum closer to the exact integral?
+Choose identities and substitutions from the powers
+Integrate sine-cosine and tangent-secant products
+Check radians, signs and valid intervals

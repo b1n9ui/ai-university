@@ -1,0 +1,66 @@
+Absolute and conditional convergence
+Remove signs and test the total magnitude
+Absolute convergence means the absolute-value series converges. Conditional convergence means the original series converges but its absolute-value series diverges.
+Conditional convergence relies on cancellation; rearrangement can change the sum. Absolutely convergent sums are stable under rearrangement.
+Why is absolute convergence stronger?
+The magnitude of an original tail is at most its absolute-value tail. Making the latter small controls the former.
+Classifying a series
+Test absolute values first. If they converge, you are done. If they diverge, test the signed original instead of immediately declaring divergence.
+Can terms be rearranged freely?
+Finite sums can. Infinite sums need conditions: absolute convergence allows rearrangement; for conditional convergence retain the specified order.
+Remove signs and test the total magnitude
+\sum|a_n|<\infty\Rightarrow\sum a_n\text{ converges};\qquad \sum a_n\text{ converges and }\sum|a_n|=\infty\Rightarrow\text{conditional convergence}
+These are real series. Rearrangement invariance does not make arbitrary finite truncations equal.
+Apply the triangle inequality to a finite tail.
+Absolute convergence makes the bound arbitrarily small.
+The original series satisfies the Cauchy criterion and converges.
+Conditional convergence
+Classify $\sum\frac{(-1)^{n-1}}n$.
+The alternating-series test gives convergence.
+Its absolute-value series is harmonic and diverges.
+Conditionally convergent.
+Absolute convergence
+Classify $\sum\frac{(-1)^n}{n^2}$.
+Its absolute-value series is the reciprocal-square series.
+The power is 2, greater than 1, so the absolute sum is finite.
+Absolutely convergent.
+Divergent absolute values force the original series to diverge.
+Conditional convergence is still possible; test the original series next.
+Rearrangement cannot change any infinite sum.
+A conditionally convergent sum can depend on order.
+Classify $\sum\frac{(-1)^n}{n^3}$.
+Absolutely convergent.
+Remove the signs first.
+Its absolute-value series is a convergent power tail with exponent 3.
+Classify $\sum\frac{(-1)^n}{\sqrt n}$.
+Conditionally convergent.
+Test the original and absolute-value series separately.
+Magnitudes decrease to zero, so the original converges. The absolute-value power is $\frac12\leq1$, giving divergence.
+Classify $\sum\frac{(-2)^n}{n}$.
+It diverges.
+Do its terms tend to zero?
+The magnitude $\frac{2^n}{n}$ does not vanish, violating the necessary condition.
+Classify $\sum\frac{\sin n}{n^2}$.
+Absolutely convergent.
+Compare absolute values.
+$|\frac{\sin n}{n^2}|\leq\frac1{n^2}$; comparison gives absolute convergence.
+If the absolute-value series diverges, what about the original?
+It must diverge
+It must converge conditionally
+Further testing is needed
+Either conditional convergence or divergence is possible.
+First ask whether the total magnitude is finite without cancellation. If so, convergence is absolute; if convergence requires cancellation, it is conditional.
+An odd count
+Set the count to 5.
+The next term is negative; the partial sum is above the true sum.
+An even count
+Set the count to 6.
+The next term is positive; the partial sum is below the true sum.
+Reduce the error
+Set the count to 60.
+The error is at most $\frac1{61}$; the sum remains between neighboring partial sums.
+Display alternating harmonic partial sums, the exact sum $\ln2$ and next-term bounds.
+On which side of the true sum do odd and even partial sums lie?
+Test the original and absolute-value series separately
+Classify absolute and conditional convergence
+Explain why rearrangement needs hypotheses

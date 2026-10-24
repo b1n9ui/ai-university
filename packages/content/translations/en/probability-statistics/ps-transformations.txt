@@ -1,0 +1,65 @@
+Transforming variables: start with the CDF
+Changing variables changes both values and the density assigned to interval lengths.
+Changing variables changes both values and the density assigned to interval lengths.
+Compress an interval by half and its density must double to preserve its probability.
+Start with the CDF
+Use monotone change of variables
+Start with the CDF
+Rewrite $Y\le y$ as an event for the original variable, find its probability, then differentiate if needed. Nonmonotone transformations may have several preimage intervals.
+Use monotone change of variables
+On a strictly monotone differentiable branch with differentiable inverse, transform density using the absolute Jacobian factor.
+Keep the support and branches
+Squaring can merge positive and negative branches. Omitting the absolute value or another branch loses probability.
+The formula applies on monotone differentiable invertible branches; multiple preimages generally require summing their contributions.
+The formula applies on monotone differentiable invertible branches; multiple preimages generally require summing their contributions.
+Transform the support together with the variable.
+Rewrite the new-variable event in the old variable.
+On an increasing branch, transform the integration limit.
+The chain rule gives density scaling; use absolute value on a decreasing branch.
+Linear scaling
+For $X\sim U(0,1),Y=2X+1$, find the new density.
+The support becomes one to three.
+The inverse derivative is one half.
+$Y\sim U(1,3)$, with density $1/2$.
+Squaring
+For $X\sim U(-1,1),Y=X^2$, find $F_Y(y)$.
+For $0\le y\le1$, the original event is $-\sqrt y\le X\le\sqrt y$.
+Divide its length by two.
+$F_Y(y)=0$ for $y<0$, $F_Y(y)=\sqrt y$ for $0\le y\le1$, and $F_Y(y)=1$ for $y>1$. Density is $1/(2\sqrt y)$ for $0<y<1$, zero outside.
+For $X\sim U(0,1),Y=3X$, find the density height.
+Preserve probability area.
+The support has width three.
+$1/3$.
+For $X\sim U(-1,1)$, find $P(X^2\le1/4)$.
+Undo the square event.
+$|X|\le1/2$, giving length one divided by two.
+$1/2$.
+Why use an absolute derivative for a decreasing transformation?
+Density must be nonnegative.
+Length scaling uses absolute magnitude.
+Remove orientation while retaining the length ratio.
+Is using only the positive square root always correct for squaring?
+Check whether the original support includes negative values.
+If both signs occur, the negative branch also contributes probability.
+Not necessarily.
+What can go wrong if support is not updated after transformation?
+No effect on probability
+Incorrect total integral or interval probabilities
+Only the font changes
+The density formula and support jointly define the distribution.
+Changing variables merely replaces letters
+Interval-length scaling is also required.
+Squaring has only one preimage
+Positive and negative support generally gives two branches.
+Change a linear scale factor. Why does density height change inversely?
+A uniform linear transformation preserves area; the text separately handles multi-branch squaring.
+Interval-length scaling is also required.
+Linear scale factor: 2
+Set the scale factor to $2$ and compare the figure and readouts.
+At these parameters: expectation $2$; variance $0.333333$; density height $0.5$; left probability $0.5$.
+Linear scale factor: 0.25
+Set the scale factor to $0.25$ and compare the figure and readouts.
+At these parameters: expectation $1.125$; variance $0.00520833$; density height $4$; left probability $1$.
+Linear scale factor: 4
+Set the scale factor to $4$ and compare the figure and readouts.
+At these parameters: expectation $3$; variance $1.33333$; density height $0.25$; left probability $0.25$.

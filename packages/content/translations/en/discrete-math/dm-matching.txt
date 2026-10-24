@@ -1,0 +1,67 @@
+Bipartite matching, augmenting paths, and flow
+One-to-one assignment depends on rearranging existing assignments as well as finding free positions.
+One-to-one assignment depends on rearranging existing assignments as well as finding free positions.
+An augmenting path alternates unmatched and matched edges. Flipping them adds exactly one matched pair.
+Define a matching
+Flip an augmenting path
+Define a matching
+A matching is a set of edges with no shared endpoints. A maximal matching permits no directly added edge; a maximum matching has the largest possible size. They differ.
+Flip an augmenting path
+From an unmatched left vertex to an unmatched right vertex, alternate unmatched and matched edges. After flipping, intermediate vertices remain matched once, and the endpoints add one pair.
+Connect Hall's theorem and flow
+Every left vertex can be matched exactly when each left subset has at least as many neighbors. Adding a source, sink, and unit-capacity edges makes integer flows correspond to matchings. Checking only the entire left side is insufficient.
+Hall's condition checks every subset of the left side.
+\forall S\subseteq L:\ |N(S)|\ge|S|\iff\text{a matching saturating }L\text{ exists}
+The graph is finite and bipartite.
+Edges represent allowed pairs; each endpoint has capacity one.
+A matched left subset needs distinct neighbors.
+An augmenting path has one more unmatched edge than matched edge.
+\#\text{unmatched edges}=\#\text{matched edges}+1
+Flipping increases the matching size by one.
+A rearrangement is needed
+A connects to right vertices one and two; B connects only to one. If A is matched to one, can B still be matched?
+Follow B to one, the existing matching back to A, then A to two.
+Flip to match B with one and A with two.
+Yes; augmentation gives two pairs.
+Total neighbors are insufficient
+Among three left vertices, A and B connect only to one, while C connects to two and three. Can all three be matched?
+The entire left side has three neighbors, apparently enough.
+But the subset A and B has only one neighbor, violating Hall's condition.
+No; the maximum size is two.
+What is the maximum matching size in a complete three-by-four bipartite graph?
+The smaller side bounds the size, and that bound is attainable.
+The three left vertices can use distinct right vertices.
+Three.
+Is every maximal matching maximum?
+Not being able to add an edge directly does not rule out rearrangement.
+A length-three augmenting path can enlarge a maximal matching.
+No.
+How much does one augmentation increase the matching size?
+The endpoints gain a pair; intermediate matches are rearranged.
+One pair is added.
+One.
+Does Hall's condition need to check only the entire left side?
+A local subset may compete for too few neighbors.
+Every subset must be checked.
+No.
+How does flipping an augmenting path change matching size?
+Increases it by one
+Leaves it unchanged
+Increases it by the path's edge count
+The alternating path has exactly one extra unmatched edge.
+Maximal means maximum
+Maximal rules out only a directly added edge.
+Enough positions in total guarantee a full assignment
+Too few neighbors for a local subset can still block it.
+Compare a local greedy assignment with rearrangement along an augmenting path. Why does the matching size increase?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+Maximal rules out only a directly added edge.
+Steps executed: 0
+Set the control to $0$. Compare the current step with the complete reference result.
+At this setting: current matching size $0$; complete maximum matching $3$.
+Steps executed: 1
+Set the control to $1$. Compare the current step with the complete reference result.
+At this setting: current matching size $1$; complete maximum matching $3$.
+Steps executed: 3
+Set the control to $3$. Compare the current step with the complete reference result.
+At this setting: current matching size $3$; complete maximum matching $3$.

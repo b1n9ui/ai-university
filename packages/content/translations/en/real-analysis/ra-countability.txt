@@ -1,0 +1,67 @@
+Countability, uncountability, and diagonals
+Countable means listable by natural-number indices, not sparsely distributed.
+Countable means listable by natural-number indices, not sparsely distributed.
+The rationals are countable and dense. Reals are more numerous because every proposed list misses something, not because decimal expansions are long.
+Enumerate rationals
+Use a diagonal argument
+Enumerate rationals
+Arrange integer numerators and positive integer denominators in finite layers by size. Skip repeated fractions to list every rational.
+Use a diagonal argument
+Given any list of infinite binary sequences, construct a new sequence whose index-th bit differs from the index-th listed sequence's bit there. It differs from every row somewhere and is absent from the list.
+Transfer to real numbers
+Map binary bits to ternary zeroes and twos to inject into a real interval. The first differing digit outweighs every possible later cancellation, avoiding representation ambiguity. Thus the interval is uncountable.
+Countable means finite or in bijection with the naturals. The set of infinite binary sequences is uncountable.
+The diagonal argument refutes any purported complete infinite list.
+A finite display is not an infinite proof.
+Assume a list contains every infinite binary sequence.
+Flip each diagonal bit.
+The new sequence differs from row number at that position, so the list is incomplete.
+Equally many even integers
+Give a bijection from positive integers to positive even integers.
+Map $n\mapsto2n$.
+Every positive even integer has exactly one preimage.
+A proper subset can have the same cardinality.
+Countable yet dense rationals
+Why does density not mean uncountability?
+Density says every open interval contains a member.
+Countability concerns enumeration; the properties address different questions.
+The rationals have both properties.
+Is a finite union of countable sets countable?
+Interleave their lists and remove repetitions.
+Every member eventually appears.
+Yes.
+Would changing only the first digit suffice in the real diagonal argument?
+Every row must be excluded.
+Each row needs its own guaranteed differing position.
+No.
+Must a proper subset of the naturals be smaller in cardinality?
+Use the positive-even bijection.
+Infinite sets need not follow finite-set intuition.
+No.
+Prove $T(b)=\sum_{n\ge1}2b_n/3^n$ injects infinite zero–one sequences into $[0,1]$.
+Find the first differing position of two sequences.
+Terms are nonnegative with total at most $\sum2/3^n=1$, so the map is defined and lands in $[0,1]$.
+If the first difference is at $k$, its magnitude is $2/3^k$; later differences total at most $\sum_{n>k}2/3^n=1/3^k$.
+Their images differ in magnitude by at least $1/3^k>0$. Combined with binary-sequence uncountability, this proves the interval uncountable.
+Their images differ in magnitude by at least $1/3^k>0$. Combined with binary-sequence uncountability, this proves the interval uncountable.
+Why is the diagonal object absent from the list?
+It is longer
+It has a corresponding differing position for every row
+It is numerically greater
+The argument does not depend on size or listing order.
+A countable set cannot be dense
+The rationals are a counterexample.
+All infinite sets have the same size
+Diagonalization establishes a larger cardinality.
+Inspect each row's differing position. Why can the new sequence equal no row?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+The rationals are countable and dense. Uncountability means every proposed complete list fails, not that representations are long.
+Displayed rows and columns: 2
+Set the displayed dimension to $2$. Check the new sequence's differing diagonal bit in each row.
+Rows with a guaranteed difference $2$.
+Displayed rows and columns: 6
+Set the displayed dimension to $6$. Check the new sequence's differing diagonal bit in each row.
+Rows with a guaranteed difference $6$.
+Displayed rows and columns: 10
+Set the displayed dimension to $10$. Check the new sequence's differing diagonal bit in each row.
+Rows with a guaranteed difference $10$.

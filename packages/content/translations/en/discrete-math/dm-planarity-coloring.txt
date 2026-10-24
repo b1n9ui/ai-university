@@ -1,0 +1,66 @@
+Planar graphs and vertex coloring
+Planarity asks for a drawing without crossing edges; coloring requires adjacent vertices to differ in color.
+Planarity asks for a drawing without crossing edges; coloring requires adjacent vertices to differ in color.
+A drawing with crossings does not prove nonplanarity: another drawing may avoid them.
+Use Euler's formula
+Derive necessary edge bounds
+Use Euler's formula
+For a connected plane graph, counting the unbounded face, vertices minus edges plus faces equals two. With several components, the right side becomes one plus the component count.
+Derive necessary edge bounds
+A simple planar graph with at least three vertices has at most three times the vertex count minus six edges. If also bipartite, the bound becomes twice the vertex count minus four.
+Construct a coloring
+In a fixed vertex order, greedy coloring chooses a color unused by already colored neighbors. It needs at most maximum degree plus one colors, but may not achieve the minimum.
+Edge bounds are necessary for planarity, not sufficient tests.
+v-e+f=2,\quad e\le3v-6,\quad e\le2v-4\ \text{if also bipartite}
+Euler's formula in this form requires a connected plane embedding.
+Both edge bounds require a simple graph with at least three vertices.
+Each edge meets two face boundaries; a bridge is counted twice.
+In the relevant nondegenerate simple plane embeddings, each face boundary has at least three edge occurrences.
+Combine this with Euler's formula; tree boundary cases satisfy the bound directly.
+The complete five-vertex graph
+Can the complete five-vertex graph be drawn in the plane without crossings?
+It has five vertices and ten edges.
+The planar bound permits at most nine edges.
+No.
+The complete three-by-three bipartite graph
+Can the complete three-by-three bipartite graph be planar?
+It is bipartite, with six vertices and nine edges.
+The bipartite planar bound permits at most eight edges.
+No; the ordinary three-times-vertices bound is insufficient here.
+A connected plane embedding has five vertices and six edges. How many faces does it have?
+Use Euler's formula, including the unbounded face.
+$f=2-5+6=3$.
+Three.
+Does satisfying the edge bound guarantee planarity?
+Necessary does not mean sufficient.
+The complete three-by-three graph satisfies the ordinary bound but is not planar.
+No.
+What is the chromatic number of an even cycle?
+Alternate colors around the cycle.
+Two colors work; an edge rules out one.
+Two.
+What is the chromatic number of the complete four-vertex graph?
+Every pair of vertices is adjacent.
+Each vertex needs a different color.
+Four.
+Do crossing edges in a drawing directly prove nonplanarity?
+Yes
+No
+Yes, if there are two crossings
+Planarity asks whether some other drawing avoids all crossings.
+The edge bound is a sufficient criterion
+It can rule out planarity, but cannot establish it.
+Greedy coloring always uses the fewest colors
+The vertex order can affect its result.
+Compare colorings with edge bounds. Which conclusions give only necessary conditions?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+It can rule out planarity, but cannot establish it.
+Graph mode: 0
+Set the control to $0$. Observe which objects, relations, or counts change.
+At this setting: vertices $6$; edges $6$; greedy colors in this order $2$; ordinary planar edge bound $12$; bipartite: yes.
+Graph mode: 2
+Set the control to $2$. Observe which objects, relations, or counts change.
+At this setting: vertices $6$; edges $5$; greedy colors in this order $2$; ordinary planar edge bound $12$; bipartite: yes.
+Graph mode: 5
+Set the control to $5$. Observe which objects, relations, or counts change.
+At this setting: vertices $6$; edges $6$; greedy colors in this order $3$; ordinary planar edge bound $12$; bipartite: no.

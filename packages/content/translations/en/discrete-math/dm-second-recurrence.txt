@@ -1,0 +1,64 @@
+Second-order linear recurrences
+When the next term depends on two preceding terms, two initial values are needed.
+When the next term depends on two preceding terms, two initial values are needed.
+Characteristic roots split a recurrence into simple powers. A repeated root needs an additional index factor.
+Form the characteristic equation
+Handle distinct and repeated roots
+Form the characteristic equation
+Substitute a power-form candidate into a homogeneous constant-coefficient recurrence to obtain an algebraic equation for its growth factor.
+Handle distinct and repeated roots
+Distinct roots yield two independent power solutions. For a repeated root, the second solution is the index times that power. This repeated-root formula assumes a nonzero root.
+Fit the initial values
+The two initial values determine the two coefficients. A nonhomogeneous recurrence also needs a particular solution; the homogeneous general solution alone does not suffice.
+This lesson considers real second-order homogeneous recurrences with constant coefficients.
+The recurrence starts at index two.
+Apply power and repeated-root formulas under their stated conditions; check a repeated zero root directly in the recurrence.
+Substitute a power-form candidate.
+For a nonzero root, cancel the common power.
+Combine distinct-root solutions and fit the initial values.
+Find the first six terms of $F_0=0,F_1=1,F_n=F_{n-1}+F_{n-2}$.
+Start with zero and one.
+Successive addition gives one, two, three, five.
+Zero, one, one, two, three, five.
+A repeated root
+$a_n=2a_{n-1}-a_{n-2},a_0=1,a_1=3$.
+The characteristic polynomial is $(r-1)^2$.
+$a_n=A+Bn$; the initial values give $A=1,B=2$.
+$a_n=1+2n$.
+For $F_0=0,F_1=1,F_n=F_{n-1}+F_{n-2}$ with $n\ge2$, find $F_6$.
+Add three and five.
+The term at index six is eight.
+Eight.
+Does one initial value usually suffice for a second-order recurrence?
+The second term can still vary freely.
+A second initial constraint is missing.
+No.
+For repeated root one, do constant solutions alone suffice?
+Multiplying the root power by the index gives a second solution.
+A linear index term is also needed.
+No.
+Find the roots for $a_n=3a_{n-1}-2a_{n-2}$.
+Factor the quadratic.
+$r^2-3r+2=(r-1)(r-2)$.
+One and two.
+Why cannot the same power be written twice as two independent solutions for a repeated root?
+The coefficients become too large
+The two terms combine into one solution
+The initial values must be equal
+A second independent dependence on the index is required.
+The two initial values may be ignored afterward
+The general formula must still satisfy them.
+Every recurrence has a quadratic characteristic equation
+The equation depends on the order, homogeneity, and constant-coefficient assumptions.
+Advance term by term. How do the two preceding terms combine to make the next?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+The general formula must still satisfy them.
+Final index: 0
+Set the control to $0$. Compare the current step with the complete reference result.
+At this setting: final term $0$.
+Final index: 8
+Set the control to $8$. Compare the current step with the complete reference result.
+At this setting: final term $21$.
+Final index: 16
+Set the control to $16$. Compare the current step with the complete reference result.
+At this setting: final term $987$.

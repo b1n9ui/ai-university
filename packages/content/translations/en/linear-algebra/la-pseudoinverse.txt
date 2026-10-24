@@ -1,0 +1,64 @@
+Pseudoinverses and minimum-norm solutions
+Add no undetermined kernel component
+The pseudoinverse selects the shortest input among all least-squares solutions.
+Lost directions cannot be recovered. The pseudoinverse restores the visible part and sets undetermined kernel components to zero.
+Construct a pseudoinverse from SVD
+Find the minimum-norm least-squares solution
+How is it obtained from SVD?
+Invert positive singular values, keep zeros zero, and swap the outer factors: $A^+=V_r\Sigma_r^{-1}U_r^T$.
+What does it solve?
+$A^+b$ is the unique minimum-Euclidean-norm least-squares input. Even for unreachable right-hand sides, minimize residual first, then input length among equally good fits.
+Does it recover the original input?
+$AA^+$ projects onto the output column space; $A^+A$ projects onto the input row space. Outputs cannot recover the original kernel component.
+Pseudoinverses and minimum-norm solutions
+Use the standard Euclidean norm and never invert zero singular values. Numerical pseudoinverses need small-value thresholds; the exact formula here treats only true zeros as zero.
+Split error in orthogonal input and output coordinates.
+Solve each visible scaling equation.
+Zero free kernel coordinates minimize input length.
+A singular diagonal matrix
+$A=\operatorname{diag}(2,0),b=(1,3)^T$.
+$A^+=\operatorname{diag}(1/2,0)$.
+The optimal input is $(1/2,0)$ with output $(1,0)$; it cannot fit the vertical component three.
+Residual length 3; minimum-norm input $(1/2,0)$.
+Solvable but nonunique
+Given $A=(1\ 1),b=2$, find the minimum-norm solution.
+All solutions are $(1+t,1-t)$.
+Squared length $2+2t^2$ is minimized at $t=0$.
+$(1,1)^T$.
+The pseudoinverse recovers all lost information.
+Kernel components never enter the output and cannot be recovered.
+The pseudoinverse takes each entry's reciprocal.
+It operates on singular values while preserving the two direction sets.
+Find the pseudoinverse of $\operatorname{diag}(4,0)$.
+Invert nonzero singular scalings.
+$\operatorname{diag}(1/4,0)$.
+$\operatorname{diag}(1/4,0)$.
+How does a square invertible matrix's pseudoinverse compare with its inverse?
+There are no zero singular values.
+The SVD formula reduces to the ordinary inverse.
+Equal.
+Find the pseudoinverse of $A=0$.
+There are no visible directions.
+All singular values are zero; use a zero matrix with transposed dimensions.
+The appropriately sized zero matrix.
+Do all least-squares solutions have equal length?
+Consider adding a kernel vector.
+A nonzero kernel component can increase length without changing output.
+No; the pseudoinverse selects the shortest one.
+Compare $A=\operatorname{diag}(2,1)$ and $A=\operatorname{diag}(2,0)$, computing minimum-norm least-squares inputs for right-hand side $(1,b)$.
+When a direction disappears completely, what does the pseudoinverse do with the undetermined input?
+What does the pseudoinverse do with a zero singular value?
+Replace it by infinity
+Keep it zero
+Set it arbitrarily to one
+Zero signals a direction that cannot be inverted, not a division by zero.
+The pseudoinverse adopts a clear convention: among equally good fits, add no component invisible in the output.
+Invertible recovery
+Choose the invertible matrix and set $b=1$.
+The input is $(1/2,1)$, with zero residual.
+An unreachable singular right-hand side
+Choose the singular matrix and keep $b=1$.
+The minimum-norm input is $(1/2,0)$; residual length is one.
+Change the unreachable output component
+Keep the singular matrix and set $b=2$.
+The shortest input stays fixed; residual length becomes two.

@@ -1,0 +1,65 @@
+Bases and unique representation
+Complete directions without redundancy
+A basis spans the entire space without redundancy, giving unique coordinates.
+Spanning guarantees reach; independence rules out two different recipes. Both are needed.
+Check spanning and independence together
+Prove uniqueness of basis coordinates
+How do you verify a basis?
+First ensure the vectors belong to the space, then check spanning and independence. Two nonparallel vectors require specifying which space is the target.
+How do you select a basis from generators?
+Put the vectors in columns and eliminate. Choose the pivot columns of the original matrix: they preserve the span and are independent.
+Must a basis be orthonormal?
+No. Oblique vectors of different lengths can form a basis. Orthogonal bases are a particularly convenient later choice.
+Bases and unique representation
+B=(v_1,\ldots,v_k)\text{ is a basis}\iff \forall v\in V,\ \exists!c:\ v=\sum_jc_jv_j
+We mainly use finite-dimensional spaces. For an ordered basis, its order determines coordinate order.
+Spanning gives existence.
+Subtract two possible representations.
+Independence forces matching coefficients to agree.
+A nonstandard basis
+Is $(1,1),(1,-1)$ a basis of the plane?
+The homogeneous combination forces zero coefficients.
+For any $(x,y)$, choose $a=(x+y)/2,b=(x-y)/2$.
+Yes.
+A polynomial basis
+Why is $1,t,t^2$ a basis for real polynomials of degree at most two?
+Every member has the form $a+bt+ct^2$.
+An identically zero polynomial has every coefficient zero.
+Spanning and independent.
+Any independent list is a basis of the entire space.
+It must also span the target space.
+Basis vectors must have length one.
+Unit length is not required.
+Is $(1,0),(0,1),(1,1)$ a basis of the plane?
+Check redundancy.
+The third is the sum of the first two.
+No.
+What basis does the zero subspace have?
+A basis cannot contain zero.
+The empty list spans the zero space and is independent.
+The empty list.
+Can $(2,0),(0,3)$ be a basis of the plane?
+Can it represent arbitrary coordinates?
+$(x,y)=(x/2)(2,0)+(y/3)(0,3)$, with a unique representation.
+Yes.
+For which plane is $(1,0,0),(0,1,0)$ a basis?
+Read the third component.
+The combinations are exactly $(x,y,0)$.
+The plane $z=0$.
+The generators are $u=(1,0,0),v=(1,c,0)$. The faint plane shows their full span; the outline shows only the part drawn with bounded coefficients.
+Why can an oblique basis still give unique coordinates?
+What are the two basis requirements?
+Unit length and perpendicularity
+Spanning and linear independence
+As many vectors as possible
+One guarantees existence of representations; the other guarantees uniqueness.
+A basis is a complete, nonredundant set of directions. It need not look regular, but it must locate every vector uniquely.
+Two independent directions
+Set $c=1$.
+The vectors span the entire horizontal plane, of dimension two.
+Nearly parallel
+Set $c=0.1$.
+The bounded-coefficient region is narrow, but the span is still the whole plane.
+Exactly dependent
+Set $c=0$.
+The vectors coincide, so their span is just a line.

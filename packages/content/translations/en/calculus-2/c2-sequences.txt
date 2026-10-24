@@ -1,0 +1,62 @@
+Sequences and limits
+Track the index, not continuous time
+A sequence converges when every sufficiently late term stays close to one number. Finitely many initial terms do not determine its limit.
+$a_n=\frac1n$ approaches zero without ever equaling it. Sequence indices are integers.
+Making closeness precise
+For every positive tolerance, there is an index beyond which all terms lie within that tolerance of the limit. A few close terms do not suffice.
+Computing limits
+Use limit laws, squeezing or a related continuous function. The quotient law requires a nonzero denominator limit.
+Must oscillation diverge?
+Oscillation can converge if its amplitude vanishes. $(-1)^n$ diverges, while $\frac{(-1)^n}{n}$ tends to zero.
+Track the index, not continuous time
+The index $n$ is a positive integer. The threshold $N$ may depend on tolerance, not on the later term chosen.
+Bound the reciprocal using the tolerance.
+Choose a strictly larger integer threshold.
+Every term beyond that threshold meets the tolerance.
+A polynomial ratio
+Find $\lim_{n\to\infty}\frac{3n+1}{2n-5}$.
+Divide numerator and denominator by $n$, giving $\frac{3+1/n}{2-5/n}$.
+The denominator tends to nonzero 2, so the quotient law applies.
+$\frac32$.
+Convergent oscillation
+Find $\lim\frac{\sin n}{n}$.
+Using $|\sin n|\leq1$ gives $|\frac{\sin n}{n}|\leq\frac1n$.
+The right side tends to zero; squeeze the sequence to zero.
+$0$.
+One sufficiently close term proves convergence.
+Every sufficiently late term must be close.
+Every bounded sequence converges.
+$(-1)^n$ is bounded but has no limit.
+Find $\lim\frac{n}{n+1}$.
+$1$.
+Rewrite as one minus a small quantity.
+$\frac n{n+1}=1-\frac1{n+1}\to1$.
+Why does $(-1)^n$ not converge?
+Its odd and even subsequences have different limits.
+Examine the two subsequences.
+Odd terms equal $-1$; even terms equal 1. Convergence would require the same limit for both.
+What is the smallest integer threshold $N$ guaranteeing $\frac1n<0.01$?
+$101$.
+Respect the strict inequality.
+$n>100$, so every $n\geq101$ satisfies the requirement.
+Find $\lim\sqrt{n^2+n}-n$.
+$\frac12$.
+Multiply by the conjugate.
+$\sqrt{n^2+n}-n=\frac{n}{\sqrt{n^2+n}+n}=\frac1{\sqrt{1+1/n}+1}\to\frac12$.
+Which sequence converges?
+The second sequence's oscillation amplitude tends to zero.
+Initial terms may be erratic. Convergence requires that no sufficiently late term strays far from the limit.
+First ten terms
+Set the count to 10.
+The last term is $\frac1{10}$.
+Forty terms
+Set the count to 40.
+The last term is $\frac1{40}$; gaps between dots are not extra terms.
+Eighty terms
+Set the count to 80.
+The last term is still positive. A limit need not equal any term.
+Compare the discrete terms of $a_n=\frac1n$ with the target zero.
+Can 20 close late terms replace an argument about every later term?
+Explain sequence limits using tolerances
+Use squeezing and limit laws
+Distinguish oscillation from vanishing amplitude

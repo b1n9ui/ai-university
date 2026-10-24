@@ -1,0 +1,65 @@
+Uniform distributions and exponential waits
+Equal-length intervals have equal probabilities under uniformity; a constant Poisson rate gives exponential waiting.
+Equal-length intervals have equal probabilities under uniformity; a constant Poisson rate gives exponential waiting.
+Uniformity favors no location; exponential waiting gives no compensation for time already waited.
+Build a uniform model
+Connect counts and waiting
+Build a uniform model
+A finite interval has constant density determined by area one, and zero outside. No analogous uniform probability density exists on the entire unbounded real axis.
+Connect counts and waiting
+In a Poisson process, waiting past a time means no arrivals before it. The exponential tail therefore comes from Poisson zero probability.
+Check memorylessness
+The exponential remaining-wait distribution does not change with elapsed wait. Aging, cycles, or queue states changing the rate may invalidate the model.
+For the uniform model, $a<b$, and density is nonzero only on that interval.
+For the uniform model, $a<b$, and density is nonzero only on that interval.
+The exponential uses rate $\lambda>0$ and nonnegative waiting time.
+Total area determines the uniform height.
+The exponential tail is the probability of zero arrivals.
+A probability ratio shows the remaining wait does not depend on the past.
+A uniform interval
+For a uniform draw on $[2,8]$, find the probability of $[3,5]$.
+Target length two, total length six.
+Take the length ratio.
+$1/3$.
+Remaining exponential wait
+Rate is two per time unit. After waiting three units, what is the probability of waiting more than one additional unit?
+Use memorylessness.
+The remaining tail is $e^{-2(1)}$.
+$e^{-2}\approx0.1353$.
+What is the density height of $U(0,4)$?
+Constant height times width must be one.
+$1/4$.
+$0.25$.
+An exponential has rate $0.5$. Find its mean wait.
+Use the rate convention.
+$1/0.5=2$.
+$2$.
+At rate two, find probability of waiting at most one.
+Complement the tail.
+$1-e^{-2}$.
+$1-e^{-2}$.
+If an exponential is described as having mean two, is its rate also two?
+Check the parameter convention.
+Rate is reciprocal mean.
+The rate is $1/2$.
+As exponential rate increases, how does mean wait change?
+Longer
+Shorter
+Unchanged
+Mean wait is reciprocal rate.
+Rate and mean waiting time are the same quantity
+They are reciprocals with different units.
+Every waiting distribution is memoryless
+Memorylessness is a specific model property, not a general fact about waiting.
+Increase the arrival rate. What happens to the probability of waiting past a fixed threshold?
+The density, tail area, and mean are shown. Memorylessness applies only to the exponential model.
+They are reciprocals with different units.
+Arrival rate: 2
+Set the arrival rate to $2$ and compare the figure and readouts.
+At these parameters: mean wait $0.5$; probability above threshold $0.135335$; at or below threshold $0.864665$.
+Arrival rate: 0.2
+Set the arrival rate to $0.2$ and compare the figure and readouts.
+At these parameters: mean wait $5$; probability above threshold $0.818731$; at or below threshold $0.181269$.
+Arrival rate: 4
+Set the arrival rate to $4$ and compare the figure and readouts.
+At these parameters: mean wait $0.25$; probability above threshold $0.0183156$; at or below threshold $0.981684$.

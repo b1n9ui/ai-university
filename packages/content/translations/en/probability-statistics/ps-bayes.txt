@@ -1,0 +1,65 @@
+Total probability and Bayes' rule
+Combine probabilities from all sources, then use the observation to update the source probabilities.
+Combine probabilities from all sources, then use the observation to update the source probabilities.
+Positive results include true positives and false positives from a potentially much larger non-target group.
+Separate sources
+Find the observation's total probability
+Separate sources
+Partition the population into disjoint exhaustive groups and compute each source-and-observation path probability.
+Find the observation's total probability
+Total probability adds paths from every source, not only the intuitively appealing branch.
+Calculate the posterior
+Bayes divides the target-source path by all paths producing the observation. With a low prior, even a modest false-positive rate matters.
+Source events form a disjoint exhaustive partition, and the observation satisfies $P(D)>0$.
+Source events form a disjoint exhaustive partition, and the observation satisfies $P(D)>0$.
+Posteriors depend on base rates and the model's conditional probabilities.
+Partition the observation by source.
+Add the disjoint paths.
+Divide by observation probability.
+A low base rate
+Target prevalence is $0.01$, detection rate $0.9$, and false-positive rate $0.1$. Find target probability after a positive.
+True-positive path $0.009$; false-positive path $0.099$.
+Divide by all positives, $0.108$.
+$1/12\approx0.0833$.
+Mixed sources
+Factory one supplies sixty percent with defect rate $0.02$; factory two supplies forty percent with rate $0.05$. Find total defect probability.
+First path: $0.6(0.02)=0.012$.
+Second path: $0.4(0.05)=0.02$.
+$0.032$.
+Factory one supplies sixty percent with defect rate $0.02$; factory two supplies forty percent with rate $0.05$. Given a defect, what is the probability of factory two?
+Use that source's defect path as numerator.
+$0.02/0.032=0.625$.
+$0.625$.
+Two equally likely sources have observation likelihoods $0.8,0.2$. Find the first source's posterior.
+Compute its numerator and total observation probability.
+$0.4/(0.4+0.1)=0.8$.
+$0.8$.
+Does high sensitivity guarantee near certainty after a positive result?
+Base rate and false-positive rate are still missing.
+A low-prevalence population may contribute many false positives.
+No.
+If the observation has equal likelihood under both sources, does it change source probabilities?
+The common factor cancels.
+Posterior equals prior.
+No.
+What belongs in Bayes' denominator?
+Only the target source
+Every source producing the observation
+Only the false-positive source
+It is the observation's total probability.
+Detection rate is target probability after a positive
+The conditioning direction is reversed; combine prior and false-positive rate.
+The prior may be omitted
+Ignoring source proportions generally changes the posterior.
+Keep detection fixed and lower the base rate. How does target probability among positives change?
+A proportion tree and population grid show true positives, false positives, and posterior in an abstract detection model.
+The conditioning direction is reversed; combine prior and false-positive rate.
+Target base rate: 0.01
+Set the target base rate to $0.01$ and compare the figure and readouts.
+At these parameters: true-positive path $0.009$; false-positive path $0.099$; total positive probability $0.108$; target given positive $0.0833333$.
+Target base rate: 0.001
+Set the target base rate to $0.001$ and compare the figure and readouts.
+At these parameters: true-positive path $0.0009$; false-positive path $0.0999$; total positive probability $0.1008$; target given positive $0.00892857$.
+Target base rate: 0.5
+Set the target base rate to $0.5$ and compare the figure and readouts.
+At these parameters: true-positive path $0.45$; false-positive path $0.05$; total positive probability $0.5$; target given positive $0.9$.

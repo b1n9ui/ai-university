@@ -1,0 +1,63 @@
+Kernel and null space
+Input changes invisible to the output
+The null space contains all input directions that the matrix sends to zero.
+Inputs with the same output differ by a null-space vector. These indistinguishable directions locate the information loss.
+Find a basis for the null space
+Test injectivity using the kernel
+How do you find a basis?
+Eliminate to solve $Ax=0$. Set one free variable to one and the others to zero in turn. The resulting special solutions form a null-space basis.
+Where does the kernel live?
+The kernel of an $m\times n$ matrix belongs to input space $\mathbb R^n$, not the output space.
+How is the kernel related to injectivity?
+A map is one-to-one exactly when its kernel contains only zero. If $Ax=Ay$, then $A(x-y)=0$.
+Kernel and null space
+\ker A=\{x\in\mathbb R^n:Ax=0\},\qquad A\text{ is one-to-one}\iff\ker A=\{0\}
+The matrix represents a linear map; its null space is automatically a subspace of the input space.
+Subtract equal outputs.
+A zero kernel forces equal inputs.
+A nonzero kernel vector gives distinct inputs with the same output.
+Find the kernel from free variables
+Find the kernel of $A=\begin{pmatrix}1&2&0\\0&0&1\end{pmatrix}$.
+$x+2y=0,z=0$.
+Set $y=t$ to get $(-2t,t,0)$.
+$\ker A=\operatorname{span}((-2,1,0))$.
+A collapsing map
+Is $T(x,y,z)=(x,y)$ one-to-one?
+$T(0,0,1)=0$.
+Different heights produce the same output.
+Not one-to-one; the kernel is the vertical axis.
+The null space contains only zero.
+The name describes zero output; inputs may be nonzero.
+Every kernel vector has zero length.
+The output disappears, not the input length.
+Find the kernel of $A=(1\ 1)$.
+Set the sum of the coordinates to zero.
+$(x,y)=t(1,-1)$.
+$\operatorname{span}((1,-1))$.
+What nullity does an invertible matrix have?
+An invertible map never merges inputs.
+The kernel is just zero; its basis is empty.
+If $Ax=b$ has two distinct solutions, is the kernel nonzero?
+Subtract the two solutions.
+Their nonzero difference belongs to the kernel.
+Nonzero.
+Do row operations change the null space?
+Multiply on the left by an invertible elimination matrix.
+$EAx=0\iff Ax=0$.
+No change.
+The kernel direction of $A=\begin{pmatrix}1&c\\0&0\end{pmatrix}$ is $(-c,1)$. Move the gold input along it; the output remains zero.
+Along which input direction does the output stay fixed?
+If $A$ has $5$ columns, how many components does a kernel vector have?
+The row count decides
+Only one is needed
+The kernel lies in the input space, whose ambient dimension is the column count.
+The null space describes invisible input changes. A larger null space allows more inputs to share one output.
+A nonzero kernel vector
+Set $c=1,t=1$.
+Input $(-1,1)$ maps to zero.
+Change its length
+Keep $c=1$ and set $t=2$.
+Input $(-2,2)$ still maps to zero.
+Change the lost direction
+Set $c=0,t=1$.
+The kernel becomes the vertical axis; input $(0,1)$ maps to zero.

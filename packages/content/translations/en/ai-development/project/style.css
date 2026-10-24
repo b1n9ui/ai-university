@@ -1,0 +1,107 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: #f3f5ef;
+  color: #24312b;
+  font:
+    17px/1.65 system-ui,
+    sans-serif;
+}
+main {
+  max-width: 700px;
+  margin: 7vh auto;
+  padding: 28px;
+}
+.eyebrow {
+  color: #527260;
+  font-size: 14px;
+}
+h1 {
+  font-size: clamp(30px, 7vw, 45px);
+  line-height: 1.2;
+}
+label {
+  display: block;
+  margin: 14px 0 6px;
+}
+.input-row {
+  display: flex;
+  gap: 10px;
+}
+input:not([type="file"]) {
+  flex: 1;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #8a9d90;
+  border-radius: 7px;
+  font: inherit;
+}
+button {
+  padding: 10px 15px;
+  border: 1px solid #40614d;
+  border-radius: 7px;
+  background: #24523a;
+  color: white;
+  font: inherit;
+  cursor: pointer;
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+button:focus-visible,
+input:focus-visible,
+summary:focus-visible {
+  outline: 3px solid #bc662b;
+  outline-offset: 3px;
+}
+ul {
+  padding: 0;
+}
+li {
+  list-style: none;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  border-bottom: 1px solid #d4ddd4;
+  padding: 14px 0;
+}
+li span {
+  flex: 1;
+  overflow-wrap: anywhere;
+}
+.done {
+  text-decoration: line-through;
+  color: #677369;
+}
+li button {
+  font-size: 14px;
+  background: white;
+  color: #354d3e;
+}
+details {
+  margin-top: 30px;
+  padding: 16px;
+  background: white;
+  border-radius: 10px;
+}
+summary {
+  cursor: pointer;
+}
+#status {
+  min-height: 1.6em;
+  color: #853b18;
+}
+input[type="file"] {
+  max-width: 100%;
+}
+@media (max-width: 400px) {
+  main {
+    padding: 18px;
+  }
+  .input-row {
+    flex-direction: column;
+  }
+}

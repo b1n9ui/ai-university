@@ -1,0 +1,227 @@
+{
+  "id": "tuples-sets",
+  "chapterId": "chapter-3",
+  "number": "3.3",
+  "title": "Tuples and sets: records and distinct values",
+  "subtitle": "Use a tuple for a fixed record and a set when you care which values occur.",
+  "concept": "Use a tuple for a fixed record and a set when you care which values occur.",
+  "intuition": "A location is a pair of coordinates. A record of cities visited need not list the same city twice.",
+  "objectives": [
+    "Group a fixed pair of values",
+    "Keep each distinct value once",
+    "Choose a container for the task"
+  ],
+  "body": [
+    {
+      "title": "Group a fixed pair of values",
+      "text": "point = (3, 4) creates a tuple using parentheses. As with a list, point[0] gives 3 and point[1] gives 4, but tuple positions cannot be reassigned. A tuple suits a fixed record such as coordinates. Here we use pairs; a one-item tuple needs a comma: (3,)."
+    },
+    {
+      "title": "Keep each distinct value once",
+      "text": "cities = {\"Beijing\", \"Shanghai\", \"Beijing\"} is a set. It keeps each distinct value once, so len(cities) is 2. With no colons, these are not dictionary key-value pairs. An empty set is set(); {} is an empty dictionary."
+    },
+    {
+      "title": "Choose a container for the task",
+      "text": "\"Beijing\" in cities tests membership. A set has no first or second position and promises no display order. Use sorted(cities) for a consistently ordered list. Choose a list for order and duplicates, a dictionary for key-value lookup, a tuple for a fixed record, and a set for distinct values and membership."
+    }
+  ],
+  "formalDefinition": {
+    "text": "Tuple positions cannot be reassigned. A set keeps distinct values, and in tests membership.",
+    "conditions": [
+      "Set elements must be hashable. This lesson uses only numbers and strings.",
+      "Sets do not support positional indexing or guarantee display order."
+    ]
+  },
+  "derivation": [
+    {
+      "text": "Parentheses group 3 and 4."
+    },
+    {
+      "text": "Indices 0 and 1 retrieve the two coordinates."
+    },
+    {
+      "text": "Compare the expected output with your prediction."
+    }
+  ],
+  "interactiveVisual": {
+    "kind": "python-trace",
+    "prediction": "How many times does the repeated 1 count?",
+    "caption": "Choose an input and predict the result, then select Next step. The arrow marks the next statement to execute; the side panel shows current variables and output produced so far.",
+    "experiment": {
+      "code": "values = [1, 1, 2]\nunique = set(values)\nprint(len(unique))\nprint(2 in unique)\n",
+      "stdout": "2\nTrue\n",
+      "stdin": ""
+    },
+    "followUp": "Compare an empty list with one containing duplicates. The set card uses a stable display order for inspection.",
+    "codeTemplate": "values = {{values}}\nunique = set(values)\nprint(len(unique))\nprint(2 in unique)\n",
+    "controls": [
+      {
+        "name": "values",
+        "label": "Original values",
+        "values": [
+          [
+            1,
+            1,
+            2
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          []
+        ],
+        "defaultIndex": 0
+      }
+    ],
+    "watch": [
+      "values",
+      "unique"
+    ]
+  },
+  "workedExamples": [
+    {
+      "title": "Read coordinates",
+      "problem": "Retrieve both numbers from a coordinate pair.",
+      "steps": [
+        "Parentheses group 3 and 4.",
+        "Indices 0 and 1 retrieve the two coordinates."
+      ],
+      "answer": {
+        "code": "point = (3, 4)\nprint(point[0])\nprint(point[1])\n",
+        "stdout": "3\n4\n",
+        "stdin": ""
+      }
+    },
+    {
+      "title": "Count distinct cities",
+      "problem": "How many distinct cities are in Beijing, Shanghai, Beijing?",
+      "steps": [
+        "A set retains distinct values automatically.",
+        "Beijing occurs twice but counts once."
+      ],
+      "answer": {
+        "code": "cities = {\"Beijing\", \"Shanghai\", \"Beijing\"}\nprint(len(cities))\nprint(\"Beijing\" in cities)\n",
+        "stdout": "2\nTrue\n",
+        "stdin": ""
+      }
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "tuples-sets-m1",
+      "claim": "A set keeps every repeated occurrence.",
+      "correction": "A set keeps distinct values. Use a list to preserve duplicates."
+    },
+    {
+      "id": "tuples-sets-m2",
+      "claim": "{} is an empty set.",
+      "correction": "{} is an empty dictionary. Use set() for an empty set."
+    }
+  ],
+  "practice": [
+    {
+      "problem": "What is the second item of (5, 8)?",
+      "hint": "Its index is 1.",
+      "solution": [
+        "Read point[1]."
+      ],
+      "answer": {
+        "code": "point = (5, 8)\nprint(point[1])\n",
+        "stdout": "8\n",
+        "stdin": ""
+      },
+      "id": "tuples-sets-p1",
+      "difficulty": 1,
+      "misconceptionTags": [
+        "tuples-sets-m1"
+      ]
+    },
+    {
+      "problem": "How many values remain after converting [1, 1, 2] to a set?",
+      "hint": "set converts the list to a set.",
+      "solution": [
+        "The repeated 1 remains only once."
+      ],
+      "answer": {
+        "code": "values = set([1, 1, 2])\nprint(len(values))\n",
+        "stdout": "2\n",
+        "stdin": ""
+      },
+      "id": "tuples-sets-p2",
+      "difficulty": 1,
+      "misconceptionTags": [
+        "tuples-sets-m2"
+      ]
+    },
+    {
+      "problem": "Test whether 3 belongs to {1, 2}.",
+      "hint": "Use in.",
+      "solution": [
+        "3 is absent, so the result is False."
+      ],
+      "answer": {
+        "code": "values = {1, 2}\nprint(3 in values)\n",
+        "stdout": "False\n",
+        "stdin": ""
+      },
+      "id": "tuples-sets-p3",
+      "difficulty": 1,
+      "misconceptionTags": [
+        "tuples-sets-m1"
+      ]
+    },
+    {
+      "problem": "Create an empty set and print its length.",
+      "hint": "Do not use {}.",
+      "solution": [
+        "set() creates an empty set.",
+        "Its length is 0."
+      ],
+      "answer": {
+        "code": "values = set()\nprint(len(values))\n",
+        "stdout": "0\n",
+        "stdin": ""
+      },
+      "id": "tuples-sets-p4",
+      "difficulty": 1,
+      "misconceptionTags": [
+        "tuples-sets-m2"
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "Which container preserves a shopping list's order and duplicates?",
+    "correctIndex": 1,
+    "choices": [
+      "A set",
+      "A list",
+      "Read a set's first item at index 0"
+    ],
+    "explanation": "Choose the container for the need: a list preserves order and duplicates.",
+    "feedback": [
+      "Sets remove duplicates and have no list-style positions.",
+      "Yes. Lists preserve order and duplicates.",
+      "A set has no first item available at index 0."
+    ]
+  },
+  "prerequisites": [
+    "dictionaries"
+  ],
+  "difficulty": 3,
+  "misconceptionTags": [
+    "tuples-sets-m1",
+    "tuples-sets-m2"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.2.1",
+    "status": "revised",
+    "humanReviewed": false
+  },
+  "sources": [
+    "python-tutorial",
+    "python-data"
+  ],
+  "furtherReading": []
+}

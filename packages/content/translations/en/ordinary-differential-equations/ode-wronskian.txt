@@ -1,0 +1,64 @@
+Wronskians and Abel's formula
+Is the initial-data matrix invertible?
+How is it defined?
+In second order, use $W=y_1y_2'-y_2y_1'$: the determinant of the previous lesson's initial-data matrix.
+Why can one point suffice?
+Two solutions of the same standard homogeneous linear equation satisfy Abel's formula. On a continuous-coefficient interval, their Wronskian is either always zero or never zero.
+Do not extend this test to arbitrary functions
+For arbitrary differentiable functions, an identically zero Wronskian need not imply dependence. This equivalence uses solutions of the same linear equation.
+Differentiate the determinant.
+Eliminate second derivatives using the equation.
+Solve the resulting first-order equation.
+Sine and cosine
+Calculate $W(\cos t,\sin t)$.
+Substitute $y_1'=-\sin t,y_2'=\cos t$.
+This gives $\cos^2t+\sin^2t$.
+$W=1$, so the solutions are independent.
+An exponential pair
+Calculate $W(e^t,e^{2t})$.
+Their derivatives are $e^t,2e^{2t}$.
+Subtraction gives $2e^{3t}-e^{3t}$.
+$W=e^{3t}\ne0$.
+What is $W(1,t)$?
+Substitute derivatives zero and one.
+$1\times1-t\times0=1$.
+$1$.
+What is $W(e^t,3e^t)$?
+The two columns are proportional.
+$3e^{2t}-3e^{2t}=0$.
+$0$.
+If the standard equation has $p=2$ and $W(0)=4$, find the Wronskian.
+Apply Abel's formula.
+Integrating the coefficient gives $2t$.
+$W=4e^{-2t}$.
+Can the Wronskian of two solutions of the same continuous-coefficient second-order equation cross zero from positive to negative?
+Its exponential factor is strictly positive.
+The initial Wronskian fixes its sign.
+No.
+A zero Wronskian proves any functions dependent.
+Additional hypotheses are needed; this test concerns solutions of the same linear equation.
+A small Wronskian equals zero.
+Distinguish numerical closeness from exact zero.
+The Wronskian combines values and derivatives in a determinant. For solutions of one linear equation, it tests independent matching of initial data.
+If two solutions supply only one direction of initial position and velocity, one degree of freedom is missing.
+Calculate Wronskians
+State when the independence criterion applies
+Wronskians and Abel's formula
+$y_1,y_2$ both solve $y''+py'+qy=0$, with $p,q$ continuous on the same interval.
+Can Abel's exponential factor become zero?
+Always in finite time
+No, while the coefficient integral is finite
+It depends on the initial sign
+A real exponential is strictly positive.
+A Wronskian checks independent initial-data variation, rather than whether two curves look similar.
+Starting point
+The initial-data matrix is the identity.
+Set observation time $t$ to $0$.
+Quarter-turn
+Values and derivatives exchange roles; the determinant stays one.
+Set observation time $t$ to $1.57079633$.
+Half-turn
+Both columns reverse while remaining independent.
+Set observation time $t$ to $3.14159265$.
+Compare the two fundamental solutions and their current data vectors. The Wronskian remains one at every time.
+Can the Wronskian become zero while both fundamental solutions vary?

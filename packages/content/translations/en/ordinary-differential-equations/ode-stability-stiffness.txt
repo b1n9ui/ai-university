@@ -1,0 +1,62 @@
+Absolute stability and stiffness
+Exact decay can become numerical growth
+The test equation
+For $y'=\lambda y$, an update has form $y_{n+1}=R(h\lambda)y_n$. Decay requires an amplification-factor magnitude below one.
+Euler's restriction
+Explicit Euler has $R(z)=1+z$. Its negative-real stability interval is $-2<h\lambda<0$. Boundary magnitudes equal one and do not reproduce decay.
+What is stiffness?
+Rapidly decaying modes can force explicit steps far smaller than slow-process accuracy requires. Implicit Euler's negative-real-axis stability removes this restriction, but accuracy still needs control.
+Apply explicit Euler to the test equation.
+On negative real roots, keep the factor strictly between minus one and one.
+Implicit Euler evaluates the right side at the new state.
+Spurious growth
+Apply explicit Euler to $y'=-10y$ with step $0.3$.
+Its factor is $1-3=-2$.
+Magnitude exceeds one, producing alternating growth.
+Numerically unstable despite exact decay.
+Implicit decay
+Apply implicit Euler to the same problem.
+Its factor is $1/(1+3)=1/4$.
+Each step decays, though not necessarily accurately.
+Stable, with factor $1/4$.
+For $\lambda=-4$, which positive steps make explicit Euler stable?
+Solve $-2<-4h<0$.
+This gives $0<h<1/2$.
+$(0,1/2)$.
+Does boundary choice $h\lambda=-2$ reproduce decay?
+Its factor is minus one.
+Magnitude stays fixed while signs alternate.
+No.
+Does stability mean the error is small enough?
+A large implicit step can still be inaccurate.
+Stability controls amplification, not exact tracking.
+No.
+Why do stiff fast modes affect slow-process computation?
+Explicit stability is limited by the largest negative-root magnitude.
+Even a rapidly disappearing mode can constrain every step.
+Stability demands a smaller step.
+A stable exact solution makes every discretization stable.
+Discrete amplification factors differ.
+A stable implicit method needs no error check.
+Control stability and accuracy separately.
+Numerical methods have their own dynamics. Excessive steps can make a decaying problem oscillate or explode numerically.
+Exact stability does not guarantee discrete stability.
+Analyze amplification with a test equation
+Explain stiffness-induced step restrictions
+Absolute stability and stiffness
+Use $\operatorname{Re}\lambda<0$ for the test equation. A stability region describes a method, not unconditional correctness for every nonlinear problem.
+What is explicit Euler's stability condition on the negative-real test equation?
+$h\lambda<0$ alone is sufficient
+Magnitude below one restricts the allowed step.
+Inspect each step's error amplification before interpreting a numerical curve.
+Explicitly stable
+The explicit factor is zero point two, giving decay.
+Set negative rate $\lambda$ to $-4$, step size $h$ to $0.2$, and step count $N$ to $8$.
+Boundary
+The explicit factor is minus one: alternating signs without amplitude decay.
+Set negative rate $\lambda$ to $-4$, step size $h$ to $0.5$, and step count $N$ to $8$.
+Explicitly unstable
+The explicit factor exceeds one in magnitude while the implicit factor still decays.
+Set negative rate $\lambda$ to $-4$, step size $h$ to $0.8$, and step count $N$ to $8$.
+The exact solution decays; each Euler curve follows its own amplification factor. Excessive numerical states stop being drawn with an explicit explanation.
+Can explicit Euler keep growing even when the exact solution decays?

@@ -1,0 +1,67 @@
+Open sets, closed sets, and relative topology
+Every point of an open set has a neighborhood inside it. A closed set contains all its limit points.
+Every point of an open set has a neighborhood inside it. A closed set contains all its limit points.
+Open and closed are not opposite labels: a set may be both or neither.
+Define openness by neighborhoods
+Define closedness by complements
+Define openness by neighborhoods
+A real subset is open when every member has a positive-radius interval inside it. Both the empty set and the whole line are open.
+Define closedness by complements
+A set is closed if its complement is open. Finite intersections and arbitrary unions of open sets are open; infinite intersections may fail. Complements and De Morgan's laws give the dual closed-set rules.
+Specify the ambient space
+A relatively open subset of a closed interval is the intersection of a real open set with that interval. At an endpoint, only points within the domain matter.
+The ambient space is the real line unless stated otherwise.
+U\text{ open}\iff\forall x\in U\ \exists r>0:\ (x-r,x+r)\subseteq U
+Relative openness and closedness require a specified ambient set.
+A point in two open sets has a radius in each.
+Take the smaller radius.
+Its neighborhood lies in both sets.
+An infinite intersection loses openness
+What is $\bigcap_{n\ge1}(-1/n,1/n)$? Is it open?
+Only zero belongs to every interval.
+Every positive-radius neighborhood of zero contains nonzero points.
+A singleton: closed but not open.
+Relative openness
+Is $[0,1/2)$ relatively open in $[0,1]$?
+It equals $(-1,1/2)\cap[0,1]$.
+At zero, check only the direction within the interval.
+Relatively open, but not open in the real line.
+Is the empty set both open and closed?
+Check the pointwise condition and its complement.
+There are no members to check; its complement, the real line, is open.
+Yes.
+Is an arbitrary union of open sets open?
+A union member lies in at least one of the open sets.
+Use that set's neighborhood.
+Yes.
+Is a finite union of closed sets closed?
+Its complement is a finite intersection of open sets.
+The complement is open, so the union is closed.
+Yes.
+Prove an arbitrary union of open sets is open.
+For a union member, find one containing open set.
+If $x\in\bigcup_{\alpha}U_\alpha$, choose an index with $x\in U_{\alpha_0}$.
+Openness gives $r>0$ with $(x-r,x+r)\subseteq U_{\alpha_0}$.
+This neighborhood also lies in the whole union. Every union member therefore has an interior neighborhood, proving openness.
+This neighborhood also lies in the whole union. Every union member therefore has an interior neighborhood, proving openness.
+Does “not closed” mean “open”?
+Yes
+No
+Only on the real line
+A half-open interval is neither.
+Open and closed are complementary labels
+The complement of a closed set is open; a nonclosed set need not itself be open.
+Relative openness needs no ambient space
+Relative properties depend on the chosen space.
+Move the center toward an endpoint. Can a neighborhood stay wholly inside the set?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+A set may be open, closed, both, or neither. Closedness means its complement is open, not that every nonclosed set is open.
+Current input: -0.2
+Set the input to $-0.2$. Check membership of the center and containment of the whole open neighborhood.
+Center belongs: no; whole current neighborhood contained: no.
+Current input: 0.5
+Set the input to $0.5$. Check membership of the center and containment of the whole open neighborhood.
+Center belongs: yes; whole current neighborhood contained: yes.
+Current input: 1.2
+Set the input to $1.2$. Check membership of the center and containment of the whole open neighborhood.
+Center belongs: no; whole current neighborhood contained: no.

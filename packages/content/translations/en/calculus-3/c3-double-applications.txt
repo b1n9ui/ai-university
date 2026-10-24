@@ -1,0 +1,63 @@
+Density, centers of mass and inertia
+Define each patch's contribution first
+Density times area gives mass; multiplying by position gives first moment; multiplying by squared axis distance gives moment of inertia.
+Equal-area patches may have different mass. Equal masses farther from an axis resist rotation more, so distance is squared.
+Model mass and center of mass from density
+Set up inertia about a specified axis
+Is center of mass an ordinary coordinate average?
+It is a mass-weighted average. Geometric symmetry identifies it directly only when the mass distribution has that symmetry.
+Which axis defines inertia?
+About the first axis use the second coordinate squared; about the second use the first squared; about the perpendicular origin axis use their sum.
+Connection to probability
+A nonnegative density integrating to one can be a probability density. Region probabilities and expectations use the same weighted integrals.
+Define each patch's contribution first
+Density is nonnegative and integrable. Center of mass needs finite positive mass; inertia needs finite corresponding second moments. Use consistent length units.
+Local density determines patch mass.
+Divide weighted positions by total mass.
+Squared distance to the vertical axis determines inertia.
+A nonuniform lamina
+On the unit square with density $\sigma=2x$, find mass and center of mass.
+Mass is $\int_0^1\int_0^12x\,dy\,dx=1$.
+First-coordinate moment is $2/3$; second-coordinate moment is $1/2$. Divide by mass.
+$M=1,(\bar x,\bar y)=(\frac23,\frac12)$.
+Disk inertia
+A radius-2 disk has uniform area density 3. Find inertia about its central perpendicular axis.
+Polar coordinates give $I_z=3\int_0^{2\pi}\int_0^2r^3drd\theta=24\pi$.
+Mass is $12\pi$; the inertia also equals $\frac12MR^2$.
+$24\pi$, with units mass times length squared.
+Center of mass is always the geometric center.
+Uneven density shifts it toward heavier material.
+Every moment of inertia uses the same distance.
+Use perpendicular distance to the specified rotation axis.
+Find the mass of the unit square at uniform density 4.
+Multiply constant density by area.
+Area 1 gives mass 4.
+Find inertia about the first axis of a unit square at density one.
+Distance to that axis is absolute second coordinate.
+$\int_0^1\int_0^1y^2dy\,dx=1/3$.
+$\frac13$.
+If all density is multiplied by 5, does the center of mass change?
+Cancel the common numerator and denominator factor.
+Mass and first moments all multiply by 5, leaving ratios unchanged.
+Unchanged.
+What must a valid probability density satisfy?
+Consider sign and total amount.
+It is nonnegative and integrates to one over the full sample region.
+Nonnegative, with total integral 1.
+Doubling all density changes the center of mass how?
+Move right
+Unchanged
+It doubles
+Weighted totals and total mass scale equally.
+Unit-square density $\sigma=1+cx$; column heights show density and the bright point marks its mass-weighted center.
+As density on the right increases, where does the center move?
+Center of mass averages positions by mass; inertia totals squared axis distances by mass.
+Uniform density
+Set density-variation coefficient $c$ to $0$.
+The center of mass is at the square's center.
+Slightly heavier on the right
+Set density-variation coefficient $c$ to $1$.
+Density $1+x$ shifts the center rightward.
+Heavier on the right
+Set density-variation coefficient $c$ to $3$.
+With density $1+3x$, the first center coordinate moves farther right; the second stays fixed.

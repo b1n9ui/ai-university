@@ -1,0 +1,66 @@
+Permutations and combinations
+Use permutations when order matters; combinations when only membership matters.
+Use permutations when order matters; combinations when only membership matters.
+Combinations identify every ordering of the same selected group as a single choice.
+Count decreasing choices
+Remove repeated representations
+Count decreasing choices
+Selecting ordered objects without replacement reduces the available count by one each time. A full permutation orders every object.
+Remove repeated representations
+Each fixed subset has exactly its size factorial orderings. Divide the permutation count by this uniform multiplicity to count combinations.
+Handle boundary cases
+Choosing zero objects gives one empty choice. This book sets the binomial coefficient to zero when more objects are requested than available; use the factorial formula only in its valid range.
+Objects are distinguishable and selection is without replacement.
+The integers satisfy zero at most the selected count at most the total count.
+Combinations disregard internal order.
+Successive choices give an ordered list.
+Every subset corresponds to the same number of permutations.
+\text{multiplicity per subset}=k!
+Divide out duplicate representations.
+Representatives versus offices
+From five people, count pairs of representatives and choices of president and vice president.
+Representatives are unordered: $\binom52=10$.
+Distinct offices are ordered: $5\cdot4=20$.
+Ten and twenty.
+The empty choice
+How many ways are there to choose zero people from five?
+Selecting nobody gives the empty set.
+There is only one such result.
+One.
+How many ways can three representatives be chosen from six people?
+Use the combination formula.
+$6\cdot5\cdot4/(3\cdot2)=20$.
+Twenty.
+How many ways can four distinct books be arranged in a row?
+Count full permutations.
+$4!=24$.
+Twenty-four.
+Can the decreasing-product rule be used when characters may repeat?
+Do later choice counts decrease?
+With replacement, every stage retains the original number of options.
+Not directly.
+What is $\binom n1$?
+Choose just one element.
+Each element corresponds to one singleton subset.
+$n$.
+Must the order of two interchangeable representatives be distinguished?
+Yes
+No
+It depends on alphabetical order
+Each pair is a subset counted once.
+Combinations distinguish order too
+Distinct roles require permutations instead.
+Dividing by any factorial removes repetition
+First prove every object has the same multiplicity.
+Change the group and selection sizes. How do the listed subsets correspond to the permutation count?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+Distinct roles require permutations instead.
+Total objects: 1
+Set the control to $1$. Observe which objects, relations, or counts change.
+At this setting: actual selected count $1$; combinations $1$; permutations $1$.
+Total objects: 4
+Set the control to $4$. Observe which objects, relations, or counts change.
+At this setting: actual selected count $2$; combinations $6$; permutations $12$.
+Total objects: 8
+Set the control to $8$. Observe which objects, relations, or counts change.
+At this setting: actual selected count $2$; combinations $28$; permutations $56$.

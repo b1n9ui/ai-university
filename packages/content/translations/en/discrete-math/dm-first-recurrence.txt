@@ -1,0 +1,65 @@
+Recurrences and first-order equations
+A recurrence defines the next term; an initial value selects the particular sequence.
+A recurrence defines the next term; an initial value selects the particular sequence.
+The same update rule can generate many sequences. Different starting values give different trajectories.
+Specify the indices
+Expand successive steps
+Specify the indices
+State whether indexing starts at zero or one and where the recurrence applies, avoiding a shift of the entire formula.
+Expand successive steps
+A first-order linear recurrence multiplies by a fixed coefficient and adds a constant. Expansion produces a geometric sum; alternatively subtract an equilibrium first.
+Check the solution
+A closed formula must satisfy both the initial value and the recurrence. Neither alone suffices. Induction proves that satisfying both determines a unique sequence.
+A first-order recurrence with fixed real coefficients can be expanded as a geometric sum.
+Indices start at zero.
+An empty geometric sum is zero.
+Expand the first two updates.
+Multiply the existing term by the coefficient, then add the constant.
+Handle coefficient one by a separate sum.
+Double and add one
+$a_0=0,a_{n+1}=2a_n+1$.
+Expansion gives $a_n=1+2+\cdots+2^{n-1}$.
+The geometric sum is $2^n-1$.
+$a_n=2^n-1$.
+An arithmetic special case
+For $a_0=3,a_{n+1}=a_n+4$, find the term with index five.
+The coefficient is one; each update adds four.
+$a_5=3+5\cdot4$.
+Twenty-three.
+Given $a_0=1,a_{n+1}=2a_n$, find $a_4$.
+Expand four times.
+$a_4=2^4=16$.
+Sixteen.
+Does a recurrence alone, without an initial value, determine a unique sequence?
+Compare different starting values.
+Different starting values generally give different solutions.
+No.
+Find the general term for $a_0=0,a_{n+1}=a_n+3$.
+Each step adds three.
+$a_n=3n$.
+$3n$.
+Is matching the first five terms enough to verify a formula?
+Substitute it back at an arbitrary index.
+Finite agreement does not rule out later differences.
+No.
+What else determines a unique sequence from a first-order recurrence?
+An appropriate initial value
+Enough plotted points
+A duplicate recurrence
+The initial value and each uniquely specified update determine all terms.
+Initial values do not affect recurrence solutions
+The initial value selects a particular sequence.
+The geometric-sum formula may divide by zero
+Use a separate form when the coefficient is one.
+Change the multiplier, added constant, and step count. How does the sequence unfold?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+The initial value selects a particular sequence.
+Steps executed: 0
+Set the control to $0$. Compare the current step with the complete reference result.
+At this setting: final term $0$.
+Steps executed: 5
+Set the control to $5$. Compare the current step with the complete reference result.
+At this setting: final term $31$.
+Steps executed: 10
+Set the control to $10$. Compare the current step with the complete reference result.
+At this setting: final term $1023$.

@@ -1,0 +1,68 @@
+Rooted trees, traversals, and prefix codes
+Choosing a root gives edges parent–child roles. A traversal specifies the visiting order.
+Choosing a root gives edges parent–child roles. A traversal specifies the visiting order.
+Preorder visits the parent first; postorder handles children first. The task determines the useful order.
+Specify child order
+Distinguish three traversals
+Specify child order
+A rooted tree specifies parent–child relations. A unique traversal sequence also needs an ordering of children. This lesson uses ordered binary trees with left and right positions.
+Distinguish three traversals
+Preorder is root–left–right, inorder left–root–right, and postorder left–right–root. Inorder here specifically concerns binary trees with designated left and right children.
+Understand prefix codes
+Place characters at leaves, labeling left edges zero and right edges one. No leaf's code prefixes another's, so bit-by-bit decoding is unique.
+In a prefix code, no codeword is a proper prefix of another.
+\text{leaf path codes}\implies\text{prefix-free}
+An ordered binary tree has fixed left and right child positions.
+Characters occupy distinct leaves of the coding tree.
+Suppose one code prefixes another leaf's code.
+Its vertex lies inside the other root-to-leaf path.
+u\text{ is an ancestor of }v\text{}
+A leaf cannot have descendants, giving a contradiction.
+u\text{ is a leaf}\implies\text{no proper descendants}
+Three-vertex traversals
+The root is A, its left child B, and its right child C. Give the three traversals.
+Preorder visits A, then B and C.
+Inorder is B, A, C; postorder is B, C, A.
+A–B–C; B–A–C; B–C–A.
+A prefix code?
+Can codewords $0,10,11$ be uniquely decoded bit by bit?
+None is a prefix of another.
+On reaching a leaf, output its symbol and return to the root.
+Yes.
+When does preorder visit the root?
+“Pre” means before its subtrees.
+Before either subtree is visited.
+First.
+Are codewords $0,01$ prefix-free?
+Check whether the first begins the second.
+Zero is a proper prefix of zero-one.
+No.
+Does a rooted tree without child ordering have a unique traversal sequence?
+Siblings can be exchanged.
+An extra ordering convention is needed.
+No.
+How many internal vertices does a full binary tree with eight leaves have?
+Use the structural-induction result.
+$I=L-1=7$.
+Seven.
+When does postorder visit the root?
+After all children
+First
+Between the left and right children
+Finish the subproblems before handling the root.
+Every rooted tree has a natural left-to-right order
+Such an order must be specified.
+Unique decodability is equivalent to prefix-freeness
+Prefix-freeness is sufficient, but not necessary, for unique decodability.
+Switch traversal orders and advance through the visited vertices.
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+Such an order must be specified.
+Steps executed: 0
+Set the control to $0$. Compare the current step with the complete reference result.
+At this setting: vertices visited $0$.
+Steps executed: 3
+Set the control to $3$. Compare the current step with the complete reference result.
+At this setting: vertices visited $3$.
+Steps executed: 7
+Set the control to $7$. Compare the current step with the complete reference result.
+At this setting: vertices visited $7$.

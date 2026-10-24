@@ -1,0 +1,68 @@
+Derivatives may be discontinuous but cannot skip values
+A derivative may oscillate discontinuously while still having the intermediate value property.
+A derivative may oscillate discontinuously while still having the intermediate value property.
+Slopes need not vary continuously, but cannot jump over every intermediate slope.
+Construct a discontinuous derivative
+Prove the derivative's intermediate value property
+Construct a discontinuous derivative
+Define zero at zero and elsewhere the square times the sine of the reciprocal. The quotient at zero vanishes, giving derivative zero, but nearby derivatives contain a nonvanishing reciprocal-cosine oscillation.
+Prove the derivative's intermediate value property
+Subtract a line with the target slope. If endpoint derivatives are negative and positive, neither endpoint can minimize the resulting continuous function. Its interior minimum has zero derivative.
+Distinguish intermediate values from continuity
+The intermediate value property allows discontinuity. Darboux excludes skipped-value jumps in derivatives, not every possible discontinuity.
+If a function is differentiable on an open interval containing two points, its derivative takes every value between its endpoint derivatives.
+The function is differentiable on an open interval containing the closed segment.
+Reversed ordering of the derivative values is handled similarly.
+Subtract the target slope.
+Endpoint derivative signs exclude endpoint minima.
+g(a+h)<g(a),\quad g(b-h)<g(b)\quad\text{for sufficiently small }h>0
+Continuity gives an interior minimum; differentiability makes its derivative zero.
+An oscillating derivative
+For $f(x)=x^2\sin(1/x)$ away from zero and zero at zero, find the derivative at zero.
+$f(h)/h=h\sin(1/h)$.
+Its magnitude is at most $|h|$, hence tends to zero.
+Zero, although nearby derivatives need not tend to zero.
+A step cannot be a derivative
+A function equals negative one on the left and one on the right, with one center value added. Could it be the derivative of an everywhere differentiable function?
+It skips many values between negative one and one.
+That violates the intermediate value property of derivatives.
+No.
+Must a differentiable function's derivative be continuous?
+Use the oscillating example.
+No.
+Not necessarily.
+Can a derivative have a jump discontinuity?
+Apply Darboux's theorem.
+A jump would skip intermediate values.
+No.
+Is the intermediate value property equivalent to continuity?
+Use the oscillating derivative.
+Intermediate values permit oscillatory discontinuities.
+No.
+Prove the function zero at zero and $x^2\sin(1/x)$ elsewhere is differentiable, with derivative discontinuous at zero.
+Compute the zero quotient, then inspect two derivative subsequences.
+The quotient at zero is $h\sin(1/h)$, bounded in magnitude by $|h|$, so $f'(0)=0$.
+For nonzero inputs, $f'(x)=2x\sin(1/x)-\cos(1/x)$.
+For $x_n=1/(2\pi n)$ the derivative is negative one; for $y_n=1/((2n+1)\pi)$ it is one. Both input sequences tend to zero, so the derivative is discontinuous.
+For $x_n=1/(2\pi n)$ the derivative is negative one; for $y_n=1/((2n+1)\pi)$ it is one. Both input sequences tend to zero, so the derivative is discontinuous.
+What does Darboux rule out for derivatives?
+Every discontinuity
+Skipping intermediate values
+Negative values
+Oscillatory discontinuity remains possible.
+Differentiable means continuously differentiable
+The latter is stronger.
+Intermediate values alone justify arbitrary limit exchanges
+Specific continuity or uniform control is still needed.
+Zoom near zero in the function and its slopes. Which settles while the other keeps oscillating?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+Derivatives cannot skip intermediate values, but may oscillate discontinuously. Continuous differentiability is stronger than differentiability.
+Zoom index: 1
+Set the zoom index to $1$. Compare shrinking function values with persistent derivative-subsequence oscillation near zero.
+Derivative at zero $0$; selected derivative subsequences: negative one and positive one.
+Zoom index: 25
+Set the zoom index to $25$. Compare shrinking function values with persistent derivative-subsequence oscillation near zero.
+Derivative at zero $0$; selected derivative subsequences: negative one and positive one.
+Zoom index: 50
+Set the zoom index to $50$. Compare shrinking function values with persistent derivative-subsequence oscillation near zero.
+Derivative at zero $0$; selected derivative subsequences: negative one and positive one.

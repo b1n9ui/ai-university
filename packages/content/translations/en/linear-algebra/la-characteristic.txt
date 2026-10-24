@@ -1,0 +1,63 @@
+Characteristic polynomials, trace, and determinant
+Find scaling values, then directions
+The characteristic polynomial finds all scalar shifts that make a matrix singular.
+Subtract the same scalar scaling from every direction. When a nonzero direction cancels completely, that scalar is an eigenvalue.
+Calculate characteristic polynomials
+Check roots using trace and determinant
+How do you find eigenvalues?
+Solve $\det(\lambda I-A)=0$, then solve $(A-\lambda I)v=0$ for each root. Roots themselves are not eigenvectors.
+What is algebraic multiplicity?
+It is the number of times a root repeats in the characteristic polynomial. It does not directly count independent eigenvectors.
+What does trace reveal?
+Over the complex numbers, counting algebraic multiplicity, eigenvalues sum to the trace and multiply to the determinant. Trace sums only diagonal entries.
+Characteristic polynomials, trace, and determinant
+Count eigenvalues over the complex numbers with algebraic multiplicities. Nonreal roots of a real matrix occur in conjugate pairs.
+A nonzero eigenvector exists exactly when the shifted matrix is singular.
+\lambda\text{ is an eigenvalue}\iff\det(\lambda I-A)=0
+The first two polynomial coefficients give the sum.
+The constant term gives the product.
+A symmetric two-by-two matrix
+Find the characteristic polynomial of $A=\begin{pmatrix}2&1\\1&2\end{pmatrix}$.
+$p=(\lambda-2)^2-1$.
+$p=(\lambda-3)(\lambda-1)$.
+The roots are $3,1$, their sum $4$, and product $3$.
+A triangular matrix
+Find the eigenvalues of $A=\begin{pmatrix}2&7&0\\0&-1&4\\0&0&2\end{pmatrix}$.
+The characteristic matrix is triangular; multiply diagonal entries.
+$p=(\lambda-2)^2(\lambda+1)$.
+$2$ has algebraic multiplicity $2$, and $-1$ has multiplicity $1$.
+Equal traces imply identical eigenvalues.
+Trace gives only one constraint on their sum.
+A repeated root guarantees that many independent eigenvectors.
+Compute the eigenspace dimension separately.
+What is $\operatorname{tr}\begin{pmatrix}1&4\\2&3\end{pmatrix}$?
+Sum only diagonal entries.
+$1+3=4$.
+A two-by-two matrix has eigenvalues $2,5$. Find its determinant.
+Multiply with multiplicities.
+$2\cdot5=10$.
+Find the characteristic polynomial of $\begin{pmatrix}1&9\\0&1\end{pmatrix}$.
+Multiply the triangular diagonal entries.
+$(\lambda-1)^2$.
+$(\lambda-1)^2$.
+After finding a root, how do you find eigenvectors?
+Return to the homogeneous system.
+Find nonzero vectors in $\ker(A-\lambda I)$.
+Solve the corresponding homogeneous equation.
+$A=\begin{pmatrix}2&c\\c&2\end{pmatrix}$. Blue is the unit input; gold is its output. They are collinear on eigendirections.
+How do eigenvalue sum and product compare with trace and determinant?
+What are the roots of the characteristic polynomial?
+Every matrix entry
+Eigenvalues
+Eigenvector coordinates
+Roots are scalars; vectors require a separate homogeneous solve.
+The characteristic equation finds possible scalings; the homogeneous systems find directions realizing them. Keep these two steps separate.
+First eigendirection
+Set $c=1,\theta=\pi/4$.
+Output length is three in the same direction, giving eigenvalue three.
+Second eigendirection
+Set $c=1,\theta=3\pi/4$.
+Output length is one, giving eigenvalue one; the directions are perpendicular.
+Repeated eigenvalue without missing directions
+Set $c=0$.
+The matrix is $2I$; every nonzero direction is an eigendirection.

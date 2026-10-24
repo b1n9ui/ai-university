@@ -1,0 +1,69 @@
+The derivative of an accumulation integral
+At a continuity point of the integrand, local averages approach its value, giving the accumulation function that derivative.
+At a continuity point of the integrand, local averages approach its value, giving the accumulation function that derivative.
+A short integral divided by its length is a local average. Continuity makes every value in that short segment close to the center value.
+Define accumulation first
+Control the difference quotient
+Define accumulation first
+A bounded integrable function is integrable on each subinterval, defining its integral from a fixed endpoint to a variable one. The appendix proves additivity and the absolute integral bound.
+Control the difference quotient
+Subtract the center integrand value from the accumulation quotient. Its magnitude is at most the largest deviation over the small segment. Continuity at the center makes this vanish.
+Continuity is a local hypothesis
+An integrand need not be continuous everywhere to define accumulation. The derivative conclusion is guaranteed at continuous interior points; a jump can create a corner in accumulation.
+If an integrable function is continuous at an interior point, its accumulation integral is differentiable there.
+F(x)=\int_a^x f(t)\,dt,\quad f\text{ continuous at }c\text{}\implies F'(c)=f(c)
+The integrand is bounded and Riemann integrable on the whole closed interval.
+The point is interior; endpoints admit one-sided versions.
+Use integral additivity to express the quotient.
+Subtract the average of the center value.
+Continuity makes every error over the short segment small.
+\left|\frac1h\int_c^{c+h}[f(t)-f(c)]\,dt\right|\le\sup_{t\text{ in the segment}}|f(t)-f(c)|\to0
+Linear accumulation
+For $f(t)=t$ accumulated from zero, what is the derivative?
+$F(x)=x^2/2$.
+The derivative is $x$, the integrand value.
+$F'(x)=x$.
+Accumulating a step
+If the integrand jumps from zero to one at one half, is accumulation differentiable there?
+On the left, accumulation is constant zero, with slope zero.
+On the right it grows linearly, with slope one.
+Not at that point.
+Does continuity only at the point suffice for this local conclusion?
+Global integrability is still needed.
+Integrability plus continuity at that point suffices.
+Yes.
+Is the accumulation of a bounded integrable function always continuous?
+Use the absolute integral bound.
+$|F(y)-F(x)|\le M|y-x|$.
+Yes; it is even Lipschitz.
+Does differentiable accumulation imply the integrand is continuous everywhere?
+This theorem makes no such converse claim.
+Changing one value preserves the integral but may destroy continuity.
+It does not follow.
+Suppose $|f|\le M$ and $f$ is integrable on $[a,b]$. Prove $F(x)=\int_a^x f$ is Lipschitz continuous.
+Use additivity and the absolute bound, without pointwise continuity everywhere.
+For $x<y$, additivity gives $F(y)-F(x)=\int_x^y f(t)\,dt$.
+Since $-M\le f\le M$, $|F(y)-F(x)|\le M(y-x)$.
+Interchanging the inputs gives $|F(y)-F(x)|\le M|y-x|$, so $F$ is uniformly continuous.
+Interchanging the inputs gives $|F(y)-F(x)|\le M|y-x|$, so $F$ is uniformly continuous.
+Why does the accumulation quotient approach the center value?
+Continuity uniformly shrinks the local average error
+There are many sample points
+Integrals are always positive
+Every value in the short segment must be near the center value.
+Integrability guarantees the derivative identity everywhere
+It may fail at jumps.
+Continuous accumulation requires a continuous integrand everywhere
+Bounded integrability already gives a Lipschitz bound.
+Shrink the segment. How does the average approach the center value, and why do jumps differ?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+A local integral divided by length is an average. Continuity controls all nearby values; at jumps the derivative conclusion may fail.
+Increment magnitude: 0.4
+Set the increment magnitude to $0.4$. Compare local average and center value; switch approach directions at a jump.
+Quotient / local average $0.8$; center integrand value $0.6$; derivative guaranteed at center: yes.
+Increment magnitude: 0.2001
+Set the increment magnitude to $0.2001$. Compare local average and center value; switch approach directions at a jump.
+Quotient / local average $0.70005$; center integrand value $0.6$; derivative guaranteed at center: yes.
+Increment magnitude: 0.0001
+Set the increment magnitude to $0.0001$. Compare local average and center value; switch approach directions at a jump.
+Quotient / local average $0.60005$; center integrand value $0.6$; derivative guaranteed at center: yes.

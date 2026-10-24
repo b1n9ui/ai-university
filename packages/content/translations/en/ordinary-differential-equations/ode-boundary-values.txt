@@ -1,0 +1,64 @@
+Boundary conditions and eigenvalue problems
+Two endpoints differ from one initial point
+Why does uniqueness change?
+The second-order initial-value theorem fixes position and velocity at one time. It does not directly apply to function values at two endpoints.
+A counterexample
+$y''+y=0,y(0)=y(\pi)=0$ permits any multiple of sine, so infinitely many solutions exist.
+How do eigenparameters arise?
+For $-y''=\lambda y$, zero endpoint values select allowed frequencies and discrete eigenvalues. This leads into PDE separation of variables later.
+For a positive parameter, write sine-cosine solutions.
+The left condition removes cosine; the right restricts frequency.
+A nonzero solution requires the sine factor to vanish. Zero and negative parameters give only zero solutions.
+An interval of length one
+Find the smallest eigenvalue of $-y''=\lambda y,y(0)=y(1)=0$.
+A nonzero solution requires $\sqrt\lambda=n\pi$.
+The smallest positive integer is one.
+$\lambda_1=\pi^2$.
+Incompatible boundary data
+Does $y''+y=0,y(0)=0,y(\pi)=1$ have a solution?
+The left condition forces the form $D\sin t$.
+Every such solution is zero at the right endpoint.
+No solution.
+Solve $y''=0,y(0)=1,y(2)=3$.
+Write an affine function.
+Its intercept and slope are both one.
+$y=1+t$.
+Why exclude the zero function in an eigenvalue problem?
+Zero satisfies every parameter value.
+Allowing it would select no parameter.
+Eigenfunctions are nonzero by definition.
+If interval length doubles, by what factor does the smallest Dirichlet eigenvalue change?
+Eigenvalues scale inversely with length squared.
+$(L/(2L))^2=1/4$.
+$1/4$.
+With zero endpoints, does $\lambda=0$ have a nonzero eigenfunction?
+Apply the conditions to an affine solution.
+Both coefficients must vanish.
+No.
+Any two conditions make a second-order problem unique.
+Their locations and structure matter too.
+Zero can be an eigenfunction for any parameter.
+Eigenfunctions are nonzero.
+Conditions at different locations can give no solution, multiple solutions, or nonzero solutions only for selected parameters.
+A trajectory starting at one endpoint may miss the requirement at the other.
+Distinguish initial and boundary problems
+Solve a basic boundary eigenvalue problem
+Boundary conditions and eigenvalue problems
+Assume $L>0$ and seek a nonzero classical solution with $n=1,2,\ldots$. Zero is not an eigenfunction.
+What distinguishes a boundary-value problem?
+No interval is needed
+Conditions may be imposed at different endpoints
+It has no derivatives
+Distributed conditions change solvability and uniqueness.
+Initial data fix a start at one point; boundary data constrain different locations. Their existence and uniqueness results cannot be interchanged.
+First mode
+One interior antinode.
+Set mode number $n$ to $1$ and position $t$ to $0.5$.
+Second mode
+The midpoint becomes an interior zero.
+Set mode number $n$ to $2$ and position $t$ to $0.5$.
+Third mode
+More spatial oscillation corresponds to a larger eigenvalue.
+Set mode number $n$ to $3$ and position $t$ to $0.5$.
+Fix length one and compare allowed nonzero boundary modes. Horizontal is position, not initial-value evolution time.
+How do interior zeros and eigenvalues change with mode number?

@@ -1,0 +1,60 @@
+Rank-nullity, injectivity, and surjectivity
+Preserved and lost degrees of freedom
+Input dimension equals the dimension of independent outputs plus the dimension lost completely.
+Input degrees of freedom either contribute to visible output or lie in the kernel. The theorem counts these parts precisely.
+Apply the rank-nullity relation
+Test injectivity and surjectivity separately
+How does the count work?
+For an $m\times n$ matrix of rank $r$, the homogeneous system has $n-r$ free variables, so the kernel dimension is $n-r$.
+What do injectivity and surjectivity require?
+Injectivity needs a pivot in each column: $r=n$. Surjectivity onto the specified $\mathbb R^m$ needs a pivot in each row: $r=m$.
+What restricts rectangular matrices?
+If $n>m$, injectivity is impossible; if $m>n$, the whole output space cannot be reached. Being onto its own image is a different statement.
+Rank-nullity, injectivity, and surjectivity
+The input space is finite-dimensional. State the codomain for surjectivity rather than silently replacing it with the image.
+Pivot and free variables account for every unknown.
+Homogeneous special solutions are independent and span the kernel.
+Original pivot columns generate the image.
+How large is the kernel?
+If $A$ is $4\times6$ with rank $3$, find the kernel dimension.
+Input dimension is the column count $6$.
+Nullity is $6-3=3$.
+3; neither injective nor onto the full four-dimensional output space.
+Injective but not onto
+$T(x,y)=(x,y,x+y)$.
+The two columns are independent, so the rank is $2$ and nullity is zero.
+Outputs satisfy $z=x+y$ and do not cover all of $\mathbb R^3$.
+Injective, but not onto three-dimensional space.
+Rank plus nullity equals the row count.
+It equals input dimension, the column count.
+Injectivity and surjectivity are equivalent for every matrix.
+They are directly equivalent only when finite input and output dimensions agree.
+An $3\times5$ matrix has rank $3$. Find its nullity.
+Subtract rank from the column count.
+$5-3=2$.
+Is a full-column-rank $5\times3$ matrix injective?
+Check whether its kernel is zero.
+$3-3=0$.
+Injective.
+Can a linear map from dimension three to dimension two be injective?
+The image has dimension at most two.
+The kernel has dimension at least one.
+No.
+Is a surjective linear map from dimension four to dimension four invertible?
+Surjectivity gives rank four.
+The kernel is zero and the square matrix has full rank, so it is invertible.
+Invertible.
+Matrix $\operatorname{diag}(1,c,0)$ maps three-dimensional input to the horizontal plane. When $c$ is zero, the image collapses further to the horizontal axis.
+When a direction's output scale becomes exactly zero, how do rank and nullity compensate?
+An $2\times4$ matrix has rank $2$. What is its nullity?
+Two of its four input degrees of freedom lie in the kernel.
+Rank counts output directions; nullity counts lost input directions. Their sum is the input dimension.
+Retain two directions
+Set $c=1$.
+Rank two, nullity one.
+Reverse orientation
+Set $c=-1$.
+Orientation reverses without losing a direction; rank stays two.
+Lose another direction
+Set $c=0$.
+Rank one, nullity two; their sum remains three.

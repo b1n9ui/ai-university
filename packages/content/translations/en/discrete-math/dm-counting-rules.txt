@@ -1,0 +1,65 @@
+The sum and product rules
+Add mutually exclusive cases; multiply successive choices. Check for double counting first.
+Add mutually exclusive cases; multiply successive choices. Check for double counting first.
+Choosing a main dish and a drink uses multiplication. Choosing fish or meat uses addition, provided the categories do not overlap.
+Split into disjoint cases
+Separate the choice stages
+Split into disjoint cases
+Partition the objects into disjoint classes, count each class, then add. Overlap requires deduplication or inclusion–exclusion.
+Separate the choice stages
+Multiply when each stage has a fixed number of options. Choices may depend on earlier ones, but every prefix must have the stated number of continuations; otherwise sum over branches.
+Check with a tree
+Each root-to-leaf path represents a complete object. Count leaves only after establishing a bijection between paths and objects.
+The size of a finite Cartesian product is the product of the set sizes.
+Cases added by the sum rule are disjoint.
+At every stage of the product rule, count options under the preceding choices.
+Fix the first choice.
+Each first choice has the same number of second choices.
+Partition into disjoint groups by the first choice.
+Meal combinations
+Choose one of four mains and one of three drinks. How many meals are possible?
+There are four first choices.
+Each pairs with three drinks.
+Twelve.
+A password without repetition
+Form an ordered two-character string from five characters without repetition.
+There are five choices for the first character.
+Only four remain for the second.
+Twenty.
+Three switches each have two states. How many joint states are possible?
+Multiply across stages.
+$2^3=8$.
+Eight.
+Two groups each contain three people, with one person in both. How many distinct people are there?
+How many times was the shared person counted?
+One duplicate must be subtracted.
+There are five distinct people, not six.
+Two stages have respectively two and four options. How many complete objects are possible?
+Check that every first choice has four continuations.
+$2\cdot4=8$.
+Eight.
+If one object corresponds to two paths, can leaves still be counted directly?
+Paths and objects need a bijection.
+The leaf count would count an object twice.
+No.
+Which operation combines disjoint cases?
+Addition
+Multiplication
+Maximum
+Objects in different classes do not overlap.
+Two successive choices always add their counts
+Successive choices generally combine into ordered objects.
+Overlapping classes can be added directly
+Their intersection would be counted twice.
+Change the two choice counts. How does the number of complete grid objects change?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+Successive choices generally combine into ordered objects.
+First-stage options: 1
+Set the control to $1$. Observe which objects, relations, or counts change.
+At this setting: complete objects $4$.
+First-stage options: 3
+Set the control to $3$. Observe which objects, relations, or counts change.
+At this setting: complete objects $12$.
+First-stage options: 6
+Set the control to $6$. Observe which objects, relations, or counts change.
+At this setting: complete objects $24$.

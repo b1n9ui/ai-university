@@ -1,0 +1,65 @@
+Higher-order constant-coefficient linear equations
+Order counts the required degrees of freedom
+How many constants are needed?
+A standard order-$n$ linear equation with continuous coefficients needs $n$ initial data: the function through derivative order $n-1$.
+How are repeated roots organized?
+A real root $r$ of multiplicity $m$ supplies $e^{rt},te^{rt},\ldots,t^{m-1}e^{rt}$.
+What about forcing?
+Add one particular solution to every homogeneous solution. Undetermined coefficients and resonance corrections extend to higher constant-coefficient order. Write $D=d/dt$; polynomial $P(D)$ denotes the associated differential operator.
+Write the differential operator as a polynomial.
+Use the derivative eigenproperty of exponentials.
+Repeated roots need additional generalized directions.
+Three distinct roots
+Solve $y'''-y'=0$.
+The characteristic polynomial is $r(r-1)(r+1)$.
+All three roots are distinct.
+$y=C_0+C_1e^t+C_2e^{-t}$.
+A triple root
+Solve $y'''=0$.
+Root zero has multiplicity three.
+Repeated integration also gives a quadratic polynomial.
+$y=C_0+C_1t+C_2t^2$.
+Find the general solution of $(D-2)^3y=0$.
+Include three powers of time.
+Root two has multiplicity three.
+$e^{2t}(C_0+C_1t+C_2t^2)$.
+How many initial data does a standard fourth-order linear problem usually need?
+Count through the third derivative.
+The function and derivatives one through three give four data.
+$4$.
+Find the real general solution of $y''''+y''=0$.
+Factor $r^2(r^2+1)$.
+Zero is a double root, together with plus and minus the imaginary unit.
+$C_0+C_1t+C_2\cos t+C_3\sin t$.
+What usually went wrong if a third-order general solution has only two constants?
+Compare solution-space dimension.
+A standard third-order homogeneous space needs three independent directions.
+One independent solution is probably missing.
+Repeat the same exponential once per root multiplicity.
+Different powers of time are needed for independence.
+Every higher-order equation is solved by a characteristic polynomial.
+This method relies on constant-coefficient linear structure.
+Roots and multiplicities construct every independent homogeneous solution, with total count equal to the order.
+Time powers supply repeated-root directions; conjugate roots combine into real oscillations.
+Construct general solutions from roots and multiplicities
+Match higher-order initial data
+Higher-order constant-coefficient linear equations
+P(r)=0,\quad r\text{ of multiplicity }m\Rightarrow t^j e^{rt},\quad j=0,\ldots,m-1
+The constant-coefficient leading term is nonzero. Combine nonreal roots in conjugate pairs for real coefficients.
+Which time powers accompany a triple real root?
+Constant only
+Powers zero, one, and two
+Powers one, two, and three
+Begin at power zero, giving three independent directions.
+Higher order keeps the same ideas but requires more initial data and a larger solution space.
+Starting point
+All three function values are one, but their derivative data differ.
+Set observation time $t$ to $0$.
+Advance one time unit
+The constant direction stays fixed while the others separate.
+Set observation time $t$ to $1$.
+Longer time
+The growing direction expands visibly.
+Set observation time $t$ to $3$.
+Plot three independent fundamental solutions. Markers give their current values, not solutions of three different equations.
+Does equal initial function value make the three solutions dependent?

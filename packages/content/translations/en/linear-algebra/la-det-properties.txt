@@ -1,0 +1,62 @@
+Determinant rules
+Track determinants through elimination
+Row-operation and product rules let you calculate determinants during elimination.
+Adding a row multiple is a shear and preserves volume. Swapping rows reverses the sign; scaling one row scales the determinant by the same factor.
+Track each row operation's effect
+Apply product and transpose formulas
+What do the three row operations do?
+A row swap multiplies by $-1$. Scaling one row by $c$ multiplies the determinant by $c$. Adding another row's multiple leaves it unchanged. Columns obey the same rules.
+What about triangular matrices?
+Upper- and lower-triangular determinants equal the product of diagonal entries. Track swaps and scales during elimination.
+What about products and transposes?
+$\det(AB)=\det A\det B$ and $\det A^T=\det A$; generally $\det(A+B)=\det A+\det B$ does not hold.
+Determinant rules
+The product formula uses two $n\times n$ matrices. Scaling the whole matrix scales every row.
+Expand the linear combination in one row.
+The additional term has repeated rows, so it is zero.
+R_i\leftarrow R_i+cR_j\Rightarrow\det\text{ unchanged}
+Reduce to upper-triangular form, accounting for row-swap signs.
+\det A=(-1)^s\prod_i u_{ii}\quad\text{using only row additions and swaps}
+Eliminate instead of expanding
+Find $\det\begin{pmatrix}1&2&0\\2&5&1\\0&0&3\end{pmatrix}$.
+Subtract twice row one from row two to get $(0,1,1)$.
+The triangular diagonal product is $1\cdot1\cdot3$.
+3.
+Scale the whole matrix
+If $A$ has size three and $\det A=2$, find $\det(3A)$.
+All three rows scale by three, giving factor $3^3$.
+$27\cdot2=54$.
+54.
+$\det(cA)=c\det A$ always holds.
+For a square matrix of size $n$, the factor is $c^n$.
+A row swap does not affect the determinant.
+Its magnitude stays fixed, but the sign reverses.
+What happens after adding five times another row to one row?
+This is a shear.
+The operation preserves the determinant.
+Unchanged.
+If $\det A=4$, what follows after swapping two rows?
+A swap reverses the sign.
+$-4$.
+If $A$ is invertible and $\det A=2$, find $\det A^{-1}$.
+Take determinants of the product equal to the identity.
+$\det A\det A^{-1}=1$.
+Given $A=B=I_2$, does the determinant distribute over addition?
+Compare both sides directly.
+$\det(A+B)=\det(2I_2)=4$, whereas $\det A+\det B=2$.
+No.
+Shear matrix $\begin{pmatrix}1&c\\0&1\end{pmatrix}$ changes shape while its determinant stays one.
+Why can a shear change shape without changing area?
+By what factor does scaling one row by three change the determinant?
+Unchanged
+Only scaling the whole matrix changes all rows at once.
+Record which row operation you use at each step and account for its determinant effect.
+No shear
+Set $c=0$.
+The unit square has area one.
+Shear right
+Set $c=1$.
+The top edge shifts horizontally; the base and height stay fixed.
+Shear left
+Set $c=-1$.
+The direction reverses; area remains one.

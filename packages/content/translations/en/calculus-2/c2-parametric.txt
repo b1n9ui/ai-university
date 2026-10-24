@@ -1,0 +1,65 @@
+Parametric equations and motion
+Use one parameter to determine both coordinates
+Parametric equations specify how a point moves. The same geometric curve can have different directions and speeds.
+$x=\cos t,y=\sin t$ describes a circle and also its starting point, direction and traversal time.
+Is eliminating the parameter enough?
+It reveals a geometric equation but loses direction, start, range and repeated tracing. State the parameter interval too.
+Must the parameter be time?
+It may be time, angle or another quantity. Derivatives have velocity units only if it represents time.
+What does negative velocity mean?
+A coordinate derivative may be negative, indicating motion against that axis. Speed is the nonnegative length of the velocity vector.
+Use one parameter to determine both coordinates
+Coordinate functions are differentiable on the interval. Interpret units according to the parameter.
+Describe a circle point with two coordinates.
+Square and add to identify the geometric locus.
+Derivatives retain the motion information.
+Parametrizing an ellipse
+For $x=2\cos t,y=\sin t$, $0\leq t\leq2\pi$, describe the path and direction.
+Elimination gives $\frac{x^2}{4}+y^2=1$.
+Start at $(2,0)$ with initial velocity $(0,1)$; traverse once counterclockwise.
+An ellipse with horizontal semiaxis 2 and vertical semiaxis 1, traversed counterclockwise.
+Same path, different speed
+How many turns does $x=\cos2t,y=\sin2t$ make on $0\leq t\leq2\pi$?
+The geometric equation is still the unit circle.
+The angle runs from zero to $4\pi$; speed is 2.
+Two counterclockwise turns.
+The same eliminated equation means the same motion.
+Direction, speed and repetition may all differ.
+A coordinate derivative is the speed.
+Speed is the square root of the sum of squared coordinate derivatives.
+What is the path of $x=t,y=t^2$?
+A parabola.
+Replace the parameter by the horizontal coordinate.
+$y=x^2$; over all real parameters the point travels left to right.
+What is the direction of $x=\cos t,y=-\sin t$?
+Clockwise.
+Check the initial velocity.
+Starting at $(1,0)$, velocity $(0,-1)$ initially points downward.
+Find the speed of $x=3t,y=4t$.
+$5$.
+Take the velocity vector's length.
+$\sqrt{3^2+4^2}=5$.
+Which portion does $x=\cos t,y=\sin t$, $0\leq t\leq\pi$ trace?
+The upper semicircle, from right to left.
+Check the sine's sign on the interval.
+$\sin t\geq0$; the endpoints are $(1,0)$ and $(-1,0)$.
+What can eliminating the parameter lose?
+The geometric equation
+Direction and repetition count
+All coordinate relations
+The parameter interval and rate carry extra motion information.
+A curve is the trace; its parametrization also describes how that trace is traveled.
+Rightmost point
+Set the parameter to 0.
+The point is $(2,0)$, speed is 1 and the tangent is vertical.
+Top point
+Set the parameter to 1.5707963267948966.
+The point is $(0,1)$, speed is 2 and the tangent is horizontal.
+Leftmost point
+Set the parameter to 3.141592653589793.
+The point is $(-2,0)$; speed returns to 1 and motion remains counterclockwise.
+Move along the ellipse $(2\cos t,\sin t)$, displaying velocity and parameter position.
+Is speed constant around this ellipse?
+Read parametric paths, directions and repeated tracing
+Eliminate parameters while retaining intervals
+Compute velocity and nonnegative speed

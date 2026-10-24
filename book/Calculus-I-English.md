@@ -2,7 +2,7 @@
 
 From rates of change to accumulation
 
-English edition 1 · Chinese source v0.3.3 · AI-authored · CC0 text / MIT code · Not individually human-reviewed
+English edition 1 · source v0.3.3 · AI-authored · CC0 text / MIT code · Not individually human-reviewed
 
 An introduction to single-variable calculus: functions, limits, derivatives, integrals, and applications. Each lesson includes concise explanations, precise conditions, derivations, examples, exercises, and interactive diagrams.
 
@@ -147,7 +147,7 @@ Move $x$ from positive to negative. Where does the square-root graph stop, and w
 
 Move the input $x$. The square root has a real output only when $x \ge 0$.
 
-Online diagram: ?lang=en#/lesson/domain?view=visual
+Online diagram: #/lesson/domain?view=visual
 
 ### Guided experiment
 
@@ -295,7 +295,7 @@ As $h$ increases, does the vertex move left or right? Predict, then move the hor
 
 Adjust $h$ and $k$ and follow the parabola's vertex.
 
-Online diagram: ?lang=en#/lesson/transformations?view=visual
+Online diagram: #/lesson/transformations?view=visual
 
 ### Guided experiment
 
@@ -447,7 +447,7 @@ Can one output come from two inputs? Find equal heights on opposite sides of the
 
 Compare both sides of the parabola: the same height can come from two inputs, so the function is not one-to-one on the whole real line.
 
-Online diagram: ?lang=en#/lesson/composition?view=visual
+Online diagram: #/lesson/composition?view=visual
 
 ### Guided experiment
 
@@ -595,7 +595,7 @@ What happens to $\sin x$ when $x$ increases by $2 \pi$? Compare inputs one perio
 
 Move $x$ to explore sine's period. The horizontal axis is measured in radians.
 
-Online diagram: ?lang=en#/lesson/trigonometry?view=visual
+Online diagram: #/lesson/trigonometry?view=visual
 
 ### Guided experiment
 
@@ -747,7 +747,7 @@ Does increasing the input by 1 add $e$ to the output, or multiply it by $e$? Com
 
 The exponential is always positive. Move $x$ and check that increasing the input by one multiplies the output by $e$.
 
-Online diagram: ?lang=en#/lesson/exponential-log?view=visual
+Online diagram: #/lesson/exponential-log?view=visual
 
 ### Guided experiment
 
@@ -933,7 +933,7 @@ Does a hole rule out a limit? Compare it with the graph whose two sides disagree
 
 Move $x$ toward 1 from both sides. The open point marks the missing value at 1, while the outputs still approach 2.
 
-Online diagram: ?lang=en#/lesson/limit-intuition?view=visual
+Online diagram: #/lesson/limit-intuition?view=visual
 
 ### Guided experiment
 
@@ -1081,7 +1081,7 @@ $\frac{\sin x}{x}$ is undefined at 0. Can its outputs still approach one number 
 
 Observe $\frac{\sin (x)}{x}$ approaching 1 from both sides of $x = 0$. The open point marks the missing value.
 
-Online diagram: ?lang=en#/lesson/limit-laws?view=visual
+Online diagram: #/lesson/limit-laws?view=visual
 
 ### Guided experiment
 
@@ -1233,7 +1233,7 @@ If you halve $\varepsilon$, how does the guaranteed radius $\delta$ change? Pred
 
 Adjust $\varepsilon$. The choice $\delta  = \min (1 , \frac{\varepsilon }{5})$ guarantees that the curve within the blue vertical band stays inside the green horizontal band.
 
-Online diagram: ?lang=en#/lesson/epsilon-delta?view=visual
+Online diagram: #/lesson/epsilon-delta?view=visual
 
 ### Guided experiment
 
@@ -1386,7 +1386,7 @@ The nearby trends agree across the hole. Why is the original function still disc
 
 The limit at the hole is 2. The function becomes continuous only if that point is filled with value 2.
 
-Online diagram: ?lang=en#/lesson/continuity?view=visual
+Online diagram: #/lesson/continuity?view=visual
 
 ### Guided experiment
 
@@ -1535,7 +1535,7 @@ Does $\frac{1}{x}$ tend in the same direction as it approaches 0 from the left a
 
 $\frac{1}{x}$ tends to negative infinity on the left of zero and positive infinity on the right. The viewing window clips the graph; the curve does not end at its edge.
 
-Online diagram: ?lang=en#/lesson/infinite-limits?view=visual
+Online diagram: #/lesson/infinite-limits?view=visual
 
 ### Guided experiment
 
@@ -1724,7 +1724,7 @@ As $h$ shrinks, does the secant slope equal the derivative or approach it? At th
 
 Shrink $h$: the blue secant approaches the gold tangent. The readings compare the difference quotient with the exact derivative.
 
-Online diagram: ?lang=en#/lesson/derivative-definition?view=visual
+Online diagram: #/lesson/derivative-definition?view=visual
 
 ### Guided experiment
 
@@ -1876,7 +1876,7 @@ Move the base point on $x^{3}$ from 0 to 1. How does the slope change? Check aga
 
 Watch the difference quotient of $x^{3}$ approach $3 x^{2}$. Change $a$ to check other points.
 
-Online diagram: ?lang=en#/lesson/derivative-rules?view=visual
+Online diagram: #/lesson/derivative-rules?view=visual
 
 ### Guided experiment
 
@@ -2029,7 +2029,7 @@ At $x = 0$, the outer rate is nonzero. Why can the total rate still be zero? Che
 
 Choose $x$ and compare the inner rate $2 x$ for $u = x^{2} + 1$ with the outer rate $3 u^{2}$ for $y = u^{3}$. Their product is the total rate.
 
-Online diagram: ?lang=en#/lesson/chain-rule?view=visual
+Online diagram: #/lesson/chain-rule?view=visual
 
 ### Guided experiment
 
@@ -2181,7 +2181,7 @@ What is the tangent slope at a maximum of $\sin x$? Check using $\cos (a)$.
 
 Move $a$ along the sine curve. Its tangent slope is $\cos (a)$.
 
-Online diagram: ?lang=en#/lesson/trig-derivatives?view=visual
+Online diagram: #/lesson/trig-derivatives?view=visual
 
 ### Guided experiment
 
@@ -2330,7 +2330,7 @@ As you approach either endpoint of the upper semicircle, does the tangent become
 
 Move $a$ along the upper semicircle of radius 2. The tangent becomes steeper near the endpoints.
 
-Online diagram: ?lang=en#/lesson/implicit?view=visual
+Online diagram: #/lesson/implicit?view=visual
 
 ### Guided experiment
 
@@ -2538,7 +2538,7 @@ Move the base point on $e^{x}$. How do its height and tangent slope compare?
 
 Move $a$: the height $e^{a}$ equals the tangent slope.
 
-Online diagram: ?lang=en#/lesson/exp-log-derivatives?view=visual
+Online diagram: #/lesson/exp-log-derivatives?view=visual
 
 ### Guided experiment
 
@@ -2691,7 +2691,7 @@ As the base point on $\arctan$ moves away from 0, does its slope increase or dec
 
 The tangent slope of $\arctan$ is $\frac{1}{1 + a^{2}}$: positive everywhere and smaller farther from zero.
 
-Online diagram: ?lang=en#/lesson/inverse-trig?view=visual
+Online diagram: #/lesson/inverse-trig?view=visual
 
 ### Guided experiment
 
@@ -2843,7 +2843,7 @@ If the ladder's foot moves outward at constant speed, does its top descend at co
 
 Move the ladder's foot $x$ and compare height $y = \sqrt{25 - x^{2}}$ with its downward rate of change.
 
-Online diagram: ?lang=en#/lesson/related-rates?view=visual
+Online diagram: #/lesson/related-rates?view=visual
 
 ### Guided experiment
 
@@ -3013,7 +3013,7 @@ Farther from the center, does the tangent estimate usually improve or worsen? Ch
 
 Adjust $x$ and center $a$. Compare the true value, tangent estimate, and actual error.
 
-Online diagram: ?lang=en#/lesson/linearization?view=visual
+Online diagram: #/lesson/linearization?view=visual
 
 ### Guided experiment
 
@@ -3165,7 +3165,7 @@ Must changing the initial guess make convergence faster? Compare tangent interse
 
 Starting from an initial guess, display successive tangent intersections. Change the starting value and watch the residual or a near-zero-derivative warning.
 
-Online diagram: ?lang=en#/lesson/newton?view=visual
+Online diagram: #/lesson/newton?view=visual
 
 ### Guided experiment
 
@@ -3350,7 +3350,7 @@ How do slope signs change across a zero-derivative point? Compare a local maximu
 
 Move $a$ to $\pm 1$ to make the tangent horizontal, then check slope signs on either side.
 
-Online diagram: ?lang=en#/lesson/extrema?view=visual
+Online diagram: #/lesson/extrema?view=visual
 
 ### Guided experiment
 
@@ -3503,7 +3503,7 @@ As the right endpoint $b$ moves, where does a tangent parallel to the secant occ
 
 Change endpoint $b$. For $y = x^{2}$, the point $c = \frac{a + b}{2}$ has a tangent parallel to the endpoint secant.
 
-Online diagram: ?lang=en#/lesson/mean-value?view=visual
+Online diagram: #/lesson/mean-value?view=visual
 
 ### Guided experiment
 
@@ -3651,7 +3651,7 @@ Can the slope decrease while the function keeps increasing? Move the base point 
 
 Move the base point and compare value with slope. For $y = x^{3} - 3 x$, at $a = 0$ the slope changes from decreasing to increasing, indicating a change in concavity.
 
-Online diagram: ?lang=en#/lesson/curve-sketching?view=visual
+Online diagram: #/lesson/curve-sketching?view=visual
 
 ### Guided experiment
 
@@ -3803,7 +3803,7 @@ With fixed perimeter, does area keep increasing as one side grows? Find where it
 
 Adjust side length $x$. With perimeter fixed, the other side is $12 - x$; area is largest for a square.
 
-Online diagram: ?lang=en#/lesson/optimization?view=visual
+Online diagram: #/lesson/optimization?view=visual
 
 ### Guided experiment
 
@@ -3951,7 +3951,7 @@ What does $\frac{e^{x} - 1}{x}$ approach near 0? Connect this difference quotien
 
 Observe $\frac{e^{x} - 1}{x}$ approaching 1. Its derivative ratio $\frac{e^{x}}{1}$ also approaches 1.
 
-Online diagram: ?lang=en#/lesson/lhopital?view=visual
+Online diagram: #/lesson/lhopital?view=visual
 
 ### Guided experiment
 
@@ -4167,7 +4167,7 @@ Does changing $C$ change the slope? Compare the vertical shift with the derivati
 
 Change $C$: the antiderivative $\frac{x^{3}}{3} + C$ shifts vertically, while its derivative remains $x^{2}$.
 
-Online diagram: ?lang=en#/lesson/antiderivatives?view=visual
+Online diagram: #/lesson/antiderivatives?view=visual
 
 ### Guided experiment
 
@@ -4346,7 +4346,7 @@ For the same partition, which is larger: the left or right sum? How do both chan
 
 Switch between left, right, midpoint, and trapezoidal estimates, then increase $n$. The exact integral of $x^{2}$ on $[0,1]$ is $\frac{1}{3}$.
 
-Online diagram: ?lang=en#/lesson/riemann-sums?view=visual
+Online diagram: #/lesson/riemann-sums?view=visual
 
 ### Guided experiment
 
@@ -4499,7 +4499,7 @@ Must an integral increase when its upper bound increases? Observe what happens w
 
 Move the endpoint $b$. For $y = x$, shading on the negative half-axis contributes negatively and shading on the positive half-axis contributes positively.
 
-Online diagram: ?lang=en#/lesson/definite-integral?view=visual
+Online diagram: #/lesson/definite-integral?view=visual
 
 ### Guided experiment
 
@@ -4680,7 +4680,7 @@ How does the slope of $A (x)$ relate to the height of $f (x)$? Move the upper bo
 
 Move the upper bound $x$. The slope of $A (x) = \frac{x^{3}}{3}$ equals the strip height $f (x) = x^{2}$.
 
-Online diagram: ?lang=en#/lesson/fundamental-theorem?view=visual
+Online diagram: #/lesson/fundamental-theorem?view=visual
 
 ### Guided experiment
 
@@ -4833,7 +4833,7 @@ Do equal widths in $x$ become equal widths in $u = x^{2} + 1$? Compare $\frac{\m
 
 As $x$ runs from 0 to 1, $u = x^{2} + 1$ runs from 1 to 2. The factor $\frac{\mathrm{d}u}{\mathrm{d}x} = 2 x$ shows that widths change too.
 
-Online diagram: ?lang=en#/lesson/substitution?view=visual
+Online diagram: #/lesson/substitution?view=visual
 
 ### Guided experiment
 
@@ -5049,7 +5049,7 @@ What is the height between $y = x$ and $y = x^{2}$? At which endpoints is it zer
 
 Highlight a strip between $y = x$ and $y = x^{2}$ on $[0,1]$: its height is $x - x^{2}$ and the total area is $\frac{1}{6}$.
 
-Online diagram: ?lang=en#/lesson/area-between?view=visual
+Online diagram: #/lesson/area-between?view=visual
 
 ### Guided experiment
 
@@ -5207,7 +5207,7 @@ If a disk's radius doubles, how does its area change? For a washer, why use $R^{
 
 The disk model uses $y = \sqrt{x}$; the washer model uses $R = 2$ and $r = 1$. Change the rotation angle and slice position to compare with the area formula.
 
-Online diagram: ?lang=en#/lesson/disk-washer?view=visual
+Online diagram: #/lesson/disk-washer?view=visual
 
 ### Guided experiment
 
@@ -5389,7 +5389,7 @@ Does height stay fixed as the shell radius increases? Identify $2 \pi  x$ and $x
 
 Move the vertical strip: its radius is $x$, height $x^{2}$, and circumference $2 \pi  x$. The strip and rotation views stay synchronized.
 
-Online diagram: ?lang=en#/lesson/shells?view=visual
+Online diagram: #/lesson/shells?view=visual
 
 ### Guided experiment
 
@@ -5541,7 +5541,7 @@ Why is a curve segment longer than its horizontal width? Refine the segments, th
 
 Increase the number of two-dimensional line segments and compare polygonal length with arc length. Rotate the same curve in three dimensions to see why band area uses $\mathrm{d}s$.
 
-Online diagram: ?lang=en#/lesson/arc-length?view=visual
+Online diagram: #/lesson/arc-length?view=visual
 
 ### Guided experiment
 
@@ -5701,7 +5701,7 @@ When velocity changes from negative to positive, are displacement and distance e
 
 For $v (t) = t - 1$, the negative section represents backward motion and the positive section forward motion. Compare displacement and total distance.
 
-Online diagram: ?lang=en#/lesson/physical-integrals?view=visual
+Online diagram: #/lesson/physical-integrals?view=visual
 
 ### Guided experiment
 

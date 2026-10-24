@@ -1,0 +1,65 @@
+Mass, moments and center of mass
+Weight position by mass
+The center of mass is a mass-weighted average, not a simple average of boundary positions.
+The midpoint works for equal masses. For a continuous distribution, sum mass times position and divide by total mass.
+A thin rod
+With linear density $\rho(x)$, $dm=\rho(x)dx$. Mass is $\int dm$; moment about the origin is $\int x\,dm$.
+A planar lamina
+A uniform lamina lies between $g(x)$ and $f(x)$. A vertical strip has area $(f-g)dx$ and midpoint height $\frac{f+g}{2}$.
+What does symmetry simplify?
+A symmetric mass distribution places the center of mass on the symmetry axis. Symmetric shape alone is insufficient if density is asymmetric.
+Weight position by mass
+Total mass is positive and finite; moments exist. Uniform-lamina formulas require constant area density.
+Add the small masses.
+Add each mass times its position.
+Match the moment with a mass concentrated at the center of mass.
+A rod heavier toward the right
+On $0\leq x\leq1$, density is $\rho(x)=2x$. Find the center of mass.
+$M=\int_0^1 2x dx=1$.
+$P=\int_0^1 2x^2dx=\frac23$, so $\bar x=\frac23$.
+$\bar x=\frac23$.
+A triangular lamina
+Find the center of mass of the uniform lamina $0\leq y\leq x$, $0\leq x\leq1$.
+Its area is $A=\int_0^1x dx=\frac12$.
+Moment about the vertical axis is $\int_0^1x^2dx=\frac13$; about the horizontal axis, $\frac12\int_0^1x^2dx=\frac16$.
+$(\bar x,\bar y)=(\frac23,\frac13)$.
+The center of mass must be the geometric center.
+Weight by mass. For a lamina with a hole, the center of mass can even lie outside the material.
+Moment about the horizontal axis integrates horizontal position.
+Distance to that axis is the vertical coordinate. Draw the moment arm first.
+Mass 1 is at $x=0$ and mass 3 at $x=2$. Find the center of mass.
+$\frac32$.
+Use a weighted average.
+$\bar x=\frac{1\cdot0+3\cdot2}{4}=\frac32$.
+Find the center of mass of a uniform rod on $[2,6]$.
+$4$.
+Use symmetry.
+Constant density puts it at the midpoint $\frac{2+6}{2}=4$.
+On $[0,1]$, density is $\rho=3x^2$. Find the center of mass.
+$\frac34$.
+Compute mass and moment separately.
+$M=1$, $P=3\int_0^1x^3dx=\frac34$.
+Find the center of mass of the uniform rectangle $0\leq x\leq2,0\leq y\leq4$.
+$(1,2)$.
+Use its two symmetry axes.
+Symmetry about both midlines places it at their intersection.
+If a rod is denser on the right, which way does its center of mass shift?
+Left
+Right
+Density has no effect
+Mass elements on the right carry greater weight in the average.
+Each small piece contributes its position, weighted by its mass.
+A uniform rod
+Set the density coefficient to 0.
+The center of mass is 0.5 and total mass is 1.
+Heavier on the right
+Set the density coefficient to 2.
+Mass is 2; the center of mass is $\frac7{12}$.
+Increase the gradient
+Set the density coefficient to 6.
+The center of mass is $\frac58$, still inside the rod.
+Vary density $\rho(x)=1+cx$ on $[0,1]$ and track the center of mass.
+When the right side is heavier, does the center of mass stay at the midpoint?
+Set up mass and moment integrals
+Compute mass-weighted centers
+Use symmetry of the mass distribution

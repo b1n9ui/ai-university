@@ -1,0 +1,220 @@
+{
+  "id": "strings-input",
+  "chapterId": "chapter-1",
+  "number": "1.4",
+  "title": "Read text and quantities",
+  "subtitle": "input receives text. Convert it to a number before doing arithmetic.",
+  "concept": "input receives text. Convert it to a number before doing arithmetic.",
+  "intuition": "Typing 3 first supplies the character 3; conversion makes it a quantity.",
+  "objectives": [
+    "Read one line from the user",
+    "Convert a quantity from text to a number",
+    "Insert variables into a message"
+  ],
+  "body": [
+    {
+      "title": "Read one line from the user",
+      "text": "name = input() waits for a line. Pressing Enter delivers the text to name, without the final newline. You can first display print(\"What is your name?\") to explain what to enter. Text values are called strings."
+    },
+    {
+      "title": "Convert a quantity from text to a number",
+      "text": "Read count = int(input()) in two stages: input() receives text, then int(...) converts integer text such as \"3\" to the number 3. Now count + 2 can increase a quantity. Text such as \"three\" or \"3.5\" fails this integer conversion. Lesson 4.4 explains how to handle such errors."
+    },
+    {
+      "title": "Insert variables into a message",
+      "text": "In print(f\"Hello, {name}\"), f marks a string whose brace fields are filled with values. {name} is replaced by the variable's value. This basic form is enough for now. To display a count by itself, print(count) also works."
+    }
+  ],
+  "formalDefinition": {
+    "text": "input() reads a string; int(...) converts valid integer text to a number; an f-string inserts values using {variable_name}.",
+    "conditions": [
+      "int requires valid integer text. Empty text, \"three\", and \"3.5\" cannot be converted directly to integers."
+    ]
+  },
+  "derivation": [
+    {
+      "text": "Display the question first."
+    },
+    {
+      "text": "input receives Lin."
+    },
+    {
+      "text": "{name} is replaced by Lin."
+    }
+  ],
+  "interactiveVisual": {
+    "kind": "python-trace",
+    "prediction": "Convert the text \"3\" to a number and add 2. What is the result?",
+    "caption": "Choose an input and predict the result, then select Next step. The arrow marks the next statement to execute; the side panel shows current variables and output produced so far.",
+    "experiment": {
+      "code": "text = '3'\ncount = int(text)\nprint(count + 2)\n",
+      "stdout": "5\n",
+      "stdin": ""
+    },
+    "followUp": "Choose \"0\" and inspect the quotes on the variable cards before and after conversion. This demonstration uses a text parameter in place of keyboard input.",
+    "codeTemplate": "text = {{text}}\ncount = int(text)\nprint(count + 2)\n",
+    "controls": [
+      {
+        "name": "text",
+        "label": "Simulated input text",
+        "values": [
+          "0",
+          "1",
+          "3",
+          "5"
+        ],
+        "defaultIndex": 2
+      }
+    ],
+    "watch": [
+      "text",
+      "count"
+    ]
+  },
+  "workedExamples": [
+    {
+      "title": "Meet a classmate",
+      "problem": "Enter Lin and display a greeting.",
+      "steps": [
+        "Display the question first.",
+        "input receives Lin.",
+        "{name} is replaced by Lin."
+      ],
+      "answer": {
+        "code": "print(\"What is your name?\")\nname = input()\nprint(f\"Hello, {name}\")\n",
+        "stdout": "What is your name?\nHello, Lin\n",
+        "stdin": "Lin\n"
+      }
+    },
+    {
+      "title": "Add two more",
+      "problem": "Enter 3 and display the quantity after adding 2.",
+      "steps": [
+        "input receives the text \"3\".",
+        "int converts it to the number 3.",
+        "Adding 2 gives 5."
+      ],
+      "answer": {
+        "code": "count = int(input())\nprint(count + 2)\n",
+        "stdout": "5\n",
+        "stdin": "3\n"
+      }
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "strings-input-m1",
+      "claim": "input automatically turns text that looks numeric into a number.",
+      "correction": "input returns a string. Use int before integer arithmetic."
+    },
+    {
+      "id": "strings-input-m2",
+      "claim": "Adding two quoted quantities gives their numerical sum.",
+      "correction": "\"3\" + \"2\" concatenates to \"32\". Use numbers for arithmetic."
+    }
+  ],
+  "practice": [
+    {
+      "problem": "Enter Wang and display the name unchanged.",
+      "hint": "Read with input, then display with print.",
+      "solution": [
+        "name receives the text."
+      ],
+      "answer": {
+        "code": "name = input()\nprint(name)\n",
+        "stdout": "Wang\n",
+        "stdin": "Wang\n"
+      },
+      "id": "strings-input-p1",
+      "difficulty": 1,
+      "misconceptionTags": [
+        "strings-input-m1"
+      ]
+    },
+    {
+      "problem": "Enter 4 and display twice its value.",
+      "hint": "Convert with int.",
+      "solution": [
+        "4 * 2 = 8."
+      ],
+      "answer": {
+        "code": "count = int(input())\nprint(count * 2)\n",
+        "stdout": "8\n",
+        "stdin": "4\n"
+      },
+      "id": "strings-input-p2",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "strings-input-m2"
+      ]
+    },
+    {
+      "problem": "Enter Lin and display Welcome, Lin.",
+      "hint": "Use f and {name} to fill the message.",
+      "solution": [
+        "The variable's value replaces the brace field."
+      ],
+      "answer": {
+        "code": "name = input()\nprint(f\"Welcome, {name}\")\n",
+        "stdout": "Welcome, Lin\n",
+        "stdin": "Lin\n"
+      },
+      "id": "strings-input-p3",
+      "difficulty": 1,
+      "misconceptionTags": [
+        "strings-input-m1"
+      ]
+    },
+    {
+      "problem": "Enter 0, then add 2. What is the result?",
+      "hint": "0 is valid integer text too.",
+      "solution": [
+        "After conversion, 0 + 2 = 2."
+      ],
+      "answer": {
+        "code": "count = int(input())\nprint(count + 2)\n",
+        "stdout": "2\n",
+        "stdin": "0\n"
+      },
+      "id": "strings-input-p4",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "strings-input-m2"
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "After input reads \"3\", how can you add 2 to the quantity?",
+    "correctIndex": 1,
+    "choices": [
+      "Add 2 directly to the text",
+      "Convert to a number with int first",
+      "Quote 2 too, then add the strings"
+    ],
+    "explanation": "Convert integer text to a number before doing arithmetic.",
+    "feedback": [
+      "A string and a number cannot be added this way.",
+      "Correct: int(\"3\") gives the number 3.",
+      "\"3\" + \"2\" gives \"32\", not a numerical sum."
+    ]
+  },
+  "prerequisites": [
+    "numbers"
+  ],
+  "difficulty": 1,
+  "misconceptionTags": [
+    "strings-input-m1",
+    "strings-input-m2"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.2.1",
+    "status": "revised",
+    "humanReviewed": false
+  },
+  "sources": [
+    "python-tutorial",
+    "python-input"
+  ],
+  "furtherReading": []
+}

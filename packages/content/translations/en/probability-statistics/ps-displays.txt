@@ -1,0 +1,65 @@
+Frequency plots, histograms, and empirical distributions
+Plots display distributions; first identify what their vertical axes mean.
+Plots display distributions; first identify what their vertical axes mean.
+Histogram area records frequency. Empirical-distribution steps record the proportion at or below a threshold.
+Separate categories from numerical bins
+Use density heights
+Separate categories from numerical bins
+Categorical bar width has no probability meaning. Numerical histograms use interval bins; unequal widths make frequency heights misleading for density comparisons.
+Use density heights
+Divide a bin's relative frequency by its width. Rectangle area, not height alone, equals relative frequency.
+Read the empirical distribution
+The empirical CDF jumps at observations, merging jumps for ties. Rebinning does not change it.
+Histogram density heights require positive bin widths.
+Histogram density heights require positive bin widths.
+The empirical CDF counts “at or below” and is right-continuous.
+A bin's relative frequency is its count divided by the total.
+Require area equal to relative frequency to determine height.
+Count observations no greater than the threshold.
+Unequal bin widths
+Two bins each have relative frequency one half and widths $1,2$. What are their density heights?
+First height: $0.5/1=0.5$.
+Second: $0.5/2=0.25$; both areas remain equal.
+$0.5,0.25$.
+Read a step
+For data $1,2,2,5$, find $\hat F_4(2)$.
+Three observations do not exceed two.
+Divide by four observations.
+$3/4$.
+For data $1,3,3,4$, what is the empirical CDF at $3$?
+Include observations equal to the threshold.
+Three observations are at or below three.
+$0.75$.
+A bin has width $2$ and relative frequency $0.3$. Find its density height.
+Area equals frequency.
+$0.3/2=0.15$.
+$0.15$.
+Does changing histogram bin width change the raw-data mean?
+Distinguish display from data.
+Only the display changes, not the observations.
+No.
+Can a density height exceed one?
+Is the constraint on height or area?
+A narrow bin can be tall while total area remains one.
+Yes.
+In a density histogram, what represents a bin's relative frequency?
+Height
+Area
+Midpoint
+Frequency equals height times width.
+Density height is probability
+Continuous-interval probability is area.
+More bins always give a more objective display
+Different widths emphasize different scales; explain the choice.
+Rebin the same data. Which features change and which remain fixed?
+Only binning changes; the empirical CDF remains visible.
+Continuous-interval probability is area.
+Bins: 5
+Set the bin count to $5$ and compare the figure and readouts.
+At these parameters: sample size $12$; total rectangle area $1$; empirical cumulative proportion $0.416667$.
+Bins: 1
+Set the bin count to $1$ and compare the figure and readouts.
+At these parameters: sample size $12$; total rectangle area $1$; empirical cumulative proportion $0.416667$.
+Bins: 8
+Set the bin count to $8$ and compare the figure and readouts.
+At these parameters: sample size $12$; total rectangle area $1$; empirical cumulative proportion $0.416667$.

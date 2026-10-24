@@ -1,0 +1,67 @@
+Nonnegative series, comparison, and grouping
+Nonnegative terms make partial sums increasing. Convergence is then equivalent to boundedness above.
+Nonnegative terms make partial sums increasing. Convergence is then equivalent to boundedness above.
+Comparison must control every tail term or partial sum, not merely compare two drawn curves.
+Apply comparison
+Explain harmonic divergence
+Apply comparison
+A larger convergent nonnegative series controls a smaller one. A smaller divergent series forces a larger one to diverge. The directions cannot be reversed.
+Explain harmonic divergence
+Group indices between powers of two. Each block has twice as many smaller terms, yet contributes at least one half. Thus partial sums are unbounded.
+Compare power series in the index
+For nonincreasing nonnegative terms, dyadic grouping compares the series with weighted terms at doubling indices. This proves that reciprocal-power series converge exactly when the exponent exceeds one.
+A nonnegative series converges exactly when its partial sums are bounded above.
+Comparison need only hold eventually.
+The compared terms are nonnegative.
+Each doubling block has a specified number of terms.
+Bound the harmonic terms below within that block.
+Arbitrarily many blocks force unbounded partial sums.
+Convergence of reciprocal squares
+Prove $\sum_{n=1}^{\infty}1/n^2$ converges.
+For $n\ge2$, $1/n^2\le1/[n(n-1)]$.
+Since $1/[n(n-1)]=1/(n-1)-1/n$, tail partial sums telescope and are at most one.
+The partial sums are bounded, hence converge.
+The wrong direction
+Harmonic terms exceed reciprocal squares. Does convergence of reciprocal squares prove harmonic convergence?
+A smaller convergent quantity does not control a larger one.
+Harmonic block lower bounds prove divergence.
+No.
+When does $\sum 1/n^p$ converge?
+Compare dyadic blocks with a geometric series.
+Blocks have order $2^{k(1-p)}$, converging exactly when $p>1$.
+$p>1$.
+Can nonnegative partial sums be bounded but oscillate without convergence?
+Partial sums are automatically monotone.
+Bounded monotone sequences converge.
+No.
+May comparison ignore a finite prefix?
+Finitely many terms only change a constant.
+An eventual comparison suffices.
+Yes.
+Use dyadic grouping to prove $\sum_{n=1}^{\infty}n^{-p}$ converges for $p>1$.
+Bound each block by its term count times its largest term.
+For $2^k\le n<2^{k+1}$, $n^{-p}\le2^{-kp}$.
+There are $2^k$ terms, so the block sum is at most $2^{k(1-p)}$.
+Since $2^{1-p}<1$, the block bounds form a convergent geometric series. All nonnegative partial sums are bounded, so the original series converges.
+Since $2^{1-p}<1$, the block bounds form a convergent geometric series. All nonnegative partial sums are bounded, so the original series converges.
+If a larger nonnegative series converges, what follows for a smaller one?
+Convergence
+Divergence
+Undetermined
+The larger partial sums give a uniform upper bound.
+Comparison directions may be reversed freely
+Larger convergence gives smaller convergence; smaller divergence gives larger divergence.
+Small harmonic terms must have a finite sum
+Every doubling block still contributes a fixed amount.
+Group terms in dyadic intervals. Does every block retain a fixed contribution?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+Comparison needs control of all relevant terms. Larger convergence controls smaller series; smaller divergence controls larger series.
+Doubling blocks: 1
+Set the block count to $1$. Compare block contributions row by row and check the one-half lower bound.
+Lower bound per block $0.5$; final index $2$.
+Doubling blocks: 6
+Set the block count to $6$. Compare block contributions row by row and check the one-half lower bound.
+Lower bound per block $0.5$; final index $64$.
+Doubling blocks: 12
+Set the block count to $12$. Compare block contributions row by row and check the one-half lower bound.
+Lower bound per block $0.5$; final index $4096$.

@@ -1,0 +1,64 @@
+Local existence and uniqueness
+Continuity alone does not ensure uniqueness
+Existence hypotheses
+A continuous right-hand side on a rectangle around the initial point guarantees at least one local solution, not an all-time interval.
+Uniqueness hypotheses
+Local Lipschitz dependence on the state gives a unique local solution. A continuous state partial derivative is a common sufficient condition.
+What if a hypothesis fails?
+The theorem is unavailable; nonexistence or nonuniqueness does not automatically follow. Analyze the example. $y'=3\lvert y\rvert^{2/3}$ at zero does provide nonuniqueness.
+The difference of two solutions satisfies an integral relation.
+Bound the difference using a Lipschitz constant.
+An integral inequality forces solutions with the same initial data to coincide.
+A smooth right-hand side
+Is $y'=t+y^2,y(0)=1$ locally unique?
+The polynomial right-hand side is continuous.
+Its state partial derivative $2y$ is continuous near the initial point.
+A unique local solution exists; this alone does not establish global existence.
+Wait, then leave
+Is $y'=3\lvert y\rvert^{2/3},y(0)=0$ unique?
+The zero function is a solution.
+For any $c\ge0$, use zero when $t\le c$ and $(t-c)^3$ when $t>c$. The derivative is zero at the joining point.
+Not unique.
+Is $y'=\sin y,y(0)=2$ locally unique?
+Inspect the state partial derivative.
+The partial derivative $\cos y$ is continuous and bounded.
+Yes.
+Does a continuous right-hand side ensure uniqueness?
+Recall the waiting solutions.
+A continuous power-law right-hand side can still give multiple solutions from one initial value.
+No.
+Does local uniqueness for $y'=y^2$ imply global existence?
+Consider a positive initial value.
+Positive initial values blow up in finite time.
+No.
+Does failure of the Lipschitz condition immediately prove nonuniqueness?
+A sufficient condition is not necessary.
+If the theorem does not apply, further analysis is needed.
+No.
+Continuity already guarantees uniqueness.
+It gives a common existence guarantee only.
+A failed sufficient hypothesis makes the conclusion false.
+The theorem gives no conclusion; examine the case separately.
+Continuity commonly ensures local existence. Local Lipschitz dependence on state further ensures uniqueness.
+With insufficiently regular slopes, several valid curves can leave the same point.
+Distinguish existence and uniqueness hypotheses
+Explain hypothesis boundaries with counterexamples
+Local existence and uniqueness
+If $f$ is continuous on a rectangle near the initial point and the stated state-Lipschitz condition holds, the initial-value problem has a unique local solution.
+What does a continuous state partial derivative usually ensure?
+Local uniqueness
+An elementary closed-form solution
+Boundedness for all time
+It supplies local Lipschitz regularity.
+Existence asks whether a path is available; uniqueness asks whether the starting point allows only one.
+Leave immediately
+The cubic curve departs immediately from the starting point.
+Set waiting time $c$ to $0$ and observation time $t$ to $1$.
+Wait one unit
+Stay at zero first, then leave smoothly.
+Set waiting time $c$ to $1$ and observation time $t$ to $2$.
+Keep waiting
+The curve coincides with zero throughout the current time window.
+Set waiting time $c$ to $2$ and observation time $t$ to $1$.
+Gold is a delayed-departure solution; blue is the zero solution. Both start at zero, with continuous derivatives at the join.
+Can a solution from the same zero initial value wait before leaving?

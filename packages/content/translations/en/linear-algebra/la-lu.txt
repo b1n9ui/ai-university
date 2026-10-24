@@ -1,0 +1,60 @@
+LU factorization and repeated solves
+Save elimination as a factorization
+LU saves elimination steps so one coefficient matrix can handle multiple right-hand sides.
+Solve a lower-triangular system to perform elimination, then an upper-triangular system by back substitution, instead of repeating all matrix operations.
+Construct LU with row permutations
+Reuse a factorization for new right-hand sides
+What does each factor contain?
+$L$ is lower triangular with unit diagonal and stores elimination multipliers; $U$ is upper triangular.
+When are row swaps needed?
+Unpivoted $A=LU$ needs usable pivots. An invertible matrix generally has $PA=LU$, where $P$ records swaps. Not every invertible matrix has an LU factorization without swaps.
+How do you solve the system?
+Solve $Ly=Pb$, then $Ux=y$. Numerical work must also consider pivot sizes and floating-point errors.
+LU factorization and repeated solves
+We solve invertible square systems here. Whenever rows are swapped, permute the right-hand side too.
+Elimination turns the original matrix into an upper-triangular one.
+Store the reverse elimination steps.
+Split one system into two triangular systems.
+Save the elimination multiplier
+Given $A=\begin{pmatrix}1&1\\2&3\end{pmatrix}$, find LU.
+Subtract twice row one from row two to obtain $U=\begin{pmatrix}1&1\\0&1\end{pmatrix}$.
+$L=\begin{pmatrix}1&0\\2&1\end{pmatrix}$; multiplication recovers $A$.
+$A=LU$.
+A new right-hand side
+Use this factorization to solve $Ax=(4,11)^T$.
+$Ly=b$ gives $y_1=4,y_2=11-8=3$.
+$Ux=y$ gives $x_2=3,x_1=1$.
+$x=(1,3)^T$.
+$L$ stores the negated elimination multipliers.
+The usual convention stores the multipliers being subtracted, without negating them. Multiply to verify the signs.
+Every new right-hand side requires a new LU factorization.
+Reuse the factorization while the coefficient matrix stays fixed.
+What is $\begin{pmatrix}1&0\\3&1\end{pmatrix}\begin{pmatrix}2&1\\0&4\end{pmatrix}$?
+Multiply rows by columns.
+The second row is $(6,7)$.
+$\begin{pmatrix}2&1\\6&7\end{pmatrix}$.
+Given $Ly=(2,5)^T$ and $L=\begin{pmatrix}1&0\\2&1\end{pmatrix}$, find $y_2$.
+Forward substitute using the first row, then the second.
+$y_1=2,y_2=5-4=1$.
+Can ordinary elimination without a row swap start on $A=\begin{pmatrix}0&1\\1&0\end{pmatrix}$?
+The first pivot is zero.
+Swap rows; the matrix itself remains invertible.
+A row swap is needed.
+If $PA=LU$, why solve $Ly=Pb$ first?
+Multiply both sides of the original equation by the permutation matrix.
+$PAx=Pb$, rather than $PAx=b$.
+The right-hand side must undergo the same swaps.
+Fix $x+y=3,2x+3y=8$. View the original system, eliminate the first entry of row two, then the second entry of row one.
+Which elimination steps can be reused when only the right-hand side changes?
+If $PA=LU$, what right-hand side is used first to solve $Ax=b$?
+Row swaps act on the whole augmented system.
+LU stores the elimination separately from the current right-hand side. Factor once, then use forward and back substitution.
+Original system
+Select the original system.
+The lines intersect at $(1,2)$.
+Eliminate below
+Select the second step.
+The second constraint becomes $y=2$; the intersection stays fixed.
+Finish elimination
+Select the third step.
+The constraints are $x=1,y=2$; the solution set is unchanged.

@@ -1,0 +1,67 @@
+A series is a limit of partial sums
+An infinite series converges when its finite partial sums approach a finite real number.
+An infinite series converges when its finite partial sums approach a finite real number.
+Small terms alone are insufficient. Their accumulated sum must stabilize too.
+Define partial sums
+Derive a necessary condition
+Define partial sums
+First define finite sums, then study their sequence limit. Infinite-series notation does not authorize unrestricted infinite algebra.
+Derive a necessary condition
+If partial sums converge, their consecutive differences—the original terms—tend to zero. The harmonic series disproves the converse.
+Use the series Cauchy criterion
+Every sufficiently late finite tail sum must be small. Absolute value surrounds the whole sum, unlike absolute convergence, which sums individual absolute values.
+Series convergence means that its partial-sum sequence has a finite limit.
+All terms are defined real numbers.
+Convergence and divergence refer to partial sums.
+Multiply a geometric sum by its ratio and subtract.
+Powers vanish when the ratio's magnitude is less than one.
+Obtain the sum and exact remainder.
+A geometric sum
+Find the sum of $\sum_{n=1}^{\infty}2^{-n}$.
+Starting at index zero gives total two.
+Subtract the zero-power term one.
+One.
+Terms not tending to zero
+Does $1-1+1-1+\cdots$ converge in the ordinary sense?
+Partial sums alternate between one and zero.
+The terms do not tend to zero either.
+No. Other summation conventions are not ordinary convergence in this book.
+Find the sum of $\sum_{k=0}^{\infty}(1/3)^k$.
+Check the geometric-series condition.
+$1/(1-1/3)=3/2$.
+$3/2$.
+Does convergence of a series imply its terms tend to zero?
+Take consecutive partial-sum differences.
+Both partial sums tend to the same sum.
+Yes.
+Do terms tending to zero imply series convergence?
+Consider the harmonic series.
+Small terms can still accumulate into unbounded partial sums.
+No.
+Prove series convergence implies $a_n\to0$, and give a counterexample to the converse.
+Express a term as a consecutive partial-sum difference.
+Let $S_n=\sum_{k=1}^n a_k$. If $S_n\to S$, then $a_n=S_n-S_{n-1}\to S-S=0$.
+For the converse, take $a_n=1/n$, whose terms tend to zero.
+Each doubling block contributes at least $1/2$, making the partial sums unbounded and the series divergent.
+Each doubling block contributes at least $1/2$, making the partial sums unbounded and the series divergent.
+Which sequence determines series convergence?
+Original terms
+Partial sums
+Derivatives of terms
+Finite approximations to the total accumulation must stabilize.
+Vanishing terms establish series convergence
+They are only a necessary condition.
+All finite algebra transfers freely to infinite sums
+Check convergence and interchange conditions.
+Increase the partial-sum length. How does the exact geometric remainder control the unseen tail?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+Terms tending to zero are only necessary. The cumulative partial sums must stabilize as well.
+Retained terms: 1
+Set the retained term count to $1$. Compare the partial sum, exact remainder, and horizontal total-sum line.
+Retained terms $1$; partial sum $1$; exact remainder $1$.
+Retained terms: 20
+Set the retained term count to $20$. Compare the partial sum, exact remainder, and horizontal total-sum line.
+Retained terms $20$; partial sum $1.999998$; exact remainder $0.000001907349$.
+Retained terms: 40
+Set the retained term count to $40$. Compare the partial sum, exact remainder, and horizontal total-sum line.
+Retained terms $40$; partial sum $2$; exact remainder $1.818989\times10^{-12}$.

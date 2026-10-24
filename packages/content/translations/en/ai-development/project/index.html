@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>My learning list</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <p class="eyebrow">A small project you can explain</p>
+      <h1>My learning list</h1>
+      <p>Write the next thing you want to learn, then check it off when done.</p>
+      <form id="form">
+        <label for="title">Learning task</label>
+        <div class="input-row">
+          <input
+            id="title"
+            autocomplete="off"
+            placeholder="For example: practice a Git commit"
+          /><button>Add</button>
+        </div>
+      </form>
+      <p id="status" role="status" aria-live="polite"></p>
+      <p id="count"></p>
+      <ul id="list"></ul>
+      <details>
+        <summary>Backup and restore</summary>
+        <p>
+          Data stays in this browser and origin. A public page does not expose your list to other visitors. Clearing browser data deletes it, so download a backup.
+        </p>
+        <button id="export" type="button">Download JSON backup</button
+        ><label for="import">Choose JSON backup (replaces the current list)</label
+        ><input
+          id="import"
+          type="file"
+          accept=".json,application/json"
+        /><button id="restore" type="button" disabled>Confirm replacement</button>
+      </details>
+    </main>
+    <script type="module" src="app.mjs"></script>
+  </body>
+</html>

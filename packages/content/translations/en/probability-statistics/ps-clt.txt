@@ -1,0 +1,65 @@
+The central limit theorem
+Sums of many independent contributions approach normality after standardization.
+Sums of many independent contributions approach normality after standardization.
+The original data need not be bell-shaped. The distribution here comes from repeating the sampling and calculating a mean each time.
+Identify the sampling distribution
+Standardize correctly
+Identify the sampling distribution
+A histogram of one sample and a histogram of means from many samples describe different objects.
+Standardize correctly
+For independent identically distributed variables with finite positive variance, centering the sample mean and scaling by its population standard error gives convergence in distribution to a standard normal.
+Judge approximation limits
+Skewness, heavy tails, rare events, and tail-probability questions can require larger samples. There is no universal guarantee that thirty observations suffice.
+The classical version here assumes independent identically distributed variables and $0<\sigma^2<\infty$.
+The classical version here assumes independent identically distributed variables and $0<\sigma^2<\infty$.
+Convergence in distribution does not make every finite-sample distribution exactly normal.
+Averaging leaves the center unchanged.
+The scale of the average shrinks with sample size.
+Center and divide by that scale to obtain a nondegenerate limit.
+Approximate a mean probability
+An independent sample comes from a population with mean ten and standard deviation six. For sample size 36, approximate $P(\bar X>12)$.
+The standard error is one.
+The standardized threshold is two.
+If the normal approximation applies, approximately $1-\Phi(2)=0.0228$.
+How this differs from the law of large numbers
+If the mean approaches its expectation, why does the standardized mean still fluctuate?
+The unscaled mean's fluctuations shrink.
+Multiplication by the square root of sample size reveals the shape of those shrinking fluctuations.
+The two theorems concern different scales.
+Population standard deviation is ten and sample size is 25. Find the mean's standard error.
+Divide by the square root of sample size.
+$10/5=2$.
+$2$.
+Does increasing sample size turn the original population normal?
+Identify the object that converges.
+The sampling distribution of a statistic, such as the mean, changes.
+No.
+Can independent Cauchy observations use this finite-variance CLT?
+Check the moment assumptions.
+The population does not have finite variance.
+No.
+Do thirty observations always suffice for a highly skewed population?
+Consider the tails and required accuracy.
+No sample-size cutoff works universally.
+No guarantee.
+Which distribution does this CLT mainly describe as approaching normality?
+The original population
+Standardized means from repeated samples
+Any small set of data
+Distinguish the population, one sample, and a statistic's sampling distribution.
+The CLT makes raw data normal
+It describes statistics such as standardized means.
+Thirty observations guarantee accuracy
+Skewness, tails, and accuracy requirements all affect the sample size needed.
+Increase the size of each sample. How does the repeated-sampling distribution of standardized means change?
+Seeded repeated Bernoulli samples produce standardized means. The histogram is a finite simulation; the curve is a normal reference.
+It describes statistics such as standardized means.
+Observations per sample: 20
+Set observations per sample to $20$ and compare the diagram and readings.
+At this preset: sample size $20$; repetitions $300$; simulated mean $0.0048795$; fraction outside the window $0$.
+Observations per sample: 1
+Set observations per sample to $1$ and compare the diagram and readings.
+At this preset: sample size $1$; repetitions $300$; simulated mean $-0.0436436$; fraction outside the window $0$.
+Observations per sample: 80
+Set observations per sample to $80$ and compare the diagram and readings.
+At this preset: sample size $80$; repetitions $300$; simulated mean $0.0439155$; fraction outside the window $0$.

@@ -1,0 +1,64 @@
+Linear independence and redundant directions
+Can any direction be removed?
+Independence means that only all-zero coefficients combine the vectors to give zero.
+A direction expressible using the others is redundant. Equivalently, some coefficients not all zero give a zero combination.
+Test independence with a homogeneous system
+Construct a nontrivial dependence relation
+How do you calculate the test?
+Solve $Ac=0$. Only the zero solution means independent columns; a nonzero solution means dependent columns.
+Why is dependence equivalent to redundancy?
+If $\sum c_jv_j=0$ and some $c_i\ne0$, move $v_i$ to the other side and divide by that coefficient.
+Can the number of vectors rule it out?
+More than $n$ vectors in $\mathbb R^n$ are dependent: the homogeneous system has more unknowns than possible pivots.
+Linear independence and redundant directions
+Apply the test to the whole list. The empty list is independent; a nonempty list containing zero is dependent.
+A nonzero coefficient relation identifies a redundant vector.
+Divide by a nonzero coefficient.
+Reversing the rearrangement constructs a nonzero homogeneous solution.
+Two planar directions
+Are $(1,1),(1,-1)$ independent?
+$a+b=0,a-b=0$.
+Adding and subtracting forces $a=b=0$.
+Independent.
+Find a dependence relation
+$u=(1,0),v=(0,1),w=(2,3)$.
+$w=2u+3v$.
+The coefficients in $2u+3v-w=0$ are not all zero.
+Dependent.
+No two parallel vectors means independence.
+Three planar vectors can be pairwise nonparallel but dependent together.
+Nonzero vectors are automatically independent.
+Nonzero vectors can still satisfy a dependence relation.
+Are $(1,2),(2,4)$ independent?
+Compare scalar multiples.
+The second is twice the first.
+Dependent.
+Why does a list containing zero depend linearly?
+Give the zero vector a nonzero coefficient.
+$1\cdot0+0\cdot v_2+\cdots=0$.
+This produces a nontrivial zero combination.
+Can four vectors in $\mathbb R^3$ be independent?
+How many pivots are possible?
+There are four unknowns but at most three pivots.
+No.
+Are $(1,0,0),(0,1,0)$ independent in $\mathbb R^3$?
+Check uniqueness of the zero combination.
+The two nonzero coordinate positions force both coefficients to zero.
+Independent, but they do not span the whole space.
+The generators are $u=(1,0,0),v=(1,c,0)$. The faint plane shows their full span; the outline shows only the part drawn with bounded coefficients.
+As the second direction approaches the first, when is independence actually lost?
+What does linear dependence mean?
+At least one vector is expressible using the others
+Every pair is parallel
+All vectors must be zero
+A nontrivial homogeneous relation can be solved for at least one vector.
+Independence tests redundancy, not whether the target space is fully covered. Keep these questions separate.
+Two independent directions
+Set $c=1$.
+The vectors span the entire horizontal plane, of dimension two.
+Nearly parallel
+Set $c=0.1$.
+The bounded-coefficient region is narrow, but the span is still the whole plane.
+Exactly dependent
+Set $c=0$.
+The vectors coincide, so their span is just a line.

@@ -1,0 +1,198 @@
+{
+  "id": "debugging",
+  "chapterId": "chapter-5",
+  "number": "5.2",
+  "title": "Reproduce before guessing",
+  "subtitle": "Turn a vague complaint into diagnostic evidence.",
+  "concept": "Record environment, actions, actual and expected results. Reproduce reliably, narrow the failing data stage and make a minimal fix.",
+  "intuition": "If one tap has no water, check whether other taps work before dismantling the house.",
+  "objectives": [
+    "Record environment, steps, actual and expected behavior and original errors.",
+    "Retest the failure and nearby boundaries, recording cause and evidence."
+  ],
+  "body": [
+    {
+      "title": "Preserve the first error",
+      "text": "Record directory, command, URL, input and full error. Browser Console shows script errors; Network shows requests. Screenshots help, but text and steps are easier to reproduce. Replace credentials and private log content with descriptive placeholders before sharing."
+    },
+    {
+      "title": "Test one hypothesis",
+      "text": "Refresh loss might mean failed saving, failed loading or changed origin. Inspect one hypothesis at a time: same URL, write errors, matching keys. Ask for the next check that distinguishes causes. Changing ten things obscures the cause and can introduce side effects."
+    },
+    {
+      "title": "Retest the original and neighboring cases",
+      "text": "After a minimal fix, repeat the failure and related cases: ordinary saving, whitespace rejection and invalid backup preservation. Record cause, fix, checks and remaining issues. Abandon guesses contradicted by evidence. Swallowing exceptions is not success; users need to know data was not saved."
+    }
+  ],
+  "formalDefinition": {
+    "text": "Record environment, actions, actual and expected results. Reproduce reliably, narrow the failing data stage and make a minimal fix.",
+    "conditions": [
+      "For small personal learning projects. In shared repositories, follow the team's conventions.",
+      "This method produces checkable evidence; it cannot guarantee arbitrary AI output is correct."
+    ]
+  },
+  "workflow": [
+    "Record environment, steps, actual and expected behavior and original errors.",
+    "Test one hypothesis along the data path to narrow the cause.",
+    "Retest the failure and nearby boundaries, recording cause and evidence."
+  ],
+  "workedExamples": [
+    {
+      "title": "Data disappears on refresh",
+      "problem": "What diagnostic material should the agent receive?",
+      "steps": [
+        "State browser and URL.",
+        "Record add-visible-refresh-empty steps.",
+        "Give persistence expectations and the original console error."
+      ],
+      "answer": "Environment: http://127.0.0.1:5180 locally. Add Learn Git, confirm it appears, then refresh. Actual: empty list. Expected: retained item. Original console error attached. Distinguish save failure, load failure and origin changes before rewriting anything."
+    },
+    {
+      "title": "Storage is blocked",
+      "problem": "Should a saving exception be caught and reported as success?",
+      "steps": [
+        "Observe the write did not persist.",
+        "Keep the previous reliable state and report not saved.",
+        "When storage works, verify refresh again."
+      ],
+      "answer": "Do not claim saved. Handle failure visibly and distinguish memory changes from persisted data. This example updates the displayed list only after a successful write; failure preserves the previous state."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "If a fix fails, rewrite everything.",
+      "correction": "Reproduce and narrow first; a rewrite discards already-verified behavior."
+    },
+    {
+      "claim": "Hiding errors makes the app stable.",
+      "correction": "Suppressed exceptions can silently lose data. Give understandable feedback."
+    }
+  ],
+  "practice": [
+    {
+      "id": "debugging-p1",
+      "difficulty": 2,
+      "problem": "Expand the report saving is broken.",
+      "hint": "Supply four kinds of information.",
+      "answer": "URL and environment, steps, actual versus expected results, and original errors.",
+      "solution": [
+        "Enable another person to reproduce it.",
+        "Give evidence, not only a conclusion."
+      ]
+    },
+    {
+      "id": "debugging-p2",
+      "difficulty": 2,
+      "problem": "The list is empty after changing ports. What first?",
+      "hint": "How is storage isolated?",
+      "answer": "Check origin changes. Ports have separate localStorage and do not migrate automatically.",
+      "solution": [
+        "Confirm the cause before editing.",
+        "Expected isolation does not mean all persistence code is broken."
+      ]
+    },
+    {
+      "id": "debugging-p3",
+      "difficulty": 2,
+      "problem": "Five simultaneous edits made it work. What is missing?",
+      "hint": "Which one fixed it?",
+      "answer": "The cause is unclear and other edits may have side effects. Narrow the diff and verify each part.",
+      "solution": [
+        "Prefer an explainable fix.",
+        "Temporary disappearance of the symptom is insufficient."
+      ]
+    },
+    {
+      "id": "debugging-p4",
+      "difficulty": 2,
+      "problem": "What should be checked after a persistence fix?",
+      "hint": "The original case and nearby failures.",
+      "answer": "Refresh reproduction, ordinary creation, whitespace rejection, write-failure feedback and invalid-import preservation.",
+      "solution": [
+        "Avoid fixing one behavior while breaking another.",
+        "Choose boundaries related to the change."
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "Which debugging request is useful?",
+    "choices": [
+      "Broken again; think harder",
+      "Environment, steps, actual/expected results and original errors",
+      "Rewrite everything"
+    ],
+    "correctIndex": 1,
+    "feedback": [
+      "No new diagnostic evidence.",
+      "This enables reproduction and diagnosis.",
+      "Scope is broad before the cause is known."
+    ]
+  },
+  "interactiveVisual": {
+    "kind": "decision",
+    "prediction": "Refresh loss has three plausible causes. How do you narrow them?",
+    "steps": [
+      {
+        "question": "Ports differ before and after refresh. What first?",
+        "choices": [
+          "Check origin-specific storage",
+          "Change all JavaScript",
+          "Hide errors"
+        ],
+        "correctIndex": 0,
+        "feedback": [
+          "The port change itself may explain missing records.",
+          "There is no evidence for rewriting all code.",
+          "Hiding information obstructs diagnosis."
+        ]
+      },
+      {
+        "question": "A write definitely throws. What should the page do?",
+        "choices": [
+          "Report success",
+          "Report not saved and retain reliable state",
+          "Silently clear data"
+        ],
+        "correctIndex": 1,
+        "feedback": [
+          "Success would contradict the write result.",
+          "State the failure without misleading the user.",
+          "This destroys existing work."
+        ]
+      },
+      {
+        "question": "The fix now works. What next?",
+        "choices": [
+          "Repeat the original and related boundary checks",
+          "Expand features immediately",
+          "Delete reproduction notes"
+        ],
+        "correctIndex": 0,
+        "feedback": [
+          "Confirm the fix and inspect side effects.",
+          "Finish the current problem first.",
+          "Records support later handoffs."
+        ]
+      }
+    ],
+    "followUp": "Choose a reproducible problem, write its report and distinguish confirmed facts from open hypotheses."
+  },
+  "prerequisites": [
+    "testing"
+  ],
+  "difficulty": 3,
+  "misconceptionTags": [
+    "debugging-guess",
+    "debugging-evidence"
+  ],
+  "sources": [
+    "mdn-storage",
+    "node-test"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.1.1",
+    "status": "first-edition",
+    "humanReviewed": false
+  }
+}

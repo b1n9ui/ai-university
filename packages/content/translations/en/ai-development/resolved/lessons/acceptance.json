@@ -1,0 +1,198 @@
+{
+  "id": "acceptance",
+  "chapterId": "chapter-1",
+  "number": "1.3",
+  "title": "Define what done means",
+  "subtitle": "Turn useful into results you can check yourself.",
+  "concept": "Acceptance criteria specify inputs, actions and expected outcomes so you and the agent share a definition of done.",
+  "intuition": "Not too sweet is ambiguous when ordering a cake; size, flavor and delivery date are easier to check.",
+  "objectives": [
+    "Specify the starting state, action and expected result.",
+    "Judge completion using your checks, not the agent's report alone."
+  ],
+  "body": [
+    {
+      "title": "Write a check in three parts",
+      "text": "Use Given, When, Then. Given an empty list, when Practice Git is submitted, then one unfinished item appears. This specifies state, action and outcome. Define it before coding so the current implementation does not lower the requirement."
+    },
+    {
+      "title": "Boundary cases expose omissions",
+      "text": "Normal input covers only the normal path. Check whitespace, duplicate titles, refresh and storage failure too. This first release allows duplicate titles with distinct IDs and rejects whitespace-only titles. After trimming, the limit is 80 UTF-16 code units; some symbols use more than one. JavaScript length is not a universal character count."
+    },
+    {
+      "title": "Separate behavior, experience and limits",
+      "text": "Functional criteria describe results; experience criteria include keyboard submission and no mobile overflow. State that devices do not synchronize. Limits cannot excuse failing promised refresh persistence. Change goals only by revisiting the original purpose."
+    }
+  ],
+  "formalDefinition": {
+    "text": "Acceptance criteria specify inputs, actions and expected outcomes so you and the agent share a definition of done.",
+    "conditions": [
+      "For small personal learning projects. In shared repositories, follow the team's conventions.",
+      "This method produces checkable evidence; it cannot guarantee arbitrary AI output is correct."
+    ]
+  },
+  "workflow": [
+    "Specify the starting state, action and expected result.",
+    "Include at least one boundary or failure input.",
+    "Judge completion using your checks, not the agent's report alone."
+  ],
+  "workedExamples": [
+    {
+      "title": "Checking blank input",
+      "problem": "How do you test that blank plans cannot be added?",
+      "steps": [
+        "Start with an empty list.",
+        "Enter three spaces and submit.",
+        "Check unchanged count and an understandable message."
+      ],
+      "answer": "Given zero items, submitting only spaces leaves zero items and displays Please enter a study plan. Checking that the button clicks is insufficient."
+    },
+    {
+      "title": "Checking duplicate titles",
+      "problem": "Two items are titled Learn Git. What should deleting the second do?",
+      "steps": [
+        "Create two same-title records.",
+        "Confirm distinct IDs.",
+        "Delete the second and check that the first remains."
+      ],
+      "answer": "Only the first remains. Deletion targets the chosen record; allowed duplicate titles cannot identify records uniquely."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "No page error means done.",
+      "correction": "Check inputs and results too; silent data loss may produce no visible error."
+    },
+    {
+      "claim": "Green tests guarantee requirements are met.",
+      "correction": "If refresh or blank-input cases are missing, green results support only the cases that exist."
+    }
+  ],
+  "practice": [
+    {
+      "id": "acceptance-p1",
+      "difficulty": 2,
+      "problem": "Write a criterion for completion toggling.",
+      "hint": "Specify the initial state and click outcome.",
+      "answer": "Given an unfinished item, checking it marks it complete; unchecking restores unfinished status.",
+      "solution": [
+        "Define the first change.",
+        "Check reversal so completion is not one-way."
+      ]
+    },
+    {
+      "id": "acceptance-p2",
+      "difficulty": 2,
+      "problem": "Make the requirement premium interface checkable.",
+      "hint": "Focus on reading, screen size and controls.",
+      "answer": "At 390px width, titles wrap without horizontal scrolling and every button is keyboard-focusable.",
+      "solution": [
+        "Translate preferences into specific layout requirements.",
+        "Do not rely on premium as the only criterion."
+      ]
+    },
+    {
+      "id": "acceptance-p3",
+      "difficulty": 2,
+      "problem": "What is missing from ordinary creation, deletion and completion checks?",
+      "hint": "Consider returning the next day.",
+      "answer": "Refresh persistence, whitespace rejection and deleting one of duplicate titles.",
+      "solution": [
+        "Check the cross-day scenario.",
+        "Include invalid and ambiguous inputs, not just the happy path."
+      ]
+    },
+    {
+      "id": "acceptance-p4",
+      "difficulty": 2,
+      "problem": "The agent reports tests passed. What else do you need?",
+      "hint": "Which checks passed?",
+      "answer": "Commands, actual results, covered cases and unchecked items, followed by your own key-action checks.",
+      "solution": [
+        "Ask for evidence and scope.",
+        "One conclusion does not guarantee every feature."
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "Which criterion can you execute directly?",
+    "choices": [
+      "Stable functionality",
+      "Whitespace submission leaves the count unchanged and shows a message",
+      "As many tests as possible"
+    ],
+    "correctIndex": 1,
+    "feedback": [
+      "No specific input or result.",
+      "The action and expected result can be checked directly.",
+      "Test count alone says nothing about coverage."
+    ]
+  },
+  "interactiveVisual": {
+    "kind": "decision",
+    "prediction": "What does checking only normal input miss?",
+    "steps": [
+      {
+        "question": "What should happen after entering three spaces?",
+        "choices": [
+          "Add a blank item",
+          "Add nothing and show a message",
+          "Crash and reopen"
+        ],
+        "correctIndex": 1,
+        "feedback": [
+          "A blank item expresses no plan.",
+          "This meets whitespace-rejection criteria.",
+          "Expected invalid inputs need handling and explanation."
+        ]
+      },
+      {
+        "question": "Deleting one of two same-title records removes both.",
+        "choices": [
+          "Accept as simpler logic",
+          "Treat as acceptance failure",
+          "Change wording only"
+        ],
+        "correctIndex": 1,
+        "feedback": [
+          "Allowed duplicates cannot all be deleted by title.",
+          "Use independent IDs to target the selected record.",
+          "Wording cannot fix incorrect data changes."
+        ]
+      },
+      {
+        "question": "All written tests pass, but none tests refresh.",
+        "choices": [
+          "Claim refresh is verified",
+          "Record the gap and check refresh yourself",
+          "Remove the saving requirement"
+        ],
+        "correctIndex": 1,
+        "feedback": [
+          "There is no evidence for that claim.",
+          "Complete the evidence for the cross-day workflow.",
+          "Do not lower the core goal to fit the implementation."
+        ]
+      }
+    ],
+    "followUp": "Choose a feature and write normal, boundary and failure acceptance cases."
+  },
+  "prerequisites": [
+    "small-scope"
+  ],
+  "difficulty": 1,
+  "misconceptionTags": [
+    "acceptance-guess",
+    "acceptance-evidence"
+  ],
+  "sources": [
+    "mdn-start",
+    "node-test"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.1.1",
+    "status": "first-edition",
+    "humanReviewed": false
+  }
+}

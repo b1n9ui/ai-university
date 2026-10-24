@@ -1,0 +1,64 @@
+Damped oscillation and critical damping
+Roots determine whether motion oscillates
+Form the motion equation
+With mass $m>0$, damping $c\ge0$, and stiffness $k>0$, free motion satisfies $my''+cy'+ky=0$.
+Three cases
+Compare $c^2$ with $4mk$. Below gives decaying oscillations; equality gives a repeated root; above gives two negative real roots.
+Why does energy decrease?
+Mechanical energy is $E=(m(y')^2+ky^2)/2$. Differentiate and substitute to get $E'=-c(y')^2$.
+Write force balance.
+Substitute exponentials to find the roots.
+Only the dissipative term remains in the energy derivative.
+Underdamped
+Classify $y''+2y'+5y=0$.
+The discriminant is $4-20=-16$.
+The roots are $-1\pm2i$.
+Underdamped, with envelope $e^{-t}$ and angular frequency two.
+The critical value
+For mass two and stiffness eight, find the critical damping coefficient.
+The critical condition is $c^2=4mk$.
+Take the nonnegative root $c=2\sqrt{16}$.
+$c=8$.
+Which damping regime describes $y''+6y'+4y=0$?
+Compare the damping square with four times stiffness.
+$36>16$.
+Overdamped.
+With no damping or forcing, how does mechanical energy change?
+Set the dissipation coefficient to zero.
+The energy derivative is identically zero.
+Conserved.
+Does increasing positive damping always shorten return time for every initial state?
+Overdamping can introduce a very slow root.
+At large damping, one negative root approaches zero, allowing slower decay.
+No universal conclusion.
+What does negative damping do to the energy derivative?
+Inspect the dissipation sign.
+$-c(y')^2\ge0$: the system receives energy.
+Nondecreasing; this is negative damping.
+More damping makes every settling process faster.
+Overdamping can produce a slowly decaying direction.
+Any damping eliminates oscillation.
+Underdamped motion still oscillates with decreasing amplitude.
+Damping dissipates energy through velocity. Characteristic roots distinguish underdamped, critical, and overdamped motion.
+The spring restores equilibrium while damping removes kinetic energy. Their balance determines the return pattern.
+Classify damping using the discriminant
+Determine dissipation through energy
+Damped oscillation and critical damping
+Assume $m,k>0,c\ge0$, no forcing, and displacement measured from equilibrium. Underdamped angular frequency is $\sqrt{k/m-(c/2m)^2}$.
+Which roots correspond to critical damping?
+A purely imaginary pair
+A repeated negative real root
+Two positive real roots
+With positive mass and stiffness, the critical root is repeated, negative, and real.
+Roots, motion, envelopes, and dissipation describe the same model from different perspectives.
+Underdamped
+Amplitude decays while the motion still crosses equilibrium.
+Set damping coefficient $c$ to $0.5$ and observation time $t$ to $6$.
+Critically damped
+Use the repeated-real-root formula.
+Set damping coefficient $c$ to $2$ and observation time $t$ to $6$.
+Overdamped
+One of the two negative real roots gives a slower decay direction.
+Set damping coefficient $c$ to $4$ and observation time $t$ to $6$.
+Mass and stiffness are one, so critical damping is two. Time curves also show energy and dissipation rate.
+How does the motion change from underdamped to overdamped?

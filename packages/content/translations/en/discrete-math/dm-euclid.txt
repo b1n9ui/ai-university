@@ -1,0 +1,66 @@
+The Euclidean algorithm and Bézout's identity
+Repeated remainders preserve the gcd while reducing the problem.
+Repeated remainders preserve the gcd while reducing the problem.
+Removing an integer multiple leaves a remainder that retains the same common divisors.
+Preserve common divisors
+Prove termination
+Preserve common divisors
+Division with remainder writes the dividend as an integer multiple of the divisor plus a remainder. Dividing both original numbers is equivalent to dividing the divisor and remainder.
+Prove termination
+Nonzero remainders are successively smaller nonnegative integers, so they cannot decrease forever. The last nonzero remainder is the gcd.
+Recover a linear combination
+Substitute backward from the final step. Each remainder becomes an integer linear combination of the original inputs, giving Bézout coefficients.
+For integers not both zero, their gcd is an integer linear combination of them.
+The algorithm here takes positive integer inputs.
+Each remainder lies between zero and one less than the divisor.
+Apply division with remainder.
+Common divisibility is preserved in both directions by subtraction.
+Repeat until the remainder is zero.
+\gcd(a,b)=\text{last nonzero remainder}
+Compute and substitute backward
+Find the gcd of thirty and eighteen and express it as a linear combination.
+$30=18+12,18=12+6,12=2\cdot6$.
+$6=18-12=2\cdot18-30$.
+$\gcd=6=-30+2\cdot18$.
+Does an integer solution exist?
+Does $12x+18y=5$ have integer solutions?
+The left side is divisible by six.
+Five is not divisible by six.
+No integer solution exists.
+What is the gcd of forty-eight and eighteen?
+Take successive remainders.
+$48\bmod18=12,18\bmod12=6$; the next remainder is zero.
+Six.
+Are Bézout coefficients unique?
+Change the coefficient pair while preserving the combination.
+For coprime inputs, adjust coefficients by multiples of the other input.
+No.
+Why does the algorithm terminate?
+In which set are remainders decreasing?
+Nonnegative integers cannot decrease strictly forever.
+The remainders strictly decrease.
+Find integers solving $7x+5y=1$.
+Try small coefficients.
+$7\cdot3+5\cdot(-4)=1$.
+$(x,y)=(3,-4)$.
+Which final quantity gives the gcd?
+Last quotient
+Final zero remainder
+Last nonzero remainder
+The final nonzero divisor is the common divisor.
+Decimal approximations suffice for this algorithm
+Integer quotients and remainders must be exact.
+Back-substitution coefficients are always unique
+An integer linear combination generally has infinitely many coefficient pairs.
+Execute the remainder steps. Why is the gcd unchanged?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+Integer quotients and remainders must be exact.
+Steps executed: 0
+Set the control to $0$. Compare the current step with the complete reference result.
+At this setting: steps executed $0$; total steps $3$.
+Steps executed: 5
+Set the control to $5$. Compare the current step with the complete reference result.
+At this setting: steps executed $3$; total steps $3$; gcd $6$.
+Steps executed: 10
+Set the control to $10$. Compare the current step with the complete reference result.
+At this setting: steps executed $3$; total steps $3$; gcd $6$.

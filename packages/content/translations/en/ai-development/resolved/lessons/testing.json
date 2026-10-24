@@ -1,0 +1,197 @@
+{
+  "id": "testing",
+  "chapterId": "chapter-5",
+  "number": "5.1",
+  "title": "Choose checks that matter",
+  "subtitle": "Make tests answer user questions.",
+  "concept": "Tests compare given inputs with expected results. Normal, boundary and failure coverage matter more than test count.",
+  "intuition": "Opening an umbrella in sunshine does not establish how it handles rain and wind.",
+  "objectives": [
+    "Choose normal, boundary and failure cases from acceptance criteria.",
+    "Report commands, results, coverage and remaining checks."
+  ],
+  "body": [
+    {
+      "title": "Start with acceptance cases",
+      "text": "For creation, check ordinary text, whitespace, 80/81 code units, duplicate titles and capacity. Expectations come from requirements, not copying current function results. Fast data-rule tests complement browser checks of feedback, refresh, keyboard and narrow layouts."
+    },
+    {
+      "title": "Read one test first",
+      "text": "This example uses Node's built-in test runner. test names a case; assert.equal compares values; assert.throws checks rejection. npm test runs node --test tasks.test.mjs. Start by explaining one test's input, expected outcome and purpose rather than learning every framework."
+    },
+    {
+      "title": "Do not let implementation and expected answer share a mistake",
+      "text": "Recomputing the same algorithm in an assertion may repeat its error. Establish expectations with simple manual cases, before/after comparison or an independent method. When deleting the second duplicate title, inspect which record remains. Passing tests establish their cases, not all security, browsers and inputs."
+    }
+  ],
+  "formalDefinition": {
+    "text": "Tests compare given inputs with expected results. Normal, boundary and failure coverage matter more than test count.",
+    "conditions": [
+      "For small personal learning projects. In shared repositories, follow the team's conventions.",
+      "This method produces checkable evidence; it cannot guarantee arbitrary AI output is correct."
+    ]
+  },
+  "workflow": [
+    "Choose normal, boundary and failure cases from acceptance criteria.",
+    "Check rules against independent expectations, then inspect browser interactions.",
+    "Report commands, results, coverage and remaining checks."
+  ],
+  "workedExamples": [
+    {
+      "title": "Read a blank-input test",
+      "problem": "What does assert.throws(() => addTask([], \"   \", \"a\")) check?",
+      "steps": [
+        "Inputs are an empty array, three spaces and an ID.",
+        "Expect addTask to throw a handled error.",
+        "The page must separately catch it and display feedback."
+      ],
+      "answer": "It supports rejection by the data rule, not visible feedback. No page event or rendering was exercised, so browser acceptance is still needed."
+    },
+    {
+      "title": "A deletion test",
+      "problem": "How can deletion of one duplicate title be checked independently?",
+      "steps": [
+        "Create same-title records with IDs a and b.",
+        "Delete b.",
+        "Expect only a, with its original content and state."
+      ],
+      "answer": "Compare the explicit remaining record, not just length 1. Otherwise deleting the wrong record might pass."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "More tests always mean more reliability.",
+      "correction": "Repeating one path can hide omissions. Prioritize important behavior and boundaries."
+    },
+    {
+      "claim": "AI-written tests mean verification is complete.",
+      "correction": "Run them and compare expectations with requirements."
+    }
+  ],
+  "practice": [
+    {
+      "id": "testing-p1",
+      "difficulty": 2,
+      "problem": "Give three creation-rule cases.",
+      "hint": "Happy path, boundary and rejection.",
+      "answer": "Ordinary Learn Git; 80 accepted and 81 rejected; whitespace-only rejected.",
+      "solution": [
+        "Cover the three behaviors.",
+        "State an expected outcome for each."
+      ]
+    },
+    {
+      "id": "testing-p2",
+      "difficulty": 2,
+      "problem": "Does length changing from 2 to 1 prove the correct item was removed?",
+      "hint": "The wrong one could be removed.",
+      "answer": "No. Check the remaining ID and content.",
+      "solution": [
+        "Length establishes only count.",
+        "Identity determines which item was deleted."
+      ]
+    },
+    {
+      "id": "testing-p3",
+      "difficulty": 2,
+      "problem": "Do passing rule tests establish refresh persistence?",
+      "hint": "Did the test access browser storage?",
+      "answer": "No. These do not exercise app.mjs and storage. Add and refresh in the browser.",
+      "solution": [
+        "Separate data functions from page integration.",
+        "Obtain evidence in the relevant environment."
+      ]
+    },
+    {
+      "id": "testing-p4",
+      "difficulty": 1,
+      "problem": "How should an agent unable to run tests report?",
+      "hint": "Evidence must be truthful.",
+      "answer": "State not run and why, give commands and expected behavior, and let you execute and record actual results. Do not claim passed.",
+      "solution": [
+        "Existing test code is not successful execution.",
+        "Verification gaps should affect acceptance."
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "Which is a good deletion test?",
+    "choices": [
+      "Only check that the array shrinks",
+      "Check the intended remaining ID and original content",
+      "Only check the page did not crash"
+    ],
+    "correctIndex": 1,
+    "feedback": [
+      "The wrong object might be deleted.",
+      "This matches the selected record's behavior.",
+      "The data result is unchecked."
+    ]
+  },
+  "interactiveVisual": {
+    "kind": "decision",
+    "prediction": "Which kind of check supports which conclusion?",
+    "steps": [
+      {
+        "question": "A pure-function whitespace test passed. What does it prove?",
+        "choices": [
+          "The data rule rejects that input",
+          "Page feedback is visible",
+          "All browsers are compatible"
+        ],
+        "correctIndex": 0,
+        "feedback": [
+          "The assertion covers this rule.",
+          "The page was not run.",
+          "This case does not cover every browser."
+        ]
+      },
+      {
+        "question": "A duplicate-title deletion test checks only length.",
+        "choices": [
+          "Enough",
+          "Add remaining-ID and content assertions",
+          "Disallow duplicate titles"
+        ],
+        "correctIndex": 1,
+        "feedback": [
+          "Wrong-item deletion might still pass.",
+          "Identity checks match the behavior.",
+          "Do not remove allowed inputs to suit a weak test."
+        ]
+      },
+      {
+        "question": "Only Node tests were run. What report fits?",
+        "choices": [
+          "The whole site is verified",
+          "Rules tested; browser checks pending",
+          "Publish without looking at the page"
+        ],
+        "correctIndex": 1,
+        "feedback": [
+          "This overstates the evidence.",
+          "This states what the checks support.",
+          "Interaction failures may remain."
+        ]
+      }
+    ],
+    "followUp": "Read one project test yourself. Write its input, expectation and what it does not check."
+  },
+  "prerequisites": [
+    "review-changes"
+  ],
+  "difficulty": 3,
+  "misconceptionTags": [
+    "testing-guess",
+    "testing-evidence"
+  ],
+  "sources": [
+    "node-test"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.1.1",
+    "status": "first-edition",
+    "humanReviewed": false
+  }
+}

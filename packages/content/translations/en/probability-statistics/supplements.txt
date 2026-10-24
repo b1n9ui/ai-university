@@ -1,0 +1,280 @@
+Where Data Come From · Chapter Review
+Two regions contain $0.7,0.3$ of the population and have means $20,40$. Find the population's weighted mean. Why is it not simply thirty?
+The number of samples or groups does not determine their population weights.
+$0.7(20)+0.3(40)=26$.
+A simple average implicitly gives each region half the population weight.
+$26$; a simple average uses the wrong population composition.
+Volunteers are randomly assigned to treatment and control groups. What conclusions does this support, and what does it not guarantee?
+Distinguish recruitment from treatment assignment.
+Under the stated experimental conditions, random assignment supports a causal comparison within the sample.
+Voluntary participation does not automatically make the sample representative of the target population.
+It supports treatment comparisons within the experimental setting, without automatically justifying generalization to the population.
+Events and Probability · Chapter Review
+Two events have probabilities $0.5,0.4$ and intersection probability $0.2$. Find their union probability and $P(A\mid B)$, and determine whether they are independent.
+Apply the addition rule, conditional probability, and the product criterion separately.
+The union probability is $0.5+0.4-0.2=0.7$.
+The conditional probability is $0.2/0.4=0.5$, and the intersection equals the product of the marginal probabilities.
+Union probability $0.7$; conditional probability $0.5$; the events are independent.
+Choose three representatives from eight people, with no distinct roles, then appoint one representative as spokesperson. How many outcomes are possible?
+Choose the group, then assign the role.
+There are $\binom83=56$ representative groups.
+Each group has three possible spokespersons.
+$168$ outcomes.
+Random Variables and Average Behavior · Chapter Review
+$X$ equals zero with probability $0.25$ and four with probability $0.75$. Find its expectation and variance.
+Calculate the first and second moments.
+$EX=3,EX^2=12$.
+The variance is $12-9=3$.
+Expectation $3$; variance $3$.
+Source A accounts for twenty percent of cases and produces an observation with probability $0.6$; source B accounts for eighty percent and produces it with probability $0.1$. After observing it, what is the probability the source was A?
+The numerator is the A pathway; the total observation probability includes both pathways.
+The pathway probabilities are $0.12,0.08$.
+The posterior probability is $0.12/0.2=0.6$.
+$0.6$.
+Discrete Probability Models · Chapter Review
+Three of ten objects are targets. Draw four without replacement. Find the expected target count and the probability of exactly one target.
+Use a hypergeometric model; the draws are not independent.
+The expectation is $4(3/10)=1.2$.
+The probability is $\binom31\binom73/\binom{10}4=105/210$.
+Expectation $1.2$; probability $0.5$.
+A Poisson process averages $0.5$ events per minute and has independent, stationary increments. What is the probability of at least one event in three minutes?
+Find the three-minute parameter, then take the complement of zero events.
+The three-minute mean is $1.5$.
+The probability of zero events is $e^{-1.5}$.
+$1-e^{-1.5}$.
+Continuous Probability Models · Chapter Review
+A density is $f(x)=3x^2$ on $[0,1]$. Find its cumulative distribution function and expectation.
+Keep the support when integrating.
+Within the interval, the cumulative probability is $x^3$; it is zero to the left and one to the right.
+The expectation is $\int_0^1 3x^3dx=3/4$.
+$F(x)=x^3$ within the support; $EX=3/4$.
+$X\sim N(4,9)$. Find $P(1<X<7)$.
+Standardize both endpoints.
+The standard deviation is three, so the endpoints become minus one and one.
+The probability is $\Phi(1)-\Phi(-1)$.
+Approximately $0.6827$.
+Several Random Variables · Chapter Review
+Two equally weighted groups have means one and five and within-group variances two. Find the overall mean and variance.
+Use total expectation and total variance.
+The overall mean is three.
+The variance of the group means is four; add the average within-group variance of two.
+Mean $3$; variance $6$.
+Two variables have standard deviations one and two and correlation $-0.5$. Find the variance of their sum.
+First recover the covariance.
+The covariance is minus one.
+The variance of the sum is $1+4-2=3$.
+$3$.
+From Populations to Samples · Chapter Review
+Take sixty-four independent observations from a population with mean six and standard deviation eight. What is the standard error of the mean? If the CLT approximation applies, what is the approximate probability that the mean exceeds eight?
+Use the distribution of the sample mean, not the distribution of individual observations.
+The standard error is one.
+The standardized threshold is two.
+Standard error $1$; probability approximately $0.0228$.
+An original sample has five records. An ordinary bootstrap uses four hundred repetitions. How many resamples are generated, and how many records are in each? Does this guarantee correction of representativeness bias?
+Distinguish the original sample size from the number of repetitions.
+Four hundred resamples are generated, each containing five records drawn with replacement.
+Resampling still uses the original empirical distribution; selection bias does not automatically disappear.
+Four hundred resamples of five records each; correction of bias is not guaranteed.
+Estimation and Confidence Intervals · Chapter Review
+A normal population has known standard deviation four. A sample of sixty-four has mean ten. Using critical value $1.96$, calculate and interpret a confidence interval for the mean.
+Calculate the standard error, then explain repeated-sampling coverage.
+The standard error is $4/8=0.5$ and the margin of error is $0.98$.
+Under the model, this interval procedure has approximately $95\%$ coverage.
+Approximately $[9.02,10.98]$; this is not a posterior probability assigned directly to a fixed parameter.
+Twelve paired before-and-after differences have sample mean two and sample standard deviation three. Find the standard error and degrees of freedom for a paired interval.
+The number of independent pairs is the sample size.
+The standard error is $3/\sqrt{12}$.
+The degrees of freedom are eleven.
+Standard error approximately $0.8660$; degrees of freedom $11$.
+Hypothesis Testing and Decisions · Chapter Review
+The null hypothesis is a fair coin, and all five tosses are heads. What is the $p$-value for a prespecified right-sided exact test? What is the decision at $0.05$?
+The extreme right tail consists only of all heads.
+The probability is $1/32=0.03125$.
+It is below the prespecified threshold.
+Reject the fairness hypothesis; this does not give it posterior probability $0.03125$.
+Five tests are performed together. To control the family-wise error rate at $0.01$, what Bonferroni threshold should each use? Must the tests be independent?
+Use the union bound.
+Each threshold is $0.01/5=0.002$.
+The union bound holds under arbitrary dependence.
+Use $0.002$ per test; independence is not required.
+Relationships, Models, and Updating · Chapter Review
+Least-squares summaries are $n=10,\bar x=2,\bar y=5,S_{xx}=8,S_{xy}=12,\mathrm{SSE}=16$. Find the fitted line and the standard error of its slope.
+Fit the line, then estimate the error variance using the residual degrees of freedom.
+The slope is $1.5$ and the intercept is two.
+The estimated error variance is $16/8=2$ and the slope standard error is $\sqrt{2/8}=0.5$.
+$\hat y=2+1.5x$; slope standard error $0.5$.
+The prior is $\operatorname{Beta}(2,2)$, and five of eight trials succeed. Find the posterior and predictive success probability, and state one model assumption.
+Add the numbers of successes and failures to the prior parameters.
+The posterior is $\operatorname{Beta}(7,5)$.
+The predictive probability is $7/12$. The model assumes independent Bernoulli trials with a fixed success probability, among other conditions.
+Posterior $\operatorname{Beta}(7,5)$; predictive probability $7/12$.
+A voluntary online survey finds that users of a tool are more productive. A report claims, “The tool increases everyone's productivity.” Identify at least two unsupported inferential steps.
+Examine sampling, treatment assignment, and measurement.
+A voluntary sample may suffer from coverage and selection bias.
+Tool use was not randomly assigned; confounding or reverse causation may explain the association.
+The definition and measurement of productivity must also be clear.
+The evidence does not adequately establish causation or generalization to the whole population.
+Two independent fair dice are rolled. Given that their sum is seven, what is the probability that the first die is six?
+List the ordered outcomes in the conditioning event.
+Six equally likely ordered outcomes have sum seven.
+Only $(6,1)$ meets the target condition.
+$1/6$.
+Thirty percent of a thousand items come from source A. Defect rates are $0.01$ for A and $0.04$ for B. Given a defective item, what is the posterior probability that it came from A?
+Use pathway proportions; there is no need to draw all thousand items.
+The defective-item pathway probabilities are $0.003$ for A and $0.028$ for B.
+The denominator is $0.031$.
+$3/31\approx0.0968$.
+Independent repeated trials have success probability $0.2$. Find the probability of exactly one success in the first five trials and the expected total number of trials until the first success.
+A fixed number of trials and a fixed success target require different models.
+The binomial probability is $\binom51(0.2)(0.8)^4=0.4096$.
+The expected geometric waiting time is $1/0.2=5$.
+$0.4096$ and $5$.
+A joint density equals two on $0<x<y<1$. Find $f_X(x)$ and $E[Y\mid X=x]$, and determine whether the variables are independent.
+Integrate over the other coordinate, then normalize.
+$f_X(x)=2(1-x)$ on $(0,1)$.
+Conditionally, $Y$ is uniform on $(x,1)$, with mean $(x+1)/2$.
+The conditional distribution changes with $x$, so the variables are not independent.
+$2(1-x)$ and $(x+1)/2$; not independent.
+An independent sample comes from a population with standard deviation twelve. The current sample size is thirty-six. What sample size would reduce the standard error of the mean from two to one? Would this automatically remove selection bias?
+Distinguish square-root gains in precision from sample representativeness.
+Solving $12/\sqrt n=1$ gives $n=144$.
+Increasing the sample size does not automatically change the selection mechanism.
+$144$; selection bias is not automatically removed.
+A normal sample has $n=9,\bar x=12,s=3$, and $t_{0.975,8}=2.306$ is given. Calculate a mean interval and determine whether a two-sided test at the corresponding level rejects a population mean of ten.
+Use the same model for the interval and test.
+The standard error is one, giving interval $[9.694,14.306]$.
+Ten lies inside the interval.
+Interval approximately $[9.694,14.306]$; do not reject a population mean of ten.
+Four tosses of a fair coin are all heads. What is the $p$-value for a prespecified two-sided, probability-ordering exact binomial test? Why is it not the probability that the coin is fair?
+Include the opposite tail with equally small probability mass under the null.
+Zero heads and four heads each have mass $1/16$; the other outcomes have larger mass.
+Their sum is $1/8$.
+The $p$-value assigns probabilities to outcomes under the null hypothesis; it does not specify a prior for the parameter.
+$0.125$; it is not the posterior probability of the null hypothesis.
+Three groups each contain three observations. Their means are two, four, and six, and each sample variance is one. Find the ANOVA $F$ statistic and degrees of freedom. Does rejection imply that every pair of group means differs?
+Recover the within-group sum of squares from the summaries.
+The grand mean is four and the between-group sum of squares is twenty-four.
+Each group's within-group sum of squares is two, for a total of six.
+The ratio of mean squares is twelve, with degrees of freedom $(2,6)$. An overall rejection does not identify individual pairs.
+$F=12$ with degrees of freedom $(2,6)$; it does not establish a difference for every pair.
+The prior is $\operatorname{Beta}(1,1)$, and the data contain three successes and one failure. Give the posterior, predictive success probability, and at least four types of information to retain in an analysis report.
+Retain more than a point estimate after updating.
+The posterior is $\operatorname{Beta}(4,2)$ and the predictive success probability is $2/3$.
+Retain the observations and sampling design, prior and likelihood, effects and intervals, and diagnostics and limitations.
+$\operatorname{Beta}(4,2)$ and $2/3$; report the design, model, precision, and limitations.
+Observational Units and Variables
+Identify what each row represents before discussing its measured features.
+Populations, Samples, and Selection Bias
+Who supplies the data determines whom the conclusions may describe.
+Random Sampling and Random Assignment
+Random sampling supports population generalization; random assignment supports causal comparisons.
+Frequency Plots, Histograms, and Empirical Distributions
+Plots show distributions; check what each vertical axis measures.
+Mean, Median, and Spread
+The center locates the data; spread describes how dispersed they are.
+Sample Spaces and Events
+List the possible outcomes, then specify which form an event.
+Probability Axioms and the Addition Rule
+To calculate the probability of at least one event, subtract the overlap counted twice.
+The Multiplication Principle, Permutations, and Combinations
+Decide whether order matters before choosing how to count.
+Conditional Probability and the Multiplication Rule
+Knowing an event occurred restricts the possible outcomes and renormalizes their probabilities.
+Independence, Disjoint Events, and Repeated Trials
+Independence means knowing one event occurred does not change the probability of the other.
+Total Probability and Bayes' Rule
+Combine probabilities across sources, then use the observation to update their relative plausibility.
+Random Variables, Mass Functions, and Cumulative Distributions
+A random variable assigns a number to each outcome; its distribution describes how those numbers occur.
+Expectation and Linearity
+Expectation is a probability-weighted average, not the most common outcome.
+Variance, Standard Deviation, and Covariance Terms
+Variance measures squared deviations from the expectation.
+Markov's and Chebyshev's Inequalities
+Partial information about a distribution can still bound its tail probabilities.
+Bernoulli and Binomial Distributions
+Count successes in a fixed number of independent trials with the same success probability.
+Geometric and Negative Binomial Waiting Times
+Fix a success target and count the trials needed to reach it.
+Sampling Without Replacement and the Hypergeometric Distribution
+For draws without replacement from a fixed population, the hypergeometric model counts selected targets.
+Poisson Counts and Rare Events
+A Poisson model counts events in a specified interval, with the expected count as its parameter.
+Choosing and Approximating Discrete Models
+Choose the exact model first, then state what an approximation preserves.
+Densities and Continuous Cumulative Distributions
+A continuous variable's interval probability is area under its density curve.
+Uniform Distributions and Exponential Waiting Times
+Uniform models give equal probabilities to equal-length intervals; a homogeneous Poisson process has exponential waiting times.
+Normal Distributions and Standardization
+Subtract the mean and divide by the standard deviation to use a common normal probability scale.
+Transformations: Start with Cumulative Probability
+A transformation changes both the values and the probability density per interval.
+Continuous Expectation, Variance, and Tail Integrals
+Replace probability-weighted sums with integrals to calculate a continuous variable's average behavior.
+Joint and Marginal Distributions
+A joint distribution describes how two variables take values together.
+Conditional Distributions and Densities
+Fix one variable, then renormalize the remaining slice.
+Independence and Product Distributions
+Independence requires joint probabilities to factor for every pair of measurable value regions.
+Covariance, Correlation, and the Variance of a Sum
+Covariance describes joint deviations from the means; correlation removes the units.
+Conditional Expectation and Total Variance
+Calculate within groups, then account for differences between groups.
+The Law of Large Numbers and Relative Frequencies
+Under the stated assumptions, averages of independent repetitions concentrate around their expectation.
+The Central Limit Theorem
+Under the stated conditions, standardized sums of many independent contributions approach a normal distribution.
+Sample Means and Standard Errors
+Standard deviation measures individual variation; standard error measures an estimator's sampling variation.
+Normal Samples, Chi-Square, and $t$ Distributions
+Replacing an unknown population scale with a sample standard deviation adds uncertainty.
+Bootstrap: Resampling the Observed Sample
+Treat the sample as an empirical population and repeatedly sample from it with replacement.
+Bias, Consistency, and Mean Squared Error
+An estimator can miss systematically, fluctuate substantially, or both.
+The Method of Moments and Maximum Likelihood
+Connecting model parameters to data requires an explicit sampling model.
+Mean Confidence Intervals and Coverage
+A confidence level describes the procedure's repeated-sampling coverage, not the probability that a particular realized interval contains a fixed parameter.
+Proportion Intervals: Why Zero Width Fails
+Observing no successes does not establish that the success probability is zero.
+Two-Mean Differences and Paired Intervals
+Determine whether the groups are independent; for paired data, analyze within-pair differences.
+Null Hypotheses, $p$-Values, and Type I Errors
+A $p$-value measures how unusual the observed statistic or a more extreme one would be under the null hypothesis.
+One-Sample Mean Tests
+Compare the difference between the sample mean and hypothesized mean with its sampling-noise scale.
+Proportion Tests and Exact Binomial Tails
+For a proportion test, construct the reference distribution using the null proportion.
+Two-Group Tests and Permutation Methods
+The reference distribution must match the independent, paired, or randomized design.
+Power, Effect Size, and Multiple Comparisons
+The chance of detecting a difference depends on the true effect, noise, sample size, and decision threshold.
+Contingency Tables and Chi-Square Tests
+How far do the observed category counts depart from those expected under independence?
+Least-Squares Lines and Residuals
+Find the line that minimizes the sum of squared vertical prediction errors.
+Slope Tests, Mean-Response Intervals, and Prediction Intervals
+Estimating a mean response involves less uncertainty than predicting a new observation.
+One-Way Analysis of Variance
+Compare between-group mean differences with within-group noise.
+Beta–Binomial Updating and Analysis Reports
+Bayesian inference combines a prior and likelihood to obtain a posterior distribution for the parameter.
+Prerequisites and Scope
+The first four chapters require elementary algebra and summation. Continuous densities and transformations require single-variable integration; joint densities use basic double integrals, with links to the calculus volumes for review. This book covers a complete introductory undergraduate probability and statistics course. It does not develop measure theory, a full theory of stochastic processes, multiple regression, comprehensive experimental design, or advanced nonparametric inference. Poisson processes appear only as introductory context for count and waiting-time models.
+Conditions for Expectation, Variance, and Convergence
+Finite discrete supports allow direct summation; infinite supports require checking absolute integrability or the conditions for nonnegative integrals. The weak law of large numbers is proved using Chebyshev's inequality under finite variance. The classical CLT is stated and explored through simulations; a general proof requires characteristic functions or other probability tools. Finite simulations are not presented as proofs. The strong law and limit theory for dependent samples are not proved here.
+Why Normal-Sample Variance Loses One Degree of Freedom
+Decompose an independent standard-normal vector along the constant-vector direction and its orthogonal complement. The first projection determines the sample mean; the complement has dimension $n-1$, and its squared length gives a chi-square variable. Orthogonal components of a standard-normal vector are independent, yielding exact independence of the sample mean and sample variance. General nonnormal samples retain some moment identities but not this independence.
+$t$, Chi-Square, $F$, and Numerical Probabilities
+A $t$ variable is a standard normal divided by the square root of an independent chi-square variable divided by its degrees of freedom. The ratio of two independent chi-square variables, each divided by its degrees of freedom, gives $F$. Demonstrations calculate cumulative probabilities and quantiles using Gamma, regularized incomplete Beta/Gamma functions, and bisection. Readouts are floating-point approximations; displayed digits do not imply measurement precision.
+Discrete Tails and Endpoint Conventions
+Geometric and negative binomial variables in this book count the total trials, including the final success. Binomial right tails include the observed count. A probability-ordering two-sided binomial test sums outcomes whose null mass is no greater than the observed mass; this is not always twice a one-sided tail. Continuity corrections apply only to specified approximations, not to exact count probabilities.
+Limits of Resampling and Permutation Methods
+The ordinary bootstrap draws with replacement from the empirical distribution and preserves the original sample size. Percentile endpoints use linearly interpolated order-statistic quantiles; nominal coverage is not guaranteed for arbitrary small samples. The permutation demonstration enumerates all six equally likely assignments of four fixed outcomes to two groups of two. Exactness relies on randomization under a sharp null or on exchangeability. Bootstrap and permutation procedures are not interchangeable.
+Confidence, Credibility, and Significance
+Confidence-interval coverage is a repeated-sampling property of an interval procedure. A Bayesian credible interval describes parameter probability conditional on a prior, model, and data. A $p$-value evaluates extremeness under the null; it is not a parameter posterior. Statistical significance does not establish practical importance, causation, or model correctness. Multiple comparisons and stopping rules must be included in the full analysis procedure.
+Writing a Reproducible Analysis
+Retain raw data and units, missing-data handling, sampling or randomization design, prespecified questions and contrast directions, model assumptions, calculations, effects and uncertainty, diagnostics, sensitivity checks, and unverified assumptions. Label questions formed after exploration as exploratory rather than presenting them as prespecified tests. All simulations use visible, fixed seeds; changing a seed changes the finite sample, not the theoretical model.

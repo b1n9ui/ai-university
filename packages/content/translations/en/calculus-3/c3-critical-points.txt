@@ -1,0 +1,66 @@
+Critical points and the second-derivative test
+After zero gradient, inspect bending
+A differentiable interior extremum must have zero gradient. Second-order shape distinguishes a bowl bottom, top or saddle.
+Zero slope looks flat to first order. Inspect whether nearby directions all rise, all fall or do both.
+Find stationary points and apply the Hessian test
+Analyze degenerate cases
+What counts as a critical point?
+Candidates include domain points where the gradient vanishes or does not exist. The second-order test applies only to sufficiently smooth stationary points.
+What does the determinant test?
+A positive-definite Hessian bends up in every direction; negative-definite bends down; indefinite gives a saddle. The two-variable discriminant is its determinant.
+What if the determinant is zero?
+The quadratic term may be insufficient. Inspect higher terms or use the definition; do not declare a saddle automatically.
+After zero gradient, inspect bending
+D=f_{xx}f_{yy}-f_{xy}^2:\quad D>0,f_{xx}>0\Rightarrow\min;\quad D>0,f_{xx}<0\Rightarrow\max;\quad D<0\Rightarrow\text{saddle}
+The function is twice continuously differentiable near a zero-gradient point. The conclusions give strict local extrema; $D=0$ is inconclusive.
+An interior extremum restricts to an extremum on each coordinate line.
+The quadratic model controls signs of sufficiently small displacements.
+Completing the square gives the two-dimensional criterion.
+A bowl with a mixed term
+Classify the origin of $f=x^2+xy+y^2$.
+Its origin gradient vanishes.
+$D=2\cdot2-1=3>0$ and $f_{xx}=2>0$.
+A strict local minimum, also the global minimum.
+A degenerate minimum
+Classify the origin of $f=x^4+y^4$.
+All origin second partials vanish; the test is inconclusive.
+The function is nonnegative and vanishes only at the origin.
+A strict global minimum.
+Zero gradient always implies a minimum.
+Maxima and saddles can also have zero gradient.
+Zero determinant rules out an extremum.
+It only makes this test inconclusive.
+Classify the origin of $f=-x^2-2y^2$.
+Inspect quadratic signs.
+Every nearby nonorigin value is negative; the origin is zero.
+A strict maximum.
+Classify the origin of $f=xy$.
+Compare the diagonals.
+Along $y=x$, the value is $x^2$; along $y=-x$, it is $-x^2$.
+A saddle point.
+The origin Hessian of $f=x^4-y^4$ is zero. Classify it.
+Use higher-order terms.
+Values rise along the first axis and fall along the second.
+A saddle point.
+Can the second-derivative test directly classify boundary extrema?
+Are all directions still allowed?
+Boundary constraints may invalidate even the zero-gradient necessary condition.
+Analyze the boundary separately.
+No.
+What does $D=0$ imply?
+A saddle for certain
+No extremum for certain
+This test is inconclusive
+Higher-order terms or direct comparison may decide.
+Vary one Hessian coefficient in $f=x^2+c y^2$ to see a bowl, degenerate valley and saddle.
+Why can the origin change from minimum to saddle while its gradient stays zero?
+Zero gradient selects candidates. Opposite quadratic signs in different directions give a saddle.
+Positive definite
+Set second-direction quadratic coefficient $c$ to $1$.
+Both directions rise; the origin is a bowl bottom.
+Degenerate
+Set second-direction quadratic coefficient $c$ to $0$.
+The second direction is flat; the test gives no strict minimum.
+Indefinite
+Set second-direction quadratic coefficient $c$ to $-1$.
+The second direction falls; the origin is a saddle.

@@ -1,0 +1,56 @@
+Calculus II
+From integration techniques to infinite approximation
+A complete next course in single-variable calculus: integration methods and errors, improper integrals, sequences and series, Taylor expansions, parametric and polar curves, and introductory first-order differential equations.
+Learners familiar with Calculus I limits, derivatives, definite integrals and substitution
+Eight complete chapters, including geometric and physical integral models, introductory first-order equations and numerical methods. Multivariable calculus, higher-order equations, complex series and full real analysis belong to separate volumes.
+Integration techniques
+Rewrite unfamiliar integrals in familiar forms
+Simplify first, then choose substitution, parts, identities or partial fractions. Check results by differentiation or recombining fractions.
+Choose an integration method
+Handle radicals and rational expressions
+Check results by differentiation
+Approximating, extending and modeling integrals
+Improper integrals and geometric and physical applications
+Numerical methods address accuracy; improper integrals address limiting existence. Surface area, centers of mass and pressure each require their own small-piece model.
+Attach error bounds to approximations
+Check tails and singularities separately
+Model area, center of mass and force
+From sequences to infinite sums
+Sequence limits and infinite summation
+Sequence limits underpin series. First examine later terms, then determine whether their running totals stabilize.
+Explain sequence convergence
+Check monotone bounds and recurrences
+Compute geometric and telescoping sums
+Series convergence and error
+Every convergence test has hypotheses
+Start with the term test, then choose according to positivity, ratios or alternation. Convergence, exact sums and error estimates are distinct questions.
+Choose comparison, integral, ratio or root tests
+Check alternating-series hypotheses
+Estimate tails and truncation errors
+From convergence to function representation
+Changing the input changes the series
+Distinguish absolute and conditional convergence, treat inputs as parameters, and develop power series, termwise operations and Taylor polynomials.
+Classify absolute and conditional convergence
+Find radii and test endpoints
+Construct polynomials matching derivatives
+Taylor expansions in calculation
+Approximations need ranges and error bounds
+Use remainders to control errors, transform basic expansions, and apply them to nonelementary integrals, limits and radical approximations.
+Estimate Taylor remainders
+Transform standard expansions
+Use series for integrals and limits
+Parametric curves and polar coordinates
+Describe how a point traces a curve
+Parameters determine position, direction and repetitions. Check tracing ranges before computing tangents, arc lengths or sector areas.
+Read parametric motion
+Compute tangents and arc length
+Handle polar coordinates and swept areas
+First-order differential equations
+From local change to entire trajectories
+Use initial values to select solutions and check equilibria and intervals. Separation and integrating factors give analytic solutions; Euler supplies discrete approximations for comparison.
+Check initial-value solutions and intervals
+Use separation and integrating factors
+Compare equilibria and numerical errors
+Used to check public course topics and mathematical hypotheses only. Explanations, examples, exercises, solutions and visuals are independently authored; no source passages, problems or images were copied.
+Referenced for course organization and approaches to Taylor approximation. No text or activities were copied; this source does not establish this book's teaching effectiveness.
+Structural, formatting and prerequisite checks, plus selected analytic and numerical recalculations; not a formal proof of every expression.

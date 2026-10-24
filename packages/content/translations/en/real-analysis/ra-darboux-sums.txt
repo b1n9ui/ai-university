@@ -1,0 +1,67 @@
+Partitions, upper sums, and lower sums
+Bound the function throughout each subinterval, then add the bounding rectangle areas.
+Bound the function throughout each subinterval, then add the bounding rectangle areas.
+Upper and lower heights are true bounds on all values, not maxima and minima of sampled points.
+Define partitions and oscillation
+Refinement tightens bounds
+Define partitions and oscillation
+A partition is a finite strictly increasing endpoint list. Take the infimum and supremum on each closed subinterval. Boundedness ensures these are finite.
+Refinement tightens bounds
+Splitting an interval cannot increase either subinterval's supremum, so the upper sum does not increase. Infima cannot decrease, so the lower sum does not decrease.
+Compare different partitions
+Combine any two partitions into a common refinement. This shows every lower sum is at most every upper sum, allowing lower and upper integrals.
+Darboux sums use subinterval infima and suprema, which need not be attained.
+The function is bounded on a fixed closed bounded interval.
+Every partition subinterval has positive length.
+Each refined upper height is no greater than the original height.
+Multiply by the respective widths and add.
+Sum over all refined pieces.
+A linear function
+For $f(x)=x$ on zero to one split into two equal parts, find lower and upper sums.
+Each width is one half; lower heights are zero and one half, and upper heights one half and one.
+$L=1/4,U=3/4$.
+$1/4$ and $3/4$.
+Dense oscillation
+For the function one on rationals and zero on irrationals, what bounds hold on every positive-length subinterval?
+Both input types are dense.
+The supremum is one and infimum zero, independently of sampling density.
+Refinement cannot shrink the total gap.
+Can adding partition points increase the upper sum?
+Refined upper heights cannot be greater.
+No.
+No.
+Must an infimum be an attained function value?
+An extremal bound need not be attained.
+No.
+No.
+For constant two on zero to one, what are both sums for any partition?
+All heights are two and widths sum to one.
+Both sums equal two.
+Two.
+For $f(x)=x^2$ on $[0,1]$ split into $n$ equal parts, find both sums and their gap.
+Squaring increases on this interval.
+Lower sum: $L_n=n^{-3}\sum_{i=0}^{n-1}i^2=(n-1)(2n-1)/(6n^2)$.
+Upper sum: $U_n=n^{-3}\sum_{i=1}^{n}i^2=(n+1)(2n+1)/(6n^2)$.
+Subtract to get $U_n-L_n=1/n$. Both tend to $1/3$.
+Subtract to get $U_n-L_n=1/n$. Both tend to $1/3$.
+What height belongs in an upper-sum rectangle?
+The largest finite sample
+The supremum on the whole subinterval
+The midpoint value
+Otherwise it may fail to bound all function values.
+Many samples establish a rigorous upper bound
+An arbitrarily narrow peak can still be missed.
+Refinement decreases the lower sum
+A smaller interval's infimum can only increase or stay unchanged.
+Refine the partition. How do exact upper and lower sums tighten?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+Use bounds on the entire subinterval. Finite sampling may miss arbitrarily narrow peaks.
+Equal subintervals: 1
+Set the subinterval count to $1$. Compare analytic upper and lower rectangles, including heights when a jump meets a partition endpoint.
+Lower sum $0$; upper sum $1$; gap $1$; integral $0.3333333$.
+Equal subintervals: 20
+Set the subinterval count to $20$. Compare analytic upper and lower rectangles, including heights when a jump meets a partition endpoint.
+Lower sum $0.30875$; upper sum $0.35875$; gap $0.05$; integral $0.3333333$.
+Equal subintervals: 40
+Set the subinterval count to $40$. Compare analytic upper and lower rectangles, including heights when a jump meets a partition endpoint.
+Lower sum $0.3209375$; upper sum $0.3459375$; gap $0.025$; integral $0.3333333$.

@@ -1,0 +1,65 @@
+One-way analysis of variance
+To compare several group means, measure between-group differences relative to within-group noise.
+To compare several group means, measure between-group differences relative to within-group noise.
+Separated group centers need not give strong evidence if observations within each group are very spread out. Compare both scales.
+Decompose sums of squares
+Compare per degree of freedom
+Decompose sums of squares
+Split total variation into between-group and within-group sums of squares. Weight between-group contributions by group sample sizes.
+Compare per degree of freedom
+Divide each sum by its degrees of freedom to obtain a mean square. Under independent homoscedastic normal errors and equal null means, their ratio has an $F$ distribution.
+Interpret the overall rejection
+Rejection means not all means agree; it does not imply every pair differs. Plan follow-up comparisons or control multiplicity. Unequal variances may require an adapted method.
+Classical exact one-way ANOVA requires independence, normality within groups, and a common variance.
+Classical exact one-way ANOVA requires independence, normality within groups, and a common variance.
+Require $k\ge2,N>k$ and positive within-group mean square. Zero noise needs separate treatment.
+Split every deviation into within-group and between-group parts.
+Within-group deviations sum to zero, canceling the cross terms.
+Divide by the respective degrees of freedom and take the ratio under the null.
+Compare three groups
+The groups are $(1,2,3),(3,4,5),(5,6,7)$. Find $F$.
+Group means are two, four, and six; the grand mean is four. Between-group sum of squares is twenty-four.
+Within-group sum of squares is six. The mean squares are twelve and one.
+$F=12$, with degrees of freedom $(2,6)$ and right-tail $p$-value $0.008$.
+Equal group means
+All group means are equal but there is within-group variability. Find between-group sum of squares and $F$.
+Every group mean equals the grand mean.
+All between-group deviations are zero.
+Between-group sum of squares is zero and $F=0$.
+Four groups contain twenty observations in total. Find the $F$ degrees of freedom.
+Between groups subtract one; within groups subtract the group count.
+$(4-1,20-4)=(3,16)$.
+$(3,16)$.
+The between-group mean square is six and within-group mean square two. Find $F$.
+Take their ratio.
+$6/2=3$.
+$3$.
+Does a significant ANOVA imply every pair of groups differs?
+What is the overall null?
+Only equality of all means is rejected.
+No.
+With very unequal group variances, is the classical $F$ reference still exact?
+The common-variance assumption fails.
+Assess an approximation or use a heteroscedasticity-appropriate method.
+Exactness is not guaranteed.
+What does an ANOVA rejection mean?
+Every pair of groups differs
+At least one mean differs
+All variances are equal
+It tests the overall hypothesis of equal means.
+Within-group noise is irrelevant when comparing means
+The mean-square ratio compares between-group separation with within-group variability.
+Any number of post-hoc comparisons can use the original threshold
+Multiple comparisons create more error opportunities and need suitable control.
+Separate the group centers or increase within-group spread. How does $F$ change?
+Three groups each contain three fixed observations. Compare the sums-of-squares decomposition and $F$ right tail without interpreting significance as every pair differing.
+The mean-square ratio compares between-group separation with within-group variability.
+Adjacent-center distance: 2
+Set adjacent-center distance to $2$ and compare the diagram and readings.
+At this preset: between-group sum of squares $24$; within-group sum of squares $6$; $F$ statistic $12$; right-tail $p$-value $0.008$.
+Adjacent-center distance: 0
+Set adjacent-center distance to $0$ and compare the diagram and readings.
+At this preset: between-group sum of squares $0$; within-group sum of squares $6$; $F$ statistic $0$; right-tail $p$-value $1$.
+Adjacent-center distance: 4
+Set adjacent-center distance to $4$ and compare the diagram and readings.
+At this preset: between-group sum of squares $96$; within-group sum of squares $6$; $F$ statistic $48$; right-tail $p$-value $0.000203542$.

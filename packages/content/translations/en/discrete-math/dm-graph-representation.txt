@@ -1,0 +1,64 @@
+Graphs, adjacency lists, and adjacency matrices
+A graph represents objects by vertices and pairwise relationships by edges.
+A graph represents objects by vertices and pairwise relationships by edges.
+Repositioning or redrawing a graph does not change its structure. What matters is which vertices are adjacent.
+Specify the graph type
+Choose a representation
+Specify the graph type
+A simple undirected graph has no loops or parallel edges; directed edges have orientations. Unless stated otherwise, this book uses finite simple undirected graphs.
+Choose a representation
+An adjacency matrix supports checking a vertex pair; an adjacency list supports enumerating actual neighbors. Lists usually save space for sparse graphs.
+Distinguish equality and isomorphism
+An isomorphism may rename vertices but must preserve adjacency. Similar drawings or matching degree sequences alone do not prove isomorphism.
+An edge in a simple undirected graph is an unordered pair of distinct vertices.
+This lesson defaults to finite simple undirected graphs.
+The order of an undirected edge's endpoints does not matter.
+A simple graph has no loops.
+Every edge appears twice in its matrix.
+Read a matrix
+How many ones are in the adjacency matrix of a triangle?
+Each of three undirected edges occupies two mirrored cells.
+Every diagonal cell is zero.
+Six.
+Equal degrees are insufficient
+Are a six-cycle and two disjoint triangles isomorphic?
+Every vertex in both graphs has degree two.
+The first is connected and the second disconnected; isomorphism preserves connectedness.
+No.
+What is the maximum number of edges in a five-vertex simple graph?
+One edge per pair of distinct vertices.
+$\binom52=10$.
+Ten.
+Does moving vertices in the drawing change the graph?
+Keep adjacency unchanged.
+Geometric position is not part of the graph structure here.
+No.
+Is a simple undirected graph's adjacency matrix symmetric?
+Both directions describe the same edge.
+Mirror cells agree.
+Yes.
+Does an equal degree sequence prove isomorphism?
+Use the six-cycle and two disjoint triangles.
+Their degrees agree but connectedness differs.
+No.
+What are the diagonal entries of a simple undirected graph's adjacency matrix?
+One
+Zero
+Arbitrary
+There are no loops.
+Every crossing in a graph drawing is a vertex
+Only designated vertices count; crossing lines alone create no new vertex.
+Equal degrees imply isomorphism
+All adjacency relations must be preserved too.
+Switch graph structures and compare the edges with the adjacency matrix.
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+Only designated vertices count; crossing lines alone create no new vertex.
+Graph mode: 0
+Set the control to $0$. Observe which objects, relations, or counts change.
+At this setting: vertices $6$; edges $6$; degree sum $12$.
+Graph mode: 2
+Set the control to $2$. Observe which objects, relations, or counts change.
+At this setting: vertices $6$; edges $5$; degree sum $10$.
+Graph mode: 5
+Set the control to $5$. Observe which objects, relations, or counts change.
+At this setting: vertices $6$; edges $6$; degree sum $12$.

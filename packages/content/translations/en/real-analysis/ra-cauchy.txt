@@ -1,0 +1,66 @@
+The Cauchy condition and completeness
+Closeness between tail terms tests convergence without knowing the limit beforehand.
+Closeness between tail terms tests convergence without knowing the limit beforehand.
+Convergence brings tail terms near one target; Cauchy brings all tail terms near each other.
+Control the entire tail
+Prove boundedness and convergence
+Control the entire tail
+Cauchy controls any two sufficiently late indices, not just adjacent terms. Harmonic partial sums have adjacent differences tending to zero but still diverge.
+Prove boundedness and convergence
+Use error one to bound the tail near one fixed term, hence bound the sequence. Bolzano–Weierstrass gives a convergent subsequence; Cauchy brings all other tail terms to the same limit.
+Check the number system
+Rational Cauchy sequences approximating the square root of two lack a rational limit. Real completeness turns the Cauchy property into convergence.
+A real sequence converges exactly when it is Cauchy.
+This equivalence requires a complete number system.
+For a convergent sequence, allocate half the error to each tail term.
+Conversely, first prove Cauchy implies boundedness, then select a convergent subsequence.
+For any tail term, choose a later suitable subsequence term and split the error.
+Reciprocals are Cauchy
+Prove $1/n$ is Cauchy without using its known limit.
+For $m,n\ge N$, $|1/m-1/n|\le1/N$.
+Choose $N>1/\varepsilon$.
+Every pair of tail terms meets the condition.
+Adjacent differences do not suffice
+Why are harmonic partial sums not Cauchy?
+Between indices $N$ and $2N$, the additional $N$ terms are each at least $1/(2N)$.
+The partial sums differ by at least one half.
+A fixed-size tail difference persists.
+Do vanishing adjacent differences imply the Cauchy property?
+Use harmonic partial sums as a counterexample.
+Arbitrarily separated tail terms remain uncontrolled.
+No.
+Is every real Cauchy sequence bounded?
+Use error one, then include the finite prefix.
+The tail is near one fixed term, and the prefix is finite.
+Yes.
+Does the Cauchy definition require a proposed limit?
+It compares only pairs of terms.
+There is no target limit in the definition.
+No.
+Prove every real Cauchy sequence is bounded.
+First bound the tail around one fixed term.
+Choose a cutoff $N$ for error one, so $m,n\ge N$ implies $|a_m-a_n|<1$.
+Fix $n=N$ to obtain the tail bound $|a_m|\le|a_N|+1$.
+Take the maximum of the finite prefix magnitudes and $|a_N|+1$ to bound the whole sequence.
+Take the maximum of the finite prefix magnitudes and $|a_N|+1$ to bound the whole sequence.
+Which indices does Cauchy compare?
+Only adjacent indices
+Any two sufficiently late indices
+Only even indices
+This is stronger than vanishing adjacent differences.
+Nearby adjacent terms cannot drift far apart
+Many small differences can accumulate to a fixed distance.
+A rational Cauchy sequence always has a rational limit
+The rationals are not complete.
+Compare doubled-index tail differences for reciprocals and harmonic partial sums. Which shrink uniformly?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+Cauchy brings all tail terms together rather than specifying a target. Small adjacent differences alone can still accumulate.
+First tail index: 1
+Set the first tail index to $1$. Compare terms at doubled indices and decide whether their difference tends to zero.
+Tail-term difference $0.5$; analytic bound: less than 1.
+First tail index: 40
+Set the first tail index to $40$. Compare terms at doubled indices and decide whether their difference tends to zero.
+Tail-term difference $0.0125$; analytic bound: less than 0.025.
+First tail index: 80
+Set the first tail index to $80$. Compare terms at doubled indices and decide whether their difference tends to zero.
+Tail-term difference $0.00625$; analytic bound: less than 0.0125.

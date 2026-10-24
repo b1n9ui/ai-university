@@ -1,0 +1,65 @@
+One-sample tests for a mean
+Compare the difference from the hypothesized mean with its sampling-noise scale.
+Compare the difference from the hypothesized mean with its sampling-noise scale.
+A one-unit difference is more unusual when standard error is small than when it is large.
+Decide whether scale is known
+Choose tails from the alternative
+Decide whether scale is known
+For a normal population, use $z$ when scale is known and $t$ when unknown. Exact small-sample $t$ inference requires normality.
+Choose tails from the alternative
+A two-sided alternative concerns both increases and decreases. For a symmetric $t$ distribution, use the absolute statistic to find both tails.
+Connect intervals and tests
+Under the same model and significance level, a two-sided $t$ test rejects a proposed mean exactly when the corresponding $t$ confidence interval excludes it.
+An exact one-sample $t$ test requires independent normal observations and $n\ge2$.
+An exact one-sample $t$ test requires independent normal observations and $n\ge2$.
+Zero sample variance gives zero standard error, so the usual $t$ formula cannot be applied directly.
+Center under the null hypothesis.
+Scale by the estimated standard error of the mean.
+Add the symmetric tails.
+Calculate the statistic
+For $n=25,\bar x=12,s=5$ and hypothesized mean ten, find the $t$ statistic and degrees of freedom.
+The standard error is one.
+Divide the difference of two by one.
+$t=2$, with $24$ degrees of freedom; the two-sided $p$-value is approximately $0.057$.
+Decide using an interval
+The interval corresponding to a two-sided test is $[2,6]$. What is the decision for hypothesized value zero?
+Zero is outside the interval.
+Reject in the two-sided test at the matching level.
+Reject mean zero.
+For $n=16,\bar x=3,s=2,\mu_0=2$, find the $t$ statistic.
+The standard error is two divided by four.
+$(3-2)/0.5=2$.
+$2$.
+A symmetric two-sided test observes $t$ equal to zero. Find its $p$-value.
+There is no deviation from the hypothesized center.
+The two tails together have probability one.
+$1$.
+Can four observations from a strongly skewed population be assigned an exact $t$ test without qualification?
+Check the normal-sample assumption.
+The small sample has no such exact guarantee.
+No.
+Can a hypothesized value contained in the matching two-sided interval be rejected under the corresponding rule?
+Use a consistent boundary convention.
+Do not reject values in the interior; handle exact critical boundaries by the prespecified convention.
+A value in the interval's interior cannot be classified as rejected.
+Does the mean-test denominator use individual standard deviation or the mean's standard error?
+Individual standard deviation
+The mean's standard error
+The sample total
+The comparison concerns fluctuations of a sample mean.
+A $t$ statistic divides by sample size
+Its scale is sample standard deviation divided by the square root of sample size.
+A two-sided $p$-value is always twice the right tail
+First take the absolute statistic. A negative observation cannot use twice its original right tail.
+Keep the observed difference fixed and increase sample size. How do $t$ and the $p$-value change?
+The $t$ test uses the specified sample summaries. Changing a summary control does not generate new random data.
+Its scale is sample standard deviation divided by the square root of sample size.
+Sample size: 25
+Set sample size to $25$ and compare the diagram and readings.
+At this preset: observed statistic $2$; two-sided $p$-value $0.0569398$; degrees of freedom $24$.
+Sample size: 3
+Set sample size to $3$ and compare the diagram and readings.
+At this preset: observed statistic $0.69282$; two-sided $p$-value $0.560059$; degrees of freedom $2$.
+Sample size: 80
+Set sample size to $80$ and compare the diagram and readings.
+At this preset: observed statistic $3.57771$; two-sided $p$-value $0.000595789$; degrees of freedom $79$.

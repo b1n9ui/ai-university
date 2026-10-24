@@ -1,0 +1,64 @@
+Parametric surfaces and orientation
+Two parameter directions span a surface
+Two parameters generate a spatial surface. Their independent tangent vectors have a cross product giving the local normal.
+A parameter mesh may tilt and stretch in space. Its tangent cross product gives both normal direction and area scaling.
+Parametrize surfaces and find normals
+Check regularity and orientation
+Regularity
+The two partial-derivative vectors must not be parallel: their cross product is nonzero. At parameter poles, change charts or handle negligible boundary degeneracies.
+Why use multiple charts?
+A sphere has no single ordinary rectangular chart that is regular everywhere and nonrepeating. Use pieces without positive-area overlap.
+Orientation
+Choose a normal side continuously across the surface. Swapping parameter order reverses it. A Möbius strip has no global continuous unit normal.
+Two parameter directions span a surface
+Charts are continuously differentiable with nonzero interior cross product, avoiding repeated positive-area coverage. Global flux needs an orientable surface with consistent piece orientations.
+Fix one parameter to obtain a curve family.
+The curve derivatives span the tangent plane.
+Cross them for a normal; normalize for a unit normal.
+Normal to a graph
+Find the upward normal of surface $\mathbf r(u,v)=(u,v,u^2+v^2)$.
+The tangent vectors are $(1,0,2u)$ and $(0,1,2v)$.
+Their cross product is $(-2u,-2v,1)$, with positive vertical component.
+Unit normal $\frac{(-2u,-2v,1)}{\sqrt{1+4u^2+4v^2}}$.
+Orienting a cylinder
+Orient the side of a radius-2 cylinder outward.
+Choose $\mathbf r(\theta,z)=(2\cos\theta,2\sin\theta,z)$.
+Cross azimuth derivative with height derivative to get outward $(2\cos\theta,2\sin\theta,0)$.
+Unit normal $(\cos\theta,\sin\theta,0)$.
+The two parameter derivatives' cross product is a unit normal.
+It generally also contains area scaling and is not normalized.
+Swapping parameters only changes notation.
+It reverses orientation and therefore flux sign.
+Find a unit normal for plane parameterization $(u,v,0)$.
+Cross the coordinate basis vectors.
+$(1,0,0)\times(0,1,0)=(0,0,1)$.
+The upward unit vector.
+For $\mathbf r(u,v)=(u,0,v)$, find the normal in the stated order.
+Cross the first and third basis directions.
+$(1,0,0)\times(0,0,1)=(0,-1,0)$.
+The negative second-axis direction.
+Can a zero cross product be normalized?
+Check the divisor.
+Its length is zero. Change parameters or analyze the degeneracy.
+No.
+Do degenerate poles in a spherical chart mean the sphere is nonsmooth?
+Separate chart properties from geometry.
+Only the angular chart degenerates; other local charts describe the smooth sphere.
+No.
+How does swapping parameter order change the normal?
+Unchanged
+Opposing
+It automatically vanishes
+The cross product is anticommutative.
+Parameter plane $\mathbf r(u,v)=(u,v,cu)$, showing both tangent vectors and upward unit normal.
+When do projected and actual mesh areas agree?
+Two parameter directions span the local tangent plane; their cross product records normal and area scaling.
+Flat surface
+Set plane slope $c$ to $0$.
+The tangent plane is horizontal and the normal upward.
+Gentle tilt
+Set plane slope $c$ to $0.5$.
+The plane tilts; cross-product length exceeds one.
+Steeper tilt
+Set plane slope $c$ to $1$.
+The actual area per parameter area increases further.

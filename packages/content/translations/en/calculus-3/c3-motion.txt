@@ -1,0 +1,63 @@
+Velocity, acceleration and distance
+Velocity has direction; speed does not
+Velocity is position's rate of change. Speed is its length. Integrating speed gives distance; integrating velocity gives displacement.
+A full circle returns to the start but covers nonzero distance. Vector contributions cancel; lengths do not.
+Compute displacement and distance
+Recover motion from acceleration and initial data
+Does acceleration always increase speed?
+Only its component along velocity directly changes speed. Perpendicular acceleration changes direction; uniform circular motion still accelerates.
+Recovering a trajectory
+Integrate acceleration and use initial velocity. Then integrate velocity and use initial position. Both sets of data matter.
+Why does length integrate speed?
+A short travel length is approximately speed times elapsed time. Accumulate it along a piecewise smooth curve; retracing counts again.
+Velocity has direction; speed does not
+Arc length uses a piecewise continuously differentiable path. Acceleration requires a second derivative. Compare displacement and distance over the same interval.
+Approximate short displacement by velocity times time.
+Take lengths and accumulate distance.
+Differentiate speed squared to analyze acceleration's effect.
+Distance along a helix
+Find the distance covered by $\mathbf r(t)=(2\cos t,2\sin t,3t)$ over one revolution.
+Speed is $\sqrt{4+9}=\sqrt{13}$.
+The time interval has length $2\pi$; integrate the constant speed.
+$2\pi\sqrt{13}$.
+Projectile position
+$\mathbf a=(0,0,-2),\mathbf v(0)=(1,2,3),\mathbf r(0)=(0,0,1)$.
+Integrating acceleration gives $\mathbf v=(1,2,3-2t)$.
+Integrate again and use initial position to obtain $(t,2t,1+3t-t^2)$.
+$\mathbf r(t)=(t,2t,1+3t-t^2)$; interpret only while the model is valid.
+Nonzero acceleration always increases speed.
+It may change direction alone.
+Distance equals displacement magnitude.
+Distance is generally larger; changes of direction cause displacement cancellation.
+A radius-3 circle is traversed at one radian per unit time. Find speed.
+Take the parametric derivative's length.
+The derivative of $\mathbf r=(3\cos t,3\sin t,0)$ has length 3.
+Find displacement and distance over one unit-circle revolution.
+Integrate the vector and its length separately.
+Matching endpoints give zero displacement.
+Speed is 1; distance is $2\pi$.
+Displacement $\mathbf0$; distance $2\pi$.
+Given $\mathbf v\cdot\mathbf a=0$ and nonzero velocity, find the instantaneous derivative of speed.
+Differentiate speed squared.
+$2v v\prime=2\mathbf v\cdot\mathbf a=0$; since $v>0$, obtain $v\prime=0$.
+Are zero velocity and constant speed equivalent?
+Use uniform circular motion as a counterexample.
+It has positive constant speed while velocity's direction changes.
+No.
+What is acceleration in uniform circular motion?
+Always zero
+Perpendicular to velocity and toward the center
+Aligned with velocity
+Tangential acceleration is zero; the normal component turns the path.
+$\mathbf r(t)=(\cos t,\sin t,0)$; green denotes velocity, blue acceleration.
+Why is acceleration nonzero when speed is constant?
+Integrating velocity gives displacement; integrating its length gives distance without cancellation.
+Start moving
+Set path parameter $t$ to $0$.
+Velocity is tangent to the circle; acceleration points inward.
+A quarter revolution
+Set path parameter $t$ to $\frac\pi2$.
+Velocity rotates while retaining its length.
+A full revolution
+Set path parameter $t$ to $2\pi$.
+Displacement is zero, while distance equals the circumference.

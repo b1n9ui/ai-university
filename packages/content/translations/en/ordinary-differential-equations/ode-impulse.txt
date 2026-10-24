@@ -1,0 +1,64 @@
+Impulses and jump conditions
+Brief action with finite total impulse
+How is it defined?
+A Dirac impulse integrates against a test function to select its value at one point. It is not an ordinary function for pointwise substitution.
+What jumps in a mass system?
+For $my''+cy'+ky=J\delta(t-a)$, position is continuous and velocity jumps by $J/m$. Interpret these statements distributionally or by integration across the impulse.
+Our convention
+Take impulse time $a>0$ and give initial data immediately right of time zero, avoiding ambiguity between an initial impulse and initial-state conventions.
+Integrate the equation across a small impulse neighborhood.
+A position jump would introduce an unprescribed derivative of an impulse in the second derivative, so position stays continuous.
+Shrink the interval to obtain the velocity jump.
+An impulse on a unit oscillator
+Solve $y''+y=\delta(t-2)$ with zero initial position and velocity.
+The unit causal response is $H(t)\sin t$.
+Delay until time two; velocity jumps by one.
+$y=H(t-2)\sin(t-2)$.
+A specified impulse
+A mass-two system receives impulse six. What is the velocity jump?
+Integrating across impact gives mass times velocity change equal to impulse.
+$2\Delta v=6$.
+$\Delta v=3$.
+Find the one-sided transform of $\delta(t-3)$.
+Evaluate the exponential kernel at the impulse time.
+Evaluate $e^{-st}$ at time three.
+$e^{-3s}$.
+For impulse minus two and mass four, find the velocity jump.
+Divide signed impulse by mass.
+$-2/4=-1/2$.
+$-1/2$.
+As a finite pulse narrows, why hold area rather than height fixed?
+Total impulse is its integral.
+Fixed height with vanishing width gives vanishing total action.
+Fixed area retains a finite total action.
+Can an impulse's height at one point be substituted as an ordinary real number?
+Return to the definition.
+An impulse is defined by integration, not pointwise values.
+No.
+An impulse is an ordinary function equal to infinity at one point.
+It is a generalized function interpreted through integrals.
+An impulse instantly jumps the mass's position.
+An ideal finite impulse changes velocity while position stays continuous.
+An impulse is an ideal concentrated input defined through its integral action, not an ordinary infinitely tall function.
+Shorten the action time while preserving total area; a finite velocity jump can remain.
+Derive jump conditions by integration
+Find causal impulse responses
+Impulses and jump conditions
+Use a positive mass and finite constant-coefficient second-order model with an impulse at $a>0$. Solutions are causal distributions; the nonimpulsive forcing is locally bounded.
+Which quantity jumps when a standard mass-spring model receives finite impulse?
+Mass
+Position
+Velocity
+Velocity change equals impulse divided by mass.
+Integrating across the impulse isolates the finite change that survives.
+Before impact
+The system is still at rest.
+Set impulse time $a$ to $2$, impulse $J$ to $1$, and observation time $t$ to $1$.
+After impact
+Positive impulse starts oscillation without a position jump.
+Set impulse time $a$ to $1$, impulse $J$ to $1$, and observation time $t$ to $2$.
+Reverse impulse
+The velocity jump and subsequent displacement reverse sign.
+Set impulse time $a$ to $1$, impulse $J$ to $-1$, and observation time $t$ to $2$.
+An arrow marks impulse time; its height is a drawing symbol, not a pointwise impulse value. Displacement is continuous and velocity jumps.
+When impulse sign reverses, what happens to position and velocity jumps?

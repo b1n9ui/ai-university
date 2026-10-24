@@ -1,0 +1,66 @@
+Functions, injections, and surjections
+A function gives each input one output. An injection has no collisions; a surjection reaches every target.
+A function gives each input one output. An injection has no collisions; a surjection reaches every target.
+Each domain point needs exactly one outgoing arrow. A target point may have no incoming arrows.
+Recognize a function
+Distinguish injectivity and surjectivity
+Recognize a function
+An input with no output, or with two different outputs, violates the function definition. The codomain is the specified target set; the image is the part actually reached.
+Distinguish injectivity and surjectivity
+Injectivity means distinct inputs have distinct outputs. Surjectivity means every codomain point is reached; changing the codomain can change surjectivity.
+Inverses and composition
+A bijection has an inverse on its entire codomain. In a composition, apply the right-hand function first; its outputs must belong to the left-hand function's domain.
+A bijection is both injective and surjective.
+(g\circ f)(x)=g(f(x)),\quad f^{-1}(f(x))=x\quad\text{if }f\text{ is bijective}
+Composition requires compatible input and output sets.
+The two inverse identities require a bijection.
+Injectivity gives at most one preimage.
+Surjectivity gives every target at least one preimage.
+Together they give exactly one.
+Same formula, different codomain
+For $f(x)=x^2$ on the reals, what changes if the codomain is the reals versus the nonnegative reals?
+Neither choice is injective: positive and negative inputs can have the same square.
+It is not onto the reals, but is onto the nonnegative reals.
+The codomain affects surjectivity.
+Order of composition
+For $f(x)=x+1,g(x)=2x$, compute both compositions.
+$g(f(x))=2x+2$.
+$f(g(x))=2x+1$.
+Composition generally does not commute.
+Can a three-element set inject into a two-element set?
+Use the pigeonhole principle.
+Three inputs sharing two possible outputs force a collision.
+No.
+Can a two-element set map onto a three-element set?
+How many targets can be reached?
+Two inputs reach at most two targets.
+No.
+Find the inverse of $f(x)=3x-2$ on the reals.
+Solve for the input in terms of the output.
+$y=3x-2\implies x=(y+2)/3$.
+$f^{-1}(y)=\frac{y+2}{3}$.
+Between finite sets of equal size, does injectivity imply surjectivity?
+How many points are reached without collisions?
+The image has the domain's size, which equals the codomain's size.
+Yes.
+Does injectivity alone guarantee an inverse on the entire codomain?
+Yes
+No
+Yes, if the sets are nonempty
+Some target points may not be reached.
+The image always equals the codomain
+They coincide only for a surjection.
+Composition order can be reversed freely
+Both the resulting values and the domain may change.
+Change the mapping rule. Which patterns cause collisions or missed targets?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+They coincide only for a surjection.
+Mapping mode: 0
+Set the control to $0$. Observe which objects, relations, or counts change.
+At this setting: injective: yes; surjective: yes.
+Mapping mode: 1
+Set the control to $1$. Observe which objects, relations, or counts change.
+At this setting: injective: no; surjective: no.
+Mapping mode: 2
+Set the control to $2$. Observe which objects, relations, or counts change.
+At this setting: injective: yes; surjective: no.

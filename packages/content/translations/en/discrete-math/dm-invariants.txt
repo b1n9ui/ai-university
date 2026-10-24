@@ -1,0 +1,65 @@
+Loop invariants and termination
+Correctness requires both a property preserved at every step and a reason the process must end.
+Correctness requires both a property preserved at every step and a reason the process must end.
+An invariant keeps the computation on track. A strictly decreasing quantity rules out endless execution.
+Initialize
+Preserve and conclude
+Initialize
+The invariant must hold before the first iteration. To sum initial positive integers, start with zero processed terms and a zero sum.
+Preserve and conclude
+If the invariant holds before an iteration, show it still holds afterward. At exit, combine the invariant with the exit condition to obtain the result.
+Distinguish two kinds of correctness
+Partial correctness means the result is correct if the program terminates. Proving termination as well gives total correctness.
+An invariant describes program state; merely restating the final goal is not enough.
+The input is a nonnegative integer.
+Each iteration increments the index and adds the new term.
+Initially no terms have been processed.
+An iteration adds the next term.
+The remaining count strictly decreases; at exit all terms have been processed.
+The accumulator state
+When summing through five, three terms have been processed. What should the accumulator contain?
+The invariant gives $s=1+2+3$.
+The current state is not the final result.
+Six.
+An invariant is not enough
+A program repeats “add zero to zero” forever, maintaining a zero accumulator. Does this prove termination?
+Preserving an invariant does not exclude an infinite loop.
+A bounded-below strictly decreasing quantity is still missing.
+No.
+Find the sum of the first four positive integers.
+Add the terms successively.
+$1+2+3+4=10$.
+Ten.
+Does a nonincreasing quantity guarantee termination?
+It could remain unchanged forever.
+Strict decrease or another termination argument is needed.
+No.
+At which proof stage is the exit condition used?
+Connect the final state to the target.
+After the loop, combine the exit condition with the invariant.
+The exit-conclusion step.
+Does partial correctness guarantee a result is always returned?
+What condition does its statement include?
+It guarantees correctness only upon termination.
+No.
+What does total correctness add to partial correctness?
+More tests
+A termination proof
+Longer code
+The program must actually finish.
+An invariant means the loop variable never changes
+The unchanged property is a relation among state variables.
+A terminating test run proves universal termination
+All allowed inputs still need a general argument.
+Execute the summation step by step. Do the processed count, accumulated sum, and remaining count satisfy the invariant?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+The unchanged property is a relation among state variables.
+Steps executed: 0
+Set the control to $0$. Compare the current step with the complete reference result.
+At this setting: accumulator $0$; finished: no.
+Steps executed: 6
+Set the control to $6$. Compare the current step with the complete reference result.
+At this setting: accumulator $21$; finished: yes.
+Steps executed: 12
+Set the control to $12$. Compare the current step with the complete reference result.
+At this setting: accumulator $21$; finished: yes.

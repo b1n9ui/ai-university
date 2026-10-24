@@ -1,0 +1,66 @@
+Counting and discrete probability
+Before converting counts to probabilities, check that elementary outcomes are equally likely.
+Before converting counts to probabilities, check that elementary outcomes are equally likely.
+Counting possible head counts does not make those counts equally probable.
+Choose elementary outcomes
+Find expectations with indicators
+Choose elementary outcomes
+Ordered strings from independent fair coin tosses are equally likely. Reducing a string to its head count groups different numbers of strings into different recorded values.
+Find expectations with indicators
+The success count is a sum of success indicators. Linearity of expectation does not require independence; the binomial probability formula does require the corresponding independence assumptions.
+Condition, then count
+Renormalize within the known event. For a positive-probability event in a finite equally likely model, conditional probability is intersection size divided by conditioning-event size.
+Independent trials with the same success probability give a binomial count.
+The probability formula requires independence, a fixed trial count, and a common success probability.
+A simple ratio of counts requires equally likely elementary outcomes.
+Fix the successful positions.
+P(\text{specified successful positions})=p^k(1-p)^{n-k}
+Choose the set of successful positions.
+Add the mutually exclusive events.
+Exactly two heads
+What is the probability of exactly two heads in three independent fair tosses?
+The eight ordered strings are equally likely.
+There are three choices of the two head positions.
+$\frac38$.
+Given at least one head
+In the same three tosses, given at least one head, what is the probability of exactly two?
+Conditioning excludes all tails, leaving seven strings.
+Three still have exactly two heads.
+$\frac37$.
+What is the probability of all heads in four independent fair tosses?
+Only one string qualifies.
+$1/2^4=1/16$.
+$\frac1{16}$.
+If there are three possible head counts, does each have probability one third?
+Count the ordered outcomes grouped into each recorded value.
+Different counts can combine different numbers of strings.
+That conclusion does not follow.
+What is the expected success count in six trials with success probability one half?
+Add success indicators.
+$6/2=3$.
+Three.
+Does finding the expected success count always require independence?
+Linearity of expectation does not require independence.
+Known marginal success probabilities can be added directly.
+No.
+Do equally likely ordered strings remain equally likely after grouping by counts?
+Always
+Not necessarily
+Only zero probabilities can differ
+Different recorded values may collect different numbers of elementary strings.
+Every recorded value has the same probability
+Check how outcomes are grouped.
+Linearity of expectation requires independence
+Linearity itself does not require independence.
+Change the trial and success counts. How does counting strings give the binomial probability?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+Check how outcomes are grouped.
+Independent coin tosses: 1
+Set the control to $1$. Observe which objects, relations, or counts change.
+At this setting: actual heads $1$; matching ordered strings $1$; total ordered strings $2$.
+Independent coin tosses: 4
+Set the control to $4$. Observe which objects, relations, or counts change.
+At this setting: actual heads $2$; matching ordered strings $6$; total ordered strings $16$.
+Independent coin tosses: 8
+Set the control to $8$. Observe which objects, relations, or counts change.
+At this setting: actual heads $2$; matching ordered strings $28$; total ordered strings $256$.

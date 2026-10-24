@@ -1,0 +1,62 @@
+Markov matrices and steady states
+Transition probabilities and invariant distributions
+A Markov matrix updates a distribution with nonnegative transition probabilities. A steady state is a probability vector with eigenvalue one.
+Each column distributes one old state's probability among new states. Column sums of one preserve total probability.
+Update states using the column-stochastic convention
+Find steady states and check convergence hypotheses
+Which convention does this book use?
+Probability distributions are columns and update by $p_{k+1}=Pp_k$, so $P$ has column sums one. A row-vector convention transposes this; do not mix them.
+How do you find a steady state?
+Solve $(P-I)p_*=0$, then require nonnegative components summing to one. An arbitrary eigenvector is not automatically a probability distribution.
+Must iteration converge?
+No; periodic chains can oscillate. If every matrix entry is strictly positive, a unique steady state attracts every initial distribution. More general cases need irreducibility, aperiodicity, and related hypotheses.
+Markov matrices and steady states
+$P$ is a finite-state column-stochastic matrix and steady states must be nonnegative. The strictly positive convergence result is a cited Perron-Frobenius special case, not proved by finite iteration plots.
+Total probability is preserved by updating.
+A steady state is unchanged by updating.
+In the two-state example, the other eigenvalue controls decay away from the steady direction.
+Find and verify a steady state
+Find the steady state of $P=\begin{pmatrix}0.8&0.3\\0.2&0.7\end{pmatrix}$.
+Use $0.2p_1=0.3p_2$ together with $p_1+p_2=1$.
+Obtain $(0.6,0.4)$ and verify by matrix multiplication.
+The steady state is $(0.6,0.4)^T$.
+A stochastic matrix without convergence
+Start $P=\begin{pmatrix}0&1\\1&0\end{pmatrix}$ at $(1,0)$.
+Each update switches states, then switches back.
+A steady state $(1/2,1/2)$ exists, but this initial state oscillates periodically.
+No convergence.
+Every initial state of a stochastic matrix converges.
+Periodicity or multiple closed classes can prevent this conclusion.
+Solving the eigenvalue equation gives a steady state without normalization.
+Probability constraints are also required.
+Does $P=\begin{pmatrix}0.9&0.4\\0.1&0.6\end{pmatrix}$ satisfy the column-stochastic convention?
+Check nonnegativity and each column sum.
+Both columns are nonnegative and sum to one.
+Yes.
+Find the first component of the probability steady state for column-stochastic $P=\begin{pmatrix}0.9&0.4\\0.1&0.6\end{pmatrix}$.
+Balance transitions between states.
+$0.1p_1=0.4p_2$; normalization gives $p_1=0.8$.
+Which eigenvalue must a column-stochastic matrix have?
+The all-ones row is a left eigenvector.
+$P^T\mathbf1=\mathbf1$; $P$ and its transpose share a characteristic polynomial.
+Is the identity transition matrix's steady state unique?
+Every initial distribution stays fixed.
+Every probability vector is a steady state.
+Not unique.
+Fix strictly positive transition matrix $P=\begin{pmatrix}0.8&0.3\\0.2&0.7\end{pmatrix}$ with initial distribution $(a,1-a)$.
+Do different initial distributions approach the same limit for a strictly positive transition matrix?
+Does existence of a steady state guarantee that every initial state converges to it?
+Yes
+No
+Yes, whenever total probability is one
+A periodic update can repeatedly exchange two states.
+A steady state is a distribution that stays fixed. Convergence asks whether other distributions approach it. These are different questions.
+Initial state
+Set $a=1,n=0$.
+All probability is in the first state.
+One update
+Set $a=1,n=1$.
+The distribution is $(0.8,0.2)$.
+Near the steady state
+Set $a=1,n=8$.
+The first component is $0.6015625$, near but not yet equal to $0.6$.

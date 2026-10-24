@@ -1,0 +1,66 @@
+Absolute value and error estimates
+Absolute value expresses distance in a form that can be bounded by adding errors.
+Absolute value expresses distance in a form that can be bounded by adding errors.
+A detour may be longer, but splits one difficult error into two manageable ones.
+Express neighborhoods
+Use the triangle inequality
+Express neighborhoods
+Absolute value less than a positive radius describes an open interval around the center. Do not silently replace strict inequality with non-strict inequality.
+Use the triangle inequality
+Insert a shared intermediate quantity and budget the two errors separately. Limit and continuity proofs repeatedly use this method.
+Use the reverse triangle inequality
+The difference between two distances is at most the distance between the points. Thus absolute value is continuous and amplifies errors by at most one.
+Real absolute value satisfies the triangle and reverse triangle inequalities.
+The error radius is positive.
+The absolute-value definition gives two-sided bounds.
+Obtain the triangle inequality.
+Insert an intermediate term, then interchange the two quantities.
+Split an error
+If $|x-a|<0.02,|y-b|<0.03$, how large is the sum's error?
+$|(x+y)-(a+b)|\le|x-a|+|y-b|$.
+The two budgets sum to strictly less than zero point zero five.
+Less than $0.05$.
+Products need boundedness
+For $x_n\to a,y_n\to b$, why must the product-limit proof also control magnitudes?
+$x_ny_n-ab=x_n(y_n-b)+b(x_n-a)$.
+The first error is multiplied by $|x_n|$; boundedness of a convergent sequence gives uniform control.
+A uniform magnitude bound is needed.
+Which interval does $|x-2|<1/2$ describe?
+Subtract and add the radius at the center.
+$3/2<x<5/2$.
+$(3/2,5/2)$.
+Is the triangle inequality always an equality?
+Try numbers with opposite signs.
+$|1+(-1)|=0<2$.
+No.
+Can the change in absolute value exceed the change in its input?
+Use the reverse triangle inequality.
+$||x|-|y||\le|x-y|$.
+No.
+Prove that $|x-a|<\delta$ and $|y-b|<\delta$ imply $|(x+y)-(a+b)|<2\delta$.
+Split the total error into two parts.
+Write $(x+y)-(a+b)=(x-a)+(y-b)$.
+The triangle inequality bounds its absolute value by $|x-a|+|y-b|$.
+Each term is less than $\delta$, so the total is strictly less than $2\delta$.
+Each term is less than $\delta$, so the total is strictly less than $2\delta$.
+What justifies splitting an error at an intermediate quantity?
+The triangle inequality
+A differentiation rule
+Integer induction
+Distance is bounded by the sum of the two detour lengths.
+After squaring, signs can be ignored when taking roots
+Use the nonnegative square root and absolute value.
+Product error is just the sum of the two errors
+Magnitude factors also appear.
+Move the two points. Compare their direct distance with the route through zero.
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+A detour splits a difficult error into simpler ones. Square-root manipulations require the nonnegative root and absolute value.
+Coordinate A: -3
+Set coordinate A to $-3$. Compare direct distance with total distance through zero.
+Direct distance $2$; distance through zero $4$.
+Coordinate A: 0
+Set coordinate A to $0$. Compare direct distance with total distance through zero.
+Direct distance $1$; distance through zero $1$.
+Coordinate A: 3
+Set coordinate A to $3$. Compare direct distance with total distance through zero.
+Direct distance $4$; distance through zero $4$.

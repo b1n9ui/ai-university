@@ -1,0 +1,188 @@
+{
+  "id": "python-introduction",
+  "title": "Introduction to Python Programming",
+  "englishTitle": "Introduction to Programming with Python",
+  "version": "0.2.1",
+  "status": "published",
+  "language": "en",
+  "baseline": "General Python 3.9+ syntax and standard library, checked against the Python 3.13 documentation without relying on newer exclusive features. Web execution replays are generated with CPython 3.14; language coverage and replay runtime are recorded separately.",
+  "audience": "Readers with no programming experience. Observe the web replays first, then use Section 1.1 to learn how to save files and run programs.",
+  "outcomes": [
+    "Write a runnable program from an empty file",
+    "Understand types, branches, loops, and data containers",
+    "Organize functions and handle invalid input",
+    "Read and write small text, JSON, and CSV files",
+    "Write boundary and integration tests for a command-line project"
+  ],
+  "outOfScope": [
+    "Object-oriented programming and inheritance",
+    "Web development, databases, and scraping",
+    "NumPy, Pandas, and machine learning",
+    "Concurrency, async, generators, and performance tuning",
+    "Formal software packaging and distribution"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "humanReviewed": false,
+    "date": "2026-10-11"
+  },
+  "licenses": {
+    "content": "CC0-1.0",
+    "toolsAndProject": "MIT"
+  },
+  "chapters": [
+    {
+      "id": "chapter-1",
+      "title": "Start programming",
+      "objective": "Run scripts, distinguish text from numbers, and perform basic input and output.",
+      "lessons": [
+        "first-program",
+        "names-types",
+        "numbers",
+        "strings-input"
+      ]
+    },
+    {
+      "id": "chapter-2",
+      "title": "Control execution",
+      "objective": "Read branches and loops, find boundary errors, and design stopping conditions.",
+      "lessons": [
+        "conditions",
+        "for-range",
+        "while-stop",
+        "debugging"
+      ]
+    },
+    {
+      "id": "chapter-3",
+      "title": "Organize data",
+      "objective": "Use shopping lists and price tables to organize data by position, name, or membership.",
+      "lessons": [
+        "lists",
+        "dictionaries",
+        "tuples-sets",
+        "comprehensions"
+      ]
+    },
+    {
+      "id": "chapter-4",
+      "title": "Organize programs",
+      "objective": "Write functions, design interfaces, import modules, and handle expected exceptions.",
+      "lessons": [
+        "functions",
+        "arguments",
+        "modules",
+        "exceptions"
+      ]
+    },
+    {
+      "id": "chapter-5",
+      "title": "Build an application",
+      "objective": "Handle files, validate formats, test boundaries, and deliver a command-line tool.",
+      "lessons": [
+        "text-files",
+        "json-csv",
+        "testing",
+        "capstone"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "python-tutorial",
+      "title": "Python 3.13 Tutorial",
+      "url": "https://docs.python.org/3.13/tutorial/",
+      "purpose": "Check introductory language coverage; explanations and examples are newly written for beginners."
+    },
+    {
+      "id": "python-types",
+      "title": "Built-in Types",
+      "url": "https://docs.python.org/3.13/library/stdtypes.html",
+      "purpose": "Check types, truth values, assignment, operations, and container semantics."
+    },
+    {
+      "id": "python-floating",
+      "title": "Floating-Point Arithmetic",
+      "url": "https://docs.python.org/3.13/tutorial/floatingpoint.html",
+      "purpose": "Check floating-point representation error and approximate comparison."
+    },
+    {
+      "id": "python-input",
+      "title": "Built-in Functions",
+      "url": "https://docs.python.org/3.13/library/functions.html",
+      "purpose": "Check the behavior of input, int, print, len, and sorted."
+    },
+    {
+      "id": "python-control",
+      "title": "More Control Flow Tools",
+      "url": "https://docs.python.org/3.13/tutorial/controlflow.html",
+      "purpose": "Check loops, functions, default arguments, and call semantics."
+    },
+    {
+      "id": "python-errors",
+      "title": "Errors and Exceptions",
+      "url": "https://docs.python.org/3.13/tutorial/errors.html",
+      "purpose": "Check exception propagation, handling, and raising."
+    },
+    {
+      "id": "python-data",
+      "title": "Data Structures",
+      "url": "https://docs.python.org/3.13/tutorial/datastructures.html",
+      "purpose": "Check lists, tuples, dictionaries, sets, and comprehensions."
+    },
+    {
+      "id": "python-modules",
+      "title": "Modules and venv",
+      "url": "https://docs.python.org/3.13/tutorial/modules.html",
+      "purpose": "Check modules, entry points, and imports; see venv separately for environments."
+    },
+    {
+      "id": "python-venv",
+      "title": "venv",
+      "url": "https://docs.python.org/3.13/library/venv.html",
+      "purpose": "Check virtual-environment creation and platform-specific commands."
+    },
+    {
+      "id": "python-io",
+      "title": "Input and Output",
+      "url": "https://docs.python.org/3.13/tutorial/inputoutput.html",
+      "purpose": "Check file modes, UTF-8, with blocks, and serialization."
+    },
+    {
+      "id": "python-pathlib",
+      "title": "pathlib",
+      "url": "https://docs.python.org/3.13/library/pathlib.html",
+      "purpose": "Check relative paths, directory creation, and text file operations."
+    },
+    {
+      "id": "python-formats",
+      "title": "json",
+      "url": "https://docs.python.org/3.13/library/json.html",
+      "purpose": "Check JSON mappings, ensure_ascii, and round-trip limitations; see csv for tables."
+    },
+    {
+      "id": "python-csv",
+      "title": "csv",
+      "url": "https://docs.python.org/3.13/library/csv.html",
+      "purpose": "Check table parsing, string fields, extra columns, and newline rules."
+    },
+    {
+      "id": "python-unittest",
+      "title": "unittest",
+      "url": "https://docs.python.org/3.13/library/unittest.html",
+      "purpose": "Check test discovery, assertions, and invalid-input tests."
+    },
+    {
+      "id": "python-argparse",
+      "title": "argparse",
+      "url": "https://docs.python.org/3.13/library/argparse.html",
+      "purpose": "Check command-line arguments, help, and exit codes."
+    }
+  ],
+  "contribution": {
+    "submittedBy": "aby0120",
+    "pullRequest": "https://github.com/b1n9ui/ai-university/pull/4",
+    "acceptedOn": "2026-10-21"
+  },
+  "replayRuntime": "CPython 3.14"
+}

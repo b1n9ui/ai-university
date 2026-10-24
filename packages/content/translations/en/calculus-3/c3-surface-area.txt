@@ -1,0 +1,63 @@
+Surface area and scalar surface integrals
+Measure actual parallelogram area
+A surface element is the length of the tangent cross product times parameter area. Scalar surface integrals add a weight.
+A sloping roof exceeds its horizontal shadow. Cross-product length measures the local enlargement.
+Compute surface areas and membrane masses
+Distinguish projected from actual area
+A height graph
+Using horizontal coordinates as parameters gives the square root of one plus the squared partial derivatives as area factor.
+Does orientation change area?
+No. Cross-product length survives reversal, as does a scalar surface integral.
+Which density?
+A membrane uses density per actual surface area, not projected area. Divide by actual area for surface averages too.
+Measure actual parallelogram area
+Use piecewise regular charts without repeated positive-area coverage, with continuous integrand. The graph formula needs a continuously differentiable height function.
+Map small parameter edges to tangent vectors.
+Take their parallelogram area.
+For a graph, cross-product length yields the radical factor.
+A sloping roof
+Find the area of $z=2x+y$ above the unit square.
+Partials are 2 and 1.
+The area factor is $\sqrt{1+4+1}=\sqrt6$; multiply by base area one.
+$\sqrt6$.
+Paraboloid area
+Find the area of $z=\frac12(x^2+y^2)$ over the unit disk.
+The factor is $\sqrt{1+r^2}$.
+$A=2\pi\int_0^1r\sqrt{1+r^2}dr=\frac{2\pi}3(2\sqrt2-1)$.
+$\frac{2\pi}3(2\sqrt2-1)$.
+Surface area equals projected area.
+Include local tilt enlargement.
+Downward orientation makes a scalar surface integral negative.
+Its area element is unoriented; orientation does not negate it.
+Find the area of $z=x$ over the unit square.
+Use the square root of one plus squared slopes.
+Factor $\sqrt2$ times base area one.
+$\sqrt2$.
+A membrane has area 5 and uniform area density 3. Find mass.
+Multiply actual area by density.
+$5\cdot3=15$.
+Does reversing orientation change $\iint_S1\,dS$?
+Can length reverse sign?
+Cross-product length is unchanged, so is area.
+Unchanged.
+Does small horizontal projection imply small actual area?
+Consider steep or vertical surfaces.
+Tilt factors may be large; a vertical surface is not a graph over that horizontal plane.
+Not necessarily.
+Which part of a cross product gives the surface area element?
+Its length
+Any component
+Its negative sign
+It measures actual area spanned by local edges.
+A unit parameter square on plane $z=cx$; compare projection and actual area.
+As the roof steepens over a fixed base, how does area change?
+Actual patch area equals parameter area times tangent cross-product length, including tilt.
+Horizontal
+Set plane slope $c$ to $0$.
+Actual and parameter-square areas agree.
+Tilted
+Set plane slope $c$ to $1$.
+The area factor is $\sqrt2$.
+Steeper
+Set plane slope $c$ to $2$.
+Projection stays fixed while actual area factor becomes $\sqrt5$.

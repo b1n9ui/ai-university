@@ -1,0 +1,66 @@
+Local and global errors
+Step errors also propagate
+Our local-error convention
+One-step local error compares an update from the exact starting state with the exact endpoint, without dividing by step size. Other books may normalize it, changing the stated power by one.
+How do orders relate?
+On a smooth finite interval with stable error propagation, an order-$p$ method usually has one-step error $O(h^{p+1})$ and global error $O(h^p)$.
+How do you check a calculation?
+Compare step sizes at the same endpoint. Theoretical error ratios suggest the asymptotic regime, but two close approximations may share bias and do not prove exactness.
+Split endpoint error into new error and propagated error.
+e_{n+1}=\text{new local error}+\text{propagated old error}
+On a fixed interval, step count is inversely proportional to step size.
+Stable accumulation leaves one less power in global error.
+Estimate order from an error ratio
+Error falls from $0.04$ to $0.01$ when the step halves. Estimate the order.
+The error ratio is four.
+$2^p=4$.
+Approximately second order, assuming the leading-error regime.
+Euler local error
+For $y'=y$, start at exact value one and take step $h$.
+Euler gives $1+h$ versus exact $e^h$.
+Their difference begins at the quadratic term.
+One-step error $h^2/2+O(h^3)$.
+What is RK4's usual one-step local-error order?
+One greater than global order.
+Fifth order under this book's convention without dividing by step size.
+$O(h^5)$.
+Does halving error once prove first-order convergence?
+Rule out cancellation and other coincidences.
+Use a refinement sequence and supported hypotheses.
+A single comparison is insufficient proof.
+Should global-error comparisons fix endpoint or step count?
+Compare the same problem at the same time.
+Fix the endpoint and change step count with step size.
+Fix the endpoint.
+Must two nearby approximations be close to the exact solution?
+They may share a systematic bias.
+Use a reliable error estimate or independent reference too.
+Not necessarily.
+One step's local error equals final global error.
+Earlier errors also propagate.
+Smaller steps always reduce error at the theoretical order.
+Rounding, singularities, and nonsmoothness can change the trend.
+Local error measures one update from a correct start. Global error also includes previous error propagation and accumulation.
+Each step can deviate, and the next step starts from that already perturbed location.
+Distinguish local and global error orders
+Estimate convergence using mesh refinement
+Local and global errors
+e_n=y(t_n)-y_n,\quad\text{one step }O(h^{p+1}),\quad\text{global }O(h^p)
+Assume a fixed finite interval, sufficient regularity, and stable propagation. Our local error is not divided by step size.
+Why is global error usually one order lower than local step error?
+A fixed interval requires roughly inverse-step-size many updates
+Global error is always more accurate
+The formula is wrong
+Step count and propagation both influence total error.
+Compare errors at the same endpoint to compare the same problem.
+Coarse mesh
+Methods have different errors at the same endpoint.
+Set equal step count $N$ to $2$ and target time $T$ to $2$.
+Refine the mesh
+Step size is one quarter of its previous value.
+Set equal step count $N$ to $8$ and target time $T$ to $2$.
+Finer mesh
+Compare order-dependent error reduction; finite precision still imposes a floor.
+Set equal step count $N$ to $32$ and target time $T$ to $2$.
+Compare explicit Euler, Heun, RK4, and the analytic exponential at one endpoint. Segments only connect numerical nodes.
+Why does endpoint error depend on more than the last step?

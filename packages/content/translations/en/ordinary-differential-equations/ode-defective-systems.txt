@@ -1,0 +1,64 @@
+Repeated-root systems and generalized eigendirections
+Shear creates time factors
+A minimal model
+$A=\lambda I+N$, where $N=\begin{pmatrix}0&1\\0&0\end{pmatrix}$ satisfies $N^2=0$.
+How do you exponentiate it?
+The scalar and nilpotent parts commute, so $e^{At}=e^{\lambda t}(I+tN)$.
+Growth and decay
+If $\lambda<0$, time times exponential still tends to zero. If $\lambda=0$, shear can cause linear growth, so zero eigenvalues alone do not establish stability.
+Separate the commuting parts.
+Truncate using nilpotence.
+The second initial direction generates the shear term.
+A negative double root
+Solve $x'=-x+y,y'=-y$ with initial state $(0,1)$.
+The second component is $e^{-t}$.
+An integrating factor gives first component $te^{-t}$.
+$(x,y)=(te^{-t},e^{-t})$.
+A zero double root
+Solve $x'=y,y'=0$ with initial state $(1,2)$.
+The second component stays two.
+The first grows at constant rate two.
+$(x,y)=(1+2t,2)$.
+If $N^2=0$, what is $e^{Nt}$?
+Higher terms vanish.
+Keep only degree zero and degree one.
+$I+tN$.
+What is the limit of $te^{-t}$ as time tends to infinity?
+Exponential decay dominates polynomial growth.
+One use of L'Hopital or a standard exponential limit gives zero.
+$0$.
+Are two zero eigenvalues enough to determine stability?
+Compare the zero matrix with a nonzero nilpotent matrix.
+One stays fixed; the other can grow by shear.
+Insufficient.
+Does a repeated system eigenvalue always prevent diagonalization?
+Consider a scalar matrix.
+A scalar matrix has a complete eigenbasis.
+Not necessarily.
+Repeated eigenvalues always lack eigenvectors.
+Check eigenspace dimensions.
+Nonpositive eigenvalues guarantee stability.
+Zero real parts require checking nontrivial Jordan blocks.
+When eigenvectors are missing, the nilpotent part creates time polynomials in the exponential, supplying independent solutions.
+A repeated eigenvalue can accompany shear, so scalar exponential scaling is incomplete.
+Calculate a two-by-two Jordan-block exponential
+Recognize nontrivial repeated blocks with zero real part
+Repeated-root systems and generalized eigendirections
+We use a two-by-two Jordan block. For general coordinates, transform back using the invertible basis change.
+Why does a nontrivial two-by-two Jordan block create a time factor?
+The nilpotent exponential contains a first-order term
+The initial state must change
+Forcing must grow with time
+The time factor comes from homogeneous shear in the matrix itself.
+With repeated roots, inspect the matrix's shear structure as well as the eigenvalue numbers.
+Negative root
+Exponential decay eventually dominates the time factor.
+Set repeated eigenvalue $\lambda$ to $-1$ and observation time $t$ to $3$.
+Weak decay
+Shear stretching is more visible in the same window.
+Set repeated eigenvalue $\lambda$ to $-0.2$ and observation time $t$ to $3$.
+Zero root
+With no decay, the first component grows linearly.
+Set repeated eigenvalue $\lambda$ to $0$ and observation time $t$ to $3$.
+Start from the second basis direction and compare phase trajectories for negative and zero repeated roots, retaining the shear time factor.
+When the repeated eigenvalue reaches zero, does the shear term still decay?

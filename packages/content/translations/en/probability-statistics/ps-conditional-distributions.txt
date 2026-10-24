@@ -1,0 +1,62 @@
+Conditional distributions and densities
+Fix one variable, then normalize the remaining slice.
+Fix one variable, then normalize the remaining slice.
+A row of a joint table usually does not sum to one. Divide by its row sum to obtain a conditional distribution.
+Discrete conditional tables
+Continuous conditional densities
+Discrete conditional tables
+Within the row or column for the given value, divide by its marginal probability. The new probabilities sum to one.
+Continuous conditional densities
+Conditioning on a continuous value does not mean dividing probabilities of zero-probability points. Define the conditional density using the joint-to-marginal density ratio.
+Compare slices
+Changes in slice shape or center across conditioning values show how information about one variable changes the other's distribution.
+The denominator probability or density must be positive.
+The denominator probability or density must be positive.
+Continuous conditional density identities hold in the appropriate almost-everywhere sense. A marginal density is not a point probability.
+Take one row of the joint table.
+Use its total mass as the normalizing factor.
+Division produces conditional probabilities summing to one.
+Normalize a row
+A joint row is $(0.1,0.3)$. Given this row, find the two conditional probabilities.
+The row sum is $0.4$.
+Divide both entries by $0.4$.
+$0.25,0.75$.
+Triangular support
+The joint density is two on $0<x<y<1$. Find the density of $Y$ given $X=x$.
+The marginal is $f_X(x)=2(1-x)$.
+Divide by the marginal and retain $x<y<1$.
+$1/(1-x)$: uniform on $(x,1)$.
+Find the conditional distribution of the joint row $(0.2,0.2)$.
+Divide by its row sum.
+Divide each entry by $0.4$.
+$(0.5,0.5)$.
+A proposed conditional distribution sums to $0.4$. Is it normalized?
+Conditional probabilities must sum to one.
+It still retains the original row's total probability.
+No.
+Can a continuous conditional density be calculated directly as $P(Y=y,X=x)/P(X=x)$?
+The denominator is usually zero.
+Use a density ratio or another regular conditional-distribution definition.
+No.
+For the triangular model, find $E[Y\mid X=1/2]$.
+The conditional uniform interval runs from one half to one.
+Its midpoint is $3/4$.
+$3/4$.
+What is the second entry after normalizing the joint row $(0.1,0.3)$?
+The denominator is the total mass of the conditioning row.
+The unnormalized slice is already a conditional density
+Usually it must still be divided by the marginal density.
+Continuous conditioning cannot be defined
+The zero-over-zero event formula fails, but conditional densities provide a valid definition under appropriate conditions.
+Select different conditioning rows. How does the normalized distribution change?
+Compare raw joint probabilities with conditional probabilities from the same table; their denominators differ.
+Usually it must still be divided by the marginal density.
+Upper-left probability: 0.1
+Set the upper-left probability to $0.1$ and compare the diagram and readings.
+At this preset: first-row marginal $0.5$; first-column marginal $0.5$; upper-left probability $0.1$; conditional first-column probability in the selected row $0.2$.
+Upper-left probability: 0
+Set the upper-left probability to $0$ and compare the diagram and readings.
+At this preset: first-row marginal $0.5$; first-column marginal $0.5$; upper-left probability $0$; conditional first-column probability in the selected row $0$.
+Upper-left probability: 0.5
+Set the upper-left probability to $0.5$ and compare the diagram and readings.
+At this preset: first-row marginal $0.5$; first-column marginal $0.5$; upper-left probability $0.5$; conditional first-column probability in the selected row $1$.

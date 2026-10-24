@@ -1,0 +1,68 @@
+Linear Algebra
+From systems to spaces, projections, and factorizations
+A complete finite-dimensional introduction: systems, matrices and maps, vector spaces, the four fundamental subspaces, determinants, eigenvalues, orthogonality, least squares, symmetric matrices, SVD, networks, and data applications.
+For readers with elementary algebra and plane geometry; rotations use basic trigonometry, with no calculus prerequisite
+Ten chapters and fifty lessons form a complete introductory course in finite-dimensional real vector spaces and matrices, including complex eigenvalues, pseudoinverses, low-rank approximation, conditioning, and PCA. Full Jordan theory, abstract duality, tensors, and infinite-dimensional analysis are left to later volumes.
+Vectors and linear systems
+Solve several constraints together
+Read matrix equations through vector addition, then use elimination to determine existence and uniqueness.
+Form linear combinations
+Perform reversible row operations
+Describe the entire solution set
+Matrices and linear maps
+Turn inputs into outputs
+Matrix columns record basis images; multiplication composes maps. Use inverses and factorizations to solve problems with their meaning intact.
+Understand matrix multiplication
+Test linearity and invertibility
+Solve using LU
+Vector spaces, bases, and coordinates
+Which directions are necessary?
+Extend coordinates to objects with the same operation rules. A basis has no redundancy and represents every vector in the space.
+Test subspaces
+Distinguish span from independence
+Use bases and coordinates
+Null spaces, images, and rank
+Lost inputs and retained outputs
+The four fundamental subspaces connect solutions, independence, and orthogonality. Identify their ambient spaces first.
+Find null-space and column-space bases
+Apply rank-nullity
+Distinguish the four fundamental subspaces
+Determinants
+Oriented volume and invertibility
+A determinant measures a square matrix's signed volume scaling. Operation rules are more useful than repeatedly expanding large formulas.
+Interpret sign and volume
+Calculate using row operations
+Connect determinants with invertibility
+Eigenvalues and diagonalization
+Directions that do not turn
+Eigenvectors only scale under the map. Enough independent eigenvectors separate repeated actions into scalar calculations along directions.
+Find eigenspaces
+Test diagonalizability
+Handle repeated and complex eigenvalues
+Orthogonality, projection, and least squares
+The nearest fit when no exact solution exists
+Length and perpendicularity simplify coordinates. Orthogonal decomposition leads from projection to QR and least squares.
+Calculate projections and distances
+Construct orthonormal bases
+Form and solve least-squares problems
+Symmetric matrices and quadratic forms
+Orthogonal directions reveal shape and extrema
+Every real symmetric matrix has an orthonormal eigenbasis, separating a quadratic form into independent squared terms.
+Apply the spectral theorem
+Test definiteness and degeneracy
+Complete squares and find constrained extrema
+Singular value decomposition and numerical stability
+Independent scaling for rectangular matrices too
+SVD uses two orthogonal coordinate systems to describe general matrices, unifying rank, pseudoinverses, optimal low-rank approximation, and conditioning.
+Distinguish eigenvalues from singular values
+Use SVD and pseudoinverses
+Understand low-rank errors and ill-conditioning
+Iteration, networks, and data analysis
+Apply factorizations to concrete problems
+Use matrix language for state changes, network conservation, and data reduction. Every model identifies inputs, constraints, and meaning first.
+Build Markov and recurrence models
+Analyze graph incidence matrices
+Perform PCA and choose appropriate tools
+Used to check introductory scope, the four fundamental subspaces, factorizations, and applications. This book's text, problems, figures, and solutions are independently authored; source notes, videos, and problem banks are not copied.
+Used to check algebraic and geometric ordering and the hypotheses for solution sets, eigenspaces, and orthogonality. Source text, examples, and images are not copied.
+Structure, mathematical typesetting, prerequisites, independent matrix recalculation, visual boundaries, and actual-page checks; this does not amount to formal verification of every expression.

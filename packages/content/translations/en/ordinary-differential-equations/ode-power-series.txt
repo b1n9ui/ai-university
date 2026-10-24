@@ -1,0 +1,65 @@
+Power-series solutions at ordinary points
+Turn a function into a coefficient sequence
+What is an ordinary point?
+If the standard second-order coefficients are analytic near the expansion point, it is ordinary and solutions have local Taylor series.
+How do you align powers?
+After differentiation, shift indices to express every sum in the same power. Check lowest terms separately rather than dropping them.
+Truncations are not exact solutions
+A finite partial sum usually satisfies the equation only approximately. Coefficient analyticity supplies a lower bound for convergence radius; a particular solution may extend farther.
+Substitute $y''+y=0$.
+Every coefficient must vanish.
+Initial data fix the even and odd chains.
+The cosine series
+For $y''+y=0,y(0)=1,y'(0)=0$, calculate through degree four.
+The recurrence gives $a_2=-1/2,a_3=0,a_4=1/24$.
+Every odd coefficient is zero.
+$y=1-t^2/2+t^4/24+\cdots$.
+A variable-coefficient recurrence
+For $y''=ty,y(0)=1,y'(0)=0$, calculate through degree three.
+The constant coefficient gives $a_2=0$.
+The linear coefficient gives $6a_3=a_0=1$.
+$y=1+t^3/6+\cdots$.
+In the recurrence for $y''+y=0$, how are $a_4$ and $a_2$ related?
+Set the recurrence index to two.
+$a_4=-a_2/(4\times3)$.
+$a_4=-a_2/12$.
+Which familiar solution matches $a_0=0,a_1=1$?
+The odd chain alternates signs.
+The result is $t-t^3/6+\cdots$.
+$\sin t$.
+Does a finite series truncation usually solve the equation exactly?
+Higher-degree residuals remain.
+Exactness occurs only in special terminating cases.
+Usually not.
+Why does the constant term of $y''=ty$ give $a_2=0$?
+Multiplication by time leaves no constant on the right.
+The left constant is $2a_2$.
+Compare constant coefficients.
+Index shifts need no check of starting terms.
+The lowest summation terms may need separate treatment.
+Agreement after plotting more terms proves convergence.
+Convergence requires analytic theory or an independent estimate.
+Near an ordinary point, substitute a power series and compare like powers to derive a recurrence.
+Initial data fix the first coefficients; the equation supplies later ones in order.
+Align powers and derive recurrences
+Distinguish an infinite-series solution from a finite approximation
+Power-series solutions at ordinary points
+In standard homogeneous $y^{\prime\prime}+P(t)y^\prime+Q(t)y=0$, coefficients $P,Q$ are analytic near the expansion point. Continuity alone does not guarantee analytic solutions.
+Differentiate termwise within the convergence disk. We expand at ordinary point zero; shift the variable for another center.
+Which initial coefficients determine a second-order ordinary-point solution?
+Every coefficient is arbitrary
+The constant and linear coefficients
+Only the highest-degree coefficient
+They represent initial value and initial derivative.
+Series methods complete the solution through coefficients rather than through successive function values.
+Degree-two truncation
+Only constant and quadratic terms remain.
+Set truncation degree $n$ to $2$ and observation time $t$ to $1$.
+Degree-six truncation
+Error is smaller in the same window.
+Set truncation degree $n$ to $6$ and observation time $t$ to $2$.
+Degree-twelve truncation
+More terms improve the fit, but it remains a finite approximation.
+Set truncation degree $n$ to $12$ and observation time $t$ to $3$.
+Gold retains terms up to the chosen degree; blue is exact cosine. Compare function error and equation residual.
+How do function error and equation residual change with truncation degree?

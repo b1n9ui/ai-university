@@ -1,0 +1,64 @@
+Laplace transforms and convergence
+Weight the future exponentially
+What is the definition?
+We use the one-sided transform, integrating from zero to infinity. It records initial values and causal inputs naturally.
+When does it exist?
+Piecewise continuity and exponential order are common sufficient conditions. If eventual growth is bounded by $Me^{at}$, convergence holds for $\operatorname{Re}s>a$.
+Not every function qualifies
+For example, $e^{t^2}$ grows faster than any linear exponential on positive time, fails this sufficient condition, and its usual real-parameter transform integral diverges.
+Substitute an exponential function.
+Convergence requires decay rather than growth.
+Evaluate the endpoints.
+A constant function
+Find the transform of constant one.
+Integrate $e^{-st}$.
+For positive real parameters the upper-end contribution vanishes.
+$1/s$, with complex domain $\operatorname{Re}s>0$.
+Exponential derivatives
+Find the transform of $e^{-2t}$.
+The integrand's exponential is $e^{-(s+2)t}$.
+Integration gives a reciprocal, requiring real part greater than minus two.
+$1/(s+2)$, $\operatorname{Re}s>-2$.
+Find the transform and convergence domain of $e^{3t}$.
+Subtract the growth rate from the parameter.
+The integral is $1/(s-3)$, requiring real part greater than three.
+$1/(s-3),\operatorname{Re}s>3$.
+Find the transform of $2+e^{-t}$.
+Use linearity.
+The two terms give $2/s$ and $1/(s+1)$.
+$2/s+1/(s+1)$, on common domain $\operatorname{Re}s>0$.
+Can the algebraic value of $1/(s-3)$ at $s=0$ be called the transform integral?
+Check convergence.
+The integral diverges there; algebraic continuation is not the original integral.
+No.
+Which time interval does the one-sided transform integrate?
+Read its definition.
+Zero to positive infinity.
+$[0,\infty)$.
+If the algebraic expression exists, the transform integral converges.
+Retain the convergence domain too.
+No growing function has a transform.
+Exponential growth can converge under a sufficiently strong weight.
+A Laplace transform integrates the future against a decaying exponential, turning a time function into a function of a transform variable.
+Exponential weighting suppresses distant contributions; it must be strong enough for convergence.
+Calculate basic transforms from their definition
+State the convergence half-plane
+Laplace transforms and convergence
+Define the transform where the integral converges absolutely. We first calculate with real $s$ and then state the corresponding complex half-plane.
+What does a convergence domain specify?
+Parameters for which the integral converges
+The function has only one frequency
+The time domain
+Read the transform expression together with convergence information.
+The transform is first an integral. Tables and algebra must respect its convergence conditions.
+Convergent region
+The kernel decays and the truncated integral approaches the transform.
+Set signal exponent $a$ to $0.5$, real transform parameter $s$ to $2$, and truncation limit $T$ to $6$.
+Threshold
+The integrand is one and its integral grows linearly with the upper limit.
+Set signal exponent $a$ to $1$, real transform parameter $s$ to $1$, and truncation limit $T$ to $6$.
+Divergent region
+The integrand grows. A finite truncated value is not the infinite integral.
+Set signal exponent $a$ to $1$, real transform parameter $s$ to $0.5$, and truncation limit $T$ to $6$.
+Display the integrand and truncated integral. The infinite transform converges only when the real parameter exceeds the signal growth rate; a finite integral is not the full transform.
+Does the integral converge when the weighting decay rate is no greater than signal growth?

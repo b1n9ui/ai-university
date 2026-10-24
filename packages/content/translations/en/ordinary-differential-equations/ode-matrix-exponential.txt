@@ -1,0 +1,64 @@
+Matrix exponentials and continuous evolution
+Define a solution without diagonalization
+How is it defined?
+Define $e^{At}=I+At+(At)^2/2!+\cdots$ by its power series, convergent for finite matrices at every finite time.
+How do you obtain the initial-value solution?
+Termwise differentiation gives derivative $Ae^{At}$, and the initial matrix is the identity, so the solution is $e^{A(t-t_0)}\mathbf x_0$.
+Product rules need hypotheses
+Time advances for the same matrix compose. Exponentials of different matrices combine into the exponential of their sum only with additional conditions such as commutation.
+Differentiate term by term.
+Check the initial value.
+With diagonalization, calculate each direction separately.
+A square-zero matrix
+Find the exponential of $A=\begin{pmatrix}0&1\\0&0\end{pmatrix}$.
+$A^2=0$, so terms of order two and higher vanish.
+Keep the identity and first-order term.
+$e^{At}=\begin{pmatrix}1&t\\0&1\end{pmatrix}$.
+A scalar matrix
+Find the exponential of $A=-2I$.
+Each power is a scalar power times the identity.
+The series reduces to a scalar exponential.
+$e^{At}=e^{-2t}I$.
+What is every matrix exponential at time zero?
+Read the series' constant term.
+Every positive time power vanishes.
+The identity matrix.
+Is a matrix exponential invertible?
+Use negative-time advancement.
+$e^{At}e^{-At}=I$.
+Yes, with inverse $e^{-At}$.
+Find the exponential of diagonal $\operatorname{diag}(1,2)$.
+Each diagonal direction acts independently.
+Off-diagonal entries stay zero.
+$\operatorname{diag}(e^t,e^{2t})$.
+Does $e^{A+B}=e^Ae^B$ always hold?
+Matrices need not commute.
+It generally fails without commutation.
+No; extra conditions are needed.
+Matrix exponentials exponentiate each entry separately.
+Their definition uses matrix powers and the identity.
+Without diagonalization there is no exponential solution.
+The series defines an exponential for every square matrix.
+Matrix exponentials generalize scalar exponential evolution to linear systems, including nondiagonalizable matrices.
+Starting from the identity state map, accumulate successive matrix actions to obtain time evolution.
+Define and use matrix exponentials
+Distinguish matrix exponentials from entrywise exponentiation
+Matrix exponentials and continuous evolution
+$A$ is a finite-dimensional constant square matrix. Exponentiation is not entrywise. If $AB=BA$, then $e^{A+B}=e^Ae^B$.
+Which matrix begins the exponential series?
+The zero matrix
+The identity matrix
+The entrywise exponential of the original matrix
+The evolution must preserve the initial state at time zero.
+Diagonalization helps calculate a matrix exponential; it is not needed to define one.
+Unit second direction
+The second component stays fixed and the first grows linearly.
+Set initial first component $x_0$ to $0$, initial second component $y_0$ to $1$, and observation time $t$ to $2$.
+First direction
+Every point on the first axis is an equilibrium.
+Set initial first component $x_0$ to $1$, initial second component $y_0$ to $0$, and observation time $t$ to $2$.
+Opposite direction
+A negative second component moves left.
+Set initial first component $x_0$ to $0$, initial second component $y_0$ to $-1$, and observation time $t$ to $2$.
+For a square-zero matrix the series truncates exactly. The phase plane shows horizontal shear; the matrix readout changes with observation time.
+If the second initial component is zero, does shear produce motion?

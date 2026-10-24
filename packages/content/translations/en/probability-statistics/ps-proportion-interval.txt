@@ -1,0 +1,65 @@
+Proportion intervals: why zero width is misleading
+Zero observed successes do not establish that the success probability is zero.
+Zero observed successes do not establish that the success probability is zero.
+With small samples or proportions near a boundary, a simple symmetric interval can give unreasonable answers.
+Recognize the Wald problem
+Invert a score test
+Recognize the Wald problem
+A symmetric interval that plugs the sample proportion into its standard error has zero width at a boundary and may extend outside the probability range.
+Invert a score test
+The Wilson interval retains the unknown proportion inside the standard error and solves the resulting quadratic inequality for more reasonable endpoints.
+Separate approximate from exact
+Wilson often improves coverage but remains approximate. Exact binomial intervals invert tail probabilities; discreteness often makes their coverage conservative.
+Assume independent Bernoulli trials with a common success probability and $n>0$.
+Assume independent Bernoulli trials with a common success probability and $n>0$.
+Wilson is an approximate score-method interval; the default here is a two-sided central confidence level.
+Bound the standardized difference using binomial variance at the unknown probability.
+Collect the unknown-proportion terms into a quadratic inequality.
+Find its two roots and take the region between them.
+Zero successes
+With zero successes in ten trials and $z=1.96$, approximate the Wilson upper endpoint.
+The lower endpoint is zero; the upper simplifies to $z^2/(n+z^2)$.
+$3.8416/13.8416\approx0.2775$.
+Approximately $[0,0.2775]$.
+A middle proportion
+With fifty successes in 100 trials and $z=1.96$, find the interval center and margin.
+The center remains one half.
+The margin is approximately $0.0962$.
+Approximately $[0.4038,0.5962]$.
+With zero successes, what is the plug-in Wald standard error?
+The sample proportion is zero.
+$\sqrt{0(1-0)/n}=0$.
+$0$; that is the problem.
+If all 100 trials succeed, must the true success probability equal one?
+Finite-sample uncertainty remains.
+A probability below one can also produce all successes.
+Not necessarily.
+What does $z^2/n$ in the Wilson denominator do?
+It comes from solving the quadratic inequality.
+It adjusts both center and width.
+It avoids some boundary failures of the simple plug-in method.
+Does an exact binomial interval have coverage exactly equal to its nominal level at every parameter value?
+The binomial distribution is discrete.
+Coverage is generally at least the target but may be higher.
+No; it is often conservative.
+After zero successes, what does reporting $[0,0]$ mainly omit?
+Finite-sample uncertainty
+The success count
+The sample-size denominator
+No observed successes do not rule out every positive probability.
+A zero probability estimate has no uncertainty
+Boundary estimates still have sampling uncertainty.
+An approximate interval need not identify its method
+State whether the method is Wilson, Wald, exact inversion, or another procedure.
+Keep zero successes and increase the trial count. How does the Wilson upper endpoint shrink?
+Compare Wilson with the simple Wald interval, especially at zero successes.
+Boundary estimates still have sampling uncertainty.
+Total trials: 10
+Set total trials to $10$ and compare the diagram and readings.
+At this preset: actual successes after rounding the proportion $0$; Wilson lower endpoint $0$; Wilson upper endpoint $0.277533$; Wald margin $0$.
+Total trials: 5
+Set total trials to $5$ and compare the diagram and readings.
+At this preset: actual successes after rounding the proportion $0$; Wilson lower endpoint $0$; Wilson upper endpoint $0.434482$; Wald margin $0$.
+Total trials: 100
+Set total trials to $100$ and compare the diagram and readings.
+At this preset: actual successes after rounding the proportion $0$; Wilson lower endpoint $0$; Wilson upper endpoint $0.0369935$; Wald margin $0$.

@@ -1,0 +1,58 @@
+Real Analysis
+Turn intuition into proofs with explicit hypotheses
+Completeness of the reals, sequences and series, compactness and continuity, differentiation, Riemann integration, function sequences, and limit interchange. Each lesson includes proof strategies, hypotheses, counterexamples, full exercise solutions, and local interactions.
+Readers who know single-variable calculus and want to practice proofs; review logic and sets in Discrete Mathematics as needed
+A complete first course on the real line in eight chapters and forty lessons. Starting from a complete ordered field, it rigorously develops single-variable calculus and uniform convergence. General metric spaces, measure and Lebesgue integration, functional analysis, and multivariable analysis belong to later courses.
+Real numbers and completeness
+A reliable number system for limits
+A reliable number system for limits.
+Prove basic inequalities from ordered-field axioms
+Distinguish upper bounds, maxima, and suprema
+Prove square-root existence from completeness
+Sequences and convergence
+Express infinite approximation through precise conditions
+Express infinite approximation through precise conditions.
+Order the quantifiers in limit definitions
+Prove monotone convergence and nested intervals
+Test convergence with subsequences and Cauchy conditions
+Infinite series
+Study partial sums rather than treating infinity as ordinary addition
+Study partial sums rather than treating infinity as ordinary addition.
+Define series convergence through partial sums
+Choose comparison, ratio, root, or alternating tests
+Distinguish absolute and conditional convergence
+Sets on the real line
+Organize local information with neighborhoods, compactness, and connectedness
+Organize local information with neighborhoods, compactness, and connectedness.
+Use neighborhoods to identify open sets, closed sets, and limit points
+Prove compactness equivalent to closedness and boundedness
+Distinguish connectedness, countability, and uncountability
+Continuity and uniform continuity
+Translate input error into output error
+Translate input error into output error.
+Distinguish a function limit from its center value
+Prove continuous images preserve compactness and connectedness
+Distinguish continuity from uniform continuity
+Theory of differentiation
+From local linearity to global bounds
+From local linearity to global bounds.
+Express differentiability as local linear approximation
+State hypotheses for the mean value and Darboux theorems
+Estimate functions with Taylor remainders and second derivatives
+Riemann integration
+Bring upper and lower estimates to the same number
+Bring upper and lower estimates to the same number.
+Define integrals through upper and lower sums and test integrability
+Prove continuous and monotone functions integrable
+Apply the fundamental theorem under its hypotheses
+Function sequences and limit interchange
+Check whether one error bound controls the whole domain
+Check whether one error bound controls the whole domain.
+Distinguish pointwise and uniform convergence
+Control tails with uniform Cauchy estimates and the M-test
+Check conditions for passing limits through continuity, integration, and differentiation
+Used to check first-course scope and prerequisite relations among completeness, convergence, continuity, differentiation, integration, and uniformity. Text and problems were independently written.
+Used to check scope against an openly published author textbook; no text, figures, or exercises were copied.
+Used to check sufficient conditions for integral and derivative limit interchange.
+Used to check the Riemann-integral hypotheses of the fundamental theorem.
+Structural, typesetting, dependency, selected proof and counterexample reviews, and analytic-model cross-checks; no claim of human review or formal verification.

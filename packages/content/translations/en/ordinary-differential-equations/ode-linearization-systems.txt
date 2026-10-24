@@ -1,0 +1,64 @@
+Jacobians and local linearization
+Retain first-order change near equilibrium
+Find equilibria first
+For $\mathbf x'=\mathbf f(\mathbf x)$, solve $\mathbf f(\mathbf x_*)=0$ before applying equilibrium tests. An arbitrary point is not an equilibrium.
+The first-order matrix
+In displacement coordinates, $\mathbf u'=J\mathbf u+\mathbf r(\mathbf u)$, with remainder small relative to displacement. $J$ is the derivative matrix at equilibrium.
+Which conclusions are reliable?
+Strictly negative real parts give local asymptotic stability; a positive real part gives instability. Zero real parts can make linearization inconclusive, especially near a center.
+Translate equilibrium to the origin.
+Use the multivariable first-order expansion.
+For hyperbolic cases, sufficiently small higher-order terms do not overturn the linear trend.
+A locally stable model
+Classify the origin of $x'=-x+x^2,y'=-2y$.
+Its Jacobian at zero is $\operatorname{diag}(-1,-2)$.
+Both real parts are strictly negative.
+Locally asymptotically stable, without claiming global attraction.
+Zero roots are inconclusive
+Compare zero equilibria of $x'=-x^3$ and $x'=x^3$.
+Both linearizations vanish.
+The first points inward on both sides and the second outward.
+Identical linearization, opposite nonlinear stability.
+Find the Jacobian of $x'=2x+xy,y'=-y$ at the origin.
+Differentiate each component.
+Cross terms have no first-order contribution at zero.
+$\operatorname{diag}(2,-1)$.
+Classify the origin for $x^\prime=2x+xy,y^\prime=-y$.
+The eigenvalues have opposite signs.
+An expanding direction exists.
+An unstable saddle.
+Do purely imaginary linear roots prove a nonlinear center?
+Higher terms can change radius.
+The linear part only rotates; higher-order radial effects may matter.
+No.
+Does local asymptotic stability mean every distant initial state converges there?
+Local restricts the starting neighborhood.
+Other equilibria or escaping trajectories may exist.
+No.
+Use the Jacobian at any point to classify an equilibrium.
+Verify it is an equilibrium first.
+A linearized center guarantees a nonlinear center.
+Higher-order terms can determine stability with zero real parts.
+The Jacobian gives a nonlinear system's first-order model near equilibrium. Hyperbolic stability types can be classified by that linearization.
+Magnify the neighborhood and ask whether its first-order change already determines the trend.
+Calculate equilibrium Jacobians
+Identify decisive and inconclusive linearizations
+Jacobians and local linearization
+The right-hand side is continuously differentiable near equilibrium. An equilibrium without zero-real-part eigenvalues is hyperbolic. Conclusions are local, not automatically global.
+If all Jacobian eigenvalues have strictly negative real parts, what follows?
+Every nearby solution is a line
+Every state globally tends to zero
+Local asymptotic stability
+This is a local result with hypotheses.
+Linearization magnifies a neighborhood; it does not replace the entire nonlinear system everywhere with a matrix.
+Near the origin
+The two trajectories remain close and approach zero.
+Set initial first component $x_0$ to $0.2$, initial second component $y_0$ to $0.5$, and observation time $t$ to $3$.
+Farther away, below the threshold
+Nonlinear effects are stronger, but the solution still tends to zero.
+Set initial first component $x_0$ to $0.8$, initial second component $y_0$ to $1$, and observation time $t$ to $3$.
+Beyond the threshold
+A finite window or solution endpoint is reported; local stability cannot establish global attraction.
+Set initial first component $x_0$ to $1.5$, initial second component $y_0$ to $0$, and observation time $t$ to $3$.
+Compare nonlinear and local-linear phase trajectories. The origin attracts only locally; beyond first-component threshold one, trajectories may escape and blow up.
+Does the near-origin conclusion extend to the other side of the threshold?

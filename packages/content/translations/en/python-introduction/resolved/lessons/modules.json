@@ -1,0 +1,225 @@
+{
+  "id": "modules",
+  "chapterId": "chapter-4",
+  "number": "4.3",
+  "title": "Modules: reusable tools",
+  "subtitle": "Put reusable functions in a separate file and import them from another file.",
+  "concept": "Put reusable functions in a separate file and import them from another file.",
+  "intuition": "Keep familiar tools in a toolbox and retrieve them by name.",
+  "objectives": [
+    "Use a built-in Python module",
+    "Put your tools in helpers.py",
+    "Keep demonstrations out of imports"
+  ],
+  "body": [
+    {
+      "title": "Use a built-in Python module",
+      "text": "import math loads Python's built-in math module, a collection of related tools. math.sqrt(9) calls its square-root function and returns 3.0. The dot joins the module name to the tool name. You do not need to implement the square-root algorithm."
+    },
+    {
+      "title": "Put your tools in helpers.py",
+      "text": "The appendix defines double in helpers.py. After from helpers import double, main.py can call double(5). Save the files in one directory, enter it in a terminal, and run main.py. Do not name your own file math.py or json.py: it can hide the standard module."
+    },
+    {
+      "title": "Keep demonstrations out of imports",
+      "text": "Ordinary top-level statements also execute the first time a module is imported. To avoid prompting the user during an import, put demonstrations and command-line operations under if __name__ == \"__main__\":. Treat this as an entry-point guard: it runs when the file is executed directly, not when imported. You need not study the double underscores yet."
+    }
+  ],
+  "formalDefinition": {
+    "text": "import makes module tools available. An entry-point guard runs a demonstration only when the file is executed directly.",
+    "conditions": [
+      "Save helpers.py and main.py in the same directory for the two-file example.",
+      "This lesson gives sqrt nonnegative inputs."
+    ]
+  },
+  "derivation": [
+    {
+      "text": "import math loads the module."
+    },
+    {
+      "text": "math.sqrt(9) produces 3.0."
+    },
+    {
+      "text": "print displays the result."
+    }
+  ],
+  "interactiveVisual": {
+    "kind": "python-trace",
+    "prediction": "What is the square root of 9? Will it display as an integer or a floating-point number?",
+    "caption": "Choose an input and predict the result, then select Next step. The arrow marks the next statement to execute; the side panel shows current variables and output produced so far.",
+    "experiment": {
+      "code": "import math\nnumber = 9\nresult = math.sqrt(number)\nprint(result)\n",
+      "stdout": "3.0\n",
+      "stdin": ""
+    },
+    "followUp": "Try 0, 4, and 16 and check their known square roots.",
+    "codeTemplate": "import math\nnumber = {{number}}\nresult = math.sqrt(number)\nprint(result)\n",
+    "controls": [
+      {
+        "name": "number",
+        "label": "Input number",
+        "values": [
+          0,
+          4,
+          9,
+          16,
+          25
+        ],
+        "defaultIndex": 2
+      }
+    ],
+    "watch": [
+      "number",
+      "result"
+    ]
+  },
+  "workedExamples": [
+    {
+      "title": "Use the square-root tool",
+      "problem": "Find the square root of 9.",
+      "steps": [
+        "import math loads the module.",
+        "math.sqrt(9) produces 3.0.",
+        "print displays the result."
+      ],
+      "answer": {
+        "code": "import math\nresult = math.sqrt(9)\nprint(result)\n",
+        "stdout": "3.0\n",
+        "stdin": ""
+      }
+    },
+    {
+      "title": "Run the entry point",
+      "problem": "Run this file directly to display the doubled value.",
+      "steps": [
+        "Define the reusable function first.",
+        "The entry-point condition is true when run directly.",
+        "double(5) returns 10."
+      ],
+      "answer": {
+        "code": "def double(number):\n    return number * 2\n\nif __name__ == \"__main__\":\n    print(double(5))\n",
+        "stdout": "10\n",
+        "stdin": ""
+      }
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "modules-m1",
+      "claim": "Importing a file never runs its top-level statements.",
+      "correction": "Ordinary top-level statements execute too. Put demonstrations inside the entry-point guard."
+    },
+    {
+      "id": "modules-m2",
+      "claim": "My math.py cannot affect import math.",
+      "correction": "A local file with the same name can hide the standard module. Choose a different filename."
+    }
+  ],
+  "practice": [
+    {
+      "problem": "Find the square root of 16.",
+      "hint": "Import math, then use sqrt.",
+      "solution": [
+        "The result is 4.0."
+      ],
+      "answer": {
+        "code": "import math\nprint(math.sqrt(16))\n",
+        "stdout": "4.0\n",
+        "stdin": ""
+      },
+      "id": "modules-p1",
+      "difficulty": 1,
+      "misconceptionTags": [
+        "modules-m1"
+      ]
+    },
+    {
+      "problem": "Find the square root of 0.",
+      "hint": "0 is a boundary input for square root.",
+      "solution": [
+        "The result is 0.0."
+      ],
+      "answer": {
+        "code": "import math\nprint(math.sqrt(0))\n",
+        "stdout": "0.0\n",
+        "stdin": ""
+      },
+      "id": "modules-p2",
+      "difficulty": 1,
+      "misconceptionTags": [
+        "modules-m2"
+      ]
+    },
+    {
+      "problem": "Run an entry point that prints Tool demonstration.",
+      "hint": "Use the supplied entry-point guard.",
+      "solution": [
+        "When run directly, __name__ is \"__main__\"."
+      ],
+      "answer": {
+        "code": "if __name__ == \"__main__\":\n    print(\"Tool demonstration\")\n",
+        "stdout": "Tool demonstration\n",
+        "stdin": ""
+      },
+      "id": "modules-p3",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "modules-m1"
+      ]
+    },
+    {
+      "problem": "Import sqrt by itself and find the square root of 25.",
+      "hint": "Use from math import sqrt.",
+      "solution": [
+        "Call sqrt(25) directly this time."
+      ],
+      "answer": {
+        "code": "from math import sqrt\nprint(sqrt(25))\n",
+        "stdout": "5.0\n",
+        "stdin": ""
+      },
+      "id": "modules-p4",
+      "difficulty": 1,
+      "misconceptionTags": [
+        "modules-m2"
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "Where should demonstration code go in a module intended for import?",
+    "correctIndex": 1,
+    "choices": [
+      "At the top level, prompting on import",
+      "Under if __name__ == \"__main__\":",
+      "In a comment, which will execute too"
+    ],
+    "explanation": "The guard groups the demonstration steps that should run only when the file is executed directly.",
+    "feedback": [
+      "Top-level statements run on import and may interrupt the caller.",
+      "Yes. Run the demonstration directly; make tools available on import.",
+      "Comments do not execute."
+    ]
+  },
+  "prerequisites": [
+    "arguments",
+    "functions"
+  ],
+  "difficulty": 4,
+  "misconceptionTags": [
+    "modules-m1",
+    "modules-m2"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.2.1",
+    "status": "revised",
+    "humanReviewed": false
+  },
+  "sources": [
+    "python-tutorial",
+    "python-modules",
+    "python-venv",
+    "python-pathlib"
+  ],
+  "furtherReading": []
+}

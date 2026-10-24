@@ -1,0 +1,66 @@
+Sample spaces and events
+List the possible outcomes, then specify which belong to each event.
+List the possible outcomes, then specify which belong to each event.
+An outcome is one particular result; an event is a set of results meeting a condition.
+Describe the sample space
+Combine events
+Describe the sample space
+Two coin tosses can be recorded as ordered strings. Recording only head count gives a different sample space whose outcomes need not be equally likely.
+Combine events
+Intersection means both occur, union at least one, and complement nonoccurrence. Set diagrams help avoid counting twice.
+Check equal likelihood
+Probability is favorable count divided by total count only in a finite equally likely space.
+The sample space must cover every possible outcome of the question.
+P(A)=\frac{|A|}{|\Omega|}\quad\text{only for finite equally likely outcomes}
+The sample space must cover every possible outcome of the question.
+The counting formula requires equally likely elementary outcomes.
+List mutually exclusive elementary outcomes.
+The event of at least one head contains three outcomes.
+Add their probabilities under fair independent tosses.
+Two tosses
+What is the probability of exactly one head in two independent fair tosses?
+The four ordered outcomes are equally likely.
+Two are favorable.
+$1/2$.
+Compressed records
+Are head counts $0,1,2$ equally likely?
+They represent one, two, and one elementary outcomes respectively.
+Their probabilities are $1/4,1/2,1/4$.
+Not equally likely.
+What is the probability of an even face on a fair die?
+List even faces.
+Three favorable outcomes out of six.
+$1/2$.
+Can event $A$ and its complement occur together?
+Use the complement definition.
+They share no outcomes.
+No.
+What is the probability of at least one tail in two independent fair tosses?
+Complement the all-heads event.
+$1-1/4=3/4$.
+$3/4$.
+Does recording only “win” and “lose” imply a one-half winning probability?
+Are those categories equally likely?
+Two categories alone specify no probabilities.
+No.
+Must three distinct recorded values each have probability one third?
+Always
+Only the maximum is different
+Not necessarily
+A recording rule may merge different numbers of elementary outcomes.
+Finite outcomes are necessarily equally likely
+Equal likelihood is a model assumption needing justification.
+Events and outcomes are identical
+An event may contain many elementary outcomes.
+Change the event cells. How do unions, intersections, and complements change?
+The illustration has ten equally likely elementary outcomes; cell-count probabilities apply within that model only.
+Equal likelihood is a model assumption needing justification.
+Event B starting position: 4
+Set event B's starting position to $4$ and compare the figure and readouts.
+At these parameters: A probability $0.6$; B probability $0.5$; intersection $0.2$; union $0.9$.
+Event B starting position: 0
+Set event B's starting position to $0$ and compare the figure and readouts.
+At these parameters: A probability $0.6$; B probability $0.5$; intersection $0.5$; union $0.6$.
+Event B starting position: 9
+Set event B's starting position to $9$ and compare the figure and readouts.
+At these parameters: A probability $0.6$; B probability $0.5$; intersection $0.4$; union $0.7$.

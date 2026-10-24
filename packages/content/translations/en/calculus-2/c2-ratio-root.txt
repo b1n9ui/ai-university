@@ -1,0 +1,66 @@
+Ratio and root tests
+Look for eventual geometric decay
+A limiting consecutive ratio or nth root below one gives a convergent geometric bound. A limit equal to one is inconclusive.
+Factorials and exponentials often suit the ratio test; an overall $n$th power often suits the root test. Both seek a hidden geometric tail.
+The ratio test
+For eventually nonzero terms, compute the limit of $|a_{n+1}/a_n|$. Below one gives absolute convergence; above one or infinity gives divergence. Factorials satisfy $n!=1\cdot2\cdots n$, with $0!=1$.
+The root test
+Compute the limit of $\sqrt[n]{|a_n|}$, with the same threshold one. If the limit fails to exist, this limit version cannot be applied directly.
+What if the limit is one?
+Use another test. Both $\sum\frac1n$ and $\sum\frac1{n^2}$ have ratio limit one, but opposite convergence behavior.
+Look for eventual geometric decay
+L=\lim\left|\frac{a_{n+1}}{a_n}\right|\ \text{or}\ \lim\sqrt[n]{|a_n|}:\quad L<1\Rightarrow\text{absolute convergence},\quad L>1\Rightarrow\text{divergence}
+The chosen limit exists, possibly as positive infinity; ratio denominators are eventually nonzero. $L=1$ is inconclusive.
+For a limit below one, choose an intermediate geometric ratio.
+All sufficiently late ratios are at most that value.
+The geometric tail converges, proving absolute convergence by comparison.
+Factorials dominate exponentials
+Does $\sum_{n=0}^\infty\frac{2^n}{n!}$ converge?
+Its consecutive ratio is $\frac2{n+1}\to0$.
+The limit is below one, giving absolute convergence, not the sum.
+Absolutely convergent.
+An overall power
+Does $\sum_{n=1}^\infty(\frac{3n+1}{5n})^n$ converge?
+Its nth root is $\frac{3n+1}{5n}\to\frac35$.
+Large initial terms do not change tail convergence.
+It converges.
+A ratio tending to one implies divergence.
+One is inconclusive; use another test.
+The ratio test computes the sum.
+It decides convergence, not the sum itself.
+Does $\sum\frac{3^n}{n!}$ converge?
+Absolutely convergent.
+Divide consecutive terms.
+The ratio is $\frac3{n+1}\to0$.
+Does $\sum\frac{n!}{2^n}$ converge?
+It diverges.
+The ratio grows.
+The ratio is $\frac{n+1}{2}\to\infty$; terms also fail to tend to zero.
+Find the root limit of $\sum(\frac{n}{2n+1})^n$.
+$\frac12$, so the series converges.
+Take the nth root first.
+The root is $\frac{n}{2n+1}\to\frac12<1$.
+The ratio limit of $\sum\frac1{n^2}$ is one. What next?
+Use the positive $p$-series result or integral test to establish convergence.
+This is a familiar positive power tail.
+The ratio test is inconclusive; the $p$-series has $p=2>1$, so it converges.
+A ratio limit equal to one means what?
+Divergence
+Absolute convergence
+This test is inconclusive
+Use comparison, integration or another applicable test.
+Below one, the tail eventually shrinks at least at some fixed geometric rate. One gives no such guarantee.
+Initial terms
+Set the count to 2.
+Terms may increase initially; the first few terms do not decide.
+Into the tail
+Set the count to 8.
+The consecutive ratio is below 1 and terms shrink noticeably.
+Later terms
+Set the count to 20.
+The ratio tends to zero; a tiny undisplayed term is not mathematically zero.
+Display terms, partial sums and the next ratio for $\frac{2^n}{n!}$.
+If initial terms do not shrink, must the series diverge?
+Use ratio tests for factorial and exponential structure
+Use root tests for overall nth powers
+Recognize an inconclusive limit of one

@@ -1,0 +1,201 @@
+{
+  "id": "git-snapshot",
+  "chapterId": "chapter-3",
+  "number": "3.1",
+  "title": "Saving a file is not a Git commit",
+  "subtitle": "Understand the working tree, staging area and commits.",
+  "concept": "Saving changes the working tree. git add stages the content at that moment. git commit records staged content locally.",
+  "intuition": "A draft on your desk, a version inside an envelope and a sent letter are distinct. Editing the draft does not change the envelope.",
+  "objectives": [
+    "Use status to inspect branch and file states, then read relevant diffs.",
+    "Verify the change and create a focused local commit."
+  ],
+  "body": [
+    {
+      "title": "Know which repository you are in",
+      "text": "Git records versions; GitHub can host repositories. In a new practice directory, git init -b main creates a repository. Use git clone for an existing remote project; do not casually initialize inside another repository. Start with git status. Repository-local user.name and user.email set commit identity here; a public commit can expose that email."
+    },
+    {
+      "title": "Three versions can differ",
+      "text": "The working tree holds current files; the index stages the next commit; HEAD identifies the checked-out commit, usually the branch tip. After git add README.md, later edits do not update its staged version. git diff compares working tree with index; git diff --staged compares index with HEAD. New unstaged files normally need status and direct inspection too."
+    },
+    {
+      "title": "Give each commit one purpose",
+      "text": "Read diffs, run relevant checks and stage explicit files before committing. Describe the reason, such as reject whitespace-only plans. .gitignore prevents ordinary addition of matching untracked files, including dependencies and local secrets. It neither removes tracked content nor erases leaked history."
+    }
+  ],
+  "formalDefinition": {
+    "text": "Saving changes the working tree. git add stages the content at that moment. git commit records staged content locally.",
+    "conditions": [
+      "For small personal learning projects. In shared repositories, follow the team's conventions.",
+      "This method produces checkable evidence; it cannot guarantee arbitrary AI output is correct."
+    ]
+  },
+  "workflow": [
+    "Use status to inspect branch and file states, then read relevant diffs.",
+    "Stage only intended files and inspect the staged diff.",
+    "Verify the change and create a focused local commit."
+  ],
+  "workedExamples": [
+    {
+      "title": "A first practice commit",
+      "problem": "Record README in a new learning-list practice directory.",
+      "steps": [
+        "Initialize main and configure this repository's identity.",
+        "Save README.md, inspect it and stage it.",
+        "Review the staged diff, commit and inspect the log."
+      ],
+      "answer": "Use init only in a new practice repository; start existing projects with status. Create and save README.md first, and replace the identity placeholders with your chosen public commit identity.",
+      "code": "git init -b main\ngit config user.name \"Your Name\"\ngit config user.email \"your-public-email@example.com\"\ngit status\ngit add README.md\ngit diff --staged\ngit commit -m \"Document how to run the study list\"\ngit log --oneline"
+    },
+    {
+      "title": "Editing after staging",
+      "problem": "v1 is committed. Edit to v2 and stage it, then edit to v3. Without staging again, what is committed?",
+      "steps": [
+        "HEAD is v1, index v2, working tree v3.",
+        "Ordinary diff shows v2 to v3.",
+        "Staged diff shows v1 to v2."
+      ],
+      "answer": "The commit records v2. The working tree remains v3 with unstaged changes. To commit v3, review and stage it first; commit does not collect every latest edit automatically."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "Saving creates a recoverable commit.",
+      "correction": "Editor saving only writes the working tree; staging and committing are separate."
+    },
+    {
+      "claim": "git add . is always the best choice.",
+      "correction": "It may include unrelated files. Inspect status and prefer explicit paths while learning."
+    }
+  ],
+  "practice": [
+    {
+      "id": "git-snapshot-p1",
+      "difficulty": 2,
+      "problem": "Working tree v3, index v2, HEAD v1: what happens on commit without add?",
+      "hint": "Which version does commit read?",
+      "answer": "HEAD becomes v2; working tree stays v3 with its unstaged diff.",
+      "solution": [
+        "Staged content enters the commit.",
+        "Committing does not automatically overwrite your working edits."
+      ]
+    },
+    {
+      "id": "git-snapshot-p2",
+      "difficulty": 2,
+      "problem": "Does empty ordinary diff mean nothing can be committed?",
+      "hint": "Compare index with HEAD.",
+      "answer": "No. Changes may already be staged; inspect git diff --staged and status.",
+      "solution": [
+        "The comparisons differ.",
+        "Check status for new files too."
+      ]
+    },
+    {
+      "id": "git-snapshot-p3",
+      "difficulty": 1,
+      "problem": "How do you stage only the instructions?",
+      "hint": "Use an explicit path.",
+      "answer": "git add README.md, then git diff --staged to check for other content.",
+      "solution": [
+        "Exclude unrelated changes.",
+        "Check the staged scope before committing."
+      ]
+    },
+    {
+      "id": "git-snapshot-p4",
+      "difficulty": 2,
+      "problem": "If .env reached public history, does ignoring it fix the leak?",
+      "hint": "History remains.",
+      "answer": "No. Revoke or rotate exposed credentials first, then follow repository procedures to remove tracking and clean history.",
+      "solution": [
+        "Stop using the compromised secret first.",
+        "Ignore rules only prevent ordinary addition of matching untracked files."
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "After staging and then editing, what does commit record by default?",
+    "choices": [
+      "Every latest saved edit",
+      "The staged content",
+      "The GitHub version"
+    ],
+    "correctIndex": 1,
+    "feedback": [
+      "Commit does not run add again automatically.",
+      "The index supplies the next commit.",
+      "Local commits do not read a remote webpage."
+    ]
+  },
+  "interactiveVisual": {
+    "kind": "git",
+    "prediction": "Predict what happens after staging v2, editing to v3 and committing.",
+    "steps": [
+      {
+        "question": "Which command should first inspect the situation?",
+        "choices": [
+          "git status",
+          "git push --force",
+          "Delete .git"
+        ],
+        "correctIndex": 0,
+        "feedback": [
+          "Inspect branch and change states first.",
+          "Push does not explain local staging.",
+          "Deleting repository records loses history."
+        ]
+      },
+      {
+        "question": "With index v2 and working tree v3, what does ordinary diff compare?",
+        "choices": [
+          "v1 and v2",
+          "v2 and v3",
+          "Remote and v3"
+        ],
+        "correctIndex": 1,
+        "feedback": [
+          "That is the staged comparison.",
+          "Ordinary diff compares index and working tree.",
+          "Remote content is not the default comparison."
+        ]
+      },
+      {
+        "question": "Commit without staging again records what?",
+        "choices": [
+          "v3",
+          "v2",
+          "v1"
+        ],
+        "correctIndex": 1,
+        "feedback": [
+          "v3 was not staged.",
+          "The commit records staged v2.",
+          "v1 was the previous HEAD."
+        ]
+      }
+    ],
+    "followUp": "Reproduce the process in the practice lab and inspect all three versions and both diffs."
+  },
+  "prerequisites": [
+    "run-environment"
+  ],
+  "difficulty": 2,
+  "misconceptionTags": [
+    "git-snapshot-guess",
+    "git-snapshot-evidence"
+  ],
+  "sources": [
+    "git-record",
+    "git-diff",
+    "secrets",
+    "git-init"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.1.1",
+    "status": "first-edition",
+    "humanReviewed": false
+  }
+}

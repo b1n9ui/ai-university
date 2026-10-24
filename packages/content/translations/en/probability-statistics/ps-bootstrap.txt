@@ -1,0 +1,65 @@
+Bootstrap: resampling from a sample
+Treat observed data as an empirical population and repeatedly sample with replacement.
+Treat observed data as an empirical population and repeatedly sample with replacement.
+Keep each resample the same size; change which records are selected and how often.
+Build the empirical distribution
+Estimate a statistic's variability
+Build the empirical distribution
+The ordinary nonparametric bootstrap weights each record equally. Draw the original sample size with replacement, then calculate the statistic.
+Estimate a statistic's variability
+The standard deviation of repeated statistics estimates standard error. This volume illustrates percentile intervals using quantiles of the resampled statistics.
+Check applicability
+Independent sampling is a common starting point. Time series, clusters, strong bias, and some nonsmooth statistics need specialized methods. More repetitions cannot repair an unrepresentative original sample.
+The ordinary bootstrap approximates the population with the empirical distribution and resamples at the original sample size.
+The ordinary bootstrap approximates the population with the empirical distribution and resamples at the original sample size.
+Percentile intervals do not guarantee accurate coverage for arbitrary small samples.
+Assign equal probability mass to each original record.
+Sample repeatedly from this empirical distribution.
+Calculate spread or quantiles of the repeated statistic.
+Repeated records are allowed
+The original data are $1,2,5$. Is the bootstrap sample $(2,2,5)$ allowed?
+Draw three times with replacement.
+The same record may appear more than once.
+Yes; its mean is $3$.
+What stays fixed?
+The original sample has twenty records. With 1,000 ordinary bootstrap repetitions, how many records are in each resample?
+The 1,000 counts repetitions.
+Each resample still contains twenty records.
+Twenty per resample.
+For original data $2,4$, how many equally likely ordered bootstrap samples of size two exist?
+Each position independently has two choices.
+$2^2=4$.
+$4$.
+For original data $2,4$, list the means of all four ordered bootstrap samples of size two.
+List both draws.
+$(2,2),(2,4),(4,2),(4,4)$.
+$2,3,3,4$.
+Can one million resamples correct selection bias in the original data?
+Which data are repeatedly sampled?
+The same biased sample is reused.
+Not automatically.
+Is independent row-by-row resampling always appropriate for a time series?
+The records may be dependent.
+It can destroy temporal dependence.
+Not always; a block bootstrap or another method may be needed.
+What does sampling with replacement mean in the ordinary bootstrap?
+Original records are deleted
+A record can be selected repeatedly
+Every resample grows larger
+Resample size stays fixed; records can repeat.
+Enough repetitions always make bootstrap valid
+The original sampling design and statistic's assumptions still matter.
+Percentile intervals are always exact confidence intervals
+Their coverage is generally approximate and can be poor in some settings.
+Change the repetition count and one extreme observation. How does the bootstrap interval change?
+A seeded small-sample resampling illustrates the method only. Its interval is not claimed to achieve nominal coverage.
+The original sampling design and statistic's assumptions still matter.
+Resamples: 200
+Set the resample count to $200$ and compare the diagram and readings.
+At this preset: original sample mean $3$; bootstrap standard error $0.83684$; lower percentile endpoint $1.6$; upper percentile endpoint $4.8$.
+Resamples: 50
+Set the resample count to $50$ and compare the diagram and readings.
+At this preset: original sample mean $3$; bootstrap standard error $0.887546$; lower percentile endpoint $1.8$; upper percentile endpoint $5.11$.
+Resamples: 400
+Set the resample count to $400$ and compare the diagram and readings.
+At this preset: original sample mean $3$; bootstrap standard error $0.792683$; lower percentile endpoint $1.6$; upper percentile endpoint $4.8$.

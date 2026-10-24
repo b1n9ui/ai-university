@@ -1,0 +1,64 @@
+Regular singular points and indicial equations
+Let a solution begin with a fractional power
+Check the singularity type first
+For $y''+P(t)y'+Q(t)y=0$, if $tP(t)$ and $t^2Q(t)$ are analytic at zero, zero is a regular singular point.
+Trial form
+On positive time, use $y=t^r\sum a_nt^n$ with $a_0\ne0$. The lowest-power term yields the indicial equation.
+What do the roots determine?
+Indicial roots give possible starting powers. A noninteger root difference usually gives two Frobenius solutions; integer differences and repeated roots need further analysis and may introduce logarithms.
+Write the lowest-order terms.
+Retain the coefficient of the smallest power.
+A nonzero leading coefficient forces the bracket to vanish.
+Distinct indicial roots
+Find the indicial roots of $t^2y''+ty'-y=0$.
+$p_0=1,q_0=-1$.
+The indicial equation is $r^2-1$.
+$r=1,-1$; in this example the solutions are $Ct+D/t$.
+Test regularity
+Classify zero for $y''+y'/t+y/t^2=0$.
+Both $tP=1,t^2Q=1$ are analytic.
+The indicial equation is $r^2+1$.
+A regular singular point; real positive-time solutions are sine and cosine of logarithmic time.
+Is zero a regular singular point for $y''+y/t^3=0$?
+Check time squared times the coefficient.
+$t^2Q=1/t$ is not analytic at zero.
+No; it is irregular singular.
+Why must the leading Frobenius coefficient be nonzero?
+Otherwise the stated starting power is not the lowest one.
+A zero leading term can be absorbed into a higher starting exponent.
+It identifies the actual starting exponent.
+Find the indicial roots of $t^2y''+2ty'=0$.
+Simplify $r(r-1)+2r$.
+The indicial equation is $r(r+1)$.
+$0,-1$.
+Can ordinary series and Frobenius be chosen without checking coefficients?
+Their hypotheses differ.
+Analyze the expansion point's singularity first.
+No.
+Indicial roots are eigenvalues unrelated to starting powers.
+They come from balancing the lowest powers.
+Every solution stays finite at a regular singular point.
+Negative powers or logarithms may diverge there.
+Near a regular singular point, a solution may need a power prefactor. Frobenius uses lowest-order balance to determine that exponent.
+Ordinary Taylor series start at integer power zero; singularities may require a different initial scale.
+Test regular singular points
+Derive the indicial equation from lowest-order terms
+Regular singular points and indicial equations
+$tP,t^2Q$ is analytic at zero. Construct solutions in the punctured neighborhood $t>0$, without claiming smooth passage through the singularity.
+Which quantities are checked for a regular singular point?
+Analyticity of $tP$ and $t^2Q$
+Only the highest derivative order
+Only whether the forcing vanishes
+These scaled coefficients measure singularity strength.
+Determine the singularity's strength before choosing a starting power rather than assuming an ordinary polynomial.
+Negative power
+It grows near zero.
+Set starting power $r$ to $-1$ and positive time $t$ to $0.25$.
+Fractional power
+The function tends to zero while its derivative may grow.
+Set starting power $r$ to $0.5$ and positive time $t$ to $0.25$.
+Integer power
+Ordinary polynomials are special starting scales too.
+Set starting power $r$ to $2$ and positive time $t$ to $1$.
+Compare near-zero shapes for different starting powers. Changing this parameter also changes the equation. Only one solution is plotted, not a second-order general solution.
+How do negative, fractional, and integer starting powers differ near zero?

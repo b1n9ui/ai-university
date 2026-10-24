@@ -1,0 +1,62 @@
+Complex eigenvalues and planar rotation
+Describe rotation with complex numbers
+A real matrix may lack real eigendirections. Complex numbers extend eigenvalue language to rotation.
+A rotation moving every real line cannot be described by real scaling alone. Complex multiplication combines scaling and rotation.
+Calculate complex eigenvalues of real matrices
+Distinguish real from complex diagonalization
+How do complex operations work?
+$i^2=-1$; conjugation changes $a+bi$ to $a-bi$. Complex vectors still add and scale componentwise, but their inner product uses conjugation.
+Why do eigenvalues of real matrices occur in conjugate pairs?
+Conjugating $Av=\lambda v$ gives $A\bar v=\bar\lambda\bar v$. Thus nonreal eigenvalues pair up.
+Do complex eigenvalues permit real diagonalization?
+No. A real diagonal matrix has real eigenvalues. Distinguish diagonalization over the reals from over the complex numbers; a general complex matrix may still lack enough eigenvectors.
+Complex eigenvalues and planar rotation
+Rotation angles are in radians. Eigenvalues are nonreal except at integer half-turns. The complex inner product convention is given in the appendix.
+Write the two-by-two characteristic polynomial.
+Solve the quadratic.
+Its complex roots lie on the unit circle.
+A quarter-turn
+Find the eigenvalues and one complex eigenvector of $R=\begin{pmatrix}0&-1\\1&0\end{pmatrix}$.
+$p=\lambda^2+1$ has roots $i,-i$.
+For $i$, use $v=(1,-i)^T$ and verify $Rv=(i,1)^T=iv$.
+Eigenvalues $\pm i$; no real eigenvectors.
+Rotate and enlarge
+Find the eigenvalue magnitudes of $A=2R$.
+Doubling the original eigenvalues gives $\pm2i$.
+Their magnitudes mean lengths double at each application.
+Magnitude 2.
+A real matrix must have real eigenvalues.
+Real symmetric matrices guarantee this; general real matrices do not.
+Without real eigenvalues, a transformation is invalid.
+A planar rotation is an ordinary real linear transformation.
+What is $i^2$?
+Use the definition of complex numbers.
+$i^2=-1$.
+Find the magnitude of $3+4i$.
+Take the square root of the sum of squared real and imaginary parts.
+$\sqrt{9+16}=5$.
+If a real matrix has eigenvalue $1+2i$, which other eigenvalue is required?
+Take the conjugate.
+$1-2i$.
+$1-2i$.
+Does a planar half-turn have real eigenvectors?
+Its matrix is minus the identity.
+$R_\pi=-I$; every nonzero real vector has eigenvalue $-1$.
+Yes.
+The two unit-circle points are the rotation matrix's complex eigenvalues. Horizontal is real part; vertical is imaginary part.
+As the rotation angle changes, how do the eigenvalues move in the complex plane?
+How do nonreal eigenvalues of a real matrix pair up?
+As reciprocals
+As complex conjugates
+As negatives
+Conjugating the eigenvalue equation leaves the real matrix unchanged.
+Complex eigenvalues express rotation as multiplication by a number requiring two real coordinates to describe.
+Zero angle
+Set $\theta=0$.
+Both eigenvalues are one.
+Quarter-turn
+Set $\theta=\pi/2$.
+The eigenvalues are $i,-i$; there are no real eigendirections.
+Half-turn
+Set $\theta=\pi$.
+Both eigenvalues are minus one; every real line maps to itself.

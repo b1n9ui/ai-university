@@ -1,0 +1,64 @@
+Positive definite and semidefinite matrices
+Positive in every nonzero direction
+Positive definiteness requires a strictly positive quadratic form for every nonzero input.
+Even a matrix with all positive entries may have a negative direction. Test vectors, rather than individual entries.
+Test definiteness using eigenvalues and leading principal minors
+Distinguish positive definite, semidefinite, and indefinite forms
+What is the eigenvalue test?
+A real symmetric matrix is positive definite exactly when every eigenvalue is positive. Semidefiniteness allows zero; a negative eigenvalue gives a negative direction.
+Is the determinant alone enough?
+No. It only gives the product of eigenvalues. Sylvester's criterion says a symmetric matrix is positive definite exactly when all leading principal minors are positive.
+Can you test semidefiniteness with nonnegative leading minors?
+Not generally. Nonnegativity of all principal minors works, but checking only the upper-left leading minors is insufficient.
+Positive definite and semidefinite matrices
+These tests assume symmetry; positive definite here means real symmetric positive definite. Leading principal minors are determinants of successive upper-left submatrices.
+Change to orthonormal eigenvector coordinates.
+Positive eigenvalues make every nonzero directional value positive.
+Conversely, test each eigendirection.
+Leading minors in two dimensions
+Is $A=\begin{pmatrix}2&1\\1&2\end{pmatrix}$ positive definite?
+Its first leading minor is $2>0$.
+Its determinant is $3>0$.
+Positive definite.
+A positive determinant is insufficient
+Is $A=-I_2$ positive definite?
+Its determinant is one.
+Every nonzero input instead gives $x^TAx=-\|x\|^2<0$.
+Negative definite, not positive definite.
+Positive determinant implies positive definite.
+Two negative eigenvalues can have positive product.
+Positive semidefinite matrices are invertible like positive definite matrices.
+Semidefinite matrices may have zero eigenvalues and be singular.
+Classify $\operatorname{diag}(1,0)$.
+Inspect the sum of squares.
+$q=x^2\ge0$, but nonzero vertical inputs give zero.
+Positive semidefinite, but not positive definite.
+Is $\begin{pmatrix}1&2\\2&1\end{pmatrix}$ positive definite?
+Test opposite coordinate signs.
+At $(1,-1)$, the value is $1-4+1=-2$.
+No; indefinite.
+Is a positive definite matrix invertible?
+Every eigenvalue is strictly positive.
+Zero is not an eigenvalue.
+Invertible.
+All leading minors of $A=\operatorname{diag}(0,-1)$ are zero. Is it positive semidefinite?
+Test the vertical axis.
+$q(0,1)=-1$.
+No; nonnegative leading minors are insufficient.
+Quadratic form $q=x^2+cy^2$: the gold point lies on the unit circle, and its vertical height gives the form's directional value.
+Where does strict positivity fail when the smallest eigenvalue reaches zero?
+On which inputs does positive definiteness require positive values?
+All inputs, including zero
+All nonzero inputs
+Only standard basis vectors
+Zero always gives zero. Testing only coordinate axes can miss oblique directions.
+Positive definiteness controls every direction. Individual entries or the determinant alone can miss negative directions.
+Positive definite
+Set $c=1,\theta=\pi/2$.
+The value is one everywhere on the unit circle.
+Positive semidefinite
+Set $c=0,\theta=\pi/2$.
+Nonzero vertical inputs give zero, so strict positive definiteness fails.
+A negative direction
+Set $c=-1,\theta=\pi/2$.
+Vertical inputs give minus one and horizontal inputs plus one: the form is indefinite.

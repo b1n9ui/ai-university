@@ -1,0 +1,65 @@
+Dijkstra's shortest-path algorithm
+With nonnegative edge weights, the unsettled vertex with smallest tentative distance can safely be finalized.
+With nonnegative edge weights, the unsettled vertex with smallest tentative distance can safely be finalized.
+Finalize a distance that no later detour can shorten, then use it to update neighbors.
+Store distances and parents
+Choose a vertex to finalize
+Store distances and parents
+The source starts at distance zero; other vertices are initially unreachable. Relax an edge by comparing the old distance with the route through the current vertex.
+Choose a vertex to finalize
+Nonnegative weights prevent a later route through a larger tentative distance from reducing an already finalized smaller one. Negative weights invalidate this argument.
+Distinguish implementation costs
+A basic implementation linearly scans for each minimum and usually takes quadratic time. Adjacency lists and a priority queue improve sparse-graph cost, but require updates or duplicate-entry handling.
+Shortest paths permit an empty path; the source distance is zero.
+Dijkstra requires nonnegative edge weights.
+Unreachable vertices are displayed as unreachable, not assigned a fictitious finite distance.
+Suppose the current vertex is the first incorrectly finalized one.
+On a shorter path, the first unsettled vertex already has a tentative value no greater than that path's prefix length.
+The nonnegative suffix and minimum selection yield a contradiction.
+A shorter route through another vertex
+Edges A–C, A–B, and B–C cost seven, two, and three. What is the shortest A–C distance?
+Finalize B at distance two first.
+Relax C to two plus three, improving seven.
+Five.
+A negative-weight counterexample
+Directed edges from the source to A and B cost one and two, and B to A costs negative three. Can Dijkstra be used directly?
+It may finalize A at distance one first.
+The route through B actually costs negative one.
+No; the nonnegative-weight assumption fails.
+Which simpler algorithm works if every edge has weight one?
+Explore by edge-count layers.
+Breadth-first search.
+BFS.
+Under this lesson's convention, what is the source's distance to itself?
+Empty paths are allowed and weights are nonnegative.
+The empty path costs zero.
+Zero.
+Are tentative distances always final distances?
+Unsettled vertices can still be relaxed.
+A tentative value is only the best currently known upper bound.
+No.
+Can a minimum-spanning-tree algorithm directly replace a shortest-path algorithm?
+Compare the objectives.
+Minimum total tree cost does not guarantee shortest paths between its vertices.
+No.
+What core condition ensures Dijkstra's correctness?
+Nonnegative edge weights
+Equal degrees at every vertex
+A complete graph
+A negative edge can let a later detour improve a finalized distance.
+BFS layers suffice for weighted graphs too
+Unequal weights require comparing costs.
+A finalized vertex's distance may be changed arbitrarily
+The nonnegative-weight condition guarantees finalized distances are correct.
+Finalize vertices step by step. Which relaxations actually improve distances?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+Unequal weights require comparing costs.
+Steps executed: 0
+Set the control to $0$. Compare the current step with the complete reference result.
+At this setting: finalized vertices $0$.
+Steps executed: 3
+Set the control to $3$. Compare the current step with the complete reference result.
+At this setting: finalized vertices $3$.
+Steps executed: 6
+Set the control to $6$. Compare the current step with the complete reference result.
+At this setting: finalized vertices $6$.

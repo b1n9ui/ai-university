@@ -1,0 +1,64 @@
+Repeated roots and reduction of order
+Repeating one solution adds no freedom
+How do you supply the missing solution?
+For a double characteristic root $r$, the general solution is $(C+Dt)e^{rt}$.
+How does a known solution help?
+In standard form, set $y=v y_1$. The known solution cancels one term, leaving a first-order equation for $v'$.
+Where does reduction of order apply?
+Its formula contains $1/y_1^2$, so use subintervals where the known solution is nonzero. A zero does not necessarily prevent original solutions from existing.
+Substitute $y=vy_1$ and cancel the known-solution terms.
+Set $w=v'$, separate, and integrate.
+For repeated roots, the integral leaves a time factor.
+A decaying double root
+Solve $y''+2y'+y=0,y(0)=1,y'(0)=0$.
+Root minus one gives general solution $(C+Dt)e^{-t}$.
+The initial conditions give $C=1,D-C=0$.
+$y=(1+t)e^{-t}$.
+Reduce order from a constant solution
+For $y''=0$ with known $y_1=1$, find another solution.
+The standard coefficient is $p=0$.
+The reduction integral is $\int1dt=t$.
+Choose $y_2=t$.
+Find the general solution of $y''-4y'+4y=0$.
+The characteristic polynomial is a perfect square.
+Its double root is two.
+$y=(C+Dt)e^{2t}$.
+Can $e^t$ and $5e^t$ form a repeated-root fundamental pair?
+Check whether one is a multiple of the other.
+They are dependent and add no degree of freedom.
+No.
+What is $W(e^{rt},te^{rt})$?
+Differentiate directly.
+Subtraction leaves $e^{2rt}$.
+$e^{2rt}$.
+Can reduction of order divide directly at a zero of the known solution?
+Inspect the denominator.
+The expression requires a nonzero known solution; change interval or fundamental solution.
+No.
+A double root gives only one arbitrary constant.
+Two independent solutions and two constants are still required.
+Every zero of the known solution is a singularity of the original equation.
+It may only invalidate this computational representation.
+A double root needs a time-times-exponential second solution. A known solution also permits reduction of order to find another.
+Writing the same root twice repeats a direction and cannot match two independent initial conditions.
+Construct repeated-root solutions
+Apply reduction of order with its hypotheses
+Repeated roots and reduction of order
+Equation $y''+py'+qy=0$ has continuous coefficients, with known solution $y_1$ nonzero on the chosen subinterval.
+What is the usual second independent solution for a double root?
+A constant multiple of the same exponential
+Time times that exponential
+The square of the exponential
+The time factor provides a new initial-data direction.
+Repeated roots lack an independent solution direction; the time factor supplies it.
+Negative root
+Both fundamental solutions eventually decay.
+Set repeated real root $r$ to $-1$ and observation time $t$ to $2$.
+Zero root
+The fundamental solutions become one and time.
+Set repeated real root $r$ to $0$ and observation time $t$ to $2$.
+Positive root
+Both directions permit growth.
+Set repeated real root $r$ to $0.5$ and observation time $t$ to $2$.
+Compare the repeated exponential with its time-times-exponential companion. Their Wronskian is nonzero.
+For a negative double root, does the time factor prevent eventual decay?

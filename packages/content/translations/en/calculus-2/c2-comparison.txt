@@ -1,0 +1,66 @@
+Comparison and limit comparison
+Match an unfamiliar tail to a known one
+Compare positive terms with a known series. Limit comparison checks whether their tails differ by a finite positive factor.
+For large $n$, $\frac1{n^2+1}$ behaves like $\frac1{n^2}$. Limit comparison turns this resemblance into a precise ratio.
+Which direction works?
+Below a convergent positive series implies convergence; above a divergent one implies divergence. Reversing either comparison is inconclusive.
+Limit-comparison hypotheses
+Both sequences must eventually be positive and their ratio must tend to a finite positive number. Limits zero or infinity can support one-sided conclusions, not automatic equivalence.
+Choosing a reference
+For rational terms, compare leading powers; for radicals, compare growth rates. Initial inequalities do not determine tail behavior.
+Match an unfamiliar tail to a known one
+a_n,b_n>0,\quad\lim_{n\to\infty}\frac{a_n}{b_n}=c\in(0,\infty)\ \Longrightarrow\ \sum a_n,\sum b_n\text{ converge or diverge together}
+Terms are eventually positive; finitely many initial terms do not affect convergence.
+A positive ratio limit traps the terms between two positive multiples.
+If the reference converges, use an upper comparison.
+If the reference diverges, use a lower comparison.
+Direct comparison
+Does $\sum\frac1{n^2+1}$ converge?
+$0<\frac1{n^2+1}\leq\frac1{n^2}$.
+Reciprocal squares converge, so the smaller positive series converges.
+It converges.
+Limit comparison
+Does $\sum\frac{3n+1}{n^2+5}$ converge?
+Compare with $b_n=\frac1n$; the ratio is $\frac{3n^2+n}{n^2+5}\to3$.
+The harmonic series diverges, and the ratio limit is finite and positive.
+It diverges.
+Anything below a divergent series converges.
+A divergent upper bound is too loose to decide.
+A ratio tending to zero still guarantees the same behavior.
+Zero does not guarantee equivalence; compare reciprocal squares with harmonic terms.
+Does $\sum\frac1{n^2+n}$ converge?
+It converges.
+Compare with reciprocal squares.
+Positive terms are at most $\frac1{n^2}$; the upper series converges.
+Does $\sum\frac1{\sqrt{n^2+1}}$ converge?
+It diverges.
+Use limit comparison with harmonic terms.
+$\frac{n}{\sqrt{n^2+1}}\to1$, so it shares harmonic divergence.
+Does $0<a_n\leq\frac1n$ determine $\sum a_n$?
+No.
+Try two sequences satisfying the upper bound.
+$a_n=\frac1{n^2}$ converges, but $a_n=\frac1n$ diverges.
+Does $\sum\frac{n+1}{n^3+2}$ converge?
+It converges.
+Compare with reciprocal squares.
+$\frac{(n+1)n^2}{n^3+2}\to1$; the finite positive ratio gives convergence.
+Which comparison establishes convergence of a positive series?
+Above a convergent series
+Below a divergent series
+Below a convergent series
+The tails are bounded above by a finite total.
+Decide whether you need an upper or lower bound before choosing the reference.
+First five terms
+Set the count to 5.
+Each term of the first sequence is smaller.
+Twenty terms
+Set the count to 20.
+The ratio approaches 1; the tails have the same order.
+Eighty terms
+Set the count to 80.
+The finite partial sums still differ; comparison decides convergence.
+Compare terms of $\frac1{n^2+1}$ and $\frac1{n^2}$ and display their ratio.
+If the terms become close, must the sums be equal?
+Choose the correct comparison direction
+Compute finite positive ratio limits
+Handle zero or infinite ratios carefully

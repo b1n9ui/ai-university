@@ -1,0 +1,5024 @@
+{
+  "locale": "en",
+  "sourceVersion": "0.2.1",
+  "provenance": {
+    "authorship": "AI-generated",
+    "humanReviewed": false
+  },
+  "book": {
+    "id": "python-introduction",
+    "title": "Introduction to Python Programming",
+    "englishTitle": "Introduction to Programming with Python",
+    "version": "0.2.1",
+    "status": "published",
+    "language": "en",
+    "baseline": "General Python 3.9+ syntax and standard library, checked against the Python 3.13 documentation without relying on newer exclusive features. Web execution replays are generated with CPython 3.14; language coverage and replay runtime are recorded separately.",
+    "audience": "Readers with no programming experience. Observe the web replays first, then use Section 1.1 to learn how to save files and run programs.",
+    "outcomes": [
+      "Write a runnable program from an empty file",
+      "Understand types, branches, loops, and data containers",
+      "Organize functions and handle invalid input",
+      "Read and write small text, JSON, and CSV files",
+      "Write boundary and integration tests for a command-line project"
+    ],
+    "outOfScope": [
+      "Object-oriented programming and inheritance",
+      "Web development, databases, and scraping",
+      "NumPy, Pandas, and machine learning",
+      "Concurrency, async, generators, and performance tuning",
+      "Formal software packaging and distribution"
+    ],
+    "provenance": {
+      "author": "AI-generated",
+      "humanReviewed": false,
+      "date": "2026-10-11"
+    },
+    "licenses": {
+      "content": "CC0-1.0",
+      "toolsAndProject": "MIT"
+    },
+    "chapters": [
+      {
+        "id": "chapter-1",
+        "title": "Start programming",
+        "objective": "Run scripts, distinguish text from numbers, and perform basic input and output.",
+        "lessons": [
+          "first-program",
+          "names-types",
+          "numbers",
+          "strings-input"
+        ]
+      },
+      {
+        "id": "chapter-2",
+        "title": "Control execution",
+        "objective": "Read branches and loops, find boundary errors, and design stopping conditions.",
+        "lessons": [
+          "conditions",
+          "for-range",
+          "while-stop",
+          "debugging"
+        ]
+      },
+      {
+        "id": "chapter-3",
+        "title": "Organize data",
+        "objective": "Use shopping lists and price tables to organize data by position, name, or membership.",
+        "lessons": [
+          "lists",
+          "dictionaries",
+          "tuples-sets",
+          "comprehensions"
+        ]
+      },
+      {
+        "id": "chapter-4",
+        "title": "Organize programs",
+        "objective": "Write functions, design interfaces, import modules, and handle expected exceptions.",
+        "lessons": [
+          "functions",
+          "arguments",
+          "modules",
+          "exceptions"
+        ]
+      },
+      {
+        "id": "chapter-5",
+        "title": "Build an application",
+        "objective": "Handle files, validate formats, test boundaries, and deliver a command-line tool.",
+        "lessons": [
+          "text-files",
+          "json-csv",
+          "testing",
+          "capstone"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "id": "python-tutorial",
+        "title": "Python 3.13 Tutorial",
+        "url": "https://docs.python.org/3.13/tutorial/",
+        "purpose": "Check introductory language coverage; explanations and examples are newly written for beginners."
+      },
+      {
+        "id": "python-types",
+        "title": "Built-in Types",
+        "url": "https://docs.python.org/3.13/library/stdtypes.html",
+        "purpose": "Check types, truth values, assignment, operations, and container semantics."
+      },
+      {
+        "id": "python-floating",
+        "title": "Floating-Point Arithmetic",
+        "url": "https://docs.python.org/3.13/tutorial/floatingpoint.html",
+        "purpose": "Check floating-point representation error and approximate comparison."
+      },
+      {
+        "id": "python-input",
+        "title": "Built-in Functions",
+        "url": "https://docs.python.org/3.13/library/functions.html",
+        "purpose": "Check the behavior of input, int, print, len, and sorted."
+      },
+      {
+        "id": "python-control",
+        "title": "More Control Flow Tools",
+        "url": "https://docs.python.org/3.13/tutorial/controlflow.html",
+        "purpose": "Check loops, functions, default arguments, and call semantics."
+      },
+      {
+        "id": "python-errors",
+        "title": "Errors and Exceptions",
+        "url": "https://docs.python.org/3.13/tutorial/errors.html",
+        "purpose": "Check exception propagation, handling, and raising."
+      },
+      {
+        "id": "python-data",
+        "title": "Data Structures",
+        "url": "https://docs.python.org/3.13/tutorial/datastructures.html",
+        "purpose": "Check lists, tuples, dictionaries, sets, and comprehensions."
+      },
+      {
+        "id": "python-modules",
+        "title": "Modules and venv",
+        "url": "https://docs.python.org/3.13/tutorial/modules.html",
+        "purpose": "Check modules, entry points, and imports; see venv separately for environments."
+      },
+      {
+        "id": "python-venv",
+        "title": "venv",
+        "url": "https://docs.python.org/3.13/library/venv.html",
+        "purpose": "Check virtual-environment creation and platform-specific commands."
+      },
+      {
+        "id": "python-io",
+        "title": "Input and Output",
+        "url": "https://docs.python.org/3.13/tutorial/inputoutput.html",
+        "purpose": "Check file modes, UTF-8, with blocks, and serialization."
+      },
+      {
+        "id": "python-pathlib",
+        "title": "pathlib",
+        "url": "https://docs.python.org/3.13/library/pathlib.html",
+        "purpose": "Check relative paths, directory creation, and text file operations."
+      },
+      {
+        "id": "python-formats",
+        "title": "json",
+        "url": "https://docs.python.org/3.13/library/json.html",
+        "purpose": "Check JSON mappings, ensure_ascii, and round-trip limitations; see csv for tables."
+      },
+      {
+        "id": "python-csv",
+        "title": "csv",
+        "url": "https://docs.python.org/3.13/library/csv.html",
+        "purpose": "Check table parsing, string fields, extra columns, and newline rules."
+      },
+      {
+        "id": "python-unittest",
+        "title": "unittest",
+        "url": "https://docs.python.org/3.13/library/unittest.html",
+        "purpose": "Check test discovery, assertions, and invalid-input tests."
+      },
+      {
+        "id": "python-argparse",
+        "title": "argparse",
+        "url": "https://docs.python.org/3.13/library/argparse.html",
+        "purpose": "Check command-line arguments, help, and exit codes."
+      }
+    ],
+    "contribution": {
+      "submittedBy": "aby0120",
+      "pullRequest": "https://github.com/b1n9ui/ai-university/pull/4",
+      "acceptedOn": "2026-10-21"
+    },
+    "replayRuntime": "CPython 3.14"
+  },
+  "supplements": {
+    "chapterReviews": [
+      {
+        "chapterId": "chapter-1",
+        "questions": [
+          {
+            "problem": "Read quantity 3 at unit price 125 cents and display the total in cents.",
+            "hint": "Convert with int, then multiply.",
+            "solution": [
+              "Input starts as text.",
+              "3 * 125 = 375 cents."
+            ],
+            "answer": {
+              "code": "count = int(input())\nprint(count * 125)\n",
+              "stdout": "375\n",
+              "stdin": "3\n"
+            },
+            "id": "review-1-1"
+          },
+          {
+            "problem": "Read 12 candies and a bag size of 5. Print full bags and the remainder.",
+            "hint": "Use // and % respectively.",
+            "solution": [
+              "Two bags use 10 candies.",
+              "2 candies remain."
+            ],
+            "answer": {
+              "code": "total = int(input())\nprint(total // 5)\nprint(total % 5)\n",
+              "stdout": "2\n2\n",
+              "stdin": "12\n"
+            },
+            "id": "review-1-2"
+          }
+        ]
+      },
+      {
+        "chapterId": "chapter-2",
+        "questions": [
+          {
+            "problem": "Sum 1 through 5, then check which numbers were added.",
+            "hint": "Set stop to 6.",
+            "solution": [
+              "The terms are 1, 2, 3, 4, 5.",
+              "Their sum is 15."
+            ],
+            "answer": {
+              "code": "total = 0\nfor number in range(1, 6):\n    print(number)\n    total = total + number\nprint(total)\n",
+              "stdout": "1\n2\n3\n4\n5\n15\n",
+              "stdin": ""
+            },
+            "id": "review-2-1"
+          },
+          {
+            "problem": "Count down from 2 to 1, subtracting 1 each time. Print Done at the end.",
+            "hint": "Continue while remaining > 0.",
+            "solution": [
+              "After printing 2, the value becomes 1.",
+              "After printing 1, it becomes 0 and the loop stops."
+            ],
+            "answer": {
+              "code": "remaining = 2\nwhile remaining > 0:\n    print(remaining)\n    remaining = remaining - 1\nprint(\"Done\")\n",
+              "stdout": "2\n1\nDone\n",
+              "stdin": ""
+            },
+            "id": "review-2-2"
+          }
+        ]
+      },
+      {
+        "chapterId": "chapter-3",
+        "questions": [
+          {
+            "problem": "Count each fruit in [\"apple\", \"pear\", \"apple\"].",
+            "hint": "Accumulate in a dictionary keyed by fruit name.",
+            "solution": [
+              "apple occurs twice.",
+              "pear occurs once."
+            ],
+            "answer": {
+              "code": "counts = {}\nfor name in [\"apple\", \"pear\", \"apple\"]:\n    counts[name] = counts.get(name, 0) + 1\nprint(counts[\"apple\"])\nprint(counts[\"pear\"])\n",
+              "stdout": "2\n1\n",
+              "stdin": ""
+            },
+            "id": "review-3-1"
+          },
+          {
+            "problem": "Copy [3, 1], append 2 to the copy, and print both lists.",
+            "hint": "Use copy(), not assignment to another name.",
+            "solution": [
+              "Create an independent one-level copy.",
+              "The original does not gain 2."
+            ],
+            "answer": {
+              "code": "original = [3, 1]\nother = original.copy()\nother.append(2)\nprint(original)\nprint(other)\n",
+              "stdout": "[3, 1]\n[3, 1, 2]\n",
+              "stdin": ""
+            },
+            "id": "review-3-2"
+          }
+        ]
+      },
+      {
+        "chapterId": "chapter-4",
+        "questions": [
+          {
+            "problem": "Write read_count to convert integer text to a nonnegative quantity. Test \"3\", \"0\", \"-1\", and \"three\".",
+            "hint": "After conversion, reject values below 0.",
+            "solution": [
+              "3 and 0 are valid.",
+              "-1 fails the range check; three fails conversion."
+            ],
+            "answer": {
+              "code": "def read_count(text):\n    count = int(text)\n    if count < 0:\n        raise ValueError(\"Quantity cannot be negative\")\n    return count\n\nfor text in [\"3\", \"0\", \"-1\", \"three\"]:\n    try:\n        print(read_count(text))\n    except ValueError:\n        print(\"Enter a nonnegative integer\")\n",
+              "stdout": "3\n0\nEnter a nonnegative integer\nEnter a nonnegative integer\n",
+              "stdin": ""
+            },
+            "id": "review-4-1"
+          },
+          {
+            "problem": "Write cost(price, count=1). Check buying one and two items at unit price 5.",
+            "hint": "The default quantity applies only when omitted.",
+            "solution": [
+              "Omitting count gives cost 5.",
+              "Passing 2 gives cost 10."
+            ],
+            "answer": {
+              "code": "def cost(price, count=1):\n    return price * count\n\nprint(cost(5))\nprint(cost(price=5, count=2))\n",
+              "stdout": "5\n10\n",
+              "stdin": ""
+            },
+            "id": "review-4-2"
+          }
+        ]
+      },
+      {
+        "chapterId": "chapter-5",
+        "questions": [
+          {
+            "problem": "Save {\"count\": 3} in a JSON file, then read it and display the count.",
+            "hint": "Use dumps before writing; after reading text, use loads.",
+            "solution": [
+              "Use UTF-8 for both writing and reading.",
+              "After restoring the dictionary, retrieve 3 by key."
+            ],
+            "answer": {
+              "code": "import json\ndata = {\"count\": 3}\nwith open(\"record.json\", \"w\", encoding=\"utf-8\") as file:\n    file.write(json.dumps(data))\nwith open(\"record.json\", \"r\", encoding=\"utf-8\") as file:\n    text = file.read()\nrestored = json.loads(text)\nprint(restored[\"count\"])\n",
+              "stdout": "3\n",
+              "stdin": ""
+            },
+            "id": "review-5-1"
+          },
+          {
+            "problem": "Check that 305 cents displays as 3.05 units, not 3.50.",
+            "hint": "Calculate independently before comparing the text.",
+            "solution": [
+              "305 / 100 = 3.05.",
+              ":.2f controls only the displayed decimal places."
+            ],
+            "answer": {
+              "code": "def display(cents):\n    return f\"{cents / 100:.2f} units\"\n\nassert display(305) == \"3.05 units\"\nprint(\"Pass\")\n",
+              "stdout": "Pass\n",
+              "stdin": ""
+            },
+            "id": "review-5-2"
+          }
+        ]
+      }
+    ],
+    "exam": [
+      {
+        "problem": "Write count_passed(scores) to count scores of at least 60. Test [59, 60, 90] and an empty list. Inputs are integers from 0 through 100.",
+        "hint": "Use for and if, starting the count at 0.",
+        "solution": [
+          "59 fails; 60 and 90 pass.",
+          "An empty list contains nobody, so the count is 0."
+        ],
+        "answer": {
+          "code": "def count_passed(scores):\n    passed = 0\n    for score in scores:\n        if score >= 60:\n            passed = passed + 1\n    return passed\n\nassert count_passed([59, 60, 90]) == 2\nassert count_passed([]) == 0\nprint(\"Pass\")\n",
+          "stdout": "Pass\n",
+          "stdin": ""
+        },
+        "id": "exam-1"
+      },
+      {
+        "problem": "Count [\"apple\", \"pear\", \"apple\"] and print apple and pear counts without changing the original list.",
+        "hint": "Store results in a separate dictionary.",
+        "solution": [
+          "The default in get starts a new count at 0.",
+          "Read the original list without modifying it."
+        ],
+        "answer": {
+          "code": "items = [\"apple\", \"pear\", \"apple\"]\ncounts = {}\nfor name in items:\n    counts[name] = counts.get(name, 0) + 1\nprint(counts[\"apple\"])\nprint(counts[\"pear\"])\nassert items == [\"apple\", \"pear\", \"apple\"]\n",
+          "stdout": "2\n1\n",
+          "stdin": ""
+        },
+        "id": "exam-2"
+      },
+      {
+        "problem": "Read 125 and 75 cents from a one-column CSV and sum them as integers. Report invalid text such as three. The header is amount and each record has one column.",
+        "hint": "Combine CSV reading, a function, and exception handling.",
+        "solution": [
+          "The valid input totals 200.",
+          "Invalid text makes int raise ValueError; the caller displays an explanation."
+        ],
+        "answer": {
+          "code": "import csv\nimport io\n\ndef total_cents(text):\n    total = 0\n    for row in csv.DictReader(io.StringIO(text)):\n        amount = int(row[\"amount\"])\n        if amount <= 0:\n            raise ValueError(\"Amount must be positive\")\n        total = total + amount\n    return total\n\nassert total_cents(\"amount\\n125\\n75\\n\") == 200\nprint(\"Total check passed\")\ntry:\n    total_cents(\"amount\\nthree\\n\")\nexcept ValueError:\n    print(\"Invalid amount format\")\n",
+          "stdout": "Total check passed\nInvalid amount format\n",
+          "stdin": ""
+        },
+        "id": "exam-3"
+      },
+      {
+        "problem": "Build a file utility: double each item of [2, 3], save as JSON, read it back, and check for [4, 6].",
+        "hint": "Process the list, serialize it, write, read, and compare.",
+        "solution": [
+          "The new list is [4, 6].",
+          "Check the structure and values after reading the JSON file."
+        ],
+        "answer": {
+          "code": "import json\nvalues = [2, 3]\nresult = [value * 2 for value in values]\nwith open(\"result.json\", \"w\", encoding=\"utf-8\") as file:\n    file.write(json.dumps(result))\nwith open(\"result.json\", \"r\", encoding=\"utf-8\") as file:\n    restored = json.loads(file.read())\nassert restored == [4, 6]\nprint(\"Pass\")\n",
+          "stdout": "Pass\n",
+          "stdin": ""
+        },
+        "id": "exam-4"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "Program",
+        "definition": "Instructions written for a computer to execute in order."
+      },
+      {
+        "term": "Interpreter",
+        "definition": "A program that reads and runs Python code."
+      },
+      {
+        "term": "Terminal",
+        "definition": "A window for entering commands and viewing results."
+      },
+      {
+        "term": "Variable",
+        "definition": "A name used to retrieve a current value, such as count."
+      },
+      {
+        "term": "Assignment",
+        "definition": "Evaluate the right side, then bind the left-hand name to that value."
+      },
+      {
+        "term": "String",
+        "definition": "Text data, usually written between matching quotes in code."
+      },
+      {
+        "term": "Integer",
+        "definition": "A number without a fractional part, such as 0, 3, or -2."
+      },
+      {
+        "term": "Type",
+        "definition": "A value's category, which determines its supported operations."
+      },
+      {
+        "term": "Expression",
+        "definition": "Code that evaluates to a value, such as 2 + 3."
+      },
+      {
+        "term": "Indentation",
+        "definition": "Leading spaces that group statements into a block."
+      },
+      {
+        "term": "Condition",
+        "definition": "A test with a true or false result, such as count >= 1."
+      },
+      {
+        "term": "Loop",
+        "definition": "Steps repeated over data or while a condition holds."
+      },
+      {
+        "term": "List",
+        "definition": "An ordered collection of values that preserves duplicates."
+      },
+      {
+        "term": "Index",
+        "definition": "A position used to retrieve data, starting at 0 for a list."
+      },
+      {
+        "term": "Dictionary",
+        "definition": "A mapping from keys to values, such as product names to prices."
+      },
+      {
+        "term": "Tuple",
+        "definition": "A fixed sequence whose positions cannot be reassigned."
+      },
+      {
+        "term": "Set",
+        "definition": "A collection of distinct values supporting membership tests."
+      },
+      {
+        "term": "Function",
+        "definition": "A named set of steps that can receive input when called."
+      },
+      {
+        "term": "Parameter",
+        "definition": "A name for an input received by a function."
+      },
+      {
+        "term": "Return value",
+        "definition": "A result sent back to the caller by return."
+      },
+      {
+        "term": "Module",
+        "definition": "An importable collection of tools, often stored in a .py file."
+      },
+      {
+        "term": "Exception",
+        "definition": "A signal of a problem during execution, such as ValueError."
+      },
+      {
+        "term": "Current working directory",
+        "definition": "The starting location for relative file paths."
+      },
+      {
+        "term": "Encoding",
+        "definition": "A convention for converting text to stored data. This book uses UTF-8."
+      },
+      {
+        "term": "Serialization",
+        "definition": "Converting structures such as lists and dictionaries to a storable format such as text."
+      },
+      {
+        "term": "Test",
+        "definition": "A comparison of an actual result with an independent expectation."
+      }
+    ]
+  },
+  "lessons": [
+    {
+      "id": "first-program",
+      "chapterId": "chapter-1",
+      "number": "1.1",
+      "title": "Run your first program",
+      "subtitle": "A program is a sequence of instructions. Start by displaying two lines in order.",
+      "concept": "A program is a sequence of instructions. Start by displaying two lines in order.",
+      "intuition": "Think of a checklist: do the first item, then the second.",
+      "objectives": [
+        "Display one message",
+        "Save two lines as a program",
+        "Change one message at a time"
+      ],
+      "body": [
+        {
+          "title": "Display one message",
+          "text": "Read print(\"Hello\") as ‘display Hello’. Python provides print to display values. Parentheses hold the content, and matching straight quotes mark it as text. The quotes themselves are not printed. Try the example before memorizing terminology."
+        },
+        {
+          "title": "Save two lines as a program",
+          "text": "Use the web demonstration to inspect execution order. To run the example on your computer, follow the four setup steps below and save both lines in hello.py. After changing code, save before running it again."
+        },
+        {
+          "title": "Change one message at a time",
+          "text": "Python reads these lines from top to bottom: the first displays Hello; the second displays I am learning Python. Change only the second message and run again: the first should stay the same. A comment starts with # and is skipped during execution. Use straight quotes and ordinary code punctuation."
+        }
+      ],
+      "formalDefinition": {
+        "text": "print(...) displays its contents. These statements execute from top to bottom.",
+        "conditions": [
+          "Each example runs independently from the beginning. Start with the stated inputs, then change one thing."
+        ]
+      },
+      "derivation": [
+        {
+          "text": "The first print displays Hello."
+        },
+        {
+          "text": "The second displays I am learning Python."
+        },
+        {
+          "text": "Each print ends its output with a newline by default."
+        }
+      ],
+      "interactiveVisual": {
+        "kind": "python-trace",
+        "prediction": "Will changing the first greeting change the second message?",
+        "caption": "Choose an input and predict the result, then select Next step. The arrow marks the next statement to execute; the side panel shows current variables and output produced so far.",
+        "experiment": {
+          "code": "print('Hello')\nprint(\"I am learning Python\")\n",
+          "stdout": "Hello\nI am learning Python\n",
+          "stdin": ""
+        },
+        "followUp": "Choose another greeting and start again.",
+        "codeTemplate": "print({{message}})\nprint(\"I am learning Python\")\n",
+        "controls": [
+          {
+            "name": "message",
+            "label": "First greeting",
+            "values": [
+              "Hello",
+              "Good morning",
+              "Hello, Lin"
+            ],
+            "defaultIndex": 0
+          }
+        ],
+        "watch": []
+      },
+      "workedExamples": [
+        {
+          "title": "Your first greeting",
+          "problem": "Display two messages and check their order.",
+          "steps": [
+            "The first print displays Hello.",
+            "The second displays I am learning Python.",
+            "Each print ends its output with a newline by default."
+          ],
+          "answer": {
+            "code": "print(\"Hello\")\nprint(\"I am learning Python\")\n",
+            "stdout": "Hello\nI am learning Python\n",
+            "stdin": ""
+          }
+        },
+        {
+          "title": "A short checklist",
+          "problem": "Display two things you want to do today.",
+          "steps": [
+            "The line starting with # is a comment and produces no output.",
+            "The two print statements produce the output."
+          ],
+          "answer": {
+            "code": "# Today's checklist\nprint(\"Open the textbook\")\nprint(\"Try an example\")\n",
+            "stdout": "Open the textbook\nTry an example\n",
+            "stdin": ""
+          }
+        }
+      ],
+      "commonMistakes": [
+        {
+          "id": "first-program-m1",
+          "claim": "The quotes appear in the output too.",
+          "correction": "Quotes mark the boundaries of text. print displays the content inside them."
+        },
+        {
+          "id": "first-program-m2",
+          "claim": "Comments execute like ordinary statements.",
+          "correction": "A comment beginning with # is for readers and produces no output."
+        }
+      ],
+      "practice": [
+        {
+          "problem": "Predict the output of print(\"Good morning\").",
+          "hint": "The quotes are not printed.",
+          "solution": [
+            "Display the text inside the quotes."
+          ],
+          "answer": {
+            "code": "print(\"Good morning\")\n",
+            "stdout": "Good morning\n",
+            "stdin": ""
+          },
+          "id": "first-program-p1",
+          "difficulty": 1,
+          "misconceptionTags": [
+            "first-program-m1"
+          ]
+        },
+        {
+          "problem": "Display First step, then Second step.",
+          "hint": "Use two print statements.",
+          "solution": [
+            "Output follows the order of the statements."
+          ],
+          "answer": {
+            "code": "print(\"First step\")\nprint(\"Second step\")\n",
+            "stdout": "First step\nSecond step\n",
+            "stdin": ""
+          },
+          "id": "first-program-p2",
+          "difficulty": 1,
+          "misconceptionTags": [
+            "first-program-m2"
+          ]
+        },
+        {
+          "problem": "Change the greeting to Hello, Lin.",
+          "hint": "Change only the quoted content.",
+          "solution": [
+            "Keep print, the parentheses, and matching quotes."
+          ],
+          "answer": {
+            "code": "print(\"Hello, Lin\")\n",
+            "stdout": "Hello, Lin\n",
+            "stdin": ""
+          },
+          "id": "first-program-p3",
+          "difficulty": 1,
+          "misconceptionTags": [
+            "first-program-m1"
+          ]
+        },
+        {
+          "problem": "A comment is followed by print(\"Done\"). How many lines are displayed?",
+          "hint": "Comments do not execute.",
+          "solution": [
+            "One line is displayed: Done."
+          ],
+          "answer": {
+            "code": "# This is a comment\nprint(\"Done\")\n",
+            "stdout": "Done\n",
+            "stdin": ""
+          },
+          "id": "first-program-p4",
+          "difficulty": 1,
+          "misconceptionTags": [
+            "first-program-m2"
+          ]
+        }
+      ],
+      "learningCheck": {
+        "question": "What does print(\"Hello\") display?",
+        "correctIndex": 1,
+        "choices": [
+          "\"Hello\" (including quotes)",
+          "Hello (without quotes)",
+          "print (the instruction's name)"
+        ],
+        "explanation": "Quotes mark text; the output contains only the content inside them.",
+        "feedback": [
+          "Quotes are code delimiters, not part of this output.",
+          "Correct: print displays the quoted content.",
+          "print names the instruction, not the content to display."
+        ]
+      },
+      "prerequisites": [],
+      "difficulty": 1,
+      "misconceptionTags": [
+        "first-program-m1",
+        "first-program-m2"
+      ],
+      "provenance": {
+        "author": "AI-generated",
+        "version": "0.2.1",
+        "status": "revised",
+        "humanReviewed": false
+      },
+      "sources": [
+        "python-tutorial"
+      ],
+      "furtherReading": [],
+      "localSetup": [
+        "Install the interpreter: open python.org, choose Downloads, and install a supported Python 3 release. The interpreter runs your code. If its command is unavailable, check that installation completed.",
+        "Save the code: create a practice folder and a plain-text file in a code editor. Enter the two lines above and save as hello.py. The name must end in .py, not .py.txt. Do not save code as a Word document.",
+        "Open your practice folder in a terminal. On macOS, open Terminal; on Windows, open Terminal or PowerShell. Type cd, a space, and your folder's full path, then press Enter. Put paths containing spaces inside straight double quotes. cd changes the current directory.",
+        "Run and check: on macOS/Linux use python3 hello.py; on Windows usually use py -3 hello.py. Expect Hello and I am learning Python on separate lines. Change the second message, save, and run again. If hello.py cannot be found, check the current directory and filename."
+      ]
+    },
+    {
+      "id": "names-types",
+      "chapterId": "chapter-1",
+      "number": "1.2",
+      "title": "Give values names",
+      "subtitle": "Name a value so the next line can find it.",
+      "concept": "Name a value so the next line can find it.",
+      "intuition": "Attach an apple-count label to a basket holding 3 apples.",
+      "objectives": [
+        "Name a number",
+        "Updating a name replaces its value",
+        "Numbers and text serve different purposes"
+      ],
+      "body": [
+        {
+          "title": "Name a number",
+          "text": "apples = 3 associates the name apples with the number 3. Assignment evaluates the right side first, then updates the name on the left. print(apples) reads that value; print(\"apples\") instead displays the literal word."
+        },
+        {
+          "title": "Updating a name replaces its value",
+          "text": "In apples = apples + 2, the right side reads the old value 3 and adds 2 to obtain 5. Assignment then makes apples refer to 5. This is an instruction, not a mathematical equation that must hold forever. Follow the variable cards one line at a time."
+        },
+        {
+          "title": "Numbers and text serve different purposes",
+          "text": "3 is a number for arithmetic; \"3\" is text. Use a number for a count and text for a name. Names are case-sensitive: apples and Apples differ. This book uses lowercase English names and underscores between words, such as apple_count."
+        }
+      ],
+      "formalDefinition": {
+        "text": "Assignment evaluates the right side before updating the left-hand name. A quoted name is literal text.",
+        "conditions": [
+          "Each example runs independently from the beginning. Start with the stated inputs, then change one thing."
+        ]
+      },
+      "derivation": [
+        {
+          "text": "apples first refers to 3."
+        },
+        {
+          "text": "Evaluate 3 + 2 on the right, then update apples."
+        },
+        {
+          "text": "print reads the updated value 5."
+        }
+      ],
+      "interactiveVisual": {
+        "kind": "python-trace",
+        "prediction": "Starting with 3 apples and adding 2, what value will the variable hold?",
+        "caption": "Choose an input and predict the result, then select Next step. The arrow marks the next statement to execute; the side panel shows current variables and output produced so far.",
+        "experiment": {
+          "code": "apples = 3\napples = apples + 2\nprint(apples)\n",
+          "stdout": "5\n",
+          "stdin": ""
+        },
+        "followUp": "Start with 0 and watch the right side evaluate before assignment.",
+        "codeTemplate": "apples = {{start}}\napples = apples + 2\nprint(apples)\n",
+        "controls": [
+          {
+            "name": "start",
+            "label": "Initial apple count",
+            "values": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "defaultIndex": 3
+          }
+        ],
+        "watch": [
+          "apples"
+        ]
+      },
+      "workedExamples": [
+        {
+          "title": "Two more apples",
+          "problem": "Start with 3 apples, add 2, and display the new total.",
+          "steps": [
+            "apples first refers to 3.",
+            "Evaluate 3 + 2 on the right, then update apples.",
+            "print reads the updated value 5."
+          ],
+          "answer": {
+            "code": "apples = 3\napples = apples + 2\nprint(apples)\n",
+            "stdout": "5\n",
+            "stdin": ""
+          }
+        },
+        {
+          "title": "A variable or literal text?",
+          "problem": "Compare apples with and without quotes.",
+          "steps": [
+            "Without quotes, read the variable.",
+            "With quotes, display the text literally."
+          ],
+          "answer": {
+            "code": "apples = 3\nprint(apples)\nprint(\"apples\")\n",
+            "stdout": "3\napples\n",
+            "stdin": ""
+          }
+        }
+      ],
+      "commonMistakes": [
+        {
+          "id": "names-types-m1",
+          "claim": "print(\"apples\") reads the apple count.",
+          "correction": "Quotes produce the word apples. Use print(apples) to read the variable."
+        },
+        {
+          "id": "names-types-m2",
+          "claim": "Updating a automatically updates b if b previously received a's value.",
+          "correction": "b = a reads the value at that moment. Later assignment of a number to a does not recompute b."
+        }
+      ],
+      "practice": [
+        {
+          "problem": "After count = 4, what does print(count) display?",
+          "hint": "Read the value associated with the name.",
+          "solution": [
+            "count refers to 4."
+          ],
+          "answer": {
+            "code": "count = 4\nprint(count)\n",
+            "stdout": "4\n",
+            "stdin": ""
+          },
+          "id": "names-types-p1",
+          "difficulty": 1,
+          "misconceptionTags": [
+            "names-types-m1"
+          ]
+        },
+        {
+          "problem": "Increase count from 4 to 5.",
+          "hint": "Read its old value and add 1.",
+          "solution": [
+            "The right side gives 5; assignment updates the name."
+          ],
+          "answer": {
+            "code": "count = 4\ncount = count + 1\nprint(count)\n",
+            "stdout": "5\n",
+            "stdin": ""
+          },
+          "id": "names-types-p2",
+          "difficulty": 2,
+          "misconceptionTags": [
+            "names-types-m2"
+          ]
+        },
+        {
+          "problem": "Assign the text Lin to name, then display it.",
+          "hint": "Text needs quotes.",
+          "solution": [
+            "Use quotes when assigning the text, but not when reading the variable."
+          ],
+          "answer": {
+            "code": "name = \"Lin\"\nprint(name)\n",
+            "stdout": "Lin\n",
+            "stdin": ""
+          },
+          "id": "names-types-p3",
+          "difficulty": 1,
+          "misconceptionTags": [
+            "names-types-m1"
+          ]
+        },
+        {
+          "problem": "After a = 2; b = a; a = 5, what is b?",
+          "hint": "When b was assigned, a was still 2.",
+          "solution": [
+            "b refers to 2.",
+            "Updating a later does not recompute b."
+          ],
+          "answer": {
+            "code": "a = 2\nb = a\na = 5\nprint(a)\nprint(b)\n",
+            "stdout": "5\n2\n",
+            "stdin": ""
+          },
+          "id": "names-types-p4",
+          "difficulty": 2,
+          "misconceptionTags": [
+            "names-types-m2"
+          ]
+        }
+      ],
+      "learningCheck": {
+        "question": "After apples = 3, what does print(\"apples\") display?",
+        "correctIndex": 1,
+        "choices": [
+          "3 (always reading the variable)",
+          "apples (literal text)",
+          "Nothing (variables cannot be displayed)"
+        ],
+        "explanation": "Quotes make apples ordinary text.",
+        "feedback": [
+          "A quoted name is not looked up as a variable.",
+          "Correct: the quoted text is displayed as written.",
+          "print can display both numbers and text."
+        ]
+      },
+      "prerequisites": [
+        "first-program"
+      ],
+      "difficulty": 1,
+      "misconceptionTags": [
+        "names-types-m1",
+        "names-types-m2"
+      ],
+      "provenance": {
+        "author": "AI-generated",
+        "version": "0.2.1",
+        "status": "revised",
+        "humanReviewed": false
+      },
+      "sources": [
+        "python-tutorial",
+        "python-types"
+      ],
+      "furtherReading": []
+    },
+    {
+      "id": "numbers",
+      "chapterId": "chapter-1",
+      "number": "1.3",
+      "title": "Numbers and arithmetic",
+      "subtitle": "For the same candies, you can ask for an average or for full bags and leftovers.",
+      "concept": "For the same candies, you can ask for an average or for full bags and leftovers.",
+      "intuition": "17 candies packed 5 per bag fill 3 bags, with 2 left over.",
+      "objectives": [
+        "Use familiar arithmetic",
+        "Find full bags and leftovers",
+        "Reconstruct the original total"
+      ],
+      "body": [
+        {
+          "title": "Use familiar arithmetic",
+          "text": "Python uses + for addition, - for subtraction, * for multiplication, and / for division. For example, 3 * 5 gives 15 and 17 / 5 gives 3.4. Do not quote numbers. print(3 * 5) calculates before displaying. Multiplication and division precede addition and subtraction; use parentheses to change the order, as in (2 + 3) * 4."
+        },
+        {
+          "title": "Find full bags and leftovers",
+          "text": "For full bags only, 17 // 5 gives 3. The two slashes perform floor division. For these nonnegative quantities, this is the full-bag count. 17 % 5 gives the remainder 2; here % does not mean percent. Three bags use 15 candies, leaving 17 - 15 = 2."
+        },
+        {
+          "title": "Reconstruct the original total",
+          "text": "Multiply full bags by capacity and add leftovers: 3 * 5 + 2 = 17. If 20 candies fit 5 per bag, the remainder is 0. Change the total, then the capacity, one at a time. Counts are nonnegative integers and bag capacity must be positive."
+        }
+      ],
+      "formalDefinition": {
+        "text": "For this nonnegative-integer packing model, // gives full bags and % gives leftovers: bags times capacity plus remainder equals total.",
+        "conditions": [
+          "Counts are nonnegative integers; bag capacity is an integer greater than 0.",
+          "The divisor for /, //, and % must not be 0."
+        ]
+      },
+      "derivation": [
+        {
+          "text": "total refers to 17 candies; size refers to capacity 5."
+        },
+        {
+          "text": "Use // to obtain 3 full bags."
+        },
+        {
+          "text": "Use % to obtain remainder 2; check 3 * 5 + 2 = 17."
+        }
+      ],
+      "interactiveVisual": {
+        "kind": "python-trace",
+        "prediction": "Predict the full bags and remainder for 17 candies with capacity 5, then change the total to 20.",
+        "caption": "Choose an input and predict the result, then select Next step. The arrow marks the next statement to execute; the side panel shows current variables and output produced so far.",
+        "experiment": {
+          "code": "total = 17\nsize = 5\nbags = total // size\nleft = total % size\nprint(bags)\nprint(left)\n",
+          "stdout": "3\n2\n",
+          "stdin": ""
+        },
+        "followUp": "Try 3 candies with capacity 5. Predict whether the full-bag count is 0.",
+        "codeTemplate": "total = {{total}}\nsize = {{size}}\nbags = total // size\nleft = total % size\nprint(bags)\nprint(left)\n",
+        "controls": [
+          {
+            "name": "total",
+            "label": "Total candies",
+            "values": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20
+            ],
+            "defaultIndex": 17
+          },
+          {
+            "name": "size",
+            "label": "Candies per bag",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "defaultIndex": 4
+          }
+        ],
+        "watch": [
+          "total",
+          "size",
+          "bags",
+          "left"
+        ]
+      },
+      "workedExamples": [
+        {
+          "title": "Pack 17 candies",
+          "problem": "With capacity 5, display full bags and leftovers.",
+          "steps": [
+            "total refers to 17 candies; size refers to capacity 5.",
+            "Use // to obtain 3 full bags.",
+            "Use % to obtain remainder 2; check 3 * 5 + 2 = 17."
+          ],
+          "answer": {
+            "code": "total = 17\nsize = 5\nprint(total // size)\nprint(total % size)\n",
+            "stdout": "3\n2\n",
+            "stdin": ""
+          }
+        },
+        {
+          "title": "No leftovers",
+          "problem": "How many candies remain after packing 20 with capacity 5?",
+          "steps": [
+            "20 // 5 gives 4 full bags.",
+            "20 % 5 gives 0: no leftovers."
+          ],
+          "answer": {
+            "code": "total = 20\nsize = 5\nprint(total // size)\nprint(total % size)\n",
+            "stdout": "4\n0\n",
+            "stdin": ""
+          }
+        }
+      ],
+      "commonMistakes": [
+        {
+          "id": "numbers-m1",
+          "claim": "Both // and / give full bags.",
+          "correction": "Ordinary division gives 17 / 5 = 3.4. In this model, // gives 3 full bags."
+        },
+        {
+          "id": "numbers-m2",
+          "claim": "% always means percentage in code.",
+          "correction": "For these integer operands, % gives the remainder: 17 % 5 is 2."
+        }
+      ],
+      "practice": [
+        {
+          "problem": "How many candies are in 3 bags with 5 per bag?",
+          "hint": "Write multiplication with *.",
+          "solution": [
+            "3 * 5 = 15."
+          ],
+          "answer": {
+            "code": "print(3 * 5)\n",
+            "stdout": "15\n",
+            "stdin": ""
+          },
+          "id": "numbers-p1",
+          "difficulty": 1,
+          "misconceptionTags": [
+            "numbers-m1"
+          ]
+        },
+        {
+          "problem": "Pack 12 candies with capacity 5. Find full bags and leftovers.",
+          "hint": "Draw two full bags first.",
+          "solution": [
+            "Two bags use 10 candies.",
+            "There are 2 left over."
+          ],
+          "answer": {
+            "code": "print(12 // 5)\nprint(12 % 5)\n",
+            "stdout": "2\n2\n",
+            "stdin": ""
+          },
+          "id": "numbers-p2",
+          "difficulty": 2,
+          "misconceptionTags": [
+            "numbers-m2"
+          ]
+        },
+        {
+          "problem": "Add 3 candies to an initial 17, then pack with capacity 5. Find the remainder.",
+          "hint": "Calculate the new total first.",
+          "solution": [
+            "17 + 3 = 20.",
+            "20 % 5 = 0."
+          ],
+          "answer": {
+            "code": "total = 17 + 3\nprint(total % 5)\n",
+            "stdout": "0\n",
+            "stdin": ""
+          },
+          "id": "numbers-p3",
+          "difficulty": 2,
+          "misconceptionTags": [
+            "numbers-m1"
+          ]
+        },
+        {
+          "problem": "With only 3 candies and capacity 5, can you fill a bag?",
+          "hint": "Less than one bag gives a full-bag count of 0.",
+          "solution": [
+            "3 // 5 = 0.",
+            "3 % 5 = 3: all candies remain unpacked."
+          ],
+          "answer": {
+            "code": "print(3 // 5)\nprint(3 % 5)\n",
+            "stdout": "0\n3\n",
+            "stdin": ""
+          },
+          "id": "numbers-p4",
+          "difficulty": 2,
+          "misconceptionTags": [
+            "numbers-m2"
+          ]
+        }
+      ],
+      "learningCheck": {
+        "question": "Which operation finds leftovers when packing 17 candies with capacity 5?",
+        "correctIndex": 1,
+        "choices": [
+          "17 / 5",
+          "17 % 5",
+          "17 // 5"
+        ],
+        "explanation": "A remainder counts what is left after filling all possible complete bags.",
+        "feedback": [
+          "/ gives the average 3.4, not the leftovers.",
+          "Correct: % gives the remaining 2 candies.",
+          "// gives 3 full bags, not the remainder."
+        ]
+      },
+      "prerequisites": [
+        "names-types"
+      ],
+      "difficulty": 1,
+      "misconceptionTags": [
+        "numbers-m1",
+        "numbers-m2"
+      ],
+      "provenance": {
+        "author": "AI-generated",
+        "version": "0.2.1",
+        "status": "revised",
+        "humanReviewed": false
+      },
+      "sources": [
+        "python-tutorial",
+        "python-floating"
+      ],
+      "furtherReading": [
+        {
+          "title": "Further reading: negative numbers and decimals",
+          "text": "This packing model uses only nonnegative integers. Negative floor division rounds downward: -3 // 2 is -2, so the packing intuition cannot be applied directly. Floating-point arithmetic can also have representation error: 0.1 + 0.2 need not equal 0.3 exactly. The project stores amounts as integer cents; Decimal is an option for later study of decimal arithmetic."
+        }
+      ]
+    },
+    {
+      "id": "strings-input",
+      "chapterId": "chapter-1",
+      "number": "1.4",
+      "title": "Read text and quantities",
+      "subtitle": "input receives text. Convert it to a number before doing arithmetic.",
+      "concept": "input receives text. Convert it to a number before doing arithmetic.",
+      "intuition": "Typing 3 first supplies the character 3; conversion makes it a quantity.",
+      "objectives": [
+        "Read one line from the user",
+        "Convert a quantity from text to a number",
+        "Insert variables into a message"
+      ],
+      "body": [
+        {
+          "title": "Read one line from the user",
+          "text": "name = input() waits for a line. Pressing Enter delivers the text to name, without the final newline. You can first display print(\"What is your name?\") to explain what to enter. Text values are called strings."
+        },
+        {
+          "title": "Convert a quantity from text to a number",
+          "text": "Read count = int(input()) in two stages: input() receives text, then int(...) converts integer text such as \"3\" to the number 3. Now count + 2 can increase a quantity. Text such as \"three\" or \"3.5\" fails this integer conversion. Lesson 4.4 explains how to handle such errors."
+        },
+        {
+          "title": "Insert variables into a message",
+          "text": "In print(f\"Hello, {name}\"), f marks a string whose brace fields are filled with values. {name} is replaced by the variable's value. This basic form is enough for now. To display a count by itself, print(count) also works."
+        }
+      ],
+      "formalDefinition": {
+        "text": "input() reads a string; int(...) converts valid integer text to a number; an f-string inserts values using {variable_name}.",
+        "conditions": [
+          "int requires valid integer text. Empty text, \"three\", and \"3.5\" cannot be converted directly to integers."
+        ]
+      },
+      "derivation": [
+        {
+          "text": "Display the question first."
+        },
+        {
+          "text": "input receives Lin."
+        },
+        {
+          "text": "{name} is replaced by Lin."
+        }
+      ],
+      "interactiveVisual": {
+        "kind": "python-trace",
+        "prediction": "Convert the text \"3\" to a number and add 2. What is the result?",
+        "caption": "Choose an input and predict the result, then select Next step. The arrow marks the next statement to execute; the side panel shows current variables and output produced so far.",
+        "experiment": {
+          "code": "text = '3'\ncount = int(text)\nprint(count + 2)\n",
+          "stdout": "5\n",
+          "stdin": ""
+        },
+        "followUp": "Choose \"0\" and inspect the quotes on the variable cards before and after conversion. This demonstration uses a text parameter in place of keyboard input.",
+        "codeTemplate": "text = {{text}}\ncount = int(text)\nprint(count + 2)\n",
+        "controls": [
+          {
+            "name": "text",
+            "label": "Simulated input text",
+            "values": [
+              "0",
+              "1",
+              "3",
+              "5"
+            ],
+            "defaultIndex": 2
+          }
+        ],
+        "watch": [
+          "text",
+          "count"
+        ]
+      },
+      "workedExamples": [
+        {
+          "title": "Meet a classmate",
+          "problem": "Enter Lin and display a greeting.",
+          "steps": [
+            "Display the question first.",
+            "input receives Lin.",
+            "{name} is replaced by Lin."
+          ],
+          "answer": {
+            "code": "print(\"What is your name?\")\nname = input()\nprint(f\"Hello, {name}\")\n",
+            "stdout": "What is your name?\nHello, Lin\n",
+            "stdin": "Lin\n"
+          }
+        },
+        {
+          "title": "Add two more",
+          "problem": "Enter 3 and display the quantity after adding 2.",
+          "steps": [
+            "input receives the text \"3\".",
+            "int converts it to the number 3.",
+            "Adding 2 gives 5."
+          ],
+          "answer": {
+            "code": "count = int(input())\nprint(count + 2)\n",
+            "stdout": "5\n",
+            "stdin": "3\n"
+          }
+        }
+      ],
+      "commonMistakes": [
+        {
+          "id": "strings-input-m1",
+          "claim": "input automatically turns text that looks numeric into a number.",
+          "correction": "input returns a string. Use int before integer arithmetic."
+        },
+        {
+          "id": "strings-input-m2",
+          "claim": "Adding two quoted quantities gives their numerical sum.",
+          "correction": "\"3\" + \"2\" concatenates to \"32\". Use numbers for arithmetic."
+        }
+      ],
+      "practice": [
+        {
+          "problem": "Enter Wang and display the name unchanged.",
+          "hint": "Read with input, then display with print.",
+          "solution": [
+            "name receives the text."
+          ],
+          "answer": {
+            "code": "name = input()\nprint(name)\n",
+            "stdout": "Wang\n",
+            "stdin": "Wang\n"
+          },
+          "id": "strings-input-p1",
+          "difficulty": 1,
+          "misconceptionTags": [
+            "strings-input-m1"
+          ]
+        },
+        {
+          "problem": "Enter 4 and display twice its value.",
+          "hint": "Convert with int.",
+          "solution": [
+            "4 * 2 = 8."
+          ],
+          "answer": {
+            "code": "count = int(input())\nprint(count * 2)\n",
+            "stdout": "8\n",
+            "stdin": "4\n"
+          },
+          "id": "strings-input-p2",
+          "difficulty": 2,
+          "misconceptionTags": [
+            "strings-input-m2"
+          ]
+        },
+        {
+          "problem": "Enter Lin and display Welcome, Lin.",
+          "hint": "Use f and {name} to fill the message.",
+          "solution": [
+            "The variable's value replaces the brace field."
+          ],
+          "answer": {
+            "code": "name = input()\nprint(f\"Welcome, {name}\")\n",
+            "stdout": "Welcome, Lin\n",
+            "stdin": "Lin\n"
+          },
+          "id": "strings-input-p3",
+          "difficulty": 1,
+          "misconceptionTags": [
+            "strings-input-m1"
+          ]
+        },
+        {
+          "problem": "Enter 0, then add 2. What is the result?",
+          "hint": "0 is valid integer text too.",
+          "solution": [
+            "After conversion, 0 + 2 = 2."
+          ],
+          "answer": {
+            "code": "count = int(input())\nprint(count + 2)\n",
+            "stdout": "2\n",
+            "stdin": "0\n"
+          },
+          "id": "strings-input-p4",
+          "difficulty": 2,
+          "misconceptionTags": [
+            "strings-input-m2"
+          ]
+        }
+      ],
+      "learningCheck": {
+        "question": "After input reads \"3\", how can you add 2 to the quantity?",
+        "correctIndex": 1,
+        "choices": [
+          "Add 2 directly to the text",
+          "Convert to a number with int first",
+          "Quote 2 too, then add the strings"
+        ],
+        "explanation": "Convert integer text to a number before doing arithmetic.",
+        "feedback": [
+          "A string and a number cannot be added this way.",
+          "Correct: int(\"3\") gives the number 3.",
+          "\"3\" + \"2\" gives \"32\", not a numerical sum."
+        ]
+      },
+      "prerequisites": [
+        "numbers"
+      ],
+      "difficulty": 1,
+      "misconceptionTags": [
+        "strings-input-m1",
+        "strings-input-m2"
+      ],
+      "provenance": {
+        "author": "AI-generated",
+        "version": "0.2.1",
+        "status": "revised",
+        "humanReviewed": false
+      },
+      "sources": [
+        "python-tutorial",
+        "python-input"
+      ],
+      "furtherReading": []
+    },
+    {
+      "id": "conditions",
+      "chapterId": "chapter-2",
+      "number": "2.1",
+      "title": "Conditions and branches",
+      "subtitle": "Test a condition, then take one of two paths.",
+      "concept": "Test a condition, then take one of two paths.",
+      "intuition": "If you have enough money for the fare, take the bus. Otherwise, take the other path.",
+      "objectives": [
+        "Turn a question into a condition",
+        "Write two paths with if and else",
+        "Check the exact boundary"
+      ],
+      "body": [
+        {
+          "title": "Turn a question into a condition",
+          "text": "Suppose the fare is 5 and money holds the amount you have. money >= 5 asks whether you have at least 5; >= means greater than or equal to. A comparison returns True or False. Predict the result before following the program."
+        },
+        {
+          "title": "Write two paths with if and else",
+          "text": "if condition: starts the path taken when the condition is true; else: starts the other path. After each colon, start a new line and indent the body by four spaces. Indentation groups statements into a branch. This test takes one branch: it cannot print both messages."
+        },
+        {
+          "title": "Check the exact boundary",
+          "text": "Try 6, then 4, then exactly 5. The >= comparison includes equality, so 5 is enough. Replacing it with > would reject the exact fare. Use == to compare equality; a single = assigns a value."
+        }
+      ],
+      "formalDefinition": {
+        "text": "An if statement runs its indented body when the condition is true. Otherwise it runs the else body. Only one branch runs.",
+        "conditions": [
+          "Keep the colon and indentation. Use = for assignment and == for equality."
+        ]
+      },
+      "derivation": [
+        {
+          "text": "money holds 5."
+        },
+        {
+          "text": "5 >= 5 is true, so enter the if branch."
+        },
+        {
+          "text": "Skip the else branch."
+        }
+      ],
+      "interactiveVisual": {
+        "kind": "python-trace",
+        "prediction": "With exactly 5, which branch runs?",
+        "caption": "Choose an input and predict the result, then select Next step. The arrow marks the next statement to execute; the side panel shows current variables and output produced so far.",
+        "experiment": {
+          "code": "money = 5\nif money >= 5:\n    print(\"Take the bus\")\nelse:\n    print(\"Not enough money\")\n",
+          "stdout": "Take the bus\n",
+          "stdin": ""
+        },
+        "followUp": "Compare 4, 5, and 6. Which lines does the arrow skip?",
+        "codeTemplate": "money = {{money}}\nif money >= 5:\n    print(\"Take the bus\")\nelse:\n    print(\"Not enough money\")\n",
+        "controls": [
+          {
+            "name": "money",
+            "label": "Money available",
+            "values": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              8
+            ],
+            "defaultIndex": 3
+          }
+        ],
+        "watch": [
+          "money"
+        ]
+      },
+      "workedExamples": [
+        {
+          "title": "Enough for the fare?",
+          "problem": "You have 5 and the fare is 5. Display the decision.",
+          "steps": [
+            "money holds 5.",
+            "5 >= 5 is true, so enter the if branch.",
+            "Skip the else branch."
+          ],
+          "answer": {
+            "code": "money = 5\nif money >= 5:\n    print(\"Take the bus\")\nelse:\n    print(\"Not enough money\")\n",
+            "stdout": "Take the bus\n",
+            "stdin": ""
+          }
+        },
+        {
+          "title": "The other branch",
+          "problem": "Test the same condition with 4.",
+          "steps": [
+            "4 >= 5 is false.",
+            "Skip the if body and run the else body."
+          ],
+          "answer": {
+            "code": "money = 4\nif money >= 5:\n    print(\"Take the bus\")\nelse:\n    print(\"Not enough money\")\n",
+            "stdout": "Not enough money\n",
+            "stdin": ""
+          }
+        }
+      ],
+      "commonMistakes": [
+        {
+          "id": "conditions-m1",
+          "claim": "Exactly 5 satisfies money > 5.",
+          "correction": "> excludes equality. Use >= when the exact fare is enough."
+        },
+        {
+          "id": "conditions-m2",
+          "claim": "Both the if and else bodies run.",
+          "correction": "This test takes one branch. When the condition is true, it skips else."
+        }
+      ],
+      "practice": [
+        {
+          "problem": "Predict the value of 6 >= 5.",
+          "hint": "Is 6 at least 5?",
+          "solution": [
+            "The result is True."
+          ],
+          "answer": {
+            "code": "print(6 >= 5)\n",
+            "stdout": "True\n",
+            "stdin": ""
+          },
+          "id": "conditions-p1",
+          "difficulty": 1,
+          "misconceptionTags": [
+            "conditions-m1"
+          ]
+        },
+        {
+          "problem": "With 3, display Not enough money.",
+          "hint": "Change money to 3.",
+          "solution": [
+            "The condition is false, so enter else."
+          ],
+          "answer": {
+            "code": "money = 3\nif money >= 5:\n    print(\"Take the bus\")\nelse:\n    print(\"Not enough money\")\n",
+            "stdout": "Not enough money\n",
+            "stdin": ""
+          },
+          "id": "conditions-p2",
+          "difficulty": 2,
+          "misconceptionTags": [
+            "conditions-m2"
+          ]
+        },
+        {
+          "problem": "Display Pass for a score of at least 60 and Practice again otherwise. Test 60.",
+          "hint": "The threshold itself passes.",
+          "solution": [
+            "Use >= 60.",
+            "A score of 60 enters if."
+          ],
+          "answer": {
+            "code": "score = 60\nif score >= 60:\n    print(\"Pass\")\nelse:\n    print(\"Practice again\")\n",
+            "stdout": "Pass\n",
+            "stdin": ""
+          },
+          "id": "conditions-p3",
+          "difficulty": 2,
+          "misconceptionTags": [
+            "conditions-m1"
+          ]
+        },
+        {
+          "problem": "Test the same program with 59.",
+          "hint": "Change only the score.",
+          "solution": [
+            "59 < 60, so display Practice again."
+          ],
+          "answer": {
+            "code": "score = 59\nif score >= 60:\n    print(\"Pass\")\nelse:\n    print(\"Practice again\")\n",
+            "stdout": "Practice again\n",
+            "stdin": ""
+          },
+          "id": "conditions-p4",
+          "difficulty": 2,
+          "misconceptionTags": [
+            "conditions-m2"
+          ]
+        }
+      ],
+      "learningCheck": {
+        "question": "Which condition includes having exactly 5?",
+        "correctIndex": 1,
+        "choices": [
+          "money > 5",
+          "money >= 5",
+          "money = 5"
+        ],
+        "explanation": ">= includes equality. A single = assigns a value.",
+        "feedback": [
+          "> requires more than 5 and excludes exactly 5.",
+          "Yes. >= means at least 5.",
+          "A single = assigns a value; it is not an equality test."
+        ]
+      },
+      "prerequisites": [
+        "strings-input"
+      ],
+      "difficulty": 2,
+      "misconceptionTags": [
+        "conditions-m1",
+        "conditions-m2"
+      ],
+      "provenance": {
+        "author": "AI-generated",
+        "version": "0.2.1",
+        "status": "revised",
+        "humanReviewed": false
+      },
+      "sources": [
+        "python-tutorial",
+        "python-control"
+      ],
+      "furtherReading": []
+    },
+    {
+      "id": "for-range",
+      "chapterId": "chapter-2",
+      "number": "2.2",
+      "title": "for loops and counting",
+      "subtitle": "A for loop repeats an operation with a new value each time.",
+      "concept": "A for loop repeats an operation with a new value each time.",
+      "intuition": "Call numbers 1, 2, and 3 without writing the same instruction three times.",
+      "objectives": [
+        "Print a sequence of numbers",
+        "Set stop one beyond the last number",
+        "Build a running total"
+      ],
+      "body": [
+        {
+          "title": "Print a sequence of numbers",
+          "text": "for number in range(1, 4): gives number the values 1, 2, and 3 in turn. range produces integers: it includes 1 but excludes 4. The indented print(number) runs once per value, producing three lines."
+        },
+        {
+          "title": "Set stop one beyond the last number",
+          "text": "To count through 5, write range(1, 6). With one argument, range(3) starts at 0 and produces 0, 1, 2. Here we use an explicit start and stop. After the loop, execution continues with the next unindented statement."
+        },
+        {
+          "title": "Build a running total",
+          "text": "To add 1 + 2 + 3, start with total = 0 and add each number. The running total changes from 0 to 1 to 3 to 6. Place print(total) outside the loop to print only the final total."
+        }
+      ],
+      "formalDefinition": {
+        "text": "A for loop repeats over items. range(start, stop) starts at start and ends before stop.",
+        "conditions": [
+          "The stop value is excluded. Here the bounds are integers and the step is +1."
+        ]
+      },
+      "derivation": [
+        {
+          "text": "range(1, 4) produces 1, 2, 3."
+        },
+        {
+          "text": "number takes the next value each time."
+        },
+        {
+          "text": "The indented print runs once per value."
+        }
+      ],
+      "interactiveVisual": {
+        "kind": "python-trace",
+        "prediction": "The sum from 1 through 3 is 6. What happens if you include 4?",
+        "caption": "Choose an input and predict the result, then select Next step. The arrow marks the next statement to execute; the side panel shows current variables and output produced so far.",
+        "experiment": {
+          "code": "end = 3\ntotal = 0\nfor number in range(1, end + 1):\n    total = total + number\nprint(total)\n",
+          "stdout": "6\n",
+          "stdin": ""
+        },
+        "followUp": "Choose 0. Does the loop body run?",
+        "codeTemplate": "end = {{end}}\ntotal = 0\nfor number in range(1, end + 1):\n    total = total + number\nprint(total)\n",
+        "controls": [
+          {
+            "name": "end",
+            "label": "Last number to add",
+            "values": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "defaultIndex": 3
+          }
+        ],
+        "watch": [
+          "end",
+          "number",
+          "total"
+        ]
+      },
+      "workedExamples": [
+        {
+          "title": "Count through 3",
+          "problem": "Print consecutive numbers starting at 1.",
+          "steps": [
+            "range(1, 4) produces 1, 2, 3.",
+            "number takes the next value each time.",
+            "The indented print runs once per value."
+          ],
+          "answer": {
+            "code": "for number in range(1, 4):\n    print(number)\n",
+            "stdout": "1\n2\n3\n",
+            "stdin": ""
+          }
+        },
+        {
+          "title": "Add the first three numbers",
+          "problem": "Add 1, 2, and 3 one at a time.",
+          "steps": [
+            "Start total at 0.",
+            "After each addition, total is 1, 3, then 6.",
+            "Print the final 6 outside the loop."
+          ],
+          "answer": {
+            "code": "total = 0\nfor number in range(1, 4):\n    total = total + number\nprint(total)\n",
+            "stdout": "6\n",
+            "stdin": ""
+          }
+        }
+      ],
+      "commonMistakes": [
+        {
+          "id": "for-range-m1",
+          "claim": "range(1, 4) includes 4.",
+          "correction": "The stop is excluded, so the values are 1, 2, 3."
+        },
+        {
+          "id": "for-range-m2",
+          "claim": "Reset total to 0 on every iteration.",
+          "correction": "Initialize total before the loop. Inside it, add to the previous total."
+        }
+      ],
+      "practice": [
+        {
+          "problem": "Which numbers does range(1, 3) produce?",
+          "hint": "The stop value 3 is excluded.",
+          "solution": [
+            "It produces 1 and 2."
+          ],
+          "answer": {
+            "code": "for number in range(1, 3):\n    print(number)\n",
+            "stdout": "1\n2\n",
+            "stdin": ""
+          },
+          "id": "for-range-p1",
+          "difficulty": 1,
+          "misconceptionTags": [
+            "for-range-m1"
+          ]
+        },
+        {
+          "problem": "Print 2, 3, and 4 in order.",
+          "hint": "Use 5 as the stop value.",
+          "solution": [
+            "range(2, 5) includes 2, 3, 4."
+          ],
+          "answer": {
+            "code": "for number in range(2, 5):\n    print(number)\n",
+            "stdout": "2\n3\n4\n",
+            "stdin": ""
+          },
+          "id": "for-range-p2",
+          "difficulty": 2,
+          "misconceptionTags": [
+            "for-range-m2"
+          ]
+        },
+        {
+          "problem": "Find the sum from 1 through 4.",
+          "hint": "Start total at 0.",
+          "solution": [
+            "Add 1, 2, 3, and 4 in order.",
+            "The final total is 10."
+          ],
+          "answer": {
+            "code": "total = 0\nfor number in range(1, 5):\n    total = total + number\nprint(total)\n",
+            "stdout": "10\n",
+            "stdin": ""
+          },
+          "id": "for-range-p3",
+          "difficulty": 2,
+          "misconceptionTags": [
+            "for-range-m1"
+          ]
+        },
+        {
+          "problem": "How many times does range(1, 1) run the loop body?",
+          "hint": "The start has already reached the excluded stop.",
+          "solution": [
+            "The body does not run.",
+            "The print outside the loop still runs."
+          ],
+          "answer": {
+            "code": "total = 0\nfor number in range(1, 1):\n    total = total + number\nprint(total)\n",
+            "stdout": "0\n",
+            "stdin": ""
+          },
+          "id": "for-range-p4",
+          "difficulty": 2,
+          "misconceptionTags": [
+            "for-range-m2"
+          ]
+        }
+      ],
+      "learningCheck": {
+        "question": "Which numbers are in range(1, 4)?",
+        "correctIndex": 1,
+        "choices": [
+          "1, 2, 3, 4",
+          "1, 2, 3",
+          "0, 1, 2, 3"
+        ],
+        "explanation": "range excludes its stop value.",
+        "feedback": [
+          "The stop value 4 is excluded.",
+          "Yes. The sequence ends after 3.",
+          "The start here is explicitly 1, not 0."
+        ]
+      },
+      "prerequisites": [
+        "conditions"
+      ],
+      "difficulty": 2,
+      "misconceptionTags": [
+        "for-range-m1",
+        "for-range-m2"
+      ],
+      "provenance": {
+        "author": "AI-generated",
+        "version": "0.2.1",
+        "status": "revised",
+        "humanReviewed": false
+      },
+      "sources": [
+        "python-tutorial",
+        "python-control"
+      ],
+      "furtherReading": []
+    },
+    {
+      "id": "while-stop",
+      "chapterId": "chapter-2",
+      "number": "2.3",
+      "title": "while loops and countdowns",
+      "subtitle": "A while loop checks its condition before each iteration. True continues; false stops.",
+      "concept": "A while loop checks its condition before each iteration. True continues; false stops.",
+      "intuition": "A countdown takes another step while time remains and stops at 0.",
+      "objectives": [
+        "Check before each iteration",
+        "Move toward the stopping condition",
+        "Test small inputs and zero"
+      ],
+      "body": [
+        {
+          "title": "Check before each iteration",
+          "text": "while remaining > 0: runs its indented body only while remaining is positive. It tests the condition again on every iteration. A for loop is useful for going through items; a while loop is useful when a condition determines whether to continue."
+        },
+        {
+          "title": "Move toward the stopping condition",
+          "text": "remaining = remaining - 1 reduces the value by 1. Starting at 3, it becomes 2, 1, then 0. At 0 the condition is false and the loop stops. Without that update, the condition stays true and the loop repeats indefinitely. Do not run the version with the update removed."
+        },
+        {
+          "title": "Test small inputs and zero",
+          "text": "Count down from 3, then try 1, then 0. If the initial value is 0, the body never runs, but Done outside the loop still prints. Checking boundaries catches problems that a normal example can miss."
+        }
+      ],
+      "formalDefinition": {
+        "text": "A while loop checks first, runs its body only when the condition is true, then checks again after the body.",
+        "conditions": [
+          "Update the state so the condition eventually becomes false. Verify termination with small inputs first."
+        ]
+      },
+      "derivation": [
+        {
+          "text": "remaining starts at 3."
+        },
+        {
+          "text": "Print the value, then subtract 1 on each iteration."
+        },
+        {
+          "text": "At 0, leave the loop and print Done."
+        }
+      ],
+      "interactiveVisual": {
+        "kind": "python-trace",
+        "prediction": "Starting at 0, does the loop body run once?",
+        "caption": "Choose an input and predict the result, then select Next step. The arrow marks the next statement to execute; the side panel shows current variables and output produced so far.",
+        "experiment": {
+          "code": "remaining = 3\nwhile remaining > 0:\n    print(remaining)\n    remaining = remaining - 1\nprint(\"Done\")\n",
+          "stdout": "3\n2\n1\nDone\n",
+          "stdin": ""
+        },
+        "followUp": "Compare 0 and 3. How many times is the condition tested?",
+        "codeTemplate": "remaining = {{start}}\nwhile remaining > 0:\n    print(remaining)\n    remaining = remaining - 1\nprint(\"Done\")\n",
+        "controls": [
+          {
+            "name": "start",
+            "label": "Countdown start",
+            "values": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "defaultIndex": 3
+          }
+        ],
+        "watch": [
+          "remaining"
+        ]
+      },
+      "workedExamples": [
+        {
+          "title": "A three-step countdown",
+          "problem": "Print 3, 2, 1, then Done.",
+          "steps": [
+            "remaining starts at 3.",
+            "Print the value, then subtract 1 on each iteration.",
+            "At 0, leave the loop and print Done."
+          ],
+          "answer": {
+            "code": "remaining = 3\nwhile remaining > 0:\n    print(remaining)\n    remaining = remaining - 1\nprint(\"Done\")\n",
+            "stdout": "3\n2\n1\nDone\n",
+            "stdin": ""
+          }
+        },
+        {
+          "title": "Nothing left at the start",
+          "problem": "Start at 0.",
+          "steps": [
+            "0 > 0 is false.",
+            "Go straight to the print after the loop."
+          ],
+          "answer": {
+            "code": "remaining = 0\nwhile remaining > 0:\n    print(remaining)\n    remaining = remaining - 1\nprint(\"Done\")\n",
+            "stdout": "Done\n",
+            "stdin": ""
+          }
+        }
+      ],
+      "commonMistakes": [
+        {
+          "id": "while-stop-m1",
+          "claim": "while runs once before checking its condition.",
+          "correction": "while checks first. If the initial condition is false, its body never runs."
+        },
+        {
+          "id": "while-stop-m2",
+          "claim": "Printing the remaining value makes the countdown finish.",
+          "correction": "You must update remaining. Printing it does not change it."
+        }
+      ],
+      "practice": [
+        {
+          "problem": "What prints if the countdown starts at 1?",
+          "hint": "After one iteration, the value becomes 0.",
+          "solution": [
+            "It prints 1, then Done."
+          ],
+          "answer": {
+            "code": "remaining = 1\nwhile remaining > 0:\n    print(remaining)\n    remaining = remaining - 1\nprint(\"Done\")\n",
+            "stdout": "1\nDone\n",
+            "stdin": ""
+          },
+          "id": "while-stop-p1",
+          "difficulty": 1,
+          "misconceptionTags": [
+            "while-stop-m1"
+          ]
+        },
+        {
+          "problem": "Count down from 2.",
+          "hint": "Subtract 1 on each iteration.",
+          "solution": [
+            "It prints 2, then 1."
+          ],
+          "answer": {
+            "code": "remaining = 2\nwhile remaining > 0:\n    print(remaining)\n    remaining = remaining - 1\n",
+            "stdout": "2\n1\n",
+            "stdin": ""
+          },
+          "id": "while-stop-p2",
+          "difficulty": 1,
+          "misconceptionTags": [
+            "while-stop-m2"
+          ]
+        },
+        {
+          "problem": "Count from 0 through 2: print the current value, then add 1.",
+          "hint": "Continue while current < 3.",
+          "solution": [
+            "After printing 0, 1, 2, current becomes 3."
+          ],
+          "answer": {
+            "code": "current = 0\nwhile current < 3:\n    print(current)\n    current = current + 1\n",
+            "stdout": "0\n1\n2\n",
+            "stdin": ""
+          },
+          "id": "while-stop-p3",
+          "difficulty": 2,
+          "misconceptionTags": [
+            "while-stop-m1"
+          ]
+        },
+        {
+          "problem": "With remaining equal to 0, how often does the body of while remaining > 0 run?",
+          "hint": "The check comes before the body.",
+          "solution": [
+            "The body runs 0 times."
+          ],
+          "answer": {
+            "code": "remaining = 0\ntimes = 0\nwhile remaining > 0:\n    times = times + 1\n    remaining = remaining - 1\nprint(times)\n",
+            "stdout": "0\n",
+            "stdin": ""
+          },
+          "id": "while-stop-p4",
+          "difficulty": 2,
+          "misconceptionTags": [
+            "while-stop-m2"
+          ]
+        }
+      ],
+      "learningCheck": {
+        "question": "What must each countdown iteration do to make it stop?",
+        "correctIndex": 1,
+        "choices": [
+          "Only print the remaining value",
+          "Decrease the remaining value",
+          "Reset the remaining value to 3"
+        ],
+        "explanation": "Updating the variable can change the next condition result.",
+        "feedback": [
+          "Printing alone leaves the condition true.",
+          "Yes. Subtracting 1 eventually reaches 0.",
+          "Resetting to 3 every time prevents the countdown from finishing."
+        ]
+      },
+      "prerequisites": [
+        "for-range"
+      ],
+      "difficulty": 2,
+      "misconceptionTags": [
+        "while-stop-m1",
+        "while-stop-m2"
+      ],
+      "provenance": {
+        "author": "AI-generated",
+        "version": "0.2.1",
+        "status": "revised",
+        "humanReviewed": false
+      },
+      "sources": [
+        "python-tutorial",
+        "python-control"
+      ],
+      "furtherReading": []
+    },
+    {
+      "id": "debugging",
+      "chapterId": "chapter-2",
+      "number": "2.4",
+      "title": "Errors and debugging",
+      "subtitle": "When a program differs from your expectation, find the first wrong step and change one thing.",
+      "concept": "When a program differs from your expectation, find the first wrong step and change one thing.",
+      "intuition": "Check a calculation by finding its first incorrect step, rather than looking only at the final answer.",
+      "objectives": [
+        "Write down the expected behavior",
+        "Distinguish exceptions from wrong results",
+        "Test nearby inputs after a fix"
+      ],
+      "body": [
+        {
+          "title": "Write down the expected behavior",
+          "text": "To check the sum from 1 through 3, calculate 6 independently first. That is your expected result. If the program gives 3, avoid editing many lines at once. List the values number actually takes and find why 3 was omitted."
+        },
+        {
+          "title": "Distinguish exceptions from wrong results",
+          "text": "An exception reports an error: a misspelled variable often causes NameError, and mixing a number with text often causes TypeError. Read the exception name on the last line, then follow the line number. A program that runs but gives 3 instead of 6 has a logic error: Python followed instructions that did not express your intention."
+        },
+        {
+          "title": "Test nearby inputs after a fix",
+          "text": "range(1, 3) excludes 3; change it to range(1, 4). After the fix, test endpoints 1, 2, and 3. One successful example is not enough. Temporarily print(number) to inspect intermediate values, then remove the diagnostic print."
+        }
+      ],
+      "formalDefinition": {
+        "text": "Debug by stating an expectation, observing actual steps, and finding the earliest difference. Change one thing at a time.",
+        "conditions": [
+          "Each example runs independently from the beginning. Start with the stated inputs, then change one thing."
+        ]
+      },
+      "derivation": [
+        {
+          "text": "Calculate the expected total, 6, by hand."
+        },
+        {
+          "text": "range(1, 3) produces only 1 and 2, omitting 3."
+        },
+        {
+          "text": "Changing stop to 4 makes the total 6."
+        }
+      ],
+      "interactiveVisual": {
+        "kind": "python-trace",
+        "prediction": "To add 1 + 2 + 3, should stop be 3 or 4?",
+        "caption": "Choose an input and predict the result, then select Next step. The arrow marks the next statement to execute; the side panel shows current variables and output produced so far.",
+        "experiment": {
+          "code": "stop = 3\ntotal = 0\nfor number in range(1, stop):\n    total = total + number\nprint(total)\n",
+          "stdout": "3\n",
+          "stdin": ""
+        },
+        "followUp": "Choose 3 to find the missing iteration, then 4 to check the fix.",
+        "codeTemplate": "stop = {{stop}}\ntotal = 0\nfor number in range(1, stop):\n    total = total + number\nprint(total)\n",
+        "controls": [
+          {
+            "name": "stop",
+            "label": "range stop value",
+            "values": [
+              3,
+              4
+            ],
+            "defaultIndex": 0
+          }
+        ],
+        "watch": [
+          "stop",
+          "number",
+          "total"
+        ]
+      },
+      "workedExamples": [
+        {
+          "title": "Missing the last number",
+          "problem": "Fix the sum from 1 through 3.",
+          "steps": [
+            "Calculate the expected total, 6, by hand.",
+            "range(1, 3) produces only 1 and 2, omitting 3.",
+            "Changing stop to 4 makes the total 6."
+          ],
+          "answer": {
+            "code": "total = 0\nfor number in range(1, 4):\n    total = total + number\nprint(total)\n",
+            "stdout": "6\n",
+            "stdin": ""
+          }
+        },
+        {
+          "title": "Inspect intermediate values",
+          "problem": "Print values to check each iteration.",
+          "steps": [
+            "Print number inside the loop.",
+            "Print total outside the loop to check the final answer."
+          ],
+          "answer": {
+            "code": "total = 0\nfor number in range(1, 4):\n    print(number)\n    total = total + number\nprint(total)\n",
+            "stdout": "1\n2\n3\n6\n",
+            "stdin": ""
+          }
+        }
+      ],
+      "commonMistakes": [
+        {
+          "id": "debugging-m1",
+          "claim": "If the program reports no exception, its answer must be correct.",
+          "correction": "Compare the actual result with an independently calculated expectation."
+        },
+        {
+          "id": "debugging-m2",
+          "claim": "Change many lines together as soon as you find a bug.",
+          "correction": "Change one thing and rerun a small case so you can tell whether it fixed the problem."
+        }
+      ],
+      "practice": [
+        {
+          "problem": "Fix nmae so the program prints the value of name.",
+          "hint": "Use the same variable name each time.",
+          "solution": [
+            "Change the reference to name."
+          ],
+          "answer": {
+            "code": "name = \"Lin\"\nprint(name)\n",
+            "stdout": "Lin\n",
+            "stdin": ""
+          },
+          "id": "debugging-p1",
+          "difficulty": 1,
+          "misconceptionTags": [
+            "debugging-m1"
+          ]
+        },
+        {
+          "problem": "Fix the addition of the text \"3\" to the number 2.",
+          "hint": "Convert the text to an integer first.",
+          "solution": [
+            "int(\"3\") produces the integer 3."
+          ],
+          "answer": {
+            "code": "count = int(\"3\")\nprint(count + 2)\n",
+            "stdout": "5\n",
+            "stdin": ""
+          },
+          "id": "debugging-p2",
+          "difficulty": 2,
+          "misconceptionTags": [
+            "debugging-m2"
+          ]
+        },
+        {
+          "problem": "Add 1 through 2 and print each number being added.",
+          "hint": "Set range stop to 3.",
+          "solution": [
+            "The values printed are 1 and 2.",
+            "The total is 3."
+          ],
+          "answer": {
+            "code": "total = 0\nfor number in range(1, 3):\n    print(number)\n    total = total + number\nprint(total)\n",
+            "stdout": "1\n2\n3\n",
+            "stdin": ""
+          },
+          "id": "debugging-p3",
+          "difficulty": 2,
+          "misconceptionTags": [
+            "debugging-m1"
+          ]
+        },
+        {
+          "problem": "Test the fix with an endpoint of 0. What total do you expect?",
+          "hint": "With nothing to add, total stays 0.",
+          "solution": [
+            "The loop body does not run."
+          ],
+          "answer": {
+            "code": "total = 0\nfor number in range(1, 1):\n    total = total + number\nprint(total)\n",
+            "stdout": "0\n",
+            "stdin": ""
+          },
+          "id": "debugging-p4",
+          "difficulty": 2,
+          "misconceptionTags": [
+            "debugging-m2"
+          ]
+        }
+      ],
+      "learningCheck": {
+        "question": "A sum from 1 through 3 returns 3. What is wrong with range(1, 3)?",
+        "correctIndex": 1,
+        "choices": [
+          "Addition cannot go inside a loop",
+          "The stop excludes 3",
+          "total should start at 3"
+        ],
+        "explanation": "range excludes its stop. To include 3, use 4.",
+        "feedback": [
+          "A loop can add values one at a time.",
+          "Yes. The program added only 1 and 2.",
+          "The initial total should be 0. Starting at 3 would hide the missing value."
+        ]
+      },
+      "prerequisites": [
+        "while-stop"
+      ],
+      "difficulty": 2,
+      "misconceptionTags": [
+        "debugging-m1",
+        "debugging-m2"
+      ],
+      "provenance": {
+        "author": "AI-generated",
+        "version": "0.2.1",
+        "status": "revised",
+        "humanReviewed": false
+      },
+      "sources": [
+        "python-tutorial",
+        "python-errors"
+      ],
+      "furtherReading": []
+    },
+    {
+      "id": "lists",
+      "chapterId": "chapter-3",
+      "number": "3.1",
+      "title": "Lists and shopping lists",
+      "subtitle": "A list stores items in order. Read them by position or process them one by one.",
+      "concept": "A list stores items in order. Read them by position or process them one by one.",
+      "intuition": "A shopping list has a first and second item, and you can add another at the end.",
+      "objectives": [
+        "Put items inside square brackets",
+        "Append an item, then iterate",
+        "Two names can refer to one list"
+      ],
+      "body": [
+        {
+          "title": "Put items inside square brackets",
+          "text": "items = [\"apple\", \"bread\"] creates a list with two strings, separated by a comma inside square brackets. Lists preserve order. items[0] retrieves the first item; items[1] retrieves the second. Positions start at 0. len(items) gives the number of items, here 2."
+        },
+        {
+          "title": "Append an item, then iterate",
+          "text": "items.append(\"milk\") adds an item at the end. The dot selects an operation on this list; append is its name. for item in items: visits each item directly, without a range or an index."
+        },
+        {
+          "title": "Two names can refer to one list",
+          "text": "other = items does not copy the list. It gives the same list another name, so appending through other also changes what items sees. For independent simple lists, use other = items.copy(). This is a shallow copy; here the list contains only strings or numbers."
+        }
+      ],
+      "formalDefinition": {
+        "text": "Lists preserve order and duplicates, and positions start at 0. append adds at the end; copy duplicates the simple, one-level lists used here.",
+        "conditions": [
+          "An index must be within the list. An empty list has no item at index 0.",
+          "Here copy() is used on one-level lists of numbers or strings."
+        ]
+      },
+      "derivation": [
+        {
+          "text": "The first item is at index 0."
+        },
+        {
+          "text": "for visits items in their list order."
+        },
+        {
+          "text": "apple therefore prints once on its own and again during iteration."
+        }
+      ],
+      "interactiveVisual": {
+        "kind": "python-trace",
+        "prediction": "After an append, what is the order?",
+        "caption": "Choose an input and predict the result, then select Next step. The arrow marks the next statement to execute; the side panel shows current variables and output produced so far.",
+        "experiment": {
+          "code": "items = [\"apple\", \"bread\"]\nitems.append('milk')\nfor item in items:\n    print(item)\n",
+          "stdout": "apple\nbread\nmilk\n",
+          "stdin": ""
+        },
+        "followUp": "Choose a different product and watch the list grow by one item.",
+        "codeTemplate": "items = [\"apple\", \"bread\"]\nitems.append({{item}})\nfor item in items:\n    print(item)\n",
+        "controls": [
+          {
+            "name": "item",
+            "label": "Product to append",
+            "values": [
+              "milk",
+              "eggs",
+              "rice"
+            ],
+            "defaultIndex": 0
+          }
+        ],
+        "watch": [
+          "items",
+          "item"
+        ]
+      },
+      "workedExamples": [
+        {
+          "title": "Read a shopping list",
+          "problem": "Read the first item, then print every item.",
+          "steps": [
+            "The first item is at index 0.",
+            "for visits items in their list order.",
+            "apple therefore prints once on its own and again during iteration."
+          ],
+          "answer": {
+            "code": "items = [\"apple\", \"bread\"]\nprint(items[0])\nfor item in items:\n    print(item)\n",
+            "stdout": "apple\napple\nbread\n",
+            "stdin": ""
+          }
+        },
+        {
+          "title": "Add milk",
+          "problem": "Append an item and print the new length.",
+          "steps": [
+            "The list starts with two items.",
+            "After append, it has three."
+          ],
+          "answer": {
+            "code": "items = [\"apple\", \"bread\"]\nitems.append(\"milk\")\nprint(len(items))\n",
+            "stdout": "3\n",
+            "stdin": ""
+          }
+        }
+      ],
+      "commonMistakes": [
+        {
+          "id": "lists-m1",
+          "claim": "The first item is at position 1.",
+          "correction": "The first index is 0; index 1 is the second item."
+        },
+        {
+          "id": "lists-m2",
+          "claim": "other = items creates an independent copy.",
+          "correction": "Both names refer to one list. Use copy() for the simple one-level lists in this lesson."
+        }
+      ],
+      "practice": [
+        {
+          "problem": "What is the first item in [10, 20]?",
+          "hint": "Indices start at 0.",
+          "solution": [
+            "values[0] is 10."
+          ],
+          "answer": {
+            "code": "values = [10, 20]\nprint(values[0])\n",
+            "stdout": "10\n",
+            "stdin": ""
+          },
+          "id": "lists-p1",
+          "difficulty": 1,
+          "misconceptionTags": [
+            "lists-m1"
+          ]
+        },
+        {
+          "problem": "Append 30 to [10, 20], then print each item.",
+          "hint": "Use append.",
+          "solution": [
+            "30 goes at the end."
+          ],
+          "answer": {
+            "code": "values = [10, 20]\nvalues.append(30)\nfor value in values:\n    print(value)\n",
+            "stdout": "10\n20\n30\n",
+            "stdin": ""
+          },
+          "id": "lists-p2",
+          "difficulty": 2,
+          "misconceptionTags": [
+            "lists-m2"
+          ]
+        },
+        {
+          "problem": "Find the sum of [2, 3, 4].",
+          "hint": "Use for and total.",
+          "solution": [
+            "total becomes 2, then 5, then 9."
+          ],
+          "answer": {
+            "code": "values = [2, 3, 4]\ntotal = 0\nfor value in values:\n    total = total + value\nprint(total)\n",
+            "stdout": "9\n",
+            "stdin": ""
+          },
+          "id": "lists-p3",
+          "difficulty": 2,
+          "misconceptionTags": [
+            "lists-m1"
+          ]
+        },
+        {
+          "problem": "Copy [1, 2] and append 3 only to the copy. How long is the original?",
+          "hint": "Use copy().",
+          "solution": [
+            "The copy has three items; the original still has two."
+          ],
+          "answer": {
+            "code": "values = [1, 2]\nother = values.copy()\nother.append(3)\nprint(len(values))\nprint(len(other))\n",
+            "stdout": "2\n3\n",
+            "stdin": ""
+          },
+          "id": "lists-p4",
+          "difficulty": 2,
+          "misconceptionTags": [
+            "lists-m2"
+          ]
+        }
+      ],
+      "learningCheck": {
+        "question": "Which index reads the first shopping-list item?",
+        "correctIndex": 1,
+        "choices": [
+          "items[1]",
+          "items[0]",
+          "items[len(items)]"
+        ],
+        "explanation": "List indices start at 0.",
+        "feedback": [
+          "Index 1 is the second item.",
+          "Yes. Index 0 is the first item.",
+          "The length is one greater than the last valid index, so it is out of range."
+        ]
+      },
+      "prerequisites": [
+        "debugging"
+      ],
+      "difficulty": 3,
+      "misconceptionTags": [
+        "lists-m1",
+        "lists-m2"
+      ],
+      "provenance": {
+        "author": "AI-generated",
+        "version": "0.2.1",
+        "status": "revised",
+        "humanReviewed": false
+      },
+      "sources": [
+        "python-tutorial",
+        "python-data"
+      ],
+      "furtherReading": []
+    },
+    {
+      "id": "dictionaries",
+      "chapterId": "chapter-3",
+      "number": "3.2",
+      "title": "Dictionaries and key lookup",
+      "subtitle": "A dictionary associates keys with values so you can look up a value by name.",
+      "concept": "A dictionary associates keys with values so you can look up a value by name.",
+      "intuition": "An address book finds a phone number by name, without needing its position.",
+      "objectives": [
+        "Write a price table",
+        "Add and update by key",
+        "Choose a default for a missing key"
+      ],
+      "body": [
+        {
+          "title": "Write a price table",
+          "text": "prices = {\"apple\": 3, \"bread\": 5} is a dictionary. Each pair has a key on the left and its value on the right. A colon joins them; commas separate pairs. prices[\"apple\"] retrieves 3 by key. These square brackets contain a key, not a list position."
+        },
+        {
+          "title": "Add and update by key",
+          "text": "prices[\"milk\"] = 4 adds a new product; prices[\"apple\"] = 6 updates an existing price. Each key has one current value. for name in prices: visits the keys; prices[name] retrieves the corresponding value."
+        },
+        {
+          "title": "Choose a default for a missing key",
+          "text": "Indexing a missing key raises KeyError. prices.get(\"rice\", 0) retrieves the value if present and returns 0 otherwise, without inserting rice. This is useful for counting: counts[name] = counts.get(name, 0) + 1 starts an unseen item at 0 and adds one."
+        }
+      ],
+      "formalDefinition": {
+        "text": "A dictionary maps keys to values. Square brackets read an existing key; get can supply a default for a missing key.",
+        "conditions": [
+          "A key must exist for direct indexed lookup. For a missing key, get lets you choose a default."
+        ]
+      },
+      "derivation": [
+        {
+          "text": "The key \"apple\" initially maps to 3."
+        },
+        {
+          "text": "Assigning the same key again changes its value to 6."
+        },
+        {
+          "text": "It does not create a second apple key."
+        }
+      ],
+      "interactiveVisual": {
+        "kind": "python-trace",
+        "prediction": "What does looking up rice return? Does the dictionary gain an item?",
+        "caption": "Choose an input and predict the result, then select Next step. The arrow marks the next statement to execute; the side panel shows current variables and output produced so far.",
+        "experiment": {
+          "code": "prices = {\"apple\": 3, \"bread\": 5}\nname = 'apple'\nprice = prices.get(name, 0)\nprint(price)\n",
+          "stdout": "3\n",
+          "stdin": ""
+        },
+        "followUp": "Compare an existing key with a missing key. Does prices change?",
+        "codeTemplate": "prices = {\"apple\": 3, \"bread\": 5}\nname = {{name}}\nprice = prices.get(name, 0)\nprint(price)\n",
+        "controls": [
+          {
+            "name": "name",
+            "label": "Product to look up",
+            "values": [
+              "apple",
+              "bread",
+              "rice"
+            ],
+            "defaultIndex": 0
+          }
+        ],
+        "watch": [
+          "prices",
+          "name",
+          "price"
+        ]
+      },
+      "workedExamples": [
+        {
+          "title": "Find a price by product name",
+          "problem": "Look up apple, then change its price.",
+          "steps": [
+            "The key \"apple\" initially maps to 3.",
+            "Assigning the same key again changes its value to 6.",
+            "It does not create a second apple key."
+          ],
+          "answer": {
+            "code": "prices = {\"apple\": 3, \"bread\": 5}\nprint(prices[\"apple\"])\nprices[\"apple\"] = 6\nprint(prices[\"apple\"])\n",
+            "stdout": "3\n6\n",
+            "stdin": ""
+          }
+        },
+        {
+          "title": "Count each fruit",
+          "problem": "Count occurrences in apple, pear, apple.",
+          "steps": [
+            "For a new fruit, get returns 0.",
+            "Add 1 and store it under the same key.",
+            "On the second apple, update its count from 1 to 2."
+          ],
+          "answer": {
+            "code": "counts = {}\nfor name in [\"apple\", \"pear\", \"apple\"]:\n    counts[name] = counts.get(name, 0) + 1\nprint(counts[\"apple\"])\nprint(counts[\"pear\"])\n",
+            "stdout": "2\n1\n",
+            "stdin": ""
+          }
+        }
+      ],
+      "commonMistakes": [
+        {
+          "id": "dictionaries-m1",
+          "claim": "[0] always reads the first dictionary value.",
+          "correction": "A dictionary uses keys. Lookup with 0 works only if 0 is an actual key."
+        },
+        {
+          "id": "dictionaries-m2",
+          "claim": "get inserts a missing key automatically.",
+          "correction": "get only reads and returns the default; it does not insert a key."
+        }
+      ],
+      "practice": [
+        {
+          "problem": "Look up the bread price, 5.",
+          "hint": "Use the product name as the key.",
+          "solution": [
+            "prices[\"bread\"] retrieves 5."
+          ],
+          "answer": {
+            "code": "prices = {\"apple\": 3, \"bread\": 5}\nprint(prices[\"bread\"])\n",
+            "stdout": "5\n",
+            "stdin": ""
+          },
+          "id": "dictionaries-p1",
+          "difficulty": 1,
+          "misconceptionTags": [
+            "dictionaries-m1"
+          ]
+        },
+        {
+          "problem": "Update the bread price to 6.",
+          "hint": "Assign a new value to the same key.",
+          "solution": [
+            "The new price replaces the old one."
+          ],
+          "answer": {
+            "code": "prices = {\"bread\": 5}\nprices[\"bread\"] = 6\nprint(prices[\"bread\"])\n",
+            "stdout": "6\n",
+            "stdin": ""
+          },
+          "id": "dictionaries-p2",
+          "difficulty": 1,
+          "misconceptionTags": [
+            "dictionaries-m2"
+          ]
+        },
+        {
+          "problem": "Return 0 for rice, which has no entry.",
+          "hint": "Use the second argument of get.",
+          "solution": [
+            "A missing key returns the default 0."
+          ],
+          "answer": {
+            "code": "prices = {\"apple\": 3}\nprint(prices.get(\"rice\", 0))\n",
+            "stdout": "0\n",
+            "stdin": ""
+          },
+          "id": "dictionaries-p3",
+          "difficulty": 2,
+          "misconceptionTags": [
+            "dictionaries-m1"
+          ]
+        },
+        {
+          "problem": "Count fruits from an empty list. How many keys result?",
+          "hint": "An empty list runs no loop iterations.",
+          "solution": [
+            "The dictionary stays empty, with length 0."
+          ],
+          "answer": {
+            "code": "counts = {}\nfor name in []:\n    counts[name] = counts.get(name, 0) + 1\nprint(len(counts))\n",
+            "stdout": "0\n",
+            "stdin": ""
+          },
+          "id": "dictionaries-p4",
+          "difficulty": 2,
+          "misconceptionTags": [
+            "dictionaries-m2"
+          ]
+        }
+      ],
+      "learningCheck": {
+        "question": "prices has no rice key. Which expression returns a default of 0?",
+        "correctIndex": 1,
+        "choices": [
+          "prices[\"rice\"]",
+          "prices.get(\"rice\", 0)",
+          "prices[0]"
+        ],
+        "explanation": "get supplies a default for a missing key.",
+        "feedback": [
+          "Directly reading a missing key raises an exception.",
+          "Yes. A missing key returns the second argument, 0.",
+          "Dictionaries use keys. The key 0 does not mean the first position."
+        ]
+      },
+      "prerequisites": [
+        "lists"
+      ],
+      "difficulty": 3,
+      "misconceptionTags": [
+        "dictionaries-m1",
+        "dictionaries-m2"
+      ],
+      "provenance": {
+        "author": "AI-generated",
+        "version": "0.2.1",
+        "status": "revised",
+        "humanReviewed": false
+      },
+      "sources": [
+        "python-tutorial",
+        "python-data"
+      ],
+      "furtherReading": []
+    },
+    {
+      "id": "tuples-sets",
+      "chapterId": "chapter-3",
+      "number": "3.3",
+      "title": "Tuples and sets: records and distinct values",
+      "subtitle": "Use a tuple for a fixed record and a set when you care which values occur.",
+      "concept": "Use a tuple for a fixed record and a set when you care which values occur.",
+      "intuition": "A location is a pair of coordinates. A record of cities visited need not list the same city twice.",
+      "objectives": [
+        "Group a fixed pair of values",
+        "Keep each distinct value once",
+        "Choose a container for the task"
+      ],
+      "body": [
+        {
+          "title": "Group a fixed pair of values",
+          "text": "point = (3, 4) creates a tuple using parentheses. As with a list, point[0] gives 3 and point[1] gives 4, but tuple positions cannot be reassigned. A tuple suits a fixed record such as coordinates. Here we use pairs; a one-item tuple needs a comma: (3,)."
+        },
+        {
+          "title": "Keep each distinct value once",
+          "text": "cities = {\"Beijing\", \"Shanghai\", \"Beijing\"} is a set. It keeps each distinct value once, so len(cities) is 2. With no colons, these are not dictionary key-value pairs. An empty set is set(); {} is an empty dictionary."
+        },
+        {
+          "title": "Choose a container for the task",
+          "text": "\"Beijing\" in cities tests membership. A set has no first or second position and promises no display order. Use sorted(cities) for a consistently ordered list. Choose a list for order and duplicates, a dictionary for key-value lookup, a tuple for a fixed record, and a set for distinct values and membership."
+        }
+      ],
+      "formalDefinition": {
+        "text": "Tuple positions cannot be reassigned. A set keeps distinct values, and in tests membership.",
+        "conditions": [
+          "Set elements must be hashable. This lesson uses only numbers and strings.",
+          "Sets do not support positional indexing or guarantee display order."
+        ]
+      },
+      "derivation": [
+        {
+          "text": "Parentheses group 3 and 4."
+        },
+        {
+          "text": "Indices 0 and 1 retrieve the two coordinates."
+        },
+        {
+          "text": "Compare the expected output with your prediction."
+        }
+      ],
+      "interactiveVisual": {
+        "kind": "python-trace",
+        "prediction": "How many times does the repeated 1 count?",
+        "caption": "Choose an input and predict the result, then select Next step. The arrow marks the next statement to execute; the side panel shows current variables and output produced so far.",
+        "experiment": {
+          "code": "values = [1, 1, 2]\nunique = set(values)\nprint(len(unique))\nprint(2 in unique)\n",
+          "stdout": "2\nTrue\n",
+          "stdin": ""
+        },
+        "followUp": "Compare an empty list with one containing duplicates. The set card uses a stable display order for inspection.",
+        "codeTemplate": "values = {{values}}\nunique = set(values)\nprint(len(unique))\nprint(2 in unique)\n",
+        "controls": [
+          {
+            "name": "values",
+            "label": "Original values",
+            "values": [
+              [
+                1,
+                1,
+                2
+              ],
+              [
+                1,
+                2,
+                3
+              ],
+              []
+            ],
+            "defaultIndex": 0
+          }
+        ],
+        "watch": [
+          "values",
+          "unique"
+        ]
+      },
+      "workedExamples": [
+        {
+          "title": "Read coordinates",
+          "problem": "Retrieve both numbers from a coordinate pair.",
+          "steps": [
+            "Parentheses group 3 and 4.",
+            "Indices 0 and 1 retrieve the two coordinates."
+          ],
+          "answer": {
+            "code": "point = (3, 4)\nprint(point[0])\nprint(point[1])\n",
+            "stdout": "3\n4\n",
+            "stdin": ""
+          }
+        },
+        {
+          "title": "Count distinct cities",
+          "problem": "How many distinct cities are in Beijing, Shanghai, Beijing?",
+          "steps": [
+            "A set retains distinct values automatically.",
+            "Beijing occurs twice but counts once."
+          ],
+          "answer": {
+            "code": "cities = {\"Beijing\", \"Shanghai\", \"Beijing\"}\nprint(len(cities))\nprint(\"Beijing\" in cities)\n",
+            "stdout": "2\nTrue\n",
+            "stdin": ""
+          }
+        }
+      ],
+      "commonMistakes": [
+        {
+          "id": "tuples-sets-m1",
+          "claim": "A set keeps every repeated occurrence.",
+          "correction": "A set keeps distinct values. Use a list to preserve duplicates."
+        },
+        {
+          "id": "tuples-sets-m2",
+          "claim": "{} is an empty set.",
+          "correction": "{} is an empty dictionary. Use set() for an empty set."
+        }
+      ],
+      "practice": [
+        {
+          "problem": "What is the second item of (5, 8)?",
+          "hint": "Its index is 1.",
+          "solution": [
+            "Read point[1]."
+          ],
+          "answer": {
+            "code": "point = (5, 8)\nprint(point[1])\n",
+            "stdout": "8\n",
+            "stdin": ""
+          },
+          "id": "tuples-sets-p1",
+          "difficulty": 1,
+          "misconceptionTags": [
+            "tuples-sets-m1"
+          ]
+        },
+        {
+          "problem": "How many values remain after converting [1, 1, 2] to a set?",
+          "hint": "set converts the list to a set.",
+          "solution": [
+            "The repeated 1 remains only once."
+          ],
+          "answer": {
+            "code": "values = set([1, 1, 2])\nprint(len(values))\n",
+            "stdout": "2\n",
+            "stdin": ""
+          },
+          "id": "tuples-sets-p2",
+          "difficulty": 1,
+          "misconceptionTags": [
+            "tuples-sets-m2"
+          ]
+        },
+        {
+          "problem": "Test whether 3 belongs to {1, 2}.",
+          "hint": "Use in.",
+          "solution": [
+            "3 is absent, so the result is False."
+          ],
+          "answer": {
+            "code": "values = {1, 2}\nprint(3 in values)\n",
+            "stdout": "False\n",
+            "stdin": ""
+          },
+          "id": "tuples-sets-p3",
+          "difficulty": 1,
+          "misconceptionTags": [
+            "tuples-sets-m1"
+          ]
+        },
+        {
+          "problem": "Create an empty set and print its length.",
+          "hint": "Do not use {}.",
+          "solution": [
+            "set() creates an empty set.",
+            "Its length is 0."
+          ],
+          "answer": {
+            "code": "values = set()\nprint(len(values))\n",
+            "stdout": "0\n",
+            "stdin": ""
+          },
+          "id": "tuples-sets-p4",
+          "difficulty": 1,
+          "misconceptionTags": [
+            "tuples-sets-m2"
+          ]
+        }
+      ],
+      "learningCheck": {
+        "question": "Which container preserves a shopping list's order and duplicates?",
+        "correctIndex": 1,
+        "choices": [
+          "A set",
+          "A list",
+          "Read a set's first item at index 0"
+        ],
+        "explanation": "Choose the container for the need: a list preserves order and duplicates.",
+        "feedback": [
+          "Sets remove duplicates and have no list-style positions.",
+          "Yes. Lists preserve order and duplicates.",
+          "A set has no first item available at index 0."
+        ]
+      },
+      "prerequisites": [
+        "dictionaries"
+      ],
+      "difficulty": 3,
+      "misconceptionTags": [
+        "tuples-sets-m1",
+        "tuples-sets-m2"
+      ],
+      "provenance": {
+        "author": "AI-generated",
+        "version": "0.2.1",
+        "status": "revised",
+        "humanReviewed": false
+      },
+      "sources": [
+        "python-tutorial",
+        "python-data"
+      ],
+      "furtherReading": []
+    },
+    {
+      "id": "comprehensions",
+      "chapterId": "chapter-3",
+      "number": "3.4",
+      "title": "Comprehensions and data processing",
+      "subtitle": "A list comprehension is shorthand for processing items and collecting results. Understand the ordinary loop first.",
+      "concept": "A list comprehension is shorthand for processing items and collecting results. Understand the ordinary loop first.",
+      "intuition": "Double each product's quantity and collect the results into a new list.",
+      "objectives": [
+        "Start with a familiar for loop",
+        "Express the same steps in one line",
+        "Add a filter when needed"
+      ],
+      "body": [
+        {
+          "title": "Start with a familiar for loop",
+          "text": "Starting with values = [1, 2, 3], create result = []. In a loop, calculate value * 2 and add it with result.append(...). The result is [2, 4, 6]. The original remains [1, 2, 3] because the additions went into a new list."
+        },
+        {
+          "title": "Express the same steps in one line",
+          "text": "result = [value * 2 for value in values] expresses the same simple process. Read the for clause first: take each value from values. Then read value * 2: what each item becomes. The surrounding brackets collect those results into a list."
+        },
+        {
+          "title": "Add a filter when needed",
+          "text": "[value * 2 for value in values if value >= 2] keeps values at least 2, then doubles them, giving [4, 6]. Check a small list by hand. For nested loops or complicated conditions, an ordinary for loop may be clearer. The goal is to explain each result, not to minimize line count."
+        }
+      ],
+      "formalDefinition": {
+        "text": "[expression for item in data if condition] filters items, evaluates an expression, and collects the results in a new list. The condition is optional.",
+        "conditions": [
+          "Each example runs independently from the beginning. Start with the stated inputs, then change one thing."
+        ]
+      },
+      "derivation": [
+        {
+          "text": "Start with an empty result."
+        },
+        {
+          "text": "Double and append each item."
+        },
+        {
+          "text": "The three results are 2, 4, 6."
+        }
+      ],
+      "interactiveVisual": {
+        "kind": "python-trace",
+        "prediction": "With a threshold of 2, which numbers remain and what are their doubled values?",
+        "caption": "Choose an input and predict the result, then select Next step. The arrow marks the next statement to execute; the side panel shows current variables and output produced so far.",
+        "experiment": {
+          "code": "values = [1, 2, 3]\nminimum = 2\nresult = []\nfor value in values:\n    if value >= minimum:\n        result.append(value * 2)\nprint(result)\n",
+          "stdout": "[4, 6]\n",
+          "stdin": ""
+        },
+        "followUp": "Set the threshold to 4. Does anything enter the result? This replay expands the comprehension into separate steps.",
+        "codeTemplate": "values = [1, 2, 3]\nminimum = {{minimum}}\nresult = []\nfor value in values:\n    if value >= minimum:\n        result.append(value * 2)\nprint(result)\n",
+        "controls": [
+          {
+            "name": "minimum",
+            "label": "Minimum value to keep",
+            "values": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "defaultIndex": 1
+          }
+        ],
+        "watch": [
+          "values",
+          "minimum",
+          "value",
+          "result"
+        ]
+      },
+      "workedExamples": [
+        {
+          "title": "Collect results with a loop",
+          "problem": "Double 1, 2, and 3 separately.",
+          "steps": [
+            "Start with an empty result.",
+            "Double and append each item.",
+            "The three results are 2, 4, 6."
+          ],
+          "answer": {
+            "code": "values = [1, 2, 3]\nresult = []\nfor value in values:\n    result.append(value * 2)\nprint(result)\n",
+            "stdout": "[2, 4, 6]\n",
+            "stdin": ""
+          }
+        },
+        {
+          "title": "Write a comprehension",
+          "problem": "Keep values at least 2, then double them.",
+          "steps": [
+            "1 fails the condition and is skipped.",
+            "2 and 3 remain.",
+            "Multiplying each by 2 gives 4 and 6."
+          ],
+          "answer": {
+            "code": "values = [1, 2, 3]\nresult = [value * 2 for value in values if value >= 2]\nprint(result)\n",
+            "stdout": "[4, 6]\n",
+            "stdin": ""
+          }
+        }
+      ],
+      "commonMistakes": [
+        {
+          "id": "comprehensions-m1",
+          "claim": "A comprehension is always preferable to an ordinary loop.",
+          "correction": "A comprehension suits simple tasks. An ordinary loop is easier to inspect when the steps are complex."
+        },
+        {
+          "id": "comprehensions-m2",
+          "claim": "Creating result automatically changes values.",
+          "correction": "Here results go into a new list. The original list does not change."
+        }
+      ],
+      "practice": [
+        {
+          "problem": "Add 1 to each item in [1, 2] and collect a new list.",
+          "hint": "The leading expression is value + 1.",
+          "solution": [
+            "1 becomes 2; 2 becomes 3."
+          ],
+          "answer": {
+            "code": "values = [1, 2]\nresult = [value + 1 for value in values]\nprint(result)\n",
+            "stdout": "[2, 3]\n",
+            "stdin": ""
+          },
+          "id": "comprehensions-p1",
+          "difficulty": 2,
+          "misconceptionTags": [
+            "comprehensions-m1"
+          ]
+        },
+        {
+          "problem": "Keep only values at least 2 from [1, 2, 3].",
+          "hint": "Keep value as the leading expression.",
+          "solution": [
+            "Filter without changing the retained values."
+          ],
+          "answer": {
+            "code": "values = [1, 2, 3]\nresult = [value for value in values if value >= 2]\nprint(result)\n",
+            "stdout": "[2, 3]\n",
+            "stdin": ""
+          },
+          "id": "comprehensions-p2",
+          "difficulty": 2,
+          "misconceptionTags": [
+            "comprehensions-m2"
+          ]
+        },
+        {
+          "problem": "Solve the previous exercise with an ordinary loop.",
+          "hint": "Append only after the if condition passes.",
+          "solution": [
+            "Only 2 and 3 enter the new list."
+          ],
+          "answer": {
+            "code": "values = [1, 2, 3]\nresult = []\nfor value in values:\n    if value >= 2:\n        result.append(value)\nprint(result)\n",
+            "stdout": "[2, 3]\n",
+            "stdin": ""
+          },
+          "id": "comprehensions-p3",
+          "difficulty": 2,
+          "misconceptionTags": [
+            "comprehensions-m1"
+          ]
+        },
+        {
+          "problem": "What results from doubling every item in an empty list?",
+          "hint": "There are no items to process.",
+          "solution": [
+            "The new list is empty too."
+          ],
+          "answer": {
+            "code": "values = []\nresult = [value * 2 for value in values]\nprint(result)\n",
+            "stdout": "[]\n",
+            "stdin": ""
+          },
+          "id": "comprehensions-p4",
+          "difficulty": 2,
+          "misconceptionTags": [
+            "comprehensions-m2"
+          ]
+        }
+      ],
+      "learningCheck": {
+        "question": "How can you check a comprehension you do not understand?",
+        "correctIndex": 1,
+        "choices": [
+          "Make it shorter first",
+          "Expand it into an ordinary for loop",
+          "Assume it modifies the original list directly"
+        ],
+        "explanation": "Expand it into for, if, and append, then trace the items by hand.",
+        "feedback": [
+          "Shorter code may hide the steps.",
+          "Yes. Use the familiar loop to check each item.",
+          "This comprehension creates a new list; the original does not change."
+        ]
+      },
+      "prerequisites": [
+        "tuples-sets"
+      ],
+      "difficulty": 3,
+      "misconceptionTags": [
+        "comprehensions-m1",
+        "comprehensions-m2"
+      ],
+      "provenance": {
+        "author": "AI-generated",
+        "version": "0.2.1",
+        "status": "revised",
+        "humanReviewed": false
+      },
+      "sources": [
+        "python-tutorial",
+        "python-data"
+      ],
+      "furtherReading": []
+    },
+    {
+      "id": "functions",
+      "chapterId": "chapter-4",
+      "number": "4.1",
+      "title": "Functions, parameters, and return values",
+      "subtitle": "Name a reusable sequence of steps, give it input when calling it, and capture its result.",
+      "concept": "Name a reusable sequence of steps, give it input when calling it, and capture its result.",
+      "intuition": "A doubling machine takes 3 and returns 6.",
+      "objectives": [
+        "Give the steps a name",
+        "Call the function and capture its result",
+        "Returning and printing are different"
+      ],
+      "body": [
+        {
+          "title": "Give the steps a name",
+          "text": "def double(number): defines a function named double. A function is a reusable sequence of steps; number names its input and is called a parameter. The indented return number * 2 doubles it and sends the result to the caller. Defining the function records the steps; it does not yet compute with 3."
+        },
+        {
+          "title": "Call the function and capture its result",
+          "text": "result = double(3) makes the call: number receives 3, the calculation produces 6, and return sends 6 back for result to hold. print(result) displays it. Call again with a different input without rewriting the function body."
+        },
+        {
+          "title": "Returning and printing are different",
+          "text": "print displays content; return sends a value back to the caller. To continue calculating with the result, return it. A function that prints but has no return statement returns None, which cannot be used as a number in this calculation. Its parameter is local to the call."
+        }
+      ],
+      "formalDefinition": {
+        "text": "def defines a function; a call supplies input. return sends a result to the caller, while print displays content.",
+        "conditions": [
+          "Define the function before calling it. Use return when the caller needs a result for further calculation."
+        ]
+      },
+      "derivation": [
+        {
+          "text": "def records the steps."
+        },
+        {
+          "text": "double(3) binds number to 3 for this call."
+        },
+        {
+          "text": "return sends back 6, which result stores."
+        }
+      ],
+      "interactiveVisual": {
+        "kind": "python-trace",
+        "prediction": "Does defining the function print anything? What changes when it is called with 3?",
+        "caption": "Choose an input and predict the result, then select Next step. The arrow marks the next statement to execute; the side panel shows current variables and output produced so far.",
+        "experiment": {
+          "code": "def double(number):\n    return number * 2\n\nresult = double(3)\nprint(result)\n",
+          "stdout": "6\n",
+          "stdin": ""
+        },
+        "followUp": "Try 0. Follow execution from the call into the function and back.",
+        "codeTemplate": "def double(number):\n    return number * 2\n\nresult = double({{number}})\nprint(result)\n",
+        "controls": [
+          {
+            "name": "number",
+            "label": "Function input",
+            "values": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "defaultIndex": 3
+          }
+        ],
+        "watch": [
+          "number",
+          "result"
+        ]
+      },
+      "workedExamples": [
+        {
+          "title": "A doubling function",
+          "problem": "Pass in 3, capture its double, and display it.",
+          "steps": [
+            "def records the steps.",
+            "double(3) binds number to 3 for this call.",
+            "return sends back 6, which result stores."
+          ],
+          "answer": {
+            "code": "def double(number):\n    return number * 2\n\nresult = double(3)\nprint(result)\n",
+            "stdout": "6\n",
+            "stdin": ""
+          }
+        },
+        {
+          "title": "Use a returned value",
+          "problem": "Pass in 4 and add 1 to the returned result.",
+          "steps": [
+            "double(4) returns 8.",
+            "The caller adds 1 to get 9."
+          ],
+          "answer": {
+            "code": "def double(number):\n    return number * 2\n\nresult = double(4) + 1\nprint(result)\n",
+            "stdout": "9\n",
+            "stdin": ""
+          }
+        }
+      ],
+      "commonMistakes": [
+        {
+          "id": "functions-m1",
+          "claim": "Writing def already calculates the result.",
+          "correction": "def records the steps. Calling the function runs them."
+        },
+        {
+          "id": "functions-m2",
+          "claim": "print and return are interchangeable.",
+          "correction": "print displays a value; return gives it to the caller for further use."
+        }
+      ],
+      "practice": [
+        {
+          "problem": "Call the doubling function with 5.",
+          "hint": "Define it, then call it.",
+          "solution": [
+            "It returns 10."
+          ],
+          "answer": {
+            "code": "def double(number):\n    return number * 2\n\nprint(double(5))\n",
+            "stdout": "10\n",
+            "stdin": ""
+          },
+          "id": "functions-p1",
+          "difficulty": 1,
+          "misconceptionTags": [
+            "functions-m1"
+          ]
+        },
+        {
+          "problem": "Write add_one to return its input plus 1.",
+          "hint": "Use return.",
+          "solution": [
+            "With input 3, it returns 4."
+          ],
+          "answer": {
+            "code": "def add_one(number):\n    return number + 1\n\nprint(add_one(3))\n",
+            "stdout": "4\n",
+            "stdin": ""
+          },
+          "id": "functions-p2",
+          "difficulty": 2,
+          "misconceptionTags": [
+            "functions-m2"
+          ]
+        },
+        {
+          "problem": "Call add_one twice, with 1 and then 4.",
+          "hint": "Each call receives its own input.",
+          "solution": [
+            "The results are 2 and 5."
+          ],
+          "answer": {
+            "code": "def add_one(number):\n    return number + 1\n\nprint(add_one(1))\nprint(add_one(4))\n",
+            "stdout": "2\n5\n",
+            "stdin": ""
+          },
+          "id": "functions-p3",
+          "difficulty": 2,
+          "misconceptionTags": [
+            "functions-m1"
+          ]
+        },
+        {
+          "problem": "What should the doubling function return for 0?",
+          "hint": "0 is a valid input.",
+          "solution": [
+            "0 * 2 = 0."
+          ],
+          "answer": {
+            "code": "def double(number):\n    return number * 2\n\nprint(double(0))\n",
+            "stdout": "0\n",
+            "stdin": ""
+          },
+          "id": "functions-p4",
+          "difficulty": 1,
+          "misconceptionTags": [
+            "functions-m2"
+          ]
+        }
+      ],
+      "learningCheck": {
+        "question": "What sends a computed result back to a function's caller?",
+        "correctIndex": 1,
+        "choices": [
+          "print",
+          "return",
+          "Writing def alone performs the calculation"
+        ],
+        "explanation": "return gives a value to the caller; print only displays it.",
+        "feedback": [
+          "print displays output. It does not return the computed value to the caller.",
+          "Yes. The caller can capture the return value and use it.",
+          "def records the steps; a call executes them."
+        ]
+      },
+      "prerequisites": [
+        "comprehensions"
+      ],
+      "difficulty": 4,
+      "misconceptionTags": [
+        "functions-m1",
+        "functions-m2"
+      ],
+      "provenance": {
+        "author": "AI-generated",
+        "version": "0.2.1",
+        "status": "revised",
+        "humanReviewed": false
+      },
+      "sources": [
+        "python-tutorial",
+        "python-control"
+      ],
+      "furtherReading": []
+    },
+    {
+      "id": "arguments",
+      "chapterId": "chapter-4",
+      "number": "4.2",
+      "title": "Arguments and default values",
+      "subtitle": "Pass values by position or parameter name. Give a parameter a default for common cases.",
+      "concept": "Pass values by position or parameter name. Give a parameter a default for common cases.",
+      "intuition": "Order drinks by specifying price and quantity. If no quantity is given, prepare one.",
+      "objectives": [
+        "Identify what each input means",
+        "Give a common value a default",
+        "Decide whether a list input may change"
+      ],
+      "body": [
+        {
+          "title": "Identify what each input means",
+          "text": "def cost(price, count): has two parameters. cost(3, 2) passes 3 to price and 2 to count by position, producing 6. Reordering arguments can change their meaning. State the units of inputs such as unit price and quantity."
+        },
+        {
+          "title": "Give a common value a default",
+          "text": "def cost(price, count=1): uses 1 when count is omitted. cost(3) buys one item; cost(3, 2) buys two. cost(price=3, count=2) uses keyword arguments to name the parameters explicitly. Here the defaulted parameter follows the required one."
+        },
+        {
+          "title": "Decide whether a list input may change",
+          "text": "To total a list, read its items and return total without adding to or deleting from the input. This makes the function easier to predict. Start with numbers or strings as defaults: a default [] can be shared across calls. The optional note explains why."
+        }
+      ],
+      "formalDefinition": {
+        "text": "Arguments can be supplied by position or by name. A default applies when its argument is omitted.",
+        "conditions": [
+          "An explicit argument overrides the default. Required parameters precede defaulted parameters here."
+        ]
+      },
+      "derivation": [
+        {
+          "text": "count defaults to 1."
+        },
+        {
+          "text": "Passing 2 overrides that default."
+        },
+        {
+          "text": "The results are 3 and 6."
+        }
+      ],
+      "interactiveVisual": {
+        "kind": "python-trace",
+        "prediction": "With unit price 3 and quantity 2, what is returned?",
+        "caption": "Choose an input and predict the result, then select Next step. The arrow marks the next statement to execute; the side panel shows current variables and output produced so far.",
+        "experiment": {
+          "code": "def cost(price, count=1):\n    return price * count\n\nresult = cost(3, 2)\nprint(result)\n",
+          "stdout": "6\n",
+          "stdin": ""
+        },
+        "followUp": "Select a quantity of 0. To test the default locally, change the call to cost(3).",
+        "codeTemplate": "def cost(price, count=1):\n    return price * count\n\nresult = cost(3, {{count}})\nprint(result)\n",
+        "controls": [
+          {
+            "name": "count",
+            "label": "Quantity to buy",
+            "values": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "defaultIndex": 2
+          }
+        ],
+        "watch": [
+          "price",
+          "count",
+          "result"
+        ]
+      },
+      "workedExamples": [
+        {
+          "title": "One item by default",
+          "problem": "At unit price 3, buy one item and then two.",
+          "steps": [
+            "count defaults to 1.",
+            "Passing 2 overrides that default.",
+            "The results are 3 and 6."
+          ],
+          "answer": {
+            "code": "def cost(price, count=1):\n    return price * count\n\nprint(cost(3))\nprint(cost(3, 2))\n",
+            "stdout": "3\n6\n",
+            "stdin": ""
+          }
+        },
+        {
+          "title": "Name the arguments",
+          "problem": "Buy 3 items at unit price 4.",
+          "steps": [
+            "price explicitly receives 4.",
+            "count explicitly receives 3."
+          ],
+          "answer": {
+            "code": "def cost(price, count=1):\n    return price * count\n\nprint(cost(count=3, price=4))\n",
+            "stdout": "12\n",
+            "stdin": ""
+          }
+        }
+      ],
+      "commonMistakes": [
+        {
+          "id": "arguments-m1",
+          "claim": "Passing quantity 0 still activates the default 1.",
+          "correction": "An explicit 0 is used as 0. The default applies only when the argument is omitted."
+        },
+        {
+          "id": "arguments-m2",
+          "claim": "Positional arguments can be reordered freely.",
+          "correction": "Each position corresponds to a parameter. Use keyword arguments when the order is unclear."
+        }
+      ],
+      "practice": [
+        {
+          "problem": "Use unit price 5 and the default quantity 1.",
+          "hint": "Pass only price.",
+          "solution": [
+            "5 * 1 = 5."
+          ],
+          "answer": {
+            "code": "def cost(price, count=1):\n    return price * count\n\nprint(cost(5))\n",
+            "stdout": "5\n",
+            "stdin": ""
+          },
+          "id": "arguments-p1",
+          "difficulty": 1,
+          "misconceptionTags": [
+            "arguments-m1"
+          ]
+        },
+        {
+          "problem": "Call with unit price 5 and quantity 2 using parameter names.",
+          "hint": "Write price=5 and count=2.",
+          "solution": [
+            "The result is 10."
+          ],
+          "answer": {
+            "code": "def cost(price, count=1):\n    return price * count\n\nprint(cost(price=5, count=2))\n",
+            "stdout": "10\n",
+            "stdin": ""
+          },
+          "id": "arguments-p2",
+          "difficulty": 1,
+          "misconceptionTags": [
+            "arguments-m2"
+          ]
+        },
+        {
+          "problem": "Write total_of to read [2, 3] and return its sum.",
+          "hint": "Do not modify the input list.",
+          "solution": [
+            "The accumulated sum is 5.",
+            "The original list still has two items."
+          ],
+          "answer": {
+            "code": "def total_of(values):\n    total = 0\n    for value in values:\n        total = total + value\n    return total\n\nvalues = [2, 3]\nprint(total_of(values))\nprint(values)\n",
+            "stdout": "5\n[2, 3]\n",
+            "stdin": ""
+          },
+          "id": "arguments-p3",
+          "difficulty": 2,
+          "misconceptionTags": [
+            "arguments-m1"
+          ]
+        },
+        {
+          "problem": "What is the cost of quantity 0 at unit price 5?",
+          "hint": "Pass 0 explicitly.",
+          "solution": [
+            "0 overrides the default 1.",
+            "The cost is 0."
+          ],
+          "answer": {
+            "code": "def cost(price, count=1):\n    return price * count\n\nprint(cost(5, 0))\n",
+            "stdout": "0\n",
+            "stdin": ""
+          },
+          "id": "arguments-p4",
+          "difficulty": 1,
+          "misconceptionTags": [
+            "arguments-m2"
+          ]
+        }
+      ],
+      "learningCheck": {
+        "question": "For cost(price, count=1), what is count in cost(5, 0)?",
+        "correctIndex": 1,
+        "choices": [
+          "1, because defaults always apply",
+          "0, the explicit argument",
+          "5, because argument order does not matter"
+        ],
+        "explanation": "An explicit argument overrides its default.",
+        "feedback": [
+          "A default is used only when that argument is omitted.",
+          "Yes. Passing 0 computes the price of zero items.",
+          "The second position supplies count, not the first."
+        ]
+      },
+      "prerequisites": [
+        "functions"
+      ],
+      "difficulty": 4,
+      "misconceptionTags": [
+        "arguments-m1",
+        "arguments-m2"
+      ],
+      "provenance": {
+        "author": "AI-generated",
+        "version": "0.2.1",
+        "status": "revised",
+        "humanReviewed": false
+      },
+      "sources": [
+        "python-tutorial",
+        "python-control"
+      ],
+      "furtherReading": [
+        {
+          "title": "Optional: why [] is a risky default",
+          "text": "A default value is created once when the function is defined. In def add(item, items=[]):, appending to items makes calls that omit items share one list. Use items=None, then if items is None: items = [] inside the function. None marks an omitted list, and is None checks for that marker. Beginners can instead make the list argument required to avoid hidden state."
+        }
+      ]
+    },
+    {
+      "id": "modules",
+      "chapterId": "chapter-4",
+      "number": "4.3",
+      "title": "Modules: reusable tools",
+      "subtitle": "Put reusable functions in a separate file and import them from another file.",
+      "concept": "Put reusable functions in a separate file and import them from another file.",
+      "intuition": "Keep familiar tools in a toolbox and retrieve them by name.",
+      "objectives": [
+        "Use a built-in Python module",
+        "Put your tools in helpers.py",
+        "Keep demonstrations out of imports"
+      ],
+      "body": [
+        {
+          "title": "Use a built-in Python module",
+          "text": "import math loads Python's built-in math module, a collection of related tools. math.sqrt(9) calls its square-root function and returns 3.0. The dot joins the module name to the tool name. You do not need to implement the square-root algorithm."
+        },
+        {
+          "title": "Put your tools in helpers.py",
+          "text": "The appendix defines double in helpers.py. After from helpers import double, main.py can call double(5). Save the files in one directory, enter it in a terminal, and run main.py. Do not name your own file math.py or json.py: it can hide the standard module."
+        },
+        {
+          "title": "Keep demonstrations out of imports",
+          "text": "Ordinary top-level statements also execute the first time a module is imported. To avoid prompting the user during an import, put demonstrations and command-line operations under if __name__ == \"__main__\":. Treat this as an entry-point guard: it runs when the file is executed directly, not when imported. You need not study the double underscores yet."
+        }
+      ],
+      "formalDefinition": {
+        "text": "import makes module tools available. An entry-point guard runs a demonstration only when the file is executed directly.",
+        "conditions": [
+          "Save helpers.py and main.py in the same directory for the two-file example.",
+          "This lesson gives sqrt nonnegative inputs."
+        ]
+      },
+      "derivation": [
+        {
+          "text": "import math loads the module."
+        },
+        {
+          "text": "math.sqrt(9) produces 3.0."
+        },
+        {
+          "text": "print displays the result."
+        }
+      ],
+      "interactiveVisual": {
+        "kind": "python-trace",
+        "prediction": "What is the square root of 9? Will it display as an integer or a floating-point number?",
+        "caption": "Choose an input and predict the result, then select Next step. The arrow marks the next statement to execute; the side panel shows current variables and output produced so far.",
+        "experiment": {
+          "code": "import math\nnumber = 9\nresult = math.sqrt(number)\nprint(result)\n",
+          "stdout": "3.0\n",
+          "stdin": ""
+        },
+        "followUp": "Try 0, 4, and 16 and check their known square roots.",
+        "codeTemplate": "import math\nnumber = {{number}}\nresult = math.sqrt(number)\nprint(result)\n",
+        "controls": [
+          {
+            "name": "number",
+            "label": "Input number",
+            "values": [
+              0,
+              4,
+              9,
+              16,
+              25
+            ],
+            "defaultIndex": 2
+          }
+        ],
+        "watch": [
+          "number",
+          "result"
+        ]
+      },
+      "workedExamples": [
+        {
+          "title": "Use the square-root tool",
+          "problem": "Find the square root of 9.",
+          "steps": [
+            "import math loads the module.",
+            "math.sqrt(9) produces 3.0.",
+            "print displays the result."
+          ],
+          "answer": {
+            "code": "import math\nresult = math.sqrt(9)\nprint(result)\n",
+            "stdout": "3.0\n",
+            "stdin": ""
+          }
+        },
+        {
+          "title": "Run the entry point",
+          "problem": "Run this file directly to display the doubled value.",
+          "steps": [
+            "Define the reusable function first.",
+            "The entry-point condition is true when run directly.",
+            "double(5) returns 10."
+          ],
+          "answer": {
+            "code": "def double(number):\n    return number * 2\n\nif __name__ == \"__main__\":\n    print(double(5))\n",
+            "stdout": "10\n",
+            "stdin": ""
+          }
+        }
+      ],
+      "commonMistakes": [
+        {
+          "id": "modules-m1",
+          "claim": "Importing a file never runs its top-level statements.",
+          "correction": "Ordinary top-level statements execute too. Put demonstrations inside the entry-point guard."
+        },
+        {
+          "id": "modules-m2",
+          "claim": "My math.py cannot affect import math.",
+          "correction": "A local file with the same name can hide the standard module. Choose a different filename."
+        }
+      ],
+      "practice": [
+        {
+          "problem": "Find the square root of 16.",
+          "hint": "Import math, then use sqrt.",
+          "solution": [
+            "The result is 4.0."
+          ],
+          "answer": {
+            "code": "import math\nprint(math.sqrt(16))\n",
+            "stdout": "4.0\n",
+            "stdin": ""
+          },
+          "id": "modules-p1",
+          "difficulty": 1,
+          "misconceptionTags": [
+            "modules-m1"
+          ]
+        },
+        {
+          "problem": "Find the square root of 0.",
+          "hint": "0 is a boundary input for square root.",
+          "solution": [
+            "The result is 0.0."
+          ],
+          "answer": {
+            "code": "import math\nprint(math.sqrt(0))\n",
+            "stdout": "0.0\n",
+            "stdin": ""
+          },
+          "id": "modules-p2",
+          "difficulty": 1,
+          "misconceptionTags": [
+            "modules-m2"
+          ]
+        },
+        {
+          "problem": "Run an entry point that prints Tool demonstration.",
+          "hint": "Use the supplied entry-point guard.",
+          "solution": [
+            "When run directly, __name__ is \"__main__\"."
+          ],
+          "answer": {
+            "code": "if __name__ == \"__main__\":\n    print(\"Tool demonstration\")\n",
+            "stdout": "Tool demonstration\n",
+            "stdin": ""
+          },
+          "id": "modules-p3",
+          "difficulty": 2,
+          "misconceptionTags": [
+            "modules-m1"
+          ]
+        },
+        {
+          "problem": "Import sqrt by itself and find the square root of 25.",
+          "hint": "Use from math import sqrt.",
+          "solution": [
+            "Call sqrt(25) directly this time."
+          ],
+          "answer": {
+            "code": "from math import sqrt\nprint(sqrt(25))\n",
+            "stdout": "5.0\n",
+            "stdin": ""
+          },
+          "id": "modules-p4",
+          "difficulty": 1,
+          "misconceptionTags": [
+            "modules-m2"
+          ]
+        }
+      ],
+      "learningCheck": {
+        "question": "Where should demonstration code go in a module intended for import?",
+        "correctIndex": 1,
+        "choices": [
+          "At the top level, prompting on import",
+          "Under if __name__ == \"__main__\":",
+          "In a comment, which will execute too"
+        ],
+        "explanation": "The guard groups the demonstration steps that should run only when the file is executed directly.",
+        "feedback": [
+          "Top-level statements run on import and may interrupt the caller.",
+          "Yes. Run the demonstration directly; make tools available on import.",
+          "Comments do not execute."
+        ]
+      },
+      "prerequisites": [
+        "arguments",
+        "functions"
+      ],
+      "difficulty": 4,
+      "misconceptionTags": [
+        "modules-m1",
+        "modules-m2"
+      ],
+      "provenance": {
+        "author": "AI-generated",
+        "version": "0.2.1",
+        "status": "revised",
+        "humanReviewed": false
+      },
+      "sources": [
+        "python-tutorial",
+        "python-modules",
+        "python-venv",
+        "python-pathlib"
+      ],
+      "furtherReading": []
+    },
+    {
+      "id": "exceptions",
+      "chapterId": "chapter-4",
+      "number": "4.4",
+      "title": "Exceptions and input validation",
+      "subtitle": "When users may enter invalid data, give a fallible conversion a clear failure path.",
+      "concept": "When users may enter invalid data, give a fallible conversion a clear failure path.",
+      "intuition": "Someone enters two instead of a numeric quantity. Explain the requirement before asking again.",
+      "objectives": [
+        "Find the operation that can fail",
+        "Handle the expected failure with try and except",
+        "Conversion does not guarantee validity"
+      ],
+      "body": [
+        {
+          "title": "Find the operation that can fail",
+          "text": "int(\"3\") succeeds, but int(\"three\") raises ValueError: the text is unsuitable for this conversion. Without handling, the program stops there. Identify the error you intend to handle instead of wrapping everything in an indistinct failure case."
+        },
+        {
+          "title": "Handle the expected failure with try and except",
+          "text": "The try body attempts the conversion. except ValueError: handles only that exception type. Success skips except; failure skips the remaining try statements and enters except. Handling an exception does not make the failed operation succeed: it provides understandable feedback."
+        },
+        {
+          "title": "Conversion does not guarantee validity",
+          "text": "\"-2\" converts to an integer, but a shopping quantity cannot be negative. After conversion, test count < 0. A function can reject it with raise ValueError(\"Quantity cannot be negative\"). Do not catch every exception indiscriminately, or spelling bugs and file problems may be misreported as quantity errors."
+        }
+      ],
+      "formalDefinition": {
+        "text": "try attempts a fallible operation; except handles a specified exception. raise explicitly rejects invalid input.",
+        "conditions": [
+          "Catch only expected exception types. After conversion, check the allowed range."
+        ]
+      },
+      "derivation": [
+        {
+          "text": "try attempts the conversion."
+        },
+        {
+          "text": "The conversion fails, so execution enters the ValueError handler."
+        },
+        {
+          "text": "Print a clear requirement rather than continuing with a fabricated number."
+        }
+      ],
+      "interactiveVisual": {
+        "kind": "python-trace",
+        "prediction": "Do inputs three and -2 follow the same path?",
+        "caption": "Choose an input and predict the result, then select Next step. The arrow marks the next statement to execute; the side panel shows current variables and output produced so far.",
+        "experiment": {
+          "code": "text = '3'\ntry:\n    count = int(text)\n    if count < 0:\n        print(\"Cannot be negative\")\n    else:\n        print(count)\nexcept ValueError:\n    print(\"Enter an integer\")\n",
+          "stdout": "3\n",
+          "stdin": ""
+        },
+        "followUp": "Choose valid text, a negative value, and invalid text. Compare the paths.",
+        "codeTemplate": "text = {{text}}\ntry:\n    count = int(text)\n    if count < 0:\n        print(\"Cannot be negative\")\n    else:\n        print(count)\nexcept ValueError:\n    print(\"Enter an integer\")\n",
+        "controls": [
+          {
+            "name": "text",
+            "label": "Simulated input text",
+            "values": [
+              "3",
+              "0",
+              "-2",
+              "three"
+            ],
+            "defaultIndex": 0
+          }
+        ],
+        "watch": [
+          "text",
+          "count"
+        ]
+      },
+      "workedExamples": [
+        {
+          "title": "Handle invalid text",
+          "problem": "Try converting three into a quantity.",
+          "steps": [
+            "try attempts the conversion.",
+            "The conversion fails, so execution enters the ValueError handler.",
+            "Print a clear requirement rather than continuing with a fabricated number."
+          ],
+          "answer": {
+            "code": "text = \"three\"\ntry:\n    count = int(text)\n    print(count)\nexcept ValueError:\n    print(\"Enter an integer, such as 3\")\n",
+            "stdout": "Enter an integer, such as 3\n",
+            "stdin": ""
+          }
+        },
+        {
+          "title": "Reject a negative quantity",
+          "problem": "Define a quantity validator and test -2.",
+          "steps": [
+            "Conversion to -2 succeeds.",
+            "The negative-value check raises ValueError.",
+            "The caller displays the exception message."
+          ],
+          "answer": {
+            "code": "def read_count(text):\n    count = int(text)\n    if count < 0:\n        raise ValueError(\"Quantity cannot be negative\")\n    return count\n\ntry:\n    print(read_count(\"-2\"))\nexcept ValueError as error:\n    print(error)\n",
+            "stdout": "Quantity cannot be negative\n",
+            "stdin": ""
+          }
+        }
+      ],
+      "commonMistakes": [
+        {
+          "id": "exceptions-m1",
+          "claim": "Anything convertible to an integer is a valid quantity.",
+          "correction": "Conversion checks the representation. Range requirements, such as nonnegativity, need a separate check."
+        },
+        {
+          "id": "exceptions-m2",
+          "claim": "After an exception is caught, Python automatically supplies a valid number.",
+          "correction": "except runs only the handler you wrote. It does not repair the input."
+        }
+      ],
+      "practice": [
+        {
+          "problem": "Convert valid text \"4\" and display it.",
+          "hint": "A successful conversion skips except.",
+          "solution": [
+            "The result is 4."
+          ],
+          "answer": {
+            "code": "try:\n    count = int(\"4\")\n    print(count)\nexcept ValueError:\n    print(\"Enter an integer\")\n",
+            "stdout": "4\n",
+            "stdin": ""
+          },
+          "id": "exceptions-p1",
+          "difficulty": 1,
+          "misconceptionTags": [
+            "exceptions-m1"
+          ]
+        },
+        {
+          "problem": "Handle the failure to convert \"4.5\" directly to an integer.",
+          "hint": "Catch only ValueError.",
+          "solution": [
+            "Conversion fails and prints Enter an integer."
+          ],
+          "answer": {
+            "code": "try:\n    count = int(\"4.5\")\n    print(count)\nexcept ValueError:\n    print(\"Enter an integer\")\n",
+            "stdout": "Enter an integer\n",
+            "stdin": ""
+          },
+          "id": "exceptions-p2",
+          "difficulty": 2,
+          "misconceptionTags": [
+            "exceptions-m2"
+          ]
+        },
+        {
+          "problem": "Convert -1, then print Cannot be negative.",
+          "hint": "Check the range after successful conversion.",
+          "solution": [
+            "Conversion succeeds, but the value is not a valid quantity."
+          ],
+          "answer": {
+            "code": "count = int(\"-1\")\nif count < 0:\n    print(\"Cannot be negative\")\nelse:\n    print(count)\n",
+            "stdout": "Cannot be negative\n",
+            "stdin": ""
+          },
+          "id": "exceptions-p3",
+          "difficulty": 2,
+          "misconceptionTags": [
+            "exceptions-m1"
+          ]
+        },
+        {
+          "problem": "Quantity 0 is allowed. What should the program display?",
+          "hint": "Reject values below 0, not equal to 0.",
+          "solution": [
+            "0 is not less than 0."
+          ],
+          "answer": {
+            "code": "count = int(\"0\")\nif count < 0:\n    print(\"Cannot be negative\")\nelse:\n    print(count)\n",
+            "stdout": "0\n",
+            "stdin": ""
+          },
+          "id": "exceptions-p4",
+          "difficulty": 2,
+          "misconceptionTags": [
+            "exceptions-m2"
+          ]
+        }
+      ],
+      "learningCheck": {
+        "question": "int can convert \"-2\". Does that make it a valid shopping quantity?",
+        "correctIndex": 1,
+        "choices": [
+          "Successful conversion always means valid input",
+          "It still needs a negative-value check",
+          "except automatically changes negative values to 0"
+        ],
+        "explanation": "Conversion checks whether text represents a number. Validation checks whether that number is allowed.",
+        "feedback": [
+          "Successful conversion only shows that the text represents an integer.",
+          "Yes. The application requirement needs a separate check.",
+          "except does not automatically change input or supply a replacement value."
+        ]
+      },
+      "prerequisites": [
+        "modules"
+      ],
+      "difficulty": 4,
+      "misconceptionTags": [
+        "exceptions-m1",
+        "exceptions-m2"
+      ],
+      "provenance": {
+        "author": "AI-generated",
+        "version": "0.2.1",
+        "status": "revised",
+        "humanReviewed": false
+      },
+      "sources": [
+        "python-tutorial",
+        "python-errors"
+      ],
+      "furtherReading": []
+    },
+    {
+      "id": "text-files",
+      "chapterId": "chapter-5",
+      "number": "5.1",
+      "title": "Text files and paths",
+      "subtitle": "Variables disappear when a program ends. Save data to a file to read it next time.",
+      "concept": "Variables disappear when a program ends. Save data to a file to read it next time.",
+      "intuition": "Write today's list on paper so you can read it tomorrow.",
+      "objectives": [
+        "Choose where to write",
+        "Specify the file mode and text encoding",
+        "Reading a file still gives text"
+      ],
+      "body": [
+        {
+          "title": "Choose where to write",
+          "text": "notes.txt is a filename. Without a full path, it is relative to the program's current working directory, which may differ from the code directory. Start in a separate practice folder. The web replay uses an isolated example directory and does not write files on your computer."
+        },
+        {
+          "title": "Specify the file mode and text encoding",
+          "text": "with open(\"notes.txt\", \"w\", encoding=\"utf-8\") as file: opens a file for writing. Mode w truncates an existing file, so practice with a new filename. The encoding determines how text is stored; this book consistently uses UTF-8. file.write(\"Buy apples\\n\") writes text; \\n is a newline. with closes the file when its indented block ends."
+        },
+        {
+          "title": "Reading a file still gives text",
+          "text": "Open the same file in r mode. text = file.read() reads its contents as a string. Use print(text, end=\"\") to preserve the file's newlines without adding another one. Mode a appends to existing content; check the destination first."
+        }
+      ],
+      "formalDefinition": {
+        "text": "with open(...) opens a file and closes it at the end of the block. r reads, w overwrites, and a appends.",
+        "conditions": [
+          "w overwrites an existing file. Use new filenames in a separate practice directory.",
+          "Relative paths start at the current working directory. Use UTF-8 consistently when reading and writing."
+        ]
+      },
+      "derivation": [
+        {
+          "text": "w creates or overwrites the example file and writes a line."
+        },
+        {
+          "text": "The file closes when the with block ends."
+        },
+        {
+          "text": "r reopens it to read and display the saved text."
+        }
+      ],
+      "interactiveVisual": {
+        "kind": "python-trace",
+        "prediction": "Does text change when it is written to a file and read back?",
+        "caption": "Choose an input and predict the result, then select Next step. The arrow marks the next statement to execute; the side panel shows current variables and output produced so far.",
+        "experiment": {
+          "code": "message = 'Buy apples'\nwith open(\"notes.txt\", \"w\", encoding=\"utf-8\") as file:\n    file.write(message)\nwith open(\"notes.txt\", \"r\", encoding=\"utf-8\") as file:\n    text = file.read()\nprint(text)\n",
+          "stdout": "Buy apples\n",
+          "stdin": ""
+        },
+        "followUp": "Try empty text and inspect text after reading. Each replay starts in a fresh example directory.",
+        "codeTemplate": "message = {{message}}\nwith open(\"notes.txt\", \"w\", encoding=\"utf-8\") as file:\n    file.write(message)\nwith open(\"notes.txt\", \"r\", encoding=\"utf-8\") as file:\n    text = file.read()\nprint(text)\n",
+        "controls": [
+          {
+            "name": "message",
+            "label": "Text to save",
+            "values": [
+              "Buy apples",
+              "Practice tomorrow",
+              ""
+            ],
+            "defaultIndex": 0
+          }
+        ],
+        "watch": [
+          "message",
+          "text"
+        ]
+      },
+      "workedExamples": [
+        {
+          "title": "Save a note",
+          "problem": "Write Buy apples, close the file, then read it again.",
+          "steps": [
+            "w creates or overwrites the example file and writes a line.",
+            "The file closes when the with block ends.",
+            "r reopens it to read and display the saved text."
+          ],
+          "answer": {
+            "code": "with open(\"notes.txt\", \"w\", encoding=\"utf-8\") as file:\n    file.write(\"Buy apples\\n\")\nwith open(\"notes.txt\", \"r\", encoding=\"utf-8\") as file:\n    text = file.read()\nprint(text, end=\"\")\n",
+            "stdout": "Buy apples\n",
+            "stdin": ""
+          }
+        },
+        {
+          "title": "Append at the end",
+          "problem": "Keep the first line and add a second with a.",
+          "steps": [
+            "Create the example file first.",
+            "a preserves the existing content and writes at the end.",
+            "Reading the file returns both lines."
+          ],
+          "answer": {
+            "code": "with open(\"notes.txt\", \"w\", encoding=\"utf-8\") as file:\n    file.write(\"Buy apples\\n\")\nwith open(\"notes.txt\", \"a\", encoding=\"utf-8\") as file:\n    file.write(\"Buy bread\\n\")\nwith open(\"notes.txt\", \"r\", encoding=\"utf-8\") as file:\n    text = file.read()\nprint(text, end=\"\")\n",
+            "stdout": "Buy apples\nBuy bread\n",
+            "stdin": ""
+          }
+        }
+      ],
+      "commonMistakes": [
+        {
+          "id": "text-files-m1",
+          "claim": "w appends to existing content.",
+          "correction": "w truncates the file. Use a to append."
+        },
+        {
+          "id": "text-files-m2",
+          "claim": "A relative path always starts at the code file's directory.",
+          "correction": "It starts at the current working directory. Check where the program is running."
+        }
+      ],
+      "practice": [
+        {
+          "problem": "Write Hello to a new hello.txt, then read it.",
+          "hint": "After writing, open it in r mode.",
+          "solution": [
+            "Use the same UTF-8 encoding for writing and reading."
+          ],
+          "answer": {
+            "code": "with open(\"hello.txt\", \"w\", encoding=\"utf-8\") as file:\n    file.write(\"Hello\")\nwith open(\"hello.txt\", \"r\", encoding=\"utf-8\") as file:\n    text = file.read()\nprint(text)\n",
+            "stdout": "Hello\n",
+            "stdin": ""
+          },
+          "id": "text-files-p1",
+          "difficulty": 2,
+          "misconceptionTags": [
+            "text-files-m1"
+          ]
+        },
+        {
+          "problem": "Append B to an example file containing A.",
+          "hint": "Mode a preserves existing content.",
+          "solution": [
+            "Write A first, then append B."
+          ],
+          "answer": {
+            "code": "with open(\"letters.txt\", \"w\", encoding=\"utf-8\") as file:\n    file.write(\"A\")\nwith open(\"letters.txt\", \"a\", encoding=\"utf-8\") as file:\n    file.write(\"B\")\nwith open(\"letters.txt\", \"r\", encoding=\"utf-8\") as file:\n    text = file.read()\nprint(text)\n",
+            "stdout": "AB\n",
+            "stdin": ""
+          },
+          "id": "text-files-p2",
+          "difficulty": 2,
+          "misconceptionTags": [
+            "text-files-m2"
+          ]
+        },
+        {
+          "problem": "Overwrite A with B using w in an example file.",
+          "hint": "Reopening with w discards the old content.",
+          "solution": [
+            "Only B remains."
+          ],
+          "answer": {
+            "code": "with open(\"letters.txt\", \"w\", encoding=\"utf-8\") as file:\n    file.write(\"A\")\nwith open(\"letters.txt\", \"w\", encoding=\"utf-8\") as file:\n    file.write(\"B\")\nwith open(\"letters.txt\", \"r\", encoding=\"utf-8\") as file:\n    text = file.read()\nprint(text)\n",
+            "stdout": "B\n",
+            "stdin": ""
+          },
+          "id": "text-files-p3",
+          "difficulty": 2,
+          "misconceptionTags": [
+            "text-files-m1"
+          ]
+        },
+        {
+          "problem": "What is the length of the text read from an empty example file?",
+          "hint": "read returns an empty string.",
+          "solution": [
+            "len(text) is 0."
+          ],
+          "answer": {
+            "code": "with open(\"empty.txt\", \"w\", encoding=\"utf-8\") as file:\n    file.write(\"\")\nwith open(\"empty.txt\", \"r\", encoding=\"utf-8\") as file:\n    text = file.read()\nprint(len(text))\n",
+            "stdout": "0\n",
+            "stdin": ""
+          },
+          "id": "text-files-p4",
+          "difficulty": 2,
+          "misconceptionTags": [
+            "text-files-m2"
+          ]
+        }
+      ],
+      "learningCheck": {
+        "question": "Which mode preserves content and adds at the end?",
+        "correctIndex": 1,
+        "choices": [
+          "w",
+          "a",
+          "r automatically saves changes"
+        ],
+        "explanation": "a appends, w overwrites, and r reads.",
+        "feedback": [
+          "w discards existing content, so it cannot preserve it here.",
+          "Yes. a appends after the existing content.",
+          "r is a read mode and cannot write."
+        ]
+      },
+      "prerequisites": [
+        "exceptions",
+        "modules"
+      ],
+      "difficulty": 5,
+      "misconceptionTags": [
+        "text-files-m1",
+        "text-files-m2"
+      ],
+      "provenance": {
+        "author": "AI-generated",
+        "version": "0.2.1",
+        "status": "revised",
+        "humanReviewed": false
+      },
+      "sources": [
+        "python-tutorial",
+        "python-io",
+        "python-pathlib"
+      ],
+      "furtherReading": []
+    },
+    {
+      "id": "json-csv",
+      "chapterId": "chapter-5",
+      "number": "5.2",
+      "title": "JSON and CSV: structures and tables",
+      "subtitle": "JSON stores structures; CSV stores tables. After parsing, check both types and meaning.",
+      "concept": "JSON stores structures; CSV stores tables. After parsing, check both types and meaning.",
+      "intuition": "Store a dictionary in a text file or organize a bill into table rows.",
+      "objectives": [
+        "Store a dictionary as JSON",
+        "Read a small CSV table",
+        "Numeric CSV fields arrive as text"
+      ],
+      "body": [
+        {
+          "title": "Store a dictionary as JSON",
+          "text": "json.dumps(data, ensure_ascii=False) converts a dictionary to JSON text. Remember the s in dumps as string. ensure_ascii=False leaves non-ASCII characters readable. json.loads(text) converts the text back to data. This uses a standard data format rather than merely saving a dictionary's printed appearance."
+        },
+        {
+          "title": "Read a small CSV table",
+          "text": "Each CSV row is a record, and the first row can name the columns. csv.DictReader reads each row as a dictionary using those names. Here io.StringIO wraps sample text as a file-like object; io provides input/output tools. You can also pass a real file opened with open to DictReader. A small text table separates table handling from path issues."
+        },
+        {
+          "title": "Numeric CSV fields arrive as text",
+          "text": "An amount field may look like 125, but row[\"amount\"] is the string \"125\". Convert it with int to integer cents before adding. A complete project also checks column names, missing values, and negative amounts. Successful parsing does not validate each row. Likewise, check that parsed JSON has the dictionary or list structure you need."
+        }
+      ],
+      "formalDefinition": {
+        "text": "JSON converts between structures and text; CSV reads column-based records. Validate structures and values after parsing.",
+        "conditions": [
+          "CSV fields are text by default. Convert and validate before calculating.",
+          "The parsed JSON structure must match what the program expects."
+        ]
+      },
+      "derivation": [
+        {
+          "text": "Import json first."
+        },
+        {
+          "text": "dumps produces text in the standard format."
+        },
+        {
+          "text": "After loads restores the data, read the name and count by key."
+        }
+      ],
+      "interactiveVisual": {
+        "kind": "python-trace",
+        "prediction": "After a JSON round trip, does count remain the same number?",
+        "caption": "Choose an input and predict the result, then select Next step. The arrow marks the next statement to execute; the side panel shows current variables and output produced so far.",
+        "experiment": {
+          "code": "import json\ndata = {\"name\": \"Lin\", \"count\": 3}\ntext = json.dumps(data, ensure_ascii=False)\nrestored = json.loads(text)\nprint(restored[\"count\"])\n",
+          "stdout": "3\n",
+          "stdin": ""
+        },
+        "followUp": "Choose 0. Compare the quotes in text with the dictionary structure in restored.",
+        "codeTemplate": "import json\ndata = {\"name\": \"Lin\", \"count\": {{count}}}\ntext = json.dumps(data, ensure_ascii=False)\nrestored = json.loads(text)\nprint(restored[\"count\"])\n",
+        "controls": [
+          {
+            "name": "count",
+            "label": "Count to save",
+            "values": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "defaultIndex": 3
+          }
+        ],
+        "watch": [
+          "data",
+          "text",
+          "restored"
+        ]
+      },
+      "workedExamples": [
+        {
+          "title": "Save and restore a record",
+          "problem": "Convert a name and count to JSON, then read them back.",
+          "steps": [
+            "Import json first.",
+            "dumps produces text in the standard format.",
+            "After loads restores the data, read the name and count by key."
+          ],
+          "answer": {
+            "code": "import json\ndata = {\"name\": \"Lin\", \"count\": 3}\ntext = json.dumps(data, ensure_ascii=False)\nrestored = json.loads(text)\nprint(restored[\"name\"])\nprint(restored[\"count\"])\n",
+            "stdout": "Lin\n3\n",
+            "stdin": ""
+          }
+        },
+        {
+          "title": "Add two amounts",
+          "problem": "The CSV amount column contains 125 and 200, in cents.",
+          "steps": [
+            "DictReader reads two rows by column name.",
+            "Convert each amount string to an integer.",
+            "The total is 325 cents."
+          ],
+          "answer": {
+            "code": "import csv\nimport io\ntext = \"category,amount\\nfood,125\\ntransport,200\\n\"\ntotal = 0\nfor row in csv.DictReader(io.StringIO(text)):\n    total = total + int(row[\"amount\"])\nprint(total)\n",
+            "stdout": "325\n",
+            "stdin": ""
+          }
+        }
+      ],
+      "commonMistakes": [
+        {
+          "id": "json-csv-m1",
+          "claim": "CSV numeric fields automatically become numbers.",
+          "correction": "Fields are text by default. Convert them explicitly before calculation."
+        },
+        {
+          "id": "json-csv-m2",
+          "claim": "If a file parses, its data needs no further checks.",
+          "correction": "Check column names, value types, and permitted ranges too."
+        }
+      ],
+      "practice": [
+        {
+          "problem": "Read count from JSON text.",
+          "hint": "Use loads, then look up the key.",
+          "solution": [
+            "The result is the integer 3."
+          ],
+          "answer": {
+            "code": "import json\ndata = json.loads('{\"count\": 3}')\nprint(data[\"count\"])\n",
+            "stdout": "3\n",
+            "stdin": ""
+          },
+          "id": "json-csv-p1",
+          "difficulty": 1,
+          "misconceptionTags": [
+            "json-csv-m1"
+          ]
+        },
+        {
+          "problem": "Convert [1, 2] to JSON and back, then print its length.",
+          "hint": "Use dumps and loads.",
+          "solution": [
+            "The restored list has two items."
+          ],
+          "answer": {
+            "code": "import json\ntext = json.dumps([1, 2])\nvalues = json.loads(text)\nprint(len(values))\n",
+            "stdout": "2\n",
+            "stdin": ""
+          },
+          "id": "json-csv-p2",
+          "difficulty": 2,
+          "misconceptionTags": [
+            "json-csv-m2"
+          ]
+        },
+        {
+          "problem": "Read a CSV amount of 50 and add 10.",
+          "hint": "Use int first.",
+          "solution": [
+            "50 + 10 = 60."
+          ],
+          "answer": {
+            "code": "import csv\nimport io\ntext = \"amount\\n50\\n\"\nfor row in csv.DictReader(io.StringIO(text)):\n    print(int(row[\"amount\"]) + 10)\n",
+            "stdout": "60\n",
+            "stdin": ""
+          },
+          "id": "json-csv-p3",
+          "difficulty": 2,
+          "misconceptionTags": [
+            "json-csv-m1"
+          ]
+        },
+        {
+          "problem": "With only a CSV header and no data rows, what is the total?",
+          "hint": "The loop receives no records.",
+          "solution": [
+            "total remains 0."
+          ],
+          "answer": {
+            "code": "import csv\nimport io\ntotal = 0\nfor row in csv.DictReader(io.StringIO(\"amount\\n\")):\n    total = total + int(row[\"amount\"])\nprint(total)\n",
+            "stdout": "0\n",
+            "stdin": ""
+          },
+          "id": "json-csv-p4",
+          "difficulty": 2,
+          "misconceptionTags": [
+            "json-csv-m2"
+          ]
+        }
+      ],
+      "learningCheck": {
+        "question": "A CSV row contains row[\"amount\"] equal to \"125\". What should happen before adding amounts?",
+        "correctIndex": 1,
+        "choices": [
+          "Add a number directly",
+          "Convert to integer cents with int",
+          "Append the string \"200\""
+        ],
+        "explanation": "CSV fields are text by default. Convert and validate before calculating.",
+        "feedback": [
+          "A string and integer cannot be added that way.",
+          "Yes. Conversion enables numeric addition; also check the range.",
+          "Concatenation gives \"125200\", not a monetary sum."
+        ]
+      },
+      "prerequisites": [
+        "text-files",
+        "dictionaries",
+        "modules"
+      ],
+      "difficulty": 5,
+      "misconceptionTags": [
+        "json-csv-m1",
+        "json-csv-m2"
+      ],
+      "provenance": {
+        "author": "AI-generated",
+        "version": "0.2.1",
+        "status": "revised",
+        "humanReviewed": false
+      },
+      "sources": [
+        "python-tutorial",
+        "python-formats",
+        "python-csv"
+      ],
+      "furtherReading": []
+    },
+    {
+      "id": "testing",
+      "chapterId": "chapter-5",
+      "number": "5.3",
+      "title": "Tests and boundary cases",
+      "subtitle": "Specify inputs and correct results, then repeatedly compare them with the program's output.",
+      "concept": "Specify inputs and correct results, then repeatedly compare them with the program's output.",
+      "intuition": "Give a machine small problems with known answers and check whether it keeps answering correctly.",
+      "objectives": [
+        "Calculate expectations independently",
+        "Write a check with assert",
+        "Cover ordinary and boundary cases"
+      ],
+      "body": [
+        {
+          "title": "Calculate expectations independently",
+          "text": "For a doubling function, calculate expectations by hand: 3 gives 6, 0 gives 0, and -2 gives -4. Do not generate the expected answer by calling the function under test, or the same bug can appear on both sides. Tests preserve these checks so you can rerun them after changing the code."
+        },
+        {
+          "title": "Write a check with assert",
+          "text": "assert double(3) == 6 requires the comparison to be true. == tests equality. Success continues silently; failure raises AssertionError. A final print(\"Checks passed\") shows execution got through those assertions. Do not run these tests with Python's -O option: it disables assert statements."
+        },
+        {
+          "title": "Cover ordinary and boundary cases",
+          "text": "Passing for 3 is not enough. Try 0, negative inputs, and values that expose likely bugs. Passing tests does not prove correctness for every input, but explicit boundary checks help prevent known bugs from returning. The project appendix uses unittest to run a suite. Start with input, expectation, and comparison."
+        }
+      ],
+      "formalDefinition": {
+        "text": "A test compares an actual result with an independently determined expectation. assert requires its condition to be true.",
+        "conditions": [
+          "Calculate expected answers independently. Do not run assertion-based tests with -O, which disables assert."
+        ]
+      },
+      "derivation": [
+        {
+          "text": "Calculate the expectations 6, 0, and -4 by hand."
+        },
+        {
+          "text": "Each assert compares an actual result with its expectation."
+        },
+        {
+          "text": "After all checks pass, print Checks passed."
+        }
+      ],
+      "interactiveVisual": {
+        "kind": "python-trace",
+        "prediction": "For input 3, the correct answer is 6. What happens if the expectation is mistakenly 5?",
+        "caption": "Choose an input and predict the result, then select Next step. The arrow marks the next statement to execute; the side panel shows current variables and output produced so far.",
+        "experiment": {
+          "code": "def double(number):\n    return number * 2\n\nactual = double(3)\nexpected = 6\nif actual == expected:\n    print(\"Checks passed\")\nelse:\n    print(\"Check failed\")\n",
+          "stdout": "Checks passed\n",
+          "stdin": ""
+        },
+        "followUp": "Change only the expected value and inspect the comparison. This expands the check performed by assert.",
+        "codeTemplate": "def double(number):\n    return number * 2\n\nactual = double({{number}})\nexpected = {{expected}}\nif actual == expected:\n    print(\"Checks passed\")\nelse:\n    print(\"Check failed\")\n",
+        "controls": [
+          {
+            "name": "number",
+            "label": "Function input",
+            "values": [
+              0,
+              3,
+              -2
+            ],
+            "defaultIndex": 1
+          },
+          {
+            "name": "expected",
+            "label": "Your expected value",
+            "values": [
+              0,
+              5,
+              6,
+              -4
+            ],
+            "defaultIndex": 2
+          }
+        ],
+        "watch": [
+          "number",
+          "actual",
+          "expected"
+        ]
+      },
+      "workedExamples": [
+        {
+          "title": "Test a doubling function",
+          "problem": "Check an ordinary value, zero, and a negative value.",
+          "steps": [
+            "Calculate the expectations 6, 0, and -4 by hand.",
+            "Each assert compares an actual result with its expectation.",
+            "After all checks pass, print Checks passed."
+          ],
+          "answer": {
+            "code": "def double(number):\n    return number * 2\n\nassert double(3) == 6\nassert double(0) == 0\nassert double(-2) == -4\nprint(\"Checks passed\")\n",
+            "stdout": "Checks passed\n",
+            "stdin": ""
+          }
+        },
+        {
+          "title": "Observe a failure",
+          "problem": "Suppose doubling is mistakenly implemented as adding 2. Test input 3.",
+          "steps": [
+            "The incorrect function returns 5.",
+            "The expectation is 6, so assert fails.",
+            "We catch AssertionError only to demonstrate this failure. In a real test, let it fail directly."
+          ],
+          "answer": {
+            "code": "def double(number):\n    return number + 2\n\ntry:\n    assert double(3) == 6\nexcept AssertionError:\n    print(\"Check failed: input 3 should give 6\")\n",
+            "stdout": "Check failed: input 3 should give 6\n",
+            "stdin": ""
+          }
+        }
+      ],
+      "commonMistakes": [
+        {
+          "id": "testing-m1",
+          "claim": "Generate the correct answer by calling the function under test again.",
+          "correction": "The same bug can affect both sides. Determine the expectation independently."
+        },
+        {
+          "id": "testing-m2",
+          "claim": "Passing one ordinary input means all cases are correct.",
+          "correction": "Add boundaries such as zero, an empty list, and invalid input. Tests support only the cases checked."
+        }
+      ],
+      "practice": [
+        {
+          "problem": "Write a check for add_one(3).",
+          "hint": "The hand-calculated expectation is 4.",
+          "solution": [
+            "Compare the actual result with 4."
+          ],
+          "answer": {
+            "code": "def add_one(number):\n    return number + 1\n\nassert add_one(3) == 4\nprint(\"Pass\")\n",
+            "stdout": "Pass\n",
+            "stdin": ""
+          },
+          "id": "testing-p1",
+          "difficulty": 1,
+          "misconceptionTags": [
+            "testing-m1"
+          ]
+        },
+        {
+          "problem": "Write a boundary check for add_one(0).",
+          "hint": "Expect 1.",
+          "solution": [
+            "Zero should also increase by 1."
+          ],
+          "answer": {
+            "code": "def add_one(number):\n    return number + 1\n\nassert add_one(0) == 1\nprint(\"Pass\")\n",
+            "stdout": "Pass\n",
+            "stdin": ""
+          },
+          "id": "testing-p2",
+          "difficulty": 1,
+          "misconceptionTags": [
+            "testing-m2"
+          ]
+        },
+        {
+          "problem": "Check that the sum of an empty list is 0.",
+          "hint": "There are no items to add.",
+          "solution": [
+            "total_of([]) should return 0."
+          ],
+          "answer": {
+            "code": "def total_of(values):\n    total = 0\n    for value in values:\n        total = total + value\n    return total\n\nassert total_of([]) == 0\nprint(\"Pass\")\n",
+            "stdout": "Pass\n",
+            "stdin": ""
+          },
+          "id": "testing-p3",
+          "difficulty": 1,
+          "misconceptionTags": [
+            "testing-m1"
+          ]
+        },
+        {
+          "problem": "Check that 3 candies in bags of 5 make 0 full bags with remainder 3.",
+          "hint": "Check the two results separately.",
+          "solution": [
+            "Use two assertions with the hand-calculated answers."
+          ],
+          "answer": {
+            "code": "assert 3 // 5 == 0\nassert 3 % 5 == 3\nprint(\"Pass\")\n",
+            "stdout": "Pass\n",
+            "stdin": ""
+          },
+          "id": "testing-p4",
+          "difficulty": 2,
+          "misconceptionTags": [
+            "testing-m2"
+          ]
+        }
+      ],
+      "learningCheck": {
+        "question": "How should you obtain an expected answer for a function test?",
+        "correctIndex": 1,
+        "choices": [
+          "Call the same function again",
+          "Calculate a small case independently",
+          "Treat absence of exceptions as success"
+        ],
+        "explanation": "Independent expectations can reveal errors in the function's calculation.",
+        "feedback": [
+          "A shared bug can affect both sides and escape the comparison.",
+          "Yes. Calculate independently, then compare with the program's result.",
+          "A program can return a wrong answer without raising an exception."
+        ]
+      },
+      "prerequisites": [
+        "json-csv",
+        "functions",
+        "exceptions"
+      ],
+      "difficulty": 5,
+      "misconceptionTags": [
+        "testing-m1",
+        "testing-m2"
+      ],
+      "provenance": {
+        "author": "AI-generated",
+        "version": "0.2.1",
+        "status": "revised",
+        "humanReviewed": false
+      },
+      "sources": [
+        "python-tutorial",
+        "python-unittest"
+      ],
+      "furtherReading": []
+    },
+    {
+      "id": "capstone",
+      "chapterId": "chapter-5",
+      "number": "5.4",
+      "title": "Capstone: a local expense reporter",
+      "subtitle": "Connect reading, validation, calculation, and display to build an expense summary tool.",
+      "concept": "Connect reading, validation, calculation, and display to build an expense summary tool.",
+      "intuition": "Read the bill, validate amounts, total them by category, then display a report.",
+      "objectives": [
+        "Start with a bill you can check by hand",
+        "Separate four responsibilities",
+        "Add the command-line interface last"
+      ],
+      "body": [
+        {
+          "title": "Start with a bill you can check by hand",
+          "text": "Take food at 125 cents, transport at 200, and food at 75. Calculate independently: food totals 200, transport 200, and the grand total is 400 cents. Start with three in-memory records, combining Chapter 3 lists and dictionaries with Chapter 4 functions. Do not add files, command-line parsing, and tests all at once."
+        },
+        {
+          "title": "Separate four responsibilities",
+          "text": "First read CSV (Section 5.2). Second validate columns, category, and integer-cent amounts, rejecting zero and negatives (Section 4.4). Third accumulate amounts by category in a dictionary (Section 3.2). Fourth display results in a stable order. Verify the accumulation before connecting file input. The appendix provides complete source with a function for each responsibility."
+        },
+        {
+          "title": "Add the command-line interface last",
+          "text": "Save the appendix source and sample.csv in one folder and enter it in a terminal. Run python3 expense_report.py --help to check usage, then python3 expense_report.py sample.csv. Store amounts as integer cents and convert to currency units only for display. A CLI accepts arguments through terminal commands; argparse reads the filename. The class declarations in the full tests organize unittest cases; object-oriented mechanisms belong in a later course."
+        }
+      ],
+      "formalDefinition": {
+        "text": "The reporter separates reading, validation, aggregation, and display. Each record must contain a positive integer amount in cents.",
+        "conditions": [
+          "Reject zero or negative amounts, missing columns, empty categories, and malformed amounts. Each record uses positive integer cents.",
+          "No records gives a total of 0. That differs from an invalid record whose amount is 0."
+        ]
+      },
+      "derivation": [
+        {
+          "text": "Each record is a dictionary containing category and amount."
+        },
+        {
+          "text": "For a category's first occurrence, start its total at 0."
+        },
+        {
+          "text": "Food totals 125 + 75 and transport 200, for a grand total of 400."
+        }
+      ],
+      "interactiveVisual": {
+        "kind": "python-trace",
+        "prediction": "If the last amount changes from 75 cents to 50, what is the total?",
+        "caption": "Choose an input and predict the result, then select Next step. The arrow marks the next statement to execute; the side panel shows current variables and output produced so far.",
+        "experiment": {
+          "code": "amounts = [125, 200, 75]\ntotal = 0\nfor amount in amounts:\n    total = total + amount\nprint(total)\n",
+          "stdout": "400\n",
+          "stdin": ""
+        },
+        "followUp": "Choose 75 and check the running totals: 125, 325, 400.",
+        "codeTemplate": "amounts = [125, 200, {{extra}}]\ntotal = 0\nfor amount in amounts:\n    total = total + amount\nprint(total)\n",
+        "controls": [
+          {
+            "name": "extra",
+            "label": "Final amount in cents",
+            "values": [
+              50,
+              75,
+              100,
+              125
+            ],
+            "defaultIndex": 1
+          }
+        ],
+        "watch": [
+          "amounts",
+          "amount",
+          "total"
+        ]
+      },
+      "workedExamples": [
+        {
+          "title": "Build the aggregation core",
+          "problem": "Sum three small records by category. Assume the records have already been validated and contain positive integer cents.",
+          "steps": [
+            "Each record is a dictionary containing category and amount.",
+            "For a category's first occurrence, start its total at 0.",
+            "Food totals 125 + 75 and transport 200, for a grand total of 400."
+          ],
+          "answer": {
+            "code": "records = [\n    {\"category\": \"food\", \"amount\": 125},\n    {\"category\": \"transport\", \"amount\": 200},\n    {\"category\": \"food\", \"amount\": 75},\n]\ntotals = {}\ntotal = 0\nfor record in records:\n    category = record[\"category\"]\n    amount = record[\"amount\"]\n    totals[category] = totals.get(category, 0) + amount\n    total = total + amount\nprint(totals[\"food\"])\nprint(totals[\"transport\"])\nprint(total)\n",
+            "stdout": "200\n200\n400\n",
+            "stdin": ""
+          }
+        },
+        {
+          "title": "Convert units only for display",
+          "problem": "Display 375 cents as 3.75 currency units.",
+          "steps": [
+            "Compute the total using integer cents.",
+            "Divide by 100 to convert cents to currency units.",
+            "In the f-string, :.2f displays two decimal places. The internal accounts still use integer cents."
+          ],
+          "answer": {
+            "code": "cents = 125 * 3\nprint(f\"{cents / 100:.2f} units\")\n",
+            "stdout": "3.75 units\n",
+            "stdin": ""
+          }
+        }
+      ],
+      "commonMistakes": [
+        {
+          "id": "capstone-m1",
+          "claim": "Every amount convertible to an integer belongs in the bill.",
+          "correction": "Each amount must also exceed 0. This project rejects zero and negative records."
+        },
+        {
+          "id": "capstone-m2",
+          "claim": "Invalid input can silently become 0.",
+          "correction": "Report the error so the user can correct it rather than hiding a data problem."
+        }
+      ],
+      "practice": [
+        {
+          "problem": "Two amounts in the same category are 100 and 50 cents. What is their total?",
+          "hint": "Accumulate both under one key.",
+          "solution": [
+            "The result is 150 cents."
+          ],
+          "answer": {
+            "code": "totals = {}\nfor amount in [100, 50]:\n    totals[\"food\"] = totals.get(\"food\", 0) + amount\nprint(totals[\"food\"])\n",
+            "stdout": "150\n",
+            "stdin": ""
+          },
+          "id": "capstone-p1",
+          "difficulty": 1,
+          "misconceptionTags": [
+            "capstone-m1"
+          ]
+        },
+        {
+          "problem": "Display 150 cents as currency units with two decimal places.",
+          "hint": "Use :.2f as shown in this lesson.",
+          "solution": [
+            "Divide by 100 and display 1.50."
+          ],
+          "answer": {
+            "code": "cents = 150\nprint(f\"{cents / 100:.2f} units\")\n",
+            "stdout": "1.50 units\n",
+            "stdin": ""
+          },
+          "id": "capstone-p2",
+          "difficulty": 2,
+          "misconceptionTags": [
+            "capstone-m2"
+          ]
+        },
+        {
+          "problem": "Check amounts 0 and -1 cents. This project requires each amount to be positive.",
+          "hint": "Test amount <= 0.",
+          "solution": [
+            "Check 0 and -1 separately.",
+            "Neither is positive, so reject both."
+          ],
+          "answer": {
+            "code": "for amount in [0, -1]:\n    if amount <= 0:\n        print(\"Amount must be positive\")\n    else:\n        print(amount)\n",
+            "stdout": "Amount must be positive\nAmount must be positive\n",
+            "stdin": ""
+          },
+          "id": "capstone-p3",
+          "difficulty": 2,
+          "misconceptionTags": [
+            "capstone-m1"
+          ]
+        },
+        {
+          "problem": "With no records, what is the total in cents?",
+          "hint": "Accumulation starts at 0.",
+          "solution": [
+            "The loop does not run and the total is 0."
+          ],
+          "answer": {
+            "code": "total = 0\nfor amount in []:\n    total = total + amount\nprint(total)\n",
+            "stdout": "0\n",
+            "stdin": ""
+          },
+          "id": "capstone-p4",
+          "difficulty": 1,
+          "misconceptionTags": [
+            "capstone-m2"
+          ]
+        }
+      ],
+      "learningCheck": {
+        "question": "How should the tool handle a negative amount under this project's rules?",
+        "correctIndex": 1,
+        "choices": [
+          "Add it because arithmetic is possible",
+          "Explain the error and reject the input",
+          "Silently change it to 0"
+        ],
+        "explanation": "Each record must contain positive integer cents. Reject zero and negatives explicitly.",
+        "feedback": [
+          "Being usable in arithmetic does not satisfy the input requirements.",
+          "Yes. Validate first, then aggregate.",
+          "Silently changing values hides the original data problem behind an apparently successful report."
+        ]
+      },
+      "prerequisites": [
+        "testing",
+        "dictionaries",
+        "json-csv"
+      ],
+      "difficulty": 5,
+      "misconceptionTags": [
+        "capstone-m1",
+        "capstone-m2"
+      ],
+      "provenance": {
+        "author": "AI-generated",
+        "version": "0.2.1",
+        "status": "revised",
+        "humanReviewed": false
+      },
+      "sources": [
+        "python-tutorial",
+        "python-csv",
+        "python-argparse",
+        "python-pathlib"
+      ],
+      "furtherReading": []
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+The integral test and tail bounds
+Trap a positive tail between areas
+A positive, continuous, decreasing function links an integral to a series and bounds the tail after a finite partial sum.
+Unit-width rectangles on opposite sides of a decreasing curve bound its area. Two integrals trap the tail sum.
+Essential hypotheses
+The function is eventually positive, continuous and decreasing, and its integer values give the terms. Handle any finite initial segment separately.
+Does the integral equal the series sum?
+Usually not. They share convergence behavior; tail integrals provide bounds, not equality.
+Choosing the number of terms
+If the upper tail bound is below the tolerance, the partial sum meets the error target. The benchmark $\sum_{n=1}^\infty n^{-p}$ is a $p$-series and converges exactly when $p>1$.
+Trap a positive tail between areas
+$f$ is positive, continuous and decreasing on $[N,\infty)$, and its improper integral converges.
+Use monotonicity to compare each rectangle with neighboring areas.
+Sum from the first omitted term.
+Let the upper endpoint tend to infinity to bound the tail.
+A reciprocal-square tail
+Bound the error after 10 terms of $\sum\frac1{n^2}$.
+The function is positive, continuous and decreasing; its tail integral is simple.
+$\int_{11}^\infty x^{-2}dx\leq R_{10}\leq\int_{10}^\infty x^{-2}dx$.
+$\frac1{11}\leq R_{10}\leq\frac1{10}$.
+A logarithmic boundary
+Does $\sum_{n=2}^\infty\frac1{n(\ln n)^2}$ converge?
+Its associated function is positive and decreasing on $x\geq2$.
+Set $u=\ln x$; the integral is the finite value $\int_{\ln2}^\infty u^{-2}du$.
+It converges.
+Any function representation permits the integral test.
+Check positivity, continuity and eventual decrease.
+The sum equals the integral starting at one.
+Rectangles differ from the curve. The test gives convergence equivalence and tail bounds.
+When does $\sum\frac1{n^p}$ converge?
+$p>1$.
+Examine the tail integral.
+$\int_1^\infty x^{-p}dx$ converges exactly when $p>1$; for $p\leq0$, the term test also applies.
+For reciprocal squares with bound $R_N\le1/N$, how many terms guarantee this bound is at most $0.01$?
+$100$ terms suffice.
+Use the upper tail bound.
+$R_N\leq\frac1N$; choose $N=100$.
+Does $\sum_{n=2}^\infty\frac1{n\ln n}$ converge?
+It diverges.
+Substitute the logarithm as variable.
+$\int_2^R\frac{dx}{x\ln x}=\ln\ln R-\ln\ln2\to\infty$.
+For $\sum_{n=1}^{\infty}1/n^3$, use $\int_{10}^{\infty}x^{-3}\,dx$ to bound the tail after 10 terms. What is the bound?
+$\frac1{200}$.
+Start the integral at ten.
+$R_{10}\leq\int_{10}^\infty x^{-3}dx=\frac1{2\cdot10^2}$.
+What does the integral test generally provide?
+An exact series sum
+Convergence equivalence and applicable tail bounds
+The sum of any signed series
+Positive decreasing curves and rectangles trap tails; they usually do not coincide.
+Replace an infinite unseen tail by two computable areas, obtaining both convergence and a useful error range.
+Ten terms
+Set the count to 10.
+The tail lies between $\frac1{11}$ and $\frac1{10}$.
+Forty terms
+Set the count to 40.
+The tail lies between $\frac1{41}$ and $\frac1{40}$.
+Eighty terms
+Set the count to 80.
+The upper bound is $\frac1{80}$; the finite partial sum is still not the full sum.
+Display reciprocal-square partial sums with tail bounds from $\frac1{N+1}\leq R_N\leq\frac1N$.
+How much does increasing the count narrow the possible tail range?
+Check the integral-test hypotheses
+Test positive power and logarithmic tails
+Estimate truncation error using tail integrals

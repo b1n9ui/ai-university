@@ -1,0 +1,65 @@
+Parameters and basic bifurcations
+Continuous parameter changes can alter equilibria
+A saddle-node model
+$y'=\mu-y^2$ has no equilibrium for negative parameter, a double equilibrium at zero, and two equilibria for positive parameter, one stable and one unstable.
+A pitchfork model
+$y'=\mu y-y^3$ always has the zero equilibrium. Positive parameters create two stable nonzero equilibria while the origin becomes unstable.
+A parameter is not time
+A bifurcation diagram compares systems with different fixed parameters. Automatically sweeping a slider compares models; it does not solve an equation with time-varying parameters.
+Find the equilibrium condition.
+Positive parameters give two roots; negative ones no real roots.
+Classify using the state derivative.
+f_y=-2y\Rightarrow +\sqrt\mu\text{ stable},\ -\sqrt\mu\text{ unstable}
+Saddle-node parameter four
+Classify equilibria of $y'=4-y^2$.
+The equilibria are plus and minus two.
+The state derivative is negative at plus two and positive at minus two.
+Plus two is stable; minus two unstable.
+Pitchfork parameter one
+Classify equilibria of $y'=y-y^3$.
+The roots are zero and plus and minus one.
+The derivative is $1-3y^2$.
+Zero is unstable; plus and minus one are asymptotically stable.
+Does $y'=-1-y^2$ have real equilibria?
+Set the right-hand side to zero.
+It would require a square equal to minus one, which is impossible.
+No.
+How do the sides of zero behave in $y'=-y^2$?
+The right side is negative on both sides.
+Positive states approach zero; negative states leave.
+One-sided attraction but overall instability.
+How does the pitchfork origin behave for negative parameters?
+The linear derivative equals the parameter.
+A negative derivative gives local asymptotic stability.
+Stable.
+Can a parameter-sweep animation be treated as a nonautonomous solution?
+Every frame uses another fixed-parameter system.
+Actual time dependence of a parameter must be put into the equation and solved.
+No.
+A repeated equilibrium determines stability by itself.
+A zero linear term needs further analysis.
+A bifurcation diagram is one initial-value trajectory over time.
+It records equilibrium structures at fixed parameter values.
+A bifurcation is a change in equilibrium count or stability structure as a parameter crosses a critical value.
+It reorganizes a family of nearby motions, rather than merely changing one curve's appearance.
+Analyze saddle-node and pitchfork normal forms
+Distinguish fixed-parameter comparisons from time-dependent parameters
+Parameters and basic bifurcations
+The parameter is fixed and real. The positive root has negative derivative, the negative root positive derivative. At zero, use signs rather than only linear derivatives.
+Which change concerns bifurcation?
+Changing an integration constant's sign
+Changing plot color
+A parameter changes equilibrium or stability structure
+Structural change is the key.
+Fix a parameter and study that system before comparing parameter values. This separates bifurcation from time evolution.
+Negative parameter
+No real equilibrium; state decreases.
+Set fixed parameter $\mu$ to $-1$, initial value $y_0$ to $0$, and observation time $t$ to $1$.
+Threshold
+Zero initial data stay at the double equilibrium.
+Set fixed parameter $\mu$ to $0$, initial value $y_0$ to $0$, and observation time $t$ to $1$.
+Positive parameter
+Zero initial data approach stable equilibrium one.
+Set fixed parameter $\mu$ to $1$, initial value $y_0$ to $0$, and observation time $t$ to $2$.
+Horizontal is time, showing a fixed-parameter solution and equilibrium lines when present. Automatic sweeping compares different systems, rather than solving time-varying parameter dynamics.
+How many equilibria appear when the fixed parameter changes from negative to positive?

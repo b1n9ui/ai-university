@@ -1,0 +1,64 @@
+Triple integrals in cylindrical coordinates
+A polar base plus height
+Cylindrical coordinates retain height and use polar coordinates horizontally. The volume element keeps one radial factor.
+A small volume is a polar patch times height. Adding a dimension does not introduce another radial factor.
+Compute cylindrical integrals
+Check cylindrical and paraboloid boundaries
+Suitable regions
+Cylinders, cones, axial paraboloids and solids projecting to disks often simplify.
+Writing height limits
+Replace horizontal squared-distance expressions by radius and identify the upper surface. For a cone, height is proportional to radius.
+What about the cone's vertex?
+Angle degeneracy on the axis occupies zero volume and is usually harmless. A singular density still requires a convergence check.
+A polar base plus height
+Use nonnegative radius and avoid repeated angular coverage. The integrand is integrable; outside degenerate sets the map is smooth and one-to-one.
+The horizontal patch uses the polar area element.
+Height introduces no further scaling.
+Volume is area times height.
+Volume beneath a paraboloid
+Find the volume of $x^2+y^2\le z\le4$.
+In cylindrical coordinates, $0\le r\le2,r^2\le z\le4$.
+$V=2\pi\int_0^2(4-r^2)r\,dr=8\pi$.
+$8\pi$.
+Squared distance inside a cylinder
+Integrate $x^2+y^2$ over the radius-1, height-2 cylinder.
+The integrand is $r^2$; the volume element contributes $r$.
+$\int_0^2dz\int_0^{2\pi}d\theta\int_0^1r^3dr=\pi$.
+$\pi$.
+Cylindrical volume uses radius squared.
+Only the horizontal polar area contributes radius; height has no extra scaling.
+For a circular projection, change only bounds.
+Transform the integrand and volume element too.
+Find the volume of a radius-2, height-3 cylinder.
+Check with base area times height.
+$V=4\pi\cdot3=12\pi$.
+$12\pi$.
+What radial limits describe the conical region between $z=r$ and $z=2$?
+Require ordered lower and upper heights.
+$r\le2$ requires $0\le r\le2$.
+$0\le r\le2$.
+Why is the angle nonunique on the cylindrical axis?
+Horizontal radius is zero.
+Both horizontal components vanish for every angle.
+This coordinate degeneracy is usually harmless to volume integration.
+Does $\iiint r\,dr\,d\theta\,dz$ represent density one or density equal to radius?
+Identify the volume-element factor.
+The final radius comes from the volume element; density is one.
+Constant density one.
+Why is there one radius factor in cylindrical volume?
+Horizontal polar area scaling
+Height scaling
+To cancel pi
+Angular increments correspond to arc lengths, requiring radius.
+A radius-1, height-2 cylinder with a horizontal polar grid. Slice area is always $\pi$.
+Does height introduce another radial factor?
+The horizontal patch is polar; vertical extension just multiplies its area by height.
+Bottom
+Set relative slice height to $0$.
+Display the bottom horizontal cross-section.
+Middle
+Set relative slice height to $0.5$.
+Shape and area match the bottom slice.
+Top
+Set relative slice height to $1$.
+Height varies while radius stays fixed; constant slice area accumulates volume.

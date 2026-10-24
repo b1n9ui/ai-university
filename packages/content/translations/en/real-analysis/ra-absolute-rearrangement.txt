@@ -1,0 +1,67 @@
+Absolute convergence and rearrangements
+Absolute convergence preserves the sum under rearrangement. Conditional convergence does not grant that freedom.
+Absolute convergence preserves the sum under rearrangement. Conditional convergence does not grant that freedom.
+An absolute tail sum is a total error budget, regardless of the order of its terms.
+Absolute convergence implies convergence
+Capture a finite prefix
+Absolute convergence implies convergence
+The absolute value of a finite tail sum is bounded by the sum of absolute values. Small absolute tails therefore establish the series Cauchy criterion.
+Capture a finite prefix
+Choose a small absolute-tail budget. A rearrangement eventually includes the entire important original prefix. All omitted and extra terms then come from the small tail.
+Conditional sums can change
+Alternating harmonic positive terms sum to positive infinity and negative terms to negative infinity. Repeatedly take enough positives to cross a target and enough negatives to go below it. Overshoots vanish, yielding a rearrangement to any specified real sum.
+A rearrangement is a bijection of natural-number indices, using each term exactly once.
+Rearrangement cannot delete, repeat, or change terms.
+Products and exchanges of double sums need their own convergence conditions.
+Choose a small absolute-tail budget.
+A sufficiently long rearranged prefix contains the key original prefix.
+The difference from the original sum is controlled entirely by its tail.
+Safe rearrangement
+May $\sum (-1)^{n-1}/2^n$ be rearranged arbitrarily?
+Its absolute-value series is geometric and convergent.
+Every bijective rearrangement preserves the sum.
+Yes.
+Keeping only positive terms
+Is retaining only the positive alternating harmonic terms a rearrangement?
+Every original negative term is deleted.
+A rearrangement uses every term once.
+No; it is a different series.
+Does absolute convergence imply ordinary convergence?
+Use the triangle inequality and Cauchy criterion.
+The absolute-tail budget controls the original tail sum.
+Yes.
+Does ordinary convergence imply absolute convergence?
+The alternating harmonic series is a counterexample.
+Its absolute-value series diverges.
+No.
+May a rearrangement repeat one term?
+Use the bijection requirement.
+Each original index occurs exactly once.
+No.
+Give a series whose grouped partial sums converge while its original partial sums do not.
+Pairwise cancellation can hide intermediate partial sums.
+Take $1-1+1-1+\cdots$.
+Grouping consecutive pairs gives zero groups and constantly zero grouped partial sums.
+Original odd partial sums are one and even ones zero, so no common limit exists and the series diverges.
+Original odd partial sums are one and even ones zero, so no common limit exists and the series diverges.
+What must a valid rearrangement preserve?
+Each term exactly once
+Positive terms only
+Arbitrary deletion of finitely many terms
+A bijection preserves every original term and its multiplicity.
+Infinite sums allow the same exchanges as finite sums
+Conditional convergence may change the result.
+Grouping and rearrangement are identical
+Grouping first changes which partial sums are observed.
+Compare rearrangements of absolutely convergent and alternating harmonic series. Which guarantees follow from the absolute-tail budget?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+An absolute-tail budget controls every ordering of the tail. Conditional convergence can instead change the sum.
+Retained terms: 3
+Set the retained term count to $3$. Compare two orders at the same length, distinguishing finite differences from changes of the infinite sum.
+Original-order partial sum $0.375$; rearranged partial sum $0.375$; absolute-convergence guarantee: applicable.
+Retained terms: 41
+Set the retained term count to $41$. Compare two orders at the same length, distinguishing finite differences from changes of the infinite sum.
+Original-order partial sum $0.3333333$; rearranged partial sum $0.3333333$; absolute-convergence guarantee: applicable.
+Retained terms: 80
+Set the retained term count to $80$. Compare two orders at the same length, distinguishing finite differences from changes of the infinite sum.
+Original-order partial sum $0.3333333$; rearranged partial sum $0.3333333$; absolute-convergence guarantee: applicable.

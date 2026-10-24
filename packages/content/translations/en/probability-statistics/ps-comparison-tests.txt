@@ -1,0 +1,65 @@
+Two-group tests and permutation reasoning
+A comparison's reference distribution must match its independent, paired, or randomized design.
+A comparison's reference distribution must match its independent, paired, or randomized design.
+Permutation shuffles labels that are exchangeable under the null, not arbitrary data without justification.
+Choose the right statistic
+Build a permutation reference
+Choose the right statistic
+Use Welch $t$ for independent group means and a one-sample $t$ test on paired differences. A score test of equal proportions uses the pooled proportion under the null.
+Build a permutation reference
+Under random assignment and the sharp null of zero treatment effect for every individual, reassign groups according to the design. Observational data require extra exchangeability assumptions.
+Do not generalize without assumptions
+Equal means with different distributions need not make raw labels exchangeable. Monte Carlo permutations add simulation error; this small example enumerates every assignment.
+Calculate Welch reference degrees of freedom using the preceding chapter's formula.
+Calculate Welch reference degrees of freedom using the preceding chapter's formula.
+Exact permutation inference requires a randomized design's sharp null or appropriate label exchangeability.
+Fix the statistic and observed grouping.
+Enumerate label assignments allowed under the null.
+Divide the count of at-least-as-extreme assignments by the total.
+Enumerate four values
+The fixed outcomes are $1,2,3,4$, randomly split into equal groups of two. The observed first group is $3,4$. Find the two-sided mean-difference permutation $p$-value.
+There are $\binom42=6$ assignments.
+The largest absolute difference is two, attained by groups $3,4$ or $1,2$.
+$2/6=1/3$.
+A pooled proportion
+Two groups each have fifty trials, with thirty and twenty successes. Find the pooled proportion when testing equality.
+There are fifty total successes in 100 trials.
+The pooled proportion is one half.
+$0.5$.
+Should every before-and-after label be arbitrarily shuffled in paired data?
+The design includes pairing constraints.
+Arbitrary shuffling destroys within-pair structure; use randomization appropriate to the design.
+No.
+Two independent groups have observed difference two and estimated standard error one. Find Welch $t$.
+Divide the difference by its standard error.
+$2/1=2$.
+$2$.
+One group is always zero; another has mean zero and large variability. Do equal means imply exchangeability?
+Compare entire distributions.
+The group distributions differ.
+Not necessarily.
+Of six assignments in the small example, two are extreme. Find the $p$-value.
+Count directly.
+$2/6=1/3$.
+$1/3$.
+What is essential for an exact permutation test?
+Access to a computer
+A valid null assignment mechanism or label exchangeability
+A large dataset
+Computational repetition cannot replace design assumptions.
+Any two groups can be freely permuted
+Justify exchangeability or the randomized design.
+Equal means imply identical distributions
+Shapes and variances can still differ.
+Enumerate groupings of the four fixed values. Where does the observed difference fall?
+Enumerate all six two-versus-two assignments. Two-sided extremeness uses absolute mean difference.
+Justify exchangeability or the randomized design.
+Equal group means
+Choose assignment $3$ and compare the group means.
+The groups are $\{1,4\}$ and $\{2,3\}$, each with mean $2.5$. The observed difference is $0$; all six assignments are at least as extreme, giving two-sided $p=1$.
+Means differ by one
+Choose assignment $2$ and count assignments with absolute mean difference at least $1$.
+The groups are $\{1,3\}$ and $\{2,4\}$, with mean difference $-1$. Four of six assignments have absolute difference at least $1$, so two-sided $p=4/6=2/3$.
+Means differ by two
+Choose assignment $1$ and observe how the extreme-tail count changes.
+The groups are $\{1,2\}$ and $\{3,4\}$, with mean difference $-2$. Only this assignment and its group reversal are at least as extreme, giving two-sided $p=2/6=1/3$.

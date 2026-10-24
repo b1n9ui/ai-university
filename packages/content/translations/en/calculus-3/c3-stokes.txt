@@ -1,0 +1,62 @@
+Stokes' theorem
+Keep the boundary and choose an easier surface
+Stokes' theorem connects boundary circulation with curl flux through a surface.
+Subdivide an open surface. Internal edges run in opposite directions and cancel, leaving the surface boundary.
+Convert circulation to curl flux
+Match right-hand orientation and replacement hypotheses
+Matching boundary direction
+Point your right thumb along the positive normal; curled fingers give positive boundary direction. Walking with your head along that normal keeps the surface on your left.
+Replacing the surface
+The replacement needs the same oriented boundary and a smooth field on the required neighborhoods. Do not cross singularities or invalid domains.
+Does a closed surface have a boundary curve?
+Its curve boundary is empty, so smooth curl fields have zero total flux through it. A visible silhouette is not a boundary curve.
+Keep the boundary and choose an easier surface
+The surface is piecewise smooth and orientable, with compatible piecewise smooth boundary orientation. The field is continuously differentiable on an open neighborhood of the surface. Include all boundary components.
+Pull each small-patch line integral into the parameter plane.
+Apply Green's theorem and simplify by the chain rule.
+Cancel shared edges to obtain the full formula.
+Replace a hemisphere by a disk
+For $\mathbf F=(-y,x,0)$, find circulation around the unit upper hemisphere boundary counterclockwise from above.
+The boundary is a horizontal unit circle; use an upward disk.
+Curl is $(0,0,2)$; its flux is $2\pi$.
+$2\pi$.
+A tilted triangular plane
+For $\mathbf F=(0,x,0)$, take the first-octant triangle in plane $x+y+z=1$, with normal's vertical component positive.
+Curl is $(0,0,1)$.
+Flux equals its horizontal projected triangle area $1/2$.
+$\frac12$.
+Matching boundary shape is enough; ignore direction.
+Reversing orientation negates both circulation and curl flux.
+Every surface flux can use Stokes' theorem.
+The theorem concerns curl flux, not arbitrary field flux.
+Find closed-loop circulation of a constant field.
+Its curl is zero and it is smooth everywhere.
+Stokes, or constant force dotted with total displacement, gives zero.
+Find circulation of $(-y,x,0)$ around a horizontal radius-3 counterclockwise circle.
+Multiply curl two by disk area.
+$2\cdot9\pi=18\pi$.
+$18\pi$.
+Can the compatible-orientation formula be used after reversing the normal alone?
+Do the orientations still match?
+The right-hand rule fails. Reverse the boundary or negate one side.
+Not unchanged.
+Find total flux of a smooth field's curl through a closed sphere.
+The sphere has no boundary curve.
+Stokes gives circulation over an empty boundary, hence zero.
+What can replace a difficult surface in Stokes' theorem?
+Any equal-area surface
+A surface with the same oriented boundary and required field smoothness
+Any sphere
+Preserve the boundary and check smoothness; do not cross invalid regions.
+Field $(-y,x,0)$ on surface $z=c(1-x^2-y^2)$ above a unit disk, keeping boundary and upward orientation fixed.
+Why is circulation unchanged when the interior bulges and area grows?
+Use a more convenient surface with the same oriented boundary, provided field smoothness holds.
+Flat disk
+Set bulge height $c$ to $0$.
+The surface is a disk; curl flux is $2\pi$.
+Raise the interior
+Set bulge height $c$ to $0.5$.
+The interior rises; boundary and curl flux stay unchanged.
+Higher surface
+Set bulge height $c$ to $1$.
+Actual area increases, but curl flux remains $2\pi$.

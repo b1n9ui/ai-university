@@ -1,0 +1,218 @@
+{
+  "id": "first-program",
+  "chapterId": "chapter-1",
+  "number": "1.1",
+  "title": "Run your first program",
+  "subtitle": "A program is a sequence of instructions. Start by displaying two lines in order.",
+  "concept": "A program is a sequence of instructions. Start by displaying two lines in order.",
+  "intuition": "Think of a checklist: do the first item, then the second.",
+  "objectives": [
+    "Display one message",
+    "Save two lines as a program",
+    "Change one message at a time"
+  ],
+  "body": [
+    {
+      "title": "Display one message",
+      "text": "Read print(\"Hello\") as ‘display Hello’. Python provides print to display values. Parentheses hold the content, and matching straight quotes mark it as text. The quotes themselves are not printed. Try the example before memorizing terminology."
+    },
+    {
+      "title": "Save two lines as a program",
+      "text": "Use the web demonstration to inspect execution order. To run the example on your computer, follow the four setup steps below and save both lines in hello.py. After changing code, save before running it again."
+    },
+    {
+      "title": "Change one message at a time",
+      "text": "Python reads these lines from top to bottom: the first displays Hello; the second displays I am learning Python. Change only the second message and run again: the first should stay the same. A comment starts with # and is skipped during execution. Use straight quotes and ordinary code punctuation."
+    }
+  ],
+  "formalDefinition": {
+    "text": "print(...) displays its contents. These statements execute from top to bottom.",
+    "conditions": [
+      "Each example runs independently from the beginning. Start with the stated inputs, then change one thing."
+    ]
+  },
+  "derivation": [
+    {
+      "text": "The first print displays Hello."
+    },
+    {
+      "text": "The second displays I am learning Python."
+    },
+    {
+      "text": "Each print ends its output with a newline by default."
+    }
+  ],
+  "interactiveVisual": {
+    "kind": "python-trace",
+    "prediction": "Will changing the first greeting change the second message?",
+    "caption": "Choose an input and predict the result, then select Next step. The arrow marks the next statement to execute; the side panel shows current variables and output produced so far.",
+    "experiment": {
+      "code": "print('Hello')\nprint(\"I am learning Python\")\n",
+      "stdout": "Hello\nI am learning Python\n",
+      "stdin": ""
+    },
+    "followUp": "Choose another greeting and start again.",
+    "codeTemplate": "print({{message}})\nprint(\"I am learning Python\")\n",
+    "controls": [
+      {
+        "name": "message",
+        "label": "First greeting",
+        "values": [
+          "Hello",
+          "Good morning",
+          "Hello, Lin"
+        ],
+        "defaultIndex": 0
+      }
+    ],
+    "watch": []
+  },
+  "workedExamples": [
+    {
+      "title": "Your first greeting",
+      "problem": "Display two messages and check their order.",
+      "steps": [
+        "The first print displays Hello.",
+        "The second displays I am learning Python.",
+        "Each print ends its output with a newline by default."
+      ],
+      "answer": {
+        "code": "print(\"Hello\")\nprint(\"I am learning Python\")\n",
+        "stdout": "Hello\nI am learning Python\n",
+        "stdin": ""
+      }
+    },
+    {
+      "title": "A short checklist",
+      "problem": "Display two things you want to do today.",
+      "steps": [
+        "The line starting with # is a comment and produces no output.",
+        "The two print statements produce the output."
+      ],
+      "answer": {
+        "code": "# Today's checklist\nprint(\"Open the textbook\")\nprint(\"Try an example\")\n",
+        "stdout": "Open the textbook\nTry an example\n",
+        "stdin": ""
+      }
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "first-program-m1",
+      "claim": "The quotes appear in the output too.",
+      "correction": "Quotes mark the boundaries of text. print displays the content inside them."
+    },
+    {
+      "id": "first-program-m2",
+      "claim": "Comments execute like ordinary statements.",
+      "correction": "A comment beginning with # is for readers and produces no output."
+    }
+  ],
+  "practice": [
+    {
+      "problem": "Predict the output of print(\"Good morning\").",
+      "hint": "The quotes are not printed.",
+      "solution": [
+        "Display the text inside the quotes."
+      ],
+      "answer": {
+        "code": "print(\"Good morning\")\n",
+        "stdout": "Good morning\n",
+        "stdin": ""
+      },
+      "id": "first-program-p1",
+      "difficulty": 1,
+      "misconceptionTags": [
+        "first-program-m1"
+      ]
+    },
+    {
+      "problem": "Display First step, then Second step.",
+      "hint": "Use two print statements.",
+      "solution": [
+        "Output follows the order of the statements."
+      ],
+      "answer": {
+        "code": "print(\"First step\")\nprint(\"Second step\")\n",
+        "stdout": "First step\nSecond step\n",
+        "stdin": ""
+      },
+      "id": "first-program-p2",
+      "difficulty": 1,
+      "misconceptionTags": [
+        "first-program-m2"
+      ]
+    },
+    {
+      "problem": "Change the greeting to Hello, Lin.",
+      "hint": "Change only the quoted content.",
+      "solution": [
+        "Keep print, the parentheses, and matching quotes."
+      ],
+      "answer": {
+        "code": "print(\"Hello, Lin\")\n",
+        "stdout": "Hello, Lin\n",
+        "stdin": ""
+      },
+      "id": "first-program-p3",
+      "difficulty": 1,
+      "misconceptionTags": [
+        "first-program-m1"
+      ]
+    },
+    {
+      "problem": "A comment is followed by print(\"Done\"). How many lines are displayed?",
+      "hint": "Comments do not execute.",
+      "solution": [
+        "One line is displayed: Done."
+      ],
+      "answer": {
+        "code": "# This is a comment\nprint(\"Done\")\n",
+        "stdout": "Done\n",
+        "stdin": ""
+      },
+      "id": "first-program-p4",
+      "difficulty": 1,
+      "misconceptionTags": [
+        "first-program-m2"
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "What does print(\"Hello\") display?",
+    "correctIndex": 1,
+    "choices": [
+      "\"Hello\" (including quotes)",
+      "Hello (without quotes)",
+      "print (the instruction's name)"
+    ],
+    "explanation": "Quotes mark text; the output contains only the content inside them.",
+    "feedback": [
+      "Quotes are code delimiters, not part of this output.",
+      "Correct: print displays the quoted content.",
+      "print names the instruction, not the content to display."
+    ]
+  },
+  "prerequisites": [],
+  "difficulty": 1,
+  "misconceptionTags": [
+    "first-program-m1",
+    "first-program-m2"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.2.1",
+    "status": "revised",
+    "humanReviewed": false
+  },
+  "sources": [
+    "python-tutorial"
+  ],
+  "furtherReading": [],
+  "localSetup": [
+    "Install the interpreter: open python.org, choose Downloads, and install a supported Python 3 release. The interpreter runs your code. If its command is unavailable, check that installation completed.",
+    "Save the code: create a practice folder and a plain-text file in a code editor. Enter the two lines above and save as hello.py. The name must end in .py, not .py.txt. Do not save code as a Word document.",
+    "Open your practice folder in a terminal. On macOS, open Terminal; on Windows, open Terminal or PowerShell. Type cd, a space, and your folder's full path, then press Enter. Put paths containing spaces inside straight double quotes. cd changes the current directory.",
+    "Run and check: on macOS/Linux use python3 hello.py; on Windows usually use py -3 hello.py. Expect Hello and I am learning Python on separate lines. Change the second message, save, and run again. If hello.py cannot be found, check the current directory and filename."
+  ]
+}

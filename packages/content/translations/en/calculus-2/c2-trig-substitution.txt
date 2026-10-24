@@ -1,0 +1,69 @@
+Trigonometric substitution
+Use identities to simplify square roots
+Match the substitution to the radical, then choose an angle interval to handle absolute values correctly.
+$x=a\sin\theta$ turns $\sqrt{a^2-x^2}$ into $a|\cos\theta|$. On $-\frac\pi2\leq\theta\leq\frac\pi2$, cosine is nonnegative.
+Which substitution fits?
+For $a^2-x^2$ use sine; for $a^2+x^2$ use tangent; for $x^2-a^2$ use secant on the $x\geq a$ branch, where $a>0$.
+Why draw a triangle?
+A triangle converts trigonometric ratios back to the original variable. It describes one branch, not every possible sign.
+What else changes?
+The differential $dx$ changes too. A denominator's radical often cancels a factor from the differential.
+Use identities to simplify square roots
+$a>0$ and $\theta\in[-\frac\pi2,\frac\pi2]$; exclude endpoints when the radical is in a denominator.
+Substitute in the semicircle-area integral.
+Reduce the power and integrate.
+Return to the original variable.
+A radical in the denominator
+Evaluate $\int\frac{dx}{\sqrt{9-x^2}}$.
+Set $x=3\sin\theta$, $dx=3\cos\theta d\theta$, choosing a branch with positive cosine.
+The integral becomes $\int d\theta$; convert back using arcsine.
+$\arcsin\frac x3+C$, $-3<x<3$.
+A sum of squares
+Evaluate $\int\frac{dx}{x^2+4}$.
+Set $x=2\tan\theta$; the denominator becomes $4\sec^2\theta$.
+Since $dx=2\sec^2\theta d\theta$, the integral is $\frac12\theta+C$.
+$\frac12\arctan\frac x2+C$.
+A sum-of-squares radical
+Evaluate $\int\frac{x^2}{\sqrt{x^2+4}}\,dx$.
+Set $x=2\tan\theta$ with $-\pi/2<\theta<\pi/2$, so $\sqrt{x^2+4}=2\sec\theta>0$ and $dx=2\sec^2\theta\,d\theta$.
+The integral becomes $4\int(\sec^3\theta-\sec\theta)\,d\theta$. Integration by parts gives $\int\sec^3\theta\,d\theta=\tfrac12(\sec\theta\tan\theta+\ln|\sec\theta+\tan\theta|)+C$, hence $2\sec\theta\tan\theta-2\ln|\sec\theta+\tan\theta|+C$.
+Substitute $\tan\theta=x/2$, $\sec\theta=\sqrt{x^2+4}/2$. Absorb the logarithm's constant factor into $C$; $x+\sqrt{x^2+4}>0$ holds for every real input.
+$\frac{x\sqrt{x^2+4}}2-2\ln(x+\sqrt{x^2+4})+C$, $x\in\mathbb R$.
+$\sqrt{\cos^2\theta}=\cos\theta$ always holds.
+Keep the absolute value first, then remove it using the chosen angle branch.
+Substitute only in the radical, leaving the differential unchanged.
+Transform both the scale factor in $dx$ and the integration variable.
+Evaluate $\int\frac{dx}{\sqrt{16-x^2}}$.
+$\arcsin\frac x4+C$.
+Express the radical using cosine.
+$x=4\sin\theta$; the factors $4\cos\theta$ cancel.
+Evaluate $\int_0^2\sqrt{4-x^2}\,dx$.
+$\pi$.
+Check using a quarter circle.
+A radius-2 quarter circle has area $\frac14\pi\cdot4=\pi$; substitution also gives $4\int_0^{\pi/2}\cos^2\theta d\theta$.
+Which substitution suits $\sqrt{x^2+9}$?
+$x=3\tan\theta$, $-\frac\pi2<\theta<\frac\pi2$.
+Turn the sum of squares into secant squared.
+$x^2+9=9(1+\tan^2\theta)=9\sec^2\theta$; secant is positive on this branch.
+On $x>2$, evaluate $\int\frac{dx}{x\sqrt{x^2-4}}$.
+$\frac12\arccos\frac2x+C$.
+Use the secant branch.
+$x=2\sec\theta$, $0<\theta<\frac\pi2$; the integral becomes $\frac12\int d\theta$.
+$\cos\theta=\frac2x$; this answer is asserted only on the specified positive branch.
+What does $\sqrt{9\cos^2\theta}$ always equal?
+A square root is nonnegative: retain the absolute value.
+Match the radical to an identity, control its sign with a branch, and convert the result back to the original variable.
+At the center
+Set the angle to 0.
+The horizontal coordinate is zero; the radical's height is 2.
+An intermediate angle
+Set the angle to 0.5.
+The horizontal coordinate increases and the height decreases; the hypotenuse remains 2.
+Near the edge
+Set the angle to 1.4.
+The radical's height is small and remains nonnegative.
+Move a point on the semicircle; compare $x=2\sin\theta$ with the radical's height.
+Near the semicircle's edge, what happens to the horizontal coordinate and height?
+Match trigonometric substitutions to radicals
+Handle absolute values using angle branches
+Transform the differential and substitute back

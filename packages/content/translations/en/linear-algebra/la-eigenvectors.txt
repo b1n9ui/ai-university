@@ -1,0 +1,63 @@
+Eigenvectors and eigenspaces
+Directions that stay on the same line
+An eigenvector is a nonzero vector whose image is a scalar multiple of itself.
+A general vector changes direction. An eigendirection only stretches, shrinks, reverses, or disappears when the eigenvalue is zero.
+Verify eigenvectors and eigenvalues
+Find the associated eigenspace
+What does an eigenvalue measure?
+In $Av=\lambda v$, $\lambda$ gives signed scaling in that direction. $\lambda=0$ is allowed, but $v=0$ is not an eigenvector.
+What do vectors for one eigenvalue form?
+Include zero and the associated vectors form $\ker(A-\lambda I)$, the eigenspace.
+Does every matrix have real eigenvectors?
+No. A planar rotation generally has no real eigendirection. Allowing complex numbers changes the situation.
+Eigenvectors and eigenspaces
+Eigenvalues concern a square map from one finite-dimensional space to itself. Specify whether the scalar field is real or complex.
+Move the scalar multiple to the left.
+Require a nonzero homogeneous solution.
+Find all directions in the eigenspace.
+Verify directions directly
+Given $A=\begin{pmatrix}2&1\\1&2\end{pmatrix}$, check $(1,1)$ and $(1,-1)$.
+$A(1,1)=(3,3)=3(1,1)$.
+$A(1,-1)=(1,-1)$.
+Their eigenvalues are $3$ and $1$ respectively.
+A zero eigenvalue
+Find the zero eigenspace of $A=\operatorname{diag}(2,0)$.
+$Av=0$ forces the first component to zero.
+All $(0,t)$ form that space.
+$E_0=\operatorname{span}((0,1))$.
+Zero is also an eigenvector.
+Zero satisfies every scaling relation and cannot identify an eigenvalue, so the definition excludes it.
+Eigenvalues must be positive.
+They can be negative, zero, or complex.
+When $\operatorname{diag}(2,5)$ acts on $(0,3)$, what is the eigenvalue?
+Read the scale in that direction.
+The output is $(0,15)=5(0,3)$.
+Is every nonzero vector an eigenvector of $A=-I$?
+Apply the matrix to an arbitrary vector.
+$Av=-v$.
+Yes, with eigenvalue minus one.
+Can an invertible $A$ have eigenvalue zero?
+A nonzero zero-eigenvector would belong to the kernel.
+An invertible matrix has zero kernel.
+No.
+Does adding two vectors from one eigenspace stay in that eigenspace?
+Use linearity.
+$A(u+v)=\lambda(u+v)$. The result may be zero, which still belongs to the space.
+It remains in the eigenspace.
+$A=\begin{pmatrix}2&c\\c&2\end{pmatrix}$. Blue is the unit input; gold is its output. They are collinear on eigendirections.
+At which input angles does the matrix preserve the direction line?
+May a matrix send an eigenvector to zero?
+Yes, for eigenvalue zero
+No
+Only the zero vector is allowed
+The input must be nonzero; the output need not be.
+An eigendirection reduces a multi-coordinate map to scalar multiplication. This simplifies matrix powers and dynamical systems later.
+First eigendirection
+Set $c=1,\theta=\pi/4$.
+Output length is three in the same direction, giving eigenvalue three.
+Second eigendirection
+Set $c=1,\theta=3\pi/4$.
+Output length is one, giving eigenvalue one; the directions are perpendicular.
+Repeated eigenvalue without missing directions
+Set $c=0$.
+The matrix is $2I$; every nonzero direction is an eigendirection.

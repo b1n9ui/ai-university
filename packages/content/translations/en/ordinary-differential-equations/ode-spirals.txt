@@ -1,0 +1,64 @@
+Complex eigenvalues, rotation, and stability
+A rotating trajectory can also contract
+The standard rotation block
+$A=\begin{pmatrix}\alpha&-\beta\\\beta&\alpha\end{pmatrix}$ combines scaling $e^{\alpha t}$ with rotation at angular velocity $\beta$.
+Three long-term regimes
+Negative real part gives an attracting spiral, positive gives a repelling spiral, and zero real part with nonzero imaginary part gives a center, orbiting without tending to zero.
+The general linear conclusion
+Strictly negative real parts for all eigenvalues give asymptotic stability. A positive real part gives instability. Zero real parts require examining Jordan structure.
+Split the matrix into scaling and rotation generators.
+Sum even and odd powers separately.
+Radius and angle evolve separately.
+Attracting spiral
+Solve $A=\begin{pmatrix}-1&-2\\2&-1\end{pmatrix}$ with initial state $(1,0)$.
+Its real part is minus one and angular velocity two.
+Rotate and scale using the standard block.
+$e^{-t}(\cos2t,\sin2t)^T$.
+Center
+Do solutions of $x'=-y,y'=x$ tend to zero?
+The squared-radius derivative is $2x(-y)+2yx=0$.
+A nonzero initial state keeps a nonzero radius.
+Stable but not asymptotically stable.
+What behavior corresponds to conjugate roots with real part $-2$?
+Read the radius factor.
+Radius decays by $e^{-2t}$.
+An attracting spiral.
+With $\beta<0$ in the standard block, which way is rotation?
+Inspect the initial velocity at a point on the positive horizontal axis.
+Vertical velocity is negative, turning downward.
+Clockwise.
+Do all nonzero center trajectories approach the origin?
+Radius is preserved.
+A nonzero starting radius does not disappear.
+No.
+Must a center remain circular after a general similarity change?
+A basis change need not be orthogonal.
+A circle can become an ellipse.
+Not necessarily.
+Every stable equilibrium attracts nearby trajectories.
+A center is stable without attracting.
+Complex eigenvalues imply instability.
+The real-part sign determines scaling.
+Complex real parts control radial trends and imaginary parts rotation. A linear center is not asymptotically stable.
+Rotation and dilation can coexist, producing spirals.
+Distinguish centers and spirals
+Determine forward-time linear stability
+Complex eigenvalues, rotation, and stability
+This expression applies to the stated standard block. A general similarity change turns circles into ellipses while preserving frequency and exponential trends.
+Which sign must an attracting spiral's eigenvalue real part have?
+Zero
+Positive
+Negative
+A negative real part gives exponential decay.
+Orbiting and moving farther from the origin are separate effects. Read angle and radius independently.
+Attracting spiral
+Radius shrinks during counterclockwise rotation.
+Set radial exponent rate $\alpha$ to $-0.5$, angular velocity $\beta$ to $1$, and observation time $t$ to $4$.
+Center
+Radius stays one and does not tend to zero.
+Set radial exponent rate $\alpha$ to $0$, angular velocity $\beta$ to $1$, and observation time $t$ to $4$.
+Reverse and repel
+Clockwise rotation with growing radius.
+Set radial exponent rate $\alpha$ to $0.3$, angular velocity $\beta$ to $-1$, and observation time $t$ to $3$.
+Draw the exact trajectory from $(1,0)$. Real part controls radius; angular-velocity sign controls rotation direction.
+What occurs between contraction and expansion as the real part crosses zero?

@@ -1,0 +1,69 @@
+General changes of variables and Jacobians
+Measure local area or volume scaling
+A Jacobian determinant gives a smooth coordinate map's local area or volume scaling. Integration uses its absolute value.
+A parameter square becomes a small parallelogram. Two derivative vectors determine area; three determine volume.
+Compute Jacobians and area factors
+Check one-to-one coverage and orientation
+The Jacobian matrix
+Arrange each output coordinate's partial derivatives by input parameter. In two dimensions its determinant is signed area scaling from the two derivative vectors.
+Why the absolute value?
+A negative determinant means orientation reversal, not negative area or volume. Oriented surface integrals have separate direction rules.
+When is direct substitution invalid?
+A nonzero local determinant does not ensure no global overlap. Check one-to-one coverage; folded maps require branches and multiplicity accounting.
+Measure local area or volume scaling
+Use a continuously differentiable map one-to-one in the interior with nonzero interior Jacobian. Boundary degeneracies are negligible; require integrability. In three dimensions use a third-order determinant.
+Partial-derivative vectors map small parameter edges.
+Their parallelogram area is the absolute determinant.
+Transform the function and region together.
+Ellipse area
+Map the unit disk by $x=3u,y=2v$. Find image area.
+The Jacobian is $3\cdot2=6$.
+The original disk has area $\pi$; area scales sixfold.
+$6\pi$.
+A skew grid
+For $x=u+v,y=u-v$, find the image area of the parameter unit square.
+The determinant is $-2$.
+Use absolute factor 2 times parameter area one.
+2; the sign indicates orientation reversal only.
+Position-dependent scaling
+Let $x=u,y=(1+u)v$, $0\le u,v\le1$. Find image area and its integral $\iint_D y\,dA$.
+The inverse is $u=x,v=y/(1+x)$, so the image is $0\le x\le1,0\le y\le1+x$ and coverage is one-to-one.
+$J=1+u>0$; area is $\int_0^1\int_0^1(1+u)\,dv\,du=3/2$. One point's factor is not a global constant.
+Transform the integrand too: $y=(1+u)v$. Thus the integral is $\int_0^1\int_0^1(1+u)^2v\,dv\,du=\frac12\int_0^1(1+u)^2du=7/6$.
+Area $3/2$; $\iint_Dy\,dA=7/6$.
+A negative determinant gives negative mass.
+An unoriented area element uses the absolute determinant.
+Nonzero determinant guarantees global one-to-one coverage.
+It gives local information; global injectivity needs a separate check.
+Find the area factor for $x=2u,y=5v$.
+Take the diagonal matrix determinant.
+$|2\cdot5|=10$.
+Find area scaling and orientation for $x=v,y=u$.
+Exchange the coordinates.
+The determinant is $-1$; absolute area factor is 1.
+Area is unchanged and orientation reversed.
+Is $x=u^2,y=v$ one-to-one on $-1\le u\le1$ for direct substitution?
+Compare opposite parameters.
+Positive and negative parameters give the same first coordinate, duplicating interior coverage.
+Split branches; do not treat both as one coverage.
+No.
+Find the volume factor for spatial scaling $x=2u,y=3v,z=4w$.
+Multiply the three independent factors.
+The absolute determinant is $2\cdot3\cdot4=24$.
+What if the Jacobian is negative in an area integral?
+Take its absolute value
+Discard the region
+Mass becomes negative
+Unoriented area is nonnegative; the sign records orientation.
+The unit parameter square maps by $x=u,y=(1+cu)v$ to a trapezoid. Move $u$ and compare local factor $J=1+cu$ with total area $1+c/2$.
+Why cannot one local factor multiply the whole parameter area when scaling varies?
+Derivatives map a small square to a parallelogram; its determinant measures the local expansion.
+No deformation
+First choose $c=0,u=0.5$.
+The map is the identity; local factor and total area are both $1$.
+Near the left
+Choose $c=1,u=0$.
+The left local factor is $1$, while total image area is $3/2$. Local and global factors differ.
+Move right
+Keep $c=1$ and move $u$ to $1$.
+The right local factor is $2$, while total area stays $3/2$; integration accumulates the varying factors.

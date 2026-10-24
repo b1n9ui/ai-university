@@ -1,0 +1,64 @@
+The pigeonhole principle and double counting
+With more objects than containers, some container holds more than one object.
+With more objects than containers, some container holds more than one object.
+The pigeonhole principle guarantees a collision without necessarily locating it.
+Use an average-based lower bound
+Choose suitable boxes
+Use an average-based lower bound
+If each of a fixed number of boxes holds at most a given count, total capacity is bounded. Exceed that capacity and some box must hold more.
+Choose suitable boxes
+Boxes may be residue classes, birth months, or intervals. The key is often finding a finite classification covering every object.
+Count the same relation twice
+Group the same collection in two ways to obtain two expressions for its size. For example, the two endpoints of each edge contribute to the degree sum.
+The box count is a positive integer and the object count a nonnegative integer.
+Each object goes into exactly one box.
+Assume every box falls below the target count.
+This bounds the total number of objects.
+Contradict the actual total.
+Birth months
+Among thirteen people, how many must share a birth month?
+There are only twelve months.
+The ceiling of thirteen divided by twelve is two.
+At least two.
+A subset with a marked element
+Choose a subset of an $n$-element set and mark one of its elements. Count the possibilities.
+Choose size $k$ first, then mark an element: $\sum_k k\binom nk$.
+Choose the marked element first, then the remaining subset: $n2^{n-1}$.
+$\sum_k k\binom nk=n2^{n-1}$ for positive integer $n$.
+Ten objects go into three boxes. How many must some box contain?
+Round the average upward.
+$\lceil10/3\rceil=4$.
+Four.
+Does the pigeonhole principle identify the particular box?
+Existence is different from location.
+It guarantees only that at least one box reaches the bound.
+Not in general.
+Must any six integers contain two congruent modulo five?
+Classify by the five remainders.
+Six objects go into five classes.
+Yes.
+May the two sides of a double-counting identity count different collections?
+Specify the relation being counted first.
+Both sides must describe the same set or collections in bijection.
+No.
+Do ten objects in three locations guarantee four in some location?
+Yes
+Only three are guaranteed
+Only with an even distribution
+At most three per location would accommodate only nine.
+The average bound requires an even distribution
+No uniform distribution is required.
+Similar-looking counting expressions are equal
+Explain why they count the same objects.
+Change the numbers of objects or boxes. How does the guaranteed occupancy bound change?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+No uniform distribution is required.
+Object count: 0
+Set the control to $0$. Observe which objects, relations, or counts change.
+At this setting: guaranteed lower bound $0$; largest occupancy in this allocation $0$.
+Object count: 10
+Set the control to $10$. Observe which objects, relations, or counts change.
+At this setting: guaranteed lower bound $4$; largest occupancy in this allocation $4$.
+Object count: 20
+Set the control to $20$. Observe which objects, relations, or counts change.
+At this setting: guaranteed lower bound $7$; largest occupancy in this allocation $7$.

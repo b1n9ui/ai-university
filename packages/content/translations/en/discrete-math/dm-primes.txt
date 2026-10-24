@@ -1,0 +1,66 @@
+Primes and unique factorization
+Every integer greater than one factors into primes, uniquely apart from their order.
+Every integer greater than one factors into primes, uniquely apart from their order.
+Trial division need not pass the square root: two larger factors would have a product greater than the original number.
+Define primes
+Understand Euclid's lemma
+Define primes
+A prime has exactly two positive divisors: one and itself. One is not prime; otherwise arbitrary factors of one would destroy uniqueness.
+Understand Euclid's lemma
+If a prime divides a product of two integers, it divides at least one factor. General composite integers do not have this property.
+Establish unique factorization
+Existence follows by repeatedly factoring smaller composite integers. For uniqueness, Euclid's lemma matches the prime factors in two factorizations one by one.
+The fundamental theorem of arithmetic applies to positive integers greater than one.
+The prime factors are distinct, with positive integer exponents.
+Uniqueness disregards the order of prime factors.
+If a prime does not divide the first factor, they are coprime.
+Use Bézout's identity to express one.
+Multiply by the second factor to obtain divisibility.
+b=upb+vab\implies p\mid b\ \text{if }p\mid ab
+Factor sixty
+Find the prime factorization of sixty.
+$60=2\cdot30=2^2\cdot15$.
+$15=3\cdot5$.
+$60=2^2\cdot3\cdot5$.
+Why composites do not work
+Six divides two times three. Must it divide either two or three?
+The product is six, so divisibility holds.
+Neither factor is divisible by six.
+No. The product-divisibility lemma requires a prime.
+Is one prime?
+Count its positive divisors.
+One has only one positive divisor.
+No.
+Which primes must be tested to establish that twenty-nine is prime?
+Its square root is less than six.
+None of two, three, or five divides it.
+Two, three, and five.
+How many distinct prime factors does eighty-four have?
+Factor successively.
+$84=2^2\cdot3\cdot7$.
+Three.
+Are there infinitely many primes?
+Assume a finite list and consider its product plus one.
+That number is divisible by no listed prime, yet still has a prime divisor.
+Yes.
+Why does trial division only need to reach the square root?
+All factors are small
+At least one nontrivial factor is no greater than the square root
+Every prime is no greater than the square root
+A factor pair cannot have both factors greater than the square root.
+One is the smallest prime
+One does not have exactly two positive divisors.
+The product-divisibility lemma holds for every integer
+The composite number six already gives a counterexample.
+Increase the sieve's upper bound. Which numbers remain prime?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+One does not have exactly two positive divisors.
+Sieve upper bound: 2
+Set the control to $2$. Observe which objects, relations, or counts change.
+At this setting: primes $1$.
+Sieve upper bound: 51
+Set the control to $51$. Observe which objects, relations, or counts change.
+At this setting: primes $15$.
+Sieve upper bound: 100
+Set the control to $100$. Observe which objects, relations, or counts change.
+At this setting: primes $25$.

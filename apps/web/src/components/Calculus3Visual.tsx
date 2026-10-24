@@ -1,3 +1,4 @@
+import {tr, localizeNode} from "../i18n";
 import { useEffect, useId, useMemo, useRef, useState } from "react";
 import {
   RotateCcw,
@@ -96,13 +97,13 @@ export function SpatialPlot({
       viewBox={"0 0 " + W + " " + H}
       role="img"
       aria-label={
-        title +
+        tr(title +
         "；" +
         (planar ? "二维坐标图" : view === "space"
           ? "可旋转三维图"
           : view === "top"
             ? "俯视投影"
-            : "正视投影")
+            : "正视投影"))
       }
       tabIndex={interactive ? 0 : undefined}
       onKeyDown={(e) => {
@@ -167,11 +168,9 @@ export function SpatialPlot({
         drag.current = null;
       }}
     >
-      <title>{title}</title>
+      <title>{localizeNode(title)}</title>
       <desc>
-        {planar?'二维坐标图，横轴向右、纵轴向上。加减键缩放，Home 恢复。':'三维几何，三轴使用相同单位。拖动或方向键旋转，加减键缩放，Home 恢复；可切换俯视或正视。'}
-        数值与公式在图下提供。
-      </desc>
+        {localizeNode(planar?'二维坐标图，横轴向右、纵轴向上。加减键缩放，Home 恢复。':'三维几何，三轴使用相同单位。拖动或方向键旋转，加减键缩放，Home 恢复；可切换俯视或正视。')}{tr("数值与公式在图下提供。")}</desc>
       <defs>
         <radialGradient id={"glow" + id}>
           <stop stopColor="#294c43" stopOpacity=".6" />
@@ -183,7 +182,7 @@ export function SpatialPlot({
       </defs>
       <rect width={W} height={H} fill={"url(#glow" + id + ")"} />
       <g clipPath={"url(#clip" + id + ")"}>
-        {frame.lines
+        {localizeNode(frame.lines
           .filter((l) => !l.label)
           .map((l, i) => (
             <path
@@ -194,8 +193,8 @@ export function SpatialPlot({
               strokeWidth=".8"
               strokeOpacity=".5"
             />
-          ))}
-        {polygons.map((p, i) => (
+          )))}
+        {localizeNode(polygons.map((p, i) => (
           <path
             key={"face" + i}
             d={path(p.points) + "Z"}
@@ -205,8 +204,8 @@ export function SpatialPlot({
             strokeOpacity={Math.min(0.3, p.opacity + 0.05)}
             strokeWidth=".55"
           />
-        ))}
-        {(planar?[0,1]:[0,1,2]).map((axis) => {
+        )))}
+        {localizeNode((planar?[0,1]:[0,1,2]).map((axis) => {
           const from = [0, 0, 0],
             to = [0, 0, 0];
           from[axis] = planar?frame.focus[axis]-frame.extent*.9:-2;
@@ -230,9 +229,9 @@ export function SpatialPlot({
                 className="axis-letter"
                 fill={["#bfe3b6", "#9bd7e6", "#eed3aa"][axis]}
               >
-                {(frame.axisLabels??["x", "y", "z"])[axis]}
+                {localizeNode((frame.axisLabels??["x", "y", "z"])[axis])}
               </text>
-              {ticks.map((v) => {
+              {localizeNode(ticks.map((v) => {
                 const point = [0, 0, 0];
                 point[axis] = v;
                 const q = project(point);
@@ -244,14 +243,14 @@ export function SpatialPlot({
                     fill="#aec1b1"
                     fontSize="10"
                   >
-                    {v}
+                    {localizeNode(v)}
                   </text>
                 );
-              })}
+              }))}
             </g>
           );
-        })}
-        {frame.lines
+        }))}
+        {localizeNode(frame.lines
           .filter((l) => !!l.label)
           .map((l, i) => (
             <path
@@ -263,8 +262,8 @@ export function SpatialPlot({
               strokeDasharray={l.dash ? "5 5" : undefined}
               strokeLinecap="round"
             />
-          ))}
-        {frame.arrows.map((a, i) => {
+          )))}
+        {localizeNode(frame.arrows.map((a, i) => {
           const p = project(a.at),
             q = project(add(a.at, a.vector)),
             dx = q[0] - p[0],
@@ -277,7 +276,7 @@ export function SpatialPlot({
             w = h * 0.45;
           return (
             <g key={"arrow" + i}>
-              <title>{a.label ? plainMathText(a.label) : "场向量"}</title>
+              <title>{localizeNode(a.label ? plainMathText(a.label) : "场向量")}</title>
               <path
                 d={"M" + p[0] + "," + p[1] + "L" + q[0] + "," + q[1]}
                 stroke={a.color}
@@ -304,8 +303,8 @@ export function SpatialPlot({
               />
             </g>
           );
-        })}
-        {frame.dots.map((d, i) => {
+        }))}
+        {localizeNode(frame.dots.map((d, i) => {
           const q = project(d.at);
           return (
             <g key={"dot" + i}>
@@ -324,24 +323,24 @@ export function SpatialPlot({
                 stroke="#fff9dd"
                 strokeWidth="1.2"
               />
-              {d.label && (
+              {localizeNode(d.label && (
                 <text x={q[0] + 12} y={q[1] - 12} fill={d.color} fontSize="12">
-                  {plainMathText(d.label)}
+                  {localizeNode(plainMathText(d.label))}
                 </text>
-              )}
+              ))}
             </g>
           );
-        })}
+        }))}
       </g>
-      {interactive && (
+      {localizeNode(interactive && (
         <text x="20" y={H - 18} fill="#9ebcac" fontSize="11">
-          {planar ? "加减键缩放 · Home 恢复" : view === "space"
+          {localizeNode(planar ? "加减键缩放 · Home 恢复" : view === "space"
             ? "拖动旋转 · 方向键也可操作"
             : view === "top"
               ? "俯视：高度被投影到同一平面"
-              : "正视：纵向深度被压缩"}
+              : "正视：纵向深度被压缩")}
         </text>
-      )}
+      ))}
     </svg>
   );
 }
@@ -474,24 +473,24 @@ export default function Calculus3Visual({
     <section
       ref={card}
       className={"visual-card calculus3-visual " + (compact ? "compact" : "")}
-      aria-label="交互演示"
+      aria-label={tr("交互演示")}
     >
       <div className="visual-heading">
         <div>
-          <span className="eyebrow">{ode?'ORDINARY DIFFERENTIAL EQUATIONS':linear?'LINEAR ALGEBRA':'SPATIAL THINKING / CALCULUS III'}</span>
-          <h3>{lesson.title}</h3>
+          <span className="eyebrow">{localizeNode(ode?'ORDINARY DIFFERENTIAL EQUATIONS':linear?'LINEAR ALGEBRA':'SPATIAL THINKING / CALCULUS III')}</span>
+          <h3>{localizeNode(lesson.title)}</h3>
         </div>
-        <button className="icon-btn" aria-label="重置演示" onClick={reset}>
+        <button className="icon-btn" aria-label={tr("重置演示")} onClick={reset}>
           <RotateCcw size={17} />
         </button>
       </div>
       <div className="c3-stage-head">
         <span className="c3-local-badge">
           <Move3D size={13} />
-          {ode?'本地动态模型':linear?(frame.dimension===2?'二维图示':'三维图示'):'本地三维几何'}
+          {localizeNode(ode?'本地动态模型':linear?(frame.dimension===2?'二维图示':'三维图示'):'本地三维几何')}
         </span>
-        {frame.dimension!==2&&<div className="c3-views" role="group" aria-label="投影视角">
-          {(
+        {localizeNode(frame.dimension!==2&&<div className="c3-views" role="group" aria-label={tr("投影视角")}>
+          {localizeNode((
             [
               ["space", "三维"],
               ["top", "俯视"],
@@ -503,20 +502,20 @@ export default function Calculus3Visual({
               aria-pressed={view === v}
               onClick={() => setView(v)}
             >
-              {label}
+              {localizeNode(label)}
             </button>
-          ))}
-        </div>}
+          )))}
+        </div>)}
       </div>
-      {frame.matrix&&<div className="linear-matrix"><Formula latex={frame.matrix}/></div>}
+      {localizeNode(frame.matrix&&<div className="linear-matrix"><Formula latex={frame.matrix}/></div>)}
       <div className="c3-formula">
         <Formula latex={frame.formula} />
       </div>
-      {frame.motion&&<SpringMotion motion={frame.motion}/>}
+      {localizeNode(frame.motion&&<SpringMotion motion={frame.motion}/>)}
       <div className="c3-stage">
         <SpatialPlot
           frame={frame}
-          title={lesson.title}
+          title={tr(lesson.title)}
           interactive
           view={view}
           camera={camera}
@@ -526,7 +525,7 @@ export default function Calculus3Visual({
         <div className="c3-camera-tools">
           <button
             className="icon-btn"
-            aria-label={frame.dimension===2?'放大图形':'放大三维图'}
+            aria-label={tr(frame.dimension===2?'放大图形':'放大三维图')}
             onClick={() =>
               setCamera((c) => ({ ...c, zoom: Math.min(1.9, c.zoom + 0.15) }))
             }
@@ -535,7 +534,7 @@ export default function Calculus3Visual({
           </button>
           <button
             className="icon-btn"
-            aria-label={frame.dimension===2?'缩小图形':'缩小三维图'}
+            aria-label={tr(frame.dimension===2?'缩小图形':'缩小三维图')}
             onClick={() =>
               setCamera((c) => ({ ...c, zoom: Math.max(0.6, c.zoom - 0.15) }))
             }
@@ -544,7 +543,7 @@ export default function Calculus3Visual({
           </button>
           <button
             className="icon-btn"
-            aria-label={frame.dimension===2?'恢复图形视角':'恢复三维视角'}
+            aria-label={tr(frame.dimension===2?'恢复图形视角':'恢复三维视角')}
             onClick={() => {
               setView("space");
               setCamera(initialCamera);
@@ -554,51 +553,49 @@ export default function Calculus3Visual({
           </button>
         </div>
       </div>
-      {initialDrag&&<p className="ode-drag-hint">{lesson.id==='ode-direction-fields'||lesson.id==='ode-classification'?'在图内上下拖动可调整零时刻的初始值；下方输入框和滑块也可操作。':'在图内拖动可调整初始状态；下方输入框和滑块也可操作。'}</p>}
-      {legend.length > 0 && (
+      {localizeNode(initialDrag&&<p className="ode-drag-hint">{localizeNode(lesson.id==='ode-direction-fields'||lesson.id==='ode-classification'?'在图内上下拖动可调整零时刻的初始值；下方输入框和滑块也可操作。':'在图内拖动可调整初始状态；下方输入框和滑块也可操作。')}</p>)}
+      {localizeNode(legend.length > 0 && (
         <div className="c2-legend c3-legend">
-          {legend.map((l) => (
+          {localizeNode(legend.map((l) => (
             <span key={l.label}>
               <i style={{ background: l.color }} />
-              <MathText text={l.label} />
+              <MathText text={tr(l.label)} />
             </span>
-          ))}
+          )))}
         </div>
-      )}
+      ))}
       <div className="c2-readouts">
-        {frame.stats.map((s) => (
+        {localizeNode(frame.stats.map((s) => (
           <div key={s.label}>
             <small>
-              <MathText text={s.label} />
+              <MathText text={tr(s.label)} />
             </small>
             <strong>
-              <MathText text={s.value} />
+              <MathText text={tr(s.value)} />
             </strong>
           </div>
-        ))}
+        )))}
       </div>
       <div className="controls">
-        {controls.map((c) => c.options ? <label className="linear-choice" key={c.key}><MathText text={c.label}/><select aria-label={plainMathText(c.label)} value={values[c.key]} onChange={e=>update(c.key,+e.target.value)}>{c.options.map(o=><option key={o.value} value={o.value}>{o.label}</option>)}</select></label> : (
+        {localizeNode(controls.map((c) => c.options ? <label className="linear-choice" key={c.key}><MathText text={tr(c.label)}/><select aria-label={tr(plainMathText(c.label))} value={values[c.key]} onChange={e=>update(c.key,+e.target.value)}>{localizeNode(c.options.map(o=><option key={o.value} value={o.value}>{localizeNode(o.label)}</option>))}</select></label> : (
           <ParameterControl
             key={c.key}
-            label={c.label}
+            label={tr(c.label)}
             min={c.min}
             max={c.max}
             step={c.step}
             value={values[c.key]}
             onChange={(v) => update(c.key, v)}
           />
-        ))}
+        )))}
       </div>
       <div className="animation-transport">
         <button className="play-btn" onClick={play}>
-          {playing ? <Pause size={16} /> : <Play size={16} />}{" "}
-          {playing ? "暂停动画" : "自动推进"}
+          {localizeNode(playing ? <Pause size={16} /> : <Play size={16} />)}{localizeNode(" ")}
+          {localizeNode(playing ? "暂停动画" : "自动推进")}
         </button>
-        <label>
-          速度
-          <select
-            aria-label="动画速度"
+        <label>{tr("速度")}<select
+            aria-label={tr("动画速度")}
             value={speed}
             onChange={(e) => {
               setPlaying(false);
@@ -611,39 +608,33 @@ export default function Calculus3Visual({
           </select>
         </label>
       </div>
-      {done && (
+      {localizeNode(done && (
         <p className="playback-finish" role="status">
-          {linear||ode?'本次参数变化已播完。':'已到本次参数的明确终点。趋零演示保留正数下界；有限图示不等于无穷极限的证明。'}
+          {localizeNode(linear||ode?'本次参数变化已播完。':'已到本次参数的明确终点。趋零演示保留正数下界；有限图示不等于无穷极限的证明。')}
         </p>
-      )}
+      ))}
       <p className="visual-caption">
         <span>
-          <MathText text={lesson.interactiveVisual.caption} />
+          <MathText text={tr(lesson.interactiveVisual.caption)} />
         </span>
       </p>
-      <p className="visual-disclaimer">{frame.note}</p>
-      {frame.dimension!==2&&<details className="c3-help">
+      <p className="visual-disclaimer">{localizeNode(frame.note)}</p>
+      {localizeNode(frame.dimension!==2&&<details className="c3-help">
         <summary>
-          <ArrowUpRight size={13} />
-          操作与投影说明
-        </summary>
-        <p>
-          三维视图可拖动旋转。点按图形后，方向键旋转、加减号缩放、Home
-          恢复。手机请在图内拖动，正文区域仍可正常滚动。俯视和正视压缩一个方向；切回三维可以检查遮挡。所有几何在本地用向量坐标计算，无需
-          WebGL。
-        </p>
-      </details>}
+          <ArrowUpRight size={13} />{tr("操作与投影说明")}</summary>
+        <p>{tr("三维视图可拖动旋转。点按图形后，方向键旋转、加减号缩放、Home 恢复。手机请在图内拖动，正文区域仍可正常滚动。俯视和正视压缩一个方向；切回三维可以检查遮挡。所有几何在本地用向量坐标计算，无需 WebGL。")}</p>
+      </details>)}
     </section>
   );
 }
 export function Calculus3Preview({ lesson }: { lesson: Lesson }) {
   const frame = lesson.interactiveVisual.kind==='ode'?odeFrame(lesson.id):lesson.interactiveVisual.kind==='linear-algebra'?linearFrame(lesson.id):calculus3Frame(lesson.id);
-  return <SpatialPlot frame={frame} title={lesson.title} />;
+  return <SpatialPlot frame={frame} title={tr(lesson.title)} />;
 }
 function SpringMotion({motion}:{motion:NonNullable<Frame3['motion']>}){
   const x=210+80*motion.position/motion.range;
   const spring=Array.from({length:17},(_,i)=>`${i?'L':'M'}${40+(x-65)*i/16},${i===0||i===16?61:i%2?49:73}`).join('');
-  return <div className="ode-motion"><span>运动示意 · 与下图使用同一时刻</span><svg viewBox="0 0 400 115" role="img" aria-label={`弹簧运动，时间 ${motion.time.toFixed(2)}，位移 ${motion.position.toFixed(4)}；示意比例在本模型内固定`}>
+  return <div className="ode-motion"><span>{tr("运动示意 · 与下图使用同一时刻")}</span><svg viewBox="0 0 400 115" role="img" aria-label={tr(`弹簧运动，时间 ${motion.time.toFixed(2)}，位移 ${motion.position.toFixed(4)}；示意比例在本模型内固定`)}>
     <line x1="22" y1="25" x2="22" y2="92" stroke="#8aaf9d" strokeWidth="4"/>
     <line x1="22" y1="92" x2="380" y2="92" stroke="#607e71"/>
     <line x1="210" y1="20" x2="210" y2="90" stroke="#adc19b" strokeDasharray="4 5" opacity=".5"/>
@@ -651,6 +642,6 @@ function SpringMotion({motion}:{motion:NonNullable<Frame3['motion']>}){
     <path d={spring} stroke="#b9dba7" strokeWidth="2" fill="none"/>
     <rect x={x-25} y="36" width="50" height="50" rx="8" fill="#dbbe80" stroke="#f4e9b8"/>
     <circle cx={x-14} cy="89" r="3" fill="#b2c5b1"/><circle cx={x+14} cy="89" r="3" fill="#b2c5b1"/>
-    <text x="210" y="111" textAnchor="middle" fill="#b8cab3" fontSize="10">平衡位置</text>
+    <text x="210" y="111" textAnchor="middle" fill="#b8cab3" fontSize="10">{tr("平衡位置")}</text>
   </svg></div>;
 }

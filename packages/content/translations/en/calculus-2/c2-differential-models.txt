@@ -1,0 +1,65 @@
+Differential equations and direction fields
+Find curves that follow a prescribed slope
+A differential equation specifies slope; an initial value specifies a starting point. A direction field shows the local directions allowed.
+The unknown is a function. $y\prime=y$ asks for all curves whose rate equals their value; an initial value selects one.
+Checking a solution
+Substitute the function and derivative into the equation. Check its claimed interval and initial value too.
+What does a direction field show?
+At each $(x,y)$, draw a segment with slope $f(x,y)$. It suggests growth, decline and equilibria; finitely many segments do not prove existence.
+Is the solution unique?
+A continuous right side gives local existence. If its derivative with respect to the vertical variable is also continuous near the initial point, local uniqueness follows. Continuity alone need not give uniqueness.
+Find curves that follow a prescribed slope
+One sufficient local-uniqueness condition is continuity of $f$ and $\frac{\partial f}{\partial y}$ near the initial point. The latter means differentiating in $y$ while holding $x$ fixed.
+Differentiate the exponential candidate.
+Use the initial value to determine the constant.
+Substitute back to check equation and initial value.
+Checking a solution family
+Does $y=Ce^{-2x}$ satisfy $y\prime=-2y$?
+Its derivative is $-2Ce^{-2x}$.
+The right side $-2y$ agrees for every real input.
+Yes; an initial value determines the constant.
+Selecting an initial-value solution
+Solve $y\prime=y$, $y(0)=3$.
+A candidate general solution is $Ce^x$.
+The initial value gives $C=3$; verify by substitution.
+$y=3e^x$, for every real input.
+An initial value specifies a slope.
+It specifies a point; the equation supplies the slope there.
+Every continuous slope field guarantees uniqueness.
+Additional local-uniqueness hypotheses are needed.
+Does $y=x^2+1$ satisfy $y\prime=2x$ and $y(0)=1$?
+Yes.
+Check both equation and initial value.
+$y\prime=2x$ and $y(0)=1$.
+Solve $y\prime=y$, $y(0)=0$.
+$y=0$.
+Equilibria are solutions too.
+For the zero function, both derivative and right side vanish. Smoothness here gives uniqueness.
+For $y\prime=1-y$, find the slope at $y=2$.
+$-1$.
+Substitute the current height.
+$1-2=-1$; the curve falls to the right.
+Solve $y\prime=3y$, $y(0)=2$.
+$2e^{3x}$.
+Use an exponential and substitute back.
+Its derivative is $6e^{3x}=3y$; the initial value is 2.
+What does an initial value determine?
+A point on the curve
+Slopes at every point
+Existence on the entire real axis
+The equation specifies slopes; global existence requires further checking.
+A solution curve follows the small direction arrows at every point along its path.
+Coarse steps
+Set the count to 4.
+Four steps on the fixed interval $[0,4]$ leave a visible gap from the exact curve.
+Reduce the step size
+Set the count to 16.
+The step size is 0.25; compare error directly with the exact solution.
+Refine further
+Set the count to 64.
+The approximation still has finitely many steps; the field is not a uniqueness proof.
+Compare the direction field, exact solution and Euler polygon for $y\prime=y(1-y/10)$, with initial value $y(0)=2$.
+How does reducing step size change the gap between polygon and exact curve?
+Check equations and initial values
+Read direction fields and equilibrium slopes
+Distinguish local existence from uniqueness

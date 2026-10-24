@@ -1,0 +1,64 @@
+Classical fourth-order Runge-Kutta
+Combine four slope evaluations into one step
+Where are the evaluations?
+At the start, first predicted midpoint, second predicted midpoint, and predicted endpoint. Each stage uses the previous slope.
+What are the weights?
+Use one, two, two, one, divided by six, rather than a simple four-slope average.
+Higher order still has limits
+Smooth solutions on fixed finite intervals give fourth-order global accuracy. Stiffness, jumps, and singularities can defeat that advantage. Split steps at known jumps.
+Calculate the four stages for test equation $y'=y$.
+Their weighted update matches the exponential through degree four.
+The difference begins at degree five.
+A unit step
+Apply RK4 to $y'=y,y_0=1,h=1$.
+The stages are $1,3/2,7/4,11/4$.
+The weighted increment is $41/24$.
+$y_1=65/24\approx2.708333$.
+Constant slope
+Take one RK4 step for $y'=3,y_0=2,h=1/2$.
+All four slopes are three.
+Weights sum to six, giving increment $3/2$.
+$y_1=7/2$, exact in this case.
+How many right-hand-side evaluations does one usual RK4 step use?
+Count the stages.
+One for each of four stages.
+$4$.
+In the asymptotic regime, how does fourth-order global error change when step size halves?
+Error is proportional to the fourth power.
+It shrinks to one sixteenth.
+About $1/16$.
+Can RK4 stably solve decay with arbitrarily large steps?
+Accuracy order is not unconditional stability.
+Its amplification factor can leave the unit disk for large negative arguments.
+No.
+Why place a node at a known step discontinuity?
+Crossing nonsmooth forcing breaks the order assumptions.
+Split into smooth segments for the error analysis.
+Avoid crossing the jump in one step.
+Fourth order means only the fourth decimal place can be wrong.
+Order describes error scaling as step size tends to zero.
+Four stages repeat sampling at the same position.
+Stage locations differ and depend on earlier stages.
+Classical RK4 combines four carefully placed slope evaluations for fourth-order global accuracy under smoothness hypotheses.
+Evaluate two midpoints and an endpoint, then combine with the appropriate weights.
+Calculate all four stages
+Distinguish high-order accuracy from stability guarantees
+Classical fourth-order Runge-Kutta
+Stages here are slopes, not already multiplied by step size. Fourth-order convergence needs sufficient smoothness, solution existence, and stable error propagation.
+What does fourth order mean?
+Always four significant digits
+Leading global error scales with the fourth power of step size under suitable conditions
+It applies only to fourth-order differential equations
+Method order and differential-equation order are different notions.
+RK4 accuracy comes from stage locations and weights working together, rather than repeated unweighted averaging.
+Coarse mesh
+Methods have different errors at the same endpoint.
+Set equal step count $N$ to $2$ and target time $T$ to $2$.
+Refine the mesh
+Step size is one quarter of its previous value.
+Set equal step count $N$ to $8$ and target time $T$ to $2$.
+Finer mesh
+Compare order-dependent error reduction; finite precision still imposes a floor.
+Set equal step count $N$ to $32$ and target time $T$ to $2$.
+Compare explicit Euler, Heun, RK4, and the analytic exponential at one endpoint. Segments only connect numerical nodes.
+As the mesh is refined, how does RK4 error compare with lower-order methods?

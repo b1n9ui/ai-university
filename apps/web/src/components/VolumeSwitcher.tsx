@@ -20,7 +20,7 @@ export function VolumeSwitcher({ path }: { path: string }) {
             location.hash = routeHref(path, { book: e.target.value });
           }}
         >
-          {localizeNode(path==="downloads" && locale === "zh"?categories.map(category=><optgroup key={category.id} label={tr(category.title)}>{localizeNode(publishedVolumes.filter(v=>v.categoryId===category.id).map(v=><option key={v.id} value={v.id}>{localizeNode(v.title)}</option>))}</optgroup>):collections.map((c) => (
+          {localizeNode(path==="downloads"?categories.map(category=><optgroup key={category.id} label={tr(category.title)}>{localizeNode(publishedVolumes.filter(v=>v.categoryId===category.id).map(v=><option key={v.id} value={v.id}>{localizeNode(v.title)}</option>))}</optgroup>):collections.map((c) => (
             <option key={c.book.id} value={c.book.id}>
               {localizeNode(locale === "en" ? c.book.title : c.book.titleZh+" · "+c.book.title)}
             </option>

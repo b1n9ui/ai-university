@@ -1,0 +1,64 @@
+Diagonalization and similar matrices
+Coordinates that do not mix
+In an eigenvector basis, the matrix is diagonal and scales each coordinate separately.
+Choosing directions that do not mix separates the matrix action into independent coordinates.
+Construct an eigenvector matrix
+Test diagonalizability and calculate matrix powers
+How is the factorization formed?
+Put independent eigenvectors in $S$, and matching eigenvalues on the diagonal of $D$ in the same order. Then $AS=SD$.
+When does it exist?
+A matrix of size $n$ is diagonalizable over a field exactly when it has $n$ independent eigenvectors there. Having $n$ distinct eigenvalues is sufficient but not necessary.
+What does similarity preserve?
+Similar matrices describe the same operator in different coordinates. They share characteristic polynomial, trace, determinant, and rank, but generally not entries or Euclidean length effects.
+Diagonalization and similar matrices
+The eigenvector matrix $S$ must be invertible, with eigenvector columns matched to diagonal entries. Negative powers also require nonzero eigenvalues.
+Apply the matrix column by column.
+Multiply on the right by the inverse.
+Repeated multiplication cancels adjacent inverse factors.
+Factor, then take powers
+Given $A=\begin{pmatrix}2&1\\1&2\end{pmatrix}$, find $A^2$.
+Choose $S=\begin{pmatrix}1&1\\1&-1\end{pmatrix}$ and $D=\operatorname{diag}(3,1)$.
+$SD^2S^{-1}=\begin{pmatrix}5&4\\4&5\end{pmatrix}$; verify by direct multiplication.
+$A^2=\begin{pmatrix}5&4\\4&5\end{pmatrix}$.
+A repeated root can still diagonalize
+Is $A=2I_3$ diagonalizable?
+It is already diagonal.
+The standard basis gives three independent eigenvectors, all with eigenvalue $2$.
+Diagonalizable.
+Diagonalization just deletes off-diagonal entries.
+That changes the operator; a basis change is required.
+Repeated eigenvalues prevent diagonalization.
+Repetition is harmless if enough independent directions remain.
+$D=\operatorname{diag}(2,-1)$, $D^3$?
+Cube each diagonal entry.
+$D^3=\operatorname{diag}(8,-1)$.
+$\operatorname{diag}(8,-1)$.
+May an eigenvector matrix for diagonalization have dependent columns?
+The factorization requires its inverse.
+Dependent columns make it singular.
+No.
+Given $A=SDS^{-1}$, what is $A^0$?
+Both zero and nonzero eigenvalues allow the zeroth matrix power.
+$A^0=I$, using $D^0=I$.
+$I$.
+Must similar matrices have the same singular values?
+A basis change need not be orthogonal.
+$\begin{pmatrix}1&c\\0&2\end{pmatrix}$ and $\operatorname{diag}(1,2)$ are similar, but a nonorthogonal shear changes length scaling.
+Not necessarily.
+$S=\begin{pmatrix}1&c\\0&1\end{pmatrix}$, $D=\operatorname{diag}(2,1)$, $A=SDS^{-1}$. The columns of $S$ give the two eigendirections.
+In the eigenbasis, how do the previously mixed coordinates scale separately?
+Which condition is necessary and sufficient for diagonalization?
+Every entry is nonzero
+Enough linearly independent eigenvectors
+A nonzero eigenvalue sum
+A diagonalizing basis consists entirely of eigenvectors.
+Diagonalization finds coordinates separating every direction's action, rather than merely cleaning up the matrix's appearance.
+Standard eigenbasis
+Set $c=0$.
+The matrix is already diagonal; coordinates scale independently.
+Oblique eigenbasis
+Set $c=1$.
+The second eigendirection is $(1,1)$ and still scales by one.
+Tilt the other way
+Set $c=-1$.
+The directions change, but eigenvalues remain two and one.

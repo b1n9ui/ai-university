@@ -1,0 +1,65 @@
+Propositions and logical connectives
+First decide whether a statement has a definite truth value; then combine it with other statements.
+First decide whether a statement has a definite truth value; then combine it with other statements.
+AND requires both statements to hold. Mathematical OR allows both to hold.
+Identify propositions
+Combine statements
+Identify propositions
+“Seven is prime” has a definite truth value. “Close the door” is a request. “It is large” needs a specified object and standard before it becomes a definite proposition.
+Combine statements
+A conjunction requires both statements to be true; a disjunction requires at least one. Negation reverses truth. Exclusive OR requires exactly one true statement.
+Understand implication
+An implication rules out just one case: a true antecedent and a false consequent. It specifies a logical condition, not necessarily a sequence in time or a causal relationship.
+In classical two-valued logic, every proposition is either true or false, exclusively.
+This lesson uses classical two-valued logic.
+Connectives are defined by truth values, which need not capture every everyday meaning of their names.
+List the four assignments to the antecedent and consequent.
+Identify the one assignment that violates the implication.
+On the other three rows, the negated antecedent or the consequent is true.
+Exclude one case
+Suppose “If it rains, I take an umbrella.” It rains, but I take no umbrella. Is the implication true?
+The antecedent is true and the consequent false.
+This is the implication's only false case.
+False.
+Inclusive OR
+When both propositions are true, what are the truth values of OR and exclusive OR?
+OR requires at least one true statement.
+Exclusive OR excludes the case where both are true.
+OR is true; exclusive OR is false.
+Is an implication true when its antecedent is false and its consequent true?
+Check the only false row.
+This is not the true-antecedent, false-consequent case.
+True.
+How many two-valued assignments are there to three propositions?
+Each has two choices.
+$2^{3}=8$.
+Eight.
+Is “Prove this result” a proposition?
+Distinguish a request from a statement.
+It requests an action rather than asserting something true or false.
+No.
+If both propositions are false, is their disjunction true?
+Is at least one true?
+Neither is true.
+False.
+Which assignment makes an implication false?
+True antecedent, false consequent
+False antecedent, true consequent
+Both false
+Only a true antecedent and a false consequent violate the implication.
+OR means exactly one of the two
+Ordinary disjunction allows both statements to hold.
+Implication establishes causation
+A truth-value constraint alone gives no causal mechanism.
+Switch between assignments. Which row makes the implication false?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+Ordinary disjunction allows both statements to hold.
+Assignment row: 0
+Set the control to $0$. Observe which objects, relations, or counts change.
+At this setting: antecedent $0$; consequent $0$; implication $1$.
+Assignment row: 1
+Set the control to $1$. Observe which objects, relations, or counts change.
+At this setting: antecedent $0$; consequent $1$; implication $1$.
+Assignment row: 3
+Set the control to $3$. Observe which objects, relations, or counts change.
+At this setting: antecedent $1$; consequent $1$; implication $1$.

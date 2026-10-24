@@ -1,0 +1,65 @@
+Sampling without replacement and the hypergeometric law
+With fixed population composition and no replacement, use the hypergeometric law to count selected targets.
+With fixed population composition and no replacement, use the hypergeometric law to count selected targets.
+Selecting a target usually reduces the chance of another target on the next draw.
+Specify population composition
+Count favorable combinations
+Specify population composition
+Population size, target count, and sample size are fixed. Every unordered sample of the given size is equally likely.
+Count favorable combinations
+Choose the required targets and the remaining nontargets separately. Multiply and divide by the total number of samples.
+Understand finite-population correction
+Without replacement, count variance is smaller than a binomial model with the same success fraction. A small sampling fraction can justify binomial approximation.
+The population is nonempty; sample and target counts are valid integers.
+Sampling is uniform without replacement, with integers $N\ge1$ and $0\le K,n\le N$.
+The variance formula requires $N>1$; the support also respects available targets and nontargets.
+Count all unordered samples by combinations.
+Choose from target and nontarget groups separately.
+Negative dependence gives the finite-population correction.
+Draw two of five balls
+A bag has two red and three white balls. Draw two without replacement. Find exactly one red probability.
+Favorable combinations: $2\times3=6$.
+All combinations: $\binom52=10$.
+$0.6$.
+A census has no sampling variation
+Draw all five balls. What is the red-count variance?
+The red count is certainly two.
+The finite-population correction numerator is zero.
+$0$.
+Ten items include four targets. Draw five without replacement. Find the expected target count.
+Every item's inclusion probability is the same.
+$5(4/10)=2$.
+$2$.
+With two red among five balls, find the probability both drawn balls are red.
+Choose two targets and zero nontargets.
+$1/\binom52=0.1$.
+$0.1$.
+Are successive draws without replacement independent?
+The first draw changes composition.
+Later success probability depends on the earlier outcome.
+Generally not.
+After observing the entire population, does sampling error remain?
+Refer specifically to that finite population.
+Its composition is fully known.
+Its random sampling error vanishes; measurement errors may remain.
+What mainly distinguishes this model from binomial sampling?
+Only one draw is allowed
+Later draws generally depend on earlier outcomes
+There is no expectation
+The remaining composition changes with draws.
+Without-replacement probabilities multiply as independent trials
+Conditional probabilities generally change each time.
+The correction factor exceeds one
+For valid parameters it lies between zero and one.
+Increase the sampling fraction. How does the hypergeometric–binomial variance difference change?
+The two count models share a mean, highlighting the finite-population correction.
+Conditional probabilities generally change each time.
+Draws without replacement: 8
+Set the draw count to $8$ and compare the figure and readouts.
+At these parameters: shared mean $3.2$; hypergeometric variance $1.45655$; binomial variance $1.92$.
+Draws without replacement: 1
+Set the draw count to $1$ and compare the figure and readouts.
+At these parameters: shared mean $0.4$; hypergeometric variance $0.24$; binomial variance $0.24$.
+Draws without replacement: 30
+Set the draw count to $30$ and compare the figure and readouts.
+At these parameters: shared mean $12$; hypergeometric variance $0$; binomial variance $7.2$.

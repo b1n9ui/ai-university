@@ -1,0 +1,6 @@
+{
+  "name": "learning-list", "version": "1.0.0", "private": true, "type": "module",
+  "engines": {"node": ">=22.12"},
+  "scripts": {"start": "node server.mjs", "test": "node --test tasks.test.mjs"},
+  "license": "MIT"
+}

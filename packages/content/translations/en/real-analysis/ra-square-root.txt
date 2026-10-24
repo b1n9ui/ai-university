@@ -1,0 +1,67 @@
+Constructing square roots from completeness
+A square root exists because a supremum fills the gap, not because curves seem to intersect.
+A square root exists because a supremum fills the gap, not because curves seem to intersect.
+Collect nonnegative numbers whose squares do not exceed the target, then prove the right boundary squares to that target.
+Construct the set
+Rule out a boundary that is too small
+Construct the set
+For $a>0$, set $A=\{x\ge0:x^2\le a\}$. If $a\ge1$, one belongs; if $0<a<1$, $a$ belongs. Thus there is a positive member. The bound $\max(1,a)$ gives a positive supremum $s$.
+Rule out a boundary that is too small
+If the supremum's square is below the target, a sufficiently small positive increment still has square below the target, contradicting the upper bound.
+Rule out a boundary that is too large
+If $s^2>a$, choose $0<h<\min(s,(s^2-a)/(2s))$; then $(s-h)^2>a$. Since squaring increases strictly on nonnegative numbers, every member is below $s-h$, a smaller upper bound than $s$. Hence $s^2=a$; strict increase also proves uniqueness of the positive root.
+Every positive real number has a unique positive square root.
+The target is strictly positive; zero separately has square root zero.
+Boundedness gives a supremum, and the supremum is positive.
+If its square is too small, control the added square with a small increment.
+If too large, a small decrement stays above the target and creates a smaller upper bound.
+Both strict inequalities are impossible.
+The square root of two
+Why cannot the same construction be completed within the rational field?
+Rationals with square below two form a nonempty rationally bounded-above set.
+A rational supremum, perturbed by small rational increments and decrements, would square to two; that root is irrational.
+The rational supremum is missing.
+Bisection brackets
+Bracket the square root of two between one and two and bisect twice.
+The midpoint one point five has square above two; keep the left half.
+The next midpoint one point two five has square below two; keep the right half.
+The bracket is $[1.25,1.5]$.
+What ensures uniqueness of the positive square root?
+Compare squares of two nonnegative numbers.
+$0\le x<y\implies y^2-x^2=(y-x)(y+x)>0$.
+Squaring is strictly increasing.
+What is the positive square root of nine?
+Square the candidate and check positivity.
+Three is positive and its square is nine.
+Three.
+Does finitely many bisection steps always give an exact root?
+The remaining interval may still have positive width.
+Usually they give a bracket and an error bound.
+Not in general.
+In the square-root construction, suppose $s>0$ and $s^2<a$. Give an explicit $h>0$ with $(s+h)^2<a$.
+Control both $h\le1$ and the linear error.
+Let $d=a-s^2>0$ and choose $h=\min(1,d/[2(2s+1)])$.
+Since $h\le1$, $2sh+h^2\le(2s+1)h\le d/2$.
+Thus $(s+h)^2\le s^2+d/2<a$, contradicting that $s$ is an upper bound.
+Thus $(s+h)^2\le s^2+d/2<a$, contradicting that $s$ is an upper bound.
+Which property establishes square-root existence here?
+Finite sampling
+Least-upper-bound completeness
+Many decimal digits
+It ensures the candidate boundary is a real number.
+Continuity can be used without checking dependencies
+Continuity and the intermediate value theorem have not yet been established here; avoid circularity.
+A bisection picture proves existence
+Completeness proves existence; finite diagrams illustrate the bracketing process.
+Bisect repeatedly. How does bracket width give a provable error bound?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+Collect numbers whose squares stay below the target, then identify the boundary. Do not use continuity or the intermediate value theorem before proving them.
+Bisection steps: 0
+Set the bisection count to $0$. Check the endpoint square inequalities and halving of interval width.
+Left endpoint $1$; right endpoint $2$; width $1$; midpoint error bound $0.5$.
+Bisection steps: 12
+Set the bisection count to $12$. Check the endpoint square inequalities and halving of interval width.
+Left endpoint $1.414063$; right endpoint $1.414307$; width $0.0002441406$; midpoint error bound $0.0001220703$.
+Bisection steps: 24
+Set the bisection count to $24$. Check the endpoint square inequalities and halving of interval width.
+Left endpoint $1.414214$; right endpoint $1.414214$; width $5.960464\times10^{-8}$; midpoint error bound $2.980232\times10^{-8}$.

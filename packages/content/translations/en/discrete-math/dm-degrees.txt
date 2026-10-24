@@ -1,0 +1,67 @@
+Degrees and the handshaking lemma
+Each undirected edge contributes two endpoints, so the degree sum equals twice the edge count.
+Each undirected edge contributes two endpoints, so the degree sum equals twice the edge count.
+Count edge endpoints in two ways: by vertex or by edge.
+Define vertex degree
+Derive the handshaking lemma
+Define vertex degree
+In a simple undirected graph, degree is the neighbor count. If loops are allowed, each contributes two; this book's interactive graphs have no loops.
+Derive the handshaking lemma
+Every edge has two endpoints. Adding all degrees counts each endpoint once, directly applying double counting.
+Check degree feasibility
+The degree sum and the number of odd-degree vertices must both be even. These are necessary conditions, not a guarantee that an arbitrary sequence is realizable by a simple graph.
+A finite undirected graph has an even number of odd-degree vertices.
+The counted objects are undirected edge endpoints.
+Count endpoints by vertex.
+\#\text{endpoints}=\sum_v\deg(v)
+Count endpoints by edge.
+\#\text{endpoints}=2|E|
+Reduce modulo two to count odd terms.
+\sum_v\deg(v)\equiv\#\{v:\deg(v)\text{ odd}\}\equiv0\pmod2
+Count edges
+Four vertices each have degree three. How many edges are there?
+The degree sum is twelve.
+Divide by two to obtain the edge count.
+Six.
+An impossible sequence
+Can three vertices have degrees three, one, and zero?
+The sum is even.
+But a simple three-vertex graph has maximum degree two.
+No. An even sum is insufficient.
+Six vertices each have degree two. How many edges are there?
+Divide the degree sum by two.
+$6\cdot2/2=6$.
+Six.
+Can there be exactly one odd-degree vertex?
+The number of odd-degree vertices must be even.
+One is an odd count.
+No.
+If all degrees are even, must the graph be connected?
+Consider two disjoint cycles.
+Every vertex has degree two, but there are two components.
+Not necessarily.
+What is the largest possible degree in a five-vertex simple graph?
+A vertex can connect only to the other vertices.
+It has at most four neighbors.
+Four.
+Does an even degree sum suffice for every proposed simple-graph degree sequence?
+Yes
+No
+Yes, if no entry is zero
+Individual degree bounds and other structural constraints are also needed.
+Each edge contributes one to the degree sum
+Each endpoint contributes one.
+The handshaking lemma guarantees connectedness
+It constrains endpoint counts only.
+Switch graph structures. Do the vertex degrees sum to twice the edge count?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+Each endpoint contributes one.
+Graph mode: 0
+Set the control to $0$. Observe which objects, relations, or counts change.
+At this setting: vertices $6$; edges $6$; degree sum $12$.
+Graph mode: 2
+Set the control to $2$. Observe which objects, relations, or counts change.
+At this setting: vertices $6$; edges $5$; degree sum $10$.
+Graph mode: 5
+Set the control to $5$. Observe which objects, relations, or counts change.
+At this setting: vertices $6$; edges $6$; degree sum $12$.

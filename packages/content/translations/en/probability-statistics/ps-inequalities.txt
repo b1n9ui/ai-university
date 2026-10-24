@@ -1,0 +1,65 @@
+Markov and Chebyshev probability bounds
+A little distributional information can bound tail probabilities without the full distribution.
+A little distributional information can bound tail probabilities without the full distribution.
+A bound says “at most,” not an exact probability, and need not be tight.
+Use nonnegativity
+Square deviations to obtain a nonnegative variable
+Use nonnegativity
+Above a positive threshold, a nonnegative variable contributes at least that threshold each time. Its mean limits the probability of those contributions.
+Square deviations to obtain a nonnegative variable
+Apply Markov to squared deviation for Chebyshev's bound, requiring a mean and finite variance.
+Recognize loose bounds
+Replace a probability bound above one by one. For a specified distribution, exact probabilities are often smaller than these general bounds.
+Markov requires $a>0$, a nonnegative variable, and finite expectation.
+Markov requires $a>0$, a nonnegative variable, and finite expectation.
+The standard-deviation form of Chebyshev needs $k>0$ and finite positive variance. At variance zero, the variable equals its mean almost surely and must be handled separately.
+Bound the variable below by the threshold on its tail event.
+Take expectations and rearrange.
+Apply this to squared deviation at the squared threshold.
+Only a mean is known
+A nonnegative waiting quantity has mean two. How large can the probability of at least ten be?
+Nonnegativity holds.
+Markov gives $2/10$.
+At most $0.2$.
+Two standard deviations
+For any finite positive-variance distribution, bound the probability of deviation at least two standard deviations.
+Use Chebyshev.
+$1/2^2=1/4$.
+At most $0.25$.
+A nonnegative variable has mean three. Bound its probability of at least twelve.
+Divide mean by threshold.
+$3/12=0.25$.
+$0.25$.
+Find the Chebyshev bound beyond at least three standard deviations.
+Take the reciprocal squared multiple.
+$1/9$.
+$1/9$.
+Can this Markov formula be used directly for variables taking negative values?
+Its key step needs a pointwise nonnegative comparison.
+Negative values break that comparison.
+Not directly.
+Does an upper bound of four mean probability four?
+Probabilities still do not exceed one.
+The coarse bound is merely uninformative.
+No; replace it by at most one.
+Is Chebyshev an exact tail probability?
+Yes
+It is the normal probability
+No; it is a universal upper bound
+It does not specify distribution shape, so is often loose.
+An upper bound is an equality
+Only special distributions and thresholds attain it.
+Chebyshev works without a variance
+Finite variance is a hypothesis.
+Compare the normal tail with the universal bound. Which is tighter?
+The curve gives a specific normal tail area, alongside a bound using variance alone.
+Only special distributions and thresholds attain it.
+Standard-deviation multiple: 2
+Set the multiple to $2$ and compare the figure and readouts.
+At these parameters: normal two-sided tail $0.0455003$; universal Chebyshev bound $0.25$.
+Standard-deviation multiple: 1
+Set the multiple to $1$ and compare the figure and readouts.
+At these parameters: normal two-sided tail $0.317311$; universal Chebyshev bound $1$.
+Standard-deviation multiple: 4
+Set the multiple to $4$ and compare the figure and readouts.
+At these parameters: normal two-sided tail $6.334\times10^{-5}$; universal Chebyshev bound $0.0625$.

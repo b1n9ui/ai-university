@@ -1,0 +1,64 @@
+Vector fields and streamlines
+An arrow at every position
+A vector field assigns a vector to each point. A streamline's tangent follows the field at each point.
+A wind map describes local velocities, not one trajectory. An initial position selects a particle's path.
+Distinguish fields from individual trajectories
+Verify candidate streamlines
+What does arrow length mean?
+It represents field magnitude. Display arrows may share a shortening factor to avoid overlap; state that factor. Normalized arrows do not preserve magnitudes.
+Field versus trajectory
+A field maps position to vector; a trajectory maps time to position. In an autonomous field, particle velocity equals the field at its current position.
+Checking a streamline
+Substitute the path into the field and compare with its derivative. Parallel vectors with a different factor may describe the same geometric streamline under reparameterization.
+An arrow at every position
+Existence and uniqueness need continuity and local Lipschitz conditions. Continuous first partials suffice in the usual examples. Do not cross undefined field points.
+Read the vector at the current position.
+Express velocity as the path derivative.
+The rotational field preserves squared radius.
+A circular streamline
+For $\mathbf F=(-y,x,0)$, is $\mathbf r(t)=(2\cos t,2\sin t,0)$ a streamline?
+Its derivative is $(-2\sin t,2\cos t,0)$.
+Substitution into the field gives the same vector.
+Yes; speed is 2.
+Radial growth
+For $\mathbf F=(x,y,z)$ with initial point $(1,0,1)$, find the trajectory.
+Solve $x\prime=x,y\prime=y,z\prime=z$ componentwise.
+Initial values give $(e^t,0,e^t)$.
+$\mathbf r(t)=(e^t,0,e^t)$.
+Each arrow is a complete trajectory.
+An arrow gives only local direction and magnitude.
+Equal arrow directions imply equal magnitudes.
+Parallel arrows can have different lengths; check formulas and scale.
+Find field $(x,y,0)$ at $(2,-1,3)$.
+Substitute only the relevant components.
+This gives $(2,-1,0)$.
+$\langle2,-1,0\rangle$.
+Where does field $(-y,x,0)$ point at $(1,0,0)$?
+Substitute directly.
+The vector is $(0,1,0)$, along the positive second axis.
+Along the positive second axis.
+For constant field $(1,0,0)$ and initial point $(0,2,3)$, find the trajectory.
+Integrate constant velocity.
+$\mathbf r=(t,2,3)$; the other coordinates stay fixed.
+$(t,2,3)$.
+On the unit circle, how are field $(-y,x,0)$ and radial field $(x,y,0)$ related?
+Compute their dot product.
+$-xy+xy=0$; both are nonzero on the circle.
+They are perpendicular.
+How are a vector field and one trajectory related?
+The field gives local velocity; an initial value selects a trajectory
+The field defines only one point
+They are identical
+A position rule and a time-dependent path are different objects.
+Field $\mathbf F=(-y+cx,x+cy,0)$; arrows use a common factor 0.22, preserving magnitude ratios.
+After adding radial flow, is the circle still a streamline?
+Specify the velocity rule at all positions, then an initial point, to determine motion.
+Pure rotation
+Set radial coefficient $c$ to $0$.
+Arrows are tangent to circles; radial contribution is zero.
+Rotation with outflow
+Set radial coefficient $c$ to $0.5$.
+Arrows now have tangential and radial components.
+Stronger outflow
+Set radial coefficient $c$ to $1$.
+The outward component grows. The circle is a reference, no longer a streamline.

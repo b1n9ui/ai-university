@@ -1,0 +1,62 @@
+Cholesky factorization and completing squares
+Write a positive form as a sum of squares
+A real symmetric positive definite matrix uniquely factors into a lower-triangular matrix with positive diagonal times its transpose.
+Completing squares absorbs cross terms into new linear expressions while the remaining squared coefficients stay positive.
+Calculate a positive-diagonal Cholesky factor
+Solve using two triangular systems
+How does the calculation proceed?
+Take the positive square root of the first diagonal entry, determine entries below it, subtract their contributions, and repeat on the remaining block.
+Why is positive definiteness essential?
+It keeps each remaining pivot strictly positive, allowing a positive real square root. Semidefinite and indefinite cases cannot directly use this unpivoted version.
+How does the factorization solve systems?
+Solve $Ly=b$, then $L^Tx=y$. The quadratic form becomes $\|L^Tx\|^2$, making positivity explicit.
+Cholesky factorization and completing squares
+A=LL^T,\quad L\text{ lower triangular with }l_{ii}>0,\qquad x^TAx=\|L^Tx\|^2
+Require a real symmetric positive definite square matrix. Positive diagonal ensures uniqueness. Floating-point tests need care near degeneracy.
+For a symmetric two-by-two matrix, take the first root.
+Subtract its contribution from the second diagonal entry.
+Positive definiteness keeps the radicand positive.
+A concrete factorization
+$A=\begin{pmatrix}4&2\\2&3\end{pmatrix}$.
+$l_{11}=2,l_{21}=1$.
+$l_{22}=\sqrt{3-1}=\sqrt2$.
+$L=\begin{pmatrix}2&0\\1&\sqrt2\end{pmatrix}$.
+Read it as a sum of squares
+Complete squares in $4x^2+4xy+3y^2$.
+From the example, $L^T(x,y)=(2x+y,\sqrt2y)$.
+Its squared length gives $(2x+y)^2+2y^2$.
+$(2x+y)^2+2y^2$.
+$A=LL$ is Cholesky factorization.
+The second factor is the transpose, not the same lower-triangular factor again.
+Symmetry alone allows positive square roots throughout.
+An indefinite matrix can produce a nonpositive pivot.
+Find the positive-diagonal Cholesky factor of $A=\operatorname{diag}(4,9)$.
+Take each positive square root.
+$L=\operatorname{diag}(2,3)$.
+$\operatorname{diag}(2,3)$.
+$L=\begin{pmatrix}1&0\\2&1\end{pmatrix}$, $LL^T$?
+Multiply directly.
+The result is $\begin{pmatrix}1&2\\2&5\end{pmatrix}$.
+$\begin{pmatrix}1&2\\2&5\end{pmatrix}$.
+Can $A=\operatorname{diag}(1,-1)$ have a real positive-diagonal Cholesky factor?
+Such a factor would make the form a squared length.
+The vertical direction is negative, impossible for a real squared length.
+No.
+Why require positive diagonal rather than arbitrary square-root signs?
+Each positive square has two square roots.
+Positive roots remove sign ambiguity and make the factor unique.
+A convention ensuring uniqueness.
+$L=\begin{pmatrix}1&0\\c&1\end{pmatrix}$, $A=LL^T$. The unit circle deforms under $L^T$; squared lengths give the quadratic form of $A$.
+Why does the completed-square matrix remain positive definite as the cross term changes?
+Given $A=LL^T$, which squared length equals the quadratic form?
+Expanding the squared length multiplies the transpose of $x$ by $L$, then by the transpose of $L$ and $x$.
+Cholesky turns positivity in every direction into an explicit sum of squares and supplies two easy triangular solves.
+No cross term
+Set $c=0$.
+$A$ is the identity.
+Positive cross term
+Set $c=1$.
+$q=(x+y)^2+y^2$; every nonzero input gives a positive value.
+Negative cross term
+Set $c=-1$.
+$q=(x-y)^2+y^2$; positive definiteness remains.

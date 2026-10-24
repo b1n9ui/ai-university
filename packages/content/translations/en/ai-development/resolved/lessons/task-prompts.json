@@ -1,0 +1,205 @@
+{
+  "id": "task-prompts",
+  "chapterId": "chapter-4",
+  "number": "4.2",
+  "title": "Write an actionable task brief",
+  "subtitle": "Precision comes from goals and evidence, not incantations.",
+  "concept": "A task brief states goal, context, scope, acceptance, verification and delivery. Plain wording is enough if it directs action.",
+  "intuition": "Telling a colleague what to change, why, the expected result and how to check it works better than repeated urging.",
+  "objectives": [
+    "Limit this task to one behavior change and give current context.",
+    "Request reviewable checks, change explanations and verification gaps."
+  ],
+  "body": [
+    {
+      "title": "One brief, one change",
+      "text": "Replace optimize the entire site with reject whitespace-only titles while preserving trimming for valid ones. Describe the failure, files and confirmed constraints. Specify autonomous scope and changes needing discussion, such as dependencies, data format or services. Avoid approval for every action while making consequential boundaries clear."
+    },
+    {
+      "title": "Replace adjectives with examples",
+      "text": "Robust, elegant and high-quality express preferences, not sufficient criteria. Add examples: three spaces add nothing; surrounding whitespace is trimmed; 80 code units are accepted and 81 rejected. These are ordinary collaboration details, not model-specific tricks."
+    },
+    {
+      "title": "Make verification reviewable",
+      "text": "Request changed files, actual commands and outcomes, and unchecked items. Without execution access, the agent should say not run and provide steps. Demanding green results at any cost invites false reports. Filling six headings checks structure, not correctness; inspect whether their contents are specific and consistent."
+    }
+  ],
+  "formalDefinition": {
+    "text": "A task brief states goal, context, scope, acceptance, verification and delivery. Plain wording is enough if it directs action.",
+    "conditions": [
+      "For small personal learning projects. In shared repositories, follow the team's conventions.",
+      "This method produces checkable evidence; it cannot guarantee arbitrary AI output is correct."
+    ]
+  },
+  "workflow": [
+    "Limit this task to one behavior change and give current context.",
+    "Specify normal, boundary and failure outcomes, and scope that must not silently expand.",
+    "Request reviewable checks, change explanations and verification gaps."
+  ],
+  "workedExamples": [
+    {
+      "title": "A whitespace-title brief",
+      "problem": "Rewrite fix input as an actionable task.",
+      "steps": [
+        "State that three spaces currently create an item.",
+        "Give accepted and rejected cases.",
+        "Limit scope and request tests and browser checks."
+      ],
+      "answer": "Goal: reject whitespace-only plans.\nContext: read tasks.mjs, app.mjs and tests.\nScope: no storage-format changes or new dependencies.\nAcceptance: three spaces add nothing and show feedback; '  Learn Git  ' is saved as 'Learn Git'.\nVerification: run npm test and inspect input/feedback in the page; state any checks unavailable.\nDelivery: files changed, command results and limitations."
+    },
+    {
+      "title": "Make a style request concrete",
+      "problem": "How can make the button more premium become actionable?",
+      "steps": [
+        "Give usable visual references or preferences and their purpose.",
+        "Limit the change to styles.",
+        "Add mobile and keyboard criteria."
+      ],
+      "answer": "Make the Add button dark green with rounded corners, preserving current typography. Change styling only. At 390px width there must be no horizontal scrolling, focus must be visible and text unclipped. Report changed locations and actual page checks. Adjectives cannot guarantee universal taste."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "Precise prompts require many technical terms.",
+      "correction": "Plain descriptions of inputs and outcomes can be precise; misused terminology adds confusion."
+    },
+    {
+      "claim": "A filled template is automatically an excellent prompt.",
+      "correction": "It confirms structure only. Goals, truthful context and consistency still require judgment."
+    }
+  ],
+  "practice": [
+    {
+      "id": "task-prompts-p1",
+      "difficulty": 2,
+      "problem": "Rewrite optimize all code.",
+      "hint": "Choose an observed failure.",
+      "answer": "Fix only whitespace-only titles being added, preserving other behavior and data format.",
+      "solution": [
+        "Narrow the behavior scope.",
+        "Add normal, boundary and failure criteria."
+      ]
+    },
+    {
+      "id": "task-prompts-p2",
+      "difficulty": 2,
+      "problem": "Should you demand passing tests at any cost?",
+      "hint": "Could the standard be weakened?",
+      "answer": "No. Require the agreed behavior and honest results, failures and unrun checks.",
+      "solution": [
+        "Correct behavior is the goal.",
+        "Do not permit deleted assertions, skipped checks or fabricated results."
+      ]
+    },
+    {
+      "id": "task-prompts-p3",
+      "difficulty": 2,
+      "problem": "What can happen without current-project context?",
+      "hint": "Which facts must the agent guess?",
+      "answer": "Wrong files, duplicate functionality or unnecessary structure.",
+      "solution": [
+        "Provide relevant paths and inspected facts.",
+        "Confirm consequential unknowns first."
+      ]
+    },
+    {
+      "id": "task-prompts-p4",
+      "difficulty": 2,
+      "problem": "When should a new dependency be discussed?",
+      "hint": "Does it change an agreed boundary?",
+      "answer": "If the task excludes new dependencies, explain why existing tools are insufficient and the benefit and maintenance cost before asking you to decide.",
+      "solution": [
+        "Dependencies are not inherently bad.",
+        "But small changes should not silently expand costs."
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "Which sentence reduces ambiguity?",
+    "choices": [
+      "Be extremely professional",
+      "Three spaces add nothing and give understandable feedback",
+      "Change as many files as possible"
+    ],
+    "correctIndex": 1,
+    "feedback": [
+      "No outcome is specified.",
+      "Concrete input and result support direct acceptance checks.",
+      "File count is not quality."
+    ]
+  },
+  "interactiveVisual": {
+    "kind": "prompt",
+    "prediction": "Does this task brief let you judge the result?",
+    "steps": [
+      {
+        "question": "The goal only says improve the site.",
+        "choices": [
+          "Already clear",
+          "Specify one behavior change",
+          "Add more expert role titles"
+        ],
+        "correctIndex": 1,
+        "feedback": [
+          "There is no completion criterion.",
+          "Define this task's outcome first.",
+          "Titles do not constrain behavior."
+        ]
+      },
+      {
+        "question": "Acceptance only says good experience.",
+        "choices": [
+          "Write input, action and result",
+          "Skip acceptance",
+          "Let AI choose every standard"
+        ],
+        "correctIndex": 0,
+        "feedback": [
+          "Turn preferences into checkable outcomes.",
+          "Without criteria, changes are hard to judge.",
+          "You should confirm standards serve the user goal."
+        ]
+      },
+      {
+        "question": "The agent has no browser. What should it report?",
+        "choices": [
+          "Claim page checks passed",
+          "List unchecked items and your check steps",
+          "Hide the limitation"
+        ],
+        "correctIndex": 1,
+        "feedback": [
+          "That fabricates evidence.",
+          "This accurately describes capabilities and evidence.",
+          "Limits affect whether you can accept the result."
+        ]
+      }
+    ],
+    "followUp": "Turn a vague request into a lab brief. For each line, ask whether you can check it."
+  },
+  "prerequisites": [
+    "agent-context"
+  ],
+  "difficulty": 3,
+  "misconceptionTags": [
+    "task-prompts-guess",
+    "task-prompts-evidence"
+  ],
+  "sources": [
+    "prompt"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.1.1",
+    "status": "first-edition",
+    "humanReviewed": false
+  },
+  "promptTemplate": {
+    "goal": "Reject whitespace-only plans while retaining trimming for valid titles.",
+    "context": "Read tasks.mjs, app.mjs and tasks.test.mjs. Existing personal list; no third-party dependencies.",
+    "scope": "No backup-format changes, new dependencies or synchronization service.",
+    "acceptance": "Three spaces add nothing and show feedback; '  Learn Git  ' saves as 'Learn Git'; accept 80 and reject 81 UTF-16 code units.",
+    "verification": "Run npm test and inspect page input and feedback. Without a browser, state gaps and manual steps.",
+    "delivery": "Changed files, key diffs, actual command results, page checks and unverified items."
+  }
+}

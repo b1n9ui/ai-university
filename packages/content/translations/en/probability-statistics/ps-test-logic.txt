@@ -1,0 +1,68 @@
+Null hypotheses, $p$-values, and Type I errors
+A $p$-value measures how unusual the data are under the specified null model.
+A $p$-value measures how unusual the data are under the specified null model.
+It asks what happens if we sample from this model, not directly how likely the hypothesis is to be true.
+Prespecify the comparison
+Define the $p$-value
+Prespecify the comparison
+Specify the null, alternative direction, statistic, and significance level before seeing data. Do not choose the more favorable tail afterward.
+Define the $p$-value
+Under the null model, find the probability of statistics at least as supportive of the alternative as the observed value. The meaning of extreme depends on a prespecified ordering.
+Distinguish errors
+A Type I error rejects a true null hypothesis. Significance level controls a procedure's error probability; it is not the posterior probability that this particular conclusion is wrong.
+Specify the statistic and tails before observation, and justify the null distribution.
+p_{\mathrm{right}}=P_{H_0}(T\ge t_{\mathrm{obs}}),\qquad P_{H_0}(\text{reject }H_0)\le\alpha
+Specify the statistic and tails before observation, and justify the null distribution.
+For a composite null, rejection probability generally must be controlled at every null parameter value.
+Give the statistic's distribution under the null.
+Accumulate the extreme region in the alternative's direction.
+p=P_0(T\ge t_{\mathrm{obs}})\quad\text{right-sided test}
+Compare with the prespecified rejection threshold.
+p\le\alpha\ \Rightarrow\ \text{reject }H_0
+A right-sided normal test
+The null distribution is standard normal. At observed $z=2$, find the right-sided $p$-value.
+The null right tail is $1-\Phi(2)$.
+Approximately $0.0228$.
+Approximately $0.0228$.
+Nonrejection is not proof
+A test does not reject equal group means. Can the groups be declared equivalent?
+A small sample may lack power to detect a difference.
+Equivalence testing requires a prespecified negligible-difference range.
+No.
+For a standard normal null and right-sided observation zero, find the $p$-value.
+Half the area is to the right.
+$0.5$.
+$0.5$.
+For $p=0.03,\alpha=0.05$, does the prespecified rule reject?
+Compare the $p$-value with the threshold.
+$0.03<0.05$.
+Reject.
+Is a $p$-value $P(H_0\mid\text{data})$?
+The direction of conditioning is different.
+It measures data extremeness under the null.
+No.
+What is wrong with selecting the smaller $p$-value from left- and right-sided tests after seeing the result?
+Does the original error control still apply?
+Selection creates more opportunities to reject and requires adjustment.
+The original significance level may no longer be controlled.
+What does a small $p$-value mainly indicate?
+A small posterior probability for the null
+Data this extreme are unusual under the specified null model
+The effect must be large
+The interpretation depends on the model, statistic, and prespecified tail.
+A $p$-value is the probability that the null is true
+That reverses the conditioning.
+Nonsignificance proves no difference
+Nonrejection may reflect low precision or low power.
+Move the observed statistic. How does the right-sided $p$-value change?
+Keep the standard normal null fixed; the shading represents only the prespecified right tail.
+That reverses the conditioning.
+Observed $z$: 2
+Set observed $z$ to $2$ and compare the diagram and readings.
+At this preset: observed statistic $2$; right-sided $p$-value $0.0227501$.
+Observed $z$: -3
+Set observed $z$ to $-3$ and compare the diagram and readings.
+At this preset: observed statistic $-3$; right-sided $p$-value $0.99865$.
+Observed $z$: 4
+Set observed $z$ to $4$ and compare the diagram and readings.
+At this preset: observed statistic $4$; right-sided $p$-value $3.167\times10^{-5}$.

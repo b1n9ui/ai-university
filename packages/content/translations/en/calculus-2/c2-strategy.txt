@@ -1,0 +1,65 @@
+Choosing an integration method
+Read the structure before choosing a tool
+Simplify and look for an inner derivative, then examine products, radicals or rational functions. A definite integral can exist without an elementary antiderivative.
+Although both contain exponentials, $\int2xe^{x^2}dx$ suggests substitution and $\int xe^x dx$ suggests parts. Look for the inner derivative outside.
+What should you try first?
+Simplify algebraically, use identities or perform polynomial division. The result may fit a basic formula.
+Can methods be combined?
+Yes. Integration by parts may lead to substitution; a trigonometric substitution may lead to a trigonometric integral. Each step should reduce some difficulty.
+When should you stop seeking an elementary formula?
+Functions such as $e^{-x^2}$ have no elementary antiderivative. Keep the definite integral and use numerical methods or series with an error estimate.
+Read the structure before choosing a tool
+The fundamental theorem applies when $f$ is continuous on a finite closed interval; elementary formulas are not required for integrability.
+Identify the composite structure first.
+The other product calls for integration by parts.
+Check every candidate antiderivative by differentiating.
+Expansion is shorter
+Evaluate $\int\frac{x^2+2x+1}{x}dx$.
+For $x\neq0$, split into $x+2+\frac1x$.
+Integrate term by term; parts is unnecessary.
+$\frac{x^2}{2}+2x+\ln|x|+C$.
+Combining two methods
+Evaluate $\int x\ln(x^2)dx$, where $x>0$.
+First set $u=x^2$, giving $\frac12\int\ln u\,du$.
+Then integration by parts gives $\frac12(u\ln u-u)+C$.
+$\frac12[x^2\ln(x^2)-x^2]+C$.
+Each problem must use only one method.
+When the structure changes, switch tools and verify each step.
+Without an elementary antiderivative, the integral cannot exist.
+Continuity guarantees a definite integral on a finite closed interval.
+Which method should you try first for $\int\frac{2x}{1+x^2}dx$?
+Substitute $u=1+x^2$, obtaining $\ln(1+x^2)+C$.
+The numerator is the denominator's derivative.
+$du=2x dx$; the integral becomes $\int\frac1u du$.
+Which method should you try first for $\int x\sin x dx$?
+Integration by parts, giving $-x\cos x+\sin x+C$.
+Differentiate the polynomial.
+$u=x,v=-\cos x$; the remaining integral is $\int\cos x dx$.
+Evaluate $\int_0^1\frac{x^2+1}{x+1}dx$.
+$2\ln2-\frac12$.
+Divide first.
+$\frac{x^2+1}{x+1}=x-1+\frac2{x+1}$; evaluate the resulting integrals at the endpoints.
+Can $\int_0^1e^{-x^2}dx$ be defined despite having no elementary antiderivative?
+Yes; its value lies between 0 and 1.
+Check continuity on the finite interval first.
+The integrand is continuous and satisfies $0<e^{-x^2}\leq1$. The integral exists and can be approximated with error control.
+Which step should come first?
+Use parts whenever a product appears
+Simplify and look for a composite structure
+Guess a more complicated antiderivative
+Choose a method from the simplified structure, not just its appearance.
+Ask which rewrite simplifies the next step. Then differentiate your proposed answer to check it.
+Short interval
+Set the upper endpoint to 0.5.
+The area is $1-\frac12e^{1/2}$; the integration-by-parts expression agrees.
+Check the endpoint
+Set the upper endpoint to 1.
+The integral is 1, as is the boundary term minus the remaining integral.
+Extend the interval
+Set the upper endpoint to 2.
+The integral is $e^2+1$; evaluate both terms on the right.
+Compare $\int_0^b xe^x dx$ with its boundary term and remaining integral.
+As the upper endpoint increases, do both expressions give the same accumulated value?
+Choose methods using simplification and inner derivatives
+Combine integration techniques
+Distinguish elementary antiderivatives from integrability

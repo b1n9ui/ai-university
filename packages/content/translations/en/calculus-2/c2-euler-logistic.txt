@@ -1,0 +1,65 @@
+Euler's method and the logistic model
+Step along the current slope and examine equilibria
+Euler advances using the current slope. Logistic growth slows as remaining capacity decreases.
+A stable continuous model can have unreasonable numerical behavior at large step sizes. Separate model properties from algorithm properties.
+One Euler step
+At $(x_n,y_n)$, use slope $f(x_n,y_n)$ over width $h$. Recompute slope every step rather than following the initial tangent forever.
+Logistic equilibria
+$y\prime=ry(1-y/K)$, $r,K>0$. Equilibria are zero and $K$. Positive solutions grow below $K$ and fall above $K$.
+Understanding numerical error
+On a fixed finite interval, if the exact solution has bounded second derivative and the right side has bounded vertical derivative near it, Euler's global error is bounded by a constant times step size. Halving steps typically reduces error, but a few comparisons do not establish a uniform guarantee.
+Step along the current slope and examine equilibria
+Euler uses a fixed positive step size. Convergence requires sufficient regularity and controlled derivatives on the interval. For logistic $r,K>0$ and positive initial values, compare with an explicit solution.
+Separate the logistic equation, keeping both equilibria.
+Use partial fractions and solve for positive initial values.
+Approximate one step using the current slope.
+Two Euler steps
+Use $h=0.1$ to approximate $y\prime=y$, $y(0)=1$ through $x=0.2$.
+First step: $y_1=1+0.1\cdot1=1.1$.
+Second step: $y_2=1.1+0.1\cdot1.1=1.21$; the exact value is $e^{0.2}$.
+Euler gives $1.21$; the exact value is about $1.2214$, an underestimate of about $0.0114$.
+Limited resources
+Solve $y\prime=y(1-y/10)$, $y(0)=2$ and describe long-term behavior.
+$A=\frac{10}{2}-1=4$.
+$y=\frac{10}{1+4e^{-x}}$; the denominator decreases from 5 to 1.
+The positive solution increases toward 10.
+The Euler polygon is the exact solution.
+It is discrete approximation; compare it with exact solutions or error bounds.
+A stable continuous model stays stable at every step size.
+Large steps may cause oscillation, overshoot or unrealistic negative values.
+For $y\prime=y,y(0)=1,h=0.5$, find the value after one step.
+$1.5$.
+Add step size times slope to the current value.
+$y_1=1+0.5\cdot1=1.5$.
+Find the equilibria of the logistic equation $r=2,K=5$.
+$y=0$ and $y=5$.
+Set the right side to zero.
+$2y(1-y/5)=0$, giving two constant solutions.
+For $y\prime=y(1-y/10)$, find the slope when $y=12$.
+$-2.4$.
+Above carrying capacity, the solution declines.
+$12(1-12/10)=-2.4$.
+For $y\prime=-y,y(0)=1$, with Euler step $h=3$, what happens after two steps?
+$1\to-2\to4$, contrary to continuous decay.
+Calculate the numerical recurrence multiplier.
+$y_{n+1}=(1-h)y_n=-2y_n$; magnitude grows. The step choice causes numerical instability.
+If a large Euler step produces negative population, what should you conclude first?
+Real population must become negative
+The numerical approximation may have failed
+The differential equation is undefined
+Inspect the algorithm and step size rather than treating the approximation as exact.
+The equation specifies continuous change; Euler updates at intervals. Large steps can miss important changes between updates.
+Coarse steps
+Set the count to 4.
+Four steps on the fixed interval $[0,4]$ leave a visible gap from the exact curve.
+Reduce the step size
+Set the count to 16.
+The step size is 0.25; compare error directly with the exact solution.
+Refine further
+Set the count to 64.
+The approximation still has finitely many steps; the field is not a uniqueness proof.
+Compare the direction field, exact solution and Euler polygon for $y\prime=y(1-y/10)$, with initial value $y(0)=2$.
+How does reducing step size change the gap between polygon and exact curve?
+Compute one-step and multistep Euler approximations
+Analyze logistic equilibria and long-term behavior
+Distinguish numerical stability from model properties

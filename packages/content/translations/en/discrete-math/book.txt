@@ -1,0 +1,57 @@
+Discrete Mathematics
+From precise definitions to sound reasoning
+Logic and proof, sets and relations, integers, induction and algorithms, counting, recurrences, graphs, trees, and network algorithms. Each lesson includes hypotheses, derivations, examples, solved exercises, and local interactive illustrations.
+Readers with elementary algebra; no calculus or programming prerequisite
+A complete introductory course in eight chapters and forty lessons, covering proof, discrete structures, counting and recurrences, elementary graph theory, and common network algorithms. Computability, complexity theory, advanced combinatorics, and abstract algebra belong to later courses.
+Logic and proof
+State a claim precisely
+State a claim precisely.
+Identify propositions
+Specify the domain
+Use the contrapositive
+Sets, functions, and relations
+Specify objects and correspondence rules
+Specify objects and correspondence rules.
+Perform set operations
+Represent a relation
+Recognize partial orders
+Integers and congruences
+From divisibility to modular arithmetic
+From divisibility to modular arithmetic.
+Use the definition of divisibility
+Define primes
+Check invertibility
+Induction, recursion, and algorithms
+Use finite arguments to cover infinitely many cases
+Use finite arguments to cover infinitely many cases.
+Choose the starting case
+Distinguish objects from representations
+Define an upper bound
+Basic counting
+Separate choices, then combine them
+Separate choices, then combine them.
+Split into disjoint cases
+Count decreasing choices
+Check distinguishability
+Recurrences and combinatorial methods
+Solve larger problems through smaller ones
+Solve larger problems through smaller ones.
+Remove overlap between two sets
+Form the characteristic equation
+Choose elementary outcomes
+Graphs and connections
+Represent relationships with vertices and edges
+Represent relationships with vertices and edges.
+Specify the graph type
+Find connected components
+Use Euler's formula
+Trees and network algorithms
+Find paths and connections under constraints
+Find paths and connections under constraints.
+Connectivity and acyclicity
+Specify the optimization target
+Define a matching
+Used to check introductory scope and learning objectives for proof, integers, counting, graphs, and process invariants. Text and problems were independently written.
+Used to compare the author's published organization of logic, proof, graph theory, counting, and sequences. No text, illustrations, or exercises were copied.
+Used to distinguish this course from later mathematical foundations and computability courses.
+Structural, formula, prerequisite, selected independent counting, and graph-algorithm checks; no claim of line-by-line formal verification.

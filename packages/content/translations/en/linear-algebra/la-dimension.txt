@@ -1,0 +1,60 @@
+Dimension, extension, and basis size
+How many independent coefficients are needed?
+Every basis of a finite-dimensional space has the same size, called its dimension.
+Different bases can look very different, yet unique representation in the same space needs the same number of independent coefficients.
+Find bases and dimensions of finite-dimensional spaces
+Extend independent lists or reduce spanning lists
+How do you calculate dimension?
+Find any basis and count it. For a column space, count pivots. For a subspace, parameterize it and find independent generators.
+Why do bases have equal size?
+The exchange lemma says an independent list cannot exceed a spanning list in length. Apply it in both directions to two bases to get equality.
+How do you extend or reduce a list?
+In finite dimensions, add vectors outside the current span until an independent list becomes a basis. Remove redundant generators until a spanning list becomes a basis.
+Dimension, extension, and basis size
+\dim V=n\Rightarrow\#\{\text{independent vectors}\}\le n\le\#\{\text{spanning vectors}\}
+These statements require finite dimensions. The zero space has dimension zero. Ambient dimension need not equal subspace dimension.
+An independent list cannot be longer than a spanning list.
+Exchange the roles of two bases.
+The two inequalities force equality.
+One constraint removes a dimension
+Find the dimension of $W=\{(x,y,z):x+y+z=0\}$.
+Write it as $(-s-t,s,t)=s(-1,1,0)+t(-1,0,1)$.
+The two generators are independent.
+$\dim W=2$.
+Polynomial degree
+What is the dimension of real polynomials of degree at most $4$?
+A basis is $1,t,t^2,t^3,t^4$.
+The constant term also has an independent coefficient.
+5.
+A subspace in three-dimensional coordinates must be three-dimensional.
+A spatial line still has only one independent direction.
+Polynomials of degree at most two form a two-dimensional space.
+The constant term makes the dimension three.
+What dimension has a nondegenerate line through the origin in space?
+One nonzero vector generates it.
+Every point is a multiple of that vector.
+What is the dimension of $\mathbb R^{2\times3}$?
+Each matrix entry has an independent coefficient.
+Six matrices with one unit entry each form a basis.
+Can two independent vectors in a three-dimensional space always be extended to a basis?
+Use the finite-dimensional extension theorem.
+Choose a vector outside their plane.
+Yes.
+Do exactly $n$ independent vectors in an $n$-dimensional space form a basis?
+If they did not span, one more could be added.
+That would exceed $n$ independent vectors, a contradiction.
+They form a basis.
+Matrix $\operatorname{diag}(1,c,0)$ maps three-dimensional input to the horizontal plane. When $c$ is zero, the image collapses further to the horizontal axis.
+How much dimension is lost when one independent direction collapses?
+What is the dimension of a plane through the origin in $\mathbb R^3$?
+The ambient space has three coordinates, but the plane needs only two independent coefficients.
+Dimension counts independent directions, rather than written coordinates or listed arrows.
+Retain two directions
+Set $c=1$.
+Rank two, nullity one.
+Reverse orientation
+Set $c=-1$.
+Orientation reverses without losing a direction; rank stays two.
+Lose another direction
+Set $c=0$.
+Rank one, nullity two; their sum remains three.

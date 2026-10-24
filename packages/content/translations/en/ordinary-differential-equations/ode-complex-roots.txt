@@ -1,0 +1,64 @@
+Complex roots and real oscillations
+From complex exponentials to sine and cosine
+Why do trigonometric functions appear?
+Euler's formula splits $e^{i\beta t}$ into sine and cosine. Real and imaginary parts remain solutions for real-coefficient equations.
+How do you read the roots?
+Roots $\alpha\pm i\beta$ give real solution $e^{\alpha t}(C\cos\beta t+D\sin\beta t)$, with $\beta>0$.
+Be careful with period
+Pure oscillation has period $2\pi/\beta$. A nonzero real part usually makes the full function nonperiodic, even though oscillation spacing stays fixed.
+Expand the complex exponential.
+Take real and imaginary parts as two real solutions.
+They supply two independent initial-data directions.
+No damping
+Solve $y''+4y=0,y(0)=1,y'(0)=2$.
+The roots are $\pm2i$.
+The general solution $C\cos2t+D\sin2t$ has initial coefficients $C=1,D=1$.
+$y=\cos2t+\sin2t$.
+Decaying oscillation
+Find the general solution of $y''+2y'+5y=0$.
+The characteristic roots are $-1\pm2i$.
+The real part gives $e^{-t}$, while the imaginary part gives angular frequency two.
+$y=e^{-t}(C\cos2t+D\sin2t)$.
+Find the angular frequency of $y''+9y=0$.
+Take the positive imaginary part.
+The roots are $\pm3i$.
+$3$.
+What is its fundamental period?
+Relate angular frequency to one full turn.
+$T=2\pi/3$.
+$2\pi/3$.
+How does the envelope change for roots $-2\pm i$?
+Inspect the real part.
+The envelope is proportional to $e^{-2t}$.
+Exponential decay.
+Is $e^{-t}\cos t$ periodic?
+Compare amplitudes one full oscillation apart.
+Each cycle reduces amplitude, so the function does not repeat.
+No.
+Complex roots permit only complex physical solutions.
+Conjugate combinations give real sine-cosine solutions.
+The imaginary part is frequency in cycles per second.
+It is angular frequency; divide by $2\pi$ for ordinary frequency.
+A conjugate root pair produces real oscillations with growth or decay.
+The real part controls the envelope; the imaginary part controls rotation rate.
+Convert complex roots to a real fundamental pair
+Distinguish frequency and period
+Complex roots and real oscillations
+Use a real constant-coefficient second-order homogeneous equation with $\beta>0$. Angular frequency is radians per unit time.
+What does the real part of a conjugate root control?
+Initial time
+Angular frequency
+Amplitude envelope
+The imaginary part controls oscillation speed.
+Complex notation organizes two real motions, sine and cosine, which together carry position and velocity data.
+Unit angular frequency
+Displacement is zero and velocity minus one.
+Set angular frequency $\omega$ to $1$ and observation time $t$ to $1.57079633$.
+Higher frequency
+At the same time, displacement is minus one and velocity zero.
+Set angular frequency $\omega$ to $2$ and observation time $t$ to $1.57079633$.
+Nearly one cycle
+Six time units nearly complete a cycle, but the exact period is twice pi.
+Set angular frequency $\omega$ to $1$ and observation time $t$ to $6$.
+Plot displacement and velocity against time. Changing frequency changes both period and velocity amplitude.
+What happens to period and velocity amplitude when angular frequency doubles?

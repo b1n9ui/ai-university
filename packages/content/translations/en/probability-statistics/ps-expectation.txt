@@ -1,0 +1,65 @@
+Expectation and linearity
+Expectation is a probability-weighted average, not the most frequent outcome.
+Expectation is a probability-weighted average, not the most frequent outcome.
+The expected value need never occur; a fair die's expectation is not a die face.
+Weight by probabilities
+Apply linearity
+Weight by probabilities
+For discrete expectation, multiply each value by its probability and sum. A function of the random variable can be evaluated before taking expectation.
+Apply linearity
+Expectation of a sum is the sum of expectations, without independence. A constant has its own value as expectation.
+Check integrability
+If positive and negative contributions both diverge, cancellation does not define expectation. Linear combinations here assume absolute integrability.
+This lesson assumes $E|X|,E|Y|<\infty$.
+This lesson assumes $E|X|,E|Y|<\infty$.
+Generally $E[g(X)]=g(E[X])$ does not hold.
+Group outcomes by random-variable value.
+Expand the finite sum termwise.
+Separate contributions and sum marginals.
+The die's average
+What is the expectation of a fair six-sided die?
+Each face has probability one sixth.
+Face values sum to twenty-one.
+$21/6=3.5$.
+Transformations do not commute
+$X$ is equally likely $-1,1$. Compare $E[X^2]$ and $(E[X])^2$.
+The mean is zero, whose square is zero.
+Every squared value is one, giving expected square one.
+Respectively $1,0$.
+$X$ equals ten with probability $0.3$, otherwise zero. Find its expectation.
+Weight by probability.
+$10(0.3)=3$.
+$3$.
+If $E[X]=2$, find $E[3X+1]$.
+Use linearity.
+$3(2)+1=7$.
+$7$.
+May expectation lie outside the support?
+Consider the die.
+Its expectation $3.5$ is not an attainable face.
+Yes.
+Does the expectation of a sum of correlated variables need covariance?
+Distinguish expectation from variance.
+Linearity requires no independence.
+No.
+Does linearity of expectation require independence?
+Yes
+No, but the relevant expectations must exist
+Only valid for fair dice
+Integrability suffices; independence is not required.
+An expectation must be attainable
+A weighted average may lie outside the support.
+A nonlinear function can be moved outside expectation
+Only special cases allow this; verify separately.
+Move one value. How does the probability-weighted balance point change?
+Fixed probabilities show mass, expectation, and the distinction from the expected square.
+A weighted average may lie outside the support.
+Second value: 4
+Set the second value to $4$ and compare the figure and readouts.
+At these parameters: expectation $3$; second moment $12$; variance $3$; standard deviation $1.73205$.
+Second value: -3
+Set the second value to $-3$ and compare the figure and readouts.
+At these parameters: expectation $-2.25$; second moment $6.75$; variance $1.6875$; standard deviation $1.29904$.
+Second value: 8
+Set the second value to $8$ and compare the figure and readouts.
+At these parameters: expectation $6$; second moment $48$; variance $12$; standard deviation $3.4641$.

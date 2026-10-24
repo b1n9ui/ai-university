@@ -1,0 +1,67 @@
+Contraposition and contradiction
+When a direct proof is difficult, rule out a true hypothesis with a false conclusion.
+When a direct proof is difficult, rule out a true hypothesis with a false conclusion.
+Contraposition proves an equivalent implication. Contradiction temporarily assumes the negated conclusion and derives an impossibility.
+Use the contrapositive
+State the contradiction assumption
+Use the contrapositive
+To prove that an even square has an even integer root, prove that an odd integer has an odd square. Contraposition does more than exchange antecedent and consequent.
+State the contradiction assumption
+To prove irrationality, assume a fraction of coprime integers represents the number, then derive a common factor of its numerator and denominator.
+Check where the contradiction comes from
+The contradiction must depend on the added negated assumption, with every other step justified. Do not assume the desired conclusion.
+In classical logic, an implication is equivalent to its contrapositive.
+This lesson uses classical logic.
+Represent a rational number with coprime integer numerator and denominator.
+An implication fails only when its antecedent is true and its consequent false.
+Its contrapositive fails under exactly the same assignment.
+They therefore have identical truth values.
+An even square
+Prove that an integer whose square is even must be even.
+Assume the integer is odd and write it as $2k+1$.
+Its square is $2(2k^2+2k)+1$, which is odd.
+Thus an even square cannot come from an odd integer.
+The integer is even.
+The irrationality of the square root of two
+Prove that $\sqrt2$ is irrational.
+Assume $\sqrt2=a/b$, with $\gcd(a,b)=1,b\ne0$.
+$a^2=2b^2$, so $a=2c$.
+Substitution gives $b^2=2c^2$, so $b$ is also even, contradicting coprimality.
+$\sqrt2$ is irrational.
+What is the converse of $p\to q$?
+Exchange the antecedent and consequent.
+It becomes $q\to p$.
+$q\to p$; it need not be equivalent.
+Does contraposition merely exchange the hypothesis and conclusion?
+Both must also be negated.
+Exchanging them alone gives the converse.
+No.
+Prove that there is no largest integer.
+Assume there is a largest integer, then add one.
+If $M$ is largest, $M+1$ is larger.
+There is no largest integer.
+Why choose a fraction in lowest terms in the proof about the square root of two?
+Which condition does the final contradiction violate?
+A common factor of two conflicts with coprimality.
+It makes the derived common factor a contradiction.
+Which statement is equivalent to the original implication?
+Converse
+Contrapositive
+Inverse
+They exclude the same assignment.
+The converse is always equivalent
+The contrapositive is equivalent; the converse need not be.
+A contradiction proof may use the conclusion circularly
+Temporarily assume its negation and derive a contradiction through justified steps.
+Compare an implication, its converse, and its contrapositive. Which truth-table columns match everywhere?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+The contrapositive is equivalent; the converse need not be.
+Comparison mode: 0
+Set the control to $0$. Observe which objects, relations, or counts change.
+At this setting: counterexample rows $0$.
+Comparison mode: 1
+Set the control to $1$. Observe which objects, relations, or counts change.
+At this setting: counterexample rows $2$.
+Comparison mode: 2
+Set the control to $2$. Observe which objects, relations, or counts change.
+At this setting: counterexample rows $0$.

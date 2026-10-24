@@ -1,0 +1,65 @@
+The multivariable chain rule and implicit functions
+Add contributions from every changing input
+When a quantity depends on several intermediate variables, sum the products of local rates along every dependency path.
+Along a mountain path, both eastward and northward motion change height. Add their contributions.
+Compute total change along parameter paths
+Find implicit derivatives at regular points
+Why add contributions?
+The linear increment is a sum of coordinate contributions. Substitute each coordinate's parameter change into that sum.
+Several input parameters
+Track each input's paths separately, forming a derivative matrix. Matrix multiplication organizes these sums.
+Implicit differentiation
+If $F(x,y)=0$ and $F_y\ne0$, continuous partials nearby allow the second coordinate locally as a differentiable function of the first. Differentiate the identity. Do not use the quotient when its denominator vanishes.
+Add contributions from every changing input
+The outer function is differentiable at the path point and inner functions differentiable. The implicit-function conclusion requires $F$ continuously differentiable nearby and $F_y\ne0$.
+Write the outer function's linear increment.
+Divide by the time increment and take limits.
+Differentiate the implicit identity.
+Differentiating along a path
+Given $f=x^2y,x=t,y=t^2$, find the derivative along the path.
+The chain rule gives $2xy\cdot1+x^2\cdot2t$.
+Substitution gives $4t^3$; check by substituting $f=t^4$ first.
+$4t^3$.
+An implicit slope
+Find the slope of ellipse $x^2+4y^2=8$ at $(2,1)$.
+$F_x=2x,F_y=8y$; the denominator is 8 at that point.
+The slope is $-4/8$.
+$-\frac12$.
+Only one changing direction contributes to the chain rule.
+Every input varying with the parameter contributes.
+A zero implicit denominator means the derivative is infinity.
+The formula fails; inspect vertical tangency or more serious degeneracy.
+Given $f=x+y,x=t^2,y=\sin t$, find the rate at time zero.
+Differentiate along both dependency paths.
+$2t+\cos t$ equals 1 at zero.
+Find the rate of $f=x^2+y^2$ along $x=\cos t,y=\sin t$.
+Check the identity first.
+The function is constantly 1 along the path, so its derivative is zero.
+The two chain-rule contributions cancel.
+For $x^2+y^2=1$ at $(1,0)$, can you use $-x/y$?
+Check the denominator and tangent.
+The denominator vanishes; the second coordinate is not locally differentiable as a function of the first here.
+The circle has a vertical tangent.
+No.
+Given $F(x,y,z)=0,F_z\ne0$, find local $z_x$.
+Fix the second variable and differentiate the identity in the first.
+$F_x+F_z z_x=0$.
+This gives $z_x=-F_x/F_z$.
+$-\frac{F_x}{F_z}$.
+What is the rate when moving along a contour?
+Always positive
+Zero
+Equal to distance traveled
+Constant function value makes the chain-rule sum zero.
+Move on the unit circle on bowl $z=x^2+y^2$; observe the two coordinate contributions cancel.
+Can the total rate vanish when both partials are nonzero?
+Find how each intermediate variable changes, then add its contribution.
+Path start
+Set path parameter $t$ to $0$.
+Start at $(1,0)$, at height 1.
+Path midpoint
+Set path parameter $t$ to $\frac\pi4$.
+Height stays 1 along the unit circle.
+Path endpoint
+Set path parameter $t$ to $\frac\pi2$.
+Position and direction change while the total height rate remains zero.

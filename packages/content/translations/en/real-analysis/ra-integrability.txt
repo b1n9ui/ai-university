@@ -1,0 +1,67 @@
+The Darboux integrability criterion
+Integrability requires a partition with upper–lower gap below every prescribed positive error.
+Integrability requires a partition with upper–lower gap below every prescribed positive error.
+The uncertain area must be reducible arbitrarily, not merely look small in one display.
+Define lower and upper integrals
+Prove the equivalent criterion
+Define lower and upper integrals
+The lower integral is the supremum of lower sums; the upper integral the infimum of upper sums. Equality defines Riemann integrability and their common value the integral.
+Prove the equivalent criterion
+Small partition gaps bound the integral gap. Conversely, approximate the common integral separately by a lower and upper sum, then take a common refinement to obtain one small-gap partition.
+Prove nonintegrability
+A fixed positive lower bound on every partition gap refutes the criterion. The densely oscillating zero–one function has gap one on the unit interval.
+This book uses the Darboux construction, equivalent to the Riemann definition.
+f\text{ integrable}\iff\forall\varepsilon>0\ \exists P:\ U(f,P)-L(f,P)<\varepsilon
+The function is bounded on a fixed closed bounded interval.
+A small partition gap controls the lower–upper integral gap.
+If the integrals agree, find sums approaching both.
+A common refinement improves both bounds simultaneously.
+The square-function gap
+For squaring on zero to one with $n$ equal subintervals, what is the upper–lower gap?
+Each height difference is $(i/n)^2-((i-1)/n)^2$.
+Multiply by the common width and telescope; the total is the reciprocal count.
+$1/n$.
+The Dirichlet counterexample
+Is the rational-indicator function integrable on zero to one?
+Every partition gives upper sum one and lower sum zero.
+Its gap cannot be less than one half.
+Not Riemann integrable.
+Must every partition have a small gap for integrability?
+The criterion requires a suitable partition to exist.
+One partition for each prescribed error suffices.
+No.
+Does one gap of one tenth establish integrability?
+Every arbitrarily small error is required.
+A fixed error is insufficient.
+No.
+What is the square-function gap with twenty equal subintervals?
+Use the reciprocal formula.
+$1/20=0.05$.
+$0.05$.
+Prove the function one on rationals and zero on irrationals is not Riemann integrable on $[0,1]$.
+Every positive-length subinterval contains both types of numbers.
+Every partition subinterval therefore has supremum one and infimum zero.
+However fine the partition, its upper sum is one and lower sum zero.
+The gap stays one, never below error $1/2$, violating the Darboux criterion.
+The gap stays one, never below error $1/2$, violating the Darboux criterion.
+What is the integrability criterion's quantifier order?
+One error for all partitions
+For every error, some partition
+For each partition, any target value
+The partition may depend on the error.
+One fine plot proves integrability
+Construct a partition for every prescribed error.
+Every discontinuous function is nonintegrable
+Many discontinuous functions, including finite-jump examples, remain integrable.
+Compare squaring, a step, and dense oscillation. Which gaps truly tend to zero?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+A small gap once is insufficient. Give a construction making the uncertainty smaller than any prescribed positive error.
+Equal subintervals: 1
+Set the subinterval count to $1$. Compare both sums and their gap; switch examples to see whether refinement removes it.
+Lower sum $0$; upper sum $1$; gap $1$; integral $0.3333333$.
+Equal subintervals: 20
+Set the subinterval count to $20$. Compare both sums and their gap; switch examples to see whether refinement removes it.
+Lower sum $0.30875$; upper sum $0.35875$; gap $0.05$; integral $0.3333333$.
+Equal subintervals: 40
+Set the subinterval count to $40$. Compare both sums and their gap; switch examples to see whether refinement removes it.
+Lower sum $0.3209375$; upper sum $0.3459375$; gap $0.025$; integral $0.3333333$.

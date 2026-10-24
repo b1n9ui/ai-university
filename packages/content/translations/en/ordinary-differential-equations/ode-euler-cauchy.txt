@@ -1,0 +1,61 @@
+Euler-Cauchy equations
+Use logarithmic time for power coefficients
+Which trial works?
+For $t^2y''+aty'+by=0$ on positive time, try $t^r$ to obtain $r(r-1)+ar+b=0$.
+Why not the usual characteristic polynomial?
+The second derivative contributes $r(r-1)$ rather than $r^2$ because powers differentiate using falling factors.
+Zero and repeated roots
+The leading coefficient vanishes at zero. Separate positive and negative intervals. A repeated root adds $\ln t$; complex roots oscillate in logarithmic time.
+Set $s=\ln t$ and rename the function $Y(s)$.
+On differentiating again, retain the first-derivative term.
+The equation becomes constant coefficient.
+Distinct powers
+Solve $t^2y''-2y=0$ for $t>0$.
+The indicial polynomial is $r(r-1)-2=(r-2)(r+1)$.
+Distinct powers give independent solutions.
+$y=Ct^2+D/t$.
+A repeated logarithmic root
+Solve $t^2y''+ty'=0$ for $t>0$.
+The indicial polynomial is $r^2=0$.
+A double zero root gives a constant and a logarithm.
+$y=C+D\ln t$.
+Find the indicial roots of $t^2y''+3ty'+y=0$.
+Write $r(r-1)+3r+1$.
+This becomes $(r+1)^2$.
+A double root at minus one.
+Find its general solution.
+Include a logarithmic factor for repetition.
+The power is minus one.
+$y=t^{-1}(C+D\ln t)$.
+Find real solutions of $t^2y''+ty'+y=0$ on positive time.
+The indicial equation is $r^2+1$.
+Use sine and cosine of logarithmic time.
+$C\cos(\ln t)+D\sin(\ln t)$.
+Can you directly extend the positive-time solution uniquely through zero?
+The leading coefficient vanishes at zero.
+Standard linear existence and uniqueness fail there; analyze separately.
+No direct conclusion.
+The indicial second-derivative term is always the root squared.
+A power's second derivative gives a falling factorial.
+Power solutions automatically cover all real times.
+State branches and exclude singular points explicitly.
+Euler-Cauchy coefficients match derivative orders by powers, allowing power trials or logarithmic-time simplification.
+Exponentials suit translation scales; powers suit multiplicative scales. A logarithm turns multiplication into addition.
+Form indicial equations
+Handle sign-separated intervals and repeated roots
+Euler-Cauchy equations
+$a,b$ are constants. We work on positive time. On negative intervals use $\lvert t\rvert$ and $\ln\lvert t\rvert$, without automatically crossing zero.
+Which logarithmic variable fits an Euler-Cauchy equation?
+Logarithms turn power scaling into a constant-coefficient relation.
+Choose a variable fitting the equation's scaling rather than forcing an inappropriate constant-coefficient formula.
+A constant solution
+Only the constant direction remains.
+Set logarithmic coefficient $D$ to $0$ and positive time $t$ to $1$.
+Positive logarithmic direction
+The function increases with positive time.
+Set logarithmic coefficient $D$ to $1$ and positive time $t$ to $2$.
+Opposite direction
+Another initial direction for the same equation.
+Set logarithmic coefficient $D$ to $-1$ and positive time $t$ to $2$.
+Compare constant-logarithmic combinations. Time zero is a coefficient singularity and is not crossed.
+How does changing the logarithmic coefficient affect the positive-time curve?

@@ -60,7 +60,7 @@
   "入门": "Introduction",
   "从第一行代码到完整程序": "From your first line to a complete program",
   "从输入输出、分支与循环开始，学习数据容器、函数、文件与测试，完成消费汇总器。每节都有可调参数的执行回放。": "Learn input and output, branches, loops, containers, functions, files, and tests while building an expense summarizer. Each lesson includes adjustable execution traces.",
-  "没有编程经验的中文读者": "Chinese readers without programming experience",
+  "没有编程经验的中文读者": "Readers without programming experience",
   "5 章 · 20 节 · Python 标准库与命令行项目": "5 chapters · 20 lessons · Python standard library and command-line projects",
   "带着 AI 做项目": "Building Projects with AI",
   "说清需求，验证结果，完成交付": "Define requirements, verify results, deliver",

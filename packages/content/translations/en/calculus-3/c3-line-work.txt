@@ -1,0 +1,62 @@
+Work and vector line integrals
+Keep force along directed displacement
+A work integral dots force with each directed displacement. Reversing the path reverses its sign.
+Pushing along motion gives positive work; opposing motion gives negative work; perpendicular force contributes none.
+Compute parametrized work integrals
+Check reversal and closed-loop work
+Connection to arc-length integrals
+Directed displacement is unit tangent times arc length. Thus work integrates tangential force against length.
+Must the path be straight?
+Any piecewise smooth path can be parameterized. Evaluate the field along it and dot with velocity; endpoint forces alone do not suffice.
+Does a closed path force zero work?
+No. A continuously tangential force can do positive work around a circle. Conservative-field hypotheses give zero closed-loop work.
+Keep force along directed displacement
+The field is continuous along an oriented piecewise smooth path. Reversal changes orientation. Unit tangents are defined on regular pieces.
+A short-step work contribution is force dotted with displacement.
+Write displacement using parameter velocity.
+Reversal negates directed displacement.
+Pushing around a circle
+Find work of $\mathbf F=(-y,x,0)$ around a radius-2 counterclockwise circle.
+Choose $\mathbf r=(2\cos t,2\sin t,0)$; velocity equals the field.
+The dot product is 4; integration gives $8\pi$.
+$8\pi$.
+Radial force on a circle
+Find work of $\mathbf F=(x,y,0)$ along the same circle.
+Radial field and tangential velocity are perpendicular.
+Every local contribution is zero, hence the full loop's work is zero.
+0.
+Integrating force magnitude gives work.
+Take the signed component along displacement.
+Every closed path has zero work.
+A rotational field is a counterexample.
+Find work of constant force $(2,0,0)$ along a straight path from the origin to $(3,1,0)$.
+Dot constant force with total displacement.
+$2\cdot3=6$.
+For constant force $(2,0,0)$, find work along the straight return from $(3,1,0)$ to the origin.
+Reverse the directed displacement.
+The return displacement is $(-3,-1,0)$, giving work $-6$.
+Find work when force is always perpendicular to velocity.
+Inspect every dot product.
+Every contribution is zero, so is the integral.
+Find work around the unit circle clockwise in field $(-y,x,0)$.
+Calculate counterclockwise first, then reverse.
+Counterclockwise work is $2\pi$.
+Reversal gives $-2\pi$.
+$-2\pi$.
+How does reversing the path change work?
+Unchanged
+Negates it
+Takes its absolute value
+Work accumulates directed displacement.
+Counterclockwise unit-circle motion in field $\mathbf F=(-y,x,0)$; tangential force does positive work.
+How can work be nonzero when start and finish agree?
+Only force along each displacement contributes; perpendicular force does no local work.
+Counterclockwise motion
+Set path parameter $t$ to $\frac\pi2$.
+The rotational field pushes along the path, accumulating positive work.
+Half a revolution
+Set path parameter $t$ to $\pi$.
+The local dot product stays one, so work keeps growing.
+Complete loop
+Set path parameter $t$ to $2\pi$.
+The path closes, but work is $2\pi$; it does not cancel.

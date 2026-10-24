@@ -1,0 +1,62 @@
+Composition, rotations, and shears
+Apply transformations from right to left
+Matrices for composed maps multiply in right-to-left order of action.
+Shearing then stretching generally reaches a different point from stretching then shearing.
+Calculate a composite matrix
+Explain the order of rotations, reflections, and shears
+Why read a product backward?
+In $(AB)x=A(Bx)$, the rightmost matrix reaches the input first. Write the intermediate vector to keep the order clear.
+How do you represent rotation?
+Rotate both standard basis vectors through the same angle to obtain the matrix columns. Angles are in radians; positive rotation is counterclockwise.
+How do linear and affine maps differ?
+An affine map $Ax+b$ can translate. If $b\ne0$, it is not linear in the original space. Homogeneous coordinates can encode it in a larger matrix without making the original map linear.
+Composition, rotations, and shears
+Input and output dimensions must match for composition. Multiplication is associative but generally not commutative.
+Apply the right map first.
+Then apply the left map.
+Combine them into one matrix.
+Order changes the result
+First shear $(0,1)$ by $S=\begin{pmatrix}1&1\\0&1\end{pmatrix}$, then stretch by $D=\operatorname{diag}(2,1)$.
+$S(0,1)=(1,1)$.
+$D(1,1)=(2,1)$; reversing the order gives only $(1,1)$.
+The order is $DS$; the result is $(2,1)$.
+Two rotations
+Where does $(2,1)$ go after two counterclockwise rotations of $\pi/2$?
+The first gives $(-1,2)$.
+The second gives $(-2,-1)$, equivalent to rotation through $\pi$.
+$(-2,-1)$.
+$AB$ means apply $A$ first.
+With column vectors, the right matrix acts first.
+Every area-preserving map is a rotation.
+A shear can preserve area while changing angles.
+What matrix rotates counterclockwise through $\pi/2$?
+Use the standard basis images.
+$e_1\mapsto e_2,e_2\mapsto-e_1$.
+$\begin{pmatrix}0&-1\\1&0\end{pmatrix}$.
+What matrix reflects across the horizontal axis?
+Keep the horizontal coordinate and negate the vertical one.
+$(x,y)\mapsto(x,-y)$.
+$\operatorname{diag}(1,-1)$.
+What is $R_\theta R_{-\theta}$?
+Rotate backward, then back again.
+Every vector returns to its starting point.
+$I$.
+Can a shear and a nonuniform stretch generally be exchanged?
+Test the vector from the example.
+$DS(0,1)=(2,1)$, $SD(0,1)=(1,1)$.
+No.
+Fix shear $S$ and horizontal stretch $D$ by two. Change the input direction and swap their order.
+Does shearing first give the same result as stretching first?
+Which matrix acts first in $(AB)x$?
+They act simultaneously
+First obtain the intermediate vector, then pass it to the left matrix.
+Think of composition as two machines: the input enters the right one, whose output enters the left one.
+Shear first
+Set $\theta=\pi/2$; shear, then stretch.
+Input $(0,1)$ goes first to $(1,1)$, then $(2,1)$.
+Swap the order
+Keep the direction; stretch before shearing.
+The input is initially unchanged, then reaches $(1,1)$.
+Test another direction
+Set $\theta=0$.
+Both orders send this input to $(2,0)$. Agreement for one input does not imply equal matrices.

@@ -1,0 +1,219 @@
+{
+  "id": "lists",
+  "chapterId": "chapter-3",
+  "number": "3.1",
+  "title": "Lists and shopping lists",
+  "subtitle": "A list stores items in order. Read them by position or process them one by one.",
+  "concept": "A list stores items in order. Read them by position or process them one by one.",
+  "intuition": "A shopping list has a first and second item, and you can add another at the end.",
+  "objectives": [
+    "Put items inside square brackets",
+    "Append an item, then iterate",
+    "Two names can refer to one list"
+  ],
+  "body": [
+    {
+      "title": "Put items inside square brackets",
+      "text": "items = [\"apple\", \"bread\"] creates a list with two strings, separated by a comma inside square brackets. Lists preserve order. items[0] retrieves the first item; items[1] retrieves the second. Positions start at 0. len(items) gives the number of items, here 2."
+    },
+    {
+      "title": "Append an item, then iterate",
+      "text": "items.append(\"milk\") adds an item at the end. The dot selects an operation on this list; append is its name. for item in items: visits each item directly, without a range or an index."
+    },
+    {
+      "title": "Two names can refer to one list",
+      "text": "other = items does not copy the list. It gives the same list another name, so appending through other also changes what items sees. For independent simple lists, use other = items.copy(). This is a shallow copy; here the list contains only strings or numbers."
+    }
+  ],
+  "formalDefinition": {
+    "text": "Lists preserve order and duplicates, and positions start at 0. append adds at the end; copy duplicates the simple, one-level lists used here.",
+    "conditions": [
+      "An index must be within the list. An empty list has no item at index 0.",
+      "Here copy() is used on one-level lists of numbers or strings."
+    ]
+  },
+  "derivation": [
+    {
+      "text": "The first item is at index 0."
+    },
+    {
+      "text": "for visits items in their list order."
+    },
+    {
+      "text": "apple therefore prints once on its own and again during iteration."
+    }
+  ],
+  "interactiveVisual": {
+    "kind": "python-trace",
+    "prediction": "After an append, what is the order?",
+    "caption": "Choose an input and predict the result, then select Next step. The arrow marks the next statement to execute; the side panel shows current variables and output produced so far.",
+    "experiment": {
+      "code": "items = [\"apple\", \"bread\"]\nitems.append('milk')\nfor item in items:\n    print(item)\n",
+      "stdout": "apple\nbread\nmilk\n",
+      "stdin": ""
+    },
+    "followUp": "Choose a different product and watch the list grow by one item.",
+    "codeTemplate": "items = [\"apple\", \"bread\"]\nitems.append({{item}})\nfor item in items:\n    print(item)\n",
+    "controls": [
+      {
+        "name": "item",
+        "label": "Product to append",
+        "values": [
+          "milk",
+          "eggs",
+          "rice"
+        ],
+        "defaultIndex": 0
+      }
+    ],
+    "watch": [
+      "items",
+      "item"
+    ]
+  },
+  "workedExamples": [
+    {
+      "title": "Read a shopping list",
+      "problem": "Read the first item, then print every item.",
+      "steps": [
+        "The first item is at index 0.",
+        "for visits items in their list order.",
+        "apple therefore prints once on its own and again during iteration."
+      ],
+      "answer": {
+        "code": "items = [\"apple\", \"bread\"]\nprint(items[0])\nfor item in items:\n    print(item)\n",
+        "stdout": "apple\napple\nbread\n",
+        "stdin": ""
+      }
+    },
+    {
+      "title": "Add milk",
+      "problem": "Append an item and print the new length.",
+      "steps": [
+        "The list starts with two items.",
+        "After append, it has three."
+      ],
+      "answer": {
+        "code": "items = [\"apple\", \"bread\"]\nitems.append(\"milk\")\nprint(len(items))\n",
+        "stdout": "3\n",
+        "stdin": ""
+      }
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "lists-m1",
+      "claim": "The first item is at position 1.",
+      "correction": "The first index is 0; index 1 is the second item."
+    },
+    {
+      "id": "lists-m2",
+      "claim": "other = items creates an independent copy.",
+      "correction": "Both names refer to one list. Use copy() for the simple one-level lists in this lesson."
+    }
+  ],
+  "practice": [
+    {
+      "problem": "What is the first item in [10, 20]?",
+      "hint": "Indices start at 0.",
+      "solution": [
+        "values[0] is 10."
+      ],
+      "answer": {
+        "code": "values = [10, 20]\nprint(values[0])\n",
+        "stdout": "10\n",
+        "stdin": ""
+      },
+      "id": "lists-p1",
+      "difficulty": 1,
+      "misconceptionTags": [
+        "lists-m1"
+      ]
+    },
+    {
+      "problem": "Append 30 to [10, 20], then print each item.",
+      "hint": "Use append.",
+      "solution": [
+        "30 goes at the end."
+      ],
+      "answer": {
+        "code": "values = [10, 20]\nvalues.append(30)\nfor value in values:\n    print(value)\n",
+        "stdout": "10\n20\n30\n",
+        "stdin": ""
+      },
+      "id": "lists-p2",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "lists-m2"
+      ]
+    },
+    {
+      "problem": "Find the sum of [2, 3, 4].",
+      "hint": "Use for and total.",
+      "solution": [
+        "total becomes 2, then 5, then 9."
+      ],
+      "answer": {
+        "code": "values = [2, 3, 4]\ntotal = 0\nfor value in values:\n    total = total + value\nprint(total)\n",
+        "stdout": "9\n",
+        "stdin": ""
+      },
+      "id": "lists-p3",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "lists-m1"
+      ]
+    },
+    {
+      "problem": "Copy [1, 2] and append 3 only to the copy. How long is the original?",
+      "hint": "Use copy().",
+      "solution": [
+        "The copy has three items; the original still has two."
+      ],
+      "answer": {
+        "code": "values = [1, 2]\nother = values.copy()\nother.append(3)\nprint(len(values))\nprint(len(other))\n",
+        "stdout": "2\n3\n",
+        "stdin": ""
+      },
+      "id": "lists-p4",
+      "difficulty": 2,
+      "misconceptionTags": [
+        "lists-m2"
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "Which index reads the first shopping-list item?",
+    "correctIndex": 1,
+    "choices": [
+      "items[1]",
+      "items[0]",
+      "items[len(items)]"
+    ],
+    "explanation": "List indices start at 0.",
+    "feedback": [
+      "Index 1 is the second item.",
+      "Yes. Index 0 is the first item.",
+      "The length is one greater than the last valid index, so it is out of range."
+    ]
+  },
+  "prerequisites": [
+    "debugging"
+  ],
+  "difficulty": 3,
+  "misconceptionTags": [
+    "lists-m1",
+    "lists-m2"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.2.1",
+    "status": "revised",
+    "humanReviewed": false
+  },
+  "sources": [
+    "python-tutorial",
+    "python-data"
+  ],
+  "furtherReading": []
+}

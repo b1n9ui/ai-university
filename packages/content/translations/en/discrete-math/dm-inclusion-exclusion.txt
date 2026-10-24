@@ -1,0 +1,64 @@
+Inclusion–exclusion
+After adding overlapping collections, correct each object's repeated count by alternating subtraction and addition.
+After adding overlapping collections, correct each object's repeated count by alternating subtraction and addition.
+Intersections are initially overcounted; subtracting pairwise intersections then removes triple intersections too often.
+Remove overlap between two sets
+Extend to three sets
+Remove overlap between two sets
+The size of a two-set union is the sum of the sizes minus the intersection: shared elements were counted twice.
+Extend to three sets
+A member of all three sets is first added three times, then subtracted in three pairwise intersections. Add it back once.
+Prove with indicators
+Check the total weight of each element. The binomial identity gives weight one to elements in at least one set and zero to elements in none.
+Inclusion–exclusion applies to finite sets; intersection sizes need not be equal.
+All finite sets and intersections belong to the same universe.
+Fix an element belonging to both sets.
+Fix an element belonging to all three sets.
+Sum the individual weights to count the union.
+Two courses
+Ten people take course A, eight take B, and three take both. How many take at least one?
+The direct sum eighteen counts three people twice.
+Subtract three.
+Fifteen.
+Sieve integers
+How many integers from one through thirty are divisible by two or three?
+There are fifteen multiples of two and ten of three.
+The five multiples of six must be subtracted once.
+Twenty.
+Two sets have sizes seven and six, with intersection size two. Find the union size.
+Remove one duplicate count.
+$7+6-2=11$.
+Eleven.
+Why add the triple intersection at the end of the three-set formula?
+Check the coefficient of a member in all three sets.
+Its coefficient so far is three minus three, or zero.
+Restore its count to one.
+What does inclusion–exclusion become for two disjoint sets?
+Their intersection is empty.
+Only the sum of the two sizes remains.
+The sum rule.
+How many integers from one through twenty are divisible by two or five?
+The intersection consists of multiples of ten.
+$10+4-2=12$.
+Twelve.
+What sign does the triple intersection have in the three-set formula?
+Plus
+Minus
+It is absent
+It corrects excessive subtraction by the pairwise intersections.
+Pairwise disjointness is the same as an empty triple intersection
+The triple intersection may be empty while pairwise intersections are not.
+Subtracting an arbitrary intersection once suffices
+Check the final weight of every type of member.
+Expand the integer range. How do intersections of multiple sets remove duplicate counts?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+The triple intersection may be empty while pairwise intersections are not.
+Integer-range upper bound: 1
+Set the control to $1$. Observe which objects, relations, or counts change.
+At this setting: multiples of two $0$; multiples of three $0$; intersection $0$; union $0$.
+Integer-range upper bound: 30
+Set the control to $30$. Observe which objects, relations, or counts change.
+At this setting: multiples of two $15$; multiples of three $10$; intersection $5$; union $20$.
+Integer-range upper bound: 60
+Set the control to $60$. Observe which objects, relations, or counts change.
+At this setting: multiples of two $30$; multiples of three $20$; intersection $10$; union $40$.

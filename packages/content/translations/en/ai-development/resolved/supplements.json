@@ -1,0 +1,365 @@
+{
+  "chapterReviews": [
+    {
+      "chapterId": "chapter-1",
+      "questions": [
+        {
+          "problem": "Turn build an amazing study tool with every feature into a first release.",
+          "hint": "Return to one person's specific difficulty.",
+          "answer": "User: yourself. Scenario: finding plans in the evening. First release: add, complete, delete and save. Accounts and synchronization are deferred.",
+          "solution": [
+            "Identify the user and purpose.",
+            "Keep features needed for the complete workflow.",
+            "Write criteria for ordinary input, whitespace and refresh."
+          ]
+        },
+        {
+          "problem": "How do you verify creation works?",
+          "hint": "Specify state, action and outcome.",
+          "answer": "From an empty list, submitting Learn Git creates an unfinished item; whitespace creates nothing; surrounding whitespace is trimmed.",
+          "solution": [
+            "State the successful result.",
+            "State rejected input.",
+            "Make results observable, rather than merely absence of an error."
+          ]
+        }
+      ]
+    },
+    {
+      "chapterId": "chapter-2",
+      "questions": [
+        {
+          "problem": "Trace one addition and explain the server's role.",
+          "hint": "Distinguish file delivery from business-data persistence.",
+          "answer": "Input → app.mjs event → tasks.mjs rules → localStorage → rendering. server.mjs serves static files only.",
+          "solution": [
+            "Read entry-point references.",
+            "Follow submission to validation and saving.",
+            "Confirm there is no shared-list API."
+          ]
+        },
+        {
+          "problem": "npm start fails. What information should the agent receive?",
+          "hint": "Enable reproduction.",
+          "answer": "Current directory, tool versions, command and complete error; relevant configuration if needed.",
+          "solution": [
+            "Check the environment against instructions.",
+            "Distinguish directory, tools and port failures.",
+            "Do not delete dependency records casually."
+          ]
+        }
+      ]
+    },
+    {
+      "chapterId": "chapter-3",
+      "questions": [
+        {
+          "problem": "HEAD v1, index v2, working tree v3: what does committing and pushing share?",
+          "hint": "Push shares commits, not the working tree directly.",
+          "answer": "The commit records v2 and the remote branch receives it; v3 remains local unstaged work.",
+          "solution": [
+            "Commit reads staged content.",
+            "Push transfers branch history.",
+            "Sharing v3 requires reviewing, staging, committing and pushing it."
+          ]
+        },
+        {
+          "problem": "Distinguish unstaging, discarding edits and reversing a pushed commit.",
+          "hint": "Inspect state and effects.",
+          "answer": "restore --staged keeps edits; ordinary restore overwrites unstaged working changes; revert can reverse an ordinary shared commit through a new record.",
+          "solution": [
+            "Inspect status and diffs first.",
+            "Backup needed content.",
+            "Choose the matching operation and verify again."
+          ]
+        }
+      ]
+    },
+    {
+      "chapterId": "chapter-4",
+      "questions": [
+        {
+          "problem": "Write a brief for fixing list loss after refresh.",
+          "hint": "Give current behavior, scope, criteria and evidence.",
+          "answer": "Require persistence; provide URL, steps, actual/expected results and save/load files. Diagnose first without adding synchronization. Request actual tests and browser evidence.",
+          "solution": [
+            "Make the failure reproducible.",
+            "Constrain unrelated structural changes.",
+            "Deliver command results and verification gaps."
+          ]
+        },
+        {
+          "problem": "The agent changes 20 files for button color. How do you review?",
+          "hint": "Can each change be justified?",
+          "answer": "Inspect files and diffs, ask why unrelated changes are necessary, reduce to styling scope and check keyboard and narrow screens.",
+          "solution": [
+            "File count alone does not decide correctness.",
+            "Check whether data and dependency changes are necessary.",
+            "Record checks after acceptance."
+          ]
+        }
+      ]
+    },
+    {
+      "chapterId": "chapter-5",
+      "questions": [
+        {
+          "problem": "Why do green automated tests not establish whole-site verification?",
+          "hint": "What actually executed?",
+          "answer": "Rule tests do not exercise browser events, storage or layout. Perform relevant page checks and report gaps.",
+          "solution": [
+            "List coverage.",
+            "Add normal, boundary and failure interaction checks.",
+            "Limit conclusions to actual evidence."
+          ]
+        },
+        {
+          "problem": "A backup is valid JSON but has invalid fields. What happens?",
+          "hint": "Syntax differs from business validity.",
+          "answer": "Reject the entire file without replacing the list. Validate version, fields, types, IDs and limits.",
+          "solution": [
+            "Parse first.",
+            "Validate every record.",
+            "Write only after validity and confirmation."
+          ]
+        }
+      ]
+    },
+    {
+      "chapterId": "chapter-6",
+      "questions": [
+        {
+          "problem": "What should a personal-list handoff include?",
+          "hint": "Let someone else run and understand it.",
+          "answer": "Source, runtime requirements, commands, version, acceptance evidence, limitations, backup/recovery instructions and deferred ideas.",
+          "solution": [
+            "Prepare runnable materials.",
+            "Match the delivered version to checks.",
+            "Explain data location and restoration."
+          ]
+        },
+        {
+          "problem": "How should upgrading to multiuser synchronization begin?",
+          "hint": "Sharing changes access and permissions.",
+          "answer": "Confirm separate/shared records, read/write permissions, conflicts and recovery, then rewrite scope and acceptance.",
+          "solution": [
+            "An icon is not synchronization.",
+            "The original local-storage design has limits.",
+            "Build around confirmed scenarios."
+          ]
+        }
+      ]
+    }
+  ],
+  "exam": [
+    {
+      "problem": "Capstone: independently deliver a personal study list.",
+      "hint": "Follow the four checkpoints.",
+      "answer": "Deliver a one-page plan, at least 6 acceptance cases, data/file maps, 2 briefs, at least 3 focused commits, test and browser evidence, README and runnable source.",
+      "solution": [
+        "Specify the user and first release, excluding synchronization.",
+        "Include ordinary creation, whitespace, duplicate titles, toggling, refresh and valid/invalid restoration.",
+        "Implement creation, manipulation, storage and handoff checkpoints, reviewing and checking each.",
+        "Compare with the appendix rather than merely copying; record unchecked environments and limits."
+      ]
+    },
+    {
+      "problem": "Evaluate: AI adds a cloud service and embeds a key in the webpage to change a button color.",
+      "hint": "Check goal, scope and secrets.",
+      "answer": "Reject unrelated cloud services and client-side secrets. If exposed, revoke/rotate first. Return to styling scope and recheck.",
+      "solution": [
+        "The change does not match the color task.",
+        "Read/edit permissions do not authorize a new external service.",
+        "Inspect diffs, lockfiles and artifacts; check keyboard and mobile layout."
+      ]
+    },
+    {
+      "problem": "Evaluate: tests were deleted, saving reports success, but refresh loses records.",
+      "hint": "Green results and success text can both mislead.",
+      "answer": "Do not accept. Restore requirement-based checks, reproduce and distinguish writing, reading and origin failures. Retest after fixing.",
+      "solution": [
+        "Preserve errors and version evidence.",
+        "Do not hide exceptions to report success.",
+        "Judge completion against original criteria."
+      ]
+    },
+    {
+      "problem": "Evaluate: after pushing, the agent claims public deployment and synchronized user lists.",
+      "hint": "Separate remote code, deployment and user data.",
+      "answer": "Request accessible branch/PR, deployed URL and version evidence. localStorage does not provide multiuser synchronization; revisit the requirement.",
+      "solution": [
+        "Push updates a target remote branch only.",
+        "A public page needs deployment and acceptance separately.",
+        "Shared user data needs additional architecture and permissions."
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Agent",
+      "definition": "An AI assistant that uses context and may operate tools. Capability does not authorize every operation."
+    },
+    {
+      "term": "User scenario",
+      "definition": "A person's actions at a particular moment toward a goal, explaining a feature's purpose."
+    },
+    {
+      "term": "First release",
+      "definition": "The essential complete workflow agreed for the current scenario, not every future idea."
+    },
+    {
+      "term": "Acceptance criteria",
+      "definition": "Specific inputs, actions and expected outcomes for judging completion."
+    },
+    {
+      "term": "Terminal",
+      "definition": "A command-entry and execution window. Its directory affects which files commands operate on."
+    },
+    {
+      "term": "Runtime environment",
+      "definition": "Tools, versions, operating system and configuration required to run code."
+    },
+    {
+      "term": "Dependency",
+      "definition": "An external package or tool whose versions and maintenance costs need management."
+    },
+    {
+      "term": "Lockfile",
+      "definition": "Records exact dependency resolution to support reproducible installation; do not delete reflexively on errors."
+    },
+    {
+      "term": "Entry point",
+      "definition": "Where loading or execution begins, helping trace behavior through files."
+    },
+    {
+      "term": "Frontend",
+      "definition": "Presentation and interaction in a client such as a browser."
+    },
+    {
+      "term": "Backend",
+      "definition": "The part commonly handling server-side data, permissions and business logic."
+    },
+    {
+      "term": "API",
+      "definition": "An agreed program interface specifying inputs, outputs and their meaning."
+    },
+    {
+      "term": "localStorage",
+      "definition": "Origin-scoped browser string storage, subject to clearing, permissions and capacity."
+    },
+    {
+      "term": "Data structure",
+      "definition": "Fields, types and relationships governing access, changes and validation."
+    },
+    {
+      "term": "ID",
+      "definition": "A record's identity, distinct from a display title that may repeat."
+    },
+    {
+      "term": "Git repository",
+      "definition": "Stores file-version history; distinct from the hosting website."
+    },
+    {
+      "term": "Working tree",
+      "definition": "The file contents currently being edited."
+    },
+    {
+      "term": "Staging area",
+      "definition": "Selected content for the next commit, potentially different from current files."
+    },
+    {
+      "term": "Commit",
+      "definition": "A local version snapshot and record, not created merely by saving a file."
+    },
+    {
+      "term": "HEAD",
+      "definition": "The currently checked-out commit position, usually following the current branch tip."
+    },
+    {
+      "term": "Branch",
+      "definition": "A name pointing to a history tip, organizing changes by purpose."
+    },
+    {
+      "term": "Remote",
+      "definition": "A configured repository location; origin is a conventional name."
+    },
+    {
+      "term": "Push",
+      "definition": "Update a target remote branch with local branch commits."
+    },
+    {
+      "term": "PR",
+      "definition": "Review material proposing a merge into a target branch; not automatic merge or deployment."
+    },
+    {
+      "term": "Diff",
+      "definition": "Comparison of text changes between states, used to inspect scope and behavior."
+    },
+    {
+      "term": "Conflict",
+      "definition": "An automatic merge cannot decide the result; understand both intentions and resolve explicitly."
+    },
+    {
+      "term": "Task brief",
+      "definition": "This book's six-part collaboration material: goal, context, scope, acceptance, verification and delivery."
+    },
+    {
+      "term": "Assertion",
+      "definition": "A test expression checking an expected condition."
+    },
+    {
+      "term": "Regression check",
+      "definition": "After a fix, recheck existing behavior and relevant boundaries for unintended breakage."
+    },
+    {
+      "term": "Secret",
+      "definition": "A credential such as a key, token or password. Revoke or rotate after exposure."
+    },
+    {
+      "term": "Deployment",
+      "definition": "Place runnable artifacts in the intended user-accessible environment."
+    },
+    {
+      "term": "Rollback",
+      "definition": "Restore usable code or data state, treating each separately."
+    }
+  ],
+  "projectPlan": [
+    {
+      "title": "Checkpoint 1: record a plan",
+      "task": "Build the page and creation rule. Ordinary input appears, whitespace is rejected; persistence is deferred.",
+      "evidence": [
+        "Rule tests: ordinary, whitespace, 80 and 81",
+        "Browser submission and feedback",
+        "Review the diff and commit"
+      ]
+    },
+    {
+      "title": "Checkpoint 2: operate on the correct record",
+      "task": "Toggle and delete by ID without affecting duplicate titles.",
+      "evidence": [
+        "Toggle twice to restore state",
+        "Check the remaining ID after deletion",
+        "Keyboard interaction and empty state"
+      ]
+    },
+    {
+      "title": "Checkpoint 3: persist and restore",
+      "task": "Refresh persistence, JSON backup and validated, confirmed restoration with failure feedback.",
+      "evidence": [
+        "Refresh the same URL",
+        "Restore IDs, titles and completion from a valid backup",
+        "Reject invalid backups without changing existing data"
+      ]
+    },
+    {
+      "title": "Checkpoint 4: enable a handoff",
+      "task": "Complete README, acceptance records, version and known limits.",
+      "evidence": [
+        "Run from instructions with another person or clean directory",
+        "Narrow-screen, keyboard and resource checks",
+        "Record local, remote and deployment states separately"
+      ]
+    }
+  ]
+}

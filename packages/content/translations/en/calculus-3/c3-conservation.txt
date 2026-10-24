@@ -1,0 +1,62 @@
+Conservation and local-to-global balance
+Net boundary outflow reduces the interior total
+The continuity equation connects local density change with divergence of flux. Integrating gives mass balance on a fixed region.
+Mass loss from a fixed container equals net boundary outflow. Shrinking the container yields the same balance locally.
+Connect the continuity equation to global conservation
+Distinguish velocity flux from mass flux
+Is the flux field velocity?
+Mass flux is density times velocity. Velocity flux gives volume flow; varying density makes the distinction essential.
+Connecting differentiation and integration
+With sufficient smoothness, interchange time differentiation and volume integration on a fixed region. Then convert boundary outflow using divergence.
+How do the volume's tools connect?
+Gradient describes local scalar change; divergence local net outflow; volume integrals accumulate interiors; surface integrals accumulate boundaries. Solving the resulting PDE belongs to a later volume.
+Net boundary outflow reduces the interior total
+The region is fixed with piecewise smooth boundary, without volume sources. Density and velocity have required continuous partials and permit differentiation under the integral. Moving boundaries or sources need extra terms.
+Total mass derivative equals negative net boundary outflow.
+Use divergence to convert to a volume integral.
+Validity on arbitrary small fixed regions gives local balance.
+Uniform expansion
+For velocity $\mathbf v=(x,y,z)$, spatially uniform density and initial density one, find a conserving density.
+Divergence is 3; spatial uniformity gives $\nabla\rho=0$.
+The equation becomes $\rho\prime+3\rho=0$; initial data give $e^{-3t}$.
+$\rho(t)=e^{-3t}$.
+Mass change in a fixed ball
+For that model, find mass and outward mass flow in the unit ball.
+Mass $M=(4\pi/3)e^{-3t}$; derivative $-4\pi e^{-3t}$.
+The boundary normal velocity is one, giving flux $4\pi e^{-3t}$.
+Mass derivative and outward flow have opposite signs and equal magnitudes.
+Velocity itself is mass flux.
+Multiply by density; their units differ.
+Conservation means mass in every fixed region is constant.
+Boundary exchange can change interior mass. Conservation is the full balance.
+A source-free fixed region has outward mass flow 5. Find its mass derivative.
+What sign does outflow have for interior mass?
+Mass decreases, giving derivative $-5$.
+With constant velocity and density uniform in space and time, does continuity hold?
+Inspect time change and divergence separately.
+Density's time derivative and constant-flux divergence are both zero.
+The inequality holds.
+For divergence-free velocity and spatially uniform density, can source-free density vary arbitrarily in time?
+Insert into local balance.
+Zero spatial gradient and zero velocity divergence force zero time derivative of density.
+No; it must be constant in time.
+An internal source creates mass at rate 2 while outward flow is 5. Find the mass derivative.
+Include the source in the balance.
+Production minus outflow is $2-5=-3$.
+Does decreasing mass in a fixed container violate conservation?
+Always
+Not necessarily; there may be net outflow
+Density must be negative
+Conservation includes boundary exchange.
+Fixed unit ball, velocity $(x,y,z)$, density $e^{-3t}$. Compare interior mass derivative with outward mass flux.
+As mass decreases, must the outward flow rate remain constant?
+Account for missing interior mass through boundary outflow or internal sources.
+Initial time
+Set time $t$ to $0$.
+Density is one; mass and outward flow are positive.
+Later
+Set time $t$ to $0.5$.
+Uniform density decays exponentially, reducing outward mass flow too.
+Final displayed time
+Set time $t$ to $1$.
+Mass keeps falling; its derivative remains the negative of outward flow.

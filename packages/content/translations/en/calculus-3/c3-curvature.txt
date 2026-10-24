@@ -1,0 +1,63 @@
+Arc-length parameters and curvature
+Separate turning from travel speed
+Curvature measures tangent-direction change per unit distance. It describes the curve's shape.
+The same bend is equally curved at any travel speed. Measuring tangent change by arc length removes speed's effect.
+Compute curvature and arc-length parameters
+Resolve tangential and normal acceleration
+The unit tangent
+Normalize nonzero velocity to obtain $\mathbf T$. The length of its derivative with respect to arc length is curvature.
+Decomposing acceleration
+Tangential acceleration changes speed; normal acceleration has magnitude curvature times speed squared. Nonzero curvature defines principal normal and binormal.
+Is torsion required here?
+This volume focuses on length and curvature. Torsion measures departure from the osculating plane and belongs to differential geometry; it is unnecessary for these integral theorems.
+Separate turning from travel speed
+The curve is twice continuously differentiable with nonzero velocity. $\mathbf N$ also requires nonzero curvature. Arc length is monotone on a regular interval.
+Arc length changes at the speed.
+Changes in unit tangent are perpendicular to it.
+Differentiate velocity's magnitude and direction separately.
+Curvature of a circle
+Find the curvature of a radius-4 circle.
+Unit arc length produces angular change $1/4$.
+The velocity-acceleration cross-product formula gives the same result.
+$\kappa=\frac14$.
+Helix curvature
+Find the curvature of $\mathbf r(t)=(2\cos t,2\sin t,t)$.
+Velocity length is $\sqrt5$; acceleration length is 2, and they are perpendicular.
+The cross-product length is $2\sqrt5$; divide by $5\sqrt5$.
+$\kappa=\frac25$.
+Faster travel means larger curvature.
+Regular reparameterization preserves curvature. Normal acceleration, instead, scales with speed squared.
+A straight line's principal normal is uniquely given by the formula.
+A straight line has zero curvature, so this normalization does not define a principal normal.
+Find the curvature of a radius-2 circle.
+Use reciprocal radius.
+Arc length $ds$ produces turn angle $ds/2$.
+Find the curvature of $\mathbf r(t)=(t,0,0)$.
+Acceleration is zero.
+The cross product vanishes and speed is 1, so curvature is zero.
+If speed doubles on the same circle, what happens to normal acceleration?
+Keep curvature unchanged.
+By $a_N=\kappa v^2$, it quadruples.
+Four times
+Can the cross-product formula be used directly when $\mathbf r\prime(t_0)=0$?
+Check its denominator.
+The speed-cubed denominator is zero.
+Choose a regular parameter or analyze separately; division is invalid.
+No.
+If the same path is traveled at twice the speed, how does curvature change?
+Doubles
+Quadruples
+Unchanged
+Curvature depends on shape and has units of reciprocal length.
+Vary the radius to compare unit tangent, principal normal and curvature, with equal coordinate scaling.
+Does a larger radius turn more or less per unit distance?
+Tangent turning per distance gives curvature independently of speed.
+Small radius
+Set circle radius $R$ to $0.5$.
+The circle is tighter; curvature is 2.
+Unit radius
+Set circle radius $R$ to $1$.
+Curvature is 1.
+Large radius
+Set circle radius $R$ to $2$.
+The bend is gentler; curvature is one-half.

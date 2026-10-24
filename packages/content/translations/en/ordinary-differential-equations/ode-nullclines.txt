@@ -1,0 +1,66 @@
+Nullclines and predator-prey models
+One stationary component need not mean a stationary state
+Define two nullcline families
+In planar system $x'=f,y'=g$, $f=0$ is the horizontal-component nullcline and $g=0$ the vertical-component nullcline.
+An idealized model
+Use $x'=x(1-y),y'=y(x-1)$. Positive states represent two populations coupled by encounter rates; resource limits and other realistic mechanisms are absent.
+What does the picture show?
+In the first quadrant, thresholds at one determine directions. Nullclines are generally not trajectories. A numerically closed curve does not prove periodic solutions for general models.
+Set the two components to zero separately.
+x'=0\Rightarrow x=0\ \text{or}\ y=1
+The other component gives the other family.
+y'=0\Rightarrow y=0\ \text{or}\ x=1
+Simultaneous zeros give equilibria.
+Read directions
+At state $(2,1/2)$, which way does motion go?
+Horizontal rate is $2(1-1/2)=1$.
+Vertical rate is $(1/2)(2-1)=1/2$.
+Both populations increase.
+A nullcline point need not be equilibrium
+Is state $(2,1)$ an equilibrium?
+Its horizontal derivative is zero.
+Its vertical derivative is one, so motion continues upward.
+Not an equilibrium.
+What are the two non-axis nullclines in the positive quadrant?
+Inspect each threshold.
+The horizontal-component nullcline is horizontal at one; the vertical-component nullcline is vertical at one.
+$y=1,x=1$.
+At $(1/2,2)$, does each component increase or decrease?
+Substitute into each sign.
+The horizontal factor and vertical threshold difference are negative.
+Both decrease.
+Where is the positive equilibrium?
+Intersect the two non-axis lines.
+Both coordinates are one.
+$(1,1)$.
+Must an entire nullcline be a solution trajectory?
+The other component can move the state off the line.
+One vanishing derivative is not enough to stay there.
+Not necessarily.
+One component's zero derivative means equilibrium.
+Every component must vanish simultaneously.
+An ideal predator-prey model directly predicts every real ecosystem.
+Parameters and missing mechanisms limit its scope.
+Nullclines divide phase space into component-increase and decrease regions; their intersections are equilibria.
+A nullcline can pause one component while the other continues moving.
+Find nullclines and equilibria
+Interpret directions in the positive-state region
+Nullclines and predator-prey models
+Population meaning uses $x,y>0$. The axes are invariant; numerical methods should check for accidental escape from the positive region.
+How are equilibria related to the two nullcline families?
+Their union
+Their intersections
+Any point on either
+Every state component must be stationary together.
+Use nullclines to divide the plane, then read the signs within regions before interpreting trajectories.
+Positive equilibrium
+Both populations stay fixed.
+Set initial population $x_0$ to $1$, initial population $y_0$ to $1$, and observation time $t$ to $5$.
+Away from equilibrium
+Motion crosses regions with different signs.
+Set initial population $x_0$ to $1.5$, initial population $y_0$ to $0.5$, and observation time $t$ to $5$.
+Another starting state
+Nullcline regions explain initial decline and later turning.
+Set initial population $x_0$ to $0.5$, initial population $y_0$ to $1.5$, and observation time $t$ to $5$.
+The phase plane shows nullclines, a direction field, and an RK4 approximation in the positive region. A finite numerical trajectory is not a proof of periodicity.
+Does every point on a nullcline remain stationary?

@@ -1,0 +1,65 @@
+Sample means and standard errors
+Standard deviation describes individual spread; standard error describes an estimator's variability.
+Standard deviation describes individual spread; standard error describes an estimator's variability.
+Averaging cancels some independent fluctuations, but it does not eliminate differences between individuals.
+Identify the statistic
+Find the mean's standard error
+Identify the statistic
+A sample mean is a function of the data. It changes from sample to sample and has its own distribution.
+Find the mean's standard error
+For independent identically distributed observations with finite variance, the mean's variance is population variance divided by sample size. When population standard deviation is unknown, estimate it with sample standard deviation.
+Distinguish exact from approximate
+A normal population gives an exactly normal sample mean at every sample size. Other populations need an approximation such as the CLT; an algebraic standard-error formula alone does not establish normality.
+This lesson assumes independent identically distributed observations.
+This lesson assumes independent identically distributed observations.
+Sampling a large fraction of a finite population without replacement needs a finite-population correction.
+Write the sample mean as a scaled sum.
+Independence makes variances of the sum add.
+Take the square root to find the statistic's scale.
+Two different scales
+Individual standard deviation is twelve and independent sample size is 36. Find the mean's standard error.
+The individual scale remains twelve.
+The mean's scale is $12/6$.
+$2$.
+The cost of precision
+How must sample size change to halve standard error?
+Standard error scales inversely with the square root of sample size.
+Multiply sample size by four.
+Quadruple it.
+For $s=8,n=16$, estimate the standard error.
+Divide the standard deviation by four.
+$8/4=2$.
+$2$.
+Is standard error the sample standard deviation of the raw data?
+They describe different objects.
+One describes a mean, the other individuals.
+No.
+If sample size increases from ten to forty, by what factor does standard error change?
+Take the inverse square root of the sample-size ratio.
+$\sqrt{10/40}=1/2$.
+A factor of $1/2$.
+What happens if repeated measurements on the same object are positively correlated but an independent-sample standard error is used?
+Positive covariance terms are omitted.
+The actual variance of the average can be larger.
+Uncertainty may be underestimated.
+Must the population standard deviation of individuals shrink when sample size increases?
+Yes
+No; the mean's standard error shrinks under the stated conditions
+It becomes zero
+Individual variation and estimation precision are different quantities.
+Standard deviation and standard error are interchangeable
+State whether you are describing individuals or a statistic.
+The independent-sample formula works for every sample
+Dependence, design weights, and finite populations can change the variance.
+If sample size quadruples, how much does the sampling-distribution width shrink?
+The model uses the exact sample-mean distribution for a known normal population, labeling individual standard deviation and the mean's standard error separately.
+State whether you are describing individuals or a statistic.
+Sample size: 25
+Set sample size to $25$ and compare the diagram and readings.
+At this preset: individual standard deviation $2$; mean standard error $0.4$; sampling-distribution center $2$.
+Sample size: 1
+Set sample size to $1$ and compare the diagram and readings.
+At this preset: individual standard deviation $2$; mean standard error $2$; sampling-distribution center $2$.
+Sample size: 100
+Set sample size to $100$ and compare the diagram and readings.
+At this preset: individual standard deviation $2$; mean standard error $0.2$; sampling-distribution center $2$.

@@ -1,0 +1,63 @@
+Gaussian elimination and row operations
+Rewrite constraints without changing solutions
+Elimination removes unknowns step by step while preserving the entire solution set.
+Subtracting a multiple of one row from another rewrites a constraint using known information. The operation is reversible, so no solution is lost.
+Apply row operations to an augmented matrix
+Solve by back substitution
+Which row operations are valid?
+Swap two rows, multiply a row by a nonzero scalar, or add a multiple of another row. Each is reversible.
+How do you use an augmented matrix?
+Write coefficients and the right-hand side together as $[A\mid\mathbf b]$. Apply each operation to the whole row, including the right-hand side.
+When do you back substitute?
+After reaching echelon form, solve upward from the last nonzero equation. Continue clearing above pivots and scaling them to one to obtain reduced echelon form.
+Gaussian elimination and row operations
+A row scale factor must be nonzero. Row operations preserve solutions but generally change the matrix as a linear map.
+Choose a nonzero pivot.
+Eliminate the entries below it.
+Back substitute or continue eliminating.
+Solve in two steps
+Solve $x+y=3,2x+3y=8$.
+Subtract twice the first equation from the second to get $y=2$.
+Substitute into the first equation to get $x=1$.
+$(1,2)$.
+A row swap is needed
+Solve $2y=4,x+y=3$.
+Swap rows to place a nonzero pivot in the first column.
+First obtain $y=2$, then $x=1$.
+$(1,2)$. A zero first coefficient does not imply inconsistency.
+Multiplying an entire row by zero preserves solutions.
+It discards an original constraint.
+The right-hand side is excluded from elimination.
+Both sides must change together.
+What results from dividing the augmented row $(2,4\mid6)$ by $2$?
+Include the right-hand side.
+$(1,2\mid3)$.
+$(1,2\mid3)$.
+What reverses $R_2\leftarrow R_2-3R_1$?
+Add back the quantity that was subtracted.
+$R_2\leftarrow R_2+3R_1$.
+$R_2\leftarrow R_2+3R_1$.
+In $x+2y=5,y=2$, find $x$.
+Back substitute from bottom to top.
+$x=5-4=1$.
+After swapping columns for two unknowns, can you read the solution using the original variable labels?
+Column positions identify variables.
+A column swap reorders variables; record the label change too.
+No.
+Fix $x+y=3,2x+3y=8$. View the original system, eliminate the first entry of row two, then the second entry of row one.
+Does eliminating a coefficient change the intersection?
+Which operation can discard an original constraint?
+Swap two rows
+Multiply an entire row by zero
+Add twice another row
+Multiplication by zero turns a constraint into an identity.
+Elimination rewrites the same constraints in an easier form. Each step should be reversible.
+Original system
+Select the original system.
+The lines intersect at $(1,2)$.
+Eliminate below
+Select the second step.
+The second constraint becomes $y=2$; the intersection stays fixed.
+Finish elimination
+Select the third step.
+The constraints are $x=1,y=2$; the solution set is unchanged.

@@ -1,0 +1,61 @@
+Linear maps and standard matrices
+Basis images determine the whole map
+A linear map preserves addition and scalar multiplication, so its basis images determine it completely.
+Knowing where the two basis directions go determines every vector's image in the plane.
+Check preservation of addition and scaling
+Build a matrix from basis images
+How do you test linearity?
+Check $T(u+v)=T(u)+T(v)$ and $T(cu)=cT(u)$ for all vectors and scalars. Testing a few points does not prove a general map linear.
+How do you find the standard matrix?
+Compute the images of standard basis vectors $e_j$ and put them in columns. A nonzero translation is not linear because it moves the origin.
+Does linear mean a straight line?
+Coordinates, matrices, and polynomials can form vector spaces. Linearity describes operations; it does not require a graph to be a line in one variable.
+Linear maps and standard matrices
+The domain and codomain must be vector spaces. We begin with real coordinate spaces.
+Express any input in the basis.
+Separate terms using linearity.
+These images become matrix columns.
+From a rule to a matrix
+What matrix represents $T(x,y)=(x+2y,3x)$?
+$T(1,0)=(1,3),T(0,1)=(2,0)$.
+Put the two images in columns, in order.
+$\begin{pmatrix}1&2\\3&0\end{pmatrix}$.
+Rule out translation
+Is $T(x,y)=(x+1,y)$ linear?
+$T(0,0)=(1,0)\ne0$.
+A linear map sends the zero vector to zero.
+Not linear.
+Preserving the origin guarantees linearity.
+$T(x)=x^2$ preserves the origin but not addition.
+Standard matrix rows are the basis images.
+Put the images in columns.
+Given $T(x,y)=(2x-y,y)$, find $T(0,1)$.
+Substitute directly.
+The result is $(-1,1)$.
+$(-1,1)$.
+Is $T(x)=|x|$ linear?
+Test multiplication by a negative scalar.
+$T(-1)=1$, whereas $-T(1)=-1$.
+Not linear.
+Is the zero map linear?
+Check both operation rules.
+Both sides of each rule are zero.
+Linear.
+Given linear $T(1,0)=(1,1),T(0,1)=(0,2)$, find $T(2,-1)$.
+Combine basis images with the input coefficients.
+$2(1,1)-(0,2)=(2,0)$.
+$(2,0)$.
+Blue shows the original grid and unit circle; green shows their image under $A$. Gold shows the image of $(1,1)$. The four inputs change the matrix entries.
+Which basis image changes when you change one matrix column?
+Which condition alone rules out linearity?
+Linearity forces zero to map to zero.
+Linear maps can scale, rotate, shear, or collapse directions, but must treat every linear combination consistently.
+Identity
+Set $A=I$.
+The grid, circle, and vector stay unchanged.
+Shear
+Set $A=\begin{pmatrix}1&1\\0&1\end{pmatrix}$.
+The unit square tilts while its area remains one.
+Collapse to a line
+Set $A=\operatorname{diag}(1,0)$.
+Vertical information is lost; rank drops to one.

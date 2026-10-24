@@ -1,0 +1,65 @@
+Choosing a linear algebra tool
+Choose a factorization for the objective
+Decide whether you need an exact solve, an approximate fit, repeated iteration, or compression before choosing a factorization.
+Writing a matrix equation is only the start. Reachability, uniqueness, and error sensitivity determine the next tool.
+Check dimensions, rank, and consistency first
+Choose tools for solving, fitting, iteration, and dimensional reduction
+What comes first in an exact solve?
+Check size and rank, then consistency. Describe solutions as a particular solution plus kernel. Reuse LU for repeated invertible solves and Cholesky for positive definite systems.
+How do you handle errors?
+Least squares finds the nearest output; QR handles full-column-rank fits; SVD and pseudoinverses handle rank deficiency and minimum norm. Inspect singular values and conditioning for sensitivity.
+How do eigendecomposition and SVD differ?
+Repeated updates of one state favor eigenstructure. Length scaling, rectangular matrices, and compression favor SVD. Familiarity with a formula does not establish its hypotheses.
+Choosing a linear algebra tool
+\text{Exact solve: }Ax=b;\quad\text{fit: }\min\|Ax-b\|;\quad\text{iterate: }A^k;\quad\text{compress: }A_k
+Every tool has size, rank, symmetry, and numerical hypotheses. This summary adds no unconditional guarantee.
+Check structure and reachability.
+Separate output uniqueness from input uniqueness.
+Choose a factorization matching the objective.
+Exact solutions can still need a shortest-input choice
+For $x+y=2$, distinguish all exact solutions from the minimum-norm one.
+Every exact solution is $(1+t,1-t)$.
+Squared input length is $2+2t^2$, minimized at $(1,1)$.
+The kernel explains nonuniqueness; the pseudoinverse chooses the shortest input.
+Factor a positive definite system
+Which factorization should repeated solves of $\begin{pmatrix}4&2\\2&3\end{pmatrix}x=b$ reuse?
+The matrix is real symmetric with positive leading principal minors.
+Save $L=\begin{pmatrix}2&0\\1&\sqrt2\end{pmatrix}$ and use two triangular solves for each right-hand side.
+Reuse Cholesky; no repeated inverses are needed.
+Always calculate an inverse first.
+Rectangular and singular matrices lack an ordinary inverse, and direct factorization is often preferable.
+A diagram agreeing with a few numbers proves the general result.
+Diagrams test specific models; theorems still need their hypotheses and arguments.
+With noisy observations and generally inconsistent equations, which problem should come first?
+State the objective first.
+Minimize $\|Ax-b\|^2$ and check the modeling assumptions.
+Least squares.
+Can a matrix with no real eigendirections still use SVD?
+SVD does not require a real eigenbasis of $A$.
+Every real matrix has an SVD.
+Yes.
+Which space contains the difference of two solutions?
+Subtract solutions with the same right-hand side.
+$A(x_1-x_2)=0$.
+The null space.
+Which tool retains the $k$ most important length-variation directions?
+The matrix may be rectangular.
+Truncate in decreasing singular-value order.
+Truncated SVD.
+Blue shows the original grid and unit circle; green shows their image under $A$. Gold shows the image of $(1,1)$. The four inputs change the matrix entries.
+How do preserved, compressed, and lost directions affect the choice of solving tool?
+What is the best first step for a new problem?
+Calculate an inverse
+Specify inputs, outputs, constraints, and objective
+Delete small entries
+A tool's hypotheses come from the problem structure.
+The ideas connect: kernels and images explain solutions, orthogonality explains nearest points, eigenvalues explain iteration, and singular values explain general scaling and approximation.
+Identity
+Set $A=I$.
+The grid, circle, and vector stay unchanged.
+Shear
+Set $A=\begin{pmatrix}1&1\\0&1\end{pmatrix}$.
+The unit square tilts while its area remains one.
+Collapse to a line
+Set $A=\operatorname{diag}(1,0)$.
+Vertical information is lost; rank drops to one.

@@ -1,0 +1,66 @@
+Forced oscillation and resonance
+Forcing supplies energy continuously
+Away from resonance
+For $y''+\omega_0^2y=F\cos\omega t$ with $\omega\ne\omega_0$, the same-frequency particular coefficient is $F/(\omega_0^2-\omega^2)$.
+Exact resonance
+If $\omega=\omega_0>0$, the usual trial overlaps the homogeneous space. A particular solution is $Ft\sin(\omega_0t)/(2\omega_0)$.
+A small frequency difference
+Nearby but unequal frequencies can produce beats: a slowly changing envelope. Finite-time growth alone is not exact resonance.
+Try the resonance-corrected form.
+The second derivative and restoring term cancel the time-dependent part.
+Match the forcing coefficient.
+Unit-frequency resonance
+Solve $y''+y=\cos t,y(0)=y'(0)=0$.
+Choose resonant particular solution $t\sin t/2$.
+Its initial value and derivative are zero, requiring no homogeneous correction.
+$y=t\sin t/2$.
+Nonresonant zero initial data
+Solve $y''+y=\cos2t$ with zero position and velocity.
+A particular solution is $-\cos2t/3$.
+Add $\cos t/3$ for zero initial position; the sine coefficient is zero.
+$y=(\cos t-\cos2t)/3$.
+Find the resonant angular frequency of $y''+4y=\cos\omega t$.
+Read the natural frequency.
+$\omega_0^2=4$; choose the positive frequency.
+$2$.
+Give one particular solution of $y''+4y=\cos2t$.
+Use the resonance formula.
+$F=1,\omega_0=2$.
+$t\sin2t/4$.
+Can homogeneous terms cancel long-term linear resonant growth for arbitrary initial data?
+Homogeneous terms are bounded.
+Bounded sine-cosine terms cannot cancel a persistently growing envelope.
+No.
+Does zero forcing still produce this forced resonant growth?
+Check the forcing amplitude.
+The resonant particular coefficient vanishes with the forcing.
+No.
+Very close frequencies are exactly equal.
+Nonresonance and exact resonance differ in long-term behavior.
+Positive damping still always gives amplitude growing linearly in time.
+Positive damping gives finite steady amplitude.
+An undamped system driven at its natural frequency can develop a growing resonant term.
+Repeatedly synchronized forcing accumulates energy; damping changes this conclusion.
+Distinguish driving and natural frequencies
+Explain the resonant time factor
+Forced oscillation and resonance
+Assume no damping, constant coefficients, and $\omega_0>0$. This formula uses cosine forcing, with $F$ its amplitude in the normalized equation.
+For right side $F\sin(\omega_0t)$, choose $y_p=-Ft\cos(\omega_0t)/(2\omega_0)$. A forcing phase change also changes the particular solution.
+Nonzero forcing is required for this growth term. The next lesson covers positive-damping steady response.
+Which conditions are essential for this unbounded resonant response?
+No damping and forcing at the natural frequency
+Merely a nonzero initial position
+Any forcing and damping
+Matching frequency together with no dissipation produces sustained accumulation.
+Resonance means the old particular-solution structure fails and needs a growing time factor; it is more than a zero in a denominator.
+Low-frequency driving
+Forcing combines with natural oscillation.
+Set forcing angular frequency $\omega$ to $0.5$ and observation time $t$ to $6$.
+Exact resonance
+The response contains time times sine, with a growing envelope.
+Set forcing angular frequency $\omega$ to $1$ and observation time $t$ to $6$.
+Higher-frequency driving
+The nonresonant response is a difference of bounded cosines.
+Set forcing angular frequency $\omega$ to $2$ and observation time $t$ to $6$.
+Display the zero-initial-data analytic response and forcing. At frequency one, use the resonance-limit formula to avoid division by zero.
+How does the response differ when driving and natural frequencies agree exactly?

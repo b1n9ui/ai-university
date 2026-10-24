@@ -1,0 +1,227 @@
+Logic and proof · Chapter review
+Negate “Everyone likes some dish,” and explain whether “some dish” may depend on the person.
+Keep the quantifier order and negate each quantifier.
+The original statement is $\forall x\exists y\,L(x,y)$.
+Its negation is $\exists x\forall y\,\neg L(x,y)$; the original witness may depend on the person.
+Someone likes no dish. The original does not require a shared dish.
+Prove that an odd integer has an odd square, and state the contrapositive.
+Write the integer as twice an integer plus one.
+$(2k+1)^2=2(2k^2+2k)+1$.
+Contrapositive: an integer with an even square is even.
+Both statements hold.
+Sets, functions, and relations · Chapter review
+Compare possible injections and surjections between a two-element set and a three-element set.
+Fix the direction, then count how many targets can be reached.
+From two to three, injections exist but surjections do not; from three to two, surjections exist but injections do not.
+No bijection exists in either direction.
+The direction determines what is possible.
+Under divisibility on positive integers, find the greatest lower bound and least upper bound of twelve and eighteen.
+Find common divisors and common multiples, respectively.
+$\gcd(12,18)=6$.
+$\operatorname{lcm}(12,18)=36$.
+Six and thirty-six.
+Integers and congruences · Chapter review
+Use the Euclidean algorithm to find the gcd of forty-two and thirty, then substitute backward.
+First find remainders twelve and six.
+$42=30+12,30=2\cdot12+6$.
+$6=30-2(42-30)=3\cdot30-2\cdot42$.
+Six.
+Solve $x\equiv1\pmod3,\ x\equiv2\pmod5$.
+Write all solutions to the first congruence first.
+$x=1+3t$, giving $3t\equiv1\pmod5$, hence $t\equiv2\pmod5$.
+$x\equiv7\pmod{15}$.
+$x\equiv7\pmod{15}$.
+Induction, recursion, and algorithms · Chapter review
+In the inductive proof for the sum of initial odd integers, what next term is added?
+Check which index has already been established.
+The first $k$ terms sum to $k^2$; the next term is $2k+1$.
+Adding gives $(k+1)^2$.
+$2k+1$, not $2k-1$.
+A loop preserves a correct invariant but runs forever. Which part of its correctness proof is missing?
+Distinguish returning a correct result from necessarily returning.
+The invariant supports only partial correctness.
+Termination still needs evidence such as a bounded-below strictly decreasing quantity.
+Termination is missing.
+Basic counting · Chapter review
+Choose three representatives from eight people, then designate one spokesperson. How many ways are there?
+Choose the unordered group, then assign the role.
+$\binom83=56$.
+$56\cdot3=168$.
+One hundred sixty-eight.
+Distribute six identical candies among three people, with at least one each. How many ways?
+Give each person one first.
+Distribute the remaining three among three people, allowing zero.
+$\binom52=10$.
+Ten.
+Recurrences and combinatorial methods · Chapter review
+How many integers from one through sixty are divisible by three or five?
+Subtract multiples of fifteen.
+$20+12-4=28$.
+The intersection consists of multiples of fifteen.
+Twenty-eight.
+For $a_0=1,a_{n+1}=2a_n+1$, find and verify the general term.
+Adding one turns the update into doubling.
+$a_{n+1}+1=2(a_n+1)$.
+$a_n+1=2^{n+1}$ satisfies both the initial value and recurrence.
+$a_n=2^{n+1}-1$.
+Graphs and connections · Chapter review
+Compare degrees, connectivity, and bipartiteness of a six-cycle and two disjoint triangles.
+Equal degrees do not determine structure.
+Both have six vertices, six edges, and every degree two.
+The six-cycle is connected and bipartite; the two triangles have two components and are not bipartite.
+Equal degrees, but nonisomorphic graphs.
+A connected plane graph has six vertices and eight edges. How many faces? Do those counts alone prove every such graph planar?
+Use the equality under its hypotheses, then distinguish necessary and sufficient conditions.
+If connected and planar as stated, $f=2-6+8=4$.
+Vertex and edge counts alone do not decide planarity in general.
+Four faces; counts alone do not establish planarity.
+Trees and network algorithms · Chapter review
+A triangle has edge weights one, two, and two. Find its minimum spanning-tree cost and decide uniqueness.
+Take the lightest edge and either weight-two edge.
+The cost is three.
+Either weight-two edge completes the tree, so the optimum is not unique.
+Cost three; nonunique.
+Why might three left vertices with three total neighbors still lack a matching covering the left side?
+Make two left vertices compete for a single neighbor.
+A and B connect only to one; C connects to two and three.
+The subset A and B has only one neighbor, violating Hall's condition.
+Check the neighborhood size of every subset.
+Prove that among any six integers, two have a difference divisible by five.
+Classify by remainders modulo five.
+There are only five residue classes.
+Two of the six integers share a class, so their difference is divisible by five.
+This follows from the pigeonhole principle.
+Choose a three-person group from six people and designate one leader. Count in two ways.
+Choose the group first or the leader first.
+Group first: $\binom63\cdot3=60$.
+Leader first: $6\binom52=60$.
+Sixty.
+Solve $x\equiv2\pmod3,\ x\equiv1\pmod4$ and state the uniqueness modulus.
+Write the first solution as two plus three times a parameter.
+$2+3t\equiv1\pmod4$, so $t\equiv1\pmod4$.
+$x\equiv5\pmod{12}$; coprime moduli guarantee uniqueness modulo twelve.
+$x\equiv5\pmod{12}$.
+Count allocations of four items to four people, each receiving at most two.
+Extract the fourth-degree generating-function coefficient, or subtract excess allocations from the unrestricted count.
+Unrestricted count: $\binom73=35$.
+If a specified person gets at least three, one item remains, giving $\binom43=4$ allocations; subtract sixteen for four people.
+Two people cannot both receive at least three.
+Nineteen.
+Given $a_0=0,a_1=1,a_n=2a_{n-1}$ for $n\ge2$, find the general term and explain the special zero index.
+Double starting from index one.
+For $n\ge1$, $a_n=2^{n-1}$.
+List index zero separately as zero; do not force a negative exponent into the formula.
+Index zero is zero; subsequent terms are powers of two with exponent one less than the index.
+A five-vertex graph has degrees four, one, one, one, one. Is it a tree? Does it have an Euler trail or Hamilton cycle?
+The center joins all other vertices; the leaves have degree one.
+It is a four-leaf star tree.
+Four odd-degree vertices rule out an Euler trail; leaves cannot lie on a Hamilton cycle.
+A tree; neither of the latter two exists.
+Must a shortest-path tree in a nonnegative undirected network be a minimum spanning tree?
+Use a triangle: source–A costs two, source–B costs two, and A–B costs one.
+The shortest-path tree uses both source edges, totaling four.
+A minimum spanning tree uses one source edge and A–B, totaling three.
+No; the optimization objectives differ.
+Left vertices A and B face right vertices one and two. A connects to both; B only to one. After greedily matching A to one, how can a maximum matching be obtained?
+Find an alternating augmenting path.
+Follow B–one–A–two, alternating unmatched and matched edges.
+Flip to B–one and A–two.
+A maximum of two pairs.
+Propositions and logical connectives
+First decide whether a statement has a definite truth value; then combine it with other statements.
+Truth tables and logical equivalence
+Two expressions are logically equivalent only when they agree on every assignment.
+Quantifiers, domains, and negation
+A quantifier specifies “every” or “at least one”; the domain specifies which objects it concerns.
+Direct proofs, cases, and counterexamples
+A proof establishes a conclusion from its hypotheses. A counterexample refutes a universal claim.
+Contraposition and contradiction
+When a direct proof is difficult, rule out a true hypothesis with a false conclusion.
+Set operations and power sets
+A set ignores order and records each element only once.
+Functions, injections, and surjections
+A function gives each input one output. An injection has no collisions; a surjection reaches every target.
+Binary relations and relation matrices
+A relation records which ordered pairs hold, allowing more associations than a function.
+Equivalence relations and partitions
+An equivalence relation divides objects into disjoint classes.
+Partial orders, Hasse diagrams, and lattices
+A partial order permits incomparable objects; a total order requires every pair to be comparable.
+Divisibility, greatest common divisors, and least common multiples
+Divisibility requires an integer quotient. The greatest common divisor is the largest shared positive factor.
+The Euclidean algorithm and Bézout's identity
+Repeated remainders preserve the gcd while reducing the problem.
+Primes and unique factorization
+Every integer greater than one factors into primes, uniquely apart from their order.
+Congruences and modular arithmetic
+Modular arithmetic keeps only remainders, while addition and multiplication remain consistent.
+Modular inverses and the Chinese remainder theorem
+Coprimality gives inverses and lets two remainder conditions determine a unique class modulo the product.
+Mathematical induction
+Check a starting case, then prove that each case passes the result to its successor.
+Strong induction and well-ordering
+When the next case needs several smaller cases, assume all preceding cases in the inductive step.
+Recursive definitions and structural induction
+Specify basic objects, then rules for building new objects from existing ones.
+Loop invariants and termination
+Correctness requires both a property preserved at every step and a reason the process must end.
+Algorithm growth and asymptotic notation
+Asymptotic notation describes eventual upper bounds, lower bounds, or matching orders of growth.
+The sum and product rules
+Add mutually exclusive cases; multiply successive choices. Check for double counting first.
+The pigeonhole principle and double counting
+With more objects than containers, some container holds more than one object.
+Permutations and combinations
+Use permutations when order matters; combinations when only membership matters.
+The binomial theorem and Pascal's identity
+Expansion coefficients count which factors contribute the same term.
+Repeated selections and stars and bars
+Distribute identical objects among distinct recipients by encoding counts with stars and bars.
+Inclusion–exclusion
+After adding overlapping collections, correct each object's repeated count by alternating subtraction and addition.
+Recurrences and first-order equations
+A recurrence defines the next term; an initial value selects the particular sequence.
+Second-order linear recurrences
+When the next term depends on two preceding terms, two initial values are needed.
+Generating functions and constrained counting
+Store counts as power-series coefficients; multiplication then combines independent choices.
+Counting and discrete probability
+Before converting counts to probabilities, check that elementary outcomes are equally likely.
+Graphs, adjacency lists, and adjacency matrices
+A graph represents objects by vertices and pairwise relationships by edges.
+Degrees and the handshaking lemma
+Each undirected edge contributes two endpoints, so the degree sum equals twice the edge count.
+Connectivity, breadth-first search, and bipartite graphs
+Breadth-first search explores by distance layers; the layer number is the minimum number of edges from the source.
+Euler trails and Hamilton cycles
+Euler asks to use each edge once; Hamilton asks to visit each vertex once.
+Planar graphs and vertex coloring
+Planarity asks for a drawing without crossing edges; coloring requires adjacent vertices to differ in color.
+Trees and spanning trees
+A tree connects all its vertices with just enough edges and no cycle.
+Rooted trees, traversals, and prefix codes
+Choosing a root gives edges parent–child roles. A traversal specifies the visiting order.
+Minimum spanning trees and Kruskal's algorithm
+A minimum spanning tree connects every vertex with the smallest total edge cost.
+Dijkstra's shortest-path algorithm
+With nonnegative edge weights, the unsettled vertex with smallest tentative distance can safely be finalized.
+Bipartite matching, augmenting paths, and flow
+One-to-one assignment depends on rearranging existing assignments as well as finding free positions.
+Notation and boundary conventions
+Sets ignore repetition. Graphs default to finite simple undirected graphs. Sequences starting at index zero are explicitly identified. Empty sums are zero, empty products and zero factorial are one. Binomial coefficients are zero outside the selection range from zero to the total. Partial orders are reflexive; Hasse diagrams omit loops and transitive edges.
+Boolean algebra and logic circuits
+On the two-element set of truth values, conjunction, disjunction, and negation are Boolean operations. Set intersection, union, and complement obey the same identities. Gates compute truth values, so truth tables compare finite circuits without feedback. Logical equivalence does not imply equal gate counts, delays, or energy use.
+Sizes of infinite sets
+Count finite sets by elements; compare infinite cardinalities by bijections. Doubling bijects positive integers with even positive integers, so a proper subset can have the same cardinality as its universe. A diagonal proof of uncountability of the reals must address ambiguities in infinite representations; finite enumeration is not such a proof.
+From recurrences to generating functions
+Multiply the Fibonacci recurrence by the corresponding powers and sum from index two. After rearrangement, the initial terms determine the numerator. Interpret every operation coefficientwise in formal power series; each fixed coefficient involves only a finite sum.
+Planar edge bounds and sufficiency
+In a connected tree, the sole face boundary traverses each edge twice. For simple plane graphs with at least three vertices and a cycle, handle bridges in the embedding or apply face-boundary counting to the blocks. Trees satisfy the bound directly. The complete three-by-three bipartite graph satisfies the ordinary three-times-vertices bound but violates the bipartite bound: a necessary condition is not a full criterion.
+Sufficiency of Hall's condition: alternating reachable sets
+Take a maximum matching. If a left vertex is unmatched, explore from it along unmatched edges to the right and matched edges to the left. Reaching an unmatched right vertex would give an augmentation, contradicting maximal size. Every reached right vertex is therefore matched, and its matched left vertex is reached too. The reached left set contains at least one extra vertex, the initial unmatched one, while all its neighbors lie in the reached right set. This violates Hall's condition. Hence Hall's condition leaves no unmatched left vertex.
+S=\text{reached left set},\quad N(S)=\text{reached right set},\quad |N(S)|<|S|
+From matching to unit-capacity flow
+Connect a source to every left vertex, use allowed pairing edges from left to right, and connect every right vertex to a sink, all with capacity one. A matching defines an integer flow of the same size; conversely, left-to-right edges carrying one in an integer flow define a matching. Reverse residual edges on augmenting paths allow old pairs to be undone. General max-flow/min-cut theory and capacity scaling belong to later algorithms courses.
+\text{maximum matching size}=\text{maximum flow value in this network}
+Finite states and later courses
+A finite-state machine determines its next state from the current state and input symbol. Tracking the parity of ones in a binary string needs only two states: zero preserves the state and one flips it. Induction on input length proves the state equals the parity of the prefix read so far. This book's invariant method applies directly. General automata, formal languages, computability, and complexity belong to later courses.

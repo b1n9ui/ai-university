@@ -1,0 +1,64 @@
+Convolution and general forcing responses
+Add the responses to all earlier input pieces
+What is convolution?
+$(f*g)(t)=\int_0^tf(\tau)g(t-\tau)d\tau$. The second factor records time elapsed since the input occurred.
+Why is its transform useful?
+When convergence permits exchanging integrals, time convolution becomes multiplication of transforms.
+Where do initial data belong?
+Nonzero initial data add a homogeneous response. A convolution alone usually supplies only the zero-initial-data part.
+Write the zero-state oscillator relation in transform space.
+Invert the transfer factor.
+Turn the transform product into an integral.
+Constant driving of an oscillator
+Find the zero-initial-data response of $y''+y=1$.
+Its convolution is $\int_0^t\sin(t-\tau)d\tau$.
+Integrate using the remaining-time variable.
+$y=1-\cos t$.
+A first-order exponential kernel
+Find the zero-initial-data response of $y'+y=1$.
+Its impulse response on positive time is $e^{-t}$.
+Integrate $\int_0^te^{-(t-\tau)}d\tau$.
+$y=1-e^{-t}$.
+What is the convolution of constant one with itself?
+Use the integration interval's length.
+$\int_0^t1d\tau=t$.
+$t$.
+What does $t-\tau$ mean in a convolution?
+Compare current time with input time.
+It is elapsed time since the input occurred.
+The age of the response.
+What is $e^{-t}*e^{-t}$?
+Combine the exponentials.
+The integrand is constant $e^{-t}$; multiply by the interval length.
+$te^{-t}$.
+Can a zero-state convolution alone give a full solution for nonzero initial data?
+A convolution usually starts at zero.
+Add the initial-data response.
+No.
+Convolution includes future inputs in the current output.
+A causal integral includes only past and current inputs.
+Convolution is ordinary pointwise multiplication.
+One accumulates an integral; the other multiplies values at the same time.
+A linear time-invariant system's zero-state response is the convolution of its input with the causal impulse response.
+Each input instant starts its own response; current output accumulates the contributions of all past inputs.
+Interpret elapsed time in convolution
+Represent solutions by integrals
+Convolution and general forcing responses
+Assume a causal constant-coefficient linear system with zero initial data and piecewise-continuous exponential-order inputs, making the integral exchanges and transforms valid.
+Why is current time the convolution's upper limit?
+To save computation
+A causal system depends only on past inputs
+The function has no later definition
+Future inputs cannot affect the current causal response.
+Convolution accumulates the effect of each small push into the total response.
+Earlier
+Only a short input history has accumulated.
+Set current time $t$ to $0.5$.
+Later
+Earlier inputs have had more time to decay.
+Set current time $t$ to $2$.
+Near the steady state
+The accumulated area approaches one but remains below it.
+Set current time $t$ to $5$.
+Horizontal is past input time. Gold is the current convolution integrand; shaded area equals the zero-state response.
+How do past-input contributions redistribute as current time advances?

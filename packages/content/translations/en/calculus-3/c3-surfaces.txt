@@ -1,0 +1,64 @@
+Multivariable functions and level sets
+Assign one value to each input position
+A two-variable function assigns height to each allowed planar position. A contour joins positions with the same height.
+Color maps and contours encode heights. A surface shows shape; contours make directions easier to read.
+Find multivariable domains
+Read contours and level surfaces
+Finding the domain
+Require nonnegative radicands, positive logarithm arguments and nonzero denominators. Intersect the conditions to find a planar or spatial region.
+Graph versus contour
+A graph displays output as height. A contour stays in the input plane with output fixed. Contours of different values cannot intersect.
+Displaying three-variable functions
+Three input coordinates already fill space. Use level surfaces or slices for output; the four-dimensional graph is not an ordinary spatial surface.
+Assign one value to each input position
+The function is single-valued on its domain. Level sets may be empty, points, curves or regions, and need not be smooth.
+Specify allowed inputs.
+Fix the output to obtain a level set.
+Use coordinate slices to inspect height changes.
+A radical's domain
+Find the domain of $f(x,y)=\sqrt{9-x^2-y^2}$.
+The radicand must be nonnegative, giving $x^2+y^2\le9$.
+Zero radicand is allowed on the boundary.
+The closed radius-3 disk.
+A contour
+Find the height-4 contour of $f(x,y)=x^2+4y^2$.
+Set the output to 4.
+Rewrite as $x^2/4+y^2=1$.
+An ellipse with semiaxes 2 and 1.
+The graph of a two-variable function is a planar region.
+The planar region is its domain; the graph is usually a spatial surface.
+Dense contours always mean high elevation.
+With equal contour intervals and scale, density indicates rapid change, not absolute height.
+Find the domain of $\ln(y-x^2)$.
+The logarithm's input must be strictly positive.
+$y-x^2>0$; exclude the boundary parabola.
+$y>x^2$.
+Find the zero-level set of $x^2+y^2$.
+Squares are nonnegative.
+Both coordinates must vanish.
+The origin.
+Can contours of different heights intersect?
+Is a function's output unique?
+An intersection would assign two different outputs to one input.
+No.
+What does a level surface of a three-variable temperature function represent?
+Fix temperature, keeping spatial locations.
+It contains every point at the specified temperature.
+The set of positions with the same temperature.
+Is $x^2+y^2=0$ a circular curve?
+An ordinary circle
+A single point
+The empty set
+Only the origin satisfies it. Level sets need not be regular curves.
+Surface $z=x^2+y^2$ with a fixed-first-coordinate slice; the projection marks corresponding inputs.
+When moving in the plane, which coordinates are inputs and which is output?
+The domain lies in the input plane; the graph raises output into height, while contours retain equal-height positions.
+Central slice
+Set fixed coordinate $x$ to $0$.
+The slice passes through the bowl's bottom, with minimum height zero.
+Shift the slice
+Set fixed coordinate $x$ to $0.5$.
+The entire slice rises.
+A farther slice
+Set fixed coordinate $x$ to $1$.
+The minimum height is 1.

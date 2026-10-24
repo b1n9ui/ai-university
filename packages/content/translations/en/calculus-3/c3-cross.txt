@@ -1,0 +1,66 @@
+Cross products, area and normals
+Find area and perpendicular direction together
+The cross product is perpendicular to both input vectors. Its length is their parallelogram's area.
+Base times height gives magnitude; the right-hand rule gives direction. Swapping inputs preserves area and reverses the normal.
+Find normals and areas
+Compute volume using triple products
+How does it differ from the dot product?
+The dot product is a scalar measuring alignment. The three-dimensional cross product is a vector describing perpendicular direction and spanned area.
+Why does order matter?
+Turn from the first vector toward the second; the right hand chooses the positive normal. Reversing order changes sign.
+Using the triple product
+Dot a cross product with a third vector for signed volume. Its absolute value is parallelepiped volume. Zero means the vectors are coplanar.
+Find area and perpendicular direction together
+Use three-dimensional right-handed Cartesian coordinates. A unit normal requires a nonzero cross product.
+Choose a direction perpendicular to both vectors.
+Base times height determines magnitude.
+Take the third vector's signed height.
+Triangle area
+Find the triangle area spanned by $\mathbf u=\langle2,0,0\rangle,\mathbf v=\langle1,3,0\rangle$.
+The cross product is $\langle0,0,6\rangle$.
+The parallelogram area is 6; take half.
+3.
+Spatial volume
+Find the parallelepiped volume for $\mathbf u=\langle1,0,1\rangle,\mathbf v=\langle0,2,0\rangle,\mathbf w=\langle0,0,3\rangle$.
+The cross product is $\langle-2,0,2\rangle$.
+Dotting with the third gives 6; take its absolute value.
+6.
+Swapping cross-product inputs changes nothing.
+The cross product is anticommutative; order determines orientation.
+Parallel vectors give a unique unit normal.
+Their cross product is zero; the perpendicular direction is not unique.
+Find $\mathbf i\times\mathbf k$.
+Use the right-hand order or components.
+Swapping the third and first coordinate directions reverses sign.
+The result is $-\mathbf j$.
+$-\mathbf j$.
+Find the parallelogram area spanned by $\langle3,0,0\rangle$ and $\langle0,4,0\rangle$.
+Take the cross product's length.
+The cross product is $\langle0,0,12\rangle$, with length 12.
+Does swapping two vectors in a triple product change volume?
+Distinguish signed from unsigned volume.
+The signed triple product changes sign.
+Its absolute value, geometric volume, stays unchanged.
+Geometric volume is unchanged.
+Two nonzero vectors have zero cross product. What follows?
+What does zero area imply?
+$\sin\theta=0$; the angle is zero or $\pi$.
+They are parallel, either aligned or opposing.
+The vectors are parallel.
+What does reversing cross-product order do?
+Negates length
+Reverses direction, preserving length
+Changes nothing
+The normal reverses; area stays nonnegative.
+Rotate the second vector in its plane and inspect the parallelogram and perpendicular cross product.
+Do opposite parallel vectors span positive area?
+Magnitude gives base times height; the right hand chooses direction. Keep area separate from orientation.
+Parallel
+Set angle $\theta$ to $0$.
+The parallelogram collapses; the cross product is zero.
+Maximum area
+Set angle $\theta$ to $\frac\pi2$.
+Perpendicular inputs span maximum area.
+Collapsed again
+Set angle $\theta$ to $\pi$.
+Opposite parallel inputs still give zero area; the cross product cannot be normalized.

@@ -1,0 +1,228 @@
+Real numbers and completeness · Chapter review
+For nonempty bounded-above sets with $s=\sup A$ and $t=\sup B$, prove $\sup(A+B)=s+t$.
+First give an upper bound, then approximate it from each set.
+Every sum is at most $s+t$.
+For a positive error choose $a>s-\varepsilon/2,b>t-\varepsilon/2$.
+Then $a+b>s+t-\varepsilon$.
+$s+t$.
+Why does density of the rationals not imply their completeness?
+Compare local approximation with membership of suprema.
+Rationals approximate the square root of two arbitrarily closely.
+Their limit is irrational, and a supremum may lie outside the number system.
+The properties differ.
+Sequences and convergence · Chapter review
+Prove a convergent real sequence has only one limit.
+Divide the distance between proposed limits into thirds.
+If two distinct limits are distance $d>0$ apart, take error $d/3$.
+Enter both tails and use the triangle inequality to make their distance less than two thirds of itself, a contradiction.
+The limit is unique.
+Give a bounded nonconvergent real sequence and identify two convergent subsequences.
+Use persistent oscillation.
+Take $(-1)^n$.
+Odd and even subsequences tend to negative one and one respectively.
+Boundedness guarantees a convergent subsequence only.
+Infinite series · Chapter review
+Prove convergence of $\sum_{n=1}^{\infty}1/[n(n+1)]$ and find its sum.
+Split into differences of adjacent reciprocals.
+$1/[n(n+1)]=1/n-1/(n+1)$.
+Partial sums satisfy $1-1/(N+1)\to1$.
+One.
+Can ratio limit one decide convergence? Give contrasting examples.
+Use two reciprocal-power series.
+The harmonic series diverges; reciprocal squares converge.
+Both have ratio limit one.
+No.
+Sets on the real line · Chapter review
+For the reciprocal set together with zero, determine openness, closedness, boundedness, compactness, and connectedness.
+Identify every limit point, then check for gaps.
+It is closed and bounded, hence compact.
+It is not open; it skips intermediate points between separated members, so is disconnected.
+Closed, bounded, compact; not open or connected.
+Why can finite cover diagrams not directly verify compactness?
+The definition quantifies over every open cover.
+A diagram checks only one cover.
+A general finite-subcover argument or the proved Heine–Borel criterion is needed.
+Finite examples do not replace a universal proof.
+Continuity and uniform continuity · Chapter review
+Prove squaring uniformly continuous on each fixed closed bounded interval, and explain why the full real line differs.
+Bound the product factor.
+On $[-M,M]$, $|x^2-y^2|\le2M|x-y|$; the case $M=0$ is trivial.
+On the whole line choose $n,n+1/n$: input gaps vanish while output gaps tend to two.
+Bounded domains give a uniform factor bound; the whole line does not.
+A continuous function on a compact interval attains extrema and intermediate values. Which hypotheses serve each conclusion?
+Distinguish compactness from interval connectedness.
+Compactness and continuity give extrema.
+Interval connectedness and continuity give intermediate values.
+The hypotheses have distinct roles.
+Theory of differentiation · Chapter review
+Prove zero derivative on an interval implies a constant function, and explain the disconnected-domain exception.
+Apply the mean value theorem between arbitrary inputs.
+Their output difference is a derivative times the input difference, hence zero.
+Two separated intervals can carry different constants while every derivative stays zero.
+The conclusion holds on each interval component.
+For $f(0)=0$, $f(x)=x^2\sin(1/x)$ when $x\ne0$, prove differentiability at zero and discontinuity of its derivative there.
+Compare the difference quotient with the nonzero-point derivative.
+$f(h)/h=h\sin(1/h)\to0$.
+Away from zero, the derivative $2x\sin(1/x)-\cos(1/x)$ keeps oscillating.
+Differentiability does not guarantee derivative continuity.
+Riemann integration · Chapter review
+Prove that changing finitely many values of a Riemann-integrable function to finite values preserves integrability and the integral.
+Enclose exceptional points in intervals of arbitrarily small total width.
+Outside those intervals, sums agree or are controlled by the original integrability.
+Extra uncertainty is at most a uniform height bound times their total length, hence can be arbitrarily small.
+The new function is integrable with the same integral.
+Why is derivative existence everywhere insufficient for this book's endpoint integral formula?
+Check the function being integrated.
+A derivative need not be bounded or Riemann integrable.
+The formula's derivative-integrability hypothesis cannot be omitted.
+The required integrability must also hold.
+Function sequences and limit interchange · Chapter review
+Prove $x^n$ tends uniformly to zero on $[0,r]$ for fixed $0<r<1$, but not on $[0,1)$.
+Compare supremum errors.
+The first domain has supremum error $r^n\to0$.
+The second has supremum one at every index, or moving points with error one half.
+Domain boundaries change uniform error control.
+Why does uniform function convergence to zero not suffice for interchanging derivatives?
+Use a small-amplitude high-frequency sine.
+$\sin(nx)/n$ has magnitude at most the reciprocal index.
+Its derivative at zero stays one; the limiting zero function has derivative zero.
+Function-amplitude control does not control derivatives.
+In the square-root construction, how does a supremum whose square is too small lead to a contradiction?
+Choose a sufficiently small positive increment.
+Keep $h(2s+h)<a-s^2$ so the new square remains below the target.
+The new number exceeds the supremum yet belongs to the candidate set, a contradiction.
+This rules out being too small; a smaller upper bound similarly rules out being too large.
+A bounded real sequence has the same limit for every convergent subsequence. Prove the whole sequence converges.
+Assume infinitely many terms lie outside one fixed error band.
+The bad subsequence is bounded and has a convergent subsequence.
+Its limit stays outside the band, contradicting uniqueness of the subsequential limit.
+Boundedness is essential to the argument.
+Prove harmonic divergence with doubling blocks, then explain why vanishing adjacent differences do not suffice.
+Compare partial sums at doubled indices.
+Each block contributes at least one half.
+Adjacent reciprocal differences vanish, but distant tail partial sums remain separated.
+The partial sums are not Cauchy.
+Give a compact disconnected set and a connected noncompact set.
+Use a finite set and an unbounded interval.
+Two distinct points form a compact disconnected set.
+The real line is connected but unbounded, hence noncompact.
+The properties are independent.
+A real-line function has a uniformly bounded derivative magnitude. Prove uniform continuity.
+Apply the mean value theorem.
+$|f(x)-f(y)|\le M|x-y|$.
+For a positive bound, take radius equal to error divided by the bound. For zero bound, the function is constant.
+Lipschitz control implies uniform continuity.
+For squaring on zero to one with equal subdivisions, write both sums and find the integral.
+Use the sum-of-squares formula.
+$L_n=(n-1)n(2n-1)/(6n^3)$.
+$U_n=n(n+1)(2n+1)/(6n^3)$.
+Both tend to one third.
+$1/3$.
+Construct continuous functions tending pointwise to zero with every integral one.
+Use narrowing, growing triangular spikes.
+For indices at least two, use support $[0,2/n]$, center $1/n$, and height $n$.
+Every fixed positive point eventually lies outside the support, and zero always has value zero; each triangular area is one.
+Pointwise convergence does not suffice for integral interchange.
+Explain why uniformly convergent derivatives still need convergent function values at one point, giving a counterexample without that condition.
+Derivatives cannot detect constant offsets.
+Constant functions $f_n(x)=n$ have identically zero, uniformly convergent derivatives.
+The functions diverge everywhere, failing the anchor condition.
+An anchor prevents drifting constants.
+Ordered fields and real arithmetic
+Real numbers support arithmetic and comparison, but division, roots, and reciprocals have conditions.
+Upper bounds, suprema, and completeness
+A supremum is the least upper bound; it need not belong to the set.
+The Archimedean property and density
+Natural numbers exceed every real bound; every nonempty open interval contains a rational.
+Absolute value and error estimates
+Absolute value expresses distance in a form that can be bounded by adding errors.
+Constructing square roots from completeness
+A square root exists because a supremum fills the gap, not because curves seem to intersect.
+Quantifiers in sequence limits
+Convergence requires every term after some cutoff to meet any prescribed positive error.
+Limit algebra, order, and squeezing
+Control individual errors before combining them. Reciprocals require denominators bounded away from zero.
+Monotone convergence and nested intervals
+A bounded monotone real sequence converges to its appropriate supremum or infimum.
+Subsequences and Bolzano–Weierstrass
+Every bounded real sequence has at least one convergent subsequence.
+The Cauchy condition and completeness
+Closeness between tail terms tests convergence without knowing the limit beforehand.
+A series is a limit of partial sums
+An infinite series converges when its finite partial sums approach a finite real number.
+Nonnegative series, comparison, and grouping
+Nonnegative terms make partial sums increasing. Convergence is then equivalent to boundedness above.
+Ratio and root tests
+An eventual bound by a convergent geometric series establishes absolute convergence.
+Alternating series and remainder bounds
+When magnitudes decrease to zero, alternating cancellation bounds the remainder by the next term.
+Absolute convergence and rearrangements
+Absolute convergence preserves the sum under rearrangement. Conditional convergence does not grant that freedom.
+Open sets, closed sets, and relative topology
+Every point of an open set has a neighborhood inside it. A closed set contains all its limit points.
+Limit points, closure, and sequential criteria
+The closure contains every point whose arbitrarily small neighborhoods meet the original set.
+Compactness and Heine–Borel
+On the real line, compact means closed and bounded. Every open cover can then be reduced to finitely many members.
+Connectedness and intervals
+A real subset is connected exactly when it omits no point between two of its members.
+Countability, uncountability, and diagonals
+Countable means listable by natural-number indices, not sparsely distributed.
+Function limits and continuity
+A function limit controls nearby inputs. Continuity additionally makes that limit equal the value at the center.
+Testing function limits with sequences
+A real function has a limit only if every admissible input sequence approaching the center gives the same output limit.
+Continuous functions on compact sets and extrema
+Continuous functions map compact sets to compact sets, ensuring both extrema are attained.
+Intermediate values and connected images
+A continuous function cannot pass between two values while skipping a value between them.
+Uniform continuity and Heine–Cantor
+Uniform continuity uses one input radius across the entire domain, independently of the center.
+Derivatives and local linearity
+Differentiability writes the change as a linear main term plus a remainder smaller than the input change.
+Rolle's theorem and the mean value theorem
+Continuity on a closed interval and differentiability inside connect the average change to a derivative somewhere.
+Derivatives may be discontinuous but cannot skip values
+A derivative may oscillate discontinuously while still having the intermediate value property.
+Taylor's theorem with controlled remainders
+A Taylor polynomial approximates a function only when its remainder is genuinely small.
+Convexity, tangents, and second derivatives
+A convex graph lies below its chords and, when differentiable, above every tangent.
+Partitions, upper sums, and lower sums
+Bound the function throughout each subinterval, then add the bounding rectangle areas.
+The Darboux integrability criterion
+Integrability requires a partition with upper–lower gap below every prescribed positive error.
+Integrability of continuous, monotone, and finite-jump functions
+Continuous and monotone functions on closed bounded intervals are integrable, for different reasons.
+The derivative of an accumulation integral
+At a continuity point of the integrand, local averages approach its value, giving the accumulation function that derivative.
+Integral evaluation, substitution, and integration by parts
+An antiderivative's endpoint difference computes an integral only when the antiderivative and integrability hypotheses hold.
+Pointwise and uniform convergence
+Pointwise convergence allows different waiting times for each input; uniform convergence uses one cutoff for the whole domain.
+Uniform Cauchy convergence and the Weierstrass test
+Control function differences by one uniform tail budget to prove uniform convergence of a sequence or function series.
+A uniform limit of continuous functions is continuous
+Split the error into three parts, transferring change in the limit to one continuous approximating function.
+Conditions for interchanging integrals and derivatives
+Uniform convergence passes integrals on finite intervals, but alone does not pass derivatives.
+Power series, convergence radii, and termwise operations
+On smaller closed intervals inside the convergence radius, both the power series and its derivative series have uniform bounds.
+Limsup, liminf, and the root test
+For a bounded sequence, tail suprema form a nonincreasing sequence whose limit is the limsup; tail infima similarly define liminf. A limsup strictly below a number means every sufficiently late term is below it; a limsup strictly above a number means infinitely many terms exceed it. Apply these facts to index-th roots of absolute terms for the root test. Unbounded cases permit extended real values.
+Compactness, closed boundedness, and sequential compactness
+For boundedness, cover a compact set with integer-radius intervals and choose a finite subcover. For closedness, take an outside point and neighborhoods around each member of radius one third their distance apart. A finite subcover and the minimum of its radii give a neighborhood of the outside point avoiding the set. Closed bounded sets lie in a closed interval, whose compactness follows by bisection; a closed subset inherits compactness by adding its open complement to a cover. Bolzano–Weierstrass and closedness give convergent subsequences with limits in the set. Conversely, unboundedness supplies a sequence with growing magnitude, and nonclosedness one approaching a missing closure point; both violate that subsequence property.
+K\subseteq\mathbb R:\quad\text{compact}\iff\text{closed and bounded}\iff\text{every sequence has a convergent subsequence with limit in }K
+Integral linearity, additivity, and tagged sums
+A common refinement lets two functions use one partition. The triangle bound on oscillation proves integrability of linear combinations; taking limits of common tagged sums gives linearity. Splitting the interval and joining partitions proves interval additivity. A function bounded in magnitude by a constant has every tagged sum, and hence integral, bounded by that constant times the width. The Darboux criterion is equivalent to all sufficiently fine tagged sums being close to the integral: fix a small-gap partition, then an arbitrary fine mesh needs extra error only in pieces crossing its finitely many partition points. Their total width vanishes with the mesh; remaining pieces are controlled by the original sums.
+Finite exceptions versus dense discontinuity
+Finitely many exceptional points fit in intervals of arbitrarily small total length. Boundedness then makes their upper–lower contribution arbitrarily small. In contrast, the rational-indicator function has oscillation one on every positive-length interval, so every partition gap equals the full interval length. Finite sampling cannot establish density; exact bounds follow from proofs that rationals and irrationals are both dense.
+Smooth does not mean analytic: a flat function
+Set the value at zero to zero and elsewhere use the exponential of negative reciprocal square. Every nonzero-point derivative is a polynomial in the reciprocal times that exponential. With reciprocal square as a new variable, positive-term lower bounds for the exponential series show exponential growth dominates every fixed power. Thus all those polynomial-times-decay expressions vanish. Induction on difference quotients gives every derivative at zero as zero, continuously. Yet values at nonzero inputs are positive, so the zero Taylor series does not equal the function.
+Differentiability of a one-variable inverse
+Suppose a function is continuously differentiable near a point with nonzero derivative. Derivative continuity preserves its sign in a smaller neighborhood, and the mean value theorem gives strict monotonicity. A continuous inverse exists on the image interval. Its difference quotient is the reciprocal of the corresponding original quotient, whose limit is nonzero, so the reciprocal limit applies. Keep the branch restriction and do not apply the result at a zero derivative.
+Improper integrals and numerical series
+Define an integral on an infinite interval as a limit of finite-endpoint integrals, not by treating infinity as an ordinary endpoint. For a nonnegative nonincreasing function, integrals on unit intervals lie between neighboring integer-point values. Summing proves the integral test under those hypotheses. The finite-interval uniform convergence theorem cannot transfer unconditionally to infinite intervals: its total-length error bound fails.
+Proof dependencies and later analysis
+This book starts from the real complete ordered field. Exponential, logarithmic, and trigonometric functions use familiar single-variable-calculus definitions and properties. A construction of logarithms by integration, then exponentials by inversion, belongs after the fundamental theorem and one-variable inverse theorem. General metric spaces, measure, Lebesgue integration, functional analysis, and multivariable real analysis are later independent courses. Finite diagrams and automatic tests do not replace general proofs.
+\text{completeness}\to\text{sequences}\to\text{compactness and continuity}\to\text{calculus}\to\text{uniform limits}

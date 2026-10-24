@@ -1,0 +1,64 @@
+Truth tables and logical equivalence
+Two expressions are logically equivalent only when they agree on every assignment.
+Two expressions are logically equivalent only when they agree on every assignment.
+Agreement on one row says nothing about the others. Equivalence requires every row to match.
+Test equivalence
+Use De Morgan's laws
+Test equivalence
+For finitely many propositional variables, list all assignments. Agreement on every row completely verifies equality of these truth functions.
+Use De Morgan's laws
+Negating “both hold” gives “at least one fails.” Negating “at least one holds” gives “both fail.”
+Recognize tautologies
+A formula true on every row is a tautology. A formula true on at least one row is satisfiable; one false on every row is a contradiction.
+Logical equivalence requires equal truth values on all assignments.
+Compare classical truth functions on the same variables.
+A conjunction is true only when both statements are true.
+Negate this to exclude the case where both are true.
+The right-hand expression is false in exactly that case too.
+Excluded middle
+What type of formula is $p\lor\neg p$?
+If the proposition is true, the left term is true.
+If it is false, the right term is true.
+A tautology.
+Find a failure of equivalence
+Are $p\to q$ and $q\to p$ equivalent?
+Take $p=0,q=1$.
+The first is true and the second false.
+They are not equivalent.
+How many rows does a four-variable truth table have?
+Each variable independently has two choices.
+$2^{4}=16$.
+Sixteen rows.
+Negate $p\lor q$.
+Use De Morgan's law.
+Both propositions must be false.
+$\neg p\land\neg q$.
+Can agreement on one row prove equivalence?
+What quantifier does equivalence require?
+All assignments must agree.
+No.
+Is $p\land\neg p$ satisfiable?
+Consider both possible truth values.
+At least one conjunct is always false.
+No.
+How many counterexample rows suffice to refute equivalence?
+Every row
+Just one
+Truth tables cannot be used
+One disagreeing assignment disproves agreement on all assignments.
+One matching row establishes equivalence
+Every assignment must match.
+Satisfiable means tautological
+Satisfiability requires only one true row.
+Switch comparison modes. Where do counterexample rows appear?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+Every assignment must match.
+Comparison mode: 0
+Set the control to $0$. Observe which objects, relations, or counts change.
+At this setting: counterexample rows $0$.
+Comparison mode: 1
+Set the control to $1$. Observe which objects, relations, or counts change.
+At this setting: counterexample rows $2$.
+Comparison mode: 2
+Set the control to $2$. Observe which objects, relations, or counts change.
+At this setting: counterexample rows $0$.

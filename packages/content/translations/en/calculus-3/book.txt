@@ -1,0 +1,62 @@
+Calculus III
+From multivariable change to conservation in space
+A complete course in multivariable and vector calculus: spatial geometry, vector curves, partial derivatives and optimization, multiple integrals, line and surface integrals, Green's, Stokes' and divergence theorems, and conservation.
+Learners familiar with single-variable differentiation, integration, substitution and parametric curves
+Nine complete chapters covering spatial motion, Jacobians, flux and integral theorems. Full linear algebra, torsion theory, differential forms, second-order equations and PDE solution methods belong to separate volumes.
+Vectors and space
+Coordinates for directions, projections and surfaces
+Separate position, direction and shape. Dot products measure alignment; cross products give normals. Lines, planes and coordinate systems prepare for spatial calculus.
+Perform vector operations
+Write equations of lines and planes
+Read spatial surfaces and coordinates
+Spatial curves and motion
+Position, velocity and bending
+Differentiate components, then interpret geometrically. Velocity is tangent; acceleration changes speed or direction.
+Find spatial velocity and acceleration
+Compute arc length
+Separate tangential and normal change
+Multivariable change and differentiation
+From coordinate slices to a common linear approximation
+Partials inspect coordinate directions. Differentiability requires one linear model for every small displacement. Gradients and the chain rule put that model to work.
+Check multivariable limits
+Distinguish existing partials from differentiability
+Predict directional change with gradients
+Local models and optimization
+Find candidates, then inspect directions and boundaries
+Second-order terms describe bending. Global extrema also require boundary checks. Constraints restrict feasible directions to curves or surfaces.
+Classify points with quadratic models
+Check boundaries and degenerate points
+Apply Lagrange multipliers correctly
+Double integrals
+Accumulate contributions over a planar region
+Multiply each small area by height or density and sum. Drawing the region guides order and coordinate choices.
+Build double integrals from patches
+Reverse integration order
+Use polar coordinates and density models
+Triple integrals and substitution
+Divide space into small volumes
+Project to find the base, then bound height. Cylindrical, spherical and general substitutions must account for actual volume scaling.
+Set spatial integration bounds
+Choose cylindrical or spherical coordinates
+Explain the Jacobian's absolute value
+Vector fields and line integrals
+Two ways to accumulate along a path
+Scalar integrals weight by length; work dots force with displacement. Potentials and Green's theorem replace paths by endpoint or region calculations.
+Distinguish scalar integrals from work
+Find potentials and check domains
+Apply Green's theorem correctly
+Surfaces and flux
+Area needs scaling; flux needs orientation too
+Two parameters generate a surface. Tangent cross products supply area scaling and normals, reducing surface integrals to double integrals.
+Build regular surface parameterizations
+Compute surface area and scalar integrals
+Compute oriented flux, divergence and curl
+From local change to boundaries
+Green's, Stokes' and divergence theorems
+Shared internal edges or faces cancel, connecting local change with total boundary behavior. Check smoothness, closure and orientation before choosing a calculation.
+Match boundary and normal orientations
+Apply Stokes' and divergence theorems
+Connect local change with conservation
+Used to check public course scope and concept order. Explanations, examples, exercises, solutions and visuals are independently authored; no lecture text or problem banks were copied.
+Used to check definitions and hypotheses, especially substitution, Stokes' and divergence theorems. No passages, examples or images were copied. Source licensing does not extend to unrelated project assets.
+Structural, formula and prerequisite checks, selected independent analytic and numerical recalculations, and page checks; not a formal proof of every expression.

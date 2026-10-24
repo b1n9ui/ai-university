@@ -1,0 +1,64 @@
+First-order linear equations and integrating factors
+Turn the left side into a product derivative
+Write standard form first
+The equation is $y'+p(t)y=q(t)$. Require continuous coefficients on the chosen interval.
+Why choose this factor?
+Choose $\mu=e^{\int p(t)dt}$, giving $\mu'=p\mu$, so the left side becomes $(\mu y)'$.
+How do initial data enter?
+A definite integral from the initial time keeps the initial value explicit without repeatedly rearranging constants.
+Multiply by an unknown factor.
+Match coefficients in the product rule.
+Integrate and divide by the factor.
+Constant input
+Solve $y'+2y=6,y(0)=1$.
+The integrating factor is $e^{2t}$, giving $(e^{2t}y)'=6e^{2t}$.
+Integration gives $y=3+Ce^{-2t}$; the initial condition gives $C=-2$.
+$y=3-2e^{-2t}$.
+A singular coefficient
+Solve $y'+y/t=t$ on $t>0$.
+Choose integrating factor $t$.
+From $(ty)'=t^2$, integration gives $ty=t^3/3+C$.
+$y=t^2/3+C/t$, discussed only on the chosen positive interval.
+Solve $y'+y=4,y(0)=2$.
+Find the equilibrium first.
+General solution $4+Ce^{-t}$ has initial-condition constant $C=-2$.
+$y=4-2e^{-t}$.
+Give one integrating factor for $y'+3ty=q(t)$.
+Integrate the time coefficient.
+$\int3t\,dt=3t^2/2$.
+$e^{3t^2/2}$.
+Solve $y'-y=0,y(1)=2$.
+The initial time is not zero.
+$y=Ce^t$, $Ce=2$.
+$y=2e^{t-1}$.
+After dividing $ty'+y=1$ by $t$, can the standard formula be declared valid at zero?
+Check the division.
+The standard coefficients are undefined at zero; return to the original equation to check it separately.
+No.
+Multiply only the unknown-function term by the integrating factor.
+Multiply the entire equation.
+An arbitrary constant in the factor's exponent changes the solution family.
+Its nonzero scale is absorbed by the integration constant.
+An integrating factor turns a first-order linear equation into a product derivative ready to integrate.
+Choose a weight that combines the unknown and its derivative exactly.
+Construct an integrating factor
+Solve linear initial-value problems
+First-order linear equations and integrating factors
+$p,q$ is continuous on the interval, and the integrating factor never vanishes.
+What is the integrating factor designed to do?
+Make all coefficients one
+Eliminate the right-hand side
+Make the left side a product derivative
+Its derivative must equal the coefficient times the factor.
+This does not guess a solution; it builds a product whose differentiation can be reversed by integration.
+Approach from below
+The solution rises from zero toward steady state one.
+Set initial value $y_0$ to $0$ and observation time $t$ to $3$.
+Approach from above
+The solution falls from two toward steady state one.
+Set initial value $y_0$ to $2$ and observation time $t$ to $3$.
+Steady state
+Starting at the steady state keeps the solution fixed.
+Set initial value $y_0$ to $1$ and observation time $t$ to $3$.
+With steady state one, gold curves show first-order linear responses for different initial values. The cooling and mixing models differ only by scaling and translation.
+How do initial values above and below the steady state approach it?

@@ -1,0 +1,63 @@
+Truncated SVD and optimal low-rank approximation
+Preserve main variation with fewer directions
+Keeping the largest singular values approximates a matrix with fewer directions and gives exact truncation errors.
+Removing the weakest independent changes has a firmer global basis than arbitrarily deleting rows, columns, or small entries.
+Construct a truncated SVD
+Calculate spectral and Frobenius truncation errors
+How do you truncate?
+$A_k=\sum_{i=1}^k\sigma_i u_i v_i^T$; if $k<r$, its rank is $k$.
+What determines the error?
+Spectral-norm error is the next singular value; squared Frobenius error is the sum of discarded singular-value squares. This is Eckart-Young optimality. The Frobenius norm is the square root of the sum of all squared entries.
+Does optimal mean unique?
+Not always. Repeated singular values at the truncation boundary allow equally good directional choices. Optimality concerns the stated norm and rank constraint, not every application objective.
+Truncated SVD and optimal low-rank approximation
+Order singular values decreasingly. Assume $0\le k<r$; retaining at least the rank gives zero error. The derivation proves spectral optimality by dimension counting; the appendix covers Frobenius optimality.
+The residual stays diagonal in singular coordinates.
+A matrix $B$ of rank at most $k$ has a nonzero kernel vector among the first $k+1$ input directions.
+Along that input, any approximation leaves at least the next singular value.
+Diagonal truncation
+Find the best rank-one truncation of $A=\operatorname{diag}(5,2,1)$ and its errors.
+Retaining the largest singular direction gives $A_1=\operatorname{diag}(5,0,0)$.
+Spectral error is $2$; Frobenius error is $\sqrt{2^2+1^2}$.
+Errors are $2$ and $\sqrt5$ respectively.
+How many directions should remain?
+Singular values are $10,1,0.1$. To make spectral error at most $0.2$, how many directions are required?
+Retaining one leaves next value one, which is too large.
+Retaining two leaves next value $0.1$.
+At least two.
+Low-rank approximation deletes the smallest matrix entries.
+Assess whole singular-direction contributions instead.
+Retaining $k$ terms always gives a unique approximation.
+Repeated singular values can make optimal directions nonunique.
+For singular values $4,3,2$, find rank-two spectral truncation error.
+Read the next value.
+$\sigma_3=2$.
+For singular values $4,3,2$, find rank-one Frobenius truncation error.
+Take the square root of the discarded sum of squares.
+$\sqrt{3^2+2^2}=\sqrt{13}$.
+$\sqrt{13}$.
+If a matrix already has rank one, does keeping two directions reduce its exact error further?
+Zero singular directions contribute nothing.
+Keeping every nonzero direction already gives zero error.
+No.
+If the two largest singular values agree, is the best rank-one direction unique?
+Rotate inside their equal-scaling subspace.
+Different unit directions can attain equal error.
+Not necessarily.
+Original singular values are $2,s$. Switch the number retained and compare the original ellipse, approximate image, and spectral error.
+How do ellipse shape and error change after discarding the smaller singular direction?
+Which quantity gives the spectral error of a best rank-$k$ truncation?
+The largest entry
+Singular value number $k$+1
+The trace
+After retaining $k$ directions, the strongest omitted direction controls maximum residual amplification.
+Low-rank approximation gives a calculable tradeoff between storage or model complexity and error.
+Discard one direction
+Set $s=1$ and retain one direction.
+The approximate image becomes a segment; spectral error is one.
+Retain everything
+Set $s=1$ and retain two directions.
+The original matrix is recovered exactly; error is zero.
+A weaker discarded direction
+Set $s=0.2$ and retain one direction.
+Spectral error is $0.2$.

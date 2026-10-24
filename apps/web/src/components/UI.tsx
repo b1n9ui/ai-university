@@ -1,5 +1,3 @@
-import {locale, languageUrl} from "../i18n";
-import {unavailableEdition} from "../i18n/editions";
 import {tr, localizeNode} from "../i18n";
 import {
   ArrowRight,
@@ -38,7 +36,7 @@ export function Link({
   const scoped=["lab","practice","reference","learning","search","downloads","guide"].includes(to)||to==="practice/exam";
   const values=scoped?{book:book.id,...params}:params;
   return (
-    <a className={className} href={locale === "en" && unavailableEdition(to, values?.book?.toString()) ? languageUrl(location.href.split("#")[0]+routeHref(to, values),"zh") : routeHref(to, values)} {...props}>
+    <a className={className} href={routeHref(to, values)} {...props}>
       {localizeNode(children)}
     </a>
   );

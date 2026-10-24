@@ -1,0 +1,62 @@
+Geometric and telescoping series
+One scales; the other cancels
+Find finite partial sums before taking a limit. Do not manipulate an infinite expression whose convergence is unknown.
+Multiplying a geometric sum by its ratio shifts its terms. Telescoping expresses terms as differences so the interior cancels.
+Why must the ratio have magnitude below one?
+The finite-sum remainder contains $r^{N+1}$, which vanishes only when $|r|<1$. Treat $r=1$ separately; $r=-1$ oscillates.
+Does the starting index matter?
+Starting at power zero differs from starting at power one. Write the first two terms to avoid losing a ratio factor.
+What survives telescoping?
+Write the first and last terms explicitly. The surviving boundary terms determine convergence.
+One scales; the other cancels
+The finite-sum formula requires $r\neq1$. If $a\neq0$, the infinite geometric series converges exactly when $|r|<1$.
+Multiply the finite sum by its ratio and subtract.
+Solve for the finite sum.
+Within the convergence range, the tail vanishes.
+Check the starting index
+Evaluate $\sum_{n=1}^\infty\frac1{3^n}$.
+The first term is $\frac13$; the ratio is $\frac13$.
+The sum is $\frac{1/3}{1-1/3}$.
+$\frac12$.
+Telescoping
+Evaluate $\sum_{n=1}^\infty\frac1{n(n+1)}$.
+Decompose as $\frac1n-\frac1{n+1}$.
+$S_N=1-\frac1{N+1}\to1$.
+$1$.
+Any ratio can enter the infinite-sum formula.
+Check $|r|<1$ first.
+Cancellation removes every term.
+Retain the first and last boundary contributions.
+Evaluate $\sum_{n=0}^\infty(\frac14)^n$.
+$\frac43$.
+The first term is one.
+$|r|=\frac14<1$; the sum is $\frac1{1-1/4}=\frac43$.
+Evaluate $\sum_{n=0}^\infty(-\frac12)^n$.
+$\frac23$.
+A negative ratio can still converge.
+$|r|=\frac12<1$; the sum is $\frac1{1+1/2}=\frac23$.
+Evaluate $\sum_{n=2}^\infty\frac1{n(n+1)}$.
+$\frac12$.
+The telescoping sum begins at the second term.
+$S_N=\frac12-\frac1{N+1}\to\frac12$.
+Can $\frac1{1-2}=-1$ be used for $\sum_{n=0}^\infty2^n$?
+No; the series diverges.
+Check the ratio range and positivity.
+The ratio's magnitude exceeds one and terms do not vanish; finite sums $2^{N+1}-1$ are unbounded.
+What is the sum of $\sum_{n=1}^\infty r^n$ when $|r|<1$?
+Starting at power one makes the first term the ratio itself.
+Perform each manipulation on a finite sum first. Keeping the uncancelled tail prevents assigning a false finite value to divergence.
+Positive ratio
+Set the ratio to 0.5 and count to 8.
+Starting at power zero, the limiting sum is 2.
+Negative ratio
+Set the ratio to -0.5 and count to 8.
+Partial sums approach $\frac23$ from alternating sides.
+Outside the convergence range
+Set the ratio to 1.1 and count to 20.
+Terms and partial sums grow; the infinite-sum formula does not apply.
+Vary the ratio and count to distinguish convergence, oscillation and growth.
+For a negative ratio, how do partial sums approach the sum?
+Derive finite geometric sums before taking limits
+Check starting indices and ratio ranges
+Retain boundary terms in telescoping sums

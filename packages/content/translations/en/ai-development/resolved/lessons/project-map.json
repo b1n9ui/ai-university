@@ -1,0 +1,198 @@
+{
+  "id": "project-map",
+  "chapterId": "chapter-2",
+  "number": "2.1",
+  "title": "Understand the project's files",
+  "subtitle": "Find the entry point, then each file's responsibility.",
+  "concept": "A project is a set of cooperating files. Start with README, then trace entry points to interface, logic, configuration and tests.",
+  "intuition": "A restaurant has a menu, kitchen and accounts. Mixing them on one sheet makes changes difficult.",
+  "objectives": [
+    "Read README and configuration to find entry points and commands.",
+    "Trace one user action through its files; do not delete unfamiliar files casually."
+  ],
+  "body": [
+    {
+      "title": "Start with instructions",
+      "text": "Read README for purpose, setup and limitations. In a Node project, package.json defines scripts as command aliases and dependencies as external packages. This example has none; other web projects may require installation."
+    },
+    {
+      "title": "Trace four kinds of files",
+      "text": "index.html supplies structure and loads style.css and app.mjs. CSS controls appearance. app.mjs connects controls to data; tasks.mjs defines creation, toggling and deletion; tasks.test.mjs tests those rules. server.mjs serves files locally, and README explains operation. Identify responsibilities before choosing frameworks."
+    },
+    {
+      "title": "Read enough to explain behavior",
+      "text": "You need not understand every syntax detail yet. Know who receives input, validates it, saves it and redraws the page. Ask the agent to explain a line with concrete input and compare its explanation with the file. Why is ID checked before deletion? is more verifiable than explain everything."
+    }
+  ],
+  "formalDefinition": {
+    "text": "A project is a set of cooperating files. Start with README, then trace entry points to interface, logic, configuration and tests.",
+    "conditions": [
+      "For small personal learning projects. In shared repositories, follow the team's conventions.",
+      "This method produces checkable evidence; it cannot guarantee arbitrary AI output is correct."
+    ]
+  },
+  "workflow": [
+    "Read README and configuration to find entry points and commands.",
+    "Identify interface, logic, tests and tooling files.",
+    "Trace one user action through its files; do not delete unfamiliar files casually."
+  ],
+  "workedExamples": [
+    {
+      "title": "Change appearance only",
+      "problem": "Where should you look to enlarge buttons?",
+      "steps": [
+        "Find button rules in CSS.",
+        "Check button structure and classes in HTML and JavaScript.",
+        "Check narrow screens and keyboard operation afterward."
+      ],
+      "answer": "Primarily style.css; inspect index.html and app.mjs as needed. Button size does not require changing data structures or deleting tests."
+    },
+    {
+      "title": "Change the title limit",
+      "problem": "Where does changing the limit from 80 to 100 have consequences?",
+      "steps": [
+        "tasks.mjs contains the validation constant.",
+        "Tests cover boundaries 80 and 81.",
+        "Instructions and feedback mention the limit too."
+      ],
+      "answer": "Confirm the requirement, then update the rule, boundary tests and README together. Changing only the message leaves actual validation at 80."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "Delete unfamiliar files to simplify the project.",
+      "correction": "Check references and purpose first. Configuration, lockfiles and tests may be essential."
+    },
+    {
+      "claim": "If AI can edit, I need not know the entry point.",
+      "correction": "Knowing entry points helps judge whether changes fit the goal and diagnose failures."
+    }
+  ],
+  "practice": [
+    {
+      "id": "project-map-p1",
+      "difficulty": 1,
+      "problem": "What do CSS and tasks.mjs control?",
+      "hint": "Appearance versus data rules.",
+      "answer": "CSS controls styling. tasks.mjs defines creation, toggling, deletion and backup format.",
+      "solution": [
+        "Remember responsibilities rather than extensions alone.",
+        "Test rule changes; inspect the page for style changes."
+      ]
+    },
+    {
+      "id": "project-map-p2",
+      "difficulty": 1,
+      "problem": "How do you find what npm start runs?",
+      "hint": "Read scripts in the configuration.",
+      "answer": "Inspect scripts.start in package.json; here it is node server.mjs.",
+      "solution": [
+        "Command aliases vary by project.",
+        "Do not assume every start script does the same thing."
+      ]
+    },
+    {
+      "id": "project-map-p3",
+      "difficulty": 1,
+      "problem": "You downloaded a project but cannot open it. What first?",
+      "hint": "Find instructions before guessing commands.",
+      "answer": "Read README, check tools and directory. If instructions are missing, ask the agent to inspect files and add them.",
+      "solution": [
+        "Follow actual project evidence.",
+        "Avoid unrelated guessed commands."
+      ]
+    },
+    {
+      "id": "project-map-p4",
+      "difficulty": 2,
+      "problem": "Why might tests change when the title limit changes?",
+      "hint": "Tests specify boundaries.",
+      "answer": "A genuine new limit requires updated accepted and rejected boundaries, not deletion of failing assertions.",
+      "solution": [
+        "Confirm that the criterion changed.",
+        "Update tests while keeping invalid-input coverage."
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "Where should you first look to change button color?",
+    "choices": [
+      "style.css",
+      "Rewrite every file",
+      "Backup data"
+    ],
+    "correctIndex": 0,
+    "feedback": [
+      "The styling responsibility matches the goal.",
+      "Broad changes make review harder.",
+      "Data storage does not control color."
+    ]
+  },
+  "interactiveVisual": {
+    "kind": "decision",
+    "prediction": "The goal is one color change. Is the proposed file list reasonable?",
+    "steps": [
+      {
+        "question": "The agent plans to read README and CSS first.",
+        "choices": [
+          "Reasonable: identify setup and styling",
+          "A waste of time",
+          "Delete configuration first"
+        ],
+        "correctIndex": 0,
+        "feedback": [
+          "Understanding entry points and styles supports focused changes.",
+          "It helps avoid editing the wrong place.",
+          "Configuration may be required to run."
+        ]
+      },
+      {
+        "question": "It also proposes rewriting tasks.mjs.",
+        "choices": [
+          "Ask how that relates to color",
+          "Accept immediately",
+          "Delete tests to match"
+        ],
+        "correctIndex": 0,
+        "feedback": [
+          "Explain or remove unrelated logic changes.",
+          "They may change data behavior.",
+          "Weakening checks can conceal errors."
+        ]
+      },
+      {
+        "question": "What evidence should be delivered?",
+        "choices": [
+          "Just done",
+          "Changed files plus narrow-screen and keyboard results",
+          "The model sounds confident"
+        ],
+        "correctIndex": 1,
+        "feedback": [
+          "No actual evidence is supplied.",
+          "These checks match the change and experience criteria.",
+          "Confidence does not replace inspecting the page."
+        ]
+      }
+    ],
+    "followUp": "Map the appendix project's file responsibilities and trace which files adding one item uses."
+  },
+  "prerequisites": [
+    "acceptance"
+  ],
+  "difficulty": 2,
+  "misconceptionTags": [
+    "project-map-guess",
+    "project-map-evidence"
+  ],
+  "sources": [
+    "mdn-start",
+    "node-test"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.1.1",
+    "status": "first-edition",
+    "humanReviewed": false
+  }
+}

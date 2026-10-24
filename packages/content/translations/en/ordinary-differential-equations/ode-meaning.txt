@@ -1,0 +1,64 @@
+What a differential equation describes
+Given a rate, find the whole process
+What is unknown?
+In $y'=2y$, the unknown is function $y(t)$. The slope at each point must equal twice its height.
+How do you test a solution?
+Differentiate, substitute, and check that the function is defined on the interval. Agreement at one instant is not enough.
+What else does a model need?
+Specify variables, units, parameters, initial data, and validity. Exponential growth idealizes a constant proportional growth rate.
+Assume the instantaneous growth rate is proportional to the current amount.
+The exponential derivative preserves that proportion.
+Substitution verifies equality throughout the interval.
+Test a solution
+Does $y=3e^{2t}$ solve $y'=2y$?
+Differentiating gives $y'=6e^{2t}$.
+The right side is $2y=6e^{2t}$, so the sides agree.
+Yes, on the whole real line.
+Model with units
+An amount grows each hour at $0.1$ times its current value, starting at $20$. State the model and solution.
+Measure time in hours: $y'=0.1y,y(0)=20$.
+Substitution into the exponential family gives constant $20$.
+$y=20e^{0.1t}$, used for $t\ge0$.
+Which proportional-rate equation does $y=2e^{-t}$ satisfy?
+Differentiate first.
+$y'=-2e^{-t}=-y$.
+$y'=-y$.
+Does $y=t^2$ solve $y'=2t$ on the real line?
+Compare both sides.
+Its derivative is $2t$ at every real point.
+Yes.
+Does $y=t$ solve $y'=y$?
+Distinguish one point from an interval.
+The derivative is $1$ and right side $t$; they agree only at $t=1$.
+Not a solution on an interval.
+In $y'=0.4y$, time is measured in days. What units does the parameter have?
+Both sides must have the same units.
+The left side is amount per day, so the proportionality coefficient has units per day.
+$\mathrm{day}^{-1}$.
+A differential equation's solution is a number.
+A solution is usually a function; initial data specify its value at one time.
+Passing through the correct point guarantees a solution.
+The derivative relation must hold throughout the interval too.
+A differential equation constrains an unknown function and its derivatives. Solving means finding functions satisfying that constraint.
+A change rule at each instant, together with a starting point, can determine the whole process.
+Write an equation from a rate rule
+Verify candidates by substitution
+What a differential equation describes
+Time $t$ is usually the independent variable. A solution has the required derivatives on a specified open interval.
+What is the most direct way to verify a solution?
+Check only that its plot looks similar
+Differentiate and substitute
+Check only the initial value
+The equation and initial condition require separate checks.
+The equation specifies a rule at every point. A solution follows it along the whole path, rather than reaching just one correct position.
+Growth
+A positive coefficient gives exponential growth from positive initial data.
+Set rate coefficient $k$ to $1$, initial value $y_0$ to $1$, and observation time $t$ to $1$.
+Decay
+A negative coefficient makes positive initial data approach zero.
+Set rate coefficient $k$ to $-1$, initial value $y_0$ to $1$, and observation time $t$ to $1$.
+Zero initial value
+The zero solution stays zero.
+Set rate coefficient $k$ to $1$, initial value $y_0$ to $0$, and observation time $t$ to $2$.
+Adjust the coefficient and initial value. Gold shows the analytic solution; the bright point marks the current time.
+How does the same positive initial state's trend change when the coefficient changes sign?

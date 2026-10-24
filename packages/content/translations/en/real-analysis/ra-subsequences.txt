@@ -1,0 +1,67 @@
+Subsequences and Bolzano–Weierstrass
+Every bounded real sequence has at least one convergent subsequence.
+Every bounded real sequence has at least one convergent subsequence.
+The sequence may jump around. Selecting later terms in successively smaller intervals finds a stable route through it.
+Select strictly later terms
+Bisect repeatedly
+Select strictly later terms
+Subsequence indices strictly increase: reusing one favorable term is not allowed. Every subsequence of a convergent sequence has the same limit.
+Bisect repeatedly
+Bisect a closed interval containing the sequence. At least one half contains infinitely many terms. Retain it and repeat. Lengths tend to zero, so the nested-interval theorem gives one common point.
+Select approaching terms
+In each retained interval choose a term later than the preceding selection. Infinitely many terms make this possible; interval length bounds the error.
+Bolzano–Weierstrass here concerns bounded real sequences.
+(a_n)\text{ bounded}\implies\exists n_1<n_2<\cdots:\ a_{n_k}\to L
+Both boundedness and real completeness enter the proof.
+At each stage keep a half containing infinitely many terms.
+The nested intervals have a unique common point.
+Choose increasing indices and bound errors by the interval lengths.
+Two subsequential limits
+Which convergent subsequences are immediate for $(-1)^n$?
+The even-index subsequence is constantly one.
+The odd-index subsequence is constantly negative one.
+Two different subsequential limits rule out convergence of the original sequence.
+Boundedness and one limit point
+If a bounded real sequence has just one subsequential limit, must it converge to that limit?
+Otherwise infinitely many terms remain outside a fixed error band.
+This bounded bad subsequence has a convergent subsequence whose limit remains outside the band, contradicting uniqueness.
+Yes.
+Does one convergent subsequence imply convergence of the whole sequence?
+Consider alternating positive and negative one.
+Another subsequence may approach elsewhere.
+No.
+Does repeatedly choosing the same term form a subsequence?
+Check strict increase of indices.
+Indices cannot repeat.
+No.
+Can an unbounded sequence have a convergent subsequence?
+Let odd terms be zero and even terms grow.
+The zero subsequence converges while the whole sequence is unbounded.
+Yes.
+Prove that if $a_n\to L$, every subsequence $a_{n_k}$ also tends to $L$.
+What lower bound holds for strictly increasing positive integer indices?
+Strict increase gives $n_k\ge k$.
+Given $\varepsilon>0$, choose a cutoff $N$ for the original sequence.
+When $k\ge N$, also $n_k\ge N$, so $|a_{n_k}-L|<\varepsilon$.
+When $k\ge N$, also $n_k\ge N$, so $|a_{n_k}-L|<\varepsilon$.
+What condition must subsequence indices satisfy?
+Strictly increasing
+Repetitions allowed
+Consecutive
+Selections must keep moving to later terms.
+Every bounded sequence itself converges
+The theorem guarantees only a subsequence.
+A subsequential limit must occur among the original terms
+It need only belong to their closure.
+Highlight odd and even subsequences. Why does subsequence convergence not control the entire sequence?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+Selecting later terms in shrinking intervals yields a convergent subsequence. The theorem does not assert convergence of the entire sequence.
+Displayed terms: 4
+Set the term count to $4$. Identify the highlighted subsequence and compare the odd and even limits.
+Even-subsequence limit $1$; odd-subsequence limit $-1$.
+Displayed terms: 22
+Set the term count to $22$. Identify the highlighted subsequence and compare the odd and even limits.
+Even-subsequence limit $1$; odd-subsequence limit $-1$.
+Displayed terms: 40
+Set the term count to $40$. Identify the highlighted subsequence and compare the odd and even limits.
+Even-subsequence limit $1$; odd-subsequence limit $-1$.

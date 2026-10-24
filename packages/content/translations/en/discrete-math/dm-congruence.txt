@@ -1,0 +1,65 @@
+Congruences and modular arithmetic
+Modular arithmetic keeps only remainders, while addition and multiplication remain consistent.
+Modular arithmetic keeps only remainders, while addition and multiplication remain consistent.
+A clock returns to the same position after a full turn. Congruence records differences of whole turns.
+Understand congruence
+Calculate modulo an integer
+Understand congruence
+Two integers are congruent when their difference is divisible by the modulus. Represent each class by its remainder from zero to one less than the modulus.
+Calculate modulo an integer
+Congruences can be added, subtracted, and multiplied termwise. Division needs extra care: a canceled factor must be invertible modulo the modulus.
+Compute large powers
+Repeated squaring with remainders avoids rapidly growing integers. Each step preserves congruence, not the original integer's size.
+The modulus is a positive integer; modulo one there is only one class.
+Interactive moduli in this book are at least two.
+Check invertibility before cancellation.
+Write congruence as a difference that is a multiple of the modulus.
+Split the difference of the products.
+Both terms are divisible by the modulus.
+Negative remainders
+What is the standard representative of negative one modulo five?
+$-1=5(-1)+4$.
+The representative must be nonnegative and less than five.
+Four.
+Invalid cancellation
+Does $2x\equiv2\pmod6$ force $x\equiv1$?
+Both one and four have double congruent to two.
+Two and six are not coprime, so two is not invertible.
+No; the class of four is also a solution.
+What is the standard remainder of seventeen modulo five?
+Subtract a multiple of five.
+$17=3\cdot5+2$.
+Two.
+What is the remainder of the square of seven modulo five?
+First reduce seven to two, then square.
+$7^2\equiv2^2=4$.
+Four.
+Does congruence imply equality of integers?
+Two numbers may differ by a whole turn.
+Two and seven are congruent modulo five but unequal.
+No.
+What is the standard remainder of negative seven modulo five?
+Choose the nonnegative representative.
+$-7=5(-2)+3$.
+Three.
+Can a factor of two always be canceled modulo six?
+Always
+Not in general
+Only for positive remainders
+Two has no inverse modulo six.
+Remainders only make sense for positive inputs
+Negative integers also have standard nonnegative representatives.
+Division is unrestricted in modular arithmetic
+Only invertible elements permit division.
+Change the integer and modulus. Where do negative values and multiple turns land?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+Negative integers also have standard nonnegative representatives.
+Current integer: -20
+Set the control to $-20$. Observe which objects, relations, or counts change.
+At this setting: standard remainder $0$; integer quotient $-4$.
+Current integer: 5
+Set the control to $5$. Observe which objects, relations, or counts change.
+At this setting: standard remainder $0$; integer quotient $1$.
+Current integer: 30
+Set the control to $30$. Observe which objects, relations, or counts change.
+At this setting: standard remainder $0$; integer quotient $6$.

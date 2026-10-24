@@ -1,0 +1,62 @@
+Principal component analysis and centering
+Preserve the most variance by projection
+PCA finds orthogonal directions retaining the most variance in centered data.
+Project data onto a line that retains maximal variation and minimizes squared reconstruction error.
+Center data and form a covariance matrix
+Use SVD for projection and reconstruction
+Why subtract the mean first?
+Without centering, a global offset from the origin can appear as dominant variation. PCA axes usually pass through the sample mean; add it back during reconstruction.
+How is the data matrix arranged?
+Samples are rows of $X\in\mathbb R^{N\times d}$, with zero column means. Use population-style covariance $C=X^TX/N$.
+How does SVD enter?
+If $X=U\Sigma V^T$, principal directions are columns of $V$, with variances $\sigma_i^2/N$. Scores are $XV_k$ and reconstruction is $XV_kV_k^T$.
+Principal component analysis and centering
+Center each column first. We divide covariance by $N$; using $N-1$ rescales variances without changing principal directions. Whether differently scaled features should be standardized depends on the modeling objective.
+Mean squared projection score is directional variance.
+Maximize using the Rayleigh quotient.
+Total squared variation minus retained variation gives reconstruction error.
+Principal axes differ from mean position
+For centered points $(2,0),(-2,0),(0,1),(0,-1)$, find the first principal direction.
+$C=\operatorname{diag}(2,1/2)$.
+The horizontal direction retains variance two; dropping vertical coordinates leaves total squared reconstruction error two.
+Horizontal; explained variance ratio $2/(2+1/2)=0.8$.
+An oblique principal direction
+Find the principal direction of the four points $(2,2),(-2,-2),(1,-1),(-1,1)$.
+Their mean is zero and $C=\begin{pmatrix}2.5&1.5\\1.5&2.5\end{pmatrix}$.
+The largest eigenvalue is four, with direction $(1,1)/\sqrt2$.
+Along the diagonal, retaining variance four.
+The principal component is the variable with the largest mean.
+It combines centered directions, rather than selecting a large mean.
+Preserving variance always preserves the most task-relevant information.
+PCA optimizes unsupervised squared reconstruction and can discard information important for classification or causation.
+What should each column mean be after centering?
+Subtract its original mean.
+Each column sums to zero.
+Given eigenvalues $9,1$, find the first component's explained variance ratio.
+Divide the largest by the sum.
+$9/10=0.9$.
+Does rotating into all principal coordinates without discarding dimensions lose information?
+Keeping all coordinates makes the orthogonal change reversible.
+Recover centered data with the transpose, then add the mean.
+No.
+Does replacing covariance divisor $N$ by $N$-1 change principal directions?
+All entries scale by one positive constant.
+Eigenvectors stay fixed and eigenvalues scale together.
+No.
+The four points are $(\pm2,0),(0,\pm1)$ with zero mean. Project onto a rotating line and compare retained variance with total squared reconstruction error.
+How do retained variance and reconstruction error trade off as the direction rotates?
+What does subtracting the mean separate?
+Overall position from data variation
+Positive from negative values
+Rows from columns
+Principal directions describe variation around the mean, rather than distance of the whole dataset from the origin.
+PCA combines the spectral theorem, projection, and low-rank approximation in one data problem. Its objective is precise, as are its limitations.
+Principal direction
+Set $\theta=0$.
+Retained variance two, squared reconstruction error two.
+Oblique direction
+Set $\theta=\pi/4$.
+Retained variance $1.25$, squared reconstruction error five.
+Secondary direction
+Set $\theta=\pi/2$.
+Retained variance $0.5$, squared reconstruction error eight.

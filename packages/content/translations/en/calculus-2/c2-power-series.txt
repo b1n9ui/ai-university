@@ -1,0 +1,67 @@
+Power series and convergence intervals
+Treat each input as a separate series
+A power series converges inside its radius and diverges outside. Test each boundary point separately.
+On $|x|<1$, $\sum x^n$ represents $\frac1{1-x}$. Outside this range, that series representation is invalid.
+Center and radius
+The center of $\sum c_n(x-a)^n$ is $a$. The radius measures distance from it and may be zero, positive finite or infinite.
+Why are endpoints special?
+The ratio test usually gives a strict inequality. At endpoints, harmonic, alternating harmonic or other series can arise, with different results on each side.
+Does a defined function value imply a convergent expansion?
+No. $\frac1{1-x}$ is defined at $x=2$, but its geometric expansion centered at zero diverges there.
+Treat each input as a separate series
+\sum_{n=0}^\infty c_n(x-a)^n:\quad |x-a|<R\text{ absolutely convergent},\quad |x-a|>R\text{ divergent}
+Test endpoints $x=a\pm R$ separately. For $R=0$ only the center converges; for $R=\infty$ every input converges.
+Compute the ratio for a typical power series.
+Find the open interval, then substitute both endpoints.
+Combine the endpoint results.
+\text{The convergence interval is }[-1,1)
+A shifted center
+Find the convergence interval of $\sum_{n=0}^\infty\frac{(x-2)^n}{3^n}$.
+The ratio is $\frac{x-2}{3}$; its magnitude must be below one.
+This gives $-1<x<5$; at endpoints the ratios are plus or minus one, so terms do not vanish.
+$(-1,5)$; center 2, radius 3.
+Both endpoints included
+Find the convergence interval of $\sum_{n=1}^\infty\frac{x^n}{n^2}$.
+The ratio limit is $|x|$, giving radius 1.
+At either endpoint, absolute values form the reciprocal-square series, so both converge.
+$[-1,1]$.
+The radius equals the interval's length.
+The radius is distance from the center; the open interval has twice that length.
+Finding the radius finishes the problem.
+For a finite radius, test both endpoints individually.
+Find the radius of $\sum(2x)^n$.
+$\frac12$.
+Require the geometric ratio's magnitude below one.
+$|2x|<1$; the radius is $\frac12$, and both endpoints diverge.
+Find the radius of $\sum\frac{x^n}{n!}$.
+$\infty$.
+Fix the input before taking the ratio limit.
+The ratio is $\frac{|x|}{n+1}\to0$; every finite input gives convergence.
+Find the radius of $\sum n!x^n$.
+$0$.
+Check nonzero inputs.
+For nonzero input, the ratio is $(n+1)|x|\to\infty$; only center zero converges.
+Find the convergence interval of $\sum\frac{(x-1)^n}{n}$.
+$[0,2)$.
+Find the open interval, then test left and right endpoints.
+$|x-1|<1$; the left endpoint is alternating harmonic, the right harmonic.
+After finding the radius, what remains?
+Include both endpoints by default
+Test left and right endpoints separately
+Treat the radius as a function value
+The endpoint series may behave differently.
+Each input creates a sequence of numbers to add. The convergence interval contains exactly those inputs producing finite sums.
+Near the center
+Set input to 0.5 and count to 10.
+Inside the radius, partial sums approach 2.
+Near the boundary
+Set input to 0.95 and count to 10.
+Convergence still holds, but similar accuracy takes more terms.
+Outside the radius
+Set input to -1.2 and count to 20.
+Partial sums oscillate with growing magnitude and do not equal the rational function.
+Compare $\sum_{n=0}^{N-1}x^n$ with $\frac1{1-x}$ and mark the convergence radius.
+Outside the radius, do the polynomial graphs still approach the same function?
+Identify centers, radii and convergence intervals
+Check both endpoints individually
+Distinguish defined values from valid expansions

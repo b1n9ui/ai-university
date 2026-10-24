@@ -1,0 +1,64 @@
+Gram-Schmidt orthogonalization
+Subtract projections, then normalize
+Orthogonalization removes projections onto known directions, retaining each new independent part.
+For each new vector, remove its old-direction components. The remainder is the direction it genuinely adds.
+Construct an orthonormal basis step by step
+Recognize zero residuals and dependent inputs
+What happens at each step?
+Calculate $r_j=a_j-\sum_{i<j}(q_i^Ta_j)q_i$, then divide by $\|r_j\|$. Use previously normalized directions each time.
+What if the remainder is zero?
+This input adds no direction. The independent-column construction fails and cannot divide by zero; skip dependent columns and choose a basis instead.
+Does the span change?
+Only old directions are subtracted, so every prefix span stays unchanged. Floating-point implementations often use modified Gram-Schmidt or Householder transformations for stability.
+Gram-Schmidt orthogonalization
+The version without skipping requires independent input vectors. A zero remainder cannot be normalized. The visual uses finite precision.
+Take the dot product with any earlier direction.
+Orthonormality leaves only the matching-index term.
+Normalizing changes only length.
+Orthogonalize two oblique directions
+$a_1=(1,1),a_2=(1,0)$.
+$q_1=(1,1)/\sqrt2$.
+$r_2=(1,0)-(1/2,1/2)=(1/2,-1/2)$, with length $1/\sqrt2$.
+$q_2=(1,-1)/\sqrt2$.
+Detect a dependent column
+$a_1=(1,0),a_2=(2,0)$.
+$q_1=(1,0)$.
+$r_2=a_2-2q_1=0$, which cannot be normalized.
+Column two is redundant and should be skipped.
+Normalizing all original vectors at the end makes them orthogonal.
+Normalization preserves angles; subtracting projections creates perpendicularity first.
+A zero residual means the whole space has no basis.
+It only reveals redundancy in this list.
+Normalize $(3,4)$.
+Divide by its length.
+Its length is five, giving $(3/5,4/5)$.
+$(3/5,4/5)$.
+Given $q_1=(1,0),a_2=(2,3)$, find the remainder.
+Subtract the horizontal projection.
+$(2,3)-(2,0)=(0,3)$.
+$(0,3)$.
+Can reordering inputs change the orthonormal basis?
+The first direction is preserved first.
+Generally yes, while the final span remains the same.
+It may change.
+Do three independent spatial vectors stay independent after orthogonalization?
+Use the relationship among nonzero orthogonal vectors.
+Dot a zero combination with each unit vector; every coefficient vanishes.
+Still independent.
+The columns are $(1,0),(1,c)$. Switch between original columns, subtracting projections, and normalization to see dependent columns produce zero residuals.
+When does subtracting the second vector's projection leave zero?
+What does a zero orthogonalization residual mean?
+The new vector is already in the previous span
+It is already a unit vector
+Divide zero by zero
+Without a new independent direction, there is no remainder to normalize.
+Orthogonalization keeps new information and removes repeated directions. It cannot create missing directions.
+Original columns
+Set $c=1$ and select original columns.
+Column two has a horizontal component.
+Subtract the projection
+Select subtraction of the projection.
+The remainder is $(0,1)$, perpendicular to the first direction.
+Dependent columns
+Set $c=0$ and select normalization.
+The residual is zero, so this column-by-column construction cannot normalize it. A general QR factorization may still exist.

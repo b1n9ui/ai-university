@@ -1,0 +1,68 @@
+Convexity, tangents, and second derivatives
+A convex graph lies below its chords and, when differentiable, above every tangent.
+A convex graph lies below its chords and, when differentiable, above every tangent.
+Nondecreasing secant slopes translate geometric curvature into comparable quantities.
+Define convexity by chords
+Connect it to monotone derivatives
+Define convexity by chords
+At a weighted average of two inputs, the output is no greater than the same weighted average of their outputs. Weights lie from zero to one, and the domain is an interval.
+Connect it to monotone derivatives
+Compare three-point secants and bring adjacent points together to obtain a nondecreasing derivative. Conversely, a nondecreasing derivative and the mean value theorem order the secants and imply convexity.
+Use a second-derivative sufficient condition
+A nonnegative second derivative makes the first derivative nondecreasing by the mean value theorem, hence gives convexity. A zero second derivative at one point need not preclude strict convexity or imply an inflection.
+Tangents to a differentiable convex function give global lower bounds.
+The domain is an interval.
+The second-derivative criterion requires the stated twice-differentiability assumptions.
+Compare adjacent secants at three ordered points.
+Move one point to the other to obtain a tangent lower bound.
+A nonnegative second derivative gives a nondecreasing first derivative by the mean value theorem.
+f''\ge0\implies f'\text{ nondecreasing}\implies f\text{ convex}
+Convexity of squaring
+Verify the convexity definition directly for the square function.
+$(1-t)x^2+ty^2-[(1-t)x+ty]^2=t(1-t)(x-y)^2$.
+The right side is nonnegative.
+Convex; strict for distinct inputs and interior weights.
+Zero second derivative with strict convexity
+Does the zero second derivative of $x^4$ at zero prevent strict convexity?
+Its derivative $4x^3$ is strictly increasing.
+Thus the function is strictly convex and zero is not an inflection point.
+No.
+Where is a convex graph relative to its chords?
+Use the weighted-average definition.
+Below or on them.
+Below.
+Where is a differentiable convex graph relative to its tangents?
+Use the tangent lower bound.
+Above or on them.
+Above.
+Does a zero second derivative imply an inflection point?
+Consider a quartic.
+Convexity need not change there.
+Not necessarily.
+Use a tangent bound to prove $\log x\le x-1$ for every positive $x$.
+Take the tangent to convex $-\log x$ at one.
+Let $g(x)=-\log x$. Since $g''(x)=1/x^2>0$, it is convex on the positive half-line.
+At one, $g(1)=0$ and $g'(1)=-1$. The tangent bound gives $-\log x\ge-(x-1)$.
+Multiply by negative one to get $\log x\le x-1$. The elementary logarithm derivative is used as a calculus prerequisite.
+Multiply by negative one to get $\log x\le x-1$. The elementary logarithm derivative is used as a calculus prerequisite.
+What does a nonnegative second derivative ensure?
+Convexity
+Strict convexity everywhere
+Every point is an extremum
+Strictness requires additional information.
+A convex graph lies above its chords
+The direction is reversed.
+Every zero of the second derivative is an inflection
+Check whether convexity changes on the two sides.
+Move the tangent point. How do the graph, tangent, and chord positions express convexity?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+Convexity orders secant slopes. Remember the direction: the graph lies below chords and above tangents.
+Current input: -1
+Set the input to $-1$. Compare the graph with the lower tangent and upper chord between the endpoints.
+Tangent slope $-2$; chord height above the tangent point $0$.
+Current input: 0
+Set the input to $0$. Compare the graph with the lower tangent and upper chord between the endpoints.
+Tangent slope $0$; chord height above the tangent point $1$.
+Current input: 1
+Set the input to $1$. Compare the graph with the lower tangent and upper chord between the endpoints.
+Tangent slope $2$; chord height above the tangent point $0$.

@@ -1,0 +1,65 @@
+Probability axioms and the addition rule
+To find the probability that at least one event occurs, subtract their double-counted overlap.
+To find the probability that at least one event occurs, subtract their double-counted overlap.
+Counting each of two sets once counts the intersection twice.
+Apply the axioms
+Derive complement and union rules
+Apply the axioms
+Probabilities are nonnegative, the whole space has probability one, and a countable union of mutually exclusive events has the sum of their probabilities.
+Derive complement and union rules
+Partitioning the space into an event and its complement gives the complement rule. A general union must also subtract the intersection.
+Check disjointness
+Mutually exclusive means events cannot occur together. Independent means learning one does not change the other's probability. These differ.
+Both events belong to the same probability model.
+Both events belong to the same probability model.
+Mutually exclusive events have zero intersection probability.
+Split an event into intersection and difference regions.
+Add the three disjoint regions.
+Substitute each event's probability.
+One inclusion–exclusion step
+Given $P(A)=0.6,P(B)=0.5,P(A\cap B)=0.3$, find the union probability.
+The initial sum is $1.1$.
+Subtract the repeated $0.3$.
+$0.8$.
+At least one success
+Two independent trials each succeed with probability $0.2$. Find the probability of at least one success.
+Both fail with probability $0.8^2=0.64$.
+Take the complement.
+$0.36$.
+If $P(A)=0.7$, find the complement probability.
+They sum to one.
+$1-0.7=0.3$.
+$0.3$.
+Disjoint events have probabilities $0.2,0.4$. Find their union probability.
+The intersection is zero.
+$0.2+0.4=0.6$.
+$0.6$.
+Events have probabilities $0.8,0.7$. How small can their intersection be?
+The union cannot exceed one.
+$0.8+0.7-P(A\cap B)\le1$.
+At least $0.5$.
+Can an event have probability $1.2$?
+Compare it with the whole space.
+An event lies within the whole space, so its probability is at most one.
+No.
+When does simply adding two probabilities give their union probability?
+When independent
+When mutually exclusive
+When identical
+There must be no double-counted intersection.
+Independence permits direct addition
+Whether the overlap vanishes depends on disjointness.
+At least one occurrence always needs exhaustive enumeration
+Often compute the complement of no occurrence.
+Change the overlap. How much does direct addition overcount?
+The sets distinguish overlap from union probability. Controls must respect probability constraints.
+Whether the overlap vanishes depends on disjointness.
+Event B starting position: 4
+Set event B's starting position to $4$ and compare the figure and readouts.
+At these parameters: A probability $0.6$; B probability $0.5$; intersection $0.2$; union $0.9$.
+Event B starting position: 0
+Set event B's starting position to $0$ and compare the figure and readouts.
+At these parameters: A probability $0.6$; B probability $0.5$; intersection $0.5$; union $0.6$.
+Event B starting position: 9
+Set event B's starting position to $9$ and compare the figure and readouts.
+At these parameters: A probability $0.6$; B probability $0.5$; intersection $0.4$; union $0.7$.

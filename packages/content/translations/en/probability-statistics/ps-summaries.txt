@@ -1,0 +1,65 @@
+Mean, median, and spread
+Location describes where data lie; spread describes how dispersed they are.
+Location describes where data lie; spread describes how dispersed they are.
+The mean is a balance point; the median a middle rank. An extreme value affects them differently.
+Choose a location statistic
+Compute sample variance
+Choose a location statistic
+The mean uses every value; the median depends on sorted position. With skewness or outliers, report the median and interquartile range together.
+Compute sample variance
+Sample variance divides squared deviations from the sample mean by the degrees of freedom. Standard deviation has the original data's units.
+Track units
+Translation changes location but not spread. Scaling multiplies standard deviation by the absolute factor and variance by its square. This book computes quartiles by splitting about the median, excluding the overall median for odd sample sizes and taking each half's median.
+Sample variance requires $n\ge2$. A descriptive population variance may divide by the full count; state the convention.
+Sample variance requires $n\ge2$. A descriptive population variance may divide by the full count; state the convention.
+Unbiasedness requires independent identically distributed observations and a finite second moment; it is proved later.
+Deviations from the mean sum to zero.
+Square them to prevent sign cancellation.
+Correct one degree of freedom when estimating population variance.
+Compute variance
+Find the sample standard deviation of $1,2,3$.
+The mean is two; squared deviations sum to two.
+Divide by two to get variance one, then take the square root.
+$s=1$.
+Add an extreme value
+Change $1,2,3$ to $1,2,30$. Find mean and median.
+The mean is $33/3=11$.
+The middle sorted value stays two.
+Mean $11$; median $2$.
+Find the mean of $2,4,6$.
+Sum and divide by three.
+$12/3=4$.
+$4$.
+What happens to sample standard deviation if five is added to every observation?
+Inspect deviations from the mean.
+Every deviation stays unchanged.
+Unchanged.
+What happens to variance if every value is tripled?
+Track squared deviations.
+Each squared deviation is multiplied by nine.
+Multiplied by $9$.
+With sample size one, can sample variance use denominator $n-1$?
+Check the denominator.
+Degrees of freedom are zero.
+No.
+After multiplying data by $-2$, how does standard deviation change?
+Multiplied by $-2$
+Multiplied by $2$
+Multiplied by $4$
+Standard deviation is nonnegative and scales by the absolute factor.
+Variance and standard deviation have the same units
+Variance has squared units; standard deviation restores the original units.
+Similar centers imply identical distributions
+Also compare spread, shape, and outliers.
+Move the last observation. Which is more sensitive: mean, median, or standard deviation?
+Other observations stay fixed to show an extreme value's influence; this does not automatically justify deletion.
+Variance has squared units; standard deviation restores the original units.
+Last observation: 7
+Set the last observation to $7$ and compare the figure and readouts.
+At these parameters: mean $3.4$; median $3$; sample standard deviation $2.30217$.
+Last observation: 4
+Set the last observation to $4$ and compare the figure and readouts.
+At these parameters: mean $2.8$; median $3$; sample standard deviation $1.30384$.
+Last observation: 20
+Set the last observation to $20$ and compare the figure and readouts.
+At these parameters: mean $6$; median $3$; sample standard deviation $7.90569$.

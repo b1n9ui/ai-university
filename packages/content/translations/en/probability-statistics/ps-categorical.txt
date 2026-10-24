@@ -1,0 +1,67 @@
+Contingency tables and chi-square tests
+Are observed category counts far enough from the counts expected under independence?
+Are observed category counts far enough from the counts expected under independence?
+Use marginal proportions to predict each cell's count, then accumulate standardized squared deviations.
+Calculate expected counts
+Measure deviation
+Calculate expected counts
+The contingency-table null asserts row and column independence. Using observed margins, expected count is row total times column total divided by the grand total.
+Measure deviation
+Add squared cell deviations divided by expected counts. This measures departure from the null model. Row and column sum constraints determine degrees of freedom.
+Check approximation conditions
+Observational units must be independent and expected counts sufficiently large. This volume uses the conservative classroom rule of at least five in every cell. Sparse tables need exact or design-appropriate alternatives.
+This is a contingency-table independence test. Categories for each margin must be mutually exclusive and exhaustive.
+This is a contingency-table independence test. Categories for each margin must be mutually exclusive and exhaustive.
+Goodness-of-fit degrees of freedom instead equal category count minus one minus estimated parameter count. Do not interchange them.
+Units must be independent, $N>0$, and all retained row and column margins positive. Remove impossible empty categories before calculating degrees of freedom.
+Chi-square tail probabilities are asymptotic approximations. This volume uses at least five expected observations per cell as a conservative classroom rule; sparse tables need another suitable method.
+Under independence, a joint proportion is the product of its marginals.
+Multiply by the grand total to obtain expected counts.
+Accumulate scaled deviations and use the asymptotic chi-square reference.
+A two-by-two table
+The count-table rows are $(20,10)$ and $(10,20)$. Find expected counts and the chi-square statistic.
+Each row and column total is thirty; the grand total is sixty. Every expected count is fifteen.
+Each of four cells contributes $25/15$.
+The statistic is $20/3\approx6.667$, with one degree of freedom and asymptotic $p$-value approximately $0.0098$.
+Goodness of fit
+There are four categories with fixed probabilities and no estimated parameters. Find the goodness-of-fit degrees of freedom.
+The four category counts have a fixed total.
+Three independent directions remain.
+$3$.
+Find independence-test degrees of freedom for three rows and four columns.
+Subtract one from each dimension, then multiply.
+$2\times3=6$.
+$6$.
+A row total is twenty, column total thirty, and grand total sixty. Find the expected count at their intersection.
+Multiply the margins and divide by the grand total.
+$20(30)/60=10$.
+$10$.
+If every observed count equals its expectation, what is the statistic?
+Every deviation is zero.
+The total is zero.
+$0$.
+Can repeated questionnaires from the same person be treated as independent counts without qualification?
+The observational unit is repeated.
+Within-person dependence violates the independent-unit assumption.
+No.
+What must not be too small for the chi-square approximation?
+Expected counts
+The table's font size
+Category-name length
+Sparse expected counts can undermine the asymptotic reference distribution.
+Every two-by-two table has four degrees of freedom
+After independence constraints, it has one.
+A significant association proves causation
+A table association does not rule out confounding or selection bias.
+Keep marginal totals fixed and increase diagonal counts. How does the chi-square statistic change?
+A two-by-two table with expected count fifteen per cell displays observed counts, expectations, and individual contributions.
+After independence constraints, it has one.
+Count in each diagonal cell: 20
+Set each diagonal cell's count to $20$ and compare the diagram and readings.
+At this preset: expected count per cell $15$; chi-square statistic $6.66667$; degrees of freedom $1$; asymptotic right-tail $p$-value $0.00982327$.
+Count in each diagonal cell: 0
+Set each diagonal cell's count to $0$ and compare the diagram and readings.
+At this preset: expected count per cell $15$; chi-square statistic $60$; degrees of freedom $1$; asymptotic right-tail $p$-value $9.486\times10^{-15}$.
+Count in each diagonal cell: 30
+Set each diagonal cell's count to $30$ and compare the diagram and readings.
+At this preset: expected count per cell $15$; chi-square statistic $60$; degrees of freedom $1$; asymptotic right-tail $p$-value $9.486\times10^{-15}$.

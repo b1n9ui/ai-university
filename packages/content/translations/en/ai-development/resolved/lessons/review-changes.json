@@ -1,0 +1,206 @@
+{
+  "id": "review-changes",
+  "chapterId": "chapter-4",
+  "number": "4.3",
+  "title": "Finish collaboration with evidence",
+  "subtitle": "Move from AI says done to I know why I accept it.",
+  "concept": "Review diffs, acceptance results and verification evidence before accepting, correcting or splitting the task further.",
+  "intuition": "For a renovation handover, inspect the room rather than just reading the contractor's done message.",
+  "objectives": [
+    "Read changed files and key diffs, explaining their relation to the goal.",
+    "After acceptance, leave a focused commit and handoff notes; otherwise return specific evidence."
+  ],
+  "body": [
+    {
+      "title": "Read diffs from the problem outward",
+      "text": "Inspect file scope, then key changes. Title validation should include trimming, rejection and feedback, with matching tests. A new framework, broad renames or lockfile changes need a reason. Ask for concrete inputs through unfamiliar syntax, then try them yourself."
+    },
+    {
+      "title": "Do not adjust tests to suit incorrect code",
+      "text": "If the limit remains 80, deleting the rejection test at 81 is not a fix. A confirmed new standard may change tests, but must preserve complete boundary coverage. Instead of still broken, provide input, actual and expected results, and reproduction steps."
+    },
+    {
+      "title": "Leave handoff records",
+      "text": "Commit accepted changes with a clear purpose and record implementation, checks and gaps. Future sessions should read those records. Track accepted, awaiting checks and deferred separately. Read, tested and deployed are distinct states; one done label should not hide them."
+    }
+  ],
+  "formalDefinition": {
+    "text": "Review diffs, acceptance results and verification evidence before accepting, correcting or splitting the task further.",
+    "conditions": [
+      "For small personal learning projects. In shared repositories, follow the team's conventions.",
+      "This method produces checkable evidence; it cannot guarantee arbitrary AI output is correct."
+    ]
+  },
+  "workflow": [
+    "Read changed files and key diffs, explaining their relation to the goal.",
+    "Follow predefined acceptance cases and check real results and gaps.",
+    "After acceptance, leave a focused commit and handoff notes; otherwise return specific evidence."
+  ],
+  "workedExamples": [
+    {
+      "title": "Review a whitespace fix",
+      "problem": "The change adds a large dependency. Is it reasonable?",
+      "steps": [
+        "Check whether trim and existing validation suffice.",
+        "Ask for the dependency's necessity and maintenance cost.",
+        "Remove unrelated changes if unnecessary, then reverify."
+      ],
+      "answer": "The current functions can implement this rule. Explain the dependency's specific purpose; if unnecessary, retain the existing dependency structure. Rerun existing tests and report results rather than deleting tests to reduce files."
+    },
+    {
+      "title": "A useful correction request",
+      "problem": "Items disappear after refresh. How should you report it?",
+      "steps": [
+        "List input and action order.",
+        "State actual and expected results.",
+        "Provide URL, console details and checked scope."
+      ],
+      "answer": "At http://127.0.0.1:5180, adding Learn Git displays it, but refresh empties the list. It should persist. Inspect saving, loading and error handling; explain the cause and make a minimal fix without adding synchronization."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "Accept every diff you do not understand.",
+      "correction": "Choose key behavior, ask for concrete-input explanation and verify it yourself."
+    },
+    {
+      "claim": "Delete failing tests.",
+      "correction": "Decide whether implementation violates requirements or requirements were deliberately changed; green alone is not the goal."
+    }
+  ],
+  "practice": [
+    {
+      "id": "review-changes-p1",
+      "difficulty": 2,
+      "problem": "Twenty files changed for one color. What first?",
+      "hint": "Does scope match the purpose?",
+      "answer": "Inspect files and diffs, explain unrelated changes and reduce to necessary style changes.",
+      "solution": [
+        "Keep review manageable.",
+        "Many files are not automatically wrong, but every change needs a reason."
+      ]
+    },
+    {
+      "id": "review-changes-p2",
+      "difficulty": 2,
+      "problem": "How can the agent explain an unfamiliar condition?",
+      "hint": "Provide concrete inputs.",
+      "answer": "Trace three spaces and an ordinary title through the branch, stating intermediate values and whether an item is created.",
+      "solution": [
+        "Make the explanation executable.",
+        "Do not settle for abstract praise."
+      ]
+    },
+    {
+      "id": "review-changes-p3",
+      "difficulty": 2,
+      "problem": "The limit is 80 but its test was deleted. Accept?",
+      "hint": "Was the standard explicitly changed?",
+      "answer": "Not just because results are green. Restore boundary coverage and fix behavior, unless a confirmed new standard has complete replacement tests.",
+      "solution": [
+        "Compare with original criteria.",
+        "Tests provide evidence, not decoration."
+      ]
+    },
+    {
+      "id": "review-changes-p4",
+      "difficulty": 2,
+      "problem": "Write a handoff note.",
+      "hint": "State done, checked and unchecked.",
+      "answer": "Whitespace rejection is fixed and committed. npm test passed and browser feedback was checked. Other browsers and concurrent tabs remain unverified.",
+      "solution": [
+        "State the evidence scope.",
+        "The next task can continue from it."
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "What supports accepting a change?",
+    "choices": [
+      "Agent confidence",
+      "Relevant diffs, acceptance results and actual tests",
+      "More lines of code"
+    ],
+    "correctIndex": 1,
+    "feedback": [
+      "Confidence does not replace checks.",
+      "This evidence can be compared with the goal.",
+      "Line count has no direct relation to user outcomes."
+    ]
+  },
+  "interactiveVisual": {
+    "kind": "prompt",
+    "prediction": "If tests pass, must you still review diffs?",
+    "steps": [
+      {
+        "question": "A color change adds a data migration.",
+        "choices": [
+          "Ask why it is necessary",
+          "Accept immediately",
+          "Skip the file list"
+        ],
+        "correctIndex": 0,
+        "feedback": [
+          "The link between data changes and styling is unclear.",
+          "Existing data may be changed unintentionally.",
+          "You lose scope awareness."
+        ]
+      },
+      {
+        "question": "Tests were deleted and results are green.",
+        "choices": [
+          "Declare completion",
+          "Restore necessary coverage against criteria",
+          "Praise the model more"
+        ],
+        "correctIndex": 1,
+        "feedback": [
+          "Green may reflect a lowered standard.",
+          "Keep both criteria and evidence.",
+          "Praise does not establish behavior."
+        ]
+      },
+      {
+        "question": "You find a refresh failure. How next?",
+        "choices": [
+          "Repeat think harder",
+          "Give reproduction, actual and expected results",
+          "Rewrite everything"
+        ],
+        "correctIndex": 1,
+        "feedback": [
+          "No new diagnostic evidence is supplied.",
+          "The next change can target a concrete failure.",
+          "Diagnose before rewriting."
+        ]
+      }
+    ],
+    "followUp": "Fill a correction brief in the lab with evidence instead of still broken."
+  },
+  "prerequisites": [
+    "task-prompts"
+  ],
+  "difficulty": 3,
+  "misconceptionTags": [
+    "review-changes-guess",
+    "review-changes-evidence"
+  ],
+  "sources": [
+    "git-diff",
+    "node-test"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.1.1",
+    "status": "first-edition",
+    "humanReviewed": false
+  },
+  "promptTemplate": {
+    "goal": "Diagnose and fix list loss after refresh within existing scope.",
+    "context": "At http://127.0.0.1:5180, adding Learn Git works, then refresh empties the list. Persistence is expected. I will attach the original error.",
+    "scope": "Inspect save/load and origin first. No site rewrite, new service or overwriting old data.",
+    "acceptance": "At the same URL, ordinary additions survive refresh; whitespace remains rejected; failed writes clearly say data was not saved.",
+    "verification": "Repeat reproduction, run rule tests and inspect related errors. State anything you cannot execute.",
+    "delivery": "Root cause and evidence, minimal fix, actual verification and remaining risks."
+  }
+}

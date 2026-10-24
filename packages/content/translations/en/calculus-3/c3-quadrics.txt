@@ -1,0 +1,66 @@
+Quadric surfaces and cross-sections
+Understand a surface by slicing it
+Fix one coordinate to obtain a cross-section. Key slices are more reliable than memorized silhouettes.
+Circles, ellipses, parabolas and hyperbolas in slices reveal the spatial shape.
+Identify standard quadrics from slices
+Distinguish bowls, saddles and cylinders
+Recognizing an ellipsoid
+Three same-sign squared terms equal a positive constant. Find axis intercepts. Fixing one coordinate usually gives an ellipse, possibly a point or empty set.
+Paraboloid versus hyperbolic paraboloid
+For $z=x^2+y^2$, both coordinate slices open upward. For $z=x^2-y^2$, one opens up and the other down, producing a saddle.
+Must a cylinder be circular?
+A missing coordinate means translation invariance in that direction. For example $z=x^2$ extends along the second axis and is a cylinder. Cross terms may require rotated axes; square-term signs alone do not classify them.
+Understand a surface by slicing it
+Ellipsoid semiaxes satisfy $a,b,c>0$. These examples use standard forms aligned with principal axes.
+Fix height to obtain a plane curve.
+Compare perpendicular slices for bending direction.
+An absent variable means translation invariance.
+z=x^2\quad\text{independent of }y
+An ellipsoid slice
+Find the slice of $\frac{x^2}4+y^2+\frac{z^2}9=1$ at $z=\frac32$.
+Substitution leaves $1-\frac14=\frac34$ on the right.
+This gives $\frac{x^2}3+\frac{y^2}{3/4}=1$.
+An ellipse with semiaxes $\sqrt3$ and $\frac{\sqrt3}2$.
+Recognizing a saddle
+Is the origin a minimum of $z=2x^2-y^2$?
+Along the horizontal axis, $z=2x^2\ge0$.
+Along the other axis, $z=-y^2\le0$; nearby values are both higher and lower.
+No; it is a saddle point.
+All level curves are circles.
+Slices may be hyperbolas, lines, empty sets or other shapes.
+A minimum along one direction is a local minimum.
+A multivariable minimum requires no lower nearby values in any direction.
+Find the slice radius of $z=x^2+y^2$ at $z=4$.
+Insert the fixed height.
+$x^2+y^2=4$; radius 2.
+Find the slice of $x^2+y^2-z^2=1$ at $z=0$.
+Set height to zero.
+$x^2+y^2=1$, the unit circle.
+The unit circle.
+Is $y^2+z^2=9$ a sphere?
+Is the first coordinate restricted?
+The first coordinate is arbitrary.
+This is a radius-3 cylinder extending along the first axis.
+No; a cylinder.
+Find the slice of $z=x^2-y^2$ at $z=0$.
+Factor the difference of squares.
+$(x-y)(x+y)=0$.
+Two lines: $y=x$ and $y=-x$.
+Two intersecting lines.
+What does a missing first coordinate imply?
+It must be a sphere
+Translation invariance along the first axis
+No spatial surface exists
+The other coordinates satisfy the equation while the first is free.
+Vary a parameter in $z=x^2+c y^2$ to move from bowl through cylinder to saddle.
+How does reversing one squared term's sign change the surface?
+Fix one coordinate, inspect its slices, then assemble the spatial picture.
+Bending upward
+Set squared-term coefficient $c$ to $1$.
+Both coordinate directions bend upward, forming an elliptic paraboloid.
+Cylinder
+Set squared-term coefficient $c$ to $0$.
+The second coordinate no longer affects height; the surface extends in that direction.
+Saddle
+Set squared-term coefficient $c$ to $-1$.
+The coordinate slices bend in opposite directions.

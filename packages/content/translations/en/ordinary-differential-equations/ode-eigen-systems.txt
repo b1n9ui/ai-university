@@ -1,0 +1,64 @@
+Eigendirections, nodes, and saddles
+How a matrix determines continuous-time trajectories
+How does one direction evolve?
+If $A\mathbf v=\lambda\mathbf v$, then $e^{\lambda t}\mathbf v$ solves the system.
+Nodes and saddles
+Two negative real eigenvalues give an attracting node; two positive ones a repelling node. Opposite signs give a saddle with only some stable directions.
+Special initial states
+A saddle trajectory exactly on its stable eigenline approaches the origin. This does not make the whole equilibrium stable.
+Try an exponential along an eigenvector.
+Both sides agree.
+Combine directions to match initial state.
+An attracting node
+What is the long-term behavior of $A=\operatorname{diag}(-1,-3)$?
+Both directions decay.
+Every initial state approaches the origin.
+The origin is asymptotically stable.
+A saddle
+For $A=\operatorname{diag}(1,-1)$, which initial states approach the origin?
+The components are $x_0e^t$ and $y_0e^{-t}$.
+Decay requires the first initial component to be zero.
+Only stable axis $x_0=0$.
+With a complete real eigenbasis and eigenvalues $2,4$, classify the system.
+Both directions grow.
+The origin repels.
+An unstable node.
+Classify the equilibrium with eigenvalues $-2,3$.
+Their signs differ.
+One direction contracts and one expands.
+A saddle.
+Does multiplying an eigenvector by three add a motion direction?
+Compare their lines.
+It only rescales the same line.
+No new independent direction.
+Does a saddle's decaying trajectory establish stability?
+Stability requires all sufficiently nearby initial states to stay nearby.
+Other nearby directions leave.
+No.
+One negative eigenvalue makes the system stable.
+Check every direction.
+Eigenvalues specify initial coefficients.
+Coefficients come from initial coordinates in the eigenbasis.
+Constant-system eigenvectors give straight motion directions; eigenvalues give their exponential rates.
+Split the initial state into eigencomponents, then grow or decay each independently.
+Solve using independent eigenvectors
+Distinguish nodes and saddles
+Eigendirections, nodes, and saddles
+Use a constant matrix with a complete eigenbasis. Stability concerns forward time; the homogeneous equilibrium is the origin.
+What characterizes saddle eigenvalues?
+Both zero
+Both negative
+Real with opposite signs
+Contraction and expansion coexist.
+Eigenvectors locate directions, eigenvalues set rates, and initial coordinates give their weights.
+An attracting node
+Both components decay.
+Set first exponent rate $\lambda_1$ to $-1$, second exponent rate $\lambda_2$ to $-0.5$, and observation time $t$ to $3$.
+A saddle
+One direction grows and the other decays.
+Set first exponent rate $\lambda_1$ to $1$, second exponent rate $\lambda_2$ to $-1$, and observation time $t$ to $2$.
+Repelling node
+Both directions grow.
+Set first exponent rate $\lambda_1$ to $0.5$, second exponent rate $\lambda_2$ to $1$, and observation time $t$ to $2$.
+Draw the analytic trajectory from $(1,1)$ and a normalized direction field. Vary parameters to compare nodes and saddles. One trajectory does not represent every initial state.
+What happens to a node when one negative eigenvalue becomes positive?

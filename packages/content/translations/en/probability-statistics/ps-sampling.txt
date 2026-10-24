@@ -1,0 +1,65 @@
+Populations, samples, and selection bias
+Whom you collect data from determines whom your conclusions can represent.
+Whom you collect data from determines whom your conclusions can represent.
+Even a huge voluntary survey may measure only those willing to respond.
+State the target population
+Understand random sampling
+State the target population
+The population is every unit of interest; the sampling frame is the list actually available for selection. They may differ.
+Understand random sampling
+Simple random sampling gives each fixed-size sample equal probability. Stratified sampling draws randomly within groups, then combines them using population proportions.
+Separate bias from variation
+Standard errors describe random sampling variation, not systematic bias from coverage gaps, nonresponse, or measurement error.
+A stratified population mean uses population group weights, not an arbitrary average of group means.
+A stratified population mean uses population group weights, not an arbitrary average of group means.
+Within-group samples must represent their groups; weighting cannot repair every unobserved selection mechanism.
+Split the population mean by groups.
+Replace unknown group means with sample group means.
+Retain population weights so oversampling does not alter the target composition.
+Combine strata
+Population groups have proportions $0.8,0.2$ and sample group means $10,20$. Estimate the population mean.
+Use population weights.
+$0.8\times10+0.2\times20=12$.
+$12$.
+A large but biased sample
+Can surveying only regular gym users estimate exercise time across a city?
+The frame excludes many nonusers.
+A larger sample within that list does not restore the omitted people.
+Not directly generalizable citywide.
+With group weights $0.5$ each and means $4,8$, what is the weighted mean?
+Multiply each mean by its weight and add.
+$0.5(4)+0.5(8)=6$.
+$6$.
+Does a random sample have the same mean every time?
+What does random sampling introduce?
+Different selected units generally give varying statistics.
+Usually not.
+Does increasing voluntary responses necessarily remove selection bias?
+Separate sample size from selection method.
+Response propensity may remain related to the outcome.
+No.
+If a small stratum is oversampled, should all records simply be averaged?
+Compare sample and population compositions.
+The raw mean overweights the small stratum.
+Generally use weights appropriate to the sampling design.
+Which necessarily disappears as sample size grows?
+Selection bias
+All measurement errors
+Neither necessarily disappears
+Sample size does not replace representativeness.
+Random sampling means asking people arbitrarily
+Randomness needs a specified probability mechanism.
+Large samples have no bias
+They reduce random variation, not automatically selection bias.
+Change the sampled group proportions. How does the sample-composition mean differ from the population mean?
+Group means stay fixed while sample composition changes; population weights are displayed separately.
+Randomness needs a specified probability mechanism.
+First-group sample proportion: 0.5
+Set the first-group sample proportion to $0.5$ and compare the figure and readouts.
+At these parameters: sample-composition mean $15$; population mean $12$; difference $3$.
+First-group sample proportion: 0
+Set the first-group sample proportion to $0$ and compare the figure and readouts.
+At these parameters: sample-composition mean $20$; population mean $12$; difference $8$.
+First-group sample proportion: 1
+Set the first-group sample proportion to $1$ and compare the figure and readouts.
+At these parameters: sample-composition mean $10$; population mean $12$; difference $-2$.

@@ -1,0 +1,65 @@
+Random sampling and random assignment
+Sampling supports generalization; random assignment supports causal comparisons.
+Sampling supports generalization; random assignment supports causal comparisons.
+Randomly selecting people and randomly allocating treatments are two randomizations with different jobs.
+Identify confounding
+Use random assignment
+Identify confounding
+Preexisting treatment–control differences mix treatment effects with baseline differences in observed outcomes.
+Use random assignment
+Random assignment breaks systematic links between treatment allocation and pretreatment factors by design. Finite samples may still be imbalanced.
+State causal boundaries
+Causal interpretation also needs well-defined interventions, consistent measurement, and assumptions such as no interference. Population generalization separately needs suitable sampling and context.
+Random assignment compares treatments within the same experimental framework.
+Random assignment compares treatments within the same experimental framework.
+Consider attrition, noncompliance, interference, and measurement methods.
+Observe an outcome difference between groups.
+Nonrandom group differences may include confounding.
+Prespecified random assignment supports a design-based treatment-effect estimate.
+Compute a difference
+Randomized groups have means $14,11$. Estimate the treatment difference.
+Use the prespecified treatment-minus-control direction.
+$14-11=3$; uncertainty analysis is still needed.
+Point estimate $3$.
+An observational study
+Tutored students score higher. Does that alone show tutoring caused improvement?
+Participants may differ in baseline preparation and family support.
+Those confounders have not been excluded.
+The association alone does not establish causation.
+With means $8,10$, find treatment minus control.
+Keep the direction consistent.
+$8-10=-2$.
+$-2$.
+Does random sampling automatically produce random assignment?
+The two randomizations act on different decisions.
+Sampling chooses participants; assignment chooses who receives treatment.
+No.
+Does unequal sex composition after random assignment prove randomization failed?
+A probability mechanism does not guarantee exact balance each time.
+Finite random assignments permit chance imbalances.
+No.
+Can a randomized trial in a convenience sample be generalized nationally without conditions?
+Separate causal comparison from external representativeness.
+Random assignment does not make participants representative nationally.
+Not unconditionally.
+What does random assignment primarily address?
+Confounding in causal comparisons
+Coverage of the whole population
+Automatic imputation of missing data
+It supports comparability between groups.
+Random assignment guarantees identical groups
+It removes systematic allocation while allowing chance imbalance.
+Correlation establishes causation
+A design or additional identification assumptions are needed.
+Can changing group composition alone create a mean difference without a treatment effect?
+The confounding example changes composition, not a real randomized treatment effect.
+It removes systematic allocation while allowing chance imbalance.
+Low-baseline proportion in treatment: 0.3
+Set the low-baseline treatment proportion to $0.3$ and compare the figure and readouts.
+At these parameters: treatment mean $17$; control mean $12$; difference $5$.
+Low-baseline proportion in treatment: 0
+Set the low-baseline treatment proportion to $0$ and compare the figure and readouts.
+At these parameters: treatment mean $20$; control mean $12$; difference $8$.
+Low-baseline proportion in treatment: 1
+Set the low-baseline treatment proportion to $1$ and compare the figure and readouts.
+At these parameters: treatment mean $10$; control mean $12$; difference $-2$.

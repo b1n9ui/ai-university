@@ -1,0 +1,68 @@
+Minimum spanning trees and Kruskal's algorithm
+A minimum spanning tree connects every vertex with the smallest total edge cost.
+A minimum spanning tree connects every vertex with the smallest total edge cost.
+Consider cheaper edges first, keeping an edge whenever it does not close a cycle.
+Specify the optimization target
+Merge by increasing weight
+Specify the optimization target
+Assign edge weights to a connected undirected graph and minimize the sum over spanning trees. This differs from minimizing each path from one source.
+Merge by increasing weight
+Kruskal scans edges in nondecreasing weight order. Accept an edge joining distinct components; reject an edge within one component because it creates a cycle.
+Justify the greedy choice
+Use an exchange argument. The chosen edge crosses the cut around a current component; it can replace a no-lighter edge across that cut in an optimal compatible tree, preserving optimality.
+Kruskal permits negative weights. A disconnected input gives a minimum spanning forest.
+T^*=\arg\min_{T\text{ spanning tree}}\sum_{e\in T}w(e)
+The input is a finite undirected graph with comparable edge weights.
+A single tree spanning every vertex exists only for a connected graph.
+Choose the lightest edge crossing the current cut.
+w(e)\le w(f)\quad\text{for every crossing edge }f
+Add it to a compatible optimal tree, creating a cycle.
+T+e\text{ contains a cycle}
+Delete another crossing edge from that cycle.
+A triangle
+A triangle has edge weights one, two, and four. What is its minimum spanning-tree cost?
+Take one, then two; no cycle has formed.
+Reject the weight-four edge because it closes a cycle.
+Three.
+Nonunique optima
+If every triangle edge has weight one, is its minimum spanning tree unique?
+Deleting any one edge gives a spanning tree.
+All three choices cost two.
+No.
+How many edges does a five-vertex minimum spanning tree have?
+It is a spanning tree first.
+Its edge count is five minus one.
+Four.
+Do negative weights invalidate Kruskal's algorithm?
+The exchange proof uses only weight comparisons.
+Nonnegative weights are not required.
+No.
+Why reject an edge that creates a cycle?
+A spanning tree cannot contain a cycle.
+Earlier accepted edges are no heavier, so this cycle edge is unnecessary.
+It avoids a cycle while preserving greedy optimality.
+Does a minimum spanning tree always give shortest source-to-vertex paths?
+Its objective is total edge cost, not individual path length.
+The optimization objectives differ.
+Not necessarily.
+What directly determines whether Kruskal accepts an edge?
+It joins distinct current components
+It is nearest the root
+Its endpoints have different colors
+An edge within one component creates a cycle.
+A minimum spanning tree is a shortest-path tree
+Their objective functions differ.
+Tied weights mean there is no solution
+An optimum still exists, but may not be unique.
+Scan edges successively. Which are accepted, and which are skipped because they close a cycle?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+Their objective functions differ.
+Steps executed: 0
+Set the control to $0$. Compare the current step with the complete reference result.
+At this setting: accepted edges $0$; current cost $0$.
+Steps executed: 4
+Set the control to $4$. Compare the current step with the complete reference result.
+At this setting: accepted edges $4$; current cost $8$.
+Steps executed: 9
+Set the control to $9$. Compare the current step with the complete reference result.
+At this setting: accepted edges $5$; current cost $13$.

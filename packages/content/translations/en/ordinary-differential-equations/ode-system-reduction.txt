@@ -1,0 +1,64 @@
+First-order systems and state variables
+Put lower derivatives into the state
+How does second order become first order?
+Set $x_1=y,x_2=y'$. Then $x_1'=x_2$, and the original equation gives the other derivative.
+What about higher order?
+Use $y,y',\ldots,y^{(n-1)}$. Earlier derivatives equal the next state component; the last uses the original equation.
+A state adds no physical constraint
+This is the same problem rewritten. Initial derivatives become state components, providing a unified form for matrices and phase planes.
+Define the state.
+The first relation follows from the definition.
+The second follows from the motion equation.
+An oscillator system
+Write $y''+4y=0$ as a first-order system.
+Use position and velocity as the two states.
+Acceleration is minus four times position.
+$\mathbf x'=\begin{pmatrix}0&1\\-4&0\end{pmatrix}\mathbf x$.
+A third-order system
+Write $y'''+2y'=t$ as a first-order system.
+Set $x_1=y,x_2=y',x_3=y''$.
+Its last equation is $x_3'=t-2x_2$.
+$x_1'=x_2,x_2'=x_3,x_3'=t-2x_2$.
+How many components does a second-order state usually need?
+Record the function and first derivative.
+Two components.
+$2$.
+In $y''=-y$, find the velocity vector at state $(1,0)$.
+Substitute into both system components.
+$x_1'=0,x_2'=-1$.
+$(0,-1)$.
+Is the phase plane's second coordinate time?
+Read the state definition.
+It is the original function's derivative.
+No; it is velocity.
+Which state corresponds to initial data $y(0)=2,y'(0)=-3$?
+Follow the component order.
+Position first, velocity second.
+$\mathbf x(0)=(2,-3)^T$.
+Rewriting as a system changes the original solutions.
+The state definition gives a one-to-one correspondence.
+A phase-plane curve is the function's time graph.
+Phase-plane axes are state components; time parameterizes the path.
+A higher-order equation becomes a first-order system using the function and lower derivatives as state.
+Recording position and velocity together describes what happens next without second-order notation.
+Construct state variables
+Convert between high-order equations and systems
+First-order systems and state variables
+The highest derivative has been isolated; initial data correspond to $x_1(t_0)=y_0,x_2(t_0)=v_0$.
+What does the state of second-order motion usually contain?
+Two copies of position
+Time and position
+Position and velocity
+Velocity supplies the additional information needed to predict motion.
+A state records the information needed now. The equation gives its rate of change.
+Release from rest
+Initial acceleration points toward negative position.
+Set initial position $x_0$ to $1$, initial velocity $v_0$ to $0$, and observation time $t$ to $1$.
+Push from the origin
+Equal initial positions with different velocities give different trajectories.
+Set initial position $x_0$ to $0$, initial velocity $v_0$ to $1$, and observation time $t$ to $1$.
+Zero state
+The origin stays at equilibrium.
+Set initial position $x_0$ to $0$, initial velocity $v_0$ to $0$, and observation time $t$ to $3$.
+Horizontal is position and vertical velocity. The bright point moves along the phase trajectory with time, using the same oscillator as the time plot.
+Do equal positions but different velocities lead to the same trajectory?

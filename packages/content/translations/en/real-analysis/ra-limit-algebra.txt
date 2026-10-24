@@ -1,0 +1,66 @@
+Limit algebra, order, and squeezing
+Control individual errors before combining them. Reciprocals require denominators bounded away from zero.
+Control individual errors before combining them. Reciprocals require denominators bounded away from zero.
+Sum errors split into budgets; product errors also need a magnitude bound.
+Convergence implies boundedness
+Prove product and quotient limits
+Convergence implies boundedness
+The tail lies within radius one of the limit. Combine its bound with a maximum over the finite prefix to bound the whole sequence.
+Prove product and quotient limits
+Split the product difference into two terms and use boundedness to allocate errors. A nonzero denominator limit eventually bounds denominator magnitude below by half the limit's magnitude.
+Apply squeezing
+If eventual lower and upper bounds approach the same limit, they also bound the middle error. Strict inequalities generally become only non-strict inequalities after taking limits.
+Finite real limits obey the algebraic and squeeze theorems.
+Tail denominators in a quotient are nonzero; remove any finitely many undefined initial terms first.
+The denominator is eventually bounded away from zero.
+Express reciprocal error over a common denominator.
+Use a uniform estimate, then the product theorem.
+Bounded oscillation times a vanishing factor
+Find the limit of $\sin n/n$.
+$|\sin n|\le1$.
+$|\sin n/n|\le1/n\to0$.
+Zero.
+Strict order need not survive
+For $a_n=0,b_n=1/n$, the first is always smaller. Compare their limits.
+The first limit is zero.
+The second also tends to zero.
+The limits coincide; strict inequality need not remain.
+Find the limit of $(2n+1)/(n+3)$.
+Divide numerator and denominator by the index.
+$(2+1/n)/(1+3/n)\to2$.
+Two.
+Can the quotient law be applied directly when the denominator limit is zero?
+The crucial lower bound fails.
+The result may be finite, divergent, or nonexistent.
+No.
+Must every bounded sequence converge?
+Consider alternating positive and negative one.
+It is bounded but not convergent.
+No.
+If $a_n\to a$ and $b_n\to b$, prove $a_nb_n\to ab$.
+Use boundedness of a convergent sequence and split the product error.
+Choose $M\ge1$ bounding all $|a_n|\le M$.
+$|a_nb_n-ab|\le M|b_n-b|+|b||a_n-a|$.
+Choose a common cutoff making each term less than $\varepsilon/2$. When $b=0$, the second term vanishes. The total is less than $\varepsilon$.
+Choose a common cutoff making each term less than $\varepsilon/2$. When $b=0$, the second term vanishes. The total is less than $\varepsilon$.
+What key extra condition does the quotient law need?
+A nonzero denominator limit
+A positive numerator
+Monotonicity of every term
+It keeps tail denominators uniformly away from zero.
+Bounded means convergent
+Tail behavior still needs control.
+Strict inequalities remain strict after limits
+The gap may shrink to zero.
+Why does an oscillating term between positive and negative reciprocals still converge?
+Finite examples illustrate and check particular cases. General results depend on the proofs and hypotheses in the text.
+Product estimates require magnitude bounds as well as small errors. Boundedness alone does not control tail behavior.
+Displayed terms: 2
+Set the term count to $2$. Check that displayed points stay between the bounds and watch the bounds approach each other.
+Last-term magnitude $0.4546487$; analytic upper bound $0.5$.
+Displayed terms: 41
+Set the term count to $41$. Check that displayed points stay between the bounds and watch the bounds approach each other.
+Last-term magnitude $0.003868846$; analytic upper bound $0.02439024$.
+Displayed terms: 80
+Set the term count to $80$. Check that displayed points stay between the bounds and watch the bounds approach each other.
+Last-term magnitude $0.01242361$; analytic upper bound $0.0125$.

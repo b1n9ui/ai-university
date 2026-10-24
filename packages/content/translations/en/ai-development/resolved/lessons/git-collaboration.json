@@ -1,0 +1,206 @@
+{
+  "id": "git-collaboration",
+  "chapterId": "chapter-3",
+  "number": "3.2",
+  "title": "Branches, pushes and pull requests",
+  "subtitle": "Give a change a place and a review process.",
+  "concept": "A branch maintains a line of history, push updates a remote branch, and a PR proposes merging changes into another branch. None automatically means deployment.",
+  "intuition": "Revising your own draft, sending it out and asking an editor to accept it are different steps.",
+  "objectives": [
+    "Check the working tree before creating a branch for one change.",
+    "Explain the trigger, changed behavior and verification in a PR; distinguish commit, push, merge and release."
+  ],
+  "body": [
+    {
+      "title": "One focused branch",
+      "text": "From a clean working tree, git switch -c feature/empty-title creates and switches branches. Commits there do not advance main automatically. Branches are not isolated folders: uncommitted changes may follow a switch or prevent it. Inspect status and preserve work first."
+    },
+    {
+      "title": "A remote is another repository location",
+      "text": "git remote -v shows configured names and URLs. origin is conventional, not a fixed service. git push -u origin feature/empty-title uploads that branch and sets its upstream. You need permission; without it, commonly fork first and open a PR from your fork. Use supported authentication rather than source-code credentials."
+    },
+    {
+      "title": "A PR is a proposal with evidence",
+      "text": "State the original triggering input, old and new behavior, changed files, checks and limits. Reviewers inspect diffs and request changes. PR creation, passing checks and merging are separate states. Website updates depend on build and release configuration; some projects deploy manually."
+    },
+    {
+      "title": "First sharing and later updates",
+      "text": "A repository initialized from a ZIP has no origin. Create your own empty hosted repository and pass its actual URL to git remote add origin. For existing projects, git clone the real URL and follow README. Before updates inspect status and preserve local work. git fetch origin downloads records without merging. With upstream set and a clean tree, git pull --ff-only accepts only fast-forwards. If histories diverge, inspect both and follow project conventions; do not hide divergence with force-push."
+    }
+  ],
+  "formalDefinition": {
+    "text": "A branch maintains a line of history, push updates a remote branch, and a PR proposes merging changes into another branch. None automatically means deployment.",
+    "conditions": [
+      "For small personal learning projects. In shared repositories, follow the team's conventions.",
+      "This method produces checkable evidence; it cannot guarantee arbitrary AI output is correct."
+    ]
+  },
+  "workflow": [
+    "Check the working tree before creating a branch for one change.",
+    "Verify remote and permissions, then push the checked branch.",
+    "Explain the trigger, changed behavior and verification in a PR; distinguish commit, push, merge and release."
+  ],
+  "workedExamples": [
+    {
+      "title": "Share a whitespace fix",
+      "problem": "How do you share a branch in a personal practice repository with origin configured?",
+      "steps": [
+        "Create a branch from a clean state.",
+        "Edit, run relevant checks, review and commit.",
+        "Check the remote, push and create a PR on the hosting service."
+      ],
+      "answer": "Assumptions: clean working tree, matching filenames and an origin you may push to. Create the PR on the hosting service; these commands do not create it or deploy the site.",
+      "code": "git status\ngit switch -c feature/empty-title\n# Edit and verify, then:\ngit add tasks.mjs tasks.test.mjs\ngit diff --staged\ngit commit -m \"Reject whitespace-only plans\"\ngit remote -v\ngit push -u origin feature/empty-title"
+    },
+    {
+      "title": "Write a useful PR description",
+      "problem": "How should the whitespace-title fix be described?",
+      "steps": [
+        "Give the input and old behavior.",
+        "State the new behavior and user outcome.",
+        "List actual checks and remaining gaps."
+      ],
+      "answer": "Submitting three spaces previously added an unreadable empty item. The change trims input, rejects empty titles and shows feedback. Added blank and ordinary-title tests; npm test passed locally and browser feedback was checked. Other browsers remain unchecked."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "claim": "A successful push puts the original project live.",
+      "correction": "Push updates a remote branch; review, merge and publication are further steps."
+    },
+    {
+      "claim": "A PR directly changes someone else's main branch.",
+      "correction": "It proposes a merge; repository maintenance rules determine acceptance."
+    }
+  ],
+  "practice": [
+    {
+      "id": "git-collaboration-p1",
+      "difficulty": 1,
+      "problem": "Can a friend see my local commit?",
+      "hint": "Was it sent to an accessible remote?",
+      "answer": "Usually not until you push to a remote they can access and share its branch or PR link.",
+      "solution": [
+        "Local and remote records are separate.",
+        "Check access permissions on the link."
+      ]
+    },
+    {
+      "id": "git-collaboration-p2",
+      "difficulty": 1,
+      "problem": "Does origin always mean my friend's original repository?",
+      "hint": "It is a configured name.",
+      "answer": "No. git remote -v shows the address; a fork may use origin for your own repository.",
+      "solution": [
+        "Check the target first.",
+        "Do not infer ownership from the name."
+      ]
+    },
+    {
+      "id": "git-collaboration-p3",
+      "difficulty": 2,
+      "problem": "After branching from clean main and committing on feature, does main advance automatically?",
+      "hint": "Branches point to their own tips.",
+      "answer": "No. Advancing main requires an explicit merge or update.",
+      "solution": [
+        "Compare the branch histories.",
+        "Uncommitted working-tree behavior is separate from commits."
+      ]
+    },
+    {
+      "id": "git-collaboration-p4",
+      "difficulty": 2,
+      "problem": "A PR merged but the website did not change. What do you inspect?",
+      "hint": "The project's publication process.",
+      "answer": "Release workflows, build results, deployment targets and commit versions; manual deployment may be required.",
+      "solution": [
+        "Confirm the merged version first.",
+        "Then identify the version actually deployed."
+      ]
+    }
+  ],
+  "learningCheck": {
+    "question": "When can a friend review the change?",
+    "choices": [
+      "Only saved locally",
+      "Pushed with an accessible PR",
+      "When I say it is done"
+    ],
+    "correctIndex": 1,
+    "feedback": [
+      "Local content is not shared.",
+      "Shared commits and diffs can be reviewed.",
+      "A claim supplies no review material."
+    ]
+  },
+  "interactiveVisual": {
+    "kind": "git",
+    "prediction": "Does pushing a feature branch necessarily update the public site?",
+    "steps": [
+      {
+        "question": "A feature branch has a new commit. What happens to main?",
+        "choices": [
+          "It automatically matches",
+          "It keeps its tip until explicitly updated",
+          "It is deleted"
+        ],
+        "correctIndex": 1,
+        "feedback": [
+          "Separate history lines do not automatically advance together.",
+          "The commit belongs to the feature branch.",
+          "A commit does not delete main."
+        ]
+      },
+      {
+        "question": "What does push success mean?",
+        "choices": [
+          "The remote branch was updated",
+          "The PR merged",
+          "The website deployed"
+        ],
+        "correctIndex": 0,
+        "feedback": [
+          "Local commits reached the target remote branch.",
+          "Merge is a separate operation.",
+          "Deployment follows project configuration and procedure."
+        ]
+      },
+      {
+        "question": "Which PR description is useful?",
+        "choices": [
+          "The code is great",
+          "Trigger, new behavior and verification results",
+          "The model name alone"
+        ],
+        "correctIndex": 1,
+        "feedback": [
+          "This does not help assess behavior.",
+          "These details provide reviewable evidence.",
+          "The generation tool does not establish correctness."
+        ]
+      }
+    ],
+    "followUp": "Create a branch, commit and push in the practice lab; compare main, local feature and remote positions."
+  },
+  "prerequisites": [
+    "git-snapshot"
+  ],
+  "difficulty": 2,
+  "misconceptionTags": [
+    "git-collaboration-guess",
+    "git-collaboration-evidence"
+  ],
+  "sources": [
+    "git-branch",
+    "git-push",
+    "github-pr",
+    "git-fetch",
+    "git-pull"
+  ],
+  "provenance": {
+    "author": "AI-generated",
+    "version": "0.1.1",
+    "status": "first-edition",
+    "humanReviewed": false
+  }
+}

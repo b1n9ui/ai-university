@@ -1,0 +1,64 @@
+Directional derivatives and gradients
+Find the steepest ascent direction
+For a differentiable function, the gradient encodes every directional first-order rate in one vector.
+The gradient points steepest uphill. Perpendicular directions have zero first-order height change and lie tangent to contours.
+Compute directional rates and steepest directions
+Find level-surface tangent planes from gradients
+Why normalize the direction?
+Directional derivatives measure change per unit distance. Nonunit vectors mix in travel speed; time-path derivatives instead use the actual velocity.
+How steep is the steepest ascent?
+A dot product is at most the product of lengths. A unit direction aligned with the gradient gives its length; the opposite gives its negative.
+Why normal to a level surface?
+A tangent movement preserves function value, so its dot product with the gradient vanishes. A zero gradient cannot specify a unique normal.
+Find the steepest ascent direction
+The dot-product formula requires differentiability. Unit directions give change per unit distance. A regular level-surface normal requires nonzero gradient.
+Apply the chain rule along a straight path.
+Its velocity is the unit direction.
+Bound the dot product to find steepest ascent.
+A specified direction
+For $f=x^2+2y^2$ at $(1,1)$, find the derivative along $\langle3,4\rangle$.
+The gradient is $\langle2,4\rangle$; normalize the direction to $\langle3/5,4/5\rangle$.
+Their dot product is $6/5+16/5=22/5$.
+$\frac{22}5$.
+A level-surface normal
+Find the tangent plane of $x^2+y^2+z^2=9$ at $(1,2,2)$.
+The normal is gradient $\langle2,4,4\rangle$.
+The point-normal form simplifies to $x+2y+2z=9$.
+$x+2y+2z=9$.
+Directions need no normalization.
+Change per unit distance requires a unit vector.
+Zero gradient means no higher-order change.
+First-order rates vanish, but second- or higher-order change may remain.
+Find the maximum directional derivative of $f=3x+4y$.
+Take the gradient's length.
+Gradient $(3,4)$ has length 5.
+For $f=x^2+y^2$ at $(1,0)$, find the derivative in the positive second-axis direction.
+Take a gradient dot product.
+Gradient $(2,0)$ dotted with $(0,1)$ is zero.
+A contour-tangent directional derivative vanishes. Is the function constant along that whole straight line?
+Is first-order information a global statement?
+Only the first-order rate at that point is zero.
+On a bowl at $(1,0)$, a straight move along the second direction still increases height quadratically.
+Not guaranteed.
+Does the zero origin gradient of $f=x^2-y^2$ prove a minimum?
+Compare axes.
+Values on the first axis are nonnegative; on the second, nonpositive.
+Nearby values lie both above and below, making a saddle.
+No minimum.
+A unit direction is perpendicular to the gradient. What is its directional derivative?
+The gradient length
+Zero
+Undefined
+The dot product is zero, but second-order changes may remain.
+At $(1,0,1)$, the bowl's gradient points along the positive first axis. Rotate a unit direction and compare slopes.
+What angle separates steepest ascent from zero first-order change?
+Project the gradient onto a unit direction to obtain that direction's first-order rate.
+Aligned
+Set angle to gradient $\theta$ to $0$.
+Alignment gives the maximum directional derivative.
+Perpendicular
+Set angle to gradient $\theta$ to $\frac\pi2$.
+The directional derivative vanishes; only the first-order rate is zero.
+Opposing
+Set angle to gradient $\theta$ to $\pi$.
+The derivative is negative, giving steepest descent.

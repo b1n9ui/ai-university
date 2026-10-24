@@ -1,0 +1,64 @@
+Continuous dependence and error growth
+How far do nearby starting points separate?
+How do differences accumulate?
+Two solutions with different initial data differ through both their starting error and later differences in rates.
+What does the exponential bound say?
+With state Lipschitz constant $L$ on a common region, forward error is at most initial error times $e^{L(t-t_0)}$. This is an upper bound, not necessarily the exact error.
+Decay gives a sharper result
+For $y'=-ky$, actual error decays by $e^{-k(t-t_0)}$. A coarse bound using a positive Lipschitz constant misses this stability.
+Write the integral difference.
+Apply Gronwall's inequality.
+A linear model gives the exact error directly.
+Error growth
+In $y'=2y$, initial values differ by $0.01$. What is the difference after one time unit?
+The difference solves the same linear equation.
+The exact factor is $e^2$.
+$0.01e^2$.
+Error decay
+Two solutions of $y'=-3y$ have initial difference $2$.
+Subtract to obtain $d'=-3d$.
+Multiply the initial difference by the decaying exponential.
+The signed difference is $2e^{-3t}$.
+By what factor does the initial error in $y'=y$ grow at $t=2$?
+Use the exact exponential.
+The factor is $e^{1\times2}$.
+$e^2$.
+Does uniqueness guarantee low sensitivity to long-term initial errors?
+Consider a positive exponential model.
+Differences between unique solutions can still grow exponentially.
+Not necessarily.
+Does the error bound equal actual error?
+A bound may have slack.
+The inequality limits the largest possible value.
+Not necessarily.
+What does continuous dependence give for zero initial difference?
+Substitute zero error.
+The upper bound is zero, so the solutions coincide.
+They agree on their common interval.
+Continuous dependence guarantees accuracy for arbitrarily long times.
+Exponential amplification can destroy long-term prediction accuracy.
+A growing coarse bound proves instability.
+The bound may not be sharp; analyze actual differences.
+Under Lipschitz hypotheses on a common existence interval, an exponential upper bound controls initial-data error.
+Unique does not mean errors cannot grow. Their growth rate limits useful prediction time.
+Apply continuous-dependence estimates
+Distinguish absolute error and stability
+Continuous dependence and error growth
+Both solutions solve the same equation in a common region and existence interval with uniform state Lipschitz constant $L$. Backward estimates use the absolute time difference.
+What must hold before applying continuous dependence?
+A common existence interval and a region with uniform hypotheses
+Elementary formulas for both solutions
+Both plots fitting on one screen
+Explicit formulas are unnecessary, but the theorem's hypotheses are essential.
+Errors evolve too. Their equation determines how long a prediction remains reliable.
+Error growth
+A positive rate amplifies the difference exponentially.
+Set growth rate $k$ to $1$, initial difference $\varepsilon$ to $0.1$, and observation time $t$ to $2$.
+Error decay
+A negative rate decreases the difference.
+Set growth rate $k$ to $-1$, initial difference $\varepsilon$ to $0.1$, and observation time $t$ to $2$.
+Neutral
+Zero growth keeps the original difference.
+Set growth rate $k$ to $0$, initial difference $\varepsilon$ to $0.1$, and observation time $t$ to $2$.
+Compare exact solutions starting at one and one plus the error. Readouts show actual error, not a coarse bound.
+How do positive and negative growth rates affect initial errors differently?

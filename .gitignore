@@ -36,3 +36,26 @@ apps/web/public/real-analysis.html
 
 apps/web/public/Calculus-I-English.md
 apps/web/public/calculus-1-en.html
+
+dist-en/
+dist-github/
+build/
+apps/web/public/Calculus-II-English.md
+apps/web/public/calculus-2-en.html
+apps/web/public/Calculus-III-English.md
+apps/web/public/calculus-3-en.html
+apps/web/public/Linear-Algebra-English.md
+apps/web/public/linear-algebra-en.html
+apps/web/public/Ordinary-Differential-Equations-English.md
+apps/web/public/ordinary-differential-equations-en.html
+apps/web/public/Probability-Statistics-English.md
+apps/web/public/probability-statistics-en.html
+apps/web/public/Discrete-Mathematics-English.md
+apps/web/public/discrete-math-en.html
+apps/web/public/Real-Analysis-English.md
+apps/web/public/real-analysis-en.html
+apps/web/public/Python-Introduction-English.md
+apps/web/public/python-introduction-en.html
+apps/web/public/AI-Assisted-Development-English.md
+apps/web/public/ai-development-en.html
+packages/content/translations/en/**/__pycache__/

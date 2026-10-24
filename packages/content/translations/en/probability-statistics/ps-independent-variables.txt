@@ -1,0 +1,65 @@
+Independent variables and product distributions
+Independence requires joint probabilities to factor for every pair of value regions.
+Independence requires joint probabilities to factor for every pair of value regions.
+Checking one cell or one pair of means cannot establish independence of entire variables.
+Use the distribution definition
+Check continuous support
+Use the distribution definition
+Independence requires events defined by any measurable value regions to be independent. For discrete variables, check every cell's product relationship.
+Check continuous support
+Variables with a joint density are independent when it factors into their marginal densities. A factorable-looking formula is insufficient unless the support is handled too.
+Expectations of functions
+Independence factors expectations of integrable products. A single matching product expectation does not imply independence.
+Use the corresponding product criterion for discrete masses or densities.
+Use the corresponding product criterion for discrete masses or densities.
+The moments used in integrals and expectations must exist.
+Require the product relationship on every rectangular region.
+Each discrete cell must therefore factor.
+Sum or integrate an integrable product.
+Check all four cells
+A joint table has rows $(0.12,0.18)$ and $(0.28,0.42)$. Are the variables independent?
+The row sums are $0.3,0.7$ and the column sums are $0.4,0.6$.
+Every cell equals its corresponding marginal product.
+Yes, they are independent.
+Support matters
+The density is two on $0<x<y<1$. Are the variables independent?
+A larger given $X$ restricts the possible values of $Y$.
+The joint support is not the full rectangle of marginal supports, so the product relationship fails.
+No.
+Independent Bernoulli variables have success probabilities $0.2,0.5$. Find the probability of two successes.
+Multiply the probabilities.
+$0.1$.
+$0.1$.
+For independent variables with $E[X]=2,E[Y]=3$, find $E[XY]$.
+Factor the product expectation.
+$2(3)=6$.
+$6$.
+Does verifying the upper-left cell alone establish independence of a joint table?
+The requirement covers all values.
+Other cells may violate the product relationship.
+No.
+Do separate deterministic transformations of independent variables remain independent?
+Each transformed event still depends only on its own original variable.
+The new variables' events belong to the original independent information.
+Yes.
+A density formula factors but is defined only on a triangle. Must the variables be independent?
+Yes
+Not necessarily; check the entire support
+Marginals do not exist
+The support is part of the joint distribution.
+A matching product expectation implies independence
+One moment condition cannot replace all distributional conditions.
+Factor the formula without checking support
+Omitting the support changes the integral and joint probabilities.
+Change one marginal. How does the entire product table change?
+Rebuild every cell under independence and compare it with the product of its marginals.
+One moment condition cannot replace all distributional conditions.
+First-row marginal: 0.3
+Set the first-row marginal probability to $0.3$ and compare the diagram and readings.
+At this preset: first-row marginal $0.3$; first-column marginal $0.4$; upper-left probability $0.12$; first-column probability conditional on the first row $0.4$.
+First-row marginal: 0.05
+Set the first-row marginal probability to $0.05$ and compare the diagram and readings.
+At this preset: first-row marginal $0.05$; first-column marginal $0.4$; upper-left probability $0.02$; first-column probability conditional on the first row $0.4$.
+First-row marginal: 0.95
+Set the first-row marginal probability to $0.95$ and compare the diagram and readings.
+At this preset: first-row marginal $0.95$; first-column marginal $0.4$; upper-left probability $0.38$; first-column probability conditional on the first row $0.4$.

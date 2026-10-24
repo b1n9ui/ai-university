@@ -1,0 +1,67 @@
+Observational units and variables
+Decide what object each data row represents before interpreting its features.
+Decide what object each data row represents before interpreting its features.
+Two scores from one student are two measurements, not automatically two independent students.
+Identify the unit behind each row
+Distinguish variable types
+Identify the unit behind each row
+Students, orders, and measurement times are different observational units. Specify the population, time range, and recording rules first.
+Distinguish variable types
+Categorical variables identify groups; numerical variables measure meaningful quantities. Postal codes contain digits, but their arithmetic mean usually has no substantive meaning.
+Check duplicates and missingness
+Duplicates alter weights, and missingness may relate to outcomes. Preserve missing-value markers and handling rules rather than silently entering zero.
+Variable interpretation depends on the observational unit and measurement rules.
+\text{data table}=\{(\text{unit}_i,\text{variable}_{i1},\ldots,\text{variable}_{ip})\}_{i=1}^{n}
+Variable interpretation depends on the observational unit and measurement rules.
+Repeated measurements require attention to within-unit dependence.
+Define the target population.
+Once units are specified, record their variables.
+For repeated units, distinguish the number of objects from the number of records.
+n_{\mathrm{rows}}\ne n_{\mathrm{people}}\quad\text{in general}
+People or records?
+Three students are each measured twice. How many records and people are there?
+Two rows each give $3\times2=6$ rows.
+There are only three distinct study participants; independence also depends on sampling.
+Six records, three students.
+Digits do not always measure quantity
+Does averaging student IDs describe average achievement?
+IDs identify people.
+Scores are the numerical variable relevant to this question.
+No; the ID average has no such interpretation.
+Five households each record seven days of spending. How many rows are there?
+A household and time jointly identify a record.
+$5\times7=35$.
+$35$ rows.
+What type of variable is satisfaction recorded as low, medium, high?
+Check whether the categories have an order.
+They are ordered, but spacing is undefined.
+An ordinal categorical variable.
+May missing wages be entered as zero directly?
+Distinguish unrecorded from genuinely absent income.
+Zero wages are a known value; missing wages are unknown.
+Not without justification.
+What goes wrong if repeated measurements from one person are treated as independent samples?
+Consider shared individual factors.
+Within-person measurements often correlate, potentially understating uncertainty.
+The independence assumption may fail.
+What type of variable is a student ID?
+A numerical measurement
+An object identifier
+Random error
+Numeric format does not determine statistical meaning.
+Every number has a meaningful average
+Interpret the variable first; numerical codes can be mere labels.
+Missing means zero
+Missing means unknown; zero means known to equal zero.
+Does duplicating a person's record increase the number of study participants?
+Compare object and row counts. The illustration does not treat duplicate records as independent samples.
+Interpret the variable first; numerical codes can be mere labels.
+Objects: 4
+Set the object count to $4$ and compare the figure and readouts.
+At these parameters: objects $4$; record rows $8$.
+Objects: 1
+Set the object count to $1$ and compare the figure and readouts.
+At these parameters: objects $1$; record rows $2$.
+Objects: 10
+Set the object count to $10$ and compare the figure and readouts.
+At these parameters: objects $10$; record rows $20$.
