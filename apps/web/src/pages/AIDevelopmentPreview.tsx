@@ -1,3 +1,4 @@
+import {LessonFeedback} from "../components/LessonFeedback";
 import {tr, localizeNode, locale} from "../i18n";
 import { useEffect, useRef, useState } from "react";
 import {
@@ -1069,6 +1070,7 @@ export default function AIDevelopmentPreview({ path }: { path: string }) {
               ) : (
                 <Practice key={path} lesson={lesson} />
               ))}
+              <LessonFeedback book="ai-development" lesson={lesson.id} version={book.version} view={view} />
               <section className="ad-read-record">
                 <button
                   className={

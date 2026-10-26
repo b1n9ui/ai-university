@@ -29,13 +29,13 @@ for(const edition of ['zh','en'])test(`${edition}: complete portable publication
  }
  for(const b of books){
   const html=fs.readFileSync(path.join(dir,'books',b.id,'index.html'),'utf8');
-  for(const l of b.lessons)assert.ok(html.includes('/'+l.id+'"'),`${b.id}: missing lesson ${l.id}`);
+  for(const l of b.lessons)assert.ok(html.includes('href="'+l.id+'/"'),`${b.id}: missing lesson ${l.id}`);
   assert.ok(html.includes('../../'+b.filename));assert.ok(html.includes('../../'+b.printFile));
   assert.ok(!/c-introduction|c-language/.test(html));
  }
  const root=fs.readFileSync(dir+'/index.html','utf8');assert.match(root,/<noscript>[^]*books\/calculus-1/);
  const sitemap=fs.readFileSync(dir+'/sitemap.xml','utf8');assert.doesNotMatch(sitemap,/#/);
- assert.equal([...sitemap.matchAll(/<loc>/g)].length,edition==='zh'?26:13);
+ assert.equal([...sitemap.matchAll(/<loc>/g)].length,edition==='zh'?794:397);
 });
 test('publication metadata escapes source strings and uses actual PNG dimensions',()=>{
  const html=publicationHead('en','<script> & "title"','A < B');

@@ -23,3 +23,6 @@
  .library-exhibition .subject-heading>span{margin-top:8px;font-size:12px}
  .library-exhibition .subject-tabs>a{padding:10px 12px;gap:10px;font-size:13px}
 }
+.lesson-feedback{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:24px 28px;margin:36px 0;border:1px solid #b6ccc0;border-left:3px solid #4a8d79;border-radius:12px;background:#edf4ed;color:#234639}
+.lesson-feedback strong{font-size:16px}.lesson-feedback p{font-size:13px;line-height:1.65;margin:8px 0 0;max-width:580px;color:#526c60}.lesson-feedback-actions{display:flex;gap:12px;flex-direction:column;flex-shrink:0}.lesson-feedback-actions a{font-size:13px;text-decoration:underline;text-underline-offset:4px}.lesson-feedback-actions a:focus-visible{outline:3px solid #458878;outline-offset:4px}
+@media(max-width:700px){.lesson-feedback{align-items:flex-start;flex-direction:column;padding:20px;gap:16px}.lesson-feedback-actions{flex-direction:row;flex-wrap:wrap;gap:20px}}

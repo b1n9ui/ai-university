@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {spawnSync} from 'node:child_process';
+import {writeDiscoverySites} from './build-discovery.mjs';
 import {writePublicationSites} from './build-publication.mjs';
 import {root} from './content-utils.mjs';
 import {englishRegistry} from './build-english-content.mjs';
@@ -18,6 +19,7 @@ for(const edition of ['zh','en']){
  if(result.status!==0)process.exit(result.status||1);
 }
 writePublicationSites();
+writeDiscoverySites();
 const pages=path.join(root,'dist-github');
 fs.rmSync(pages,{recursive:true,force:true});fs.cpSync(path.join(root,'dist'),pages,{recursive:true});
 fs.cpSync(path.join(root,'dist-en'),path.join(pages,'en'),{recursive:true});
