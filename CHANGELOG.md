@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.20.0 · Public project introduction and sharing
+
+- Add English and Chinese static book summaries with complete contents, first-lesson links, and language-matched downloads; add project/share pages and real product screenshots.
+- Add canonical/language/social metadata, structured book information, and sitemaps for stable publication URLs.
+- Keep homepage actions visible and compact the library introduction.
+- Improve the open-source README, citation metadata, English correction template, and factual bilingual launch kit with channel-specific posting constraints.
+- Textbook content versions are unchanged. Ten books are published; the C contribution remains pending.
+
+
 ## v0.19.0 · 2026-10-24
 
 - 中英文拆分为独立静态站点；中文站保留十本原版教材，英文站提供全部十本完整教材。

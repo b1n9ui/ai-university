@@ -4,6 +4,12 @@
 
 中文与英文分别部署为独立静态站点，各包含十本完整教材。[中文站](https://b1n9ui.github.io/ai-university/) · [English site](https://b1n9ui.github.io/ai-university/en/)。页头链接可打开另一站的对应小节，不在同一站内切换语言；正文、图示提示、练习与下载使用所在站的语言。独立域名之间不自动同步本地学习记录。
 
+![AI University 中文阅读站](apps/web/public/launch/preview-zh.png)
+
+**直接试试：** [拖动极限图示](https://b1n9ui.github.io/ai-university/#/lesson/limit-intuition?view=visual) · [转动三维向量](https://b1n9ui.github.io/ai-university/#/lesson/c3-vectors?view=visual) · [逐步查看 Python 变量](https://b1n9ui.github.io/ai-university/#/book/python-introduction/names-types/experiment)
+
+[教材简介与完整目录](https://b1n9ui.github.io/ai-university/books/) · [项目介绍与截图](https://b1n9ui.github.io/ai-university/press/) · [发布资料](docs/launch/README.md)
+
 外部贡献先隔离、复核，再收录；正式版本由受保护的主分支发布。流程与验证边界见 [贡献保护](docs/CONTRIBUTION_SECURITY.md)。
 
 **AI 编写的开放教科书，一本一本完整完成。** 首页与书库面向微积分、线性代数、微分方程、概率统计、离散数学、实分析等方向。目前已出版 **Calculus I / 微积分 I**、**Calculus II / 微积分 II**、**Calculus III / 微积分 III**、**Linear Algebra / 线性代数**、**Ordinary Differential Equations / 常微分方程**，以及 **Probability & Statistics / 概率与统计**、**Discrete Mathematics / 离散数学**、**Real Analysis / 实分析**，分别为 35、35、40、50、55、50、40、40 节完整正文，均包含条件、推导、可操作图示、例题与完整练习解答。
@@ -22,8 +28,6 @@
 网站是 React + TypeScript + SVG + KaTeX 的纯静态应用。没有聊天室、模型 API、账户、服务端或付费依赖。AI 用于离线编写与修订教材，读者得到可审查、可下载的固定版本。
 
 [在线阅读](https://b1n9ui.github.io/ai-university/) · [微积分 I](https://b1n9ui.github.io/ai-university/#/book/calculus-1) · [微积分 II](https://b1n9ui.github.io/ai-university/#/book/calculus-2) · [微积分 III](https://b1n9ui.github.io/ai-university/#/book/calculus-3) · [线性代数](https://b1n9ui.github.io/ai-university/#/book/linear-algebra) · [常微分方程](https://b1n9ui.github.io/ai-university/#/book/ordinary-differential-equations) · [开源发布](https://github.com/b1n9ui/ai-university/releases)
-
-![新版网站首页](docs/images/series/home.jpg)
 
 当前检查记录：[数学八卷交叉检查](docs/MATHEMATICS_AUDIT_2026-10-22.md)。
 
@@ -105,7 +109,7 @@ npm run preview   # 查看构建后的静态版本
 
 ## 阅读与下载
 
-- 网站 v0.19.0：数学系列首页、按方向和出版状态筛选的书库、教材主页、数学八卷共 71 个章节主页、345 个知识点页面、实验室、分页练习中心、全文搜索、公式/术语/附录索引、阅读指南、下载、项目与贡献资料。
+- 网站 v0.20.0：数学系列首页、按方向和出版状态筛选的书库、教材主页、数学八卷共 71 个章节主页、345 个知识点页面、实验室、分页练习中心、全文搜索、公式/术语/附录索引、阅读指南、下载、项目与贡献资料。
 - 阅读页：专注模式、嵌入演示、页内定位、上下节翻页、收藏、较大字号与已读标记。练习支持逐题/连续查看、提示、完整解答与数值检查。
 - [微积分 I 书稿](book/Calculus-I.md)与[微积分 II 书稿](book/Calculus-II.md)、[微积分 III 书稿](book/Calculus-III.md)与[线性代数书稿](book/Linear-Algebra.md)、[常微分方程书稿](book/Ordinary-Differential-Equations.md)：版本化源产物，包含所有解答。
 - `dist/book.html` 与 `dist/calculus-2.html` 与 `dist/calculus-3.html` 与 `dist/linear-algebra.html`：数学八卷各自的完整阅读页（另含 `dist/ordinary-differential-equations.html` 、`dist/probability-statistics.html` 、`dist/discrete-math.html` 与 `dist/real-analysis.html`），公式预先排版，支持浏览器打印为 PDF。
@@ -129,7 +133,7 @@ docs/                      架构、内容规范、生成检查流程、部署�
 
 ## 质量与版本
 
-网站版本 **v0.19.0**；微积分 I 内容为 **v0.3.3**，微积分 II、III 为 **v0.1.2**，其余数学卷均为 **v0.1.1**。尚未逐节人工审校。结构校验、公式渲染、先修图与选定数值验证可以发现部分错误，但不等同于逐式形式化证明。欢迎用具体反例、章节位置和可复算步骤提交勘误。
+网站版本 **v0.20.0**；微积分 I 内容为 **v0.3.3**，微积分 II、III 为 **v0.1.2**，其余数学卷均为 **v0.1.1**。尚未逐节人工审校。结构校验、公式渲染、先修图与选定数值验证可以发现部分错误，但不等同于逐式形式化证明。欢迎用具体反例、章节位置和可复算步骤提交勘误。
 
 `npm run check` 检查所有章节结构、章节链接、公式语法、先修有向无环图、视觉函数配置与数学模型。浏览器验证记录见 [QA](docs/QA.md)。
 

@@ -1,0 +1,25 @@
+/* Keep first actions visible; preserve the established typography and materials. */
+@media(min-width:1001px){
+ html:lang(en) .stage-title{padding-top:clamp(52px,8vh,105px)}
+ html:lang(en) .stage-title h1{font-size:clamp(58px,6.05vw,98px);max-width:640px;line-height:1.06}
+ html:lang(en) .stage-actions{margin-top:26px}
+}
+.library-exhibition .page-heading{min-height:0;padding:26px 34px;margin-top:28px;margin-bottom:18px}
+.library-exhibition .page-heading h1{font-size:clamp(32px,3.5vw,46px);margin:13px 0 12px}
+.library-exhibition .page-heading p{margin-bottom:0;line-height:1.6}
+.library-exhibition .library-edition strong{font-size:58px;line-height:1}
+.library-exhibition .subject-tabs{margin:8px 0 12px;padding-bottom:14px}
+.library-exhibition .series-library-filter{margin:0 0 18px;padding:12px 0}
+.library-exhibition .subject-heading{margin:12px 0 16px;padding-top:0;padding-bottom:12px}
+.library-exhibition .subject-heading h2{font-size:26px;margin:4px 0}
+.library-exhibition .subject-heading p{margin:0;font-size:14px}
+.library-exhibition .library-subject .edition-shelf{margin-top:16px}
+@media(max-width:700px){
+ .library-exhibition .page-heading{padding:23px 22px;margin-top:20px}
+ .library-exhibition .page-heading h1{font-size:32px;margin-top:12px}
+ .library-exhibition .library-edition{margin-top:20px}
+ .library-exhibition .library-edition strong{font-size:44px}
+ .library-exhibition .subject-heading{margin:12px 0 14px}
+ .library-exhibition .subject-heading>span{margin-top:8px;font-size:12px}
+ .library-exhibition .subject-tabs>a{padding:10px 12px;gap:10px;font-size:13px}
+}

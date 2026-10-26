@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "Cite a fixed release of the project; cite the specific book and lesson when discussing its content."
+title: "AI University: AI-authored open textbooks"
+type: software
+authors:
+  - name: "AI University contributors"
+version: 0.20.0
+date-released: 2026-10-25
+url: "https://b1n9ui.github.io/ai-university/en/"
+repository-code: "https://github.com/b1n9ui/ai-university"
+license: MIT
+abstract: "Ten complete AI-authored textbooks with separate English and Chinese static websites. Original textbook text is CC0; website code is MIT. Not individually human-reviewed."
