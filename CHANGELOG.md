@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.21.1 — 2026-10-26
+
+- Add project-scoped IndexNow ownership and meaningful-content manifests for all 794 public HTML pages.
+- Notify participating search engines after successful Pages deployment; submit only additions, changes and removals, verify live output, and retain truthful receipts.
+- Preserve the Google-issued HTML verification file for Search Console; document ownership, submission and indexing as distinct states.
+
 ## v0.21.0 · Readable lesson editions and owner-led improvements
 
 - Export all 766 English/Chinese lessons as complete static HTML and Markdown, with citation/version metadata, content fingerprints, learning indexes, llms.txt navigation, and 794 sitemap URLs.

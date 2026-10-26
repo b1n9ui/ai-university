@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {spawnSync} from 'node:child_process';
+import {writeSearchManifests} from './build-search-manifest.mjs';
 import {writeDiscoverySites} from './build-discovery.mjs';
 import {writePublicationSites} from './build-publication.mjs';
 import {root} from './content-utils.mjs';
@@ -20,6 +21,7 @@ for(const edition of ['zh','en']){
 }
 writePublicationSites();
 writeDiscoverySites();
+writeSearchManifests();
 const pages=path.join(root,'dist-github');
 fs.rmSync(pages,{recursive:true,force:true});fs.cpSync(path.join(root,'dist'),pages,{recursive:true});
 fs.cpSync(path.join(root,'dist-en'),path.join(pages,'en'),{recursive:true});
