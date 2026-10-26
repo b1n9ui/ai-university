@@ -7,6 +7,7 @@ Ten complete AI-authored textbooks, published separately in English and Chinese.
 - [Book summaries and complete contents](https://b1n9ui.github.io/ai-university/en/books/)
 - [Own-channel announcements](OWN-CHANNEL-ANNOUNCEMENTS.md)
 - [Community channel research and human-author facts](CHANNELS.md)
+- [Current outreach status](OUTREACH_LOG.md) · [Product Hunt fields](PRODUCT-HUNT.md)
 - [First-visit audit and release checks](READINESS.md)
 
 ## What to show
