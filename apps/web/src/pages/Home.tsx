@@ -130,11 +130,11 @@ export function Home() {
           <h1>{tr("看见知识。")}<br />
             <span>{tr("理解本质。")}</span>
           </h1>
-          <p>{tr("AI 编写的开放教科书。")}<br />{tr("从数学到编程，讲解、互动与解答一应俱全。")}</p>
+          <p>{tr("AI 编写的开放教科书。")}<br />{localizeNode(publishedVolumes.length)}{tr("本完整教材 · 中英文 · 免费阅读")}</p>
           <div className="stage-actions">
             <Link to="library" className="stage-primary">{tr("进入教科书库")}<ArrowUpRight size={21} />
             </Link>
-            <Link to="lab" className="stage-secondary">{tr("查看交互图示")}<ArrowRight size={18} />
+            <Link to="lesson/limit-intuition" params={{view:"visual"}} className="stage-secondary">{tr("试试交互演示")}<ArrowRight size={18} />
             </Link>
           </div>
         </div>

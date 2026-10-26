@@ -6,6 +6,12 @@ English · [简体中文](README.zh-CN.md)
 
 [English site](https://b1n9ui.github.io/ai-university/en/) · [中文站](https://b1n9ui.github.io/ai-university/) · [Releases](https://github.com/b1n9ui/ai-university/releases)
 
+![AI University — English reading website](apps/web/public/launch/preview-en.png)
+
+**Try it:** [Move toward a limit](https://b1n9ui.github.io/ai-university/en/#/lesson/limit-intuition?view=visual) · [Explore vectors in 3D](https://b1n9ui.github.io/ai-university/en/#/lesson/c3-vectors?view=visual) · [Step through Python](https://b1n9ui.github.io/ai-university/en/#/book/python-introduction/names-types/experiment)
+
+[Book summaries & complete contents](https://b1n9ui.github.io/ai-university/en/books/) · [Project information & screenshots](https://b1n9ui.github.io/ai-university/en/press/) · [Launch materials](docs/launch/README.md)
+
 ## Available editions
 
 English and Chinese are independent static sites, each with all ten complete books. A header link opens the other site at the matching lesson. Language is fixed at build time: old preferences or `?lang=` parameters cannot change a site’s edition. Local records belong to their browser origin; separate native hosts do not synchronize them.
@@ -74,6 +80,6 @@ Contributions go through pull requests and protected-branch checks. An external 
 
 ## Version and licenses
 
-Website **v0.19.0**. English edition 1 of each book aligns with the canonical source version recorded in its manifest. Source checksums detect when translation review is needed; formulas, IDs, numeric answer keys, prerequisites, and diagram presets remain aligned.
+Website **v0.20.0**. English edition 1 of each book aligns with the canonical source version recorded in its manifest. Source checksums detect when translation review is needed; formulas, IDs, numeric answer keys, prerequisites, and diagram presets remain aligned.
 
 Website code is [MIT](LICENSE). Original textbook content is [CC0](LICENSE-CONTENT.md). Third-party libraries retain their own licenses; see [third-party notices](THIRD_PARTY_NOTICES.md).

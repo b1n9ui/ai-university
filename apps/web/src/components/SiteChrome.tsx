@@ -39,6 +39,8 @@ export function Footer() {
         <div>
           <strong>{tr("开放计划")}</strong>
           <Link to="about">{tr("关于项目")}</Link>
+          <a href="./press/">{tr("项目介绍与分享")}</a>
+          <a href="./books/">{tr("教材简介与目录")}</a>
           <Link to="about/contribute">{tr("参与贡献")}</Link>
           <Link to="about/versions">{tr("版本与勘误")}</Link>
           <a href={REPO} target="_blank" rel="noreferrer">
