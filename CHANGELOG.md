@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.21.0 · Readable lesson editions and owner-led improvements
+
+- Export all 766 English/Chinese lessons as complete static HTML and Markdown, with citation/version metadata, content fingerprints, learning indexes, llms.txt navigation, and 794 sitemap URLs.
+- Add contextual feedback in math and programming lessons, a voluntary GitHub draft form, new-textbook submissions, and owner-controlled review queues.
+- Collect public feedback in a read-only trusted-branch workflow; prepare grouped evidence packets without automatic content admission or deployment.
+- Preserve static reading, local learning records, existing textbook content versions, and the owner's final editorial control.
+
+
 ## v0.20.0 · Public project introduction and sharing
 
 - Add English and Chinese static book summaries with complete contents, first-lesson links, and language-matched downloads; add project/share pages and real product screenshots.

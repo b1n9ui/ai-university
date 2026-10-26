@@ -1,3 +1,4 @@
+import {LessonFeedback} from "../components/LessonFeedback";
 import {tr, localizeNode, locale} from "../i18n";
 import {useCurriculum} from "../lib/curriculum";
 import {
@@ -415,6 +416,7 @@ export function LessonPage({ lesson: l }: { lesson: Lesson }) {
           </Link>
         ))}
       </nav>
+      <LessonFeedback book={book.id} lesson={l.id} version={book.version} view={view} />
       <p className="content-provenance">{tr("固定版本教材 · AI 编写 · 本节难度")}{localizeNode(l.difficulty)}/6 ·{localizeNode(" ")}
         <Link to="about/versions">{tr("版本与勘误")}</Link>
       </p>

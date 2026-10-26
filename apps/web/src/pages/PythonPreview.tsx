@@ -1,3 +1,4 @@
+import {LessonFeedback} from "../components/LessonFeedback";
 import {tr, localizeNode, locale} from "../i18n";
 import { useEffect, useRef, useState } from "react";
 import {
@@ -1055,6 +1056,7 @@ export default function PythonPreview({ path }: { path: string }) {
               <article className="py-article" key={`${lesson.id}/${tab}`}>
                 <LessonContent lesson={lesson} tab={tab} />
               </article>
+              <LessonFeedback book="python-introduction" lesson={lesson.id} version={book.version} view={tab} />
               <div className="py-next">
                 <div>
                   {localizeNode(currentIndex > 0 && (

@@ -61,3 +61,5 @@ apps/web/public/ai-development-en.html
 packages/content/translations/en/**/__pycache__/
 
 out/
+
+work/
