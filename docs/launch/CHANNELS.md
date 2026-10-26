@@ -1,6 +1,6 @@
 # Community channel research · checked 2026-10-25
 
-The project's own GitHub and website are the first publication channels. The following research does not authorize posting through an unselected account. Recheck rules at submission time; no community post has been made as part of this release.
+The project's own GitHub and website are the first publication channels. The following research does not authorize posting through an unselected account. Recheck rules at submission time; current submissions and account constraints are recorded in [the outreach log](OUTREACH_LOG.md).
 
 | Channel | Current finding | Suitable next step |
 |---|---|---|
@@ -26,3 +26,14 @@ Current complete r/SideProject and r/learnmath rules could not be verified from 
 - Exclusion: pending C contribution is not a published book.
 
 A human author should add only their own true experience, motivation, decisions, and observations. Do not fabricate a personal development story or testimonials.
+
+## Additional channels checked 2026-10-25
+
+| Channel | Finding | Action |
+|---|---|---|
+| GitHub project discussions | The project owner can publish a factual announcement and invite specific feedback. | [Bilingual first-launch announcement published](https://github.com/b1n9ui/ai-university/discussions/30). |
+| Awesome AI for Education | [Contribution instructions](https://github.com/KaynXu/awesome-ai-education/blob/main/CONTRIBUTING.md) explicitly permit disclosed self-submissions. [Criteria](https://github.com/KaynXu/awesome-ai-education/blob/main/docs/criteria.md) provide a Watchlist for early resources without independent outcome evidence. | [Suggestion #17 submitted](https://github.com/KaynXu/awesome-ai-education/issues/17), pending human editorial review. No inclusion or endorsement claimed. |
+| Awesome Math | [Contribution instructions](https://github.com/rossant/awesome-math/blob/master/CONTRIBUTING.md) require nomination first and usually decline new projects with little evidence of quality/use. | Do not send a duplicate low-evidence nomination merely to increase exposure. Revisit with substantial independent feedback. |
+| DEV | [AI guidelines](https://dev.to/guidelines-for-ai-assisted-articles-on-dev/) allow disclosed AI writing but explicitly prohibit it from promoting a business, program, or course. [Terms](https://dev.to/terms) also exclude primarily promotional/backlink content. | Excluded from this AI-written promotional campaign. A genuinely human-authored technical contribution is a separate possibility, not a workaround. |
+| Product Hunt | [Official posting guide](https://help.producthunt.com/en/articles/479557-how-to-post-a-product) requires a real personal maker account and onboarding; company accounts cannot post products. [Launch guide](https://help.producthunt.com/en/articles/17350772-launch-guide) gives 60-character tagline / 260-character description limits and prohibits asking for votes. | [Prepared fields](PRODUCT-HUNT.md), not submitted. No fake person or unauthorized personal account. |
+| Bilibili | [AI-label notice](https://www.bilibili.com/opus/1106496554576904197) requires appropriate declarations. The actual new-account screen requires a phone/SMS code and indicates agreement to terms on completion. | Project account registration postponed at the user's request. Their personal Bilibili account is excluded. |
