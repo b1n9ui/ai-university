@@ -1,4 +1,4 @@
-# Outreach status · 2026-10-25
+# Outreach status · updated 2026-10-26
 
 This log records actual outcomes. A prepared draft is not a published post, and a nomination is not acceptance. No reach, engagement, or learning-impact result is claimed.
 
@@ -7,6 +7,8 @@ This log records actual outcomes. A prepared draft is not a published post, and 
 | Public websites, metadata, real screenshots, whole-book downloads | Published in v0.20.0 | [English](https://b1n9ui.github.io/ai-university/en/), [Chinese](https://b1n9ui.github.io/ai-university/), [release](https://github.com/b1n9ui/ai-university/releases/tag/v0.20.0) |
 | GitHub bilingual first-launch announcement and reader feedback entrance | Published | [Discussion #30](https://github.com/b1n9ui/ai-university/discussions/30) |
 | Awesome AI for Education | Submitted for Watchlist review | [Project suggestion #17](https://github.com/KaynXu/awesome-ai-education/issues/17); affiliation, AI involvement, and evidence limits disclosed. Await maintainer decision. |
+| IndexNow active search notification | Received, HTTP 200 | 794 URLs acknowledged after project ownership validation; [workflow and receipt artifact](https://github.com/b1n9ui/ai-university/actions/runs/40297373514). Receipt is not indexing. |
+| Google Search Console | Ownership verified; sitemap submitted | Public URL-prefix property covers both languages. Initial sitemap processing reports unable to fetch; live homepage test confirms eligibility. [Detailed status](../SEARCH_SUBMISSION_LOG.md). |
 | Bilibili project account | Registration postponed by the user | Independent logged-out registration page reached; phone/SMS and terms confirmation required. No project account created or post published. |
 | Product Hunt | Submission fields prepared | Real maker account and completed onboarding required; no submission made. See [prepared fields](PRODUCT-HUNT.md). |
 | DEV | Excluded from AI-written promotion | Full AI guidelines prohibit promoting a program/course with AI-generated writing; no post made. |
