@@ -22,8 +22,16 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.14"
+      - name: Capture published content before deployment
+        run: node scripts/search-indexing.mjs capture --output work/indexing-before.json
       - run: npm ci
       - run: npm run check
+      - name: Plan meaningful search updates
+        run: node scripts/search-indexing.mjs plan --before work/indexing-before.json --after dist-github/discovery-manifest.json --output work/indexing-plan.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: search-indexing-plan
+          path: work/indexing-*.json
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
@@ -43,3 +51,29 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
+
+  notify-search:
+    needs: [build, deploy]
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - uses: actions/download-artifact@v4
+        with:
+          name: search-indexing-plan
+          path: work/
+      - name: Notify IndexNow after successful publication
+        run: node scripts/search-indexing.mjs submit --plan work/indexing-plan.json --output work/indexing-result.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: search-indexing-receipt
+          path: work/indexing-*.json
