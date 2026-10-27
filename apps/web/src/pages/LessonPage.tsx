@@ -57,6 +57,7 @@ export function LessonPage({ lesson: l }: { lesson: Lesson }) {
   const [active, setActive] = useState("idea");
   const [scrollProgress, setScrollProgress] = useState(0);
   const [focused, setFocused] = useState(false);
+  const [experimentRequest,setExperimentRequest]=useState<{step:number;revision:number}>();
   const saved = reading.saved.includes(l.id),
     read = reading.read.includes(l.id);
   useEffect(() => {
@@ -198,7 +199,7 @@ export function LessonPage({ lesson: l }: { lesson: Lesson }) {
                 </p>
               </section>
               <TeachingExplanation key={`explain-${l.id}`} lesson={l}/>
-              <LearningCheck key={`check-${l.id}`} check={l.learningCheck} hint={l.teaching.explain} onExplore={()=>jump("visual")} />
+              <LearningCheck key={`check-${l.id}`} check={l.learningCheck} hint={l.teaching.explain} onExplore={step=>{if(step!==undefined)setExperimentRequest(r=>({step,revision:(r?.revision??0)+1}));jump("visual");}} />
               <section id="section-visual" className="embedded-visual">
                 <div className="visual-section-heading">
                   <span>
@@ -206,7 +207,7 @@ export function LessonPage({ lesson: l }: { lesson: Lesson }) {
                   <Link to={lessonPath(l.id)} params={{ view: "visual" }}>{tr("专注演示")}<ArrowUpRight size={15} />
                   </Link>
                 </div>
-                <Visual lesson={l} compact />
+                <Visual lesson={l} compact request={experimentRequest}/>
               </section>
               <section id="section-explain">
                 <SectionTitle num="02" title={tr("你可能会问")} />
@@ -316,7 +317,7 @@ export function LessonPage({ lesson: l }: { lesson: Lesson }) {
               </Link>
             </div>
           ) : view === "practice" ? (
-            <Practice lesson={l} progress={progress} onMark={mark} />
+            <Practice lesson={l} progress={progress} onMark={mark} focusQuestionId={route.params.get('question')} />
           ) : view === "connections" ? (
             <Connections lesson={l} />
           ) : (

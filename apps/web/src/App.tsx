@@ -26,6 +26,7 @@ import {
   type Reading,
 } from "./lib/state";
 import { AboutPage } from "./pages/AboutPage";
+import {TryoutPage} from './pages/TryoutPage';
 import { BookPage, ChapterPage, Library } from "./pages/BookPages";
 import { ExplorePage, ReviewPage } from "./pages/ExplorePage";
 import { Home } from "./pages/Home";
@@ -315,6 +316,8 @@ export default function App() {
             <GuidePage />
           ) : route.path === "downloads" ? (
             <DownloadsPage />
+          ) : route.path === 'about/tryout' ? (
+            <TryoutPage />
           ) : route.path === "about" || route.path.startsWith("about/") ? (
             locale === "en" ? <EnglishAbout /> : <AboutPage />
           ) : (

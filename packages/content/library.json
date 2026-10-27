@@ -85,7 +85,7 @@
         "chapters": 7,
         "lessons": 35,
         "examples": 79,
-        "exercises": 191
+        "exercises": 197
       },
       "coverFormula": "\\frac{d}{dx}\\int_a^x f(t)\\,dt=f(x)",
       "categoryId": "mathematics"

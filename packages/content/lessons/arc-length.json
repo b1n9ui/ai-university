@@ -150,7 +150,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.3.2",
+    "version": "0.3.4",
     "status": "revised",
     "humanReviewed": false
   },
@@ -168,7 +168,21 @@
       "函数高度 $f (x)$"
     ],
     "correctIndex": 1,
-    "explanation": "窄带沿曲线展开，宽度是弧长 $\\mathrm{d}s$。只乘 $\\mathrm{d}x$ 会漏掉倾斜带来的长度；这里只算侧面。"
+    "explanation": "窄带沿曲线展开，宽度是弧长 $\\mathrm{d}s$。只乘 $\\mathrm{d}x$ 会漏掉倾斜带来的长度；这里只算侧面。",
+    "responses": [
+      {
+        "text": "水平宽度漏掉了纵向变化。斜率不为零时，沿曲线的小段比水平投影更长。",
+        "experimentStep": 1
+      },
+      {
+        "text": "窄带沿曲线展开，宽度是弧长 $\\mathrm{d}s$。只乘 $\\mathrm{d}x$ 会漏掉倾斜带来的长度；这里只算侧面。",
+        "experimentStep": null
+      },
+      {
+        "text": "高度给旋转半径，不是窄带沿曲线的宽度。面积要把周长与这段斜长相乘。",
+        "experimentStep": 2
+      }
+    ]
   },
   "teaching": {
     "explain": "长度计算要把横向和纵向变化一起算进去。旋转侧面积再把这段斜长扫成窄带，因此不能只用水平宽度。",
@@ -201,6 +215,11 @@
         },
         "observation": "侧面积要乘旋转周长与斜长；当前模型不加入端盖。"
       }
-    ]
+    ],
+    "reflection": {
+      "question": "旋转侧面积与封闭物体总表面积，差在哪里？",
+      "answer": "旋转曲线只扫出侧面；若题目还要求端盖，需另算并加入，不能由侧面动画自动得到。"
+    },
+    "transferExerciseId": "arc-length-p4"
   }
 }

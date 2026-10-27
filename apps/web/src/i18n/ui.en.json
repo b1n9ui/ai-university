@@ -726,5 +726,20 @@
   "从右侧靠近": "Approach from the right",
   "清除此题记录": "Clear this question record",
   "如 1/3 · 回车检查": "e.g. 1/3 · Enter to check",
-  "小数请保留至少 6 位有效数字，也可输入分数。": "Use at least 6 significant digits, or enter a fraction."
+  "小数请保留至少 6 位有效数字，也可输入分数。": "Use at least 6 significant digits, or enter a fraction.",
+  "看对应演示": "Explore the related case",
+  "查看本节演示": "Explore this lesson’s diagram",
+  "先写下你的判断": "Write your prediction first",
+  "我的预测": "My prediction",
+  "你预计会发生什么？为什么？": "What do you expect to happen, and why?",
+  "只在当前页面暂存，不评分、不上传；离开本节后清空。": "Kept temporarily on this page only. Not graded or uploaded; cleared when you leave the lesson.",
+  "用自己的话解释": "Explain in your own words",
+  "刚才的预测": "Your earlier prediction",
+  "我的解释": "My explanation",
+  "把观察结果和数学条件连起来。": "Connect what you observed with the mathematical conditions.",
+  "对照参考解释": "Compare with the reference explanation",
+  "不会自动判定你的文字是否正确，请逐项核对理由与条件。": "Your text is not graded automatically. Compare the reasoning and conditions yourself.",
+  "换个情境再试": "Try a different setting",
+  "参加一次自主试学": "Try a self-guided study session",
+  "自主试学": "Self-guided study"
 }

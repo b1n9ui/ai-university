@@ -64,3 +64,8 @@ Fill the point
 Fill the target point with output 2.
 Both sides approach 2 and the point value is 2, so the extended function is continuous there. Manually try a different point value to see why continuity fails.
 $6$.
+A common limit is only one condition. The value at the center must also meet that limit.
+Continuity requires a defined $f (a)$, an existing limit, and equality between them. Every condition matters.
+Continuity does not depend on how small the value is. It depends on whether the value equals the limit. Try filling the same hole at two different heights.
+Which value makes the filled function continuous, and why is the filled point alone insufficient?
+The value must equal the common limit. A filled point shows only that the function is defined there, not that nearby values meet it.

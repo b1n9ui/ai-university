@@ -36,12 +36,15 @@ export function renderLesson(book, lesson, edition, allBooks) {
  html += list(lesson.workflow);
  const check=lesson.learningCheck;
  if(check){html+=heading(t.check)+paragraph(check.question)+list(check.choices.map((c,i)=>`${String.fromCharCode(65+i)}. ${c}`));html+=`<details><summary>${t.answer}</summary>`+paragraph(`${String.fromCharCode(65+check.correctIndex)}. ${check.choices[check.correctIndex]}`)+paragraph(check.explanation)+list(check.feedback?.map((s,i)=>`${String.fromCharCode(65+i)}: ${s}`))+'</details>';}
+ if(check?.responses)html+=list(check.responses.map((r,i)=>`${String.fromCharCode(65+i)}: ${r.text}`));
  const interactive=`../../../#/${book.type==='mathematics'?'lesson/'+lesson.id+'?view=visual':'book/'+book.id+'/'+lesson.id+'/experiment'}`;
  html+=heading(t.visual)+paragraph(lesson.interactiveVisual.prediction)+paragraph(lesson.interactiveVisual.caption||lesson.interactiveVisual.followUp);
  md.push(`[${t.open}](${new URL(interactive,new URL(`books/${book.id}/${lesson.id}/`,sites[edition].public_url)).href})\n`);
  html+=`<a class="button" href="${interactive}">${t.open} ↗</a>`;
  if(lesson.interactiveVisual.experiment)html+=snippet(lesson.interactiveVisual.experiment);
  if(lesson.teaching?.steps){html+=heading(t.steps);for(const step of lesson.teaching.steps)html+=heading(step.title,3)+paragraph(step.instruction)+paragraph(`${t.observation}: ${step.observation}`);}
+ if(lesson.teaching?.reflection)html+=heading(edition==='en'?'Explain the observation':'解释观察')+paragraph(lesson.teaching.reflection.question)+`<details><summary>${t.answer}</summary>`+paragraph(lesson.teaching.reflection.answer)+'</details>';
+ if(lesson.teaching?.transferExerciseId){const i=lesson.practice.findIndex(q=>q.id===lesson.teaching.transferExerciseId);html+=paragraph(edition==='en'?`Transfer exercise: question ${i+1} in this lesson.`:`迁移练习：本节第 ${i+1} 题。`);}
  for(const step of lesson.interactiveVisual.steps||[])html+=paragraph(step.question)+list(step.choices)+paragraph(`${t.answer}: ${String.fromCharCode(65+step.correctIndex)}`)+list(step.feedback);
  html+=heading(t.examples);
  for(const [i,example] of lesson.workedExamples.entries())html+=`<article class="example">`+heading(`${i+1}. ${example.title}`,3)+paragraph(example.problem)+list(example.steps)+snippet(example.answer)+(example.code?code(example.code):'')+'</article>';

@@ -70,3 +70,8 @@ $y = 3$, $\frac{\mathrm{d}y}{\mathrm{d}t} = - (\frac{4}{3}) \times 0.5 = \frac{-
 $2$ $\mathrm{cm}^{2}\,\mathrm{s}^{-1}$.
 $A = s^{2}$, $A' = 2 s s' = 2 \times 5 \times 0.2$.
 $\frac14$.
+That expression describes area change per unit radius. A rate per unit time must also account for radius change per unit time.
+Differentiate with respect to time: $\frac{\mathrm{d}A}{\mathrm{d}t} = \frac{2 \pi  r \cdot \mathrm{d}r}{\mathrm{d}t}$. Omitting $\frac{\mathrm{d}r}{\mathrm{d}t}$ ignores how fast the radius changes.
+You do not square the radius's rate. Differentiate the time-dependent square using the chain rule.
+Why does the top of the ladder change speed if the bottom moves at constant speed?
+The constraint links the two positions, but their rate ratio changes with position. Near horizontal, the same bottom displacement produces a larger height change.

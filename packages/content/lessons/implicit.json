@@ -177,7 +177,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.3.2",
+    "version": "0.3.4",
     "status": "revised",
     "humanReviewed": false
   },
@@ -196,7 +196,21 @@
       "${y'}^{2}$"
     ],
     "correctIndex": 1,
-    "explanation": "$y^{2}$ 是外层平方与内层 $y (x)$ 的复合。要乘上内层导数 $y'$。"
+    "explanation": "$y^{2}$ 是外层平方与内层 $y (x)$ 的复合。要乘上内层导数 $y'$。",
+    "responses": [
+      {
+        "text": "这只是对 $y$ 的变化率。原题对 $x$ 求导，还必须计入 $y$ 随 $x$ 的变化。",
+        "experimentStep": 1
+      },
+      {
+        "text": "$y^{2}$ 是外层平方与内层 $y (x)$ 的复合。要乘上内层导数 $y'$。",
+        "experimentStep": null
+      },
+      {
+        "text": "平方的是函数值，不是导数。先把 $y^2$ 看成外层平方与内层函数的复合。",
+        "experimentStep": null
+      }
+    ]
   },
   "teaching": {
     "explain": "不用先把曲线解成一个完整函数。沿着选定分支求导，记住纵坐标也在变；斜率属于曲线上的具体点。",
@@ -231,6 +245,11 @@
         },
         "observation": "高度更小、斜率更陡。端点不能继续用分母非零的有限斜率公式。"
       }
-    ]
+    ],
+    "reflection": {
+      "question": "圆的端点能否继续用除以高度的斜率公式？",
+      "answer": "不能；高度为零时该式不能相除。此处要讨论竖直切线，不能给它编造有限斜率。"
+    },
+    "transferExerciseId": "implicit-p5"
   }
 }

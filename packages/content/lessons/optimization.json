@@ -153,7 +153,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.3.2",
+    "version": "0.3.4",
     "status": "revised",
     "humanReviewed": false
   },
@@ -171,7 +171,21 @@
       "比较区间内临界点和端点"
     ],
     "correctIndex": 2,
-    "explanation": "最大值可能落在端点；内部还要考虑导数为零或不存在的临界点。最后比较函数值。"
+    "explanation": "最大值可能落在端点；内部还要考虑导数为零或不存在的临界点。最后比较函数值。",
+    "responses": [
+      {
+        "text": "闭区间端点也可能取得最大值；内部不可导点也不能漏掉。先列全候选，再比较函数值。",
+        "experimentStep": null
+      },
+      {
+        "text": "端点不能覆盖内部峰值。先检查内部临界点，再和端点一起比较。",
+        "experimentStep": 1
+      },
+      {
+        "text": "最大值可能落在端点；内部还要考虑导数为零或不存在的临界点。最后比较函数值。",
+        "experimentStep": null
+      }
+    ]
   },
   "teaching": {
     "explain": "先把限制写进模型，再比较合法方案。这里周长固定，一边加长就会挤短另一边，所以面积并非一直增加。",
@@ -200,6 +214,11 @@
         },
         "observation": "另一边变为 2，面积回到 20；检查可行区间与转折点。"
       }
-    ]
+    ],
+    "reflection": {
+      "question": "对称的两组尺寸面积相同，能单凭这两个读数证明中间最大吗？",
+      "answer": "不能。需要写出可行区间与面积函数，用导数符号或配方比较所有候选。"
+    },
+    "transferExerciseId": "optimization-p4"
   }
 }

@@ -25,13 +25,13 @@ export function TeachingExplanation({lesson}:{lesson:Lesson}){
   </div>
  </section>;
 }
-export function GuidedExperiment({lesson,index,modified,onApply,onFocusVisual}:{lesson:Lesson;index:number|null;modified:boolean;onApply:(index:number)=>void;onFocusVisual?:()=>void}){
+export function GuidedExperiment({lesson,index,modified,onApply,onFocusVisual,prediction,onPrediction}:{lesson:Lesson;index:number|null;modified:boolean;onApply:(index:number)=>void;onFocusVisual?:()=>void;prediction:string;onPrediction:(value:string)=>void}){
  const [reveal,setReveal]=useState(false);
  const step=index===null?undefined:lesson.teaching.steps[index];
  useEffect(()=>setReveal(false),[index]);
  function choose(i:number){setReveal(false);onApply(i);}
  return <div className="guided-experiment">
-  <div className="experiment-prompt"><p><MathText text={tr(lesson.interactiveVisual.prediction)}/></p></div>
+  <div className="experiment-prompt"><p><MathText text={tr(lesson.interactiveVisual.prediction)}/></p><details className="experiment-notes"><summary>{tr('先写下你的判断')}</summary><label>{tr('我的预测')}<textarea value={prediction} maxLength={1000} onChange={e=>onPrediction(e.target.value)} placeholder={tr('你预计会发生什么？为什么？')}/></label><small>{tr('只在当前页面暂存，不评分、不上传；离开本节后清空。')}</small></details></div>
   <div className="experiment-steps" role="group" aria-label={tr('演示步骤')}>
    {lesson.teaching.steps.map((s,i)=><button key={i} aria-pressed={i===index} onClick={()=>choose(i)}><span className="step-index">{i+1}</span><span>{tr(s.title)}</span><ArrowRight size={14}/></button>)}
   </div>
@@ -40,11 +40,14 @@ export function GuidedExperiment({lesson,index,modified,onApply,onFocusVisual}:{
   </div>
  </div>;
 }
-export function ExperimentCheckpoint({lesson,index,modified,onApply}:{lesson:Lesson;index:number;modified:boolean;onApply:(index:number)=>void}){
+export function ExperimentCheckpoint({lesson,index,modified,onApply,prediction}:{lesson:Lesson;index:number;modified:boolean;onApply:(index:number)=>void;prediction:string}){
  const step=lesson.teaching.steps[index];
+ const [reason,setReason]=useState('');
+ const last=index===lesson.teaching.steps.length-1;
  return <aside className="experiment-checkpoint" aria-label={tr('核对观察结果')}>
   <div><span className="step-count">{tr('当前步骤')} {index+1} / {lesson.teaching.steps.length}</span><h4><MathText text={tr(step.instruction)}/></h4></div>
   <details key={`${lesson.id}-${index}`}><summary><Lightbulb size={16}/>{tr('核对这一步的现象')}<ChevronDown className="checkpoint-chevron" size={14}/></summary>{modified&&<p className="checkpoint-caution">{tr('你已调整参数；这段说明对应本步预设，不是对当前图形的自动判断。')}</p>}<p><MathText text={tr(step.observation)}/></p></details>
-  <div className="checkpoint-actions">{modified&&<button className="text-btn" onClick={()=>onApply(index)}><RotateCcw size={14}/>{tr('恢复本步参数')}</button>}{index<lesson.teaching.steps.length-1?<button className="small-btn" onClick={()=>onApply(index+1)}>{tr('继续下一步')}<ArrowRight size={15}/></button>:<Link className="small-btn" to={lessonPath(lesson.id)} params={{view:'practice'}}><Check size={15}/>{tr('做一题，检查理解')}</Link>}</div>
+  {last&&lesson.teaching.reflection&&<div className="experiment-reflection"><h4>{tr('用自己的话解释')}</h4>{prediction&&<blockquote><small>{tr('刚才的预测')}</small><p>{prediction}</p></blockquote>}<p><MathText text={tr(lesson.teaching.reflection.question)}/></p><label>{tr('我的解释')}<textarea value={reason} onChange={e=>setReason(e.target.value)} maxLength={1500} placeholder={tr('把观察结果和数学条件连起来。')}/></label><details><summary>{tr('对照参考解释')}</summary>{modified&&<p className="checkpoint-caution">{tr('你已调整参数；这段说明对应本步预设，不是对当前图形的自动判断。')}</p>}<MathText text={tr(lesson.teaching.reflection.answer)}/><p className="note">{tr('不会自动判定你的文字是否正确，请逐项核对理由与条件。')}</p></details></div>}
+  <div className="checkpoint-actions">{modified&&<button className="text-btn" onClick={()=>onApply(index)}><RotateCcw size={14}/>{tr('恢复本步参数')}</button>}{!last?<button className="small-btn" onClick={()=>onApply(index+1)}>{tr('继续下一步')}<ArrowRight size={15}/></button>:<Link className="small-btn" to={lessonPath(lesson.id)} params={{view:'practice',...(lesson.teaching.transferExerciseId?{question:lesson.teaching.transferExerciseId}:{})}}><Check size={15}/>{tr(lesson.teaching.transferExerciseId?'换个情境再试':'做一题，检查理解')}</Link>}</div>
  </aside>;
 }

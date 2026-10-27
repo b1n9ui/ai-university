@@ -63,3 +63,8 @@ The other becomes 2 and area returns to 20. Check the feasible interval and turn
 $25$.
 $25$.
 $8$.
+A maximum may occur at an endpoint, and interior nondifferentiable points must not be missed. List all candidates before comparing values.
+Endpoints do not capture an interior peak. Check interior critical points, then compare them with the endpoints.
+The maximum may occur at an endpoint. Include interior critical points where the derivative is zero or nonexistent, then compare function values.
+Two symmetric dimension choices give equal areas. Do those readings alone prove the middle choice maximizes area?
+No. State the feasible interval and area function, then use derivative signs or completing the square to compare all candidates.

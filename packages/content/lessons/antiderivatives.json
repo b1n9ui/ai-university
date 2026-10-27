@@ -195,7 +195,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.3.1",
+    "version": "0.3.4",
     "status": "revised",
     "humanReviewed": false
   },
@@ -214,7 +214,21 @@
       "因为 $C$ 必须等于 1"
     ],
     "correctIndex": 0,
-    "explanation": "$x^{2}$、$x^{2} + 3$ 等都求导得到 $2 x$。$C$ 记录这一族原函数；在同一个区间讨论。"
+    "explanation": "$x^{2}$、$x^{2} + 3$ 等都求导得到 $2 x$。$C$ 记录这一族原函数；在同一个区间讨论。",
+    "responses": [
+      {
+        "text": "$x^{2}$、$x^{2} + 3$ 等都求导得到 $2 x$。$C$ 记录这一族原函数；在同一个区间讨论。",
+        "experimentStep": null
+      },
+      {
+        "text": "这里的常数来自求导丢失的信息，与数值近似无关。把两条相差常数的原函数求导比较。",
+        "experimentStep": 1
+      },
+      {
+        "text": "没有初始条件时，常数可以取任意实数。改变常数，再检查导数是否改变。",
+        "experimentStep": 2
+      }
+    ]
   },
   "teaching": {
     "explain": "把求导倒着读，可以找到一种原函数。所有竖直平移都有相同导数；积分常数记录这份尚未确定的信息。",
@@ -243,6 +257,11 @@
         },
         "observation": "原函数位置改变，但各点斜率仍由同一导函数给出。"
       }
-    ]
+    ],
+    "reflection": {
+      "question": "上下平移后，哪些读数变了，哪些没有变？这对应哪个求导事实？",
+      "answer": "原函数值改变，导数不变；常数的导数为零。在一个区间内，原函数族相差常数。"
+    },
+    "transferExerciseId": "antiderivatives-p6"
   }
 }

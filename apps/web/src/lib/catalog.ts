@@ -44,6 +44,7 @@ export function labelFor(route: Route) {
         "about/contribute": "参与贡献",
         "about/versions": "版本与勘误",
         "about/privacy": "隐私与本地数据",
+        "about/tryout": "自主试学",
         "about/research": "学习方法与参考资料",
         "practice/exam": "综合测试",
       } as Record<string, string>

@@ -1,12 +1,12 @@
 {
   "locale": "en",
-  "sourceVersion": "0.3.3",
+  "sourceVersion": "0.3.4",
   "translator": "AI-generated",
   "humanReviewed": false,
   "files": {
     "book": {
       "source": "packages/content/book.json",
-      "sha256": "9e6a107dff8b76e036d057bd2065a06517371987845f4981998d8bc35a5b8115",
+      "sha256": "9e1abe9e70574f7d890bdb439a09bc679e0619bee1bc6a38cf28941bf0c8d671",
       "fields": [
         {
           "path": "/titleZh",
@@ -1138,7 +1138,7 @@
     },
     "domain": {
       "source": "packages/content/lessons/domain.json",
-      "sha256": "cf277b46dd045a7ef8e28c4e5b29ab30a5ee7542b749f3265937fec2c9919b75",
+      "sha256": "3ba183658f54b496f0fa95eba73d21c6cc82c049012b17b892321f43bd6f556f",
       "fields": [
         {
           "path": "/title",
@@ -1387,12 +1387,32 @@
         {
           "path": "/practice/3/answer",
           "value": "$2x+1$。"
+        },
+        {
+          "path": "/learningCheck/responses/0/text",
+          "value": "根号允许等于零，不代表分母也允许等于零。分别检查根式和分母两个条件。"
+        },
+        {
+          "path": "/learningCheck/responses/1/text",
+          "value": "根号要求 $x - 2 \\ge 0$，分母又不能是零。两个条件合起来是 $x > 2$。"
+        },
+        {
+          "path": "/learningCheck/responses/2/text",
+          "value": "只排除分母为零还不够：根号里的数也不能为负。试代一个小于 2 的数。"
+        },
+        {
+          "path": "/teaching/reflection/question",
+          "value": "图里的平方根在零点有输出，为什么原题的分式却不能取根号为零的输入？"
+        },
+        {
+          "path": "/teaching/reflection/answer",
+          "value": "根式本身允许零；原题还把它放在分母，额外要求不为零。两个函数的定义域不同。"
         }
       ]
     },
     "transformations": {
       "source": "packages/content/lessons/transformations.json",
-      "sha256": "dc041ffd0003501fbd2931c8dfd127c61152f7c463073dff76187e24c23f2821",
+      "sha256": "0cabced081d4c9a3b64c3ad475fba19b69ad0ab2f172385ff15e68db0c5ff78d",
       "fields": [
         {
           "path": "/title",
@@ -1641,12 +1661,32 @@
         {
           "path": "/practice/3/answer",
           "value": "$[2,\\infty)$。"
+        },
+        {
+          "path": "/learningCheck/responses/0/text",
+          "value": "括号里的减号不是向左的指令。顶点处平方项为零，先解 $x-2=0$。"
+        },
+        {
+          "path": "/learningCheck/responses/1/text",
+          "value": "输入里的平移改变横坐标；整个平方项外加常数才改变顶点高度。"
+        },
+        {
+          "path": "/learningCheck/responses/2/text",
+          "value": "括号中的输入等于零时，函数最小。$x - 2 = 0$，所以顶点向右移到 $(2,0)$。"
+        },
+        {
+          "path": "/teaching/reflection/question",
+          "value": "横向右移与纵向上移，分别改公式的哪一处？"
+        },
+        {
+          "path": "/teaching/reflection/answer",
+          "value": "横移改输入：用 $x-a$ 代替原输入；上移在整个输出外加常数。"
         }
       ]
     },
     "composition": {
       "source": "packages/content/lessons/composition.json",
-      "sha256": "700dde4fcabe4b20c54ff0d6fbf362064f67e456b9d5f7ca9dc214ee2f57615d",
+      "sha256": "1689f433d1aede579819268153d54152a6281025f430d66e40a7f09ffb0f4e62",
       "fields": [
         {
           "path": "/title",
@@ -1895,12 +1935,32 @@
         {
           "path": "/teaching/steps/0/observation",
           "value": "$1^2=1$。"
+        },
+        {
+          "path": "/learningCheck/responses/0/text",
+          "value": "先算内层 $g (2) = 3$，再算外层 $f (3) = 9$。交换顺序会得到 $g (f (2)) = 5$。"
+        },
+        {
+          "path": "/learningCheck/responses/1/text",
+          "value": "这个结果对应先平方、再加一。原题要求先算内层，再把它的输出交给外层。"
+        },
+        {
+          "path": "/learningCheck/responses/2/text",
+          "value": "复合不是把两个函数值相加。先写出中间量 $g(2)$，再把这个数代入 $f$。"
+        },
+        {
+          "path": "/teaching/reflection/question",
+          "value": "平方函数为什么不能在全实数上直接反过来用？"
+        },
+        {
+          "path": "/teaching/reflection/answer",
+          "value": "正负输入可能输出同一个数。必须限制到一一对应的分支，才能唯一反求输入。"
         }
       ]
     },
     "trigonometry": {
       "source": "packages/content/lessons/trigonometry.json",
-      "sha256": "0ee4b55ba45fc255713c3da183153db11b9555a9fcaced720a48bdc0a7b38e0b",
+      "sha256": "b12e0b1c91b6ced72803c326ad079217cd0cc2d6ade839943c19ffbba8495844",
       "fields": [
         {
           "path": "/title",
@@ -2161,12 +2221,32 @@
         {
           "path": "/teaching/steps/0/observation",
           "value": "$\\sin0=0$。"
+        },
+        {
+          "path": "/learningCheck/responses/0/text",
+          "value": "同一个角没有因换单位而变小；只是数值变了。比较一圈的两种表示。"
+        },
+        {
+          "path": "/learningCheck/responses/1/text",
+          "value": "$\\frac{\\sin h}{h} \\to 1$ 要求 $h$ 用弧度。若用角度，换算会带来 $\\frac{\\pi }{180}$ 的系数。"
+        },
+        {
+          "path": "/learningCheck/responses/2/text",
+          "value": "角度制也能求导，但会带上单位换算系数。弧度使弧长与半径的比例直接进入公式。"
+        },
+        {
+          "path": "/teaching/reflection/question",
+          "value": "一圈的两个近零读数，能证明预设输入就是精确的一圈吗？"
+        },
+        {
+          "path": "/teaching/reflection/answer",
+          "value": "不能。输入用了小数近似；精确周期用圆周率表示，有限精度读数不替代恒等关系。"
         }
       ]
     },
     "exponential-log": {
       "source": "packages/content/lessons/exponential-log.json",
-      "sha256": "cc27ad8b8d5c154d8e97f61e0d50c07c3b8e0167a726a14d97b72b995a2fcc80",
+      "sha256": "159b27c31c9a023e94547cedf21cf5591b2a9fdcb054513828543eaeae4c1f57",
       "fields": [
         {
           "path": "/title",
@@ -2415,12 +2495,32 @@
         {
           "path": "/teaching/steps/0/observation",
           "value": "$e^0=1$。"
+        },
+        {
+          "path": "/learningCheck/responses/0/text",
+          "value": "自然对数问的是指数，不是底数。把答案代回：底数的几次方才是原来的数？"
+        },
+        {
+          "path": "/learningCheck/responses/1/text",
+          "value": "$\\ln$ 与 $e$ 的指数运算互为逆运算：$\\ln (e^{x}) = x$。这里 $x = 3$。"
+        },
+        {
+          "path": "/learningCheck/responses/2/text",
+          "value": "指数表示重复乘法，不是把底数乘以指数。对数撤销的是指数运算。"
+        },
+        {
+          "path": "/teaching/reflection/question",
+          "value": "输入每增加一，输出的差相同还是比相同？为什么？"
+        },
+        {
+          "path": "/teaching/reflection/answer",
+          "value": "比相同。指数加一相当于再乘一次底数，不是加上同一个常数。"
         }
       ]
     },
     "limit-intuition": {
       "source": "packages/content/lessons/limit-intuition.json",
-      "sha256": "05634ea87623ffae744d433b235d0136d670f959319ab7c924af20bcc9ae1c2c",
+      "sha256": "755fcc56eb7cdab9f9dee7bcdfcca69c544336a08c85daa3ccb7b86ba8a1ab99",
       "fields": [
         {
           "path": "/title",
@@ -2681,12 +2781,52 @@
         {
           "path": "/practice/1/answer",
           "value": "$2$。"
+        },
+        {
+          "path": "/learningCheck/responses/0/text",
+          "value": "点值只规定恰好在这一点的输出。极限看附近输入的输出，不把中心点代进去。"
+        },
+        {
+          "path": "/learningCheck/responses/1/text",
+          "value": "极限检查 1 附近、但不等于 1 的输入。单独改变点上的值不会改变两侧的趋势。"
+        },
+        {
+          "path": "/learningCheck/responses/2/text",
+          "value": "单点被改动，不会自动破坏附近的共同趋势。先分别看左右，再判断是否趋向同一个数。"
+        },
+        {
+          "path": "/teaching/reflection/question",
+          "value": "单点改值和左右跳跃，为什么对极限的影响不同？"
+        },
+        {
+          "path": "/teaching/reflection/answer",
+          "value": "改单点不改变去心邻域；跳跃使左右邻近输出趋向不同的数。"
+        },
+        {
+          "path": "/practice/4/problem",
+          "value": "当 $x\\ne2$ 时 $f(x)=x^2$，而 $f(2)=7$。求 $\\lim_{x\\to2}f(x)$，并说明函数是否在 2 连续。"
+        },
+        {
+          "path": "/practice/4/answer",
+          "value": "极限为 4；不连续。"
+        },
+        {
+          "path": "/practice/4/hint",
+          "value": "先分开写附近趋势与点值。"
+        },
+        {
+          "path": "/practice/4/solution/0",
+          "value": "去心邻域中函数等于平方函数，极限是 $2^2=4$。"
+        },
+        {
+          "path": "/practice/4/solution/1",
+          "value": "点值 7 与极限 4 不同，不满足连续条件。"
         }
       ]
     },
     "limit-laws": {
       "source": "packages/content/lessons/limit-laws.json",
-      "sha256": "77169c6bd9bc013c996b6f958c7401bfc0c2543beb21f3ec2c40e70f99a99928",
+      "sha256": "b2d90c8ade0308c2c55c430af123705560446b880f9c76e01a676f823fac7908",
       "fields": [
         {
           "path": "/title",
@@ -2947,12 +3087,32 @@
         {
           "path": "/practice/3/answer",
           "value": "$0$。"
+        },
+        {
+          "path": "/learningCheck/responses/0/text",
+          "value": "分子趋零不能单独决定整个商的趋势；分母也趋零，增长或缩小的相对速度才关键。"
+        },
+        {
+          "path": "/learningCheck/responses/1/text",
+          "value": "两个量都趋零，不代表它们的比趋于一。先化简或找可用的极限关系，不能把零约掉。"
+        },
+        {
+          "path": "/learningCheck/responses/2/text",
+          "value": "$\\frac{0}{0}$ 是未定式，不是答案。因式分解、约分或有理化可能揭示附近的趋势；不能直接除以零。"
+        },
+        {
+          "path": "/teaching/reflection/question",
+          "value": "两侧采样都接近一，为什么还不能把原式在零点定义成一并说已经证明？"
+        },
+        {
+          "path": "/teaching/reflection/answer",
+          "value": "补点是另一个定义；极限要求控制任意接近的输入，要靠极限论证，不能只列有限读数。"
         }
       ]
     },
     "epsilon-delta": {
       "source": "packages/content/lessons/epsilon-delta.json",
-      "sha256": "5d2b7b9ef864da381f824b114e59a0ca5a447470b84ffab5f304629c5cf6df20",
+      "sha256": "a26e5dc8b0f939f78137ec6594b87a0cd9298d0bec0fc45adcbca42a2f155456",
       "fields": [
         {
           "path": "/title",
@@ -3217,12 +3377,32 @@
         {
           "path": "/practice/2/solution/1",
           "value": "$|x^{2} - 1| < 3 \\delta  \\le \\varepsilon$。"
+        },
+        {
+          "path": "/learningCheck/responses/0/text",
+          "value": "无论要求多小的输出误差 $\\varepsilon$，都要能找到足够小的 $\\delta$。$\\delta$ 可以依赖 $\\varepsilon$。"
+        },
+        {
+          "path": "/learningCheck/responses/1/text",
+          "value": "一个固定输入范围通常无法满足任意小的输出误差。输出要求变严时，允许重新选输入范围。"
+        },
+        {
+          "path": "/learningCheck/responses/2/text",
+          "value": "输入和输出的尺度由函数决定，不必数值相等。检查图里的范围怎样保证整段输出落在误差带内。"
+        },
+        {
+          "path": "/teaching/reflection/question",
+          "value": "为什么控制整个输入小区间，比检查几个点更强？"
+        },
+        {
+          "path": "/teaching/reflection/answer",
+          "value": "定义要求范围内每个非中心输入都满足输出误差；有限采样不能排除未取样点。"
         }
       ]
     },
     "continuity": {
       "source": "packages/content/lessons/continuity.json",
-      "sha256": "c8f142acd63a3352b9549c574b1639124bc49d8b56609c73783c9c4d3a617227",
+      "sha256": "505d28dff654112c7c0f9bd364914fc4018eb9aec3a37eb212eaec574cbc7477",
       "fields": [
         {
           "path": "/title",
@@ -3487,12 +3667,32 @@
         {
           "path": "/practice/1/answer",
           "value": "$6$。"
+        },
+        {
+          "path": "/learningCheck/responses/0/text",
+          "value": "共同趋势只是一个条件；还要检查中心点的值是否接上这个趋势。"
+        },
+        {
+          "path": "/learningCheck/responses/1/text",
+          "value": "连续要求 $f (a)$ 有定义、极限存在，并且两者相等。少一个条件都不行。"
+        },
+        {
+          "path": "/learningCheck/responses/2/text",
+          "value": "连续与函数值大小无关，关键是点值和极限是否相等。把同一个孔洞补到两个不同高度试试。"
+        },
+        {
+          "path": "/teaching/reflection/question",
+          "value": "补成什么点值才连续？为什么不能只看实心点？"
+        },
+        {
+          "path": "/teaching/reflection/answer",
+          "value": "点值必须等于共同极限；实心点只表明函数有定义，不能表明附近趋势接上了。"
         }
       ]
     },
     "infinite-limits": {
       "source": "packages/content/lessons/infinite-limits.json",
-      "sha256": "19befb5eb54eba55ff7c3996c86d7b65872c576ba4f9f734e66c0209a309af6c",
+      "sha256": "a2c294ac5fb7162eca4909a77fae62eae330a84aaf9ee8298e336dc5dba17bbb",
       "fields": [
         {
           "path": "/title",
@@ -3753,12 +3953,32 @@
         {
           "path": "/practice/2/answer",
           "value": "$- \\infty$。"
+        },
+        {
+          "path": "/learningCheck/responses/0/text",
+          "value": "只看右侧会漏掉另一种趋势。换到零点左侧，先判断分母符号。"
+        },
+        {
+          "path": "/learningCheck/responses/1/text",
+          "value": "左右方向不同，不能写双侧趋于 $+ \\infty$。无穷趋势也不是一个有限实数值。"
+        },
+        {
+          "path": "/learningCheck/responses/2/text",
+          "value": "正向无界与负向无界是不同的趋势；无穷不是可以忽略符号的实数。"
+        },
+        {
+          "path": "/teaching/reflection/question",
+          "value": "图线跑出图窗，是否表示函数在那里结束？"
+        },
+        {
+          "path": "/teaching/reflection/answer",
+          "value": "不是。图窗有限，读数仍描述更大的输出；定义域和单侧趋势由函数式决定。"
         }
       ]
     },
     "derivative-definition": {
       "source": "packages/content/lessons/derivative-definition.json",
-      "sha256": "c721b179409763f730e2436e6bc9fd09c6cbd781af7878738b190f08af631464",
+      "sha256": "9df659d9fb18b52eb70c353cf11587c0e83c86eb21a8b042e238c0ca31f1910a",
       "fields": [
         {
           "path": "/title",
@@ -4019,12 +4239,52 @@
         {
           "path": "/practice/3/answer",
           "value": "$6$。"
+        },
+        {
+          "path": "/learningCheck/responses/0/text",
+          "value": "间隔很小只能给近似。观察继续缩小时差商是否还在变化，再区分有限差商和它的极限。"
+        },
+        {
+          "path": "/learningCheck/responses/1/text",
+          "value": "差商是 $\\frac{(1 + h)^{2} - 1}{h} = 2 + h$。$h = 0.1$ 得到 2.1；让 $h \\to 0$，才得到导数 2。"
+        },
+        {
+          "path": "/learningCheck/responses/2/text",
+          "value": "某个有限差商不等于导数，不代表导数不存在。要看差商在间隔趋零时是否有共同极限。"
+        },
+        {
+          "path": "/teaching/reflection/question",
+          "value": "光滑曲线的小间隔与尖角的小间隔，为什么不能用同一个“已经够小”来判断导数？"
+        },
+        {
+          "path": "/teaching/reflection/answer",
+          "value": "导数要求两侧差商有同一个有限极限。尖角两侧保持不同斜率，再小的间隔也不能消除这个差别。"
+        },
+        {
+          "path": "/practice/4/problem",
+          "value": "把平方函数换成 $f(x)=x^3$。在 $a=1$ 用右侧间隔 $h=0.1$ 求差商，再求导数。两者是否相等？"
+        },
+        {
+          "path": "/practice/4/answer",
+          "value": "差商为 3.31，导数为 3；不相等。"
+        },
+        {
+          "path": "/practice/4/hint",
+          "value": "先展开立方，再约去非零间隔。"
+        },
+        {
+          "path": "/practice/4/solution/0",
+          "value": "$\\frac{(1+h)^3-1}{h}=3+3h+h^2$，代入得到 3.31。"
+        },
+        {
+          "path": "/practice/4/solution/1",
+          "value": "当 $h\\to0$ 时，后两项趋零，差商趋于 3。"
         }
       ]
     },
     "derivative-rules": {
       "source": "packages/content/lessons/derivative-rules.json",
-      "sha256": "6958427f9d068482856e87d3447ddcca0fdebcb582fba561979fc2d2991295f4",
+      "sha256": "5941f7ce9411dc1a0f0113f653b2738bc2dd3ffe875e797b174dbe492b4e5fa0",
       "fields": [
         {
           "path": "/title",
@@ -4277,12 +4537,32 @@
         {
           "path": "/practice/3/answer",
           "value": "$\\frac{1}{2\\sqrt{x}}$，$x > 0$。"
+        },
+        {
+          "path": "/learningCheck/responses/0/text",
+          "value": "若两个因子都随输入改变，积的变化包含两份贡献。用 $f(x)=g(x)=x$ 检查这个选项。"
+        },
+        {
+          "path": "/learningCheck/responses/1/text",
+          "value": "两因子都可能变化：一个变化时乘上另一个的原值。积的导数要把这两部分相加。"
+        },
+        {
+          "path": "/learningCheck/responses/2/text",
+          "value": "这是和的求导规则。积中一个因子变化时，还要乘另一个因子当时的值。"
+        },
+        {
+          "path": "/teaching/reflection/question",
+          "value": "负输入处函数值为负，为什么导数仍可能为正？"
+        },
+        {
+          "path": "/teaching/reflection/answer",
+          "value": "函数值描述高度，导数描述局部升降；在横轴下方也可以随输入增加而上升。"
         }
       ]
     },
     "chain-rule": {
       "source": "packages/content/lessons/chain-rule.json",
-      "sha256": "cae3b29f7cd236aed0672d444a558d6442c9072fb37875f1e4ad3439d60a077f",
+      "sha256": "f4f11cc4c7b9bce777e6bab502c037169198642279164640a5a538123b52429d",
       "fields": [
         {
           "path": "/title",
@@ -4531,12 +4811,52 @@
         {
           "path": "/practice/3/answer",
           "value": "$2x(1+x)^3+3x^2(1+x)^2$。"
+        },
+        {
+          "path": "/learningCheck/responses/0/text",
+          "value": "外层变化率是 $3 (x^{2} + 1)^{2}$，内层变化率是 $2 x$。链式法则把两段变化率相乘。"
+        },
+        {
+          "path": "/learningCheck/responses/1/text",
+          "value": "外层幂次确实要处理，但题目问最容易漏掉的内层变化。检查内层停止变化时，总变化率应是多少。"
+        },
+        {
+          "path": "/learningCheck/responses/2/text",
+          "value": "内层输出用于求外层导数；内层自己的变化率还要再乘进去。把这两个角色分开写。"
+        },
+        {
+          "path": "/teaching/reflection/question",
+          "value": "正负两个输入给出同一内层输出，为什么总导数符号却相反？"
+        },
+        {
+          "path": "/teaching/reflection/answer",
+          "value": "外层导数在同一内层输出处相同，但内层变化率反号；相乘后总导数反号。"
+        },
+        {
+          "path": "/practice/4/problem",
+          "value": "$y=(1-2x)^3$ 在零点的导数是多少？不展开立方，说明导数符号从哪里来。"
+        },
+        {
+          "path": "/practice/4/answer",
+          "value": "导数为 $-6$；内层随输入增加而减小。"
+        },
+        {
+          "path": "/practice/4/hint",
+          "value": "分别写外层导数与内层变化率。"
+        },
+        {
+          "path": "/practice/4/solution/0",
+          "value": "外层导数为 $3(1-2x)^2$，内层导数为 $-2$。"
+        },
+        {
+          "path": "/practice/4/solution/1",
+          "value": "相乘得 $y'=-6(1-2x)^2$，在零点为 $-6$。"
         }
       ]
     },
     "trig-derivatives": {
       "source": "packages/content/lessons/trig-derivatives.json",
-      "sha256": "0901e88e8431378e11a821b845e0a4643f2cbee78ca21ebaf6913aa6a2df7f7e",
+      "sha256": "982e21fd34f80d289b31d8e3672ac494226f62361bf1f76fd7c6b561dbf3a77e",
       "fields": [
         {
           "path": "/title",
@@ -4785,12 +5105,32 @@
         {
           "path": "/practice/3/answer",
           "value": "$\\sec x\\tan x$。"
+        },
+        {
+          "path": "/learningCheck/responses/0/text",
+          "value": "看 $x=\\frac\\pi2$ 附近，余弦正在下降。导数的符号必须反映这个方向。"
+        },
+        {
+          "path": "/learningCheck/responses/1/text",
+          "value": "在 $x = \\frac{\\pi }{2}$ 附近，$\\cos x$ 向下变化，斜率为 −1。这与 $- \\sin x$ 相符；角以弧度计。"
+        },
+        {
+          "path": "/learningCheck/responses/2/text",
+          "value": "在零点检查：余弦处于平滑波峰，斜率为零。这个候选公式能给出零吗？"
+        },
+        {
+          "path": "/teaching/reflection/question",
+          "value": "波峰处高度最大，为什么斜率反而接近零？"
+        },
+        {
+          "path": "/teaching/reflection/answer",
+          "value": "高度和变化率不同。光滑波峰附近先升后降，峰顶切线水平。"
         }
       ]
     },
     "implicit": {
       "source": "packages/content/lessons/implicit.json",
-      "sha256": "6b01d3a0e7b49cc68bea82dd2205c20f81ec72604071c198c76496bf8ab1d51d",
+      "sha256": "0f4659fe9cfc686a720edc5e9dba6a6b53a9d7533e16a97f5f3392c9e27bd9a1",
       "fields": [
         {
           "path": "/title",
@@ -5083,12 +5423,32 @@
         {
           "path": "/practice/4/answer",
           "value": "$-\\frac12$。"
+        },
+        {
+          "path": "/learningCheck/responses/0/text",
+          "value": "这只是对 $y$ 的变化率。原题对 $x$ 求导，还必须计入 $y$ 随 $x$ 的变化。"
+        },
+        {
+          "path": "/learningCheck/responses/1/text",
+          "value": "$y^{2}$ 是外层平方与内层 $y (x)$ 的复合。要乘上内层导数 $y'$。"
+        },
+        {
+          "path": "/learningCheck/responses/2/text",
+          "value": "平方的是函数值，不是导数。先把 $y^2$ 看成外层平方与内层函数的复合。"
+        },
+        {
+          "path": "/teaching/reflection/question",
+          "value": "圆的端点能否继续用除以高度的斜率公式？"
+        },
+        {
+          "path": "/teaching/reflection/answer",
+          "value": "不能；高度为零时该式不能相除。此处要讨论竖直切线，不能给它编造有限斜率。"
         }
       ]
     },
     "exp-log-derivatives": {
       "source": "packages/content/lessons/exp-log-derivatives.json",
-      "sha256": "052653c1aae38f594984b58346390dd4606efe2906c99c55302856f2da193216",
+      "sha256": "6a051fc4d1b118a3beedabe545a681743d13de4d8e20f0e77c9df8ad1f6315f4",
       "fields": [
         {
           "path": "/title",
@@ -5337,12 +5697,32 @@
         {
           "path": "/practice/3/answer",
           "value": "$\\frac{3}{3x-1}$，$x \\ne \\frac{1}{3}$。"
+        },
+        {
+          "path": "/learningCheck/responses/0/text",
+          "value": "只求外层对数的导数还没结束；内层也在变化。写出链式法则后再约分。"
+        },
+        {
+          "path": "/learningCheck/responses/1/text",
+          "value": "链式法则中的内层系数不能只加到分子。外层导数的分母也要代入完整内层。"
+        },
+        {
+          "path": "/learningCheck/responses/2/text",
+          "value": "链式法则给出 $(\\frac{1}{3 x}) \\cdot 3 = \\frac{1}{x}$。$\\ln (3 x)$ 的实数定义域是 $x > 0$。"
+        },
+        {
+          "path": "/teaching/reflection/question",
+          "value": "指数函数在负输入处，函数值和导数为什么都不必为负？"
+        },
+        {
+          "path": "/teaching/reflection/answer",
+          "value": "指数值始终为正；自然指数的导数等于其值。输入的符号不直接决定输出或斜率的符号。"
         }
       ]
     },
     "inverse-trig": {
       "source": "packages/content/lessons/inverse-trig.json",
-      "sha256": "161d5eb1e282a50f9da75defac94e5521e3e350e2512834cf5042b2a0b928cff",
+      "sha256": "3f8427059fff215564a3594c8300e869e8e7620930345dff128a17adaec69557",
       "fields": [
         {
           "path": "/title",
@@ -5607,12 +5987,32 @@
         {
           "path": "/practice/3/answer",
           "value": "$\\frac{1}{2}$。"
+        },
+        {
+          "path": "/learningCheck/responses/0/text",
+          "value": "正弦不是全实数上一一对应的函数。试用 $x=\\pi$，再比较反正弦返回的主值。"
+        },
+        {
+          "path": "/learningCheck/responses/1/text",
+          "value": "$\\arcsin$ 的输出限制在 $[\\frac{- \\pi }{2} , \\frac{\\pi }{2}]$。超出这个区间，原角通常不能被恢复。"
+        },
+        {
+          "path": "/learningCheck/responses/2/text",
+          "value": "在主值区间内，正弦限制成可逆函数。可以先用 $x=0$ 检查“从不成立”这个说法。"
+        },
+        {
+          "path": "/teaching/reflection/question",
+          "value": "反正切远处的斜率很小，是否表示到某个有限输入就不再上升？"
+        },
+        {
+          "path": "/teaching/reflection/answer",
+          "value": "不是。任意有限输入处导数仍为正；趋近平缓和在某处变成常数不同。"
         }
       ]
     },
     "related-rates": {
       "source": "packages/content/lessons/related-rates.json",
-      "sha256": "8e5679e2be4d200af0c1739a56aa0a1d819f2474911e4f4d11d5a709f40aa0bc",
+      "sha256": "a82d3939d2edab433e32c38b9ca5078e1e35c288324144d022afd65ec9a68a2e",
       "fields": [
         {
           "path": "/title",
@@ -5901,12 +6301,32 @@
         {
           "path": "/practice/4/answer",
           "value": "$\\frac14$。"
+        },
+        {
+          "path": "/learningCheck/responses/0/text",
+          "value": "这个式子描述面积对半径的变化率。若问每单位时间的变化，还要计入半径每单位时间变多少。"
+        },
+        {
+          "path": "/learningCheck/responses/1/text",
+          "value": "先对时间求导，得到 $\\frac{\\mathrm{d}A}{\\mathrm{d}t} = \\frac{2 \\pi  r \\cdot \\mathrm{d}r}{\\mathrm{d}t}$。遗漏 $\\frac{\\mathrm{d}r}{\\mathrm{d}t}$ 就忽略了半径变化的速度。"
+        },
+        {
+          "path": "/learningCheck/responses/2/text",
+          "value": "不是把半径的变化率平方。对随时间变化的平方函数求导，应使用链式法则。"
+        },
+        {
+          "path": "/teaching/reflection/question",
+          "value": "梯子底端匀速，为什么顶端下降速度会改变？"
+        },
+        {
+          "path": "/teaching/reflection/answer",
+          "value": "约束把两个位置连起来，变化率的比例随位置改变；接近放平时，同样的底端位移对应更大的高度变化。"
         }
       ]
     },
     "linearization": {
       "source": "packages/content/lessons/linearization.json",
-      "sha256": "0694be73f79d221f1e5dc028d7fe70f292c5dfdc3d1f31c90727678b7af91761",
+      "sha256": "ae1f50870f6c2d1a2d70940be7aaeab6df8aab6da45ad3002842c825ee904299",
       "fields": [
         {
           "path": "/title",
@@ -6159,12 +6579,32 @@
         {
           "path": "/practice/2/solution/0",
           "value": "$A = s^{2}$，$\\frac{\\mathrm{d}A}{A} = \\frac{2 \\mathrm{d}s}{s}$。"
+        },
+        {
+          "path": "/learningCheck/responses/0/text",
+          "value": "近似从点 $(a , f (a))$ 出发，沿该点的斜率变化。除非函数本来就是直线，否则一般不是精确等式。"
+        },
+        {
+          "path": "/learningCheck/responses/1/text",
+          "value": "这条直线既可能没经过基点，也把局部近似写成了全局等式。先检查在基点是否与原函数相等。"
+        },
+        {
+          "path": "/learningCheck/responses/2/text",
+          "value": "导数是每单位输入的变化率，不能直接当作输出增量。还要乘输入相对基点的改变量。"
+        },
+        {
+          "path": "/teaching/reflection/question",
+          "value": "同一条切线为什么在基点精确、离远后却可能误差很大？"
+        },
+        {
+          "path": "/teaching/reflection/answer",
+          "value": "切线匹配基点的函数值与一阶变化率，没有匹配整个区间的弯曲。"
         }
       ]
     },
     "newton": {
       "source": "packages/content/lessons/newton.json",
-      "sha256": "5a01891861007cb4e724e31d8fb007fbafc7503ad4b0c186502b6b79fd856131",
+      "sha256": "e2946193ed787f83ead458babb5818d596df47765d6530855cd0e00d593d1a7c",
       "fields": [
         {
           "path": "/title",
@@ -6425,12 +6865,32 @@
         {
           "path": "/practice/2/answer",
           "value": "$3$。"
+        },
+        {
+          "path": "/learningCheck/responses/0/text",
+          "value": "牛顿更新用斜率作分母。分母为零时没有合法的下一步，不能靠动画继续算。"
+        },
+        {
+          "path": "/learningCheck/responses/1/text",
+          "value": "更新要除以 $f' (x_{n})$。斜率为零时不能这样做；函数值也可能不为零。"
+        },
+        {
+          "path": "/learningCheck/responses/2/text",
+          "value": "水平切线不代表函数值为零。先检查当前函数值，区分“斜率为零”和“已经找到根”。"
+        },
+        {
+          "path": "/teaching/reflection/question",
+          "value": "残差很小与更新公式合法，是同一个检查吗？"
+        },
+        {
+          "path": "/teaching/reflection/answer",
+          "value": "不是。残差检查函数值离零多远；合法更新还要求当前位置导数非零，并不自动保证收敛。"
         }
       ]
     },
     "extrema": {
       "source": "packages/content/lessons/extrema.json",
-      "sha256": "a0eb63201c0ae3e9d804021e7aa34042dbf8c3d43b073e7775a8b5ec67b4889d",
+      "sha256": "ab5263681c8e14767dcd3d9d151e343d676cd9c43f372d7929ced07180e73e93",
       "fields": [
         {
           "path": "/title",
@@ -6695,12 +7155,32 @@
         {
           "path": "/practice/0/answer",
           "value": "$-4$。"
+        },
+        {
+          "path": "/learningCheck/responses/0/text",
+          "value": "导数为零只是候选。比较零点左右的函数值，看是否真有从升到降的变化。"
+        },
+        {
+          "path": "/learningCheck/responses/1/text",
+          "value": "极小要求附近的函数值不低于此点。试代一个很小的负输入，检查这一要求。"
+        },
+        {
+          "path": "/learningCheck/responses/2/text",
+          "value": "$x^{3}$ 在零点两侧都递增。导数为零只给出候选点，还要检查两侧行为。"
+        },
+        {
+          "path": "/teaching/reflection/question",
+          "value": "图里的导数变号，与仅仅“导数为零”相比，多提供了什么信息？"
+        },
+        {
+          "path": "/teaching/reflection/answer",
+          "value": "它说明两侧升降方向改变，可以据此判断局部极大或极小；零导数本身只给候选。"
         }
       ]
     },
     "mean-value": {
       "source": "packages/content/lessons/mean-value.json",
-      "sha256": "865a06633eb5d1ef0dbd6f2f191e595d7f7244549d42cb113a1e5f1024e71874",
+      "sha256": "3ffd5150c48826135d914250216ea04763a956812eeb0c1682d0e9481c8b8127",
       "fields": [
         {
           "path": "/title",
@@ -6961,12 +7441,32 @@
         {
           "path": "/practice/0/answer",
           "value": "$\\frac{1}{\\sqrt{3}}$。"
+        },
+        {
+          "path": "/learningCheck/responses/0/text",
+          "value": "平方函数的保证点恰好在中点，容易误导。换成三次函数，解“瞬时斜率等于平均斜率”再比较。"
+        },
+        {
+          "path": "/learningCheck/responses/1/text",
+          "value": "$f' (c) = \\frac{f (b) - f (a)}{b - a}$。$c$ 不一定是中点，也不一定唯一；需要连续、可导的条件。"
+        },
+        {
+          "path": "/learningCheck/responses/2/text",
+          "value": "中值定理匹配两种斜率，不是在找最高点。先算整个区间的平均斜率。"
+        },
+        {
+          "path": "/teaching/reflection/question",
+          "value": "为什么图里的中点现象不能推广到所有满足中值定理的函数？"
+        },
+        {
+          "path": "/teaching/reflection/answer",
+          "value": "平方函数有特殊对称关系；定理只保证某个内点斜率等于平均斜率，没有指定中点。"
         }
       ]
     },
     "curve-sketching": {
       "source": "packages/content/lessons/curve-sketching.json",
-      "sha256": "dbf3f84a0829449033ad68fa1fc7232ad5ae582b536bf0cd9900644f9c048172",
+      "sha256": "0399ba41c34845449d6fe4bcddeccf1bc309647fc887e36f68c2859a7433807c",
       "fields": [
         {
           "path": "/title",
@@ -7227,12 +7727,32 @@
         {
           "path": "/practice/3/answer",
           "value": "$2$。"
+        },
+        {
+          "path": "/learningCheck/responses/0/text",
+          "value": "一阶导数的正负决定升降。二阶导数为负，说明斜率减小，不等于函数下降。"
+        },
+        {
+          "path": "/learningCheck/responses/1/text",
+          "value": "$f' > 0$ 说明函数上升，$f'' < 0$ 说明斜率递减。函数增加不等于增加得越来越快。"
+        },
+        {
+          "path": "/learningCheck/responses/2/text",
+          "value": "函数可以向上走，同时越来越平。把“高度增加”和“斜率增加”分开判断。"
+        },
+        {
+          "path": "/teaching/reflection/question",
+          "value": "同样的正斜率，怎样区分凹向上与凹向下？"
+        },
+        {
+          "path": "/teaching/reflection/answer",
+          "value": "继续比较附近斜率的变化：斜率增加对应凹向上，减小对应凹向下；升降只看一阶导数。"
         }
       ]
     },
     "optimization": {
       "source": "packages/content/lessons/optimization.json",
-      "sha256": "a6d79a8f9d7be8fef8e5e512a069e7fd3ff353dee4ccf55e98ba67a3c5966b12",
+      "sha256": "ca0c3de616a6f1b641de669f738d2a6a05b4dcd49cfb44484799c13687b65d6c",
       "fields": [
         {
           "path": "/title",
@@ -7493,12 +8013,32 @@
         {
           "path": "/practice/2/answer",
           "value": "$8$。"
+        },
+        {
+          "path": "/learningCheck/responses/0/text",
+          "value": "闭区间端点也可能取得最大值；内部不可导点也不能漏掉。先列全候选，再比较函数值。"
+        },
+        {
+          "path": "/learningCheck/responses/1/text",
+          "value": "端点不能覆盖内部峰值。先检查内部临界点，再和端点一起比较。"
+        },
+        {
+          "path": "/learningCheck/responses/2/text",
+          "value": "最大值可能落在端点；内部还要考虑导数为零或不存在的临界点。最后比较函数值。"
+        },
+        {
+          "path": "/teaching/reflection/question",
+          "value": "对称的两组尺寸面积相同，能单凭这两个读数证明中间最大吗？"
+        },
+        {
+          "path": "/teaching/reflection/answer",
+          "value": "不能。需要写出可行区间与面积函数，用导数符号或配方比较所有候选。"
         }
       ]
     },
     "lhopital": {
       "source": "packages/content/lessons/lhopital.json",
-      "sha256": "1a9dccff823bd653bcc7c66ea82d5dbbb0d7e232caf237402d4f03f6465d2699",
+      "sha256": "cf743319cfcf6b9f8e5288a987ac629d025b5c9fe7f50563fd002ba83ba857a3",
       "fields": [
         {
           "path": "/title",
@@ -7799,12 +8339,52 @@
         {
           "path": "/practice/4/answer",
           "value": "$0$。"
+        },
+        {
+          "path": "/learningCheck/responses/0/text",
+          "value": "先检查未定式类型，不能见到分母趋零就求导。用常数分子除以输入试验，会得到相互矛盾的结果。"
+        },
+        {
+          "path": "/learningCheck/responses/1/text",
+          "value": "先检查未定式和定理条件。$\\frac{1}{0}$ 不是洛必达所处理的类型，通常需要单侧分析。"
+        },
+        {
+          "path": "/learningCheck/responses/2/text",
+          "value": "分母趋零时，商可能无界或没有双侧极限。分子非零不可能因此直接推得商趋零。"
+        },
+        {
+          "path": "/teaching/reflection/question",
+          "value": "演示中的指数分式可以用洛必达，为什么不能据此处理所有分母趋零的分式？"
+        },
+        {
+          "path": "/teaching/reflection/answer",
+          "value": "它满足特定未定式与可导等条件；换分式后必须重新检查这些条件。"
+        },
+        {
+          "path": "/practice/5/problem",
+          "value": "求 $\\lim_{x\\to0^+}\\frac1x$。为什么把分子、分母分别求导得到零，是错误的？"
+        },
+        {
+          "path": "/practice/5/answer",
+          "value": "右侧趋于 $+\\infty$；原式不是允许使用洛必达的未定式。"
+        },
+        {
+          "path": "/practice/5/hint",
+          "value": "先判断分子、分母各自的趋势。"
+        },
+        {
+          "path": "/practice/5/solution/0",
+          "value": "分子保持为 1，分母从正侧趋零，商正向无界；并非 $\\frac00$ 型。"
+        },
+        {
+          "path": "/practice/5/solution/1",
+          "value": "对任意 $M>0$，只要 $0<x<\\frac1{M+1}$，就有 $\\frac1x>M+1>M$。这直接给出正向无界的保证。"
         }
       ]
     },
     "antiderivatives": {
       "source": "packages/content/lessons/antiderivatives.json",
-      "sha256": "26293047d8afaf1bce6a4097ac4533a97f755c7f5b13520fb778bb8410f961ea",
+      "sha256": "88248213d79c58a4e297a4a1da3e7394d088426adc307a97c9d16179b0da0c07",
       "fields": [
         {
           "path": "/title",
@@ -8141,12 +8721,32 @@
         {
           "path": "/practice/3/answer",
           "value": "$x^3+4$。"
+        },
+        {
+          "path": "/learningCheck/responses/0/text",
+          "value": "$x^{2}$、$x^{2} + 3$ 等都求导得到 $2 x$。$C$ 记录这一族原函数；在同一个区间讨论。"
+        },
+        {
+          "path": "/learningCheck/responses/1/text",
+          "value": "这里的常数来自求导丢失的信息，与数值近似无关。把两条相差常数的原函数求导比较。"
+        },
+        {
+          "path": "/learningCheck/responses/2/text",
+          "value": "没有初始条件时，常数可以取任意实数。改变常数，再检查导数是否改变。"
+        },
+        {
+          "path": "/teaching/reflection/question",
+          "value": "上下平移后，哪些读数变了，哪些没有变？这对应哪个求导事实？"
+        },
+        {
+          "path": "/teaching/reflection/answer",
+          "value": "原函数值改变，导数不变；常数的导数为零。在一个区间内，原函数族相差常数。"
         }
       ]
     },
     "riemann-sums": {
       "source": "packages/content/lessons/riemann-sums.json",
-      "sha256": "ae69a046bd0231595e27d996bdda9a75b2c85e8e95705f8599a72949e3bda185",
+      "sha256": "0369914145e73008c8bcfa5509cfbc67bb03eab3c5ac5db71e69e5664dedffff",
       "fields": [
         {
           "path": "/title",
@@ -8407,12 +9007,32 @@
         {
           "path": "/practice/3/answer",
           "value": "$6$。"
+        },
+        {
+          "path": "/learningCheck/responses/0/text",
+          "value": "同一个小区间内，递增函数的右端高度更大。保持分割不变，只切换取样端点。"
+        },
+        {
+          "path": "/learningCheck/responses/1/text",
+          "value": "每段右端点的函数值不小于左端点，所以右端点矩形的高度不小于左端点。"
+        },
+        {
+          "path": "/learningCheck/responses/2/text",
+          "value": "有限分割不保证两种和相等。先用少量矩形看差别，再增加细分观察误差。"
+        },
+        {
+          "path": "/teaching/reflection/question",
+          "value": "增加矩形数与改变取样端点，分别改变了什么？"
+        },
+        {
+          "path": "/teaching/reflection/answer",
+          "value": "前者缩小分割宽度，后者改变每个小区间的取样高度；要分开控制才能看出各自影响。"
         }
       ]
     },
     "definite-integral": {
       "source": "packages/content/lessons/definite-integral.json",
-      "sha256": "e7a53525db3796b18dca86799d2636f104bd398333720d37f28a1fa4afd7818d",
+      "sha256": "f227fd94e010ac83c5a15b9d8a8a54f4aa5f2c30c1acba7e4349383c16d606ed",
       "fields": [
         {
           "path": "/title",
@@ -8753,12 +9373,32 @@
         {
           "path": "/practice/2/answer",
           "value": "$2$。"
+        },
+        {
+          "path": "/learningCheck/responses/0/text",
+          "value": "定积分允许正负贡献抵消，几何面积不会抵消。先分别算横轴上下两部分。"
+        },
+        {
+          "path": "/learningCheck/responses/1/text",
+          "value": "$[0,1]$ 的积分是 $\\frac{- 1}{2}$，$[1,2]$ 是 $\\frac{1}{2}$。几何面积要把两部分都取正，再相加。"
+        },
+        {
+          "path": "/learningCheck/responses/2/text",
+          "value": "负号表示方向，不表示一块区域有负的几何面积。几何面积应对每段取非负贡献。"
+        },
+        {
+          "path": "/teaching/reflection/question",
+          "value": "为什么积分为零，面积读数仍可以大于零？"
+        },
+        {
+          "path": "/teaching/reflection/answer",
+          "value": "横轴两侧的带符号贡献可以抵消，几何面积把它们都计为非负长度乘宽度。"
         }
       ]
     },
     "fundamental-theorem": {
       "source": "packages/content/lessons/fundamental-theorem.json",
-      "sha256": "60cf5ceeab2719db628a77490a0368ae606633247953a7c628d3a08f62990a57",
+      "sha256": "a492499ad43124eee0963901172cd3236b5d342152071a92fd4cf0c7c7ec668d",
       "fields": [
         {
           "path": "/title",
@@ -9007,12 +9647,52 @@
         {
           "path": "/practice/3/answer",
           "value": "$2$。"
+        },
+        {
+          "path": "/learningCheck/responses/0/text",
+          "value": "上限增加 $h$ 时，新增积分约为 $f (x) h$。除以 $h$ 再取极限，得到当前的 $f (x)$。"
+        },
+        {
+          "path": "/learningCheck/responses/1/text",
+          "value": "对累积量求导，取出的是移动上端点处新增的贡献，不是把原来的被积函数先求导。"
+        },
+        {
+          "path": "/learningCheck/responses/2/text",
+          "value": "下端点固定，上端点却在移动。新增部分的高度应在当前上端点读取。"
+        },
+        {
+          "path": "/teaching/reflection/question",
+          "value": "累积值与累积速度是同一个量吗？请用当前高度解释。"
+        },
+        {
+          "path": "/teaching/reflection/answer",
+          "value": "不是。累积值包含整个区间；累积速度由移动端点处的高度决定，连续时就是该处的被积函数值。"
+        },
+        {
+          "path": "/practice/4/problem",
+          "value": "设 $A(x)=\\int_0^{x^2}t^2\\,\\mathrm{d}t$。求 $A'(x)$，并解释为什么 $A'(-1)$ 可以为负，虽然被积函数非负。"
+        },
+        {
+          "path": "/practice/4/answer",
+          "value": "$A'(x)=2x^5$，且 $A'(-1)=-2$。"
+        },
+        {
+          "path": "/practice/4/hint",
+          "value": "当前高度还要乘上端点移动的速度。"
+        },
+        {
+          "path": "/practice/4/solution/0",
+          "value": "基本定理与链式法则给 $A'(x)=(x^2)^2\\cdot2x=2x^5$。"
+        },
+        {
+          "path": "/practice/4/solution/1",
+          "value": "在负输入附近，输入增加使上限减小，累积量随之减小。也可积分得 $A(x)=\\frac{x^6}{3}$ 再求导核对。"
         }
       ]
     },
     "substitution": {
       "source": "packages/content/lessons/substitution.json",
-      "sha256": "6d9feba1031f36984351a5246aebda0922eb2f56d1312c30a42a48625f6b2fc9",
+      "sha256": "26aceae8034668ef63bec4da80bb1db385d712178f2dc880702d9645a78d397e",
       "fields": [
         {
           "path": "/title",
@@ -9317,12 +9997,32 @@
         {
           "path": "/practice/3/solution/0",
           "value": "$u = \\sin x$，$\\mathrm{d}u = \\cos x \\mathrm{d}x$。"
+        },
+        {
+          "path": "/learningCheck/responses/0/text",
+          "value": "这仍是原变量的区间。新上下限要把两个原端点分别代入变量替换。"
+        },
+        {
+          "path": "/learningCheck/responses/1/text",
+          "value": "上下限也要随变量转换：$x = 0$ 对应 $u = 1$，$x = 1$ 对应 $u = 2$。$\\mathrm{d}u = 2 x \\mathrm{d}x$。"
+        },
+        {
+          "path": "/learningCheck/responses/2/text",
+          "value": "不仅上端点需要换，起点也要换。先算原输入为零时，新变量从哪里开始。"
+        },
+        {
+          "path": "/teaching/reflection/question",
+          "value": "为什么换了变量之后，宽度和端点都要一起换？"
+        },
+        {
+          "path": "/teaching/reflection/answer",
+          "value": "宽度描述新旧变量的局部比例；端点描述实际走过的新区间。只改其中之一，就没有表示同一个累积量。"
         }
       ]
     },
     "area-between": {
       "source": "packages/content/lessons/area-between.json",
-      "sha256": "1fa8ae290fbe36830d1cd1e6b627b2ed558dac1a272c07b13eb6fa95a9458ef4",
+      "sha256": "cc265f3f159a5d435e36f580df2d88774115ab563757ba98fb625524932e8078",
       "fields": [
         {
           "path": "/title",
@@ -9583,12 +10283,32 @@
         {
           "path": "/practice/2/answer",
           "value": "$\\frac{1}{6}$。"
+        },
+        {
+          "path": "/learningCheck/responses/0/text",
+          "value": "交叉后上下位置可能互换，固定相减会出现抵消。先找交点，再逐段判断谁在上面。"
+        },
+        {
+          "path": "/learningCheck/responses/1/text",
+          "value": "面积不能靠正负抵消。先找交点与上下关系，再分段积分，也可写成高度差的绝对值积分。"
+        },
+        {
+          "path": "/learningCheck/responses/2/text",
+          "value": "高度差是一条细条的高度，不是整个区域面积。还要乘宽度，并把所有细条累积起来。"
+        },
+        {
+          "path": "/teaching/reflection/question",
+          "value": "一条竖条与整个面积之间，还差哪一步？"
+        },
+        {
+          "path": "/teaching/reflection/answer",
+          "value": "竖条只有局部高度；乘微小宽度，再在整个区间累积。交叉时必须逐段辨认上下边界。"
         }
       ]
     },
     "disk-washer": {
       "source": "packages/content/lessons/disk-washer.json",
-      "sha256": "6d83f8320adaffb16d2e3604d5cc59be318d91f117d5be03785adbc8a555c380",
+      "sha256": "6003a2aad9c36559e388e89e041f75db5cab14d6ca5093673dc40c301c1db3e6",
       "fields": [
         {
           "path": "/title",
@@ -9925,12 +10645,52 @@
         {
           "path": "/practice/5/answer",
           "value": "$\\frac13$。"
+        },
+        {
+          "path": "/learningCheck/responses/0/text",
+          "value": "先减半径再平方，得到的是另一个小圆，不是圆环。应从外圆面积中移除内圆面积。"
+        },
+        {
+          "path": "/learningCheck/responses/1/text",
+          "value": "圆环是外圆减去内圆：$\\pi  \\cdot 2^{2} - \\pi  \\cdot 1^{2} = 3 \\pi$。先减半径再平方会丢掉几何关系。"
+        },
+        {
+          "path": "/learningCheck/responses/2/text",
+          "value": "把两个半径相加会把孔洞也算成实心。想象实际挖掉的是哪一块圆盘。"
+        },
+        {
+          "path": "/teaching/reflection/question",
+          "value": "为什么圆环应减面积，不能先减半径再平方？"
+        },
+        {
+          "path": "/teaching/reflection/answer",
+          "value": "挖掉的是内圆盘整块面积；先减半径会把圆环误换成另一个圆盘。"
+        },
+        {
+          "path": "/practice/6/problem",
+          "value": "区域 $0\\le x\\le1$、$1\\le y\\le x+1$ 绕直线 $y=-1$ 旋转。写出外、内半径并求体积。"
+        },
+        {
+          "path": "/practice/6/answer",
+          "value": "$R=x+2$、$r=2$，体积为 $\\frac{7\\pi}{3}$。"
+        },
+        {
+          "path": "/practice/6/hint",
+          "value": "半径是到转轴的距离，不是原来的纵坐标。"
+        },
+        {
+          "path": "/practice/6/solution/0",
+          "value": "上下边界到转轴的距离分别为 $x+2$ 与 2；圆环面积为 $\\pi((x+2)^2-4)$。"
+        },
+        {
+          "path": "/practice/6/solution/1",
+          "value": "$V=\\pi\\int_0^1(x^2+4x)\\,\\mathrm{d}x=\\frac{7\\pi}{3}$。"
         }
       ]
     },
     "shells": {
       "source": "packages/content/lessons/shells.json",
-      "sha256": "90e389d01eb9ee9152651aba5b3cf01dd7f277d1b905a03fa22ae749d9763f6e",
+      "sha256": "3a3098de70f32d5d200e1f302d3bb2046ff5c6e9636b803e465ace6fa35cb14e",
       "fields": [
         {
           "path": "/title",
@@ -10183,12 +10943,32 @@
         {
           "path": "/practice/2/answer",
           "value": "$3-x$。"
+        },
+        {
+          "path": "/learningCheck/responses/0/text",
+          "value": "这里把半径当成了高度。竖条的高度由上下边界之差给出，离转轴的距离才是半径。"
+        },
+        {
+          "path": "/learningCheck/responses/1/text",
+          "value": "竖片从 $y = 0$ 延伸到 $y = x^{2}$，高是 $x^{2}$。薄壳体积约为 $2 \\pi  x \\cdot x^{2} \\cdot \\mathrm{d}x$。"
+        },
+        {
+          "path": "/learningCheck/responses/2/text",
+          "value": "原区域的下边界是横轴，不是上方另一条水平线。先在二维图里标出原来的竖条。"
+        },
+        {
+          "path": "/teaching/reflection/question",
+          "value": "半径加倍时，为什么每单位厚度的体积贡献变成八倍？"
+        },
+        {
+          "path": "/teaching/reflection/answer",
+          "value": "此模型高度随半径平方变化，变为四倍；周长变两倍，两者相乘得到八倍。"
         }
       ]
     },
     "arc-length": {
       "source": "packages/content/lessons/arc-length.json",
-      "sha256": "8e5c3902caf7811cd16c78598ffabf9aebe34694869584cae52d6a113e1fc9b3",
+      "sha256": "ccc98426017ff6f23f9eedd308e310fa8edfb855384dc1ac7ce3a02552880a8b",
       "fields": [
         {
           "path": "/title",
@@ -10449,12 +11229,32 @@
         {
           "path": "/practice/2/answer",
           "value": "$12\\pi$。"
+        },
+        {
+          "path": "/learningCheck/responses/0/text",
+          "value": "水平宽度漏掉了纵向变化。斜率不为零时，沿曲线的小段比水平投影更长。"
+        },
+        {
+          "path": "/learningCheck/responses/1/text",
+          "value": "窄带沿曲线展开，宽度是弧长 $\\mathrm{d}s$。只乘 $\\mathrm{d}x$ 会漏掉倾斜带来的长度；这里只算侧面。"
+        },
+        {
+          "path": "/learningCheck/responses/2/text",
+          "value": "高度给旋转半径，不是窄带沿曲线的宽度。面积要把周长与这段斜长相乘。"
+        },
+        {
+          "path": "/teaching/reflection/question",
+          "value": "旋转侧面积与封闭物体总表面积，差在哪里？"
+        },
+        {
+          "path": "/teaching/reflection/answer",
+          "value": "旋转曲线只扫出侧面；若题目还要求端盖，需另算并加入，不能由侧面动画自动得到。"
         }
       ]
     },
     "physical-integrals": {
       "source": "packages/content/lessons/physical-integrals.json",
-      "sha256": "b89ff9042e2ebd372954ec36c43d9828ce7d3ae4872daa67527dfe32fa5d6786",
+      "sha256": "46798aeaa8143695509e2d525298534654d64f5df2c9ccaece49eae7bb39abd7",
       "fields": [
         {
           "path": "/title",
@@ -10823,6 +11623,26 @@
         {
           "path": "/practice/5/solution/1",
           "value": "$F=19600\\times\\frac{16-1}{2}=147000\\,\\mathrm{N}$。"
+        },
+        {
+          "path": "/learningCheck/responses/0/text",
+          "value": "带符号的速度累积位移，往返会抵消。路程要把倒退的一段也计为走过的长度。"
+        },
+        {
+          "path": "/learningCheck/responses/1/text",
+          "value": "位移积分带方向的 $v (t)$，路程积分速率 $|v (t)|$。往返运动的位移会抵消，路程不会。"
+        },
+        {
+          "path": "/learningCheck/responses/2/text",
+          "value": "速度的导数是加速度。对它积分得到速度变化，单位和总路程也不同。"
+        },
+        {
+          "path": "/teaching/reflection/question",
+          "value": "回到起点时，为什么路程没有变成零？"
+        },
+        {
+          "path": "/teaching/reflection/answer",
+          "value": "返回只抵消带方向的位移；每段走过的长度都非负，仍要累加。"
         }
       ]
     }

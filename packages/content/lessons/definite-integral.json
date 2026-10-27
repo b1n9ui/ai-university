@@ -196,7 +196,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.3.2",
+    "version": "0.3.4",
     "status": "revised",
     "humanReviewed": false
   },
@@ -215,7 +215,21 @@
       "几何面积是 −1"
     ],
     "correctIndex": 1,
-    "explanation": "$[0,1]$ 的积分是 $\\frac{- 1}{2}$，$[1,2]$ 是 $\\frac{1}{2}$。几何面积要把两部分都取正，再相加。"
+    "explanation": "$[0,1]$ 的积分是 $\\frac{- 1}{2}$，$[1,2]$ 是 $\\frac{1}{2}$。几何面积要把两部分都取正，再相加。",
+    "responses": [
+      {
+        "text": "定积分允许正负贡献抵消，几何面积不会抵消。先分别算横轴上下两部分。",
+        "experimentStep": 1
+      },
+      {
+        "text": "$[0,1]$ 的积分是 $\\frac{- 1}{2}$，$[1,2]$ 是 $\\frac{1}{2}$。几何面积要把两部分都取正，再相加。",
+        "experimentStep": null
+      },
+      {
+        "text": "负号表示方向，不表示一块区域有负的几何面积。几何面积应对每段取非负贡献。",
+        "experimentStep": 0
+      }
+    ]
   },
   "teaching": {
     "explain": "累积保留方向。正贡献和负贡献可以抵消，所以总积分为零不等于没有发生变化，也不等于没有面积。",
@@ -244,6 +258,11 @@
         },
         "observation": "定积分为 $\\frac32$，几何面积为 $\\frac52$。"
       }
-    ]
+    ],
+    "reflection": {
+      "question": "为什么积分为零，面积读数仍可以大于零？",
+      "answer": "横轴两侧的带符号贡献可以抵消，几何面积把它们都计为非负长度乘宽度。"
+    },
+    "transferExerciseId": "definite-integral-p6"
   }
 }

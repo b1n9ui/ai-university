@@ -63,3 +63,8 @@ $T = 1 [\frac{1 + 5}{2} + 3] = 6$.
 $\frac{1}{4}$.
 $\frac{1}{4}$.
 $6$.
+On the same subinterval, an increasing function is higher at the right endpoint. Keep the partition fixed and change only the sampling endpoint.
+Each right endpoint has a function value at least as large as its left endpoint, so its rectangle is at least as tall.
+A finite partition does not make the two sums equal. Start with a few rectangles to see the difference, then refine the partition.
+What changes when you increase the number of rectangles versus changing sampling endpoints?
+The former decreases subinterval width; the latter changes the sampled height within each subinterval. Control them separately to see their effects.

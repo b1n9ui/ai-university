@@ -1,6 +1,6 @@
 {
   "locale": "en",
-  "sourceVersion": "0.3.3",
+  "sourceVersion": "0.3.4",
   "provenance": {
     "authorship": "AI-generated",
     "humanReviewed": false
@@ -10,7 +10,7 @@
     "title": "Calculus I",
     "titleZh": "Calculus I",
     "subtitle": "From rates of change to accumulation",
-    "version": "0.3.3",
+    "version": "0.3.4",
     "language": "en",
     "author": "AI University · AI-generated",
     "description": "An introduction to single-variable calculus: functions, limits, derivatives, integrals, and applications. Each lesson includes concise explanations, precise conditions, derivations, examples, exercises, and interactive diagrams.",
@@ -997,7 +997,7 @@
       ],
       "provenance": {
         "author": "AI-generated",
-        "version": "0.3.1",
+        "version": "0.3.4",
         "status": "revised",
         "humanReviewed": false
       },
@@ -1015,7 +1015,21 @@
           "$x \\ne 2$"
         ],
         "correctIndex": 1,
-        "explanation": "The root requires $x - 2 \\ge 0$, and the denominator cannot be zero. Together these give $x > 2$."
+        "explanation": "The root requires $x - 2 \\ge 0$, and the denominator cannot be zero. Together these give $x > 2$.",
+        "responses": [
+          {
+            "text": "A square root may equal zero, but a denominator may not. Check the radicand and denominator separately.",
+            "experimentStep": null
+          },
+          {
+            "text": "The root requires $x - 2 \\ge 0$, and the denominator cannot be zero. Together these give $x > 2$.",
+            "experimentStep": null
+          },
+          {
+            "text": "Excluding a zero denominator is not enough: the radicand must also be nonnegative. Try an input below 2.",
+            "experimentStep": null
+          }
+        ]
       },
       "teaching": {
         "explain": "Think of a function as a rule with an entry requirement. Check that the input can enter before finding its output. Over the reals, the square-root rule accepts only nonnegative inputs.",
@@ -1044,7 +1058,12 @@
             },
             "observation": "There is no real output, so no point should be added to the graph."
           }
-        ]
+        ],
+        "reflection": {
+          "question": "The plotted square root has an output at zero. Why can the fraction in the question not accept an input making its square root zero?",
+          "answer": "The square root itself permits zero. In the question it is also a denominator, which must be nonzero. The two functions have different domains."
+        },
+        "transferExerciseId": "domain-p4"
       }
     },
     {
@@ -1193,7 +1212,7 @@
       ],
       "provenance": {
         "author": "AI-generated",
-        "version": "0.3.2",
+        "version": "0.3.4",
         "status": "revised",
         "humanReviewed": false
       },
@@ -1211,7 +1230,21 @@
           "$(2,0)$"
         ],
         "correctIndex": 2,
-        "explanation": "The function is smallest when its inner expression is zero. Since $x - 2 = 0$, the vertex moves right to $(2,0)$."
+        "explanation": "The function is smallest when its inner expression is zero. Since $x - 2 = 0$, the vertex moves right to $(2,0)$.",
+        "responses": [
+          {
+            "text": "The minus sign inside the brackets is not an instruction to move left. At the vertex the squared term is zero; solve $x-2=0$.",
+            "experimentStep": 1
+          },
+          {
+            "text": "A shift inside the input changes the horizontal coordinate. Adding a constant outside the square changes the vertex height.",
+            "experimentStep": 2
+          },
+          {
+            "text": "The function is smallest when its inner expression is zero. Since $x - 2 = 0$, the vertex moves right to $(2,0)$.",
+            "experimentStep": null
+          }
+        ]
       },
       "teaching": {
         "explain": "A shift changes where each point lies. Subtracting inside the function requires a larger input to reach the original value, so the graph moves right.",
@@ -1243,7 +1276,12 @@
             },
             "observation": "The vertex becomes $(2,1)$; the shifts affect different coordinates."
           }
-        ]
+        ],
+        "reflection": {
+          "question": "Which part of the formula changes for a rightward shift and for an upward shift?",
+          "answer": "A horizontal shift changes the input: replace it with $x-a$. An upward shift adds a constant to the entire output."
+        },
+        "transferExerciseId": "transformations-p4"
       }
     },
     {
@@ -1393,7 +1431,7 @@
       ],
       "provenance": {
         "author": "AI-generated",
-        "version": "0.3.1",
+        "version": "0.3.4",
         "status": "revised",
         "humanReviewed": false
       },
@@ -1411,7 +1449,21 @@
           "$7$"
         ],
         "correctIndex": 0,
-        "explanation": "First $g (2) = 3$, then $f (3) = 9$. Reversing the order gives $g (f (2)) = 5$."
+        "explanation": "First $g (2) = 3$, then $f (3) = 9$. Reversing the order gives $g (f (2)) = 5$.",
+        "responses": [
+          {
+            "text": "First $g (2) = 3$, then $f (3) = 9$. Reversing the order gives $g (f (2)) = 5$.",
+            "experimentStep": null
+          },
+          {
+            "text": "That result comes from squaring first, then adding one. The question asks you to evaluate the inner function first and pass its output to the outer function.",
+            "experimentStep": null
+          },
+          {
+            "text": "Composition does not add two function values. First write the intermediate value $g(2)$, then substitute that number into $f$.",
+            "experimentStep": null
+          }
+        ]
       },
       "teaching": {
         "explain": "A forward rule can lose information: squaring merges positive and negative inputs. To reverse it uniquely, keep only one branch first.",
@@ -1440,7 +1492,12 @@
             },
             "observation": "Both give 4. Restricting to the nonnegative branch makes the reverse choice unique."
           }
-        ]
+        ],
+        "reflection": {
+          "question": "Why can the square function not be inverted on all real numbers?",
+          "answer": "Positive and negative inputs can give the same output. Restrict to a one-to-one branch to recover a unique input."
+        },
+        "transferExerciseId": "composition-p4"
       }
     },
     {
@@ -1590,7 +1647,7 @@
       ],
       "provenance": {
         "author": "AI-generated",
-        "version": "0.3.2",
+        "version": "0.3.4",
         "status": "revised",
         "humanReviewed": false
       },
@@ -1608,7 +1665,21 @@
           "Angles measured in degrees cannot be differentiated"
         ],
         "correctIndex": 1,
-        "explanation": "$\\frac{\\sin h}{h} \\to 1$ requires $h$ in radians. Using degrees introduces a factor of $\\frac{\\pi }{180}$."
+        "explanation": "$\\frac{\\sin h}{h} \\to 1$ requires $h$ in radians. Using degrees introduces a factor of $\\frac{\\pi }{180}$.",
+        "responses": [
+          {
+            "text": "Changing units does not make the angle smaller; only its numerical representation changes. Compare the two ways to describe a full turn.",
+            "experimentStep": 2
+          },
+          {
+            "text": "$\\frac{\\sin h}{h} \\to 1$ requires $h$ in radians. Using degrees introduces a factor of $\\frac{\\pi }{180}$.",
+            "experimentStep": null
+          },
+          {
+            "text": "You can differentiate in degrees, but a unit-conversion factor appears. Radians put the ratio of arc length to radius directly into the formula.",
+            "experimentStep": null
+          }
+        ]
       },
       "teaching": {
         "explain": "Sine records height on the unit circle. A full turn returns to the same point, so the heights repeat. In radians, that turn measures twice pi.",
@@ -1637,7 +1708,12 @@
             },
             "observation": "The output is close to 0 again. These presets are decimal approximations, not exact multiples of pi."
           }
-        ]
+        ],
+        "reflection": {
+          "question": "Do the near-zero readings prove that the preset input is exactly one full turn?",
+          "answer": "No. The input is a decimal approximation. The exact period uses pi, and finite-precision readings do not replace the identity."
+        },
+        "transferExerciseId": "trigonometry-p4"
       }
     },
     {
@@ -1786,7 +1862,7 @@
       ],
       "provenance": {
         "author": "AI-generated",
-        "version": "0.3.1",
+        "version": "0.3.4",
         "status": "revised",
         "humanReviewed": false
       },
@@ -1804,7 +1880,21 @@
           "$3 e$"
         ],
         "correctIndex": 1,
-        "explanation": "$\\ln$ and exponentiation with base $e$ are inverse operations: $\\ln (e^{x}) = x$. Here $x = 3$."
+        "explanation": "$\\ln$ and exponentiation with base $e$ are inverse operations: $\\ln (e^{x}) = x$. Here $x = 3$.",
+        "responses": [
+          {
+            "text": "The natural logarithm asks for the exponent, not the base. Substitute your answer back: which power of the base gives the original number?",
+            "experimentStep": 1
+          },
+          {
+            "text": "$\\ln$ and exponentiation with base $e$ are inverse operations: $\\ln (e^{x}) = x$. Here $x = 3$.",
+            "experimentStep": null
+          },
+          {
+            "text": "An exponent represents repeated multiplication, not the base multiplied by the exponent. A logarithm undoes exponentiation.",
+            "experimentStep": 2
+          }
+        ]
       },
       "teaching": {
         "explain": "Exponential growth replaces equal additions with equal multiplications. A logarithm works backward, counting how many steps reach a given output.",
@@ -1833,7 +1923,12 @@
             },
             "observation": "The output is $e^2$, about 7.38906; the ratio of consecutive outputs is still $e$."
           }
-        ]
+        ],
+        "reflection": {
+          "question": "When the input increases by one, are output differences or output ratios constant? Why?",
+          "answer": "The ratios are constant. Increasing the exponent by one multiplies by the base again rather than adding a fixed amount."
+        },
+        "transferExerciseId": "exponential-log-p4"
       }
     },
     {
@@ -1973,6 +2068,20 @@
             "A limit concerns a punctured neighborhood, so changing one point does not affect it."
           ],
           "hint": "$x$ approaches 1 without equaling 1."
+        },
+        {
+          "id": "limit-intuition-transfer",
+          "problem": "For $x\\ne2$, let $f(x)=x^2$, but set $f(2)=7$. Find $\\lim_{x\\to2}f(x)$ and determine whether the function is continuous at 2.",
+          "answer": "The limit is 4; the function is not continuous there.",
+          "solution": [
+            "In a punctured neighborhood the function equals the square function, so the limit is $2^2=4$.",
+            "The value 7 differs from the limit 4, so continuity fails."
+          ],
+          "hint": "Write the nearby trend and the point value separately.",
+          "difficulty": 4,
+          "misconceptionTags": [
+            "limit-intuition-m2"
+          ]
         }
       ],
       "prerequisites": [
@@ -1986,7 +2095,7 @@
       ],
       "provenance": {
         "author": "AI-generated",
-        "version": "0.3.1",
+        "version": "0.3.4",
         "status": "revised",
         "humanReviewed": false
       },
@@ -2005,7 +2114,21 @@
           "The limit must cease to exist"
         ],
         "correctIndex": 1,
-        "explanation": "The limit examines inputs near 1 but different from 1. Changing the point value alone does not change the nearby behavior."
+        "explanation": "The limit examines inputs near 1 but different from 1. Changing the point value alone does not change the nearby behavior.",
+        "responses": [
+          {
+            "text": "A point value specifies the output at that exact input. A limit concerns nearby inputs; it does not substitute the center point.",
+            "experimentStep": 1
+          },
+          {
+            "text": "The limit examines inputs near 1 but different from 1. Changing the point value alone does not change the nearby behavior.",
+            "experimentStep": null
+          },
+          {
+            "text": "Changing one point does not automatically destroy the common nearby trend. Examine the two sides before deciding whether they approach the same number.",
+            "experimentStep": 1
+          }
+        ]
       },
       "teaching": {
         "explain": "Separate reaching a point from approaching it. A limit describes nearby outputs; a missing point can coexist with a stable limit.",
@@ -2040,7 +2163,12 @@
             },
             "observation": "The left side stays at 1 and the right side at 3. Shrinking the distance cannot produce a common limit."
           }
-        ]
+        ],
+        "reflection": {
+          "question": "Why do changing one value and introducing a jump affect a limit differently?",
+          "answer": "Changing one value leaves the punctured neighborhood unchanged. A jump makes nearby outputs on opposite sides approach different numbers."
+        },
+        "transferExerciseId": "limit-intuition-transfer"
       }
     },
     {
@@ -2194,7 +2322,7 @@
       ],
       "provenance": {
         "author": "AI-generated",
-        "version": "0.3.1",
+        "version": "0.3.4",
         "status": "revised",
         "humanReviewed": false
       },
@@ -2213,7 +2341,21 @@
           "Simplify the expression, then find the limit"
         ],
         "correctIndex": 2,
-        "explanation": "$\\frac{0}{0}$ is an indeterminate form, not an answer. Factoring, cancellation, or rationalization may reveal nearby behavior; direct division by zero is invalid."
+        "explanation": "$\\frac{0}{0}$ is an indeterminate form, not an answer. Factoring, cancellation, or rationalization may reveal nearby behavior; direct division by zero is invalid.",
+        "responses": [
+          {
+            "text": "A numerator tending to zero does not determine the quotient. The denominator also tends to zero, so their relative rates matter.",
+            "experimentStep": 1
+          },
+          {
+            "text": "Two quantities tending to zero need not have a ratio tending to one. Simplify or use an established limit relation; you cannot cancel zeros.",
+            "experimentStep": 1
+          },
+          {
+            "text": "$\\frac{0}{0}$ is an indeterminate form, not an answer. Factoring, cancellation, or rationalization may reveal nearby behavior; direct division by zero is invalid.",
+            "experimentStep": null
+          }
+        ]
       },
       "teaching": {
         "explain": "Getting zero over zero means direct substitution failed. Study the nearby expression and check the laws' conditions rather than treating the indeterminate form as a result.",
@@ -2245,7 +2387,12 @@
             },
             "observation": "The output is the same. This trigonometric limit uses radians; finite samples support exploration, not proof."
           }
-        ]
+        ],
+        "reflection": {
+          "question": "Both sampled sides are close to one. Why is assigning one at zero not a proof of the limit?",
+          "answer": "Filling the point is a separate definition. A limit controls arbitrarily close inputs and requires an argument, not just finitely many readings."
+        },
+        "transferExerciseId": "limit-laws-p4"
       }
     },
     {
@@ -2399,7 +2546,7 @@
       ],
       "provenance": {
         "author": "AI-generated",
-        "version": "0.3.3",
+        "version": "0.3.4",
         "status": "revised",
         "humanReviewed": false
       },
@@ -2418,7 +2565,21 @@
           "$\\varepsilon$ and $\\delta$ must be equal"
         ],
         "correctIndex": 0,
-        "explanation": "For every output tolerance $\\varepsilon$, however small, a sufficiently small $\\delta$ must exist. The choice of $\\delta$ may depend on $\\varepsilon$."
+        "explanation": "For every output tolerance $\\varepsilon$, however small, a sufficiently small $\\delta$ must exist. The choice of $\\delta$ may depend on $\\varepsilon$.",
+        "responses": [
+          {
+            "text": "For every output tolerance $\\varepsilon$, however small, a sufficiently small $\\delta$ must exist. The choice of $\\delta$ may depend on $\\varepsilon$.",
+            "experimentStep": null
+          },
+          {
+            "text": "One fixed input neighborhood generally cannot meet arbitrarily small output tolerances. You may choose a new neighborhood when the output requirement tightens.",
+            "experimentStep": 1
+          },
+          {
+            "text": "The function determines the input and output scales; they need not be equal. Check how the input interval guarantees that all its outputs lie inside the tolerance band.",
+            "experimentStep": 0
+          }
+        ]
       },
       "teaching": {
         "explain": "Start with a required output accuracy, then give an input radius that guarantees it. One good point is not enough: every allowed point in that range must satisfy the bound.",
@@ -2447,7 +2608,12 @@
             },
             "observation": "Now $\\delta=0.01$. Use $|x^2-4|=|x-2||x+2|$ to justify the guarantee throughout the band."
           }
-        ]
+        ],
+        "reflection": {
+          "question": "Why is controlling an entire input neighborhood stronger than checking a few points?",
+          "answer": "The definition requires every noncentral input in the neighborhood to meet the tolerance. Finite samples cannot rule out failures between samples."
+        },
+        "transferExerciseId": "epsilon-delta-p4"
       }
     },
     {
@@ -2604,7 +2770,7 @@
       ],
       "provenance": {
         "author": "AI-generated",
-        "version": "0.3.2",
+        "version": "0.3.4",
         "status": "revised",
         "humanReviewed": false
       },
@@ -2623,7 +2789,21 @@
           "Yes, provided $f (a)$ is small enough"
         ],
         "correctIndex": 1,
-        "explanation": "Continuity requires a defined $f (a)$, an existing limit, and equality between them. Every condition matters."
+        "explanation": "Continuity requires a defined $f (a)$, an existing limit, and equality between them. Every condition matters.",
+        "responses": [
+          {
+            "text": "A common limit is only one condition. The value at the center must also meet that limit.",
+            "experimentStep": 2
+          },
+          {
+            "text": "Continuity requires a defined $f (a)$, an existing limit, and equality between them. Every condition matters.",
+            "experimentStep": null
+          },
+          {
+            "text": "Continuity does not depend on how small the value is. It depends on whether the value equals the limit. Try filling the same hole at two different heights.",
+            "experimentStep": 2
+          }
+        ]
       },
       "teaching": {
         "explain": "Continuity connects the nearby trend to the output at the point. Finding matching one-sided limits still leaves the point value to check.",
@@ -2657,7 +2837,12 @@
             },
             "observation": "Both sides approach 2 and the point value is 2, so the extended function is continuous there. Manually try a different point value to see why continuity fails."
           }
-        ]
+        ],
+        "reflection": {
+          "question": "Which value makes the filled function continuous, and why is the filled point alone insufficient?",
+          "answer": "The value must equal the common limit. A filled point shows only that the function is defined there, not that nearby values meet it."
+        },
+        "transferExerciseId": "continuity-p4"
       }
     },
     {
@@ -2809,7 +2994,7 @@
       ],
       "provenance": {
         "author": "AI-generated",
-        "version": "0.3.1",
+        "version": "0.3.4",
         "status": "revised",
         "humanReviewed": false
       },
@@ -2828,7 +3013,21 @@
           "Yes: $\\infty$ and $- \\infty$ are the same number"
         ],
         "correctIndex": 1,
-        "explanation": "The two sides disagree, so a two-sided limit of $+ \\infty$ is invalid. Infinite behavior is not a finite real value either."
+        "explanation": "The two sides disagree, so a two-sided limit of $+ \\infty$ is invalid. Infinite behavior is not a finite real value either.",
+        "responses": [
+          {
+            "text": "Looking only from the right misses the other behavior. Move to the left of zero and check the denominator's sign.",
+            "experimentStep": 2
+          },
+          {
+            "text": "The two sides disagree, so a two-sided limit of $+ \\infty$ is invalid. Infinite behavior is not a finite real value either.",
+            "experimentStep": null
+          },
+          {
+            "text": "Unbounded growth and unbounded decrease are different behaviors. Infinity is not a real number whose sign can be ignored.",
+            "experimentStep": 2
+          }
+        ]
       },
       "teaching": {
         "explain": "Tending to infinity means eventually passing every prescribed threshold, not reaching a number called infinity. Check the side of approach and the sign.",
@@ -2860,7 +3059,12 @@
             },
             "observation": "The output is −100. The sides have opposite behavior, so they cannot share one two-sided infinite limit."
           }
-        ]
+        ],
+        "reflection": {
+          "question": "Does a curve leaving the viewing window mean the function ends there?",
+          "answer": "No. The viewing window is finite, while the readings may describe larger outputs. The formula determines the domain and one-sided behavior."
+        },
+        "transferExerciseId": "infinite-limits-p4"
       }
     },
     {
@@ -3000,6 +3204,20 @@
           ],
           "hint": "The rate of change is not the current position, 9.",
           "numericAnswer": 6
+        },
+        {
+          "id": "derivative-definition-transfer",
+          "problem": "Replace the square function with $f(x)=x^3$. At $a=1$, find the right-hand difference quotient for $h=0.1$, then find the derivative. Are they equal?",
+          "answer": "The quotient is 3.31 and the derivative is 3; they are unequal.",
+          "solution": [
+            "$\\frac{(1+h)^3-1}{h}=3+3h+h^2$, which gives 3.31 after substitution.",
+            "As $h\\to0$, the last two terms tend to zero and the quotient tends to 3."
+          ],
+          "hint": "Expand the cube, then cancel the nonzero gap.",
+          "difficulty": 4,
+          "misconceptionTags": [
+            "derivative-definition-m1"
+          ]
         }
       ],
       "prerequisites": [
@@ -3013,7 +3231,7 @@
       ],
       "provenance": {
         "author": "AI-generated",
-        "version": "0.3.2",
+        "version": "0.3.4",
         "status": "revised",
         "humanReviewed": false
       },
@@ -3032,7 +3250,21 @@
           "The derivative does not exist"
         ],
         "correctIndex": 1,
-        "explanation": "The quotient is $\\frac{(1 + h)^{2} - 1}{h} = 2 + h$. At $h = 0.1$ it is 2.1; only taking $h \\to 0$ gives derivative 2."
+        "explanation": "The quotient is $\\frac{(1 + h)^{2} - 1}{h} = 2 + h$. At $h = 0.1$ it is 2.1; only taking $h \\to 0$ gives derivative 2.",
+        "responses": [
+          {
+            "text": "A small gap gives an approximation. See whether the quotient still changes as you shrink the gap, then distinguish a finite quotient from its limit.",
+            "experimentStep": 1
+          },
+          {
+            "text": "The quotient is $\\frac{(1 + h)^{2} - 1}{h} = 2 + h$. At $h = 0.1$ it is 2.1; only taking $h \\to 0$ gives derivative 2.",
+            "experimentStep": null
+          },
+          {
+            "text": "A finite quotient differing from the derivative does not mean the derivative fails to exist. Examine whether the quotients approach a common limit as the gap tends to zero.",
+            "experimentStep": 0
+          }
+        ]
       },
       "teaching": {
         "explain": "First measure average change over an interval, then shorten the interval. The derivative is the limiting value, not the slope of a merely short secant.",
@@ -3070,7 +3302,12 @@
             },
             "observation": "The right quotient is 1 and the left quotient is −1. The function is continuous but has no common two-sided derivative."
           }
-        ]
+        ],
+        "reflection": {
+          "question": "Why does making the gap small not settle differentiability for both a smooth curve and a corner?",
+          "answer": "A derivative requires a common finite limit of the two-sided difference quotients. At a corner the slopes remain different, however small the gap becomes."
+        },
+        "transferExerciseId": "derivative-definition-transfer"
       }
     },
     {
@@ -3222,7 +3459,7 @@
       ],
       "provenance": {
         "author": "AI-generated",
-        "version": "0.3.1",
+        "version": "0.3.4",
         "status": "revised",
         "humanReviewed": false
       },
@@ -3241,7 +3478,21 @@
           "$f' + g'$"
         ],
         "correctIndex": 1,
-        "explanation": "Both factors can change. Differentiate one and multiply by the other's original value, then add the two contributions."
+        "explanation": "Both factors can change. Differentiate one and multiply by the other's original value, then add the two contributions.",
+        "responses": [
+          {
+            "text": "When both factors vary, the product changes through two contributions. Test this option with $f(x)=g(x)=x$.",
+            "experimentStep": null
+          },
+          {
+            "text": "Both factors can change. Differentiate one and multiply by the other's original value, then add the two contributions.",
+            "experimentStep": null
+          },
+          {
+            "text": "That is the rule for a sum. When one factor in a product changes, its contribution is multiplied by the other factor's current value.",
+            "experimentStep": null
+          }
+        ]
       },
       "teaching": {
         "explain": "Differentiation rules organize the limits in the definition into efficient calculations. You can still check them against difference quotients. A product's derivative is not the product of its derivatives.",
@@ -3276,7 +3527,12 @@
             },
             "observation": "The derivative is again 3. A function can have a negative value and a positive rate of change."
           }
-        ]
+        ],
+        "reflection": {
+          "question": "Why can a function have a negative value but a positive derivative at a negative input?",
+          "answer": "The value describes height; the derivative describes local change. A curve below the axis can still rise as its input increases."
+        },
+        "transferExerciseId": "derivative-rules-p4"
       }
     },
     {
@@ -3418,6 +3674,21 @@
             "Apply the product rule first, then the chain rule to $(1 + x)^{3}$."
           ],
           "hint": "Start with the outermost operation."
+        },
+        {
+          "id": "chain-rule-transfer",
+          "problem": "Find the derivative of $y=(1-2x)^3$ at zero. Without expanding the cube, explain the sign of the derivative.",
+          "answer": "The derivative is $-6$; the inner function decreases as the input increases.",
+          "solution": [
+            "The outer derivative is $3(1-2x)^2$ and the inner derivative is $-2$.",
+            "Multiplying gives $y'=-6(1-2x)^2$, which is $-6$ at zero."
+          ],
+          "hint": "Write the outer derivative and the inner rate separately.",
+          "difficulty": 4,
+          "misconceptionTags": [
+            "chain-rule-m1",
+            "chain-rule-m2"
+          ]
         }
       ],
       "prerequisites": [
@@ -3431,7 +3702,7 @@
       ],
       "provenance": {
         "author": "AI-generated",
-        "version": "0.3.1",
+        "version": "0.3.4",
         "status": "revised",
         "humanReviewed": false
       },
@@ -3450,7 +3721,21 @@
           "$x^{2} + 1$"
         ],
         "correctIndex": 0,
-        "explanation": "The outer rate is $3 (x^{2} + 1)^{2}$; the inner rate is $2 x$. The chain rule multiplies them."
+        "explanation": "The outer rate is $3 (x^{2} + 1)^{2}$; the inner rate is $2 x$. The chain rule multiplies them.",
+        "responses": [
+          {
+            "text": "The outer rate is $3 (x^{2} + 1)^{2}$; the inner rate is $2 x$. The chain rule multiplies them.",
+            "experimentStep": null
+          },
+          {
+            "text": "The outer power must be differentiated, but the question targets the easily missed inner change. Check what the total rate should be when the inner rate is zero.",
+            "experimentStep": 0
+          },
+          {
+            "text": "The inner output is used to evaluate the outer derivative. The inner rate must also be multiplied in. Write those two roles separately.",
+            "experimentStep": 1
+          }
+        ]
       },
       "teaching": {
         "explain": "A change passes through two stages: input to inner output, then inner output to outer output. Multiply the rates of those stages to get the total rate.",
@@ -3479,7 +3764,12 @@
             },
             "observation": "The inner output remains 2, but its rate is −2. The total derivative is −24."
           }
-        ]
+        ],
+        "reflection": {
+          "question": "Two opposite inputs give the same inner output. Why do their total derivatives have opposite signs?",
+          "answer": "The outer derivative is evaluated at the same inner output, but the inner rates have opposite signs, so their products have opposite signs."
+        },
+        "transferExerciseId": "chain-rule-transfer"
       }
     },
     {
@@ -3633,7 +3923,7 @@
       ],
       "provenance": {
         "author": "AI-generated",
-        "version": "0.3.2",
+        "version": "0.3.4",
         "status": "revised",
         "humanReviewed": false
       },
@@ -3652,7 +3942,21 @@
           "$- \\cos x$"
         ],
         "correctIndex": 1,
-        "explanation": "Near $x = \\frac{\\pi }{2}$, $\\cos x$ decreases with slope −1. This matches $- \\sin x$; the angle is in radians."
+        "explanation": "Near $x = \\frac{\\pi }{2}$, $\\cos x$ decreases with slope −1. This matches $- \\sin x$; the angle is in radians.",
+        "responses": [
+          {
+            "text": "Near $x=\\frac\\pi2$, cosine is decreasing. The derivative's sign must reflect that direction.",
+            "experimentStep": null
+          },
+          {
+            "text": "Near $x = \\frac{\\pi }{2}$, $\\cos x$ decreases with slope −1. This matches $- \\sin x$; the angle is in radians.",
+            "experimentStep": null
+          },
+          {
+            "text": "Check at zero: cosine has a smooth peak with zero slope. Does this candidate formula give zero there?",
+            "experimentStep": null
+          }
+        ]
       },
       "teaching": {
         "explain": "Height and rate of change are different quantities. Sine's rate is cosine: the wave can be high while its instantaneous rate is near zero.",
@@ -3687,7 +3991,12 @@
             },
             "observation": "The height is near 0 and the slope near −1. These base points are decimal approximations in radians."
           }
-        ]
+        ],
+        "reflection": {
+          "question": "Why is the slope near zero at a peak where the height is largest?",
+          "answer": "Height and rate are different quantities. Around a smooth peak the curve changes from rising to falling, with a horizontal tangent at the peak."
+        },
+        "transferExerciseId": "trig-derivatives-p4"
       }
     },
     {
@@ -3869,7 +4178,7 @@
       ],
       "provenance": {
         "author": "AI-generated",
-        "version": "0.3.2",
+        "version": "0.3.4",
         "status": "revised",
         "humanReviewed": false
       },
@@ -3888,7 +4197,21 @@
           "${y'}^{2}$"
         ],
         "correctIndex": 1,
-        "explanation": "$y^{2}$ composes an outer square with the inner function $y (x)$. Multiply by the inner derivative $y'$."
+        "explanation": "$y^{2}$ composes an outer square with the inner function $y (x)$. Multiply by the inner derivative $y'$.",
+        "responses": [
+          {
+            "text": "That is the rate with respect to $y$. The question differentiates with respect to $x$, so the change of $y$ with $x$ must also be included.",
+            "experimentStep": 1
+          },
+          {
+            "text": "$y^{2}$ composes an outer square with the inner function $y (x)$. Multiply by the inner derivative $y'$.",
+            "experimentStep": null
+          },
+          {
+            "text": "The function value is squared, not its derivative. Treat $y^2$ as an outer square composed with an inner function.",
+            "experimentStep": null
+          }
+        ]
       },
       "teaching": {
         "explain": "You need not solve the whole curve as one function. Differentiate along the chosen branch, remembering that its vertical coordinate changes. The slope belongs to a specific point.",
@@ -3923,7 +4246,12 @@
             },
             "observation": "The height is smaller and the tangent steeper. At the endpoint, the nonzero-denominator formula cannot supply a finite slope."
           }
-        ]
+        ],
+        "reflection": {
+          "question": "Can the slope formula dividing by height still be used at the circle's endpoints?",
+          "answer": "No. Division by height is invalid when height is zero. Discuss a vertical tangent rather than inventing a finite slope."
+        },
+        "transferExerciseId": "implicit-p5"
       }
     },
     {
@@ -4074,7 +4402,7 @@
       ],
       "provenance": {
         "author": "AI-generated",
-        "version": "0.3.1",
+        "version": "0.3.4",
         "status": "revised",
         "humanReviewed": false
       },
@@ -4092,7 +4420,21 @@
           "$\\frac{1}{x}$"
         ],
         "correctIndex": 2,
-        "explanation": "The chain rule gives $(\\frac{1}{3 x}) \\cdot 3 = \\frac{1}{x}$. The real domain of $\\ln (3 x)$ is $x > 0$."
+        "explanation": "The chain rule gives $(\\frac{1}{3 x}) \\cdot 3 = \\frac{1}{x}$. The real domain of $\\ln (3 x)$ is $x > 0$.",
+        "responses": [
+          {
+            "text": "Differentiating the outer logarithm is only the first step; the inner function also varies. Apply the chain rule before simplifying.",
+            "experimentStep": null
+          },
+          {
+            "text": "The inner coefficient cannot appear only in the numerator. The outer derivative's denominator must contain the full inner expression too.",
+            "experimentStep": null
+          },
+          {
+            "text": "The chain rule gives $(\\frac{1}{3 x}) \\cdot 3 = \\frac{1}{x}$. The real domain of $\\ln (3 x)$ is $x > 0$.",
+            "experimentStep": null
+          }
+        ]
       },
       "teaching": {
         "explain": "Exponential growth has a rate proportional to the current amount. With the natural base, that proportionality factor is one: the curve's height equals its rate of change.",
@@ -4127,7 +4469,12 @@
             },
             "observation": "Both are approximately 0.36788. A negative input does not make an exponential output negative."
           }
-        ]
+        ],
+        "reflection": {
+          "question": "Why need neither an exponential's value nor its derivative be negative at a negative input?",
+          "answer": "The exponential is positive, and the natural exponential's derivative equals its value. The input's sign does not directly determine either sign."
+        },
+        "transferExerciseId": "exp-log-derivatives-p4"
       }
     },
     {
@@ -4280,7 +4627,7 @@
       ],
       "provenance": {
         "author": "AI-generated",
-        "version": "0.3.1",
+        "version": "0.3.4",
         "status": "revised",
         "humanReviewed": false
       },
@@ -4298,7 +4645,21 @@
           "Never"
         ],
         "correctIndex": 1,
-        "explanation": "The output of $\\arcsin$ is restricted to $[\\frac{- \\pi }{2} , \\frac{\\pi }{2}]$. Outside it, the original angle generally cannot be recovered."
+        "explanation": "The output of $\\arcsin$ is restricted to $[\\frac{- \\pi }{2} , \\frac{\\pi }{2}]$. Outside it, the original angle generally cannot be recovered.",
+        "responses": [
+          {
+            "text": "Sine is not one-to-one on all real numbers. Try $x=\\pi$ and compare the principal value returned by arcsine.",
+            "experimentStep": null
+          },
+          {
+            "text": "The output of $\\arcsin$ is restricted to $[\\frac{- \\pi }{2} , \\frac{\\pi }{2}]$. Outside it, the original angle generally cannot be recovered.",
+            "experimentStep": null
+          },
+          {
+            "text": "On its principal interval, sine is restricted to an invertible function. Test $x=0$ before accepting the claim that the identity never holds.",
+            "experimentStep": null
+          }
+        ]
       },
       "teaching": {
         "explain": "An inverse exchanges inputs and outputs, so its local scale factor is reciprocal. Find the corresponding point before inverting the derivative.",
@@ -4333,7 +4694,12 @@
             },
             "observation": "The slope is $\\frac1{10}$, still positive. The curve has not stopped rising."
           }
-        ]
+        ],
+        "reflection": {
+          "question": "If arctangent has a very small slope far out, does it stop increasing at some finite input?",
+          "answer": "No. Its derivative remains positive at every finite input. Becoming flatter asymptotically differs from becoming constant at a point."
+        },
+        "transferExerciseId": "inverse-trig-p4"
       }
     },
     {
@@ -4514,7 +4880,7 @@
       ],
       "provenance": {
         "author": "AI-generated",
-        "version": "0.3.3",
+        "version": "0.3.4",
         "status": "revised",
         "humanReviewed": false
       },
@@ -4532,7 +4898,21 @@
           "$\\pi  (\\frac{\\mathrm{d}r}{\\mathrm{d}t})^{2}$"
         ],
         "correctIndex": 1,
-        "explanation": "Differentiate with respect to time: $\\frac{\\mathrm{d}A}{\\mathrm{d}t} = \\frac{2 \\pi  r \\cdot \\mathrm{d}r}{\\mathrm{d}t}$. Omitting $\\frac{\\mathrm{d}r}{\\mathrm{d}t}$ ignores how fast the radius changes."
+        "explanation": "Differentiate with respect to time: $\\frac{\\mathrm{d}A}{\\mathrm{d}t} = \\frac{2 \\pi  r \\cdot \\mathrm{d}r}{\\mathrm{d}t}$. Omitting $\\frac{\\mathrm{d}r}{\\mathrm{d}t}$ ignores how fast the radius changes.",
+        "responses": [
+          {
+            "text": "That expression describes area change per unit radius. A rate per unit time must also account for radius change per unit time.",
+            "experimentStep": 1
+          },
+          {
+            "text": "Differentiate with respect to time: $\\frac{\\mathrm{d}A}{\\mathrm{d}t} = \\frac{2 \\pi  r \\cdot \\mathrm{d}r}{\\mathrm{d}t}$. Omitting $\\frac{\\mathrm{d}r}{\\mathrm{d}t}$ ignores how fast the radius changes.",
+            "experimentStep": null
+          },
+          {
+            "text": "You do not square the radius's rate. Differentiate the time-dependent square using the chain rule.",
+            "experimentStep": null
+          }
+        ]
       },
       "teaching": {
         "explain": "Several quantities share a constraint. Keep them variable while differentiating with respect to time, then substitute the dimensions at the instant of interest.",
@@ -4561,7 +4941,12 @@
             },
             "observation": "The top descends faster. Constant foot speed does not imply constant top speed. The model does not include the zero-height endpoint."
           }
-        ]
+        ],
+        "reflection": {
+          "question": "Why does the top of the ladder change speed if the bottom moves at constant speed?",
+          "answer": "The constraint links the two positions, but their rate ratio changes with position. Near horizontal, the same bottom displacement produces a larger height change."
+        },
+        "transferExerciseId": "related-rates-p5"
       }
     },
     {
@@ -4717,7 +5102,7 @@
       ],
       "provenance": {
         "author": "AI-generated",
-        "version": "0.3.2",
+        "version": "0.3.4",
         "status": "revised",
         "humanReviewed": false
       },
@@ -4735,7 +5120,21 @@
           "$f (x) \\approx f (a) + f' (x)$"
         ],
         "correctIndex": 0,
-        "explanation": "Start at $(a , f (a))$ and follow its tangent slope. Unless the function is already linear, this is generally an approximation, not an exact identity."
+        "explanation": "Start at $(a , f (a))$ and follow its tangent slope. Unless the function is already linear, this is generally an approximation, not an exact identity.",
+        "responses": [
+          {
+            "text": "Start at $(a , f (a))$ and follow its tangent slope. Unless the function is already linear, this is generally an approximation, not an exact identity.",
+            "experimentStep": null
+          },
+          {
+            "text": "This line may miss the base point, and it treats a local approximation as a global equality. First check whether it agrees with the function at the base point.",
+            "experimentStep": 2
+          },
+          {
+            "text": "A derivative is output change per unit input, not an output increment by itself. Multiply by the input change from the base point.",
+            "experimentStep": 1
+          }
+        ]
       },
       "teaching": {
         "explain": "Estimate a nearby output with the tangent at a convenient point. It captures first-order change; farther away, check the error rather than replacing approximation by equality.",
@@ -4767,7 +5166,12 @@
             },
             "observation": "The tangent gives 2.5, with a noticeably larger error. This is a local model."
           }
-        ]
+        ],
+        "reflection": {
+          "question": "Why is the same tangent exact at its base point but potentially inaccurate farther away?",
+          "answer": "The tangent matches the value and first-order rate at its base point, not the curve's bending over an entire interval."
+        },
+        "transferExerciseId": "linearization-p4"
       }
     },
     {
@@ -4919,7 +5323,7 @@
       ],
       "provenance": {
         "author": "AI-generated",
-        "version": "0.3.1",
+        "version": "0.3.4",
         "status": "revised",
         "humanReviewed": false
       },
@@ -4937,7 +5341,21 @@
           "Conclude that $x_{n}$ must be a root"
         ],
         "correctIndex": 1,
-        "explanation": "The update divides by $f' (x_{n})$. A zero slope prevents this step, and the function value need not be zero."
+        "explanation": "The update divides by $f' (x_{n})$. A zero slope prevents this step, and the function value need not be zero.",
+        "responses": [
+          {
+            "text": "Newton's update divides by the slope. A zero denominator gives no valid next step; an animation cannot make that division legitimate.",
+            "experimentStep": 2
+          },
+          {
+            "text": "The update divides by $f' (x_{n})$. A zero slope prevents this step, and the function value need not be zero.",
+            "experimentStep": null
+          },
+          {
+            "text": "A horizontal tangent does not imply a zero function value. Check the current value and distinguish a zero slope from a root.",
+            "experimentStep": 2
+          }
+        ]
       },
       "teaching": {
         "explain": "At each step, temporarily replace the curved function by its tangent and use that line's root as the next guess. An update is possible without necessarily being an improvement.",
@@ -4969,7 +5387,12 @@
             },
             "observation": "The derivative is zero. Division is invalid, and the demonstration should explain why it stops."
           }
-        ]
+        ],
+        "reflection": {
+          "question": "Are a small residual and a valid update formula the same check?",
+          "answer": "No. The residual checks how far the value is from zero. A valid update also needs a nonzero derivative and still does not guarantee convergence."
+        },
+        "transferExerciseId": "newton-p4"
       }
     },
     {
@@ -5125,7 +5548,7 @@
       ],
       "provenance": {
         "author": "AI-generated",
-        "version": "0.3.2",
+        "version": "0.3.4",
         "status": "revised",
         "humanReviewed": false
       },
@@ -5143,7 +5566,21 @@
           "Neither"
         ],
         "correctIndex": 2,
-        "explanation": "$x^{3}$ increases on both sides of zero. A zero derivative gives a candidate; examine nearby behavior before drawing a conclusion."
+        "explanation": "$x^{3}$ increases on both sides of zero. A zero derivative gives a candidate; examine nearby behavior before drawing a conclusion.",
+        "responses": [
+          {
+            "text": "A zero derivative only identifies a candidate. Compare values on both sides of zero and check whether increase turns into decrease.",
+            "experimentStep": null
+          },
+          {
+            "text": "A local minimum requires nearby values to be no lower than the value at the point. Test a small negative input.",
+            "experimentStep": null
+          },
+          {
+            "text": "$x^{3}$ increases on both sides of zero. A zero derivative gives a candidate; examine nearby behavior before drawing a conclusion.",
+            "experimentStep": null
+          }
+        ]
       },
       "teaching": {
         "explain": "A zero derivative is only a candidate. Check for a change from rising to falling or vice versa. For absolute extrema, compare endpoints too.",
@@ -5178,7 +5615,12 @@
             },
             "observation": "The exact derivative is zero. Nearby signs change from negative to positive, giving a local minimum."
           }
-        ]
+        ],
+        "reflection": {
+          "question": "What extra information does a derivative sign change provide beyond a zero derivative?",
+          "answer": "It shows that monotonicity changes across the point, supporting a local maximum or minimum. A zero derivative alone gives only a candidate."
+        },
+        "transferExerciseId": "extrema-p4"
       }
     },
     {
@@ -5328,7 +5770,7 @@
       ],
       "provenance": {
         "author": "AI-generated",
-        "version": "0.3.2",
+        "version": "0.3.4",
         "status": "revised",
         "humanReviewed": false
       },
@@ -5346,7 +5788,21 @@
           "The point where the maximum occurs"
         ],
         "correctIndex": 1,
-        "explanation": "$f' (c) = \\frac{f (b) - f (a)}{b - a}$. The point $c$ need not be a midpoint or unique; continuity and differentiability are required."
+        "explanation": "$f' (c) = \\frac{f (b) - f (a)}{b - a}$. The point $c$ need not be a midpoint or unique; continuity and differentiability are required.",
+        "responses": [
+          {
+            "text": "The point happens to be the midpoint for a quadratic. Try a cubic and solve for instantaneous slope equal to average slope before comparing.",
+            "experimentStep": 2
+          },
+          {
+            "text": "$f' (c) = \\frac{f (b) - f (a)}{b - a}$. The point $c$ need not be a midpoint or unique; continuity and differentiability are required.",
+            "experimentStep": null
+          },
+          {
+            "text": "The mean value theorem matches two slopes; it does not locate the highest point. Compute the interval's average slope first.",
+            "experimentStep": 1
+          }
+        ]
       },
       "teaching": {
         "explain": "The average rate over an interval occurs as an instantaneous rate somewhere inside. Continuity over the whole interval and differentiability inside are essential. There may be several such points, none necessarily at the midpoint.",
@@ -5375,7 +5831,12 @@
             },
             "observation": "The shared slope is 3, at point 1.5. The midpoint property belongs to this quadratic, not to the general theorem."
           }
-        ]
+        ],
+        "reflection": {
+          "question": "Why can the midpoint pattern in this diagram not be generalized to every function satisfying the mean value theorem?",
+          "answer": "The quadratic has a special symmetry. The theorem guarantees some interior point whose slope equals the average slope, not the midpoint."
+        },
+        "transferExerciseId": "mean-value-p4"
       }
     },
     {
@@ -5528,7 +5989,7 @@
       ],
       "provenance": {
         "author": "AI-generated",
-        "version": "0.3.2",
+        "version": "0.3.4",
         "status": "revised",
         "humanReviewed": false
       },
@@ -5546,7 +6007,21 @@
           "Rises, with increasing slope"
         ],
         "correctIndex": 1,
-        "explanation": "$f' > 0$ means the function rises; $f'' < 0$ means its slope decreases. Increasing does not mean increasing faster."
+        "explanation": "$f' > 0$ means the function rises; $f'' < 0$ means its slope decreases. Increasing does not mean increasing faster.",
+        "responses": [
+          {
+            "text": "The first derivative's sign determines increase or decrease. A negative second derivative means decreasing slope, not necessarily a decreasing function.",
+            "experimentStep": 0
+          },
+          {
+            "text": "$f' > 0$ means the function rises; $f'' < 0$ means its slope decreases. Increasing does not mean increasing faster.",
+            "experimentStep": null
+          },
+          {
+            "text": "A curve can rise while becoming flatter. Separate increasing height from increasing slope.",
+            "experimentStep": 0
+          }
+        ]
       },
       "teaching": {
         "explain": "First ask whether values rise or fall, then whether slopes grow or shrink. The first is monotonicity; the second is concavity.",
@@ -5581,7 +6056,12 @@
             },
             "observation": "The slope is again 9, but the second derivative is 12: increasing and concave up."
           }
-        ]
+        ],
+        "reflection": {
+          "question": "How can two points with positive slopes have different concavities?",
+          "answer": "Compare how nearby slopes change: increasing slopes indicate concave up, decreasing slopes concave down. Increase or decrease of the function depends only on its first derivative."
+        },
+        "transferExerciseId": "curve-sketching-p4"
       }
     },
     {
@@ -5739,7 +6219,7 @@
       ],
       "provenance": {
         "author": "AI-generated",
-        "version": "0.3.2",
+        "version": "0.3.4",
         "status": "revised",
         "humanReviewed": false
       },
@@ -5757,7 +6237,21 @@
           "Interior critical points and endpoints"
         ],
         "correctIndex": 2,
-        "explanation": "The maximum may occur at an endpoint. Include interior critical points where the derivative is zero or nonexistent, then compare function values."
+        "explanation": "The maximum may occur at an endpoint. Include interior critical points where the derivative is zero or nonexistent, then compare function values.",
+        "responses": [
+          {
+            "text": "A maximum may occur at an endpoint, and interior nondifferentiable points must not be missed. List all candidates before comparing values.",
+            "experimentStep": null
+          },
+          {
+            "text": "Endpoints do not capture an interior peak. Check interior critical points, then compare them with the endpoints.",
+            "experimentStep": 1
+          },
+          {
+            "text": "The maximum may occur at an endpoint. Include interior critical points where the derivative is zero or nonexistent, then compare function values.",
+            "experimentStep": null
+          }
+        ]
       },
       "teaching": {
         "explain": "Build the constraints into the model before comparing feasible choices. With fixed perimeter, lengthening one side shortens the other, so area cannot grow forever.",
@@ -5786,7 +6280,12 @@
             },
             "observation": "The other becomes 2 and area returns to 20. Check the feasible interval and turning point."
           }
-        ]
+        ],
+        "reflection": {
+          "question": "Two symmetric dimension choices give equal areas. Do those readings alone prove the middle choice maximizes area?",
+          "answer": "No. State the feasible interval and area function, then use derivative signs or completing the square to compare all candidates."
+        },
+        "transferExerciseId": "optimization-p4"
       }
     },
     {
@@ -5950,6 +6449,20 @@
             "lhopital-m1"
           ],
           "numericAnswer": 0
+        },
+        {
+          "id": "lhopital-transfer",
+          "problem": "Find $\\lim_{x\\to0^+}\\frac1x$. Why is obtaining zero by differentiating numerator and denominator invalid?",
+          "answer": "The right-hand behavior is $+\\infty$; the quotient is not an indeterminate form permitting l'Hopital's rule.",
+          "solution": [
+            "The numerator stays at 1 while the denominator tends to zero from above, so the quotient grows without bound; it is not a $\\frac00$ form.",
+            "For any $M>0$, if $0<x<\\frac1{M+1}$ then $\\frac1x>M+1>M$. This directly guarantees unbounded positive growth."
+          ],
+          "hint": "Identify the numerator and denominator behaviors before differentiating.",
+          "difficulty": 4,
+          "misconceptionTags": [
+            "lhopital-m1"
+          ]
         }
       ],
       "prerequisites": [
@@ -5964,7 +6477,7 @@
       ],
       "provenance": {
         "author": "AI-generated",
-        "version": "0.3.1",
+        "version": "0.3.4",
         "status": "revised",
         "humanReviewed": false
       },
@@ -5982,7 +6495,21 @@
           "The answer must be 0"
         ],
         "correctIndex": 1,
-        "explanation": "Check the indeterminate form and theorem assumptions first. $\\frac{1}{0}$ is not a form handled by this rule; one-sided analysis is usually needed."
+        "explanation": "Check the indeterminate form and theorem assumptions first. $\\frac{1}{0}$ is not a form handled by this rule; one-sided analysis is usually needed.",
+        "responses": [
+          {
+            "text": "Check the indeterminate form first. A denominator tending to zero is not sufficient. Test a constant numerator divided by the input; differentiating would give a contradictory result.",
+            "experimentStep": null
+          },
+          {
+            "text": "Check the indeterminate form and theorem assumptions first. $\\frac{1}{0}$ is not a form handled by this rule; one-sided analysis is usually needed.",
+            "experimentStep": null
+          },
+          {
+            "text": "With a denominator tending to zero, a quotient may be unbounded or lack a two-sided limit. A nonzero numerator does not imply a zero limit.",
+            "experimentStep": null
+          }
+        ]
       },
       "teaching": {
         "explain": "An indeterminate quotient compares two competing rates. L'Hôpital's rule uses their derivatives when its hypotheses hold; it is not a method for arbitrary quotients.",
@@ -6014,7 +6541,12 @@
             },
             "observation": "The quotient is approximately 0.99950. The derivative ratio and hypotheses in the text establish the common limit 1."
           }
-        ]
+        ],
+        "reflection": {
+          "question": "Why does the exponential quotient example not justify applying l'Hopital to every quotient whose denominator tends to zero?",
+          "answer": "It satisfies the required indeterminate form and differentiability conditions. A different quotient requires checking those conditions again."
+        },
+        "transferExerciseId": "lhopital-transfer"
       }
     },
     {
@@ -6214,7 +6746,7 @@
       ],
       "provenance": {
         "author": "AI-generated",
-        "version": "0.3.1",
+        "version": "0.3.4",
         "status": "revised",
         "humanReviewed": false
       },
@@ -6233,7 +6765,21 @@
           "$C$ must equal 1"
         ],
         "correctIndex": 0,
-        "explanation": "$x^{2}$, $x^{2} + 3$, and other vertical shifts all have derivative $2 x$. The constant $C$ records this family on a single interval."
+        "explanation": "$x^{2}$, $x^{2} + 3$, and other vertical shifts all have derivative $2 x$. The constant $C$ records this family on a single interval.",
+        "responses": [
+          {
+            "text": "$x^{2}$, $x^{2} + 3$, and other vertical shifts all have derivative $2 x$. The constant $C$ records this family on a single interval.",
+            "experimentStep": null
+          },
+          {
+            "text": "The constant represents information lost by differentiation, not numerical approximation. Differentiate two antiderivatives differing by a constant.",
+            "experimentStep": 1
+          },
+          {
+            "text": "Without an initial condition, the constant may be any real number. Change it and check whether the derivative changes.",
+            "experimentStep": 2
+          }
+        ]
       },
       "teaching": {
         "explain": "Reading a derivative backward gives one antiderivative. Vertical shifts have the same derivative; the integration constant records the information still undetermined.",
@@ -6262,7 +6808,12 @@
             },
             "observation": "The curve moves, but the same derivative still gives its slope at every point."
           }
-        ]
+        ],
+        "reflection": {
+          "question": "Which quantities change under vertical translation, and which do not? What differentiation fact does this express?",
+          "answer": "Antiderivative values change, but derivatives do not: a constant differentiates to zero. On an interval, antiderivatives differ by a constant."
+        },
+        "transferExerciseId": "antiderivatives-p6"
       }
     },
     {
@@ -6415,7 +6966,7 @@
       ],
       "provenance": {
         "author": "AI-generated",
-        "version": "0.3.2",
+        "version": "0.3.4",
         "status": "revised",
         "humanReviewed": false
       },
@@ -6434,7 +6985,21 @@
           "They are always equal"
         ],
         "correctIndex": 1,
-        "explanation": "Each right endpoint has a function value at least as large as its left endpoint, so its rectangle is at least as tall."
+        "explanation": "Each right endpoint has a function value at least as large as its left endpoint, so its rectangle is at least as tall.",
+        "responses": [
+          {
+            "text": "On the same subinterval, an increasing function is higher at the right endpoint. Keep the partition fixed and change only the sampling endpoint.",
+            "experimentStep": 1
+          },
+          {
+            "text": "Each right endpoint has a function value at least as large as its left endpoint, so its rectangle is at least as tall.",
+            "experimentStep": null
+          },
+          {
+            "text": "A finite partition does not make the two sums equal. Start with a few rectangles to see the difference, then refine the partition.",
+            "experimentStep": 0
+          }
+        ]
       },
       "teaching": {
         "explain": "Approximate with finite pieces, then let the largest width tend to zero. Different sampling rules can approach the integral from different directions.",
@@ -6466,7 +7031,12 @@
             },
             "observation": "The estimate is closer to $\\frac13$, but still has finite error. Numerical samples are not a proof."
           }
-        ]
+        ],
+        "reflection": {
+          "question": "What changes when you increase the number of rectangles versus changing sampling endpoints?",
+          "answer": "The former decreases subinterval width; the latter changes the sampled height within each subinterval. Control them separately to see their effects."
+        },
+        "transferExerciseId": "riemann-sums-p4"
       }
     },
     {
@@ -6667,7 +7237,7 @@
       ],
       "provenance": {
         "author": "AI-generated",
-        "version": "0.3.2",
+        "version": "0.3.4",
         "status": "revised",
         "humanReviewed": false
       },
@@ -6686,7 +7256,21 @@
           "The geometric area is −1"
         ],
         "correctIndex": 1,
-        "explanation": "The integral on $[0,1]$ is $\\frac{- 1}{2}$ and on $[1,2]$ is $\\frac{1}{2}$. Geometric area adds their positive magnitudes."
+        "explanation": "The integral on $[0,1]$ is $\\frac{- 1}{2}$ and on $[1,2]$ is $\\frac{1}{2}$. Geometric area adds their positive magnitudes.",
+        "responses": [
+          {
+            "text": "Positive and negative contributions may cancel in a definite integral. Geometric areas do not cancel. Calculate the parts above and below the axis separately.",
+            "experimentStep": 1
+          },
+          {
+            "text": "The integral on $[0,1]$ is $\\frac{- 1}{2}$ and on $[1,2]$ is $\\frac{1}{2}$. Geometric area adds their positive magnitudes.",
+            "experimentStep": null
+          },
+          {
+            "text": "A negative sign indicates orientation, not negative geometric area. Each region must contribute a nonnegative area.",
+            "experimentStep": 0
+          }
+        ]
       },
       "teaching": {
         "explain": "Accumulation keeps track of signs. A zero total can result from cancellation; it does not imply zero change or zero area.",
@@ -6715,7 +7299,12 @@
             },
             "observation": "The integral is $\\frac32$ and the geometric area is $\\frac52$."
           }
-        ]
+        ],
+        "reflection": {
+          "question": "Why can area be positive when the integral is zero?",
+          "answer": "Signed contributions on opposite sides of the axis may cancel. Geometric area counts both as nonnegative height times width."
+        },
+        "transferExerciseId": "definite-integral-p6"
       }
     },
     {
@@ -6858,6 +7447,20 @@
           ],
           "hint": "Keep the minus sign in the antiderivative.",
           "numericAnswer": 2
+        },
+        {
+          "id": "fundamental-theorem-transfer",
+          "problem": "Let $A(x)=\\int_0^{x^2}t^2\\,\\mathrm{d}t$. Find $A'(x)$ and explain why $A'(-1)$ can be negative although the integrand is nonnegative.",
+          "answer": "$A'(x)=2x^5$, and $A'(-1)=-2$.",
+          "solution": [
+            "The fundamental theorem and chain rule give $A'(x)=(x^2)^2\\cdot2x=2x^5$.",
+            "Near a negative input, increasing the input decreases the upper bound and therefore decreases accumulation. Alternatively integrate to obtain $A(x)=\\frac{x^6}{3}$ and differentiate to check."
+          ],
+          "hint": "Multiply the current height by the rate at which the upper endpoint moves.",
+          "difficulty": 4,
+          "misconceptionTags": [
+            "fundamental-theorem-m1"
+          ]
         }
       ],
       "prerequisites": [
@@ -6872,7 +7475,7 @@
       ],
       "provenance": {
         "author": "AI-generated",
-        "version": "0.3.1",
+        "version": "0.3.4",
         "status": "revised",
         "humanReviewed": false
       },
@@ -6891,7 +7494,21 @@
           "$f (0)$"
         ],
         "correctIndex": 0,
-        "explanation": "Increasing the upper bound by $h$ adds approximately $f (x) h$. Divide by $h$ and take the limit to recover $f (x)$."
+        "explanation": "Increasing the upper bound by $h$ adds approximately $f (x) h$. Divide by $h$ and take the limit to recover $f (x)$.",
+        "responses": [
+          {
+            "text": "Increasing the upper bound by $h$ adds approximately $f (x) h$. Divide by $h$ and take the limit to recover $f (x)$.",
+            "experimentStep": null
+          },
+          {
+            "text": "Differentiating accumulation extracts the contribution at the moving endpoint. It does not first differentiate the original integrand.",
+            "experimentStep": 1
+          },
+          {
+            "text": "The lower endpoint is fixed, but the upper endpoint moves. Read the added strip's height at the current upper endpoint.",
+            "experimentStep": 2
+          }
+        ]
       },
       "teaching": {
         "explain": "A small increase in the upper bound adds a thin strip. Its contribution divided by its width approaches the current height, so differentiating accumulation recovers the integrand.",
@@ -6920,7 +7537,12 @@
             },
             "observation": "The accumulation is $\\frac13$ and the current height is 1. An accumulated value and its rate are different quantities."
           }
-        ]
+        ],
+        "reflection": {
+          "question": "Are accumulation and its rate the same quantity? Explain using the current height.",
+          "answer": "No. Accumulation includes the whole interval. Its rate is determined by the height at the moving endpoint, equal to the integrand's value there when it is continuous."
+        },
+        "transferExerciseId": "fundamental-theorem-transfer"
       }
     },
     {
@@ -7100,7 +7722,7 @@
       ],
       "provenance": {
         "author": "AI-generated",
-        "version": "0.3.1",
+        "version": "0.3.4",
         "status": "revised",
         "humanReviewed": false
       },
@@ -7119,7 +7741,21 @@
           "0 and 2"
         ],
         "correctIndex": 1,
-        "explanation": "The bounds transform too: $x = 0$ gives $u = 1$ and $x = 1$ gives $u = 2$, with $\\mathrm{d}u = 2 x \\mathrm{d}x$."
+        "explanation": "The bounds transform too: $x = 0$ gives $u = 1$ and $x = 1$ gives $u = 2$, with $\\mathrm{d}u = 2 x \\mathrm{d}x$.",
+        "responses": [
+          {
+            "text": "Those are still the bounds for the original variable. Substitute each original endpoint into the new variable.",
+            "experimentStep": 2
+          },
+          {
+            "text": "The bounds transform too: $x = 0$ gives $u = 1$ and $x = 1$ gives $u = 2$, with $\\mathrm{d}u = 2 x \\mathrm{d}x$.",
+            "experimentStep": null
+          },
+          {
+            "text": "Both bounds must change. First determine where the new variable starts when the original input is zero.",
+            "experimentStep": 0
+          }
+        ]
       },
       "teaching": {
         "explain": "Substitution changes widths as well as variable names. The inner derivative is the local scale factor relating the old and new widths.",
@@ -7148,7 +7784,12 @@
             },
             "observation": "The new variable is 2 and the width factor is 2. Both bounds and widths must change consistently."
           }
-        ]
+        ],
+        "reflection": {
+          "question": "Why must both widths and endpoints change under substitution?",
+          "answer": "Widths encode the local scale between variables; endpoints specify the interval traversed in the new variable. Changing only one fails to represent the same accumulation."
+        },
+        "transferExerciseId": "substitution-p5"
       }
     },
     {
@@ -7305,7 +7946,7 @@
       ],
       "provenance": {
         "author": "AI-generated",
-        "version": "0.3.2",
+        "version": "0.3.4",
         "status": "revised",
         "humanReviewed": false
       },
@@ -7323,7 +7964,21 @@
           "Use only the height difference at the intersection"
         ],
         "correctIndex": 1,
-        "explanation": "Area cannot cancel by sign. Find intersections and curve order, then integrate piecewise, or integrate the absolute height difference."
+        "explanation": "Area cannot cancel by sign. Find intersections and curve order, then integrate piecewise, or integrate the absolute height difference.",
+        "responses": [
+          {
+            "text": "After a crossing, the curves may exchange positions. A fixed subtraction can cancel contributions. Find the crossings, then identify the upper curve on each interval.",
+            "experimentStep": null
+          },
+          {
+            "text": "Area cannot cancel by sign. Find intersections and curve order, then integrate piecewise, or integrate the absolute height difference.",
+            "experimentStep": null
+          },
+          {
+            "text": "A height difference is the height of one strip, not the whole area. Multiply by width and accumulate all the strips.",
+            "experimentStep": 1
+          }
+        ]
       },
       "teaching": {
         "explain": "Find the strip height first, then accumulate its area. Use top minus bottom; if the curves exchange places, reverse the order by splitting the interval.",
@@ -7352,7 +8007,12 @@
             },
             "observation": "The height is zero again. The integral accumulates all strips, not just the middle one."
           }
-        ]
+        ],
+        "reflection": {
+          "question": "What step connects one vertical strip to the whole area?",
+          "answer": "A strip gives a local height. Multiply by an infinitesimal width and accumulate over the interval, identifying upper and lower boundaries separately after crossings."
+        },
+        "transferExerciseId": "area-between-p4"
       }
     },
     {
@@ -7540,6 +8200,21 @@
             "disk-washer-m3"
           ],
           "numericAnswer": 0.3333333333333333
+        },
+        {
+          "id": "disk-washer-transfer",
+          "problem": "Rotate the region $0\\le x\\le1$, $1\\le y\\le x+1$ about $y=-1$. State the outer and inner radii and find the volume.",
+          "answer": "$R=x+2$, $r=2$, and the volume is $\\frac{7\\pi}{3}$.",
+          "solution": [
+            "The distances of the upper and lower boundaries from the axis are $x+2$ and 2; the annular area is $\\pi((x+2)^2-4)$.",
+            "$V=\\pi\\int_0^1(x^2+4x)\\,\\mathrm{d}x=\\frac{7\\pi}{3}$."
+          ],
+          "hint": "A radius is distance from the axis of rotation, not the original vertical coordinate.",
+          "difficulty": 4,
+          "misconceptionTags": [
+            "disk-washer-m1",
+            "disk-washer-m2"
+          ]
         }
       ],
       "prerequisites": [
@@ -7553,7 +8228,7 @@
       ],
       "provenance": {
         "author": "AI-generated",
-        "version": "0.3.1",
+        "version": "0.3.4",
         "status": "revised",
         "humanReviewed": false
       },
@@ -7571,7 +8246,21 @@
           "$9 \\pi$"
         ],
         "correctIndex": 1,
-        "explanation": "Subtract the inner disk from the outer: $\\pi  \\cdot 2^{2} - \\pi  \\cdot 1^{2} = 3 \\pi$. Subtracting radii before squaring loses the geometry."
+        "explanation": "Subtract the inner disk from the outer: $\\pi  \\cdot 2^{2} - \\pi  \\cdot 1^{2} = 3 \\pi$. Subtracting radii before squaring loses the geometry.",
+        "responses": [
+          {
+            "text": "Subtracting radii and then squaring gives a different disk, not the annulus. Remove the inner disk's area from the outer disk's area.",
+            "experimentStep": 2
+          },
+          {
+            "text": "Subtract the inner disk from the outer: $\\pi  \\cdot 2^{2} - \\pi  \\cdot 1^{2} = 3 \\pi$. Subtracting radii before squaring loses the geometry.",
+            "experimentStep": null
+          },
+          {
+            "text": "Adding the radii treats the hole as solid material. Identify the disk that is actually removed.",
+            "experimentStep": 2
+          }
+        ]
       },
       "teaching": {
         "explain": "A slice contributes its cross-sectional area times thickness. Use a disk area, a difference of disk areas, or the area formula for the actual shape.",
@@ -7609,7 +8298,12 @@
             },
             "observation": "The full area is $3\\pi$, not $\\pi(2-1)^2$."
           }
-        ]
+        ],
+        "reflection": {
+          "question": "Why subtract disk areas instead of subtracting radii and then squaring?",
+          "answer": "The removed object is the entire inner disk. Subtracting radii first replaces the annulus with a different disk."
+        },
+        "transferExerciseId": "disk-washer-transfer"
       }
     },
     {
@@ -7760,7 +8454,7 @@
       ],
       "provenance": {
         "author": "AI-generated",
-        "version": "0.3.1",
+        "version": "0.3.4",
         "status": "revised",
         "humanReviewed": false
       },
@@ -7778,7 +8472,21 @@
           "$1 - x^{2}$"
         ],
         "correctIndex": 1,
-        "explanation": "The strip runs from $y = 0$ to $y = x^{2}$, so its height is $x^{2}$. Its volume is approximately $2 \\pi  x \\cdot x^{2} \\cdot \\mathrm{d}x$."
+        "explanation": "The strip runs from $y = 0$ to $y = x^{2}$, so its height is $x^{2}$. Its volume is approximately $2 \\pi  x \\cdot x^{2} \\cdot \\mathrm{d}x$.",
+        "responses": [
+          {
+            "text": "That confuses radius with height. The strip's height is the difference between its upper and lower boundaries; distance from the axis gives the radius.",
+            "experimentStep": 2
+          },
+          {
+            "text": "The strip runs from $y = 0$ to $y = x^{2}$, so its height is $x^{2}$. Its volume is approximately $2 \\pi  x \\cdot x^{2} \\cdot \\mathrm{d}x$.",
+            "experimentStep": null
+          },
+          {
+            "text": "The region's lower boundary is the horizontal axis, not a different horizontal line above it. Identify the original vertical strip in the two-dimensional view.",
+            "experimentStep": 2
+          }
+        ]
       },
       "teaching": {
         "explain": "A strip parallel to the rotation axis forms a thin shell. Multiply circumference, height, and thickness; do not replace circumference with disk area.",
@@ -7812,7 +8520,12 @@
             },
             "observation": "The strip height is $x^2$ and the radius is $x$. Both appear separately in the integral."
           }
-        ]
+        ],
+        "reflection": {
+          "question": "Why does doubling the radius multiply volume per unit thickness by eight in this model?",
+          "answer": "Here height varies as radius squared, so it quadruples. Circumference doubles; multiplying the two factors gives eight times the contribution."
+        },
+        "transferExerciseId": "shells-p4"
       }
     },
     {
@@ -7967,7 +8680,7 @@
       ],
       "provenance": {
         "author": "AI-generated",
-        "version": "0.3.2",
+        "version": "0.3.4",
         "status": "revised",
         "humanReviewed": false
       },
@@ -7985,7 +8698,21 @@
           "Function height $f (x)$"
         ],
         "correctIndex": 1,
-        "explanation": "The band follows the curve, so its width is arc length $\\mathrm{d}s$. Using only $\\mathrm{d}x$ omits the slant. This calculates lateral area only."
+        "explanation": "The band follows the curve, so its width is arc length $\\mathrm{d}s$. Using only $\\mathrm{d}x$ omits the slant. This calculates lateral area only.",
+        "responses": [
+          {
+            "text": "Horizontal width leaves out vertical change. Where the slope is nonzero, a short curve segment is longer than its horizontal projection.",
+            "experimentStep": 1
+          },
+          {
+            "text": "The band follows the curve, so its width is arc length $\\mathrm{d}s$. Using only $\\mathrm{d}x$ omits the slant. This calculates lateral area only.",
+            "experimentStep": null
+          },
+          {
+            "text": "Height gives the radius of rotation, not the strip's width along the curve. Multiply the circumference by that slanted length.",
+            "experimentStep": 2
+          }
+        ]
       },
       "teaching": {
         "explain": "Length includes both horizontal and vertical change. Rotation sweeps this slant length into a band, so horizontal width alone is insufficient.",
@@ -8018,7 +8745,12 @@
             },
             "observation": "Lateral area multiplies rotation circumference by slant length. This model excludes end caps."
           }
-        ]
+        ],
+        "reflection": {
+          "question": "How does the area of a surface of revolution differ from the total area of a closed solid?",
+          "answer": "Rotating the curve generates the lateral surface. If end caps are requested, calculate and add them separately; they are not automatically part of the surface animation."
+        },
+        "transferExerciseId": "arc-length-p4"
       }
     },
     {
@@ -8245,7 +8977,7 @@
       ],
       "provenance": {
         "author": "AI-generated",
-        "version": "0.3.3",
+        "version": "0.3.4",
         "status": "revised",
         "humanReviewed": false
       },
@@ -8263,7 +8995,21 @@
           "$v' (t)$"
         ],
         "correctIndex": 1,
-        "explanation": "Displacement integrates signed $v (t)$; distance integrates speed $|v (t)|$. Backtracking cancels displacement but never distance."
+        "explanation": "Displacement integrates signed $v (t)$; distance integrates speed $|v (t)|$. Backtracking cancels displacement but never distance.",
+        "responses": [
+          {
+            "text": "Signed velocity accumulates displacement, so a return trip can cancel. Distance must count backward travel as length too.",
+            "experimentStep": 1
+          },
+          {
+            "text": "Displacement integrates signed $v (t)$; distance integrates speed $|v (t)|$. Backtracking cancels displacement but never distance.",
+            "experimentStep": null
+          },
+          {
+            "text": "The derivative of velocity is acceleration. Integrating it gives velocity change, with different units from total distance.",
+            "experimentStep": null
+          }
+        ]
       },
       "teaching": {
         "explain": "Match each contribution with its units before integrating. Negative velocity tracks direction, weight times lift distance gives work, and density times volume gives mass.",
@@ -8292,7 +9038,12 @@
             },
             "observation": "Displacement is $\\frac32$ and distance is $\\frac52$. Identify the requested quantity before reading the number."
           }
-        ]
+        ],
+        "reflection": {
+          "question": "Why is distance not zero when the traveler returns to the starting point?",
+          "answer": "The return cancels signed displacement. Each traveled length is nonnegative and still contributes to distance."
+        },
+        "transferExerciseId": "physical-integrals-p7"
       }
     }
   ]

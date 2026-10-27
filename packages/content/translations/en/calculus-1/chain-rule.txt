@@ -60,3 +60,13 @@ $-\frac{2x}{(1+x^2)^2}$.
 $24$.
 $6 \times 1 \times (1 + 1)^{2} = 24$.
 $2x(1+x)^3+3x^2(1+x)^2$.
+The outer rate is $3 (x^{2} + 1)^{2}$; the inner rate is $2 x$. The chain rule multiplies them.
+The outer power must be differentiated, but the question targets the easily missed inner change. Check what the total rate should be when the inner rate is zero.
+The inner output is used to evaluate the outer derivative. The inner rate must also be multiplied in. Write those two roles separately.
+Two opposite inputs give the same inner output. Why do their total derivatives have opposite signs?
+The outer derivative is evaluated at the same inner output, but the inner rates have opposite signs, so their products have opposite signs.
+Find the derivative of $y=(1-2x)^3$ at zero. Without expanding the cube, explain the sign of the derivative.
+The derivative is $-6$; the inner function decreases as the input increases.
+Write the outer derivative and the inner rate separately.
+The outer derivative is $3(1-2x)^2$ and the inner derivative is $-2$.
+Multiplying gives $y'=-6(1-2x)^2$, which is $-6$ at zero.

@@ -82,3 +82,13 @@ $\pi  \int _{0}^{1} (x^{2})^{2} \mathrm{d}x = \frac{\pi }{5}$.
 $20\pi$.
 $\frac83$.
 $\frac13$.
+Subtracting radii and then squaring gives a different disk, not the annulus. Remove the inner disk's area from the outer disk's area.
+Subtract the inner disk from the outer: $\pi  \cdot 2^{2} - \pi  \cdot 1^{2} = 3 \pi$. Subtracting radii before squaring loses the geometry.
+Adding the radii treats the hole as solid material. Identify the disk that is actually removed.
+Why subtract disk areas instead of subtracting radii and then squaring?
+The removed object is the entire inner disk. Subtracting radii first replaces the annulus with a different disk.
+Rotate the region $0\le x\le1$, $1\le y\le x+1$ about $y=-1$. State the outer and inner radii and find the volume.
+$R=x+2$, $r=2$, and the volume is $\frac{7\pi}{3}$.
+A radius is distance from the axis of rotation, not the original vertical coordinate.
+The distances of the upper and lower boundaries from the axis are $x+2$ and 2; the annular area is $\pi((x+2)^2-4)$.
+$V=\pi\int_0^1(x^2+4x)\,\mathrm{d}x=\frac{7\pi}{3}$.

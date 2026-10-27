@@ -60,3 +60,8 @@ $11$.
 $[-2,2]$.
 $\mathbb R\setminus\{-1,1\}$.
 $2x+1$.
+A square root may equal zero, but a denominator may not. Check the radicand and denominator separately.
+The root requires $x - 2 \ge 0$, and the denominator cannot be zero. Together these give $x > 2$.
+Excluding a zero denominator is not enough: the radicand must also be nonnegative. Try an input below 2.
+The plotted square root has an output at zero. Why can the fraction in the question not accept an input making its square root zero?
+The square root itself permits zero. In the question it is also a denominator, which must be nonzero. The two functions have different domains.

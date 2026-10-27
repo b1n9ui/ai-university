@@ -63,3 +63,8 @@ $x_{2} = \frac{1.5 + \frac{2}{1.5}}{2} = \frac{17}{12} \approx 1.416667$.
 $\frac{13}{6}$.
 $3 - \frac{9 - 4}{6} = \frac{13}{6}$.
 $3$.
+Newton's update divides by the slope. A zero denominator gives no valid next step; an animation cannot make that division legitimate.
+The update divides by $f' (x_{n})$. A zero slope prevents this step, and the function value need not be zero.
+A horizontal tangent does not imply a zero function value. Check the current value and distinguish a zero slope from a root.
+Are a small residual and a valid update formula the same check?
+No. The residual checks how far the value is from zero. A valid update also needs a nonzero derivative and still does not guarantee convergence.

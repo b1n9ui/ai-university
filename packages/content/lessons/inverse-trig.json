@@ -148,7 +148,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.3.1",
+    "version": "0.3.4",
     "status": "revised",
     "humanReviewed": false
   },
@@ -166,7 +166,21 @@
       "从不成立"
     ],
     "correctIndex": 1,
-    "explanation": "$\\arcsin$ 的输出限制在 $[\\frac{- \\pi }{2} , \\frac{\\pi }{2}]$。超出这个区间，原角通常不能被恢复。"
+    "explanation": "$\\arcsin$ 的输出限制在 $[\\frac{- \\pi }{2} , \\frac{\\pi }{2}]$。超出这个区间，原角通常不能被恢复。",
+    "responses": [
+      {
+        "text": "正弦不是全实数上一一对应的函数。试用 $x=\\pi$，再比较反正弦返回的主值。",
+        "experimentStep": null
+      },
+      {
+        "text": "$\\arcsin$ 的输出限制在 $[\\frac{- \\pi }{2} , \\frac{\\pi }{2}]$。超出这个区间，原角通常不能被恢复。",
+        "experimentStep": null
+      },
+      {
+        "text": "在主值区间内，正弦限制成可逆函数。可以先用 $x=0$ 检查“从不成立”这个说法。",
+        "experimentStep": null
+      }
+    ]
   },
   "teaching": {
     "explain": "反函数把输入输出交换，局部伸缩倍率也取倒数。先找到对应点，再取原导数的倒数，别在错误的输入上计算。",
@@ -201,6 +215,11 @@
         },
         "observation": "斜率为 $\\frac1{10}$，仍为正；公式不表示曲线在这里停止上升。"
       }
-    ]
+    ],
+    "reflection": {
+      "question": "反正切远处的斜率很小，是否表示到某个有限输入就不再上升？",
+      "answer": "不是。任意有限输入处导数仍为正；趋近平缓和在某处变成常数不同。"
+    },
+    "transferExerciseId": "inverse-trig-p4"
   }
 }

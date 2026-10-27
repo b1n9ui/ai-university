@@ -149,7 +149,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.3.2",
+    "version": "0.3.4",
     "status": "revised",
     "humanReviewed": false
   },
@@ -168,7 +168,21 @@
       "$- \\cos x$"
     ],
     "correctIndex": 1,
-    "explanation": "在 $x = \\frac{\\pi }{2}$ 附近，$\\cos x$ 向下变化，斜率为 −1。这与 $- \\sin x$ 相符；角以弧度计。"
+    "explanation": "在 $x = \\frac{\\pi }{2}$ 附近，$\\cos x$ 向下变化，斜率为 −1。这与 $- \\sin x$ 相符；角以弧度计。",
+    "responses": [
+      {
+        "text": "看 $x=\\frac\\pi2$ 附近，余弦正在下降。导数的符号必须反映这个方向。",
+        "experimentStep": null
+      },
+      {
+        "text": "在 $x = \\frac{\\pi }{2}$ 附近，$\\cos x$ 向下变化，斜率为 −1。这与 $- \\sin x$ 相符；角以弧度计。",
+        "experimentStep": null
+      },
+      {
+        "text": "在零点检查：余弦处于平滑波峰，斜率为零。这个候选公式能给出零吗？",
+        "experimentStep": null
+      }
+    ]
   },
   "teaching": {
     "explain": "曲线的高度和变化率不是同一个量。正弦的变化率由余弦给出；波峰很高，但瞬时变化率接近零。",
@@ -203,6 +217,11 @@
         },
         "observation": "曲线高度接近 0，斜率接近 −1。这些切点是弧度的小数近似。"
       }
-    ]
+    ],
+    "reflection": {
+      "question": "波峰处高度最大，为什么斜率反而接近零？",
+      "answer": "高度和变化率不同。光滑波峰附近先升后降，峰顶切线水平。"
+    },
+    "transferExerciseId": "trig-derivatives-p4"
   }
 }

@@ -1,6 +1,6 @@
 import katex from 'katex';
 import { splitMathText, assertMathText } from '../packages/content/math-text.mjs';
-const metadata = new Set(['id','chapterId','lessonId','lessonIds','prerequisites','misconceptionTags','sources','provenance','preset','kind','function','url','route','areaId','coverTitle','coverFormula','author','version','language']);
+const metadata = new Set(['id','chapterId','lessonId','lessonIds','transferExerciseId','prerequisites','misconceptionTags','sources','provenance','preset','kind','function','url','route','areaId','coverTitle','coverFormula','author','version','language']);
 function validateLatex(latex, context) {
   // KaTeX accepts comments, which can silently hide a percentage or formula tail.
   for (let i = 0; i < latex.length; i++) if (latex[i] === '%') {

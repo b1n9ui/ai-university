@@ -145,7 +145,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.3.1",
+    "version": "0.3.4",
     "status": "revised",
     "humanReviewed": false
   },
@@ -163,7 +163,21 @@
       "$x \\ne 2$"
     ],
     "correctIndex": 1,
-    "explanation": "根号要求 $x - 2 \\ge 0$，分母又不能是零。两个条件合起来是 $x > 2$。"
+    "explanation": "根号要求 $x - 2 \\ge 0$，分母又不能是零。两个条件合起来是 $x > 2$。",
+    "responses": [
+      {
+        "text": "根号允许等于零，不代表分母也允许等于零。分别检查根式和分母两个条件。",
+        "experimentStep": null
+      },
+      {
+        "text": "根号要求 $x - 2 \\ge 0$，分母又不能是零。两个条件合起来是 $x > 2$。",
+        "experimentStep": null
+      },
+      {
+        "text": "只排除分母为零还不够：根号里的数也不能为负。试代一个小于 2 的数。",
+        "experimentStep": null
+      }
+    ]
   },
   "teaching": {
     "explain": "把函数想成一条有入口限制的规则。先检查输入能不能进去，再问输出是多少。平方根这条规则在实数里只接受非负输入。",
@@ -192,6 +206,11 @@
         },
         "observation": "实数范围没有输出；图上不应补出一个点。"
       }
-    ]
+    ],
+    "reflection": {
+      "question": "图里的平方根在零点有输出，为什么原题的分式却不能取根号为零的输入？",
+      "answer": "根式本身允许零；原题还把它放在分母，额外要求不为零。两个函数的定义域不同。"
+    },
+    "transferExerciseId": "domain-p4"
   }
 }

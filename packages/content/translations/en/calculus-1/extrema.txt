@@ -64,3 +64,8 @@ Set the base point to 1.
 The exact derivative is zero. Nearby signs change from negative to positive, giving a local minimum.
 $f' (0) = 0$.
 $-4$.
+A zero derivative only identifies a candidate. Compare values on both sides of zero and check whether increase turns into decrease.
+A local minimum requires nearby values to be no lower than the value at the point. Test a small negative input.
+$x^{3}$ increases on both sides of zero. A zero derivative gives a candidate; examine nearby behavior before drawing a conclusion.
+What extra information does a derivative sign change provide beyond a zero derivative?
+It shows that monotonicity changes across the point, supporting a local maximum or minimum. A zero derivative alone gives only a candidate.

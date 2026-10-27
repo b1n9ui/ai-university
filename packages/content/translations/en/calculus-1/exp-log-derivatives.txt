@@ -60,3 +60,8 @@ $\frac{2x}{1+x^2}$.
 $2^x\ln2$.
 $1$.
 $\frac{3}{3x-1}$, $x \ne \frac{1}{3}$.
+Differentiating the outer logarithm is only the first step; the inner function also varies. Apply the chain rule before simplifying.
+The inner coefficient cannot appear only in the numerator. The outer derivative's denominator must contain the full inner expression too.
+The chain rule gives $(\frac{1}{3 x}) \cdot 3 = \frac{1}{x}$. The real domain of $\ln (3 x)$ is $x > 0$.
+Why need neither an exponential's value nor its derivative be negative at a negative input?
+The exponential is positive, and the natural exponential's derivative equals its value. The input's sign does not directly determine either sign.

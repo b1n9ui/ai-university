@@ -144,7 +144,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.3.2",
+    "version": "0.3.4",
     "status": "revised",
     "humanReviewed": false
   },
@@ -162,7 +162,21 @@
       "$(2,0)$"
     ],
     "correctIndex": 2,
-    "explanation": "括号中的输入等于零时，函数最小。$x - 2 = 0$，所以顶点向右移到 $(2,0)$。"
+    "explanation": "括号中的输入等于零时，函数最小。$x - 2 = 0$，所以顶点向右移到 $(2,0)$。",
+    "responses": [
+      {
+        "text": "括号里的减号不是向左的指令。顶点处平方项为零，先解 $x-2=0$。",
+        "experimentStep": 1
+      },
+      {
+        "text": "输入里的平移改变横坐标；整个平方项外加常数才改变顶点高度。",
+        "experimentStep": 2
+      },
+      {
+        "text": "括号中的输入等于零时，函数最小。$x - 2 = 0$，所以顶点向右移到 $(2,0)$。",
+        "experimentStep": null
+      }
+    ]
   },
   "teaching": {
     "explain": "平移改变的是点的位置。内部减去一个数时，要用更大的输入才能算到原来的位置，所以图像往右走。",
@@ -194,6 +208,11 @@
         },
         "observation": "顶点变为 $(2,1)$；两种平移改变不同坐标。"
       }
-    ]
+    ],
+    "reflection": {
+      "question": "横向右移与纵向上移，分别改公式的哪一处？",
+      "answer": "横移改输入：用 $x-a$ 代替原输入；上移在整个输出外加常数。"
+    },
+    "transferExerciseId": "transformations-p4"
   }
 }

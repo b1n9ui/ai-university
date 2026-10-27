@@ -147,7 +147,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.3.1",
+    "version": "0.3.4",
     "status": "revised",
     "humanReviewed": false
   },
@@ -165,7 +165,21 @@
       "说明 $x_{n}$ 一定是根"
     ],
     "correctIndex": 1,
-    "explanation": "更新要除以 $f' (x_{n})$。斜率为零时不能这样做；函数值也可能不为零。"
+    "explanation": "更新要除以 $f' (x_{n})$。斜率为零时不能这样做；函数值也可能不为零。",
+    "responses": [
+      {
+        "text": "牛顿更新用斜率作分母。分母为零时没有合法的下一步，不能靠动画继续算。",
+        "experimentStep": 2
+      },
+      {
+        "text": "更新要除以 $f' (x_{n})$。斜率为零时不能这样做；函数值也可能不为零。",
+        "experimentStep": null
+      },
+      {
+        "text": "水平切线不代表函数值为零。先检查当前函数值，区分“斜率为零”和“已经找到根”。",
+        "experimentStep": 2
+      }
+    ]
   },
   "teaching": {
     "explain": "每一步把弯曲函数临时换成当前切线，求切线的零点作为下一次猜测。猜测能更新，但不能保证每次都更好。",
@@ -197,6 +211,11 @@
         },
         "observation": "导数为零，不能除；演示应给出停止原因。"
       }
-    ]
+    ],
+    "reflection": {
+      "question": "残差很小与更新公式合法，是同一个检查吗？",
+      "answer": "不是。残差检查函数值离零多远；合法更新还要求当前位置导数非零，并不自动保证收敛。"
+    },
+    "transferExerciseId": "newton-p4"
   }
 }

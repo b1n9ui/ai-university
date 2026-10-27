@@ -138,6 +138,20 @@
       ],
       "hint": "注意原函数的负号。",
       "numericAnswer": 2
+    },
+    {
+      "id": "fundamental-theorem-transfer",
+      "problem": "设 $A(x)=\\int_0^{x^2}t^2\\,\\mathrm{d}t$。求 $A'(x)$，并解释为什么 $A'(-1)$ 可以为负，虽然被积函数非负。",
+      "answer": "$A'(x)=2x^5$，且 $A'(-1)=-2$。",
+      "solution": [
+        "基本定理与链式法则给 $A'(x)=(x^2)^2\\cdot2x=2x^5$。",
+        "在负输入附近，输入增加使上限减小，累积量随之减小。也可积分得 $A(x)=\\frac{x^6}{3}$ 再求导核对。"
+      ],
+      "hint": "当前高度还要乘上端点移动的速度。",
+      "difficulty": 4,
+      "misconceptionTags": [
+        "fundamental-theorem-m1"
+      ]
     }
   ],
   "prerequisites": [
@@ -152,7 +166,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.3.1",
+    "version": "0.3.4",
     "status": "revised",
     "humanReviewed": false
   },
@@ -171,7 +185,21 @@
       "$f (0)$"
     ],
     "correctIndex": 0,
-    "explanation": "上限增加 $h$ 时，新增积分约为 $f (x) h$。除以 $h$ 再取极限，得到当前的 $f (x)$。"
+    "explanation": "上限增加 $h$ 时，新增积分约为 $f (x) h$。除以 $h$ 再取极限，得到当前的 $f (x)$。",
+    "responses": [
+      {
+        "text": "上限增加 $h$ 时，新增积分约为 $f (x) h$。除以 $h$ 再取极限，得到当前的 $f (x)$。",
+        "experimentStep": null
+      },
+      {
+        "text": "对累积量求导，取出的是移动上端点处新增的贡献，不是把原来的被积函数先求导。",
+        "experimentStep": 1
+      },
+      {
+        "text": "下端点固定，上端点却在移动。新增部分的高度应在当前上端点读取。",
+        "experimentStep": 2
+      }
+    ]
   },
   "teaching": {
     "explain": "累积上限多走一点，就多添一条很窄的贡献。除以走过的宽度，这条的平均高度趋近当前高度，所以累积的导数恢复原函数。",
@@ -200,6 +228,11 @@
         },
         "observation": "累积为 $\\frac13$，当前高度为 1；累积值和累积速度不是同一个量。"
       }
-    ]
+    ],
+    "reflection": {
+      "question": "累积值与累积速度是同一个量吗？请用当前高度解释。",
+      "answer": "不是。累积值包含整个区间；累积速度由移动端点处的高度决定，连续时就是该处的被积函数值。"
+    },
+    "transferExerciseId": "fundamental-theorem-transfer"
   }
 }

@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.23.0 — 2026-10-27
+
+- Deepen the complete Calculus I volume in both languages: 70 responses to incorrect choices, 35 reflection tasks, and six new transfer exercises; source edition v0.3.4 now has 197 exercises including reviews.
+- Connect supported misconceptions to actual diagram presets; add temporary prediction notes and reference-explanation comparisons without automatic grading or uploading.
+- Route walkthrough completion to a specific authored practice question instead of always opening the first question.
+- Add a voluntary study page with three tasks and local Markdown export. No participant outcomes or measured learning effectiveness are claimed.
+- Keep full-book, printable, individual lesson and machine-readable exports aligned; add independent arithmetic and export-path regressions.
+
 ## v0.22.0 — 2026-10-26
 
 - Add contextual explanation, derivation, worked-example and prerequisite paths across all 345 mathematics lessons, with English/Chinese parity.

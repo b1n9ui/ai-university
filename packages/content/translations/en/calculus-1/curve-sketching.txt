@@ -63,3 +63,8 @@ The slope is again 9, but the second derivative is 12: increasing and concave up
 $(-\infty,0)$.
 $(0,0)$.
 $2$.
+The first derivative's sign determines increase or decrease. A negative second derivative means decreasing slope, not necessarily a decreasing function.
+$f' > 0$ means the function rises; $f'' < 0$ means its slope decreases. Increasing does not mean increasing faster.
+A curve can rise while becoming flatter. Separate increasing height from increasing slope.
+How can two points with positive slopes have different concavities?
+Compare how nearby slopes change: increasing slopes indicate concave up, decreasing slopes concave down. Increase or decrease of the function depends only on its first derivative.

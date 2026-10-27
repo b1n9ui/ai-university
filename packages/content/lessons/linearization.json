@@ -151,7 +151,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.3.2",
+    "version": "0.3.4",
     "status": "revised",
     "humanReviewed": false
   },
@@ -169,7 +169,21 @@
       "$f (x) \\approx f (a) + f' (x)$"
     ],
     "correctIndex": 0,
-    "explanation": "近似从点 $(a , f (a))$ 出发，沿该点的斜率变化。除非函数本来就是直线，否则一般不是精确等式。"
+    "explanation": "近似从点 $(a , f (a))$ 出发，沿该点的斜率变化。除非函数本来就是直线，否则一般不是精确等式。",
+    "responses": [
+      {
+        "text": "近似从点 $(a , f (a))$ 出发，沿该点的斜率变化。除非函数本来就是直线，否则一般不是精确等式。",
+        "experimentStep": null
+      },
+      {
+        "text": "这条直线既可能没经过基点，也把局部近似写成了全局等式。先检查在基点是否与原函数相等。",
+        "experimentStep": 2
+      },
+      {
+        "text": "导数是每单位输入的变化率，不能直接当作输出增量。还要乘输入相对基点的改变量。",
+        "experimentStep": 1
+      }
+    ]
   },
   "teaching": {
     "explain": "用熟悉点的切线估计附近输出。它抓住第一阶变化，离中心越远越要检查误差；近似不能偷换成等式。",
@@ -201,6 +215,11 @@
         },
         "observation": "切线估计为 2.5，误差明显更大；这是局部模型。"
       }
-    ]
+    ],
+    "reflection": {
+      "question": "同一条切线为什么在基点精确、离远后却可能误差很大？",
+      "answer": "切线匹配基点的函数值与一阶变化率，没有匹配整个区间的弯曲。"
+    },
+    "transferExerciseId": "linearization-p4"
   }
 }

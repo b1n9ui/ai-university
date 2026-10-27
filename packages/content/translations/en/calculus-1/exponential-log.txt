@@ -60,3 +60,8 @@ $5$.
 $x<2$.
 $3\ln x$.
 $e^0=1$.
+The natural logarithm asks for the exponent, not the base. Substitute your answer back: which power of the base gives the original number?
+$\ln$ and exponentiation with base $e$ are inverse operations: $\ln (e^{x}) = x$. Here $x = 3$.
+An exponent represents repeated multiplication, not the base multiplied by the exponent. A logarithm undoes exponentiation.
+When the input increases by one, are output differences or output ratios constant? Why?
+The ratios are constant. Increasing the exponent by one multiplies by the base again rather than adding a fixed amount.

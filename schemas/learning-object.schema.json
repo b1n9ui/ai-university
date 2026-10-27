@@ -371,6 +371,32 @@
         },
         "explanation": {
           "$ref": "#/definitions/text"
+        },
+        "responses": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "text",
+              "experimentStep"
+            ],
+            "properties": {
+              "text": {
+                "$ref": "#/definitions/text"
+              },
+              "experimentStep": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 0,
+                "maximum": 2
+              }
+            }
+          }
         }
       }
     },
@@ -478,6 +504,26 @@
               }
             }
           }
+        },
+        "reflection": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "question",
+            "answer"
+          ],
+          "properties": {
+            "question": {
+              "$ref": "#/definitions/text"
+            },
+            "answer": {
+              "$ref": "#/definitions/text"
+            }
+          }
+        },
+        "transferExerciseId": {
+          "type": "string",
+          "minLength": 1
         }
       }
     }

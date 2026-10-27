@@ -147,7 +147,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.3.1",
+    "version": "0.3.4",
     "status": "revised",
     "humanReviewed": false
   },
@@ -166,7 +166,21 @@
       "有，$\\infty$ 和 $- \\infty$ 是同一个数"
     ],
     "correctIndex": 1,
-    "explanation": "左右方向不同，不能写双侧趋于 $+ \\infty$。无穷趋势也不是一个有限实数值。"
+    "explanation": "左右方向不同，不能写双侧趋于 $+ \\infty$。无穷趋势也不是一个有限实数值。",
+    "responses": [
+      {
+        "text": "只看右侧会漏掉另一种趋势。换到零点左侧，先判断分母符号。",
+        "experimentStep": 2
+      },
+      {
+        "text": "左右方向不同，不能写双侧趋于 $+ \\infty$。无穷趋势也不是一个有限实数值。",
+        "experimentStep": null
+      },
+      {
+        "text": "正向无界与负向无界是不同的趋势；无穷不是可以忽略符号的实数。",
+        "experimentStep": 2
+      }
+    ]
   },
   "teaching": {
     "explain": "趋向无穷不是到达某个叫“无穷”的数，而是最终越过任何给定门槛。还要检查是哪一侧、向哪个方向。",
@@ -198,6 +212,11 @@
         },
         "observation": "输出为 −100。两侧方向不同，不能写成同一个双侧无穷趋势。"
       }
-    ]
+    ],
+    "reflection": {
+      "question": "图线跑出图窗，是否表示函数在那里结束？",
+      "answer": "不是。图窗有限，读数仍描述更大的输出；定义域和单侧趋势由函数式决定。"
+    },
+    "transferExerciseId": "infinite-limits-p4"
   }
 }

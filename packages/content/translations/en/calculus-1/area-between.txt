@@ -63,3 +63,8 @@ $2$.
 $\int _{0}^{2} (2 - x) \mathrm{d}x = 4 - 2$.
 $\frac{2}{3}$.
 $\frac{1}{6}$.
+After a crossing, the curves may exchange positions. A fixed subtraction can cancel contributions. Find the crossings, then identify the upper curve on each interval.
+Area cannot cancel by sign. Find intersections and curve order, then integrate piecewise, or integrate the absolute height difference.
+A height difference is the height of one strip, not the whole area. Multiply by width and accumulate all the strips.
+What step connects one vertical strip to the whole area?
+A strip gives a local height. Multiply by an infinitesimal width and accumulate over the interval, identifying upper and lower boundaries separately after crossings.

@@ -64,3 +64,8 @@ $\frac{1}{1 + 1^{2}} = \frac{1}{2}$.
 $-1$.
 $\frac{- 1}{\sqrt{1 - 0}} = - 1$.
 $\frac{1}{2}$.
+Sine is not one-to-one on all real numbers. Try $x=\pi$ and compare the principal value returned by arcsine.
+The output of $\arcsin$ is restricted to $[\frac{- \pi }{2} , \frac{\pi }{2}]$. Outside it, the original angle generally cannot be recovered.
+On its principal interval, sine is restricted to an invertible function. Test $x=0$ before accepting the claim that the identity never holds.
+If arctangent has a very small slope far out, does it stop increasing at some finite input?
+No. Its derivative remains positive at every finite input. Becoming flatter asymptotically differs from becoming constant at a point.

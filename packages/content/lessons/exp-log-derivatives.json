@@ -146,7 +146,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.3.1",
+    "version": "0.3.4",
     "status": "revised",
     "humanReviewed": false
   },
@@ -164,7 +164,21 @@
       "$\\frac{1}{x}$"
     ],
     "correctIndex": 2,
-    "explanation": "链式法则给出 $(\\frac{1}{3 x}) \\cdot 3 = \\frac{1}{x}$。$\\ln (3 x)$ 的实数定义域是 $x > 0$。"
+    "explanation": "链式法则给出 $(\\frac{1}{3 x}) \\cdot 3 = \\frac{1}{x}$。$\\ln (3 x)$ 的实数定义域是 $x > 0$。",
+    "responses": [
+      {
+        "text": "只求外层对数的导数还没结束；内层也在变化。写出链式法则后再约分。",
+        "experimentStep": null
+      },
+      {
+        "text": "链式法则中的内层系数不能只加到分子。外层导数的分母也要代入完整内层。",
+        "experimentStep": null
+      },
+      {
+        "text": "链式法则给出 $(\\frac{1}{3 x}) \\cdot 3 = \\frac{1}{x}$。$\\ln (3 x)$ 的实数定义域是 $x > 0$。",
+        "experimentStep": null
+      }
+    ]
   },
   "teaching": {
     "explain": "指数增长有个特殊性质：当前有多少，下一瞬间就按同样比例增长。以自然底数为底时，曲线高度正好等于变化率。",
@@ -199,6 +213,11 @@
         },
         "observation": "高度与斜率都约 0.36788；负输入并不使指数输出为负。"
       }
-    ]
+    ],
+    "reflection": {
+      "question": "指数函数在负输入处，函数值和导数为什么都不必为负？",
+      "answer": "指数值始终为正；自然指数的导数等于其值。输入的符号不直接决定输出或斜率的符号。"
+    },
+    "transferExerciseId": "exp-log-derivatives-p4"
   }
 }

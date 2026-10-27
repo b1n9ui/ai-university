@@ -135,6 +135,20 @@
       ],
       "hint": "变化率不是当前位置 9。",
       "numericAnswer": 6
+    },
+    {
+      "id": "derivative-definition-transfer",
+      "problem": "把平方函数换成 $f(x)=x^3$。在 $a=1$ 用右侧间隔 $h=0.1$ 求差商，再求导数。两者是否相等？",
+      "answer": "差商为 3.31，导数为 3；不相等。",
+      "solution": [
+        "$\\frac{(1+h)^3-1}{h}=3+3h+h^2$，代入得到 3.31。",
+        "当 $h\\to0$ 时，后两项趋零，差商趋于 3。"
+      ],
+      "hint": "先展开立方，再约去非零间隔。",
+      "difficulty": 4,
+      "misconceptionTags": [
+        "derivative-definition-m1"
+      ]
     }
   ],
   "prerequisites": [
@@ -148,7 +162,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.3.2",
+    "version": "0.3.4",
     "status": "revised",
     "humanReviewed": false
   },
@@ -167,7 +181,21 @@
       "导数不存在"
     ],
     "correctIndex": 1,
-    "explanation": "差商是 $\\frac{(1 + h)^{2} - 1}{h} = 2 + h$。$h = 0.1$ 得到 2.1；让 $h \\to 0$，才得到导数 2。"
+    "explanation": "差商是 $\\frac{(1 + h)^{2} - 1}{h} = 2 + h$。$h = 0.1$ 得到 2.1；让 $h \\to 0$，才得到导数 2。",
+    "responses": [
+      {
+        "text": "间隔很小只能给近似。观察继续缩小时差商是否还在变化，再区分有限差商和它的极限。",
+        "experimentStep": 1
+      },
+      {
+        "text": "差商是 $\\frac{(1 + h)^{2} - 1}{h} = 2 + h$。$h = 0.1$ 得到 2.1；让 $h \\to 0$，才得到导数 2。",
+        "experimentStep": null
+      },
+      {
+        "text": "某个有限差商不等于导数，不代表导数不存在。要看差商在间隔趋零时是否有共同极限。",
+        "experimentStep": 0
+      }
+    ]
   },
   "teaching": {
     "explain": "先用一段路算平均变化率，再把这段路缩短。导数是这个过程的极限，不是某条很短的割线本身。",
@@ -205,6 +233,11 @@
         },
         "observation": "右侧差商为 1，左侧为 −1。它连续，却没有同一个双侧导数。"
       }
-    ]
+    ],
+    "reflection": {
+      "question": "光滑曲线的小间隔与尖角的小间隔，为什么不能用同一个“已经够小”来判断导数？",
+      "answer": "导数要求两侧差商有同一个有限极限。尖角两侧保持不同斜率，再小的间隔也不能消除这个差别。"
+    },
+    "transferExerciseId": "derivative-definition-transfer"
   }
 }

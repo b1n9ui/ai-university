@@ -18,7 +18,7 @@ English and Chinese are independent static sites, each with all ten complete boo
 
 | Textbook | Chapters | Lessons | Worked examples | Exercises, including reviews | Languages |
 |---|---:|---:|---:|---:|---|
-| Calculus I | 7 | 35 | 79 | 191 | English, Chinese |
+| Calculus I | 7 | 35 | 79 | 197 | English, Chinese |
 | Calculus II | 8 | 35 | 72 | 179 | English, Chinese |
 | Calculus III | 9 | 40 | 81 | 203 | English, Chinese |
 | Linear Algebra | 10 | 50 | 100 | 250 | English, Chinese |
@@ -80,7 +80,7 @@ Contributions go through pull requests and protected-branch checks. An external 
 
 ## Version and licenses
 
-Website **v0.22.0**. English edition 1 of each book aligns with the canonical source version recorded in its manifest. Source checksums detect when translation review is needed; formulas, IDs, numeric answer keys, prerequisites, and diagram presets remain aligned.
+Website **v0.23.0**. English edition 1 of each book aligns with the canonical source version recorded in its manifest. Source checksums detect when translation review is needed; formulas, IDs, numeric answer keys, prerequisites, and diagram presets remain aligned.
 
 Website code is [MIT](LICENSE). Original textbook content is [CC0](LICENSE-CONTENT.md). Third-party libraries retain their own licenses; see [third-party notices](THIRD_PARTY_NOTICES.md).
 

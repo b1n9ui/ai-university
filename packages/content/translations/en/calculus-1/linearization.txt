@@ -61,3 +61,8 @@ $\frac{3 \times 0.1}{10} = 0.03$.
 $0.02$.
 $L(x)=1+x$.
 $A = s^{2}$, $\frac{\mathrm{d}A}{A} = \frac{2 \mathrm{d}s}{s}$.
+Start at $(a , f (a))$ and follow its tangent slope. Unless the function is already linear, this is generally an approximation, not an exact identity.
+This line may miss the base point, and it treats a local approximation as a global equality. First check whether it agrees with the function at the base point.
+A derivative is output change per unit input, not an output increment by itself. Multiply by the input change from the base point.
+Why is the same tangent exact at its base point but potentially inaccurate farther away?
+The tangent matches the value and first-order rate at its base point, not the curve's bending over an entire interval.

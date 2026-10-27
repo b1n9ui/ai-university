@@ -954,3 +954,20 @@ input[type=range] { accent-color: #4c855b; }
 .experiment-checkpoint details[open] .checkpoint-chevron { transform:rotate(180deg); }
 .exercise textarea.numeric-answer-input { min-height:56px; height:56px; max-height:140px; resize:vertical; line-height:1.6; }
 .answer-format-note { display:block; font-size:11px; line-height:1.7; color:#667462; font-weight:400; margin-top:5px; }
+
+/* Authored prediction, reasoning, and voluntary study notes. */
+.experiment-notes{margin-top:1rem;border-top:1px solid var(--line,#cdd9cb);padding-top:.75rem}
+.experiment-notes summary,.experiment-reflection summary,.tryout-tasks summary{cursor:pointer;min-height:44px;display:list-item;align-content:center;font-weight:600;color:var(--forest,#244b3d)}
+.experiment-notes label,.experiment-reflection label,.tryout-tasks label{display:grid;gap:.6rem;font-size:.875rem;font-weight:600;margin:.7rem 0}
+.experiment-notes textarea,.experiment-reflection textarea,.tryout-tasks textarea,.tryout-tasks select{box-sizing:border-box;width:100%;min-width:0;border:1px solid #a5b8a7;border-radius:10px;background:#fffefb;color:#203c30;padding:.8rem;font:inherit;line-height:1.7}
+.experiment-notes textarea{min-height:110px;resize:vertical}.experiment-reflection textarea{min-height:110px;resize:vertical}
+.experiment-notes small,.experiment-reflection .note{font-size:.75rem;line-height:1.7;color:#52675a}
+.experiment-reflection{border-top:1px solid #cdd9cb;margin-top:1.3rem;padding-top:1.2rem}
+.experiment-reflection>h4{margin-bottom:.8rem}.experiment-reflection blockquote{margin:1rem 0;padding:.8rem 1rem;border-left:3px solid #5b8d6b;background:#f0f4eb;white-space:pre-wrap;overflow-wrap:anywhere}
+.experiment-reflection blockquote p{margin:.35rem 0}.experiment-reflection details{margin-top:.8rem}
+.tryout-page{max-width:1080px;margin:auto}.tryout-privacy{max-width:80ch;color:#536759;line-height:1.9;border-left:3px solid #729879;padding-left:1.2rem;margin-bottom:2rem}
+.tryout-tasks{display:grid;gap:1.5rem}.tryout-tasks article{border:1px solid #d0dbcc;border-radius:18px;padding:clamp(20px,4vw,38px);background:#fffefb}.tryout-tasks article>h2{margin:.6rem 0 1rem}.tryout-tasks article>p{max-width:80ch;line-height:1.9}.tryout-actions,.tryout-finish{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}.tryout-actions{margin:1.2rem 0}.tryout-tasks details{border-top:1px solid #d0dbcc;padding-top:.75rem}.tryout-tasks details>p{line-height:1.8;color:#536759}.tryout-tasks .tryout-task-question{color:#203c30;background:#f0f4eb;padding:1rem;border-radius:10px}.tryout-finish{margin:2rem 0}.tryout-finish>p{flex-basis:100%;color:#536759;font-size:.85rem}
+.experiment-notes textarea:focus-visible,.experiment-reflection textarea:focus-visible,.tryout-tasks textarea:focus-visible,.tryout-tasks select:focus-visible{outline:3px solid #39845e;outline-offset:3px}
+@media(max-width:600px){.tryout-actions{align-items:stretch;flex-direction:column}.tryout-actions>a{min-height:44px}.tryout-finish{align-items:stretch;flex-direction:column}}
+
+.experiment-notes textarea,.experiment-reflection textarea,.tryout-tasks textarea{font-weight:400}

@@ -63,3 +63,13 @@ The right quotient is 1 and the left quotient is −1. The function is continuou
 $3$.
 $y=4x-4$.
 $6$.
+A small gap gives an approximation. See whether the quotient still changes as you shrink the gap, then distinguish a finite quotient from its limit.
+The quotient is $\frac{(1 + h)^{2} - 1}{h} = 2 + h$. At $h = 0.1$ it is 2.1; only taking $h \to 0$ gives derivative 2.
+A finite quotient differing from the derivative does not mean the derivative fails to exist. Examine whether the quotients approach a common limit as the gap tends to zero.
+Why does making the gap small not settle differentiability for both a smooth curve and a corner?
+A derivative requires a common finite limit of the two-sided difference quotients. At a corner the slopes remain different, however small the gap becomes.
+Replace the square function with $f(x)=x^3$. At $a=1$, find the right-hand difference quotient for $h=0.1$, then find the derivative. Are they equal?
+The quotient is 3.31 and the derivative is 3; they are unequal.
+Expand the cube, then cancel the nonzero gap.
+$\frac{(1+h)^3-1}{h}=3+3h+h^2$, which gives 3.31 after substitution.
+As $h\to0$, the last two terms tend to zero and the quotient tends to 3.
