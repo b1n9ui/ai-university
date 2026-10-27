@@ -26,7 +26,7 @@ import {
 import { Formula, MathText, plainMathText } from "./MathText";
 import { ParameterControl } from "./ParameterControl";
 import { ApplicationVisual } from "./ApplicationVisual";
-import { GuidedExperiment } from "./Teaching";
+import { GuidedExperiment, ExperimentCheckpoint } from "./Teaching";
 import { playbackStep, boundedSweep, MIN_APPROACH_DISTANCE, MAX_REFINEMENT } from '../../../../packages/visuals/playback.mjs';
 const fmt = (v: number) =>
   Number.isFinite(v) ? Number(v.toFixed(5)).toString() : "无有限值";
@@ -200,6 +200,7 @@ export function Visual({
   const [dimension, setDimension] = useState<"2d" | "3d">(
     spatial ? "3d" : "2d",
   );
+  const workspace = useRef<HTMLDivElement>(null);
   const [step,setStep] = useState<number|null>(null);
   const [scenario,setScenario] = useState<(TeachingPreset & {revision:number})>();
   const [modified,setModified] = useState(false);
@@ -208,7 +209,8 @@ export function Visual({
   useEffect(()=>{setStep(null);setScenario(undefined);setModified(false);setDimension(spatial?"3d":"2d");},[lesson.id]);
   return (
     <div className="visual-system" onChangeCapture={e=>{if(!(e.target as Element).closest(".application-visual"))setModified(true);}} onKeyDownCapture={e=>{const target=e.target as Element;if(target.matches('input[type="range"]')&&!target.closest('.application-visual')&&['Home','End','ArrowLeft','ArrowRight','ArrowUp','ArrowDown','PageUp','PageDown'].includes(e.key))setModified(true);}} onClickCapture={e=>{const target=e.target as Element;if(target.closest("button")&&target.closest(".visual-card,.solid-visual,.dimension-switch")&&!target.closest(".application-visual"))setModified(true);}}>
-      <GuidedExperiment key={`guided-${lesson.id}`} lesson={lesson} index={step} modified={modified} onApply={apply}/>
+      <GuidedExperiment key={`guided-${lesson.id}`} lesson={lesson} index={step} modified={modified} onApply={apply} onFocusVisual={()=>{workspace.current?.focus({preventScroll:true});workspace.current?.scrollIntoView({block:"start",behavior:matchMedia("(prefers-reduced-motion:reduce)").matches?"instant":"smooth"});}}/>
+      <div ref={workspace} className="visual-workspace" tabIndex={-1} aria-label={tr("图形与操作区")}>
       {localizeNode(spatial && (
         <div className="dimension-switch" role="group" aria-label={tr("演示维度")}>
           <span>{tr("同一个模型 · 两种视角")}</span>
@@ -244,6 +246,8 @@ export function Visual({
         <PlanarVisual key={lesson.id} lesson={lesson} compact={compact} scenario={scenario} />
       ))}
       {localizeNode(additional&&<details className="supplemental-experiment"><summary><span>{tr("延伸探索")}</span>{localizeNode(additional)}<span>{tr("展开")}</span></summary><ApplicationVisual key={lesson.id} lessonId={lesson.id}/></details>)}
+      </div>
+      {step!==null&&<ExperimentCheckpoint lesson={lesson} index={step} modified={modified} onApply={i=>{apply(i);workspace.current?.focus({preventScroll:true});workspace.current?.scrollIntoView({block:"start",behavior:matchMedia("(prefers-reduced-motion:reduce)").matches?"instant":"smooth"});}}/>}
     </div>
   );
 }
@@ -426,8 +430,8 @@ function PlanarVisual({
           onChange={setH}
         />
         <label className="select-label">{tr("靠近方向")}<select value={side} onChange={(e) => setSide(+e.target.value)}>
-            <option value={-1}>{tr("从左侧")}</option>
-            <option value={1}>{tr("从右侧")}</option>
+            <option value={-1}>{tr("从左侧靠近")}</option>
+            <option value={1}>{tr("从右侧靠近")}</option>
           </select>
         </label>
       </>

@@ -219,7 +219,7 @@ export function SpatialPlot({
               <path
                 d={path([from, to])}
                 stroke={["#a6d09f", "#75c3d4", "#e0bd80"][axis]}
-                strokeOpacity=".65"
+                strokeOpacity=".85"
                 strokeDasharray="4 5"
                 fill="none"
               />
@@ -227,6 +227,7 @@ export function SpatialPlot({
                 x={end[0] + 7}
                 y={end[1] - 7}
                 className="axis-letter"
+                paintOrder="stroke" stroke="#142b29" strokeWidth="3" strokeLinejoin="round"
                 fill={["#bfe3b6", "#9bd7e6", "#eed3aa"][axis]}
               >
                 {localizeNode((frame.axisLabels??["x", "y", "z"])[axis])}
@@ -240,8 +241,9 @@ export function SpatialPlot({
                     key={v}
                     x={q[0] + 4}
                     y={q[1] + 13}
-                    fill="#aec1b1"
-                    fontSize="10"
+                    fill="#d5e5d4"
+                    fontSize="12"
+                    paintOrder="stroke" stroke="#142b29" strokeWidth="3" strokeLinejoin="round"
                   >
                     {localizeNode(v)}
                   </text>

@@ -8,7 +8,7 @@ import {
   Lightbulb,
   List,
 } from "lucide-react";
-import { useRef, useState } from "react";
+import { useId, useRef, useState } from "react";
 import type { Exercise, Lesson } from "../../../../packages/content/types";
 import { MathText } from "./MathText";
 import { parseNumeric, numericAnswerMatches } from "../../../../packages/content/numeric-answer.mjs";
@@ -20,7 +20,7 @@ export function Practice({
 }: {
   lesson: Lesson;
   progress: Progress;
-  onMark: (id: string, v: "understood" | "review") => void;
+  onMark: (id: string, v: "understood" | "review" | null) => void;
 }) {
   return (
     <PracticeSet
@@ -40,7 +40,7 @@ export function PracticeSet({
   questions: Exercise[];
   misconceptions?: Lesson["commonMistakes"];
   progress: Progress;
-  onMark: (id: string, v: "understood" | "review") => void;
+  onMark: (id: string, v: "understood" | "review" | null) => void;
 }) {
   const [index, setIndex] = useState(0),
     [all, setAll] = useState(false);
@@ -56,7 +56,6 @@ export function PracticeSet({
   return (
     <section className="practice-set">
       <div className="section-heading">
-        <span className="eyebrow">PRACTICE & REFLECT</span>
         <h2 ref={heading} tabIndex={-1} style={{ scrollMarginTop: 140 }}>{tr("练习")}</h2>
         <p>{tr("数字题可检查数值；推导题请对照步骤自评。记录只保存在当前浏览器。")}</p>
       </div>
@@ -128,8 +127,10 @@ function Question({
   misconceptions: Lesson["commonMistakes"];
   index: number;
   status?: string;
-  onMark: (v: "understood" | "review") => void;
+  onMark: (v: "understood" | "review" | null) => void;
 }) {
+  const input=useRef<HTMLTextAreaElement>(null);
+  const formatId=useId();
   const [draft, setDraft] = useState(""),
     [hint, setHint] = useState(false),
     [reveal, setReveal] = useState(false),
@@ -147,8 +148,8 @@ function Question({
     if(!ok){setHint(true);setNextHint(false);}
     setFeedback(
       ok
-        ? "数值正确。请继续检查单位与推导步骤。"
-        : "答案不一致，请检查计算和单位。",
+        ? "数值一致。请再核对你的推导。"
+        : "数值还不一致。按下面的提示检查这一步。",
     );
     if(!ok)onMark("review");
   }
@@ -165,12 +166,18 @@ function Question({
           </span>
         ))}
       </header>
+      {status&&<button className="text-btn clear-question-status" onClick={()=>{input.current?.focus({preventScroll:true});onMark(null);setResult(null);setFeedback("");}}>{tr("清除此题记录")}</button>}
       <h3>
         <MathText text={tr(q.problem)} />
       </h3>
       <label className="answer-label">
         {localizeNode(q.numericAnswer !== undefined ? "数值结果（小数或分数）" : "你的思路")}
         <textarea
+          ref={input}
+          rows={q.numericAnswer!==undefined?1:4}
+          className={q.numericAnswer!==undefined?"numeric-answer-input":undefined}
+          aria-describedby={q.numericAnswer!==undefined?formatId:undefined}
+          onKeyDown={e=>{if(q.numericAnswer!==undefined&&e.key==="Enter"&&!e.shiftKey){e.preventDefault();check();}}}
           value={draft}
           onChange={(e) => {
             setDraft(e.target.value);
@@ -179,10 +186,11 @@ function Question({
           }}
           placeholder={
             tr(q.numericAnswer !== undefined
-              ? "小数请保留至少 6 位有效数字，也可输入分数…"
+              ? "如 1/3 · 回车检查"
               : "写下关键步骤，或先在纸上完成…")
           }
         />
+        {q.numericAnswer!==undefined&&<small id={formatId} className="answer-format-note">{tr("小数请保留至少 6 位有效数字，也可输入分数。")}</small>}
       </label>
       <div className="exercise-actions">
         {localizeNode(q.numericAnswer !== undefined && (

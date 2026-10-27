@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.22.0 — 2026-10-26
+
+- Add contextual explanation, derivation, worked-example and prerequisite paths across all 345 mathematics lessons, with English/Chinese parity.
+- Preserve a real retry opportunity on concept checks, with an explicit answer reveal and a route into the diagram.
+- Add progressive worked examples, graph-adjacent observation checkpoints, clear preset restoration, and focused desktop task/model layout.
+- Allow clearing one question's record, improve keyboard recovery and 3D axis legibility, and document actual screenshot-based findings and limits.
+
 ## 0.21.1 — 2026-10-26
 
 - Add project-scoped IndexNow ownership and meaningful-content manifests for all 794 public HTML pages.

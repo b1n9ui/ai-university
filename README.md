@@ -80,7 +80,7 @@ Contributions go through pull requests and protected-branch checks. An external 
 
 ## Version and licenses
 
-Website **v0.21.1**. English edition 1 of each book aligns with the canonical source version recorded in its manifest. Source checksums detect when translation review is needed; formulas, IDs, numeric answer keys, prerequisites, and diagram presets remain aligned.
+Website **v0.22.0**. English edition 1 of each book aligns with the canonical source version recorded in its manifest. Source checksums detect when translation review is needed; formulas, IDs, numeric answer keys, prerequisites, and diagram presets remain aligned.
 
 Website code is [MIT](LICENSE). Original textbook content is [CC0](LICENSE-CONTENT.md). Third-party libraries retain their own licenses; see [third-party notices](THIRD_PARTY_NOTICES.md).
 
@@ -89,3 +89,5 @@ Website code is [MIT](LICENSE). Original textbook content is [CC0](LICENSE-CONTE
 Each published lesson has a complete static HTML edition and Markdown counterpart under `books/<book>/<lesson>/`. The interactive reader links to it through “Readable & citable edition”. [AI content guide](https://b1n9ui.github.io/ai-university/en/llms.txt), [content / prerequisite index](https://b1n9ui.github.io/ai-university/en/content-index.json), and [discovery details](docs/AI_DISCOVERY.md) explain the exports and their limits.
 
 [Feedback & textbook submissions](https://b1n9ui.github.io/ai-university/en/contribute/) are voluntary public GitHub drafts with lesson context. The [improvement loop](docs/IMPROVEMENT_LOOP.md) groups reports and prepares evidence for AI-assisted review; the owner chooses official changes. No hidden tracking or automatic publication.
+
+Contextual learning in the mathematics editions: choose another explanation, unpack a derivation, work through an example, or revisit prerequisites. Diagrams keep the current task and observation checkpoints nearby. These use fixed authored content, with no runtime model call. See the [learning experience audit](docs/audits/2026-10-26-learning/README.md).
