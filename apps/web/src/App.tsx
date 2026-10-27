@@ -67,9 +67,10 @@ export default function App() {
     setReading(data);
     save("ai-university-reading-v2", data);
   }
-  function mark(id: string, v: "understood" | "review") {
+  function mark(id: string, v: "understood" | "review" | null) {
     setProgress((old) => {
-      const next = { ...old, [id]: v };
+      const next = { ...old };
+      if(v===null)delete next[id];else next[id]=v;
       save("ai-university-calculus-1-progress-v1", next);
       return next;
     });

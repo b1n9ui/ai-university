@@ -60,7 +60,7 @@ type AppState = {
   route: Route;
   progress: Progress;
   reading: Reading;
-  mark: (id: string, v: "understood" | "review") => void;
+  mark: (id: string, v: "understood" | "review" | null) => void;
   update: (r: Reading) => void;
   search: () => void;
   clear: () => void;

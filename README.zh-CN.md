@@ -109,7 +109,7 @@ npm run preview   # 查看构建后的静态版本
 
 ## 阅读与下载
 
-- 网站 v0.21.1：数学系列首页、按方向和出版状态筛选的书库、教材主页、数学八卷共 71 个章节主页、345 个知识点页面、实验室、分页练习中心、全文搜索、公式/术语/附录索引、阅读指南、下载、项目与贡献资料。
+- 网站 v0.22.0：数学系列首页、按方向和出版状态筛选的书库、教材主页、数学八卷共 71 个章节主页、345 个知识点页面、实验室、分页练习中心、全文搜索、公式/术语/附录索引、阅读指南、下载、项目与贡献资料。
 - 阅读页：专注模式、嵌入演示、页内定位、上下节翻页、收藏、较大字号与已读标记。练习支持逐题/连续查看、提示、完整解答与数值检查。
 - [微积分 I 书稿](book/Calculus-I.md)与[微积分 II 书稿](book/Calculus-II.md)、[微积分 III 书稿](book/Calculus-III.md)与[线性代数书稿](book/Linear-Algebra.md)、[常微分方程书稿](book/Ordinary-Differential-Equations.md)：版本化源产物，包含所有解答。
 - `dist/book.html` 与 `dist/calculus-2.html` 与 `dist/calculus-3.html` 与 `dist/linear-algebra.html`：数学八卷各自的完整阅读页（另含 `dist/ordinary-differential-equations.html` 、`dist/probability-statistics.html` 、`dist/discrete-math.html` 与 `dist/real-analysis.html`），公式预先排版，支持浏览器打印为 PDF。
@@ -133,7 +133,7 @@ docs/                      架构、内容规范、生成检查流程、部署�
 
 ## 质量与版本
 
-网站版本 **v0.21.1**；微积分 I 内容为 **v0.3.3**，微积分 II、III 为 **v0.1.2**，其余数学卷均为 **v0.1.1**。尚未逐节人工审校。结构校验、公式渲染、先修图与选定数值验证可以发现部分错误，但不等同于逐式形式化证明。欢迎用具体反例、章节位置和可复算步骤提交勘误。
+网站版本 **v0.22.0**；微积分 I 内容为 **v0.3.3**，微积分 II、III 为 **v0.1.2**，其余数学卷均为 **v0.1.1**。尚未逐节人工审校。结构校验、公式渲染、先修图与选定数值验证可以发现部分错误，但不等同于逐式形式化证明。欢迎用具体反例、章节位置和可复算步骤提交勘误。
 
 `npm run check` 检查所有章节结构、章节链接、公式语法、先修有向无环图、视觉函数配置与数学模型。浏览器验证记录见 [QA](docs/QA.md)。
 
@@ -201,3 +201,5 @@ English: AI University publishes complete AI-authored, versioned textbooks with 
 每节教材都有完整静态正文和 Markdown，在交互阅读页点击“正文与引用”即可打开。[AI 内容导航](https://b1n9ui.github.io/ai-university/llms.txt) 与 [知识关系索引](https://b1n9ui.github.io/ai-university/content-index.json) 便于读取和引用，不保证搜索收录或 AI 推荐。详见 [发现机制](docs/AI_DISCOVERY.md)。
 
 [反馈与新教材投稿](https://b1n9ui.github.io/ai-university/contribute/) 使用自愿提交的公开 GitHub 草稿，自动带上章节信息，不上传学习记录。[持续改进流程](docs/IMPROVEMENT_LOOP.md) 会整理反馈和复核证据，由所有者筛选正式修改，不会自动发布。
+
+数学教材支持按需讲解：换个说法、拆开推导、逐步做例题和回补前置知识。演示提供当前任务、观察核对和练习出口，全部使用固定教材内容，无需模型 API。见[学习体验审查](docs/audits/2026-10-26-learning/README.md)。

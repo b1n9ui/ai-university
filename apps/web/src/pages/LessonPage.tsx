@@ -22,6 +22,7 @@ import {lessonById, allLessons, collections} from "../../../../packages/content"
 import type { Lesson } from "../../../../packages/content/types";
 import { Formula, MathText } from "../components/MathText";
 import { Practice } from "../components/Practice";
+import {WorkedExample} from "../components/WorkedExample";
 import { TeachingExplanation } from "../components/Teaching";
 import { LearningCheck } from "../components/LearningCheck";
 import { Visual } from "../components/Visual";
@@ -185,7 +186,7 @@ export function LessonPage({ lesson: l }: { lesson: Lesson }) {
           {localizeNode(view === "read" ? (
             <article id="lesson-article" className="textbook-article">
               <section id="section-idea" className="essential-idea">
-                <Eyebrow>THE ESSENTIAL IDEA</Eyebrow>
+                <Eyebrow>{locale==='en'?'THE ESSENTIAL IDEA':'核心意思'}</Eyebrow>
                 <p>
                   <MathText text={tr(l.concept)} />
                 </p>
@@ -197,7 +198,7 @@ export function LessonPage({ lesson: l }: { lesson: Lesson }) {
                 </p>
               </section>
               <TeachingExplanation key={`explain-${l.id}`} lesson={l}/>
-              <LearningCheck key={`check-${l.id}`} check={l.learningCheck} />
+              <LearningCheck key={`check-${l.id}`} check={l.learningCheck} hint={l.teaching.explain} onExplore={()=>jump("visual")} />
               <section id="section-visual" className="embedded-visual">
                 <div className="visual-section-heading">
                   <span>
@@ -221,7 +222,7 @@ export function LessonPage({ lesson: l }: { lesson: Lesson }) {
               <section id="section-definition">
                 <SectionTitle num="03" title={tr("定义与条件")} />
                 <div className="definition-block">
-                  <Eyebrow>DEFINITION / THEOREM</Eyebrow>
+
                   <p>
                     <MathText text={tr(l.formalDefinition.text)} />
                   </p>
@@ -256,31 +257,7 @@ export function LessonPage({ lesson: l }: { lesson: Lesson }) {
               </section>
               <section id="section-examples">
                 <SectionTitle num="05" title={tr("试着解一个问题")} />
-                {localizeNode(l.workedExamples.map((ex, i) => (
-                  <div className="worked-example" key={i}>
-                    <header>
-                      <span>{tr(`例题 ${i + 1}`)}</span>
-                      <h3><MathText text={tr(ex.title)} /></h3>
-                    </header>
-                    <p className="example-problem">
-                      <MathText text={tr(ex.problem)} />
-                    </p>
-                    <details className="example-solution">
-                      <summary>{tr("查看解题步骤")}</summary>
-                      <ol>
-                        {localizeNode(ex.steps.map((s, j) => (
-                          <li key={j}>
-                            <MathText text={tr(s)} />
-                          </li>
-                        )))}
-                      </ol>
-                      <div className="example-answer">
-                        <Check size={18} />
-                        <MathText text={tr(ex.answer)} />
-                      </div>
-                    </details>
-                  </div>
-                )))}
+                {l.workedExamples.map((ex,i)=><WorkedExample key={`${l.id}-${i}`} example={ex} index={i}/>)}
               </section>
               <section id="section-mistakes">
                 <SectionTitle num="06" title={tr("常见误区")} />
@@ -303,7 +280,7 @@ export function LessonPage({ lesson: l }: { lesson: Lesson }) {
               </section>
               <div className="lesson-finish">
                 <div>
-                  <Eyebrow>NOW, TRY IT YOURSELF</Eyebrow>
+
                   <h2>{tr("本节练习")}</h2>
                   <p>{localizeNode(l.practice.length)}{tr("道练习，检查概念、计算与适用条件。")}</p>
                 </div>
@@ -349,7 +326,7 @@ export function LessonPage({ lesson: l }: { lesson: Lesson }) {
         <aside className="lesson-toc" aria-label={tr("本页目录")}>
           {localizeNode(view === "read" ? (
             <>
-              <Eyebrow>ON THIS PAGE</Eyebrow>
+              <Eyebrow>{locale==='en'?'ON THIS PAGE':'本页内容'}</Eyebrow>
               <nav>
                 {localizeNode(sections.map(([id, name]) => (
                   <button
@@ -364,7 +341,7 @@ export function LessonPage({ lesson: l }: { lesson: Lesson }) {
             </>
           ) : (
             <>
-              <Eyebrow>THIS SECTION</Eyebrow>
+              <Eyebrow>{locale==='en'?'THIS SECTION':'本节要点'}</Eyebrow>
               <p><MathText text={tr(l.concept)} /></p>
             </>
           ))}
