@@ -74,3 +74,8 @@ $\frac{3}{2}$.
 $\frac{e^{2x}}{2}+C$.
 $\frac{\sin^2x}{2}+C$.
 $u = \sin x$, $\mathrm{d}u = \cos x \mathrm{d}x$.
+Those are still the bounds for the original variable. Substitute each original endpoint into the new variable.
+The bounds transform too: $x = 0$ gives $u = 1$ and $x = 1$ gives $u = 2$, with $\mathrm{d}u = 2 x \mathrm{d}x$.
+Both bounds must change. First determine where the new variable starts when the original input is zero.
+Why must both widths and endpoints change under substitution?
+Widths encode the local scale between variables; endpoints specify the interval traversed in the new variable. Changing only one fails to represent the same accumulation.

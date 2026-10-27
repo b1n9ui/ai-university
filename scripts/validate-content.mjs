@@ -93,6 +93,8 @@ export function validateContent() {
       assert(!ids.has(l.id), `Duplicate lesson ${l.id}`);
       ids.add(l.id);
       assert(l.learningCheck.correctIndex < l.learningCheck.choices.length);
+      if(l.learningCheck.responses)assert.equal(l.learningCheck.responses.length,l.learningCheck.choices.length,`${l.id}: option feedback must align with choices`);
+      if(l.teaching.transferExerciseId)assert(l.practice.some(q=>q.id===l.teaching.transferExerciseId),`${l.id}: unknown transfer exercise`);
       assert(
         l.sources.every((id) => sourceIds.has(id)),
         `${l.id}: unknown source`,

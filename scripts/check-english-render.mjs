@@ -25,12 +25,12 @@ async function checkEnglishRendering(){
   for(const [source,expected] of [['第 4 章','Chapter 4'],['第 2 袋','Bag 2'],['例题 1','Example 1'],['第 2 / 5 题','Question 2 / 5'],['查看微积分 I教材','Open Calculus I'],['情境 2 / 3','Scenario 2 / 3']])assert.equal(tr(source),expected);
   const {default:App}=await server.ssrLoadModule('/src/App.tsx');
   const math=englishRegistry.filter(e=>e.type==='mathematics').map(e=>buildEnglishContent(e.id));
-  const shared=['home','library','library?category=mathematics','library?category=other','about','about/research','about/versions','about/privacy','about/contribute'];
+  const shared=['home','library','library?category=mathematics','library?category=other','about','about/research','about/versions','about/privacy','about/contribute','about/tryout'];
   const routes=[...shared,...math.flatMap(content=>[
    'book/'+content.book.id,
    ...['lab','practice','reference','reference?tab=glossary','reference?tab=appendix','learning','guide','downloads','practice/exam'].map(p=>p+(p.includes('?')?'&':'?')+'book='+content.book.id),
    ...content.book.chapters.flatMap(c=>['chapter/'+c.id,'practice/review/'+c.id]),
-   ...content.lessons.flatMap(l=>['lesson/'+l.id,'lesson/'+l.id+'?view=visual','lesson/'+l.id+'?view=practice','lesson/'+l.id+'?view=connections'])
+   ...content.lessons.flatMap(l=>['lesson/'+l.id,'lesson/'+l.id+'?view=visual','lesson/'+l.id+'?view=practice','lesson/'+l.id+'?view=connections',...(l.teaching.transferExerciseId?['lesson/'+l.id+'?view=practice&question='+l.teaching.transferExerciseId]:[])])
   ])];
   for(const route of routes){location.hash='#/'+route;location.href='http://127.0.0.1:5174/'+location.hash;verify(App,{},route);}
   // Render programming pages directly: a synchronous SSR render of App's lazy

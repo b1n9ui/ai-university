@@ -145,7 +145,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.3.2",
+    "version": "0.3.4",
     "status": "revised",
     "humanReviewed": false
   },
@@ -163,7 +163,21 @@
       "角度不能求导"
     ],
     "correctIndex": 1,
-    "explanation": "$\\frac{\\sin h}{h} \\to 1$ 要求 $h$ 用弧度。若用角度，换算会带来 $\\frac{\\pi }{180}$ 的系数。"
+    "explanation": "$\\frac{\\sin h}{h} \\to 1$ 要求 $h$ 用弧度。若用角度，换算会带来 $\\frac{\\pi }{180}$ 的系数。",
+    "responses": [
+      {
+        "text": "同一个角没有因换单位而变小；只是数值变了。比较一圈的两种表示。",
+        "experimentStep": 2
+      },
+      {
+        "text": "$\\frac{\\sin h}{h} \\to 1$ 要求 $h$ 用弧度。若用角度，换算会带来 $\\frac{\\pi }{180}$ 的系数。",
+        "experimentStep": null
+      },
+      {
+        "text": "角度制也能求导，但会带上单位换算系数。弧度使弧长与半径的比例直接进入公式。",
+        "experimentStep": null
+      }
+    ]
   },
   "teaching": {
     "explain": "正弦记录单位圆上的高度。绕一圈回到同一个点，高度就重复；横轴使用弧度，整圈是两个圆周率。",
@@ -192,6 +206,11 @@
         },
         "observation": "输出再次接近 0；预设值是小数近似，不是精确圆周率。"
       }
-    ]
+    ],
+    "reflection": {
+      "question": "一圈的两个近零读数，能证明预设输入就是精确的一圈吗？",
+      "answer": "不能。输入用了小数近似；精确周期用圆周率表示，有限精度读数不替代恒等关系。"
+    },
+    "transferExerciseId": "trigonometry-p4"
   }
 }

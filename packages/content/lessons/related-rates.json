@@ -176,7 +176,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.3.3",
+    "version": "0.3.4",
     "status": "revised",
     "humanReviewed": false
   },
@@ -194,7 +194,21 @@
       "$\\pi  (\\frac{\\mathrm{d}r}{\\mathrm{d}t})^{2}$"
     ],
     "correctIndex": 1,
-    "explanation": "先对时间求导，得到 $\\frac{\\mathrm{d}A}{\\mathrm{d}t} = \\frac{2 \\pi  r \\cdot \\mathrm{d}r}{\\mathrm{d}t}$。遗漏 $\\frac{\\mathrm{d}r}{\\mathrm{d}t}$ 就忽略了半径变化的速度。"
+    "explanation": "先对时间求导，得到 $\\frac{\\mathrm{d}A}{\\mathrm{d}t} = \\frac{2 \\pi  r \\cdot \\mathrm{d}r}{\\mathrm{d}t}$。遗漏 $\\frac{\\mathrm{d}r}{\\mathrm{d}t}$ 就忽略了半径变化的速度。",
+    "responses": [
+      {
+        "text": "这个式子描述面积对半径的变化率。若问每单位时间的变化，还要计入半径每单位时间变多少。",
+        "experimentStep": 1
+      },
+      {
+        "text": "先对时间求导，得到 $\\frac{\\mathrm{d}A}{\\mathrm{d}t} = \\frac{2 \\pi  r \\cdot \\mathrm{d}r}{\\mathrm{d}t}$。遗漏 $\\frac{\\mathrm{d}r}{\\mathrm{d}t}$ 就忽略了半径变化的速度。",
+        "experimentStep": null
+      },
+      {
+        "text": "不是把半径的变化率平方。对随时间变化的平方函数求导，应使用链式法则。",
+        "experimentStep": null
+      }
+    ]
   },
   "teaching": {
     "explain": "多个量被同一个关系绑住。先保留它们都在变的状态，对时间求导，最后才代入这一刻的尺寸。",
@@ -223,6 +237,11 @@
         },
         "observation": "顶端下降更快。底端匀速，不代表顶端匀速。模型没有取高度为零的端点。"
       }
-    ]
+    ],
+    "reflection": {
+      "question": "梯子底端匀速，为什么顶端下降速度会改变？",
+      "answer": "约束把两个位置连起来，变化率的比例随位置改变；接近放平时，同样的底端位移对应更大的高度变化。"
+    },
+    "transferExerciseId": "related-rates-p5"
   }
 }

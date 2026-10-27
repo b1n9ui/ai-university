@@ -147,7 +147,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.3.1",
+    "version": "0.3.4",
     "status": "revised",
     "humanReviewed": false
   },
@@ -166,7 +166,21 @@
       "$f' + g'$"
     ],
     "correctIndex": 1,
-    "explanation": "两因子都可能变化：一个变化时乘上另一个的原值。积的导数要把这两部分相加。"
+    "explanation": "两因子都可能变化：一个变化时乘上另一个的原值。积的导数要把这两部分相加。",
+    "responses": [
+      {
+        "text": "若两个因子都随输入改变，积的变化包含两份贡献。用 $f(x)=g(x)=x$ 检查这个选项。",
+        "experimentStep": null
+      },
+      {
+        "text": "两因子都可能变化：一个变化时乘上另一个的原值。积的导数要把这两部分相加。",
+        "experimentStep": null
+      },
+      {
+        "text": "这是和的求导规则。积中一个因子变化时，还要乘另一个因子当时的值。",
+        "experimentStep": null
+      }
+    ]
   },
   "teaching": {
     "explain": "求导规则把定义中的极限整理成快捷计算。结果仍应能与差商核对；积的导数不能把两个导数直接相乘。",
@@ -201,6 +215,11 @@
         },
         "observation": "导数也为 3。函数值可为负，变化率仍可为正。"
       }
-    ]
+    ],
+    "reflection": {
+      "question": "负输入处函数值为负，为什么导数仍可能为正？",
+      "answer": "函数值描述高度，导数描述局部升降；在横轴下方也可以随输入增加而上升。"
+    },
+    "transferExerciseId": "derivative-rules-p4"
   }
 }

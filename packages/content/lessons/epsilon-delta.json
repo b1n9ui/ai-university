@@ -149,7 +149,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.3.3",
+    "version": "0.3.4",
     "status": "revised",
     "humanReviewed": false
   },
@@ -168,7 +168,21 @@
       "$\\varepsilon$ 和 $\\delta$ 必须相等"
     ],
     "correctIndex": 0,
-    "explanation": "无论要求多小的输出误差 $\\varepsilon$，都要能找到足够小的 $\\delta$。$\\delta$ 可以依赖 $\\varepsilon$。"
+    "explanation": "无论要求多小的输出误差 $\\varepsilon$，都要能找到足够小的 $\\delta$。$\\delta$ 可以依赖 $\\varepsilon$。",
+    "responses": [
+      {
+        "text": "无论要求多小的输出误差 $\\varepsilon$，都要能找到足够小的 $\\delta$。$\\delta$ 可以依赖 $\\varepsilon$。",
+        "experimentStep": null
+      },
+      {
+        "text": "一个固定输入范围通常无法满足任意小的输出误差。输出要求变严时，允许重新选输入范围。",
+        "experimentStep": 1
+      },
+      {
+        "text": "输入和输出的尺度由函数决定，不必数值相等。检查图里的范围怎样保证整段输出落在误差带内。",
+        "experimentStep": 0
+      }
+    ]
   },
   "teaching": {
     "explain": "先要求输出误差够小，再给出输入能动多远的保证。不是挑一个好点，而是保证范围内所有合法点都够好。",
@@ -197,6 +211,11 @@
         },
         "observation": "$\\delta=0.01$；用 $|x^2-4|=|x-2||x+2|$ 说明整个色带内的保证。"
       }
-    ]
+    ],
+    "reflection": {
+      "question": "为什么控制整个输入小区间，比检查几个点更强？",
+      "answer": "定义要求范围内每个非中心输入都满足输出误差；有限采样不能排除未取样点。"
+    },
+    "transferExerciseId": "epsilon-delta-p4"
   }
 }

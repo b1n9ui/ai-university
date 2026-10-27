@@ -145,7 +145,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.3.1",
+    "version": "0.3.4",
     "status": "revised",
     "humanReviewed": false
   },
@@ -163,7 +163,21 @@
       "$7$"
     ],
     "correctIndex": 0,
-    "explanation": "先算内层 $g (2) = 3$，再算外层 $f (3) = 9$。交换顺序会得到 $g (f (2)) = 5$。"
+    "explanation": "先算内层 $g (2) = 3$，再算外层 $f (3) = 9$。交换顺序会得到 $g (f (2)) = 5$。",
+    "responses": [
+      {
+        "text": "先算内层 $g (2) = 3$，再算外层 $f (3) = 9$。交换顺序会得到 $g (f (2)) = 5$。",
+        "experimentStep": null
+      },
+      {
+        "text": "这个结果对应先平方、再加一。原题要求先算内层，再把它的输出交给外层。",
+        "experimentStep": null
+      },
+      {
+        "text": "复合不是把两个函数值相加。先写出中间量 $g(2)$，再把这个数代入 $f$。",
+        "experimentStep": null
+      }
+    ]
   },
   "teaching": {
     "explain": "正着算可以丢掉信息：平方会把正负两种输入合到同一输出。倒着算要唯一，就得先保留一个分支。",
@@ -192,6 +206,11 @@
         },
         "observation": "两边都会输出 4。限制到非负分支，反向才有唯一选择。"
       }
-    ]
+    ],
+    "reflection": {
+      "question": "平方函数为什么不能在全实数上直接反过来用？",
+      "answer": "正负输入可能输出同一个数。必须限制到一一对应的分支，才能唯一反求输入。"
+    },
+    "transferExerciseId": "composition-p4"
   }
 }

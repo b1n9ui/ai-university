@@ -151,7 +151,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.3.2",
+    "version": "0.3.4",
     "status": "revised",
     "humanReviewed": false
   },
@@ -169,7 +169,21 @@
       "不是极值"
     ],
     "correctIndex": 2,
-    "explanation": "$x^{3}$ 在零点两侧都递增。导数为零只给出候选点，还要检查两侧行为。"
+    "explanation": "$x^{3}$ 在零点两侧都递增。导数为零只给出候选点，还要检查两侧行为。",
+    "responses": [
+      {
+        "text": "导数为零只是候选。比较零点左右的函数值，看是否真有从升到降的变化。",
+        "experimentStep": null
+      },
+      {
+        "text": "极小要求附近的函数值不低于此点。试代一个很小的负输入，检查这一要求。",
+        "experimentStep": null
+      },
+      {
+        "text": "$x^{3}$ 在零点两侧都递增。导数为零只给出候选点，还要检查两侧行为。",
+        "experimentStep": null
+      }
+    ]
   },
   "teaching": {
     "explain": "零导数只是候选。还要看附近是否从升变降、从降变升；绝对极值则连端点一起比较。",
@@ -204,6 +218,11 @@
         },
         "observation": "精确导数为零；再看两侧会发现由降转升，对应局部极小。"
       }
-    ]
+    ],
+    "reflection": {
+      "question": "图里的导数变号，与仅仅“导数为零”相比，多提供了什么信息？",
+      "answer": "它说明两侧升降方向改变，可以据此判断局部极大或极小；零导数本身只给候选。"
+    },
+    "transferExerciseId": "extrema-p4"
   }
 }

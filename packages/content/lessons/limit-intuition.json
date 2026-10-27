@@ -135,6 +135,20 @@
         "极限考察穿孔邻域，单点改动不影响。"
       ],
       "hint": "$x$ 接近 1 但不等于 1。"
+    },
+    {
+      "id": "limit-intuition-transfer",
+      "problem": "当 $x\\ne2$ 时 $f(x)=x^2$，而 $f(2)=7$。求 $\\lim_{x\\to2}f(x)$，并说明函数是否在 2 连续。",
+      "answer": "极限为 4；不连续。",
+      "solution": [
+        "去心邻域中函数等于平方函数，极限是 $2^2=4$。",
+        "点值 7 与极限 4 不同，不满足连续条件。"
+      ],
+      "hint": "先分开写附近趋势与点值。",
+      "difficulty": 4,
+      "misconceptionTags": [
+        "limit-intuition-m2"
+      ]
     }
   ],
   "prerequisites": [
@@ -148,7 +162,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.3.1",
+    "version": "0.3.4",
     "status": "revised",
     "humanReviewed": false
   },
@@ -167,7 +181,21 @@
       "极限一定不存在"
     ],
     "correctIndex": 1,
-    "explanation": "极限检查 1 附近、但不等于 1 的输入。单独改变点上的值不会改变两侧的趋势。"
+    "explanation": "极限检查 1 附近、但不等于 1 的输入。单独改变点上的值不会改变两侧的趋势。",
+    "responses": [
+      {
+        "text": "点值只规定恰好在这一点的输出。极限看附近输入的输出，不把中心点代进去。",
+        "experimentStep": 1
+      },
+      {
+        "text": "极限检查 1 附近、但不等于 1 的输入。单独改变点上的值不会改变两侧的趋势。",
+        "experimentStep": null
+      },
+      {
+        "text": "单点被改动，不会自动破坏附近的共同趋势。先分别看左右，再判断是否趋向同一个数。",
+        "experimentStep": 1
+      }
+    ]
   },
   "teaching": {
     "explain": "把到达某点和靠近某点分开。极限看附近输出的趋势；点本身缺着一个洞，也可以有稳定趋势。",
@@ -202,6 +230,11 @@
         },
         "observation": "左侧一直为 1，右侧一直为 3；缩小距离也无法得到共同极限。"
       }
-    ]
+    ],
+    "reflection": {
+      "question": "单点改值和左右跳跃，为什么对极限的影响不同？",
+      "answer": "改单点不改变去心邻域；跳跃使左右邻近输出趋向不同的数。"
+    },
+    "transferExerciseId": "limit-intuition-transfer"
   }
 }

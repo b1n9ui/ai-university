@@ -63,3 +63,8 @@ Set the right endpoint to 3.
 The shared slope is 3, at point 1.5. The midpoint property belongs to this quadratic, not to the general theorem.
 $c = 2$.
 $\frac{1}{\sqrt{3}}$.
+The point happens to be the midpoint for a quadratic. Try a cubic and solve for instantaneous slope equal to average slope before comparing.
+$f' (c) = \frac{f (b) - f (a)}{b - a}$. The point $c$ need not be a midpoint or unique; continuity and differentiability are required.
+The mean value theorem matches two slopes; it does not locate the highest point. Compute the interval's average slope first.
+Why can the midpoint pattern in this diagram not be generalized to every function satisfying the mean value theorem?
+The quadratic has a special symmetry. The theorem guarantees some interior point whose slope equals the average slope, not the midpoint.

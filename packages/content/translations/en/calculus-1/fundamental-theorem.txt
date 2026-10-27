@@ -60,3 +60,13 @@ $8$.
 $e^x$.
 $7x^2$.
 $2$.
+Increasing the upper bound by $h$ adds approximately $f (x) h$. Divide by $h$ and take the limit to recover $f (x)$.
+Differentiating accumulation extracts the contribution at the moving endpoint. It does not first differentiate the original integrand.
+The lower endpoint is fixed, but the upper endpoint moves. Read the added strip's height at the current upper endpoint.
+Are accumulation and its rate the same quantity? Explain using the current height.
+No. Accumulation includes the whole interval. Its rate is determined by the height at the moving endpoint, equal to the integrand's value there when it is continuous.
+Let $A(x)=\int_0^{x^2}t^2\,\mathrm{d}t$. Find $A'(x)$ and explain why $A'(-1)$ can be negative although the integrand is nonnegative.
+$A'(x)=2x^5$, and $A'(-1)=-2$.
+Multiply the current height by the rate at which the upper endpoint moves.
+The fundamental theorem and chain rule give $A'(x)=(x^2)^2\cdot2x=2x^5$.
+Near a negative input, increasing the input decreases the upper bound and therefore decreases accumulation. Alternatively integrate to obtain $A(x)=\frac{x^6}{3}$ and differentiate to check.

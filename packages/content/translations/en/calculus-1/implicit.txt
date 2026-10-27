@@ -71,3 +71,8 @@ $0$.
 $\frac{- x}{y} = \frac{- 0}{5} = 0$.
 $-\frac{1+y}{1+x}$($x \ne - 1$).
 $-\frac12$.
+That is the rate with respect to $y$. The question differentiates with respect to $x$, so the change of $y$ with $x$ must also be included.
+$y^{2}$ composes an outer square with the inner function $y (x)$. Multiply by the inner derivative $y'$.
+The function value is squared, not its derivative. Treat $y^2$ as an outer square composed with an inner function.
+Can the slope formula dividing by height still be used at the circle's endpoints?
+No. Division by height is invalid when height is zero. Discuss a vertical tangent rather than inventing a finite slope.

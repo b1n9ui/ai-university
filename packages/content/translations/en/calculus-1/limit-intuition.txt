@@ -63,3 +63,13 @@ Switch to the function with different left- and right-side values.
 The left side stays at 1 and the right side at 3. Shrinking the distance cannot produce a common limit.
 $5$.
 $2$.
+A point value specifies the output at that exact input. A limit concerns nearby inputs; it does not substitute the center point.
+The limit examines inputs near 1 but different from 1. Changing the point value alone does not change the nearby behavior.
+Changing one point does not automatically destroy the common nearby trend. Examine the two sides before deciding whether they approach the same number.
+Why do changing one value and introducing a jump affect a limit differently?
+Changing one value leaves the punctured neighborhood unchanged. A jump makes nearby outputs on opposite sides approach different numbers.
+For $x\ne2$, let $f(x)=x^2$, but set $f(2)=7$. Find $\lim_{x\to2}f(x)$ and determine whether the function is continuous at 2.
+The limit is 4; the function is not continuous there.
+Write the nearby trend and the point value separately.
+In a punctured neighborhood the function equals the square function, so the limit is $2^2=4$.
+The value 7 differs from the limit 4, so continuity fails.

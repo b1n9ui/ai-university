@@ -4,8 +4,8 @@ title: "AI University: AI-authored open textbooks"
 type: software
 authors:
   - name: "AI University contributors"
-version: 0.22.0
-date-released: 2026-10-26
+version: 0.23.0
+date-released: '2026-10-27'
 url: "https://b1n9ui.github.io/ai-university/en/"
 repository-code: "https://github.com/b1n9ui/ai-university"
 license: MIT

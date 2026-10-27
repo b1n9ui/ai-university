@@ -8,7 +8,7 @@ import {
   Lightbulb,
   List,
 } from "lucide-react";
-import { useId, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import type { Exercise, Lesson } from "../../../../packages/content/types";
 import { MathText } from "./MathText";
 import { parseNumeric, numericAnswerMatches } from "../../../../packages/content/numeric-answer.mjs";
@@ -17,10 +17,12 @@ export function Practice({
   lesson,
   progress,
   onMark,
+  focusQuestionId,
 }: {
   lesson: Lesson;
   progress: Progress;
   onMark: (id: string, v: "understood" | "review" | null) => void;
+  focusQuestionId?: string|null;
 }) {
   return (
     <PracticeSet
@@ -28,6 +30,7 @@ export function Practice({
       misconceptions={lesson.commonMistakes}
       progress={progress}
       onMark={onMark}
+      focusQuestionId={focusQuestionId}
     />
   );
 }
@@ -36,15 +39,18 @@ export function PracticeSet({
   misconceptions = [],
   progress,
   onMark,
+  focusQuestionId,
 }: {
   questions: Exercise[];
   misconceptions?: Lesson["commonMistakes"];
   progress: Progress;
   onMark: (id: string, v: "understood" | "review" | null) => void;
+  focusQuestionId?: string|null;
 }) {
-  const [index, setIndex] = useState(0),
+  const [index, setIndex] = useState(()=>Math.max(0,questions.findIndex(q=>q.id===focusQuestionId))),
     [all, setAll] = useState(false);
   const heading = useRef<HTMLHeadingElement>(null);
+  useEffect(()=>{const i=questions.findIndex(q=>q.id===focusQuestionId);if(i>=0){setIndex(i);setAll(false);}},[focusQuestionId,questions]);
   const understood = questions.filter(
     (q) => progress[q.id] === "understood",
   ).length;

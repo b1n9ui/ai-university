@@ -145,7 +145,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.3.2",
+    "version": "0.3.4",
     "status": "revised",
     "humanReviewed": false
   },
@@ -163,7 +163,21 @@
       "最大值所在点"
     ],
     "correctIndex": 1,
-    "explanation": "$f' (c) = \\frac{f (b) - f (a)}{b - a}$。$c$ 不一定是中点，也不一定唯一；需要连续、可导的条件。"
+    "explanation": "$f' (c) = \\frac{f (b) - f (a)}{b - a}$。$c$ 不一定是中点，也不一定唯一；需要连续、可导的条件。",
+    "responses": [
+      {
+        "text": "平方函数的保证点恰好在中点，容易误导。换成三次函数，解“瞬时斜率等于平均斜率”再比较。",
+        "experimentStep": 2
+      },
+      {
+        "text": "$f' (c) = \\frac{f (b) - f (a)}{b - a}$。$c$ 不一定是中点，也不一定唯一；需要连续、可导的条件。",
+        "experimentStep": null
+      },
+      {
+        "text": "中值定理匹配两种斜率，不是在找最高点。先算整个区间的平均斜率。",
+        "experimentStep": 1
+      }
+    ]
   },
   "teaching": {
     "explain": "整段路的平均速度，是某一刻的瞬时速度。需要整段连续、内部可导；这个时刻不一定只有一个，也不一定在中点。",
@@ -192,6 +206,11 @@
         },
         "observation": "共同斜率为 3，保证点为 1.5；中点是平方函数的特点，不是一般定理。"
       }
-    ]
+    ],
+    "reflection": {
+      "question": "为什么图里的中点现象不能推广到所有满足中值定理的函数？",
+      "answer": "平方函数有特殊对称关系；定理只保证某个内点斜率等于平均斜率，没有指定中点。"
+    },
+    "transferExerciseId": "mean-value-p4"
   }
 }

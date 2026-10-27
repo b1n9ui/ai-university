@@ -60,3 +60,8 @@ $2\sin x\cos x$.
 $1$.
 $\sec^{2} 0 = \frac{1}{\cos^{2} 0} = 1$.
 $\sec x\tan x$.
+Near $x=\frac\pi2$, cosine is decreasing. The derivative's sign must reflect that direction.
+Near $x = \frac{\pi }{2}$, $\cos x$ decreases with slope −1. This matches $- \sin x$; the angle is in radians.
+Check at zero: cosine has a smooth peak with zero slope. Does this candidate formula give zero there?
+Why is the slope near zero at a peak where the height is largest?
+Height and rate are different quantities. Around a smooth peak the curve changes from rising to falling, with a horizontal tangent at the peak.

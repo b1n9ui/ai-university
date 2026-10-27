@@ -152,7 +152,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.3.2",
+    "version": "0.3.4",
     "status": "revised",
     "humanReviewed": false
   },
@@ -171,7 +171,21 @@
       "只要 $f (a)$ 很小就连续"
     ],
     "correctIndex": 1,
-    "explanation": "连续要求 $f (a)$ 有定义、极限存在，并且两者相等。少一个条件都不行。"
+    "explanation": "连续要求 $f (a)$ 有定义、极限存在，并且两者相等。少一个条件都不行。",
+    "responses": [
+      {
+        "text": "共同趋势只是一个条件；还要检查中心点的值是否接上这个趋势。",
+        "experimentStep": 2
+      },
+      {
+        "text": "连续要求 $f (a)$ 有定义、极限存在，并且两者相等。少一个条件都不行。",
+        "experimentStep": null
+      },
+      {
+        "text": "连续与函数值大小无关，关键是点值和极限是否相等。把同一个孔洞补到两个不同高度试试。",
+        "experimentStep": 2
+      }
+    ]
   },
   "teaching": {
     "explain": "附近的趋势和点上的输出接上，才叫连续。只把左右趋势算对，还没检查点值。",
@@ -205,6 +219,11 @@
         },
         "observation": "左右输出都趋近 2，点值也等于 2，所以补后的函数在该点连续。再手动改错点值，对比为什么不连续。"
       }
-    ]
+    ],
+    "reflection": {
+      "question": "补成什么点值才连续？为什么不能只看实心点？",
+      "answer": "点值必须等于共同极限；实心点只表明函数有定义，不能表明附近趋势接上了。"
+    },
+    "transferExerciseId": "continuity-p4"
   }
 }

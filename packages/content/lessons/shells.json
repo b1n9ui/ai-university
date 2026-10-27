@@ -146,7 +146,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.3.1",
+    "version": "0.3.4",
     "status": "revised",
     "humanReviewed": false
   },
@@ -164,7 +164,21 @@
       "$1 - x^{2}$"
     ],
     "correctIndex": 1,
-    "explanation": "竖片从 $y = 0$ 延伸到 $y = x^{2}$，高是 $x^{2}$。薄壳体积约为 $2 \\pi  x \\cdot x^{2} \\cdot \\mathrm{d}x$。"
+    "explanation": "竖片从 $y = 0$ 延伸到 $y = x^{2}$，高是 $x^{2}$。薄壳体积约为 $2 \\pi  x \\cdot x^{2} \\cdot \\mathrm{d}x$。",
+    "responses": [
+      {
+        "text": "这里把半径当成了高度。竖条的高度由上下边界之差给出，离转轴的距离才是半径。",
+        "experimentStep": 2
+      },
+      {
+        "text": "竖片从 $y = 0$ 延伸到 $y = x^{2}$，高是 $x^{2}$。薄壳体积约为 $2 \\pi  x \\cdot x^{2} \\cdot \\mathrm{d}x$。",
+        "experimentStep": null
+      },
+      {
+        "text": "原区域的下边界是横轴，不是上方另一条水平线。先在二维图里标出原来的竖条。",
+        "experimentStep": 2
+      }
+    ]
   },
   "teaching": {
     "explain": "平行于旋转轴的窄条扫成薄壳。壳的体积贡献是周长乘高度乘厚度；不能把周长误换成圆盘面积。",
@@ -198,6 +212,11 @@
         },
         "observation": "竖条高度是 $x^2$，半径是 $x$；两者在积分里分别出现。"
       }
-    ]
+    ],
+    "reflection": {
+      "question": "半径加倍时，为什么每单位厚度的体积贡献变成八倍？",
+      "answer": "此模型高度随半径平方变化，变为四倍；周长变两倍，两者相乘得到八倍。"
+    },
+    "transferExerciseId": "shells-p4"
   }
 }

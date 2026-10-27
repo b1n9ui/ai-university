@@ -63,3 +63,8 @@ $10$.
 $\frac{1}{4}$.
 $\frac{5}{2}$.
 $0$.
+A numerator tending to zero does not determine the quotient. The denominator also tends to zero, so their relative rates matter.
+Two quantities tending to zero need not have a ratio tending to one. Simplify or use an established limit relation; you cannot cancel zeros.
+$\frac{0}{0}$ is an indeterminate form, not an answer. Factoring, cancellation, or rationalization may reveal nearby behavior; direct division by zero is invalid.
+Both sampled sides are close to one. Why is assigning one at zero not a proof of the limit?
+Filling the point is a separate definition. A limit controls arbitrarily close inputs and requires an argument, not just finitely many readings.

@@ -222,7 +222,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.3.3",
+    "version": "0.3.4",
     "status": "revised",
     "humanReviewed": false
   },
@@ -240,7 +240,21 @@
       "$v' (t)$"
     ],
     "correctIndex": 1,
-    "explanation": "位移积分带方向的 $v (t)$，路程积分速率 $|v (t)|$。往返运动的位移会抵消，路程不会。"
+    "explanation": "位移积分带方向的 $v (t)$，路程积分速率 $|v (t)|$。往返运动的位移会抵消，路程不会。",
+    "responses": [
+      {
+        "text": "带符号的速度累积位移，往返会抵消。路程要把倒退的一段也计为走过的长度。",
+        "experimentStep": 1
+      },
+      {
+        "text": "位移积分带方向的 $v (t)$，路程积分速率 $|v (t)|$。往返运动的位移会抵消，路程不会。",
+        "experimentStep": null
+      },
+      {
+        "text": "速度的导数是加速度。对它积分得到速度变化，单位和总路程也不同。",
+        "experimentStep": null
+      }
+    ]
   },
   "teaching": {
     "explain": "先给每个小段的贡献配上正确单位，再积分。负速度影响方向，重量乘提升距离给功，密度乘体积给质量。",
@@ -269,6 +283,11 @@
         },
         "observation": "位移为 $\\frac32$，路程为 $\\frac52$；观察数值前先分清要求的量。"
       }
-    ]
+    ],
+    "reflection": {
+      "question": "回到起点时，为什么路程没有变成零？",
+      "answer": "返回只抵消带方向的位移；每段走过的长度都非负，仍要累加。"
+    },
+    "transferExerciseId": "physical-integrals-p7"
   }
 }

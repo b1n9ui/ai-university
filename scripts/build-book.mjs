@@ -54,6 +54,7 @@ for (const [ci, c] of book.chapters.entries()) {
     const check = l.learningCheck;
     md += `\n### 先想一下\n\n${check.question}\n\n${check.choices.map((s, i) => `${String.fromCharCode(65 + i)}. ${s}`).join("\n")}\n\n答案：${String.fromCharCode(65 + check.correctIndex)}。${check.explanation}\n`;
     html += `<div class="concept-check"><h3>先想一下</h3>${p(check.question)}${`<ol type="A" class="concept-check-choices">${check.choices.map(choice => `<li>${rich(choice)}</li>`).join("")}</ol>`}<details><summary>查看答案与解释</summary>${p(`${String.fromCharCode(65 + check.correctIndex)}。${check.explanation}`)}</details></div>`;
+    if(check.responses){md+='\n分选项说明：\n'+check.responses.map((r,i)=>`\n- ${String.fromCharCode(65+i)}：${r.text}${r.experimentStep!==null?`（对应下方实验第 ${r.experimentStep+1} 步）`:''}`).join('')+'\n';html+=`<details><summary>分选项说明</summary>${check.responses.map((r,i)=>p(`${String.fromCharCode(65+i)}：${r.text}`)+(r.experimentStep!==null?p(`对应下方实验第 ${r.experimentStep+1} 步。`):'')).join('')}</details>`;}
     for (const s of l.body) {
       md += `\n### ${s.title}\n\n${s.text}\n`;
       html += `<h3>${rich(s.title)}</h3>${p(s.text)}`;
@@ -68,6 +69,8 @@ for (const [ci, c] of book.chapters.entries()) {
     html += `<div class="visual-link"><strong>交互演示</strong>${p(l.interactiveVisual.prediction)}${p(l.interactiveVisual.caption)}<a href="./#/lesson/${l.id}?view=visual">打开 ${l.number} 的互动图 →</a></div><h3>例题</h3>`;
     md += `\n三步实验：\n${l.teaching.steps.map((s,i)=>`\n${i+1}. **${s.title}** ${s.instruction}\n\n预设下的观察：${s.observation}\n`).join("")}`;
     html += `<div class="experiment"><h3>三步实验</h3>${l.teaching.steps.map((s,i)=>`<h4>${i+1}. ${rich(s.title)}</h4>${p(s.instruction)}${p(`预设下的观察：${s.observation}`)}`).join("")}</div>`;
+    if(l.teaching.reflection){md+=`\n解释观察：${l.teaching.reflection.question}\n\n参考解释：${l.teaching.reflection.answer}\n`;html+=`<h4>解释观察</h4>${p(l.teaching.reflection.question)}<details><summary>参考解释</summary>${p(l.teaching.reflection.answer)}</details>`;}
+    if(l.teaching.transferExerciseId){const i=l.practice.findIndex(q=>q.id===l.teaching.transferExerciseId);md+=`\n迁移练习：本节第 ${i+1} 题。\n`;html+=p(`迁移练习：本节第 ${i+1} 题。`);}
     for (const [i, e] of l.workedExamples.entries()) {
       md += `\n#### 例 ${i + 1}：${e.title}\n\n${e.problem}\n\n${e.steps.map((s) => `- ${s}`).join("\n")}\n\n**答案：${e.answer}**\n`;
       html += `<article class="example"><h4>例 ${i + 1}：${rich(e.title)}</h4>${p(e.problem)}${list(e.steps)}<div class="answer">${p(e.answer)}</div></article>`;

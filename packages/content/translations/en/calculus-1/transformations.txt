@@ -60,3 +60,8 @@ The vertex becomes $(2,1)$; the shifts affect different coordinates.
 $(-2,-4)$.
 $f (- x) = - x^{3} = - f (x)$.
 $[2,\infty)$.
+The minus sign inside the brackets is not an instruction to move left. At the vertex the squared term is zero; solve $x-2=0$.
+A shift inside the input changes the horizontal coordinate. Adding a constant outside the square changes the vertex height.
+The function is smallest when its inner expression is zero. Since $x - 2 = 0$, the vertex moves right to $(2,0)$.
+Which part of the formula changes for a rightward shift and for an upward shift?
+A horizontal shift changes the input: replace it with $x-a$. An upward shift adds a constant to the entire output.

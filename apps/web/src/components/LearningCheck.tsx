@@ -3,13 +3,14 @@ import { useId, useRef, useState } from "react";
 import { ArrowRight, Check, Lightbulb, RotateCcw, ScanLine } from "lucide-react";
 import type { Lesson } from "../../../../packages/content/types";
 import { MathText } from "./MathText";
-export function LearningCheck({ check, hint, onExplore }: { check: Lesson["learningCheck"]; hint?:string; onExplore?:()=>void }) {
+export function LearningCheck({ check, hint, onExplore }: { check: Lesson["learningCheck"]; hint?:string; onExplore?:(step?:number)=>void }) {
   const [choice, setChoice] = useState<number | null>(null);
   const [revealed,setRevealed]=useState(false);
   const feedbackId=useId();
   const choices=useRef<(HTMLButtonElement|null)[]>([]);
   const answered = choice !== null,
     correct = choice === check.correctIndex;
+  const response=choice===null?undefined:check.responses?.[choice];
   return (
     <div className="learning-check">
       <div className="learning-check-label">
@@ -48,11 +49,11 @@ export function LearningCheck({ check, hint, onExplore }: { check: Lesson["learn
       {localizeNode(answered && (
         <div id={feedbackId} className={"check-feedback "+(correct?'check-correct':'check-review')}>
           <div role="status"><strong>{tr(correct?'对。':revealed?'答案与解释':'回看这个要点，再试一次。')}</strong>
-          <MathText text={tr(correct||revealed?check.explanation:hint||check.explanation)} /></div>
+          <MathText text={tr(correct||revealed?check.explanation:response?.text||hint||check.explanation)} /></div>
           {!correct&&<div className="check-followups">
            <button className="small-btn" onClick={()=>{choices.current[choice!]?.focus();setChoice(null);setRevealed(false);}}><RotateCcw size={14}/>{tr('再试一次')}</button>
            {!revealed&&<button className="text-btn" onClick={()=>setRevealed(true)}>{tr('查看答案与解释')}</button>}
-           {onExplore&&<button className="text-btn" onClick={onExplore}><ScanLine size={14}/>{tr('用图验证')}</button>}
+           {onExplore&&<button className="text-btn" onClick={()=>onExplore(response?.experimentStep??undefined)}><ScanLine size={14}/>{tr(response?.experimentStep!=null?'看对应演示':'查看本节演示')}</button>}
           </div>}
         </div>
       ))}

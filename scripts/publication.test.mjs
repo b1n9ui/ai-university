@@ -9,7 +9,7 @@ for(const edition of ['zh','en'])test(`${edition}: complete portable publication
  assert.equal(books.length,10);
  assert.equal(books.reduce((n,b)=>n+b.stats.lessons,0),383);
  assert.equal(books.reduce((n,b)=>n+b.stats.examples,0),778);
- assert.equal(books.reduce((n,b)=>n+b.stats.exercises,0),1878);
+ assert.equal(books.reduce((n,b)=>n+b.stats.exercises,0),1884);
  for(const suffix of ['books/','press/',...books.map(b=>'books/'+b.id+'/')]){
   const html=fs.readFileSync(path.join(dir,suffix,'index.html'),'utf8');
   assert.ok(html.includes(`rel="canonical" href="${new URL(suffix,base).href}"`));

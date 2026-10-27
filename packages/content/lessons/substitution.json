@@ -175,7 +175,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.3.1",
+    "version": "0.3.4",
     "status": "revised",
     "humanReviewed": false
   },
@@ -194,7 +194,21 @@
       "0 和 2"
     ],
     "correctIndex": 1,
-    "explanation": "上下限也要随变量转换：$x = 0$ 对应 $u = 1$，$x = 1$ 对应 $u = 2$。$\\mathrm{d}u = 2 x \\mathrm{d}x$。"
+    "explanation": "上下限也要随变量转换：$x = 0$ 对应 $u = 1$，$x = 1$ 对应 $u = 2$。$\\mathrm{d}u = 2 x \\mathrm{d}x$。",
+    "responses": [
+      {
+        "text": "这仍是原变量的区间。新上下限要把两个原端点分别代入变量替换。",
+        "experimentStep": 2
+      },
+      {
+        "text": "上下限也要随变量转换：$x = 0$ 对应 $u = 1$，$x = 1$ 对应 $u = 2$。$\\mathrm{d}u = 2 x \\mathrm{d}x$。",
+        "experimentStep": null
+      },
+      {
+        "text": "不仅上端点需要换，起点也要换。先算原输入为零时，新变量从哪里开始。",
+        "experimentStep": 0
+      }
+    ]
   },
   "teaching": {
     "explain": "换元不只给变量改名，还要换掉小段宽度。内部函数的导数正是新旧宽度之间的倍率。",
@@ -223,6 +237,11 @@
         },
         "observation": "新变量为 2，宽度倍率为 2；新积分界与宽度都要同步改变。"
       }
-    ]
+    ],
+    "reflection": {
+      "question": "为什么换了变量之后，宽度和端点都要一起换？",
+      "answer": "宽度描述新旧变量的局部比例；端点描述实际走过的新区间。只改其中之一，就没有表示同一个累积量。"
+    },
+    "transferExerciseId": "substitution-p5"
   }
 }

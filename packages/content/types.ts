@@ -45,12 +45,13 @@ export interface Lesson {
   concept: string;
   intuition: string;
   objectives: string[];
-  teaching: { explain: string; steps: ExperimentStep[] };
+  teaching: { explain: string; steps: ExperimentStep[]; reflection?: {question:string; answer:string}; transferExerciseId?:string };
   learningCheck: {
     question: string;
     choices: string[];
     correctIndex: number;
     explanation: string;
+    responses?: {text:string; experimentStep:number|null}[];
   };
   body: { title: string; text: string }[];
   formalDefinition: { text: string; latex: string; conditions: string[] };

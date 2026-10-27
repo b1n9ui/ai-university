@@ -63,3 +63,8 @@ $\frac23(2\sqrt2-1)$.
 $\sqrt{17}$.
 $3$.
 $12\pi$.
+Horizontal width leaves out vertical change. Where the slope is nonzero, a short curve segment is longer than its horizontal projection.
+The band follows the curve, so its width is arc length $\mathrm{d}s$. Using only $\mathrm{d}x$ omits the slant. This calculates lateral area only.
+Height gives the radius of rotation, not the strip's width along the curve. Multiply the circumference by that slanted length.
+How does the area of a surface of revolution differ from the total area of a closed solid?
+Rotating the curve generates the lateral surface. If end caps are requested, calculate and add them separately; they are not automatically part of the surface animation.

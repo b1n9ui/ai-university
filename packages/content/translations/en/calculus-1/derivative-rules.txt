@@ -61,3 +61,8 @@ $5x^4-3$.
 $3x^2+2x$.
 $-\frac{1}{4}$.
 $\frac{1}{2\sqrt{x}}$, $x > 0$.
+When both factors vary, the product changes through two contributions. Test this option with $f(x)=g(x)=x$.
+Both factors can change. Differentiate one and multiply by the other's original value, then add the two contributions.
+That is the rule for a sum. When one factor in a product changes, its contribution is multiplied by the other factor's current value.
+Why can a function have a negative value but a positive derivative at a negative input?
+The value describes height; the derivative describes local change. A curve below the axis can still rise as its input increases.

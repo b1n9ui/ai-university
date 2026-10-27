@@ -90,3 +90,8 @@ $\int _{0}^{2} 3 \mathrm{d}x = 6$.
 $19600\pi\,\mathrm{J}$.
 $147000\,\mathrm{N}$.
 $F=19600\times\frac{16-1}{2}=147000\,\mathrm{N}$.
+Signed velocity accumulates displacement, so a return trip can cancel. Distance must count backward travel as length too.
+Displacement integrates signed $v (t)$; distance integrates speed $|v (t)|$. Backtracking cancels displacement but never distance.
+The derivative of velocity is acceleration. Integrating it gives velocity change, with different units from total distance.
+Why is distance not zero when the traveler returns to the starting point?
+The return cancels signed displacement. Each traveled length is nonnegative and still contributes to distance.

@@ -63,3 +63,8 @@ $\frac{90 \times \pi }{180} = \frac{\pi }{2}$.
 $-1$.
 $\cos^2x$.
 $\sin0=0$.
+Changing units does not make the angle smaller; only its numerical representation changes. Compare the two ways to describe a full turn.
+$\frac{\sin h}{h} \to 1$ requires $h$ in radians. Using degrees introduces a factor of $\frac{\pi }{180}$.
+You can differentiate in degrees, but a unit-conversion factor appears. Radians put the ratio of arc length to radius directly into the formula.
+Do the near-zero readings prove that the preset input is exactly one full turn?
+No. The input is a decimal approximation. The exact period uses pi, and finite-precision readings do not replace the identity.

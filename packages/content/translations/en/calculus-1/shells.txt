@@ -61,3 +61,8 @@ $\pi$.
 $\frac{2\pi}{3}$.
 $2 \pi  \int _{0}^{1} x \cdot x \mathrm{d}x = \frac{2 \pi }{3}$.
 $3-x$.
+That confuses radius with height. The strip's height is the difference between its upper and lower boundaries; distance from the axis gives the radius.
+The strip runs from $y = 0$ to $y = x^{2}$, so its height is $x^{2}$. Its volume is approximately $2 \pi  x \cdot x^{2} \cdot \mathrm{d}x$.
+The region's lower boundary is the horizontal axis, not a different horizontal line above it. Identify the original vertical strip in the two-dimensional view.
+Why does doubling the radius multiply volume per unit thickness by eight in this model?
+Here height varies as radius squared, so it quadruples. Circumference doubles; multiplying the two factors gives eight times the contribution.

@@ -183,6 +183,21 @@
         "disk-washer-m3"
       ],
       "numericAnswer": 0.3333333333333333
+    },
+    {
+      "id": "disk-washer-transfer",
+      "problem": "区域 $0\\le x\\le1$、$1\\le y\\le x+1$ 绕直线 $y=-1$ 旋转。写出外、内半径并求体积。",
+      "answer": "$R=x+2$、$r=2$，体积为 $\\frac{7\\pi}{3}$。",
+      "solution": [
+        "上下边界到转轴的距离分别为 $x+2$ 与 2；圆环面积为 $\\pi((x+2)^2-4)$。",
+        "$V=\\pi\\int_0^1(x^2+4x)\\,\\mathrm{d}x=\\frac{7\\pi}{3}$。"
+      ],
+      "hint": "半径是到转轴的距离，不是原来的纵坐标。",
+      "difficulty": 4,
+      "misconceptionTags": [
+        "disk-washer-m1",
+        "disk-washer-m2"
+      ]
     }
   ],
   "prerequisites": [
@@ -196,7 +211,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.3.1",
+    "version": "0.3.4",
     "status": "revised",
     "humanReviewed": false
   },
@@ -214,7 +229,21 @@
       "$9 \\pi$"
     ],
     "correctIndex": 1,
-    "explanation": "圆环是外圆减去内圆：$\\pi  \\cdot 2^{2} - \\pi  \\cdot 1^{2} = 3 \\pi$。先减半径再平方会丢掉几何关系。"
+    "explanation": "圆环是外圆减去内圆：$\\pi  \\cdot 2^{2} - \\pi  \\cdot 1^{2} = 3 \\pi$。先减半径再平方会丢掉几何关系。",
+    "responses": [
+      {
+        "text": "先减半径再平方，得到的是另一个小圆，不是圆环。应从外圆面积中移除内圆面积。",
+        "experimentStep": 2
+      },
+      {
+        "text": "圆环是外圆减去内圆：$\\pi  \\cdot 2^{2} - \\pi  \\cdot 1^{2} = 3 \\pi$。先减半径再平方会丢掉几何关系。",
+        "experimentStep": null
+      },
+      {
+        "text": "把两个半径相加会把孔洞也算成实心。想象实际挖掉的是哪一块圆盘。",
+        "experimentStep": 2
+      }
+    ]
   },
   "teaching": {
     "explain": "体积先由薄片截面积决定。圆盘用大圆面积，圆环用大圆减小圆；其他形状就使用那个形状自己的面积。",
@@ -252,6 +281,11 @@
         },
         "observation": "完整截面积为 $3\\pi$，不是 $\\pi(2-1)^2$。"
       }
-    ]
+    ],
+    "reflection": {
+      "question": "为什么圆环应减面积，不能先减半径再平方？",
+      "answer": "挖掉的是内圆盘整块面积；先减半径会把圆环误换成另一个圆盘。"
+    },
+    "transferExerciseId": "disk-washer-transfer"
   }
 }

@@ -159,6 +159,20 @@
         "lhopital-m1"
       ],
       "numericAnswer": 0
+    },
+    {
+      "id": "lhopital-transfer",
+      "problem": "求 $\\lim_{x\\to0^+}\\frac1x$。为什么把分子、分母分别求导得到零，是错误的？",
+      "answer": "右侧趋于 $+\\infty$；原式不是允许使用洛必达的未定式。",
+      "solution": [
+        "分子保持为 1，分母从正侧趋零，商正向无界；并非 $\\frac00$ 型。",
+        "对任意 $M>0$，只要 $0<x<\\frac1{M+1}$，就有 $\\frac1x>M+1>M$。这直接给出正向无界的保证。"
+      ],
+      "hint": "先判断分子、分母各自的趋势。",
+      "difficulty": 4,
+      "misconceptionTags": [
+        "lhopital-m1"
+      ]
     }
   ],
   "prerequisites": [
@@ -173,7 +187,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.3.1",
+    "version": "0.3.4",
     "status": "revised",
     "humanReviewed": false
   },
@@ -191,7 +205,21 @@
       "答案必定是 0"
     ],
     "correctIndex": 1,
-    "explanation": "先检查未定式和定理条件。$\\frac{1}{0}$ 不是洛必达所处理的类型，通常需要单侧分析。"
+    "explanation": "先检查未定式和定理条件。$\\frac{1}{0}$ 不是洛必达所处理的类型，通常需要单侧分析。",
+    "responses": [
+      {
+        "text": "先检查未定式类型，不能见到分母趋零就求导。用常数分子除以输入试验，会得到相互矛盾的结果。",
+        "experimentStep": null
+      },
+      {
+        "text": "先检查未定式和定理条件。$\\frac{1}{0}$ 不是洛必达所处理的类型，通常需要单侧分析。",
+        "experimentStep": null
+      },
+      {
+        "text": "分母趋零时，商可能无界或没有双侧极限。分子非零不可能因此直接推得商趋零。",
+        "experimentStep": null
+      }
+    ]
   },
   "teaching": {
     "explain": "未定式比较的是两种变化谁更快。洛必达在条件成立时用导数比帮助判断，但不能对任意分式都这样做。",
@@ -223,6 +251,11 @@
         },
         "observation": "原商约为 0.99950。结合正文的导数比与条件，得到共同极限 1。"
       }
-    ]
+    ],
+    "reflection": {
+      "question": "演示中的指数分式可以用洛必达，为什么不能据此处理所有分母趋零的分式？",
+      "answer": "它满足特定未定式与可导等条件；换分式后必须重新检查这些条件。"
+    },
+    "transferExerciseId": "lhopital-transfer"
   }
 }

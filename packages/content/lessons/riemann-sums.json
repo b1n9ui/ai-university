@@ -148,7 +148,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.3.2",
+    "version": "0.3.4",
     "status": "revised",
     "humanReviewed": false
   },
@@ -167,7 +167,21 @@
       "永远相等"
     ],
     "correctIndex": 1,
-    "explanation": "每段右端点的函数值不小于左端点，所以右端点矩形的高度不小于左端点。"
+    "explanation": "每段右端点的函数值不小于左端点，所以右端点矩形的高度不小于左端点。",
+    "responses": [
+      {
+        "text": "同一个小区间内，递增函数的右端高度更大。保持分割不变，只切换取样端点。",
+        "experimentStep": 1
+      },
+      {
+        "text": "每段右端点的函数值不小于左端点，所以右端点矩形的高度不小于左端点。",
+        "experimentStep": null
+      },
+      {
+        "text": "有限分割不保证两种和相等。先用少量矩形看差别，再增加细分观察误差。",
+        "experimentStep": 0
+      }
+    ]
   },
   "teaching": {
     "explain": "先用有限小块近似，再让最大块宽趋零。有限和一般不是积分本身；不同取样方法会从不同方向靠近。",
@@ -199,6 +213,11 @@
         },
         "observation": "近似更接近 $\\frac13$；误差仍有限，不能把数值采样当证明。"
       }
-    ]
+    ],
+    "reflection": {
+      "question": "增加矩形数与改变取样端点，分别改变了什么？",
+      "answer": "前者缩小分割宽度，后者改变每个小区间的取样高度；要分开控制才能看出各自影响。"
+    },
+    "transferExerciseId": "riemann-sums-p4"
   }
 }

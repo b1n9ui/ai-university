@@ -82,3 +82,8 @@ $\frac{x^5}{5}+C$.
 $2\ln|x|+C$($x \ne 0$).
 $\sin x+C$.
 $x^3+4$.
+$x^{2}$, $x^{2} + 3$, and other vertical shifts all have derivative $2 x$. The constant $C$ records this family on a single interval.
+The constant represents information lost by differentiation, not numerical approximation. Differentiate two antiderivatives differing by a constant.
+Without an initial condition, the constant may be any real number. Change it and check whether the derivative changes.
+Which quantities change under vertical translation, and which do not? What differentiation fact does this express?
+Antiderivative values change, but derivatives do not: a constant differentiates to zero. On an interval, antiderivatives differ by a constant.

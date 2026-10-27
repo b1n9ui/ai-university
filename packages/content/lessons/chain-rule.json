@@ -137,6 +137,21 @@
         "先积法则，再对 $(1 + x)^{3}$ 用链式法则。"
       ],
       "hint": "从最外层运算开始。"
+    },
+    {
+      "id": "chain-rule-transfer",
+      "problem": "$y=(1-2x)^3$ 在零点的导数是多少？不展开立方，说明导数符号从哪里来。",
+      "answer": "导数为 $-6$；内层随输入增加而减小。",
+      "solution": [
+        "外层导数为 $3(1-2x)^2$，内层导数为 $-2$。",
+        "相乘得 $y'=-6(1-2x)^2$，在零点为 $-6$。"
+      ],
+      "hint": "分别写外层导数与内层变化率。",
+      "difficulty": 4,
+      "misconceptionTags": [
+        "chain-rule-m1",
+        "chain-rule-m2"
+      ]
     }
   ],
   "prerequisites": [
@@ -150,7 +165,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.3.1",
+    "version": "0.3.4",
     "status": "revised",
     "humanReviewed": false
   },
@@ -169,7 +184,21 @@
       "$x^{2} + 1$"
     ],
     "correctIndex": 0,
-    "explanation": "外层变化率是 $3 (x^{2} + 1)^{2}$，内层变化率是 $2 x$。链式法则把两段变化率相乘。"
+    "explanation": "外层变化率是 $3 (x^{2} + 1)^{2}$，内层变化率是 $2 x$。链式法则把两段变化率相乘。",
+    "responses": [
+      {
+        "text": "外层变化率是 $3 (x^{2} + 1)^{2}$，内层变化率是 $2 x$。链式法则把两段变化率相乘。",
+        "experimentStep": null
+      },
+      {
+        "text": "外层幂次确实要处理，但题目问最容易漏掉的内层变化。检查内层停止变化时，总变化率应是多少。",
+        "experimentStep": 0
+      },
+      {
+        "text": "内层输出用于求外层导数；内层自己的变化率还要再乘进去。把这两个角色分开写。",
+        "experimentStep": 1
+      }
+    ]
   },
   "teaching": {
     "explain": "复合变化要经过两道关：输入怎样改变内层，内层怎样改变外层。总变化率把两道关的倍率相乘。",
@@ -198,6 +227,11 @@
         },
         "observation": "内层输出仍为 2，但变化率为 −2；总导数为 −24。"
       }
-    ]
+    ],
+    "reflection": {
+      "question": "正负两个输入给出同一内层输出，为什么总导数符号却相反？",
+      "answer": "外层导数在同一内层输出处相同，但内层变化率反号；相乘后总导数反号。"
+    },
+    "transferExerciseId": "chain-rule-transfer"
   }
 }

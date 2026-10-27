@@ -148,7 +148,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.3.2",
+    "version": "0.3.4",
     "status": "revised",
     "humanReviewed": false
   },
@@ -166,7 +166,21 @@
       "上升且斜率在增大"
     ],
     "correctIndex": 1,
-    "explanation": "$f' > 0$ 说明函数上升，$f'' < 0$ 说明斜率递减。函数增加不等于增加得越来越快。"
+    "explanation": "$f' > 0$ 说明函数上升，$f'' < 0$ 说明斜率递减。函数增加不等于增加得越来越快。",
+    "responses": [
+      {
+        "text": "一阶导数的正负决定升降。二阶导数为负，说明斜率减小，不等于函数下降。",
+        "experimentStep": 0
+      },
+      {
+        "text": "$f' > 0$ 说明函数上升，$f'' < 0$ 说明斜率递减。函数增加不等于增加得越来越快。",
+        "experimentStep": null
+      },
+      {
+        "text": "函数可以向上走，同时越来越平。把“高度增加”和“斜率增加”分开判断。",
+        "experimentStep": 0
+      }
+    ]
   },
   "teaching": {
     "explain": "先看函数往上还是往下，再看斜率变大还是变小。前者是增减，后者是凹性，不能把两件事混成一件。",
@@ -201,6 +215,11 @@
         },
         "observation": "斜率也为 9，但二阶导数为 12：上升且凹向上。"
       }
-    ]
+    ],
+    "reflection": {
+      "question": "同样的正斜率，怎样区分凹向上与凹向下？",
+      "answer": "继续比较附近斜率的变化：斜率增加对应凹向上，减小对应凹向下；升降只看一阶导数。"
+    },
+    "transferExerciseId": "curve-sketching-p4"
   }
 }

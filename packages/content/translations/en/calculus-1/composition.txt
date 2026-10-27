@@ -60,3 +60,8 @@ $x > 1$.
 $f^{-1}(x)=\frac{x-5}{2}$.
 $\sqrt5$.
 $1^2=1$.
+First $g (2) = 3$, then $f (3) = 9$. Reversing the order gives $g (f (2)) = 5$.
+That result comes from squaring first, then adding one. The question asks you to evaluate the inner function first and pass its output to the outer function.
+Composition does not add two function values. First write the intermediate value $g(2)$, then substitute that number into $f$.
+Why can the square function not be inverted on all real numbers?
+Positive and negative inputs can give the same output. Restrict to a one-to-one branch to recover a unique input.

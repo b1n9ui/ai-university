@@ -64,3 +64,8 @@ $0.05$.
 $\frac{0.1}{2} = 0.05$.
 $\delta=\min(1,\frac{\varepsilon}{3})$.
 $|x^{2} - 1| < 3 \delta  \le \varepsilon$.
+For every output tolerance $\varepsilon$, however small, a sufficiently small $\delta$ must exist. The choice of $\delta$ may depend on $\varepsilon$.
+One fixed input neighborhood generally cannot meet arbitrarily small output tolerances. You may choose a new neighborhood when the output requirement tightens.
+The function determines the input and output scales; they need not be equal. Check how the input interval guarantees that all its outputs lie inside the tolerance band.
+Why is controlling an entire input neighborhood stronger than checking a few points?
+The definition requires every noncentral input in the neighborhood to meet the tolerance. Finite samples cannot rule out failures between samples.

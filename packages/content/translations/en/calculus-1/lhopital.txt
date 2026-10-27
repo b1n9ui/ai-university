@@ -73,3 +73,13 @@ $1$.
 $\frac{1}{2}$.
 $0$.
 $0$.
+Check the indeterminate form first. A denominator tending to zero is not sufficient. Test a constant numerator divided by the input; differentiating would give a contradictory result.
+Check the indeterminate form and theorem assumptions first. $\frac{1}{0}$ is not a form handled by this rule; one-sided analysis is usually needed.
+With a denominator tending to zero, a quotient may be unbounded or lack a two-sided limit. A nonzero numerator does not imply a zero limit.
+Why does the exponential quotient example not justify applying l'Hopital to every quotient whose denominator tends to zero?
+It satisfies the required indeterminate form and differentiability conditions. A different quotient requires checking those conditions again.
+Find $\lim_{x\to0^+}\frac1x$. Why is obtaining zero by differentiating numerator and denominator invalid?
+The right-hand behavior is $+\infty$; the quotient is not an indeterminate form permitting l'Hopital's rule.
+Identify the numerator and denominator behaviors before differentiating.
+The numerator stays at 1 while the denominator tends to zero from above, so the quotient grows without bound; it is not a $\frac00$ form.
+For any $M>0$, if $0<x<\frac1{M+1}$ then $\frac1x>M+1>M$. This directly guarantees unbounded positive growth.

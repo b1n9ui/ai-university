@@ -152,7 +152,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.3.2",
+    "version": "0.3.4",
     "status": "revised",
     "humanReviewed": false
   },
@@ -170,7 +170,21 @@
       "只算交点的高度差"
     ],
     "correctIndex": 1,
-    "explanation": "面积不能靠正负抵消。先找交点与上下关系，再分段积分，也可写成高度差的绝对值积分。"
+    "explanation": "面积不能靠正负抵消。先找交点与上下关系，再分段积分，也可写成高度差的绝对值积分。",
+    "responses": [
+      {
+        "text": "交叉后上下位置可能互换，固定相减会出现抵消。先找交点，再逐段判断谁在上面。",
+        "experimentStep": null
+      },
+      {
+        "text": "面积不能靠正负抵消。先找交点与上下关系，再分段积分，也可写成高度差的绝对值积分。",
+        "experimentStep": null
+      },
+      {
+        "text": "高度差是一条细条的高度，不是整个区域面积。还要乘宽度，并把所有细条累积起来。",
+        "experimentStep": 1
+      }
+    ]
   },
   "teaching": {
     "explain": "先问小条有多高，再把小条面积加起来。高度是上减下；两条曲线换位置，就要换减法顺序或分段。",
@@ -199,6 +213,11 @@
         },
         "observation": "高度再次为零；积分累积整个区间的小条，不只看中间一条。"
       }
-    ]
+    ],
+    "reflection": {
+      "question": "一条竖条与整个面积之间，还差哪一步？",
+      "answer": "竖条只有局部高度；乘微小宽度，再在整个区间累积。交叉时必须逐段辨认上下边界。"
+    },
+    "transferExerciseId": "area-between-p4"
   }
 }

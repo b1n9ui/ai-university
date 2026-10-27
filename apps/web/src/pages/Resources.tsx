@@ -418,6 +418,7 @@ export function GuidePage() {
         </div>
       </div>
       <div className="guide-cta">
+        <Link to="about/tryout" className="text-btn">{tr('参加一次自主试学')}<ArrowRight size={16}/></Link>
         <h2>{tr("从第一节开始。")}</h2>
         <Link to={lessonPath(book.lessonIds[0])} className="primary-btn">
           {localizeNode(lessons[0].title)}

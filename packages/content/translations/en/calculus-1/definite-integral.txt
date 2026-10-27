@@ -83,3 +83,8 @@ The integral is $\frac32$ and the geometric area is $\frac52$.
 $-5$.
 $6$.
 $2$.
+Positive and negative contributions may cancel in a definite integral. Geometric areas do not cancel. Calculate the parts above and below the axis separately.
+The integral on $[0,1]$ is $\frac{- 1}{2}$ and on $[1,2]$ is $\frac{1}{2}$. Geometric area adds their positive magnitudes.
+A negative sign indicates orientation, not negative geometric area. Each region must contribute a nonnegative area.
+Why can area be positive when the integral is zero?
+Signed contributions on opposite sides of the axis may cancel. Geometric area counts both as nonnegative height times width.

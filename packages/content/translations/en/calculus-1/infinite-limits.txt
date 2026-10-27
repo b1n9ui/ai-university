@@ -63,3 +63,8 @@ The output is −100. The sides have opposite behavior, so they cannot share one
 $2$.
 $+ \infty$.
 $- \infty$.
+Looking only from the right misses the other behavior. Move to the left of zero and check the denominator's sign.
+The two sides disagree, so a two-sided limit of $+ \infty$ is invalid. Infinite behavior is not a finite real value either.
+Unbounded growth and unbounded decrease are different behaviors. Infinity is not a real number whose sign can be ignored.
+Does a curve leaving the viewing window mean the function ends there?
+No. The viewing window is finite, while the readings may describe larger outputs. The formula determines the domain and one-sided behavior.

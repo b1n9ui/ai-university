@@ -144,7 +144,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.3.1",
+    "version": "0.3.4",
     "status": "revised",
     "humanReviewed": false
   },
@@ -162,7 +162,21 @@
       "$3 e$"
     ],
     "correctIndex": 1,
-    "explanation": "$\\ln$ 与 $e$ 的指数运算互为逆运算：$\\ln (e^{x}) = x$。这里 $x = 3$。"
+    "explanation": "$\\ln$ 与 $e$ 的指数运算互为逆运算：$\\ln (e^{x}) = x$。这里 $x = 3$。",
+    "responses": [
+      {
+        "text": "自然对数问的是指数，不是底数。把答案代回：底数的几次方才是原来的数？",
+        "experimentStep": 1
+      },
+      {
+        "text": "$\\ln$ 与 $e$ 的指数运算互为逆运算：$\\ln (e^{x}) = x$。这里 $x = 3$。",
+        "experimentStep": null
+      },
+      {
+        "text": "指数表示重复乘法，不是把底数乘以指数。对数撤销的是指数运算。",
+        "experimentStep": 2
+      }
+    ]
   },
   "teaching": {
     "explain": "指数增长把“每次加一样多”换成“每次乘一样多”。对数反过来数：达到某个输出需要走几步。",
@@ -191,6 +205,11 @@
         },
         "observation": "输出为 $e^2$，约 7.38906；相邻输出的比仍为 $e$。"
       }
-    ]
+    ],
+    "reflection": {
+      "question": "输入每增加一，输出的差相同还是比相同？为什么？",
+      "answer": "比相同。指数加一相当于再乘一次底数，不是加上同一个常数。"
+    },
+    "transferExerciseId": "exponential-log-p4"
   }
 }

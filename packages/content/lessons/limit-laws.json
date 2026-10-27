@@ -149,7 +149,7 @@
   ],
   "provenance": {
     "author": "AI-generated",
-    "version": "0.3.1",
+    "version": "0.3.4",
     "status": "revised",
     "humanReviewed": false
   },
@@ -168,7 +168,21 @@
       "整理表达式，再求极限"
     ],
     "correctIndex": 2,
-    "explanation": "$\\frac{0}{0}$ 是未定式，不是答案。因式分解、约分或有理化可能揭示附近的趋势；不能直接除以零。"
+    "explanation": "$\\frac{0}{0}$ 是未定式，不是答案。因式分解、约分或有理化可能揭示附近的趋势；不能直接除以零。",
+    "responses": [
+      {
+        "text": "分子趋零不能单独决定整个商的趋势；分母也趋零，增长或缩小的相对速度才关键。",
+        "experimentStep": 1
+      },
+      {
+        "text": "两个量都趋零，不代表它们的比趋于一。先化简或找可用的极限关系，不能把零约掉。",
+        "experimentStep": 1
+      },
+      {
+        "text": "$\\frac{0}{0}$ 是未定式，不是答案。因式分解、约分或有理化可能揭示附近的趋势；不能直接除以零。",
+        "experimentStep": null
+      }
+    ]
   },
   "teaching": {
     "explain": "代入碰到零除以零，只说明直接代入失败。先研究附近的式子，确认法则的条件；别把未定式当结果。",
@@ -200,6 +214,11 @@
         },
         "observation": "左侧得到相同输出。三角极限采用弧度；有限采样只帮助观察。"
       }
-    ]
+    ],
+    "reflection": {
+      "question": "两侧采样都接近一，为什么还不能把原式在零点定义成一并说已经证明？",
+      "answer": "补点是另一个定义；极限要求控制任意接近的输入，要靠极限论证，不能只列有限读数。"
+    },
+    "transferExerciseId": "limit-laws-p4"
   }
 }

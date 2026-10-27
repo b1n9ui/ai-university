@@ -190,9 +190,11 @@ const SolidVisual = lazy(() => import("./SolidVisual"));
 export function Visual({
   lesson,
   compact = false,
+  request,
 }: {
   lesson: Lesson;
   compact?: boolean;
+  request?:{step:number;revision:number};
 }) {
   const spatial = ["disk", "shell", "arc"].includes(
     lesson.interactiveVisual.kind,
@@ -204,12 +206,14 @@ export function Visual({
   const [step,setStep] = useState<number|null>(null);
   const [scenario,setScenario] = useState<(TeachingPreset & {revision:number})>();
   const [modified,setModified] = useState(false);
+  const [prediction,setPrediction]=useState('');
   const additional = ({"definite-integral":"平均值：把面积摊成相同高度","disk-washer":"其他截面：正方形与三角形","physical-integrals":"水的模型：抽水做功与闸门受力"} as Record<string,string>)[lesson.id];
   const apply = (i:number) => { const preset=lesson.teaching.steps[i].preset; setStep(i); setModified(false); setScenario({...preset,revision:(scenario?.revision??0)+1}); if(preset.dimension)setDimension(preset.dimension); };
-  useEffect(()=>{setStep(null);setScenario(undefined);setModified(false);setDimension(spatial?"3d":"2d");},[lesson.id]);
+  useEffect(()=>{setStep(null);setScenario(undefined);setModified(false);setPrediction('');setDimension(spatial?"3d":"2d");},[lesson.id]);
+  useEffect(()=>{if(request&&lesson.teaching.steps[request.step])apply(request.step);},[request?.revision,lesson.id]);
   return (
-    <div className="visual-system" onChangeCapture={e=>{if(!(e.target as Element).closest(".application-visual"))setModified(true);}} onKeyDownCapture={e=>{const target=e.target as Element;if(target.matches('input[type="range"]')&&!target.closest('.application-visual')&&['Home','End','ArrowLeft','ArrowRight','ArrowUp','ArrowDown','PageUp','PageDown'].includes(e.key))setModified(true);}} onClickCapture={e=>{const target=e.target as Element;if(target.closest("button")&&target.closest(".visual-card,.solid-visual,.dimension-switch")&&!target.closest(".application-visual"))setModified(true);}}>
-      <GuidedExperiment key={`guided-${lesson.id}`} lesson={lesson} index={step} modified={modified} onApply={apply} onFocusVisual={()=>{workspace.current?.focus({preventScroll:true});workspace.current?.scrollIntoView({block:"start",behavior:matchMedia("(prefers-reduced-motion:reduce)").matches?"instant":"smooth"});}}/>
+    <div className="visual-system" onChangeCapture={e=>{const target=e.target as Element;if(target.closest('.visual-workspace')&&!target.closest(".application-visual"))setModified(true);}} onKeyDownCapture={e=>{const target=e.target as Element;if(target.matches('input[type="range"]')&&!target.closest('.application-visual')&&['Home','End','ArrowLeft','ArrowRight','ArrowUp','ArrowDown','PageUp','PageDown'].includes(e.key))setModified(true);}} onClickCapture={e=>{const target=e.target as Element;if(target.closest("button")&&target.closest(".visual-card,.solid-visual,.dimension-switch")&&!target.closest(".application-visual"))setModified(true);}}>
+      <GuidedExperiment key={`guided-${lesson.id}`} lesson={lesson} index={step} modified={modified} onApply={apply} prediction={prediction} onPrediction={setPrediction} onFocusVisual={()=>{workspace.current?.focus({preventScroll:true});workspace.current?.scrollIntoView({block:"start",behavior:matchMedia("(prefers-reduced-motion:reduce)").matches?"instant":"smooth"});}}/>
       <div ref={workspace} className="visual-workspace" tabIndex={-1} aria-label={tr("图形与操作区")}>
       {localizeNode(spatial && (
         <div className="dimension-switch" role="group" aria-label={tr("演示维度")}>
@@ -247,7 +251,7 @@ export function Visual({
       ))}
       {localizeNode(additional&&<details className="supplemental-experiment"><summary><span>{tr("延伸探索")}</span>{localizeNode(additional)}<span>{tr("展开")}</span></summary><ApplicationVisual key={lesson.id} lessonId={lesson.id}/></details>)}
       </div>
-      {step!==null&&<ExperimentCheckpoint lesson={lesson} index={step} modified={modified} onApply={i=>{apply(i);workspace.current?.focus({preventScroll:true});workspace.current?.scrollIntoView({block:"start",behavior:matchMedia("(prefers-reduced-motion:reduce)").matches?"instant":"smooth"});}}/>}
+      {step!==null&&<ExperimentCheckpoint key={lesson.id} lesson={lesson} index={step} modified={modified} prediction={prediction} onApply={i=>{apply(i);workspace.current?.focus({preventScroll:true});workspace.current?.scrollIntoView({block:"start",behavior:matchMedia("(prefers-reduced-motion:reduce)").matches?"instant":"smooth"});}}/>}
     </div>
   );
 }
