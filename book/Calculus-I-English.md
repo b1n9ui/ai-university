@@ -2,7 +2,7 @@
 
 From rates of change to accumulation
 
-English edition 1 · source v0.3.3 · AI-authored · CC0 text / MIT code · Not individually human-reviewed
+English edition 1 · source v0.3.4 · AI-authored · CC0 text / MIT code · Not individually human-reviewed
 
 An introduction to single-variable calculus: functions, limits, derivatives, integrals, and applications. Each lesson includes concise explanations, precise conditions, derivations, examples, exercises, and interactive diagrams.
 
@@ -103,6 +103,12 @@ C. $x \ne 2$
 
 Answer: B. The root requires $x - 2 \ge 0$, and the denominator cannot be zero. Together these give $x > 2$.
 
+Feedback by choice:
+
+- A: A square root may equal zero, but a denominator may not. Check the radicand and denominator separately.
+- B: The root requires $x - 2 \ge 0$, and the denominator cannot be zero. Together these give $x > 2$.
+- C: Excluding a zero denominator is not enough: the radicand must also be nonnegative. Try an input below 2.
+
 ### Which inputs are allowed?
 
 A denominator cannot be zero, an even root requires a nonnegative radicand, and a logarithm requires a positive argument. Intersect all these restrictions. Applied problems may also restrict time, length, or other quantities.
@@ -162,6 +168,12 @@ Preset observation: $\sqrt0=0$: this boundary point belongs to the domain.
 3. **Beyond the boundary** Set the input to −1.
 
 Preset observation: There is no real output, so no point should be added to the graph.
+
+Explain the observation: The plotted square root has an output at zero. Why can the fraction in the question not accept an input making its square root zero?
+
+Reference explanation: The square root itself permits zero. In the question it is also a denominator, which must be nonzero. The two functions have different domains.
+
+Transfer exercise: question 4 in this lesson.
 
 ### Worked examples
 
@@ -251,6 +263,12 @@ C. $(2,0)$
 
 Answer: C. The function is smallest when its inner expression is zero. Since $x - 2 = 0$, the vertex moves right to $(2,0)$.
 
+Feedback by choice:
+
+- A: The minus sign inside the brackets is not an instruction to move left. At the vertex the squared term is zero; solve $x-2=0$. (experiment step 2 below)
+- B: A shift inside the input changes the horizontal coordinate. Adding a constant outside the square changes the vertex height. (experiment step 3 below)
+- C: The function is smallest when its inner expression is zero. Since $x - 2 = 0$, the vertex moves right to $(2,0)$.
+
 ### Why does subtracting $h$ move the graph right?
 
 To make $x - h$ equal the original input $u$, set $x = u + h$. Thus $f (x - h) + k$ moves $(u , f (u))$ to $(u + h , f (u) + k)$.
@@ -310,6 +328,12 @@ Preset observation: The vertex of $y=(x-2)^2$ is $(2,0)$.
 3. **Then shift up** Keep the horizontal shift at 2 and set the vertical shift to 1.
 
 Preset observation: The vertex becomes $(2,1)$; the shifts affect different coordinates.
+
+Explain the observation: Which part of the formula changes for a rightward shift and for an upward shift?
+
+Reference explanation: A horizontal shift changes the input: replace it with $x-a$. An upward shift adds a constant to the entire output.
+
+Transfer exercise: question 4 in this lesson.
 
 ### Worked examples
 
@@ -399,6 +423,12 @@ C. $7$
 
 Answer: A. First $g (2) = 3$, then $f (3) = 9$. Reversing the order gives $g (f (2)) = 5$.
 
+Feedback by choice:
+
+- A: First $g (2) = 3$, then $f (3) = 9$. Reversing the order gives $g (f (2)) = 5$.
+- B: That result comes from squaring first, then adding one. The question asks you to evaluate the inner function first and pass its output to the outer function.
+- C: Composition does not add two function values. First write the intermediate value $g(2)$, then substitute that number into $f$.
+
 ### Which inputs are allowed in a composition?
 
 For $f (g (x))$, the input $x$ must be allowed in $g$, and its output $g (x)$ must be allowed in $f$. Both requirements matter.
@@ -462,6 +492,12 @@ Preset observation: $(-1)^2=1$: different inputs give the same output.
 3. **Try another pair** Set the input to −2 and compare it with positive input 2.
 
 Preset observation: Both give 4. Restricting to the nonnegative branch makes the reverse choice unique.
+
+Explain the observation: Why can the square function not be inverted on all real numbers?
+
+Reference explanation: Positive and negative inputs can give the same output. Restrict to a one-to-one branch to recover a unique input.
+
+Transfer exercise: question 4 in this lesson.
 
 ### Worked examples
 
@@ -551,6 +587,12 @@ C. Angles measured in degrees cannot be differentiated
 
 Answer: B. $\frac{\sin h}{h} \to 1$ requires $h$ in radians. Using degrees introduces a factor of $\frac{\pi }{180}$.
 
+Feedback by choice:
+
+- A: Changing units does not make the angle smaller; only its numerical representation changes. Compare the two ways to describe a full turn. (experiment step 3 below)
+- B: $\frac{\sin h}{h} \to 1$ requires $h$ in radians. Using degrees introduces a factor of $\frac{\pi }{180}$.
+- C: You can differentiate in degrees, but a unit-conversion factor appears. Radians put the ratio of arc length to radius directly into the formula.
+
 ### How do radians convert to degrees?
 
 Since $\theta  = \frac{s}{r}$, a full turn is $2 \pi$ radians and $180^{\circ} = \pi$ radians. The periods of $\sin$ and $\cos$ are $2 \pi$; that of $\tan$ is $\pi$. Tangent is undefined where $\cos = 0$.
@@ -610,6 +652,12 @@ Preset observation: The height is close to 1, near a peak of the sine wave.
 3. **A full turn** Set the input to 6.28, close to $2\pi$.
 
 Preset observation: The output is close to 0 again. These presets are decimal approximations, not exact multiples of pi.
+
+Explain the observation: Do the near-zero readings prove that the preset input is exactly one full turn?
+
+Reference explanation: No. The input is a decimal approximation. The exact period uses pi, and finite-precision readings do not replace the identity.
+
+Transfer exercise: question 4 in this lesson.
 
 ### Worked examples
 
@@ -699,6 +747,12 @@ C. $3 e$
 
 Answer: B. $\ln$ and exponentiation with base $e$ are inverse operations: $\ln (e^{x}) = x$. Here $x = 3$.
 
+Feedback by choice:
+
+- A: The natural logarithm asks for the exponent, not the base. Substitute your answer back: which power of the base gives the original number? (experiment step 2 below)
+- B: $\ln$ and exponentiation with base $e$ are inverse operations: $\ln (e^{x}) = x$. Here $x = 3$.
+- C: An exponent represents repeated multiplication, not the base multiplied by the exponent. A logarithm undoes exponentiation. (experiment step 3 below)
+
 ### Which inputs do exponentials and logarithms accept?
 
 For $b > 0$ and $b \ne 1$, $b^{x}$ is defined for every real input and has positive outputs; $\log _ b x$ requires $x > 0$. Both increase if $b > 1$ and decrease if $0 < b < 1$.
@@ -762,6 +816,12 @@ Preset observation: The output changes from 1 to $e$, about 2.71828.
 3. **Increase by one again** Change the input to 2.
 
 Preset observation: The output is $e^2$, about 7.38906; the ratio of consecutive outputs is still $e$.
+
+Explain the observation: When the input increases by one, are output differences or output ratios constant? Why?
+
+Reference explanation: The ratios are constant. Increasing the exponent by one multiplies by the base again rather than adding a fixed amount.
+
+Transfer exercise: question 4 in this lesson.
 
 ### Worked examples
 
@@ -889,6 +949,12 @@ C. The limit must cease to exist
 
 Answer: B. The limit examines inputs near 1 but different from 1. Changing the point value alone does not change the nearby behavior.
 
+Feedback by choice:
+
+- A: A point value specifies the output at that exact input. A limit concerns nearby inputs; it does not substitute the center point. (experiment step 2 below)
+- B: The limit examines inputs near 1 but different from 1. Changing the point value alone does not change the nearby behavior.
+- C: Changing one point does not automatically destroy the common nearby trend. Examine the two sides before deciding whether they approach the same number. (experiment step 2 below)
+
 ### Can you substitute directly?
 
 Yes, for a continuous function. If substitution gives $\frac{0}{0}$, simplify or analyze nearby values first. $\frac{0}{0}$ is not an answer.
@@ -948,6 +1014,12 @@ Preset observation: The left-side output is 1.99; on the right it is 2.01. Both 
 3. **Compare a jump** Switch to the function with different left- and right-side values.
 
 Preset observation: The left side stays at 1 and the right side at 3. Shrinking the distance cannot produce a common limit.
+
+Explain the observation: Why do changing one value and introducing a jump affect a limit differently?
+
+Reference explanation: Changing one value leaves the punctured neighborhood unchanged. A jump makes nearby outputs on opposite sides approach different numbers.
+
+Transfer exercise: question 5 in this lesson.
 
 ### Worked examples
 
@@ -1009,6 +1081,15 @@ Answer: No; the limit remains 2.
 
 - A limit concerns a punctured neighborhood, so changing one point does not affect it.
 
+**5. For $x\ne2$, let $f(x)=x^2$, but set $f(2)=7$. Find $\lim_{x\to2}f(x)$ and determine whether the function is continuous at 2.**
+
+Hint: Write the nearby trend and the point value separately.
+
+Answer: The limit is 4; the function is not continuous there.
+
+- In a punctured neighborhood the function equals the square function, so the limit is $2^2=4$.
+- The value 7 differs from the limit 4, so continuity fails.
+
 Prerequisites: Functions and Domains, Graphs and Transformations.
 
 ## 2.2 Limit Laws
@@ -1036,6 +1117,12 @@ B. The answer is 1
 C. Simplify the expression, then find the limit
 
 Answer: C. $\frac{0}{0}$ is an indeterminate form, not an answer. Factoring, cancellation, or rationalization may reveal nearby behavior; direct division by zero is invalid.
+
+Feedback by choice:
+
+- A: A numerator tending to zero does not determine the quotient. The denominator also tends to zero, so their relative rates matter. (experiment step 2 below)
+- B: Two quantities tending to zero need not have a ratio tending to one. Simplify or use an established limit relation; you cannot cancel zeros. (experiment step 2 below)
+- C: $\frac{0}{0}$ is an indeterminate form, not an answer. Factoring, cancellation, or rationalization may reveal nearby behavior; direct division by zero is invalid.
 
 ### When does substitution work?
 
@@ -1096,6 +1183,12 @@ Preset observation: The output is close to 1; the original expression remains un
 3. **Check the left side** Keep the same distance and switch to the left.
 
 Preset observation: The output is the same. This trigonometric limit uses radians; finite samples support exploration, not proof.
+
+Explain the observation: Both sampled sides are close to one. Why is assigning one at zero not a proof of the limit?
+
+Reference explanation: Filling the point is a separate definition. A limit controls arbitrarily close inputs and requires an argument, not just finitely many readings.
+
+Transfer exercise: question 4 in this lesson.
 
 ### Worked examples
 
@@ -1185,6 +1278,12 @@ C. $\varepsilon$ and $\delta$ must be equal
 
 Answer: A. For every output tolerance $\varepsilon$, however small, a sufficiently small $\delta$ must exist. The choice of $\delta$ may depend on $\varepsilon$.
 
+Feedback by choice:
+
+- A: For every output tolerance $\varepsilon$, however small, a sufficiently small $\delta$ must exist. The choice of $\delta$ may depend on $\varepsilon$.
+- B: One fixed input neighborhood generally cannot meet arbitrarily small output tolerances. You may choose a new neighborhood when the output requirement tightens. (experiment step 2 below)
+- C: The function determines the input and output scales; they need not be equal. Check how the input interval guarantees that all its outputs lie inside the tolerance band. (experiment step 1 below)
+
 ### Which quantity is specified first?
 
 First take any $\varepsilon  > 0$, then choose $\delta  > 0$. Your $\delta$ may depend on $\varepsilon$, but cannot be chosen afterward to fit a particular $x$.
@@ -1248,6 +1347,12 @@ Preset observation: The guaranteed radius shrinks to $\delta=0.02$.
 3. **Halve it again** Change the tolerance to 0.05.
 
 Preset observation: Now $\delta=0.01$. Use $|x^2-4|=|x-2||x+2|$ to justify the guarantee throughout the band.
+
+Explain the observation: Why is controlling an entire input neighborhood stronger than checking a few points?
+
+Reference explanation: The definition requires every noncentral input in the neighborhood to meet the tolerance. Finite samples cannot rule out failures between samples.
+
+Transfer exercise: question 4 in this lesson.
 
 ### Worked examples
 
@@ -1338,6 +1443,12 @@ C. Yes, provided $f (a)$ is small enough
 
 Answer: B. Continuity requires a defined $f (a)$, an existing limit, and equality between them. Every condition matters.
 
+Feedback by choice:
+
+- A: A common limit is only one condition. The value at the center must also meet that limit. (experiment step 3 below)
+- B: Continuity requires a defined $f (a)$, an existing limit, and equality between them. Every condition matters.
+- C: Continuity does not depend on how small the value is. It depends on whether the value equals the limit. Try filling the same hole at two different heights. (experiment step 3 below)
+
 ### Which three conditions must hold?
 
 $f (a)$ must be defined, the limit as $x \to a$ must exist, and that limit must equal $f (a)$. At an interval endpoint, check the one-sided limit within the domain.
@@ -1401,6 +1512,12 @@ Preset observation: The output is 1.9. Both sides approach the same value.
 3. **Fill the point** Fill the target point with output 2.
 
 Preset observation: Both sides approach 2 and the point value is 2, so the extended function is continuous there. Manually try a different point value to see why continuity fails.
+
+Explain the observation: Which value makes the filled function continuous, and why is the filled point alone insufficient?
+
+Reference explanation: The value must equal the common limit. A filled point shows only that the function is defined there, not that nearby values meet it.
+
+Transfer exercise: question 4 in this lesson.
 
 ### Worked examples
 
@@ -1491,6 +1608,12 @@ C. Yes: $\infty$ and $- \infty$ are the same number
 
 Answer: B. The two sides disagree, so a two-sided limit of $+ \infty$ is invalid. Infinite behavior is not a finite real value either.
 
+Feedback by choice:
+
+- A: Looking only from the right misses the other behavior. Move to the left of zero and check the denominator's sign. (experiment step 3 below)
+- B: The two sides disagree, so a two-sided limit of $+ \infty$ is invalid. Infinite behavior is not a finite real value either.
+- C: Unbounded growth and unbounded decrease are different behaviors. Infinity is not a real number whose sign can be ignored. (experiment step 3 below)
+
 ### How do you find an asymptote?
 
 If outputs tend to $\pm \infty$ as $x \to a$ from at least one side, $x = a$ is a vertical asymptote. If outputs tend to $L$ as $x \to \pm \infty$, then $y = L$ is a horizontal asymptote in that direction. A curve can cross it.
@@ -1550,6 +1673,12 @@ Preset observation: The output becomes 100. Closer positive inputs produce large
 3. **Switch to the left** Keep distance 0.01 and switch to the left.
 
 Preset observation: The output is −100. The sides have opposite behavior, so they cannot share one two-sided infinite limit.
+
+Explain the observation: Does a curve leaving the viewing window mean the function ends there?
+
+Reference explanation: No. The viewing window is finite, while the readings may describe larger outputs. The formula determines the domain and one-sided behavior.
+
+Transfer exercise: question 4 in this lesson.
 
 ### Worked examples
 
@@ -1676,6 +1805,12 @@ C. The derivative does not exist
 
 Answer: B. The quotient is $\frac{(1 + h)^{2} - 1}{h} = 2 + h$. At $h = 0.1$ it is 2.1; only taking $h \to 0$ gives derivative 2.
 
+Feedback by choice:
+
+- A: A small gap gives an approximation. See whether the quotient still changes as you shrink the gap, then distinguish a finite quotient from its limit. (experiment step 2 below)
+- B: The quotient is $\frac{(1 + h)^{2} - 1}{h} = 2 + h$. At $h = 0.1$ it is 2.1; only taking $h \to 0$ gives derivative 2.
+- C: A finite quotient differing from the derivative does not mean the derivative fails to exist. Examine whether the quotients approach a common limit as the gap tends to zero. (experiment step 1 below)
+
 ### What are the units of a derivative?
 
 Output units divided by input units. Differentiating position with respect to time gives meters per second. Negative velocity means position decreases in the chosen direction; speed remains nonnegative.
@@ -1740,6 +1875,12 @@ Preset observation: The secant slope is 2.01: closer to 2, but still not the lim
 
 Preset observation: The right quotient is 1 and the left quotient is −1. The function is continuous but has no common two-sided derivative.
 
+Explain the observation: Why does making the gap small not settle differentiability for both a smooth curve and a corner?
+
+Reference explanation: A derivative requires a common finite limit of the two-sided difference quotients. At a corner the slopes remain different, however small the gap becomes.
+
+Transfer exercise: question 5 in this lesson.
+
 ### Worked examples
 
 #### Example 1: Instantaneous velocity
@@ -1800,6 +1941,15 @@ Answer: $6$.
 
 - The derivative is $2 t$, whose value at 3 is 6.
 
+**5. Replace the square function with $f(x)=x^3$. At $a=1$, find the right-hand difference quotient for $h=0.1$, then find the derivative. Are they equal?**
+
+Hint: Expand the cube, then cancel the nonzero gap.
+
+Answer: The quotient is 3.31 and the derivative is 3; they are unequal.
+
+- $\frac{(1+h)^3-1}{h}=3+3h+h^2$, which gives 3.31 after substitution.
+- As $h\to0$, the last two terms tend to zero and the quotient tends to 3.
+
 Prerequisites: Limit Laws, Continuity and the Intermediate Value Theorem.
 
 ## 3.2 Basic Differentiation Rules
@@ -1827,6 +1977,12 @@ B. $f' g + f g'$
 C. $f' + g'$
 
 Answer: B. Both factors can change. Differentiate one and multiply by the other's original value, then add the two contributions.
+
+Feedback by choice:
+
+- A: When both factors vary, the product changes through two contributions. Test this option with $f(x)=g(x)=x$.
+- B: Both factors can change. Differentiate one and multiply by the other's original value, then add the two contributions.
+- C: That is the rule for a sum. When one factor in a product changes, its contribution is multiplied by the other factor's current value.
 
 ### How do sums and powers differentiate?
 
@@ -1891,6 +2047,12 @@ Preset observation: The exact derivative is 3; the right-side quotient is approx
 3. **Compare a negative input** Change the base point to −1, keeping the small gap.
 
 Preset observation: The derivative is again 3. A function can have a negative value and a positive rate of change.
+
+Explain the observation: Why can a function have a negative value but a positive derivative at a negative input?
+
+Reference explanation: The value describes height; the derivative describes local change. A curve below the axis can still rise as its input increases.
+
+Transfer exercise: question 4 in this lesson.
 
 ### Worked examples
 
@@ -1981,6 +2143,12 @@ C. $x^{2} + 1$
 
 Answer: A. The outer rate is $3 (x^{2} + 1)^{2}$; the inner rate is $2 x$. The chain rule multiplies them.
 
+Feedback by choice:
+
+- A: The outer rate is $3 (x^{2} + 1)^{2}$; the inner rate is $2 x$. The chain rule multiplies them.
+- B: The outer power must be differentiated, but the question targets the easily missed inner change. Check what the total rate should be when the inner rate is zero. (experiment step 1 below)
+- C: The inner output is used to evaluate the outer derivative. The inner rate must also be multiplied in. Write those two roles separately. (experiment step 2 below)
+
 ### How do you identify the layers?
 
 Find the last operation performed. In $(x^{2} + 1)^{3}$, cubing is the outer operation and $x^{2} + 1$ is the inner function. Differentiate from outside in; each layer supplies a factor.
@@ -2045,6 +2213,12 @@ Preset observation: The inner output is 2 and its rate is 2; the outer rate is 1
 
 Preset observation: The inner output remains 2, but its rate is −2. The total derivative is −24.
 
+Explain the observation: Two opposite inputs give the same inner output. Why do their total derivatives have opposite signs?
+
+Reference explanation: The outer derivative is evaluated at the same inner output, but the inner rates have opposite signs, so their products have opposite signs.
+
+Transfer exercise: question 5 in this lesson.
+
 ### Worked examples
 
 #### Example 1: The function inside a cube
@@ -2105,6 +2279,15 @@ Answer: $2x(1+x)^3+3x^2(1+x)^2$.
 
 - Apply the product rule first, then the chain rule to $(1 + x)^{3}$.
 
+**5. Find the derivative of $y=(1-2x)^3$ at zero. Without expanding the cube, explain the sign of the derivative.**
+
+Hint: Write the outer derivative and the inner rate separately.
+
+Answer: The derivative is $-6$; the inner function decreases as the input increases.
+
+- The outer derivative is $3(1-2x)^2$ and the inner derivative is $-2$.
+- Multiplying gives $y'=-6(1-2x)^2$, which is $-6$ at zero.
+
 Prerequisites: Composition and Inverse Functions, Basic Differentiation Rules.
 
 ## 3.4 Derivatives of Trigonometric Functions
@@ -2132,6 +2315,12 @@ B. $- \sin x$
 C. $- \cos x$
 
 Answer: B. Near $x = \frac{\pi }{2}$, $\cos x$ decreases with slope −1. This matches $- \sin x$; the angle is in radians.
+
+Feedback by choice:
+
+- A: Near $x=\frac\pi2$, cosine is decreasing. The derivative's sign must reflect that direction.
+- B: Near $x = \frac{\pi }{2}$, $\cos x$ decreases with slope −1. This matches $- \sin x$; the angle is in radians.
+- C: Check at zero: cosine has a smooth peak with zero slope. Does this candidate formula give zero there?
 
 ### Where does the sine derivative come from?
 
@@ -2196,6 +2385,12 @@ Preset observation: The curve's height is near 1, but its slope is near 0.
 3. **Crossing downward through zero** Set the base point to 3.14.
 
 Preset observation: The height is near 0 and the slope near −1. These base points are decimal approximations in radians.
+
+Explain the observation: Why is the slope near zero at a peak where the height is largest?
+
+Reference explanation: Height and rate are different quantities. Around a smooth peak the curve changes from rising to falling, with a horizontal tangent at the peak.
+
+Transfer exercise: question 4 in this lesson.
 
 ### Worked examples
 
@@ -2285,6 +2480,12 @@ C. ${y'}^{2}$
 
 Answer: B. $y^{2}$ composes an outer square with the inner function $y (x)$. Multiply by the inner derivative $y'$.
 
+Feedback by choice:
+
+- A: That is the rate with respect to $y$. The question differentiates with respect to $x$, so the change of $y$ with $x$ must also be included. (experiment step 2 below)
+- B: $y^{2}$ composes an outer square with the inner function $y (x)$. Multiply by the inner derivative $y'$.
+- C: The function value is squared, not its derivative. Treat $y^2$ as an outer square composed with an inner function.
+
 ### How do you isolate $y'$?
 
 Differentiate both sides with respect to $x$. Use the chain rule on terms involving $y$ and the product rule on $x y$. Collect the $y'$ terms, factor, and solve.
@@ -2345,6 +2546,12 @@ Preset observation: The height is $\sqrt3$, and the slope is $-\frac1{\sqrt3}$.
 3. **Approach an endpoint** Set the base point to 1.9, keeping gap 0.01.
 
 Preset observation: The height is smaller and the tangent steeper. At the endpoint, the nonzero-denominator formula cannot supply a finite slope.
+
+Explain the observation: Can the slope formula dividing by height still be used at the circle's endpoints?
+
+Reference explanation: No. Division by height is invalid when height is zero. Discuss a vertical tangent rather than inventing a finite slope.
+
+Transfer exercise: question 5 in this lesson.
 
 ### Worked examples
 
@@ -2490,6 +2697,12 @@ C. $\frac{1}{x}$
 
 Answer: C. The chain rule gives $(\frac{1}{3 x}) \cdot 3 = \frac{1}{x}$. The real domain of $\ln (3 x)$ is $x > 0$.
 
+Feedback by choice:
+
+- A: Differentiating the outer logarithm is only the first step; the inner function also varies. Apply the chain rule before simplifying.
+- B: The inner coefficient cannot appear only in the numerator. The outer derivative's denominator must contain the full inner expression too.
+- C: The chain rule gives $(\frac{1}{3 x}) \cdot 3 = \frac{1}{x}$. The real domain of $\ln (3 x)$ is $x > 0$.
+
 ### What if the base is not $e$?
 
 Write $b^{x} = e^{x \ln b}$ to get derivative $b^{x} \ln b$, for $b > 0$. Use $\ln x$ only for $x > 0$; $\ln |x|$ has derivative $\frac{1}{x}$ for $x \ne 0$.
@@ -2553,6 +2766,12 @@ Preset observation: Both height and slope are approximately 2.71828.
 3. **Move left** Set the base point to −1.
 
 Preset observation: Both are approximately 0.36788. A negative input does not make an exponential output negative.
+
+Explain the observation: Why need neither an exponential's value nor its derivative be negative at a negative input?
+
+Reference explanation: The exponential is positive, and the natural exponential's derivative equals its value. The input's sign does not directly determine either sign.
+
+Transfer exercise: question 4 in this lesson.
 
 ### Worked examples
 
@@ -2642,6 +2861,12 @@ C. Never
 
 Answer: B. The output of $\arcsin$ is restricted to $[\frac{- \pi }{2} , \frac{\pi }{2}]$. Outside it, the original angle generally cannot be recovered.
 
+Feedback by choice:
+
+- A: Sine is not one-to-one on all real numbers. Try $x=\pi$ and compare the principal value returned by arcsine.
+- B: The output of $\arcsin$ is restricted to $[\frac{- \pi }{2} , \frac{\pi }{2}]$. Outside it, the original angle generally cannot be recovered.
+- C: On its principal interval, sine is restricted to an invertible function. Test $x=0$ before accepting the claim that the identity never holds.
+
 ### How do you differentiate an inverse?
 
 Apply the chain rule to $f (f^{-1} (x)) = x$ to obtain $(f^{-1})' (x) = \frac{1}{f' (f^{-1} (x))}$. The chosen branch must be invertible and the denominator nonzero.
@@ -2706,6 +2931,12 @@ Preset observation: The slope is $\frac12$. The curve still rises, but more slow
 3. **Move farther away** Set the base point to 3.
 
 Preset observation: The slope is $\frac1{10}$, still positive. The curve has not stopped rising.
+
+Explain the observation: If arctangent has a very small slope far out, does it stop increasing at some finite input?
+
+Reference explanation: No. Its derivative remains positive at every finite input. Becoming flatter asymptotically differs from becoming constant at a point.
+
+Transfer exercise: question 4 in this lesson.
 
 ### Worked examples
 
@@ -2795,6 +3026,12 @@ C. $\pi  (\frac{\mathrm{d}r}{\mathrm{d}t})^{2}$
 
 Answer: B. Differentiate with respect to time: $\frac{\mathrm{d}A}{\mathrm{d}t} = \frac{2 \pi  r \cdot \mathrm{d}r}{\mathrm{d}t}$. Omitting $\frac{\mathrm{d}r}{\mathrm{d}t}$ ignores how fast the radius changes.
 
+Feedback by choice:
+
+- A: That expression describes area change per unit radius. A rate per unit time must also account for radius change per unit time. (experiment step 2 below)
+- B: Differentiate with respect to time: $\frac{\mathrm{d}A}{\mathrm{d}t} = \frac{2 \pi  r \cdot \mathrm{d}r}{\mathrm{d}t}$. Omitting $\frac{\mathrm{d}r}{\mathrm{d}t}$ ignores how fast the radius changes.
+- C: You do not square the radius's rate. Differentiate the time-dependent square using the chain rule.
+
 ### Why substitute numerical values last?
 
 Differentiate the relationship while its quantities can still change. Replacing $r$ by a number too early freezes it as a constant and loses $\frac{\mathrm{d}r}{\mathrm{d}t}$.
@@ -2858,6 +3095,12 @@ Preset observation: The height falls to 3 and the top's rate becomes $-\frac43$:
 3. **Approach the horizontal position** Set the foot's distance to 4.8.
 
 Preset observation: The top descends faster. Constant foot speed does not imply constant top speed. The model does not include the zero-height endpoint.
+
+Explain the observation: Why does the top of the ladder change speed if the bottom moves at constant speed?
+
+Reference explanation: The constraint links the two positions, but their rate ratio changes with position. Near horizontal, the same bottom displacement produces a larger height change.
+
+Transfer exercise: question 5 in this lesson.
 
 ### Worked examples
 
@@ -2965,6 +3208,12 @@ C. $f (x) \approx f (a) + f' (x)$
 
 Answer: A. Start at $(a , f (a))$ and follow its tangent slope. Unless the function is already linear, this is generally an approximation, not an exact identity.
 
+Feedback by choice:
+
+- A: Start at $(a , f (a))$ and follow its tangent slope. Unless the function is already linear, this is generally an approximation, not an exact identity.
+- B: This line may miss the base point, and it treats a local approximation as a global equality. First check whether it agrees with the function at the base point. (experiment step 3 below)
+- C: A derivative is output change per unit input, not an output increment by itself. Multiply by the input change from the base point. (experiment step 2 below)
+
 ### Why does a line approximate the curve?
 
 Differentiability means $f(a+h)=f(a)+f\prime(a)h+R(h)$ with $R(h)/h\to0$, written $R(h)=o(h)$. The remainder becomes small relative to the input displacement; it need not be zero for a finite displacement.
@@ -3028,6 +3277,12 @@ Preset observation: The tangent gives 2.025, slightly above the true square root
 3. **Move farther away** Change the evaluation point to 6.
 
 Preset observation: The tangent gives 2.5, with a noticeably larger error. This is a local model.
+
+Explain the observation: Why is the same tangent exact at its base point but potentially inaccurate farther away?
+
+Reference explanation: The tangent matches the value and first-order rate at its base point, not the curve's bending over an entire interval.
+
+Transfer exercise: question 4 in this lesson.
 
 ### Worked examples
 
@@ -3117,6 +3372,12 @@ C. Conclude that $x_{n}$ must be a root
 
 Answer: B. The update divides by $f' (x_{n})$. A zero slope prevents this step, and the function value need not be zero.
 
+Feedback by choice:
+
+- A: Newton's update divides by the slope. A zero denominator gives no valid next step; an animation cannot make that division legitimate. (experiment step 3 below)
+- B: The update divides by $f' (x_{n})$. A zero slope prevents this step, and the function value need not be zero.
+- C: A horizontal tangent does not imply a zero function value. Check the current value and distinguish a zero slope from a root. (experiment step 3 below)
+
 ### How do you find the next guess?
 
 Set the current tangent's $y = 0$ to obtain $x_{n + 1} = x_{n} - \frac{f (x_{n})}{f' (x_{n})}$. A zero or very small denominator makes the step invalid or unreliable.
@@ -3180,6 +3441,12 @@ Preset observation: The approximation is close to the square root of 2, with a s
 3. **Try a failing point** Change the initial value to 0.
 
 Preset observation: The derivative is zero. Division is invalid, and the demonstration should explain why it stops.
+
+Explain the observation: Are a small residual and a valid update formula the same check?
+
+Reference explanation: No. The residual checks how far the value is from zero. A valid update also needs a nonzero derivative and still does not guarantee convergence.
+
+Transfer exercise: question 4 in this lesson.
 
 ### Worked examples
 
@@ -3306,6 +3573,12 @@ C. Neither
 
 Answer: C. $x^{3}$ increases on both sides of zero. A zero derivative gives a candidate; examine nearby behavior before drawing a conclusion.
 
+Feedback by choice:
+
+- A: A zero derivative only identifies a candidate. Compare values on both sides of zero and check whether increase turns into decrease.
+- B: A local minimum requires nearby values to be no lower than the value at the point. Test a small negative input.
+- C: $x^{3}$ increases on both sides of zero. A zero derivative gives a candidate; examine nearby behavior before drawing a conclusion.
+
 ### Must a maximum and minimum exist?
 
 A continuous function on a closed, bounded interval attains both. An open interval gives no such guarantee: $x$ has no maximum on $(0,1)$.
@@ -3365,6 +3638,12 @@ Preset observation: The derivative is negative. Across −1 the function changes
 3. **Check the other candidate** Set the base point to 1.
 
 Preset observation: The exact derivative is zero. Nearby signs change from negative to positive, giving a local minimum.
+
+Explain the observation: What extra information does a derivative sign change provide beyond a zero derivative?
+
+Reference explanation: It shows that monotonicity changes across the point, supporting a local maximum or minimum. A zero derivative alone gives only a candidate.
+
+Transfer exercise: question 4 in this lesson.
 
 ### Worked examples
 
@@ -3455,6 +3734,12 @@ C. The point where the maximum occurs
 
 Answer: B. $f' (c) = \frac{f (b) - f (a)}{b - a}$. The point $c$ need not be a midpoint or unique; continuity and differentiability are required.
 
+Feedback by choice:
+
+- A: The point happens to be the midpoint for a quadratic. Try a cubic and solve for instantaneous slope equal to average slope before comparing. (experiment step 3 below)
+- B: $f' (c) = \frac{f (b) - f (a)}{b - a}$. The point $c$ need not be a midpoint or unique; continuity and differentiability are required.
+- C: The mean value theorem matches two slopes; it does not locate the highest point. Compute the interval's average slope first. (experiment step 2 below)
+
 ### What does Rolle's theorem say?
 
 If $f$ is continuous on $[a , b]$, differentiable on $(a , b)$, and $f (a) = f (b)$, then $f' = 0$ somewhere inside. Equal endpoint heights force an interior horizontal tangent.
@@ -3518,6 +3803,12 @@ Preset observation: The shared slope is 2, at point 1.
 3. **Widen it further** Set the right endpoint to 3.
 
 Preset observation: The shared slope is 3, at point 1.5. The midpoint property belongs to this quadratic, not to the general theorem.
+
+Explain the observation: Why can the midpoint pattern in this diagram not be generalized to every function satisfying the mean value theorem?
+
+Reference explanation: The quadratic has a special symmetry. The theorem guarantees some interior point whose slope equals the average slope, not the midpoint.
+
+Transfer exercise: question 4 in this lesson.
 
 ### Worked examples
 
@@ -3607,6 +3898,12 @@ C. Rises, with increasing slope
 
 Answer: B. $f' > 0$ means the function rises; $f'' < 0$ means its slope decreases. Increasing does not mean increasing faster.
 
+Feedback by choice:
+
+- A: The first derivative's sign determines increase or decrease. A negative second derivative means decreasing slope, not necessarily a decreasing function. (experiment step 1 below)
+- B: $f' > 0$ means the function rises; $f'' < 0$ means its slope decreases. Increasing does not mean increasing faster.
+- C: A curve can rise while becoming flatter. Separate increasing height from increasing slope. (experiment step 1 below)
+
 ### How do you find intervals of increase and decrease?
 
 Split at points where $f' = 0$ or does not exist, then check its sign in each interval. Positive means increasing; negative means decreasing. Do not join intervals across points outside the function's domain.
@@ -3666,6 +3963,12 @@ Preset observation: The slope is −3. The second derivative changes sign across
 3. **Rising on the other side** Set the base point to 2.
 
 Preset observation: The slope is again 9, but the second derivative is 12: increasing and concave up.
+
+Explain the observation: How can two points with positive slopes have different concavities?
+
+Reference explanation: Compare how nearby slopes change: increasing slopes indicate concave up, decreasing slopes concave down. Increase or decrease of the function depends only on its first derivative.
+
+Transfer exercise: question 4 in this lesson.
 
 ### Worked examples
 
@@ -3755,6 +4058,12 @@ C. Interior critical points and endpoints
 
 Answer: C. The maximum may occur at an endpoint. Include interior critical points where the derivative is zero or nonexistent, then compare function values.
 
+Feedback by choice:
+
+- A: A maximum may occur at an endpoint, and interior nondifferentiable points must not be missed. List all candidates before comparing values.
+- B: Endpoints do not capture an interior peak. Check interior critical points, then compare them with the endpoints. (experiment step 2 below)
+- C: The maximum may occur at an endpoint. Include interior critical points where the derivative is zero or nonexistent, then compare function values.
+
 ### How do you form the objective function?
 
 Define each variable, write the objective, eliminate other variables using constraints, and state the feasible interval. Check that the units match the objective.
@@ -3818,6 +4127,12 @@ Preset observation: The other side is also 6, and the area reaches 36.
 3. **Keep lengthening** Set one side to 10.
 
 Preset observation: The other becomes 2 and area returns to 20. Check the feasible interval and turning point.
+
+Explain the observation: Two symmetric dimension choices give equal areas. Do those readings alone prove the middle choice maximizes area?
+
+Reference explanation: No. State the feasible interval and area function, then use derivative signs or completing the square to compare all candidates.
+
+Transfer exercise: question 4 in this lesson.
 
 ### Worked examples
 
@@ -3907,6 +4222,12 @@ C. The answer must be 0
 
 Answer: B. Check the indeterminate form and theorem assumptions first. $\frac{1}{0}$ is not a form handled by this rule; one-sided analysis is usually needed.
 
+Feedback by choice:
+
+- A: Check the indeterminate form first. A denominator tending to zero is not sufficient. Test a constant numerator divided by the input; differentiating would give a contradictory result.
+- B: Check the indeterminate form and theorem assumptions first. $\frac{1}{0}$ is not a form handled by this rule; one-sided analysis is usually needed.
+- C: With a denominator tending to zero, a quotient may be unbounded or lack a two-sided limit. A nonzero numerator does not imply a zero limit.
+
 ### What must you check first?
 
 The original form is $\frac{0}{0}$ or $\frac{\infty }{\infty }$. On a punctured one-sided neighborhood, numerator and denominator are differentiable, the denominator's derivative is nonzero, and the derivative ratio has a limit, possibly $\pm \infty$.
@@ -3966,6 +4287,12 @@ Preset observation: The quotient is approximately 1.00050, close to 1.
 3. **Check the left side** Use the same distance on the left.
 
 Preset observation: The quotient is approximately 0.99950. The derivative ratio and hypotheses in the text establish the common limit 1.
+
+Explain the observation: Why does the exponential quotient example not justify applying l'Hopital to every quotient whose denominator tends to zero?
+
+Reference explanation: It satisfies the required indeterminate form and differentiability conditions. A different quotient requires checking those conditions again.
+
+Transfer exercise: question 6 in this lesson.
 
 ### Worked examples
 
@@ -4045,6 +4372,15 @@ Answer: $0$.
 - The original form is $0\cdot(-\infty)$. Rewrite it as $\frac{\ln x}{1/x}$.
 - This quotient has an infinite-over-infinite form, with derivative ratio $\frac{1/x}{-1/x^2}=-x\to0$. The denominator's derivative is nonzero in the positive-side neighborhood.
 
+**6. Find $\lim_{x\to0^+}\frac1x$. Why is obtaining zero by differentiating numerator and denominator invalid?**
+
+Hint: Identify the numerator and denominator behaviors before differentiating.
+
+Answer: The right-hand behavior is $+\infty$; the quotient is not an indeterminate form permitting l'Hopital's rule.
+
+- The numerator stays at 1 while the denominator tends to zero from above, so the quotient grows without bound; it is not a $\frac00$ form.
+- For any $M>0$, if $0<x<\frac1{M+1}$ then $\frac1x>M+1>M$. This directly guarantees unbounded positive growth.
+
 Prerequisites: Differentiating Exponentials and Logarithms, Limit Laws, Rolle's Theorem and the Mean Value Theorem.
 
 ## Chapter review
@@ -4110,6 +4446,12 @@ B. Every integral is an approximation
 C. $C$ must equal 1
 
 Answer: A. $x^{2}$, $x^{2} + 3$, and other vertical shifts all have derivative $2 x$. The constant $C$ records this family on a single interval.
+
+Feedback by choice:
+
+- A: $x^{2}$, $x^{2} + 3$, and other vertical shifts all have derivative $2 x$. The constant $C$ records this family on a single interval.
+- B: The constant represents information lost by differentiation, not numerical approximation. Differentiate two antiderivatives differing by a constant. (experiment step 2 below)
+- C: Without an initial condition, the constant may be any real number. Change it and check whether the derivative changes. (experiment step 3 below)
 
 ### Why keep $C$?
 
@@ -4182,6 +4524,12 @@ Preset observation: The antiderivative moves upward; its derivative does not cha
 3. **Shift downward** Set the constant to −1.
 
 Preset observation: The curve moves, but the same derivative still gives its slope at every point.
+
+Explain the observation: Which quantities change under vertical translation, and which do not? What differentiation fact does this express?
+
+Reference explanation: Antiderivative values change, but derivatives do not: a constant differentiates to zero. On an interval, antiderivatives differ by a constant.
+
+Transfer exercise: question 6 in this lesson.
 
 ### Worked examples
 
@@ -4298,6 +4646,12 @@ C. They are always equal
 
 Answer: B. Each right endpoint has a function value at least as large as its left endpoint, so its rectangle is at least as tall.
 
+Feedback by choice:
+
+- A: On the same subinterval, an increasing function is higher at the right endpoint. Keep the partition fixed and change only the sampling endpoint. (experiment step 2 below)
+- B: Each right endpoint has a function value at least as large as its left endpoint, so its rectangle is at least as tall.
+- C: A finite partition does not make the two sums equal. Start with a few rectangles to see the difference, then refine the partition. (experiment step 1 below)
+
 ### How do you choose a height?
 
 Use a left endpoint, right endpoint, midpoint, or any sample point in each piece. Widths need not be equal, but the largest width must tend to 0. Merely increasing the number of pieces is not enough.
@@ -4361,6 +4715,12 @@ Preset observation: The left sum is $\frac18=0.125$, below the exact integral.
 3. **Refine the partition** Use 60 right-endpoint rectangles.
 
 Preset observation: The estimate is closer to $\frac13$, but still has finite error. Numerical samples are not a proof.
+
+Explain the observation: What changes when you increase the number of rectangles versus changing sampling endpoints?
+
+Reference explanation: The former decreases subinterval width; the latter changes the sampled height within each subinterval. Control them separately to see their effects.
+
+Transfer exercise: question 4 in this lesson.
 
 ### Worked examples
 
@@ -4450,6 +4810,12 @@ C. The geometric area is −1
 
 Answer: B. The integral on $[0,1]$ is $\frac{- 1}{2}$ and on $[1,2]$ is $\frac{1}{2}$. Geometric area adds their positive magnitudes.
 
+Feedback by choice:
+
+- A: Positive and negative contributions may cancel in a definite integral. Geometric areas do not cancel. Calculate the parts above and below the axis separately. (experiment step 2 below)
+- B: The integral on $[0,1]$ is $\frac{- 1}{2}$ and on $[1,2]$ is $\frac{1}{2}$. Geometric area adds their positive magnitudes.
+- C: A negative sign indicates orientation, not negative geometric area. Each region must contribute a nonnegative area. (experiment step 1 below)
+
 ### What if the bounds are reversed?
 
 The integral changes sign; equal bounds give 0. Integrals add over adjacent intervals and distribute over sums and constant multiples. Integral comparisons require the same interval and orientation.
@@ -4514,6 +4880,12 @@ Preset observation: The integral is zero and the geometric area is 1.
 3. **More positive contribution** Set the upper bound to 2.
 
 Preset observation: The integral is $\frac32$ and the geometric area is $\frac52$.
+
+Explain the observation: Why can area be positive when the integral is zero?
+
+Reference explanation: Signed contributions on opposite sides of the axis may cancel. Geometric area counts both as nonnegative height times width.
+
+Transfer exercise: question 6 in this lesson.
 
 ### Worked examples
 
@@ -4632,6 +5004,12 @@ C. $f (0)$
 
 Answer: A. Increasing the upper bound by $h$ adds approximately $f (x) h$. Divide by $h$ and take the limit to recover $f (x)$.
 
+Feedback by choice:
+
+- A: Increasing the upper bound by $h$ adds approximately $f (x) h$. Divide by $h$ and take the limit to recover $f (x)$.
+- B: Differentiating accumulation extracts the contribution at the moving endpoint. It does not first differentiate the original integrand. (experiment step 2 below)
+- C: The lower endpoint is fixed, but the upper endpoint moves. Read the added strip's height at the current upper endpoint. (experiment step 3 below)
+
 ### Why is the derivative $f (x)$?
 
 The difference quotient is the average height of the new strip. If $f$ is continuous at $x$, all nearby heights approach $f (x)$, so their average does too.
@@ -4696,6 +5074,12 @@ Preset observation: The accumulation is $\frac1{24}$; the current height and the
 
 Preset observation: The accumulation is $\frac13$ and the current height is 1. An accumulated value and its rate are different quantities.
 
+Explain the observation: Are accumulation and its rate the same quantity? Explain using the current height.
+
+Reference explanation: No. Accumulation includes the whole interval. Its rate is determined by the height at the moving endpoint, equal to the integrand's value there when it is continuous.
+
+Transfer exercise: question 5 in this lesson.
+
 ### Worked examples
 
 #### Example 1: Replace infinitely many pieces with two values
@@ -4756,6 +5140,15 @@ Answer: $2$.
 
 - An antiderivative is $- \cos x$, giving $- \cos \pi  + \cos 0 = 2$.
 
+**5. Let $A(x)=\int_0^{x^2}t^2\,\mathrm{d}t$. Find $A'(x)$ and explain why $A'(-1)$ can be negative although the integrand is nonnegative.**
+
+Hint: Multiply the current height by the rate at which the upper endpoint moves.
+
+Answer: $A'(x)=2x^5$, and $A'(-1)=-2$.
+
+- The fundamental theorem and chain rule give $A'(x)=(x^2)^2\cdot2x=2x^5$.
+- Near a negative input, increasing the input decreases the upper bound and therefore decreases accumulation. Alternatively integrate to obtain $A(x)=\frac{x^6}{3}$ and differentiate to check.
+
 Prerequisites: Antiderivatives and indefinite integrals, Definite integrals and signed area, Continuity and the Intermediate Value Theorem.
 
 ## 6.5 Integration by substitution
@@ -4783,6 +5176,12 @@ B. 1 and 2
 C. 0 and 2
 
 Answer: B. The bounds transform too: $x = 0$ gives $u = 1$ and $x = 1$ gives $u = 2$, with $\mathrm{d}u = 2 x \mathrm{d}x$.
+
+Feedback by choice:
+
+- A: Those are still the bounds for the original variable. Substitute each original endpoint into the new variable. (experiment step 3 below)
+- B: The bounds transform too: $x = 0$ gives $u = 1$ and $x = 1$ gives $u = 2$, with $\mathrm{d}u = 2 x \mathrm{d}x$.
+- C: Both bounds must change. First determine where the new variable starts when the original input is zero. (experiment step 1 below)
 
 ### How do you choose $u$?
 
@@ -4848,6 +5247,12 @@ Preset observation: The new variable is 1.25 and the local width factor is 1.
 3. **Check the endpoint** Set the input to 1.
 
 Preset observation: The new variable is 2 and the width factor is 2. Both bounds and widths must change consistently.
+
+Explain the observation: Why must both widths and endpoints change under substitution?
+
+Reference explanation: Widths encode the local scale between variables; endpoints specify the interval traversed in the new variable. Changing only one fails to represent the same accumulation.
+
+Transfer exercise: question 5 in this lesson.
 
 ### Worked examples
 
@@ -5001,6 +5406,12 @@ C. Use only the height difference at the intersection
 
 Answer: B. Area cannot cancel by sign. Find intersections and curve order, then integrate piecewise, or integrate the absolute height difference.
 
+Feedback by choice:
+
+- A: After a crossing, the curves may exchange positions. A fixed subtraction can cancel contributions. Find the crossings, then identify the upper curve on each interval.
+- B: Area cannot cancel by sign. Find intersections and curve order, then integrate piecewise, or integrate the absolute height difference.
+- C: A height difference is the height of one strip, not the whole area. Multiply by width and accumulate all the strips. (experiment step 2 below)
+
 ### What comes first?
 
 Find intersections, then determine which curve is above on each piece. Split wherever the order changes to prevent cancellation.
@@ -5064,6 +5475,12 @@ Preset observation: The top is $x$, the bottom is $x^2$, and the height is $\fra
 3. **Check the other endpoint** Set the position to 1.
 
 Preset observation: The height is zero again. The integral accumulates all strips, not just the middle one.
+
+Explain the observation: What step connects one vertical strip to the whole area?
+
+Reference explanation: A strip gives a local height. Multiply by an infinitesimal width and accumulate over the interval, identifying upper and lower boundaries separately after crossings.
+
+Transfer exercise: question 4 in this lesson.
 
 ### Worked examples
 
@@ -5153,6 +5570,12 @@ C. $9 \pi$
 
 Answer: B. Subtract the inner disk from the outer: $\pi  \cdot 2^{2} - \pi  \cdot 1^{2} = 3 \pi$. Subtracting radii before squaring loses the geometry.
 
+Feedback by choice:
+
+- A: Subtracting radii and then squaring gives a different disk, not the annulus. Remove the inner disk's area from the outer disk's area. (experiment step 3 below)
+- B: Subtract the inner disk from the outer: $\pi  \cdot 2^{2} - \pi  \cdot 1^{2} = 3 \pi$. Subtracting radii before squaring loses the geometry.
+- C: Adding the radii treats the hole as solid material. Identify the disk that is actually removed. (experiment step 3 below)
+
 ### Where do you measure the radius?
 
 From the axis to the boundary. Around $y = k$, the radius is $|y - k|$. The outer radius reaches the boundary farther from the axis, which need not be the higher curve.
@@ -5222,6 +5645,12 @@ Preset observation: The radius is 1 and the area is $\pi$. Doubling the radius q
 3. **Switch to a washer** Use outer radius 2 and inner radius 1.
 
 Preset observation: The full area is $3\pi$, not $\pi(2-1)^2$.
+
+Explain the observation: Why subtract disk areas instead of subtracting radii and then squaring?
+
+Reference explanation: The removed object is the entire inner disk. Subtracting radii first replaces the annulus with a different disk.
+
+Transfer exercise: question 7 in this lesson.
 
 ### Worked examples
 
@@ -5312,6 +5741,15 @@ Answer: $\frac13$.
 - The area is $A(x)=\frac12(2x)x=x^2$.
 - Accumulate to get $V=\int_0^1x^2\,\mathrm{d}x=\frac13$.
 
+**7. Rotate the region $0\le x\le1$, $1\le y\le x+1$ about $y=-1$. State the outer and inner radii and find the volume.**
+
+Hint: A radius is distance from the axis of rotation, not the original vertical coordinate.
+
+Answer: $R=x+2$, $r=2$, and the volume is $\frac{7\pi}{3}$.
+
+- The distances of the upper and lower boundaries from the axis are $x+2$ and 2; the annular area is $\pi((x+2)^2-4)$.
+- $V=\pi\int_0^1(x^2+4x)\,\mathrm{d}x=\frac{7\pi}{3}$.
+
 Prerequisites: Area between curves.
 
 ## 7.3 Volumes by cylindrical shells
@@ -5339,6 +5777,12 @@ B. $x^{2}$
 C. $1 - x^{2}$
 
 Answer: B. The strip runs from $y = 0$ to $y = x^{2}$, so its height is $x^{2}$. Its volume is approximately $2 \pi  x \cdot x^{2} \cdot \mathrm{d}x$.
+
+Feedback by choice:
+
+- A: That confuses radius with height. The strip's height is the difference between its upper and lower boundaries; distance from the axis gives the radius. (experiment step 3 below)
+- B: The strip runs from $y = 0$ to $y = x^{2}$, so its height is $x^{2}$. Its volume is approximately $2 \pi  x \cdot x^{2} \cdot \mathrm{d}x$.
+- C: The region's lower boundary is the horizontal axis, not a different horizontal line above it. Identify the original vertical strip in the two-dimensional view. (experiment step 3 below)
 
 ### How do you find radius and height?
 
@@ -5404,6 +5848,12 @@ Preset observation: The height quadruples and the circumference doubles, so the 
 3. **Return to the strip** Set the two-dimensional position to 0.5.
 
 Preset observation: The strip height is $x^2$ and the radius is $x$. Both appear separately in the integral.
+
+Explain the observation: Why does doubling the radius multiply volume per unit thickness by eight in this model?
+
+Reference explanation: Here height varies as radius squared, so it quadruples. Circumference doubles; multiplying the two factors gives eight times the contribution.
+
+Transfer exercise: question 4 in this lesson.
 
 ### Worked examples
 
@@ -5493,6 +5943,12 @@ C. Function height $f (x)$
 
 Answer: B. The band follows the curve, so its width is arc length $\mathrm{d}s$. Using only $\mathrm{d}x$ omits the slant. This calculates lateral area only.
 
+Feedback by choice:
+
+- A: Horizontal width leaves out vertical change. Where the slope is nonzero, a short curve segment is longer than its horizontal projection. (experiment step 2 below)
+- B: The band follows the curve, so its width is arc length $\mathrm{d}s$. Using only $\mathrm{d}x$ omits the slant. This calculates lateral area only.
+- C: Height gives the radius of rotation, not the strip's width along the curve. Multiply the circumference by that slanted length. (experiment step 3 below)
+
 ### How do you calculate arc length?
 
 For continuously differentiable $f$ on $[a , b]$, integrate $\sqrt{1 + {f'}^{2}}$. Squaring the slope makes descending sections contribute positive length too. Arc length generally differs from the straight distance between endpoints.
@@ -5556,6 +6012,12 @@ Preset observation: The polygonal length moves closer to arc length. Each slant 
 3. **Inspect a rotated band** Switch to the three-dimensional surface and complete one revolution.
 
 Preset observation: Lateral area multiplies rotation circumference by slant length. This model excludes end caps.
+
+Explain the observation: How does the area of a surface of revolution differ from the total area of a closed solid?
+
+Reference explanation: Rotating the curve generates the lateral surface. If end caps are requested, calculate and add them separately; they are not automatically part of the surface animation.
+
+Transfer exercise: question 4 in this lesson.
 
 ### Worked examples
 
@@ -5645,6 +6107,12 @@ C. $v' (t)$
 
 Answer: B. Displacement integrates signed $v (t)$; distance integrates speed $|v (t)|$. Backtracking cancels displacement but never distance.
 
+Feedback by choice:
+
+- A: Signed velocity accumulates displacement, so a return trip can cancel. Distance must count backward travel as length too. (experiment step 2 below)
+- B: Displacement integrates signed $v (t)$; distance integrates speed $|v (t)|$. Backtracking cancels displacement but never distance.
+- C: The derivative of velocity is acceleration. Integrating it gives velocity change, with different units from total distance.
+
 ### How do displacement and distance differ?
 
 Displacement is $\int  v \mathrm{d}t$; distance is $\int  |v| \mathrm{d}t$. Split where velocity changes sign. Add initial position to recover position. Average velocity is displacement divided by elapsed time.
@@ -5716,6 +6184,12 @@ Preset observation: Signed displacement cancels to zero, but distance is 1.
 3. **Continue forward** Set the upper bound to 3.
 
 Preset observation: Displacement is $\frac32$ and distance is $\frac52$. Identify the requested quantity before reading the number.
+
+Explain the observation: Why is distance not zero when the traveler returns to the starting point?
+
+Reference explanation: The return cancels signed displacement. Each traveled length is nonnegative and still contributes to distance.
+
+Transfer exercise: question 7 in this lesson.
 
 ### Worked examples
 
