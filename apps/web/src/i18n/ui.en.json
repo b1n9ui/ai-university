@@ -684,7 +684,6 @@
   "本地学习记录已清空。": "Local learning records cleared.",
   "已导入阅读与收藏记录。练习记录已合并。": "Reading and bookmark records imported. Exercise records merged.",
   "无法导入这个文件。请选择从本网站导出的学习记录 JSON。": "Could not import this file. Choose a learning-record JSON exported from this website.",
-  "本完整教材 · 中英文 · 免费阅读": " complete textbooks · English & Chinese · free to read",
   "试试交互演示": "Try an interactive lesson",
   "项目介绍与分享": "About & sharing",
   "教材简介与目录": "Book summaries & contents",
@@ -741,5 +740,6 @@
   "不会自动判定你的文字是否正确，请逐项核对理由与条件。": "Your text is not graded automatically. Compare the reasoning and conditions yourself.",
   "换个情境再试": "Try a different setting",
   "参加一次自主试学": "Try a self-guided study session",
-  "自主试学": "Self-guided study"
+  "自主试学": "Self-guided study",
+  "本完整教材 · 免费阅读": " complete textbooks · free to read"
 }

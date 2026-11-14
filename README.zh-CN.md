@@ -2,7 +2,7 @@
 
 [English](README.md) · 中文
 
-中文与英文分别部署为独立静态站点，各包含十本完整教材。[中文站](https://b1n9ui.github.io/ai-university/) · [English site](https://b1n9ui.github.io/ai-university/en/)。页头链接可打开另一站的对应小节，不在同一站内切换语言；正文、图示提示、练习与下载使用所在站的语言。独立域名之间不自动同步本地学习记录。
+[阅读教材](https://b1n9ui.github.io/ai-university/) · [English](https://b1n9ui.github.io/ai-university/en/)。导航栏可切换语言，并保留当前知识点。
 
 ![AI University 中文阅读站](apps/web/public/launch/preview-zh.png)
 

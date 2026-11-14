@@ -4,7 +4,7 @@
 
 English · [简体中文](README.zh-CN.md)
 
-[English site](https://b1n9ui.github.io/ai-university/en/) · [中文站](https://b1n9ui.github.io/ai-university/) · [Releases](https://github.com/b1n9ui/ai-university/releases)
+[Read the textbooks](https://b1n9ui.github.io/ai-university/en/) · [Releases](https://github.com/b1n9ui/ai-university/releases)
 
 ![AI University — English reading website](apps/web/public/launch/preview-en.png)
 
@@ -12,24 +12,24 @@ English · [简体中文](README.zh-CN.md)
 
 [Book summaries & complete contents](https://b1n9ui.github.io/ai-university/en/books/) · [Project information & screenshots](https://b1n9ui.github.io/ai-university/en/press/) · [Launch materials](docs/launch/README.md)
 
-## Available editions
+## The textbooks
 
-English and Chinese are independent static sites, each with all ten complete books. A header link opens the other site at the matching lesson. Language is fixed at build time: old preferences or `?lang=` parameters cannot change a site’s edition. Local records belong to their browser origin; separate native hosts do not synchronize them.
+Read in English by default. Use the header language link to switch to Chinese at the corresponding lesson.
 
-| Textbook | Chapters | Lessons | Worked examples | Exercises, including reviews | Languages |
-|---|---:|---:|---:|---:|---|
-| Calculus I | 7 | 35 | 79 | 197 | English, Chinese |
-| Calculus II | 8 | 35 | 72 | 179 | English, Chinese |
-| Calculus III | 9 | 40 | 81 | 203 | English, Chinese |
-| Linear Algebra | 10 | 50 | 100 | 250 | English, Chinese |
-| Ordinary Differential Equations | 11 | 55 | 110 | 275 | English, Chinese |
-| Probability & Statistics | 10 | 50 | 100 | 230 | English, Chinese |
-| Discrete Mathematics | 8 | 40 | 80 | 184 | English, Chinese |
-| Real Analysis | 8 | 40 | 80 | 184 | English, Chinese |
-| Introduction to Programming with Python | 5 | 20 | 40 | 94 | English, Chinese |
-| Building Projects with AI | 6 | 18 | 36 | 88 | English, Chinese |
+| Textbook | Chapters | Lessons | Worked examples | Exercises, including reviews |
+|---|---:|---:|---:|---:|
+| Calculus I | 7 | 35 | 79 | 197 |
+| Calculus II | 8 | 35 | 72 | 179 |
+| Calculus III | 9 | 40 | 81 | 203 |
+| Linear Algebra | 10 | 50 | 100 | 250 |
+| Ordinary Differential Equations | 11 | 55 | 110 | 275 |
+| Probability & Statistics | 10 | 50 | 100 | 230 |
+| Discrete Mathematics | 8 | 40 | 80 | 184 |
+| Real Analysis | 8 | 40 | 80 | 184 |
+| Introduction to Programming with Python | 5 | 20 | 40 | 94 |
+| Building Projects with AI | 6 | 18 | 36 | 88 |
 
-Every English edition includes all lessons, definitions and conditions, derivations, worked examples, misconception feedback, exercise solutions, diagram instructions, reviews, assessments, glossary, and appendices. Programming examples, execution replays, project sources, and downloads are also English. There is no runtime translation or model service.
+Each book includes definitions and conditions, derivations, worked examples, misconception feedback, exercise solutions, diagram instructions, reviews, assessments, a glossary, and appendices. Programming books include execution replays and project sources. No model service is required.
 
 ## Read and explore
 

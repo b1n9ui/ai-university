@@ -130,7 +130,7 @@ export function Home() {
           <h1>{tr("看见知识。")}<br />
             <span>{tr("理解本质。")}</span>
           </h1>
-          <p>{tr("AI 编写的开放教科书。")}<br />{localizeNode(publishedVolumes.length)}{tr("本完整教材 · 中英文 · 免费阅读")}</p>
+          <p>{tr("AI 编写的开放教科书。")}<br />{localizeNode(publishedVolumes.length)}{tr("本完整教材 · 免费阅读")}</p>
           <div className="stage-actions">
             <Link to="library" className="stage-primary">{tr("进入教科书库")}<ArrowUpRight size={21} />
             </Link>

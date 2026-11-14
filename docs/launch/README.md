@@ -1,6 +1,6 @@
 # AI University launch kit · v0.20.0
 
-Ten complete AI-authored textbooks, published separately in English and Chinese. The collection has 383 lessons, 778 worked examples, and 1,878 exercises including reviews and assessments. Counts describe coverage, not a claim of error-free content.
+Ten complete AI-authored open textbooks. The collection has 383 lessons, 778 worked examples, and 1,878 exercises including reviews and assessments. Counts describe coverage, not a claim of error-free content.
 
 - [Read in English](https://b1n9ui.github.io/ai-university/en/) · [中文阅读](https://b1n9ui.github.io/ai-university/)
 - [English project information and screenshots](https://b1n9ui.github.io/ai-university/en/press/) · [中文项目介绍与截图](https://b1n9ui.github.io/ai-university/press/)
