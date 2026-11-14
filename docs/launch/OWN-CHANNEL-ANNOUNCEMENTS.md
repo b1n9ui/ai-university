@@ -4,7 +4,7 @@ These AI-written drafts are for the project's own channels. They are not ready-t
 
 ## 中文 · 简版
 
-AI University 已开源：十本由 AI 编写的完整教材，中英文分别发布。
+AI University 已开源：十本由 AI 编写的完整开放教材。
 
 内容覆盖微积分 I–III、线性代数、常微分方程、概率统计、离散数学、实分析、Python 和 AI 辅助开发。可以阅读解释、调整图示、查看例题与练习解答，也可以下载整本书。网站是纯静态的，无需模型 API 或账户。
 
@@ -14,7 +14,7 @@ AI University 已开源：十本由 AI 编写的完整教材，中英文分别�
 
 ## English · short
 
-AI University is open source: ten complete AI-authored textbooks, available on separate English and Chinese websites.
+AI University is open source: ten complete AI-authored open textbooks.
 
 Explore explanations, interactive diagrams, worked examples, and exercise solutions across mathematics, Python, and AI-assisted development. Complete editions are downloadable. The website is static and requires no model API or account.
 
@@ -26,7 +26,7 @@ The material has not been individually human-reviewed. Concrete corrections, cou
 
 求极限时，把点拖近；学习空间向量时，转动坐标系；读 Python 时，逐步查看变量怎样变化。
 
-这是 AI University 的阅读方式。现有十本教材，共 383 节，中英文分别发布。正文、图示说明和练习解答是固定、可审查的版本；AI 用于编写和修订，网站不提供实时聊天。
+这是 AI University 的阅读方式。现有十本教材，共 383 节。正文、图示说明和练习解答是固定、可审查的版本；AI 用于编写和修订，网站不提供实时聊天。
 
 原创教材采用 CC0，网站代码采用 MIT。欢迎从一个熟悉的知识点开始，指出不清楚或不正确的地方。
 
@@ -34,6 +34,6 @@ The material has not been individually human-reviewed. Concrete corrections, cou
 
 Move a point toward a limit. Rotate a coordinate system to inspect vectors. Step through a Python program and watch its variables change.
 
-AI University brings that approach to ten complete textbooks: 383 lessons, published separately in English and Chinese. Text, diagram instructions, and exercise solutions are fixed, reviewable editions. AI is used to author and revise them; there is no runtime chatbot.
+AI University brings that approach to ten complete textbooks: 383 lessons. Text, diagram instructions, and exercise solutions are fixed, reviewable editions. AI is used to author and revise them; there is no runtime chatbot.
 
 Original textbook text is CC0; website code is MIT. Start with a topic you know and tell us where the explanation or diagram needs work.
